@@ -1,0 +1,67 @@
+Welcome to Open11!
+
+
+Open11 is a project that is based on all of Windows XP, Windows Server 2003, and finally Windows 11 codebases that aims to gradually be a Windows 11 instead of a Windows Server 2003 when building it, and that the setup program reports "Windows XP Professional" (depending on your SKU) but the Windows XP Professional in question is Windows 11 Pro, and this is because the legacy Windows NT setup is being ported to Windows 11 with this version of Windows!
+
+
+Open11 started development on September 22, 2024 under the codenames "Whistler+2", "Longhorn+1" and "Windows OCT21", and the SKUs to be available are:
+
+1. Windows 11 Pro
+2. Windows 11 Home
+3. Windows Server 2025 Enterprise
+4. Windows Server 2025 Standard
+5. Windows Server 2025 Datacenter
+6. Windows Server 2025 Web
+7. Windows Server 2025 Essentials (Small Business)
+
+
+For now no fancy Windows 11 UI or Explorer or UWP apps or anything, but we will port them in the future! Just like how we're trying so hard to port bootmgr and winload to this version of Windows.
+
+
+Basic Windows additions to be added:
+
+1. Windows Mail (Windows Vista version, but this might be upgraded to Windows Live Mail 2012)
+2. Windows Movie Maker (Windows Live 2012 as well)
+3. Windows Live Messenger 2012 (Replacing Teams and Skype for the time being)
+4. Windows Media Player 12
+5. Windows Contacts
+6. Windows Calendar (Windows Vista)
+7. Windows Easy Transfer (Windows 8.1)
+8. Windows 11 OOBE (msoobe redirects to winlogon which logs you on as defaultuser0 running WWAHost.exe that stands for Windows Web Application Host, also the entire Windows 11 OOBE is HTML anyways so it shouldn't be that big of a deal).
+9. Microsoft account integration into the entirety of Microsoft Windows, even the basic logon functions.
+10. Windows Defender
+
+
+
+This release also features Windows Vista sounds with a mix of 11 ones, specifically the "hardware remove, insert and fail" sounds.
+
+
+The project building process itself is simple, and you don't even need to be a Microsoft developer to do it. All you need to do is think of Windows 11 as if it's actually Windows XP! ;)
+
+
+To build:
+
+1. Run the Windows NT Command Processor (cmd.exe) as an administrator (and administrator privileges are extremely important when building with Vista and above)
+
+2. Go to the source code path, for instance, type (without quotes) "cd /d D:\rs_prerelease" (this "rs_prerelease" part might change when updating build labs)
+
+3. Type (without quotes) "tools\razzle.cmd" (or if you're a Windows x64 user, "tools\razzle64.cmd", which will also allow you to build 16-bit binaries for x86 Windows 11 on x64 Windows that is running on your host)
+
+4. Go to the directory you want to build files from, and type "bcz" if building for the first time (for instance, cd shell, but if that for any reason does not work, you might need to run bcz on the entire source kit root).
+
+5. Binaries will then be placed in a separate folder directly on the root of the same hard drive you used for the process (for instance, binaries.x86fre, where the x86 indicates the architecture binaries were built for and "fre"/"chk" is whether this is a free build or a checked/debug build).
+
+6. Once all binaries are built successfully, run postbuild and then oscdimg.cmd to build an ISO.
+
+
+
+More info can be found here: https://rentry.co/build-win2k3
+
+
+
+
+
+
+This is NOT affiliated with Microsoft Corporation whatsoever. Microsoft Windows is a trademark or a registered trademark of Microsoft Corporation.
+
+(c) 2021 Microsoft Corporation. All rights reserved.
