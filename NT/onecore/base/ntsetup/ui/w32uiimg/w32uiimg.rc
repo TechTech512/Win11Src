@@ -1,0 +1,111 @@
+//================================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2002 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Windows Code Name "Longhorn" Setup
+// Wizard Page Resources (Universal image assets)
+//
+// <Please put file history under this line so that recent changes are at the top> 
+//
+// (MAY 10 2021): Some old, unused resources removed and most replaced
+//                with PNGs for the upcoming Windows 10 release,
+//                codenamed "Sun Valley" (name it Windows 11).
+//
+// (DECEMBER 18 2005): Keep initial Vista setup image shit out of 
+//                     this DLL as spwizimg already does the job.
+//                     Here is just icons. Dialogs moved to
+//                     w32uires, arunres, and spwizres.
+//
+// (JUNE 20 2005): New UI vote, want it themed the same as the
+//                 theme in the final operating system (Aero/Jade)
+//                 or use Slate or do we slap some auroras? Perhaps
+//                 auroras might fit everywhere, because welcome to
+//                 Windows Vista I guess.
+//
+// (OCTOBER 1 2003): New Setup interface, Slate, in line with the
+//                   new Windows Longhorn theme. Back to left-aligns.
+//
+// (JUNE 19 2003): O baby, this needs to have more controls,
+//                 and now we added ones beforehand.
+//
+// (JANUARY 28 2003): Refined somehow. Has more pages and strings.
+//                    Not left-aligned anymore.
+//
+// (DECEMBER 4 2002): Created.
+// 
+//=================================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Setup Wizard Page Resources"
+#define VER_INTERNALNAME_STR        "w32uiRes.dll"
+#define VER_ORIGINALFILENAME_STR    "w32uiRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_WARN              IMAGE DISCARDABLE       "warning.png"
+IDB_NEWPART           IMAGE DISCARDABLE       "newpart.png"
+IDB_NEWPARTHOV        IMAGE DISCARDABLE       "newparthov.png"
+IDB_NEWPARTPRS        IMAGE DISCARDABLE       "newpartprs.png"
+IDB_NEWPARTDISABL     IMAGE DISCARDABLE       "newpartdisabl.png"
+IDB_NEWPART2          IMAGE DISCARDABLE       "newpart2.png"
+IDB_ERSPART           IMAGE DISCARDABLE       "erspart.png"
+IDB_ERSPARTHOV        IMAGE DISCARDABLE       "ersparthov.png"
+IDB_ERSPARTPRS        IMAGE DISCARDABLE       "erspartprs.png"
+IDB_ERSPARTDISABL     IMAGE DISCARDABLE       "erspartdisabl.png"
+IDB_ERSPART2          IMAGE DISCARDABLE       "erspart2.png"
+IDB_LOADDRV           IMAGE DISCARDABLE       "loaddrv.png"
+IDB_LOADDRVHOV        IMAGE DISCARDABLE       "loaddrvhov.png"
+IDB_LOADDRVPRS        IMAGE DISCARDABLE       "loaddrvprs.png"
+IDB_LOADDRVDISABL     IMAGE DISCARDABLE       "loaddrvdisabl.png"
+IDB_LOADDRV2          IMAGE DISCARDABLE       "loaddrv2.png"
+IDB_REFRESH           IMAGE DISCARDABLE       "refresh.png"
+IDB_REFRESHHOV        IMAGE DISCARDABLE       "refreshhov.png"
+IDB_REFRESHPRS        IMAGE DISCARDABLE       "refreshprs.png"
+IDB_REFRESHDISABL     IMAGE DISCARDABLE       "refreshdisabl.png"
+IDB_REFRESH2          IMAGE DISCARDABLE       "refresh2.png"
+IDB_FRMTPART          IMAGE DISCARDABLE       "fmrtpart.png"
+IDB_FRMTPARTHOV       IMAGE DISCARDABLE       "fmrtparthov.png"
+IDB_FRMTPARTPRS       IMAGE DISCARDABLE       "fmrtpartprs.png"
+IDB_FRMTPARTDISABL    IMAGE DISCARDABLE       "fmrtpartdisabl.png"
+IDB_FRMTPART2         IMAGE DISCARDABLE       "fmrtpart2.png"
+IDB_OSK               IMAGE DISCARDABLE       "osk.png"
+IDB_SELECTHINT        IMAGE DISCARDABLE       "selectrecthint.png"
+IDB_SELECT            IMAGE DISCARDABLE       "selarea.png"
+IDB_SELECT2           IMAGE DISCARDABLE       "prsarea.png"
+IDB_ITEMPCK           IMAGE DISCARDABLE       "lhselect.png"
+IDB_DISC              IMAGE DISCARDABLE       "disc.png"
+IDB_DISCHOV           IMAGE DISCARDABLE       "dischov.png"
+IDB_DISCPRS           IMAGE DISCARDABLE       "discprs.png"
+IDB_DISCDISABL        IMAGE DISCARDABLE       "discdisabl.png"
+IDB_DISC2             IMAGE DISCARDABLE       "disc2.png"
+IDB_LOGO              IMAGE DISCARDABLE       "longhornminilogo.png"
+IDB_SELECTEDITEM      IMAGE DISCARDABLE       "selecteditem.png"
+IDB_HOVEREDITEM       IMAGE DISCARDABLE       "hoveredlistitem.png"
+IDB_AEROCMDLNK        IMAGE DISCARDABLE       "aerocmdlnk.png"
+IDB_AEROSELECT        IMAGE DISCARDABLE       "aeroselect.png"
+IDB_DONE              IMAGE DISCARDABLE       "done.png"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_CLASSICDRIVE      ICON DISCARDABLE        "classicdrv.ico"
+IDI_DRIVE1            ICON DISCARDABLE        "disk.ico"
+IDI_DRIVE2            ICON DISCARDABLE        "disk2.ico"
+IDI_DISKANALYSIS      ICON DISCARDABLE        "filchk.ico"
+IDI_NODISKANALYSIS    ICON DISCARDABLE        "filnochk.ico"
+IDI_WINDOWS           ICON DISCARDABLE        "windows.ico"
+
