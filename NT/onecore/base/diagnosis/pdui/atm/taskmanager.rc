@@ -1,0 +1,2185 @@
+//===============================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Windows Diagnosis Advanced Task 
+// Manager
+// 
+//===============================================================
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Task Manager"
+#define VER_INTERNALNAME_STR        "Task Manager"
+#define VER_ORIGINALFILENAME_STR    "Taskmgr.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN ICON DISCARDABLE "main.ico"
+IDI_APP ICON DISCARDABLE "app.ico"
+IDI_SERVICES ICON DISCARDABLE "services.ico"
+IDI_SVCHOST ICON DISCARDABLE "svchost.ico"
+IDI_WINDOW ICON DISCARDABLE "window.ico"
+IDI_USER ICON DISCARDABLE "user.ico"
+IDI_FILE ICON DISCARDABLE "file.ico"
+IDI_NONET ICON DISCARDABLE "nonetworkconnectivity.ico"
+IDI_POORNET ICON DISCARDABLE "poornetworkconnectivity.ico"
+IDI_FAIRNET ICON DISCARDABLE "fairnetworkconnectivity.ico"
+IDI_GOODNET ICON DISCARDABLE "goodnetworkconnectivity.ico"
+IDI_VERYGOODNET ICON DISCARDABLE "verygoodnetworkconnectivity.ico"
+IDI_EXCLGOODNET ICON DISCARDABLE "excellentnetworkconnectivity.ico"
+IDI_UWPPROCESS ICON DISCARDABLE "metroprocess.ico"
+IDI_MULTITASKING ICON DISCARDABLE "multitasking.ico"
+IDI_APPFLUENTLIGHT ICON DISCARDABLE "appwindowfluentlight.ico"
+IDI_PERFORMANCELIGHT ICON DISCARDABLE "performancelight.ico"
+IDI_SERVICESLIGHT ICON DISCARDABLE "serviceslight.ico"
+IDI_RAMLIGHT ICON DISCARDABLE "ramlight.ico"
+IDI_BROWSERTABLIGHT ICON DISCARDABLE "browsertablight.ico"
+IDI_STARTUPAPPSLIGHT ICON DISCARDABLE "startupappslight.ico"
+IDI_FILELIGHT ICON DISCARDABLE "filelight.ico"
+IDI_TASKLIGHT ICON DISCARDABLE "tasklight.ico"
+IDI_FILELIGHT2 ICON DISCARDABLE "filelight2.ico"
+IDI_BRIEFCASE ICON DISCARDABLE "briefcase.ico"
+IDI_APPFLUENTDARK ICON DISCARDABLE "appwindowfluentdark.ico"
+IDI_PERFORMANCEDARK ICON DISCARDABLE "performancedark.ico"
+IDI_SERVICESDARK ICON DISCARDABLE "servicesdark.ico"
+IDI_RAMDARK ICON DISCARDABLE "ramdark.ico"
+IDI_BROWSERTABDARK ICON DISCARDABLE "browserdark.ico"
+IDI_STARTUPAPPSDARK ICON DISCARDABLE "startupappsdark.ico"
+IDI_FILEDARK ICON DISCARDABLE "filedark.ico"
+IDI_TASKDARK ICON DISCARDABLE "taskdark.ico"
+IDI_FILEDARK2 ICON DISCARDABLE "filedark2.ico"
+IDI_BRIEFCASEDARK ICON DISCARDABLE "briefcasedark.ico"
+IDI_RESMON ICON DISCARDABLE "resmon.ico"
+IDI_TRAY0 ICON DISCARDABLE "tray0.ico"
+IDI_TRAY1 ICON DISCARDABLE "tray1.ico"
+IDI_TRAY2 ICON DISCARDABLE "tray2.ico"
+IDI_TRAY3 ICON DISCARDABLE "tray3.ico"
+IDI_TRAY4 ICON DISCARDABLE "tray4.ico"
+IDI_TRAY5 ICON DISCARDABLE "tray5.ico"
+IDI_TRAY6 ICON DISCARDABLE "tray6.ico"
+IDI_TRAY7 ICON DISCARDABLE "tray7.ico"
+IDI_TRAY8 ICON DISCARDABLE "tray8.ico"
+IDI_TRAY9 ICON DISCARDABLE "tray9.ico"
+IDI_TRAY10 ICON DISCARDABLE "tray10.ico"
+IDI_TRAY11 ICON DISCARDABLE "tray11.ico"
+
+/////////////////////////////////////////////////////////////////
+//
+// WEVT_TEMPLATE
+//
+
+IDW_WEVTTEMPLATE WEVT_TEMPLATE DISCARDABLE "wevttempl.bin"
+
+/////////////////////////////////////////////////////////////////
+//
+// UIFile
+//
+
+IDU_DUI1 UIFILE DISCARDABLE "taskmgrdui1.bin"
+IDU_DUI2 UIFILE DISCARDABLE "taskmgrdui2.bin"
+
+/////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BIT BITMAP DISCARDABLE "bit.bmp"
+
+/////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_PERFTAB_NET_RECEIVE_COLORKEY PNG DISCARDABLE "perftabnetreceivecolorkey.png"
+IDB_PERFTAB_NET_SEND_COLORKEY    PNG DISCARDABLE "perftabnetsendcolorkey.png"
+IDB_CPUPERF                      PNG DISCARDABLE "cpuperf.png"
+IDB_MEMPERF                      PNG DISCARDABLE "memperf.png"
+IDB_DISKPERF                     PNG DISCARDABLE "diskperf.png"
+IDB_NETPERF                      PNG DISCARDABLE "netperf.png"
+IDB_GPUPERF                      PNG DISCARDABLE "gpuperf.png"
+IDB_MINGRPH                      PNG DISCARDABLE "minigraphplaceholder.png"
+IDB_UNKPERF                      PNG DISCARDABLE "unknownperf.png"
+IDB_COLUMN1                      PNG DISCARDABLE "column1.png"
+IDB_SEPLINE                      PNG DISCARDABLE "separatorline.png"
+IDB_COLUMN2                      PNG DISCARDABLE "column2.png"
+IDB_PERFGOOD                     PNG DISCARDABLE "goodperf.png"
+IDB_PERFGOODDOTTED               PNG DISCARDABLE "dottedgoodperf.png"
+IDB_CPUDARKPERF                  PNG DISCARDABLE "cpuperfdark.png"
+IDB_MEMDARKPERF                  PNG DISCARDABLE "memperfdark.png"
+IDB_DISKDARKPERF                 PNG DISCARDABLE "diskperfdark.png"
+IDB_NETDARKPERF                  PNG DISCARDABLE "netperfdark.png"
+IDB_GPUDARKPERF                  PNG DISCARDABLE "gpuperfdark.png"
+IDB_UNKDARKPERF                  PNG DISCARDABLE "unknownperfdark.png"
+IDB_PERFBLUE                     PNG DISCARDABLE "perfblue.png"
+IDB_PERFBLUEISHVIOLET            PNG DISCARDABLE "perfblueishviolet.png"
+IDB_PERFDARKGREEN                PNG DISCARDABLE "perfdarkgreen.png"
+IDB_PERFPINK                     PNG DISCARDABLE "perfpink.png"
+IDB_PERFVIOLET                   PNG DISCARDABLE "perfviolet.png"
+IDB_PERFBLACK                    PNG DISCARDABLE "perfblack.png"
+
+/////////////////////////////////////////////////////////////////
+//
+// Message Table
+//
+
+LANGUAGE 0x9,0x1
+1 11 "MSG00001.bin"
+
+
+/////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ANALYZEWAITCHAIN DIALOGEX 50, 50, 274, 177
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Analyze wait chain"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Analyzing", IDL_ANALYZINGLABEL, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE, 7, 7, 260, 26 , WS_EX_STATICEDGE
+   CONTROL "", IDC_WAITCHAINLIST, "SysTreeView32", TVS_HASLINES | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 40, 260, 70 
+   CONTROL "The analyze wait chain tree shows which processes (root nodes in the tree) are using, or waiting to use, a resource that is being used by another process (child nodes in the tree) and is required for the selected process to continue.", IDL_WAITCHAINDESC, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 117, 260, 32 
+   CONTROL "<A HREF=""https://go.microsoft.com/fwlink/?LinkID=136333"">More about wait chains</A>", IDC_WAITCHAINHELPHYPERLINK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 156, 130, 8 
+   CONTROL "&End process", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_TABSTOP, 147, 156, 66, 14 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 217, 156, 50, 14 
+END
+
+IDD_SELECTPROCESSOR DIALOGEX 50, 50, 202, 178
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select processors"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "", IDL_PROCDESC, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 188, 16 
+   CONTROL "Processors", IDC_PROCESSORLIST, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 28, 188, 120 
+   CONTROL "OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 90, 157, 50, 14 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 145, 157, 50, 14 
+END
+
+IDD_NETDETAILS DIALOGEX 50, 50, 317, 258
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_MAXIMIZEBOX | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_GROUP | WS_TABSTOP
+CAPTION "Network Details"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Table", IDC_NETDETAILTABLE, "SysListView32", LVS_REPORT | LVS_SINGLESEL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 0, 0, 317, 258 
+END
+
+IDD_PROCESSORAFFINITY DIALOGEX 0, 0, 202, 178
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Processor affinity"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Which processors are allowed to run ""%s""?", IDS_AFFINITYCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 4, 188, 19 
+   CONTROL "Processor group:", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 19, 188, 19 
+   CONTROL "", IDC_PROCESSORGROUPCOMBOBOX, COMBOBOX, CBS_DROPDOWNLIST | WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_TABSTOP, 7, 30, 80, 46 
+   CONTROL "Processors", IDC_PROCESSORLISTAFFINITY, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 49, 188, 99 
+   CONTROL "OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 90, 157, 50, 14 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 145, 157, 50, 14 
+END
+
+IDD_AFFIN2 DIALOGEX 0, 0, 202, 178
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Processor affinity"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Which processors are allowed to run ""%s""?", IDS_AFFINITYCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 4, 188, 19 
+   CONTROL "Processors", IDC_PROCESSORLISTAFFINITY, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 28, 188, 120 
+   CONTROL "OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 90, 157, 50, 14 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 145, 157, 50, 14 
+END
+
+IDD_COLLECTINGMEMDUMP DIALOGEX 50, 50, 214, 50
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting process memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Please wait while the process is written to the file.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 8 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 157, 25, 50, 14 
+END
+
+IDD_SUCCESSDUMP DIALOGEX 50, 50, 214, 80
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting process memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "The file has been successfully created.\n\nThe file is located at:", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 82, 60, 50, 15 
+   CONTROL "Open file location", ID_EXPLORE, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 134, 60, 75, 15 
+   CONTROL "", IDL_DUMPINFO, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 34, 200, 25 
+END
+
+IDD_COLLECTINGKRNDMP DIALOGEX 50, 50, 214, 50
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting kernel memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Please wait while the live kernel memory dump is written to the file.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 175, 25 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 157, 25, 50, 14 
+END
+
+IDD_KRNDMPSUCCESS DIALOGEX 50, 50, 214, 80
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting kernel memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "The file has been successfully created.\n\nThe file is located at:", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 82, 60, 50, 15 
+   CONTROL "Open file location", ID_EXPLORE, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 134, 60, 75, 15 
+   CONTROL "", IDL_DUMPINFO, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 34, 200, 25 
+END
+
+IDD_KRNDMPFAIL DIALOGEX 50, 50, 190, 70
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting kernel memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "The live memory dump was unsuccessful.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 82, 50, 50, 15 
+   CONTROL "Retry", IDRETRY, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 134, 50, 50, 15 
+   CONTROL "", IDL_DMPFAIL, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 25, 200, 25 
+END
+
+IDD_COULDNOTDOLIVEKRNDMP DIALOGEX 50, 50, 214, 70
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting kernel memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "The live memory dump could not be performed.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 157, 50, 50, 15 
+   CONTROL "", IDL_DMPFAIL, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 25, 200, 25 
+END
+
+IDD_CANCELLEDLIVEDUMP DIALOGEX 50, 50, 214, 70
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting kernel memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "The live memory dump was cancelled.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 157, 50, 50, 15 
+   CONTROL "", IDL_DMPFAIL, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 25, 200, 25 
+END
+
+IDD_CHECKINGLOWMEM DIALOGEX 50, 50, 195, 32
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Checking if low on memory"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Please wait while the system checks on memory resources.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 8 
+END
+
+IDD_LOWMEMCHECKFAIL DIALOGEX 50, 50, 140, 70
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Checking if low on memory"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "The low memory check failed.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 82, 50, 50, 15 
+   CONTROL "", IDL_DMPFAIL, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 25, 200, 25 
+END
+
+IDD_COLLMEMDMP DIALOGEX 50, 50, 214, 50
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting process memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Please wait while the process is written to the file.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 8 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 157, 25, 50, 14 
+END
+
+IDD_MEMDMPCOLLECTED DIALOGEX 50, 50, 214, 80
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Collecting process memory dump"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "The file has been successfully created.\n\nThe file is located at:", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 82, 60, 50, 15 
+   CONTROL "Open file location", ID_EXPLORE, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 134, 60, 75, 15 
+   CONTROL "", IDL_DUMPINFO, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 34, 200, 25 
+END
+
+IDD_SENDMSGTOUSR DIALOGEX 50, 50, 214, 116
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Send Message"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "&Message title:", IDL_MESSAGELABELDESC, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 200, 8 
+   CONTROL "", IDC_MSGTITLEBOX, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 17, 200, 25 
+   CONTROL "Me&ssage:", IDL_MESSAGECONTENTDESC, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 50, 200, 8 
+   CONTROL "", IDC_MSGBOX, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 60, 200, 25 
+   CONTROL "OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 103, 95, 50, 14 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 157, 95, 50, 14 
+END
+
+
+/////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+TASKMGR ACCELERATORS DISCARDABLE
+BEGIN
+	VK_DELETE, ID_END_TASK, NOINVERT, VIRTKEY
+	VK_F5, ID_RFRSH, VIRTKEY
+END
+
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WORKUNIT                                                  "Work Unit"
+	IDS_WORKUNI2                                                  "Work Unit"
+	IDS_WORKUNIT_DESC                                             "Performance counter to expose app-specific structural data (WorkUnits)."
+	IDS_APP_OWNER_PROCESSID                                       "App Owner Process ID"
+	IDS_APP_OWNER_PROCESSI2                                       "App Owner Process ID"
+	IDS_APP_OWNER_PROCESSID_DESC                                  "App Owner Process ID identifies the process which owns this work unit in the app architecture."
+	IDS_HOST_PROCESSID                                            "Host Process ID"
+	IDS_HOST_PROCESSI2                                            "Host Process ID"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	HOSTPROCESSID_DESC                                            "Host Process ID identifies the process which hosts this work unit. The host process could have terminated, so this value may no longer be valid."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	SEGOEUI                                                       "Segoe UI"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BROWSER                                                   "Browser"
+	IDS_CRASHPAD                                                  "Crashpad"
+	IDS_EXTENSION                                                 "Extension"
+	IDS_GPUPROCESS                                                "GPU Process"
+	IDS_PLUGIN                                                    "Plugin"
+	IDS_RENDERER                                                  "Renderer"
+	IDS_UTILITY                                                   "Utility"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_RESFILERESMON                                             "res`res`*`Resmon"
+	IDS_CONFIGFILETOL                                             "load`load`config`Configuration file to load"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DATAFILETOLOAD                                            "open`open`file`Data file to load"
+	IDS_DISABLEDBYGPOS                                            "Task Manager has been disabled by your administrator."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_FILE                                                      "File"
+	IDS_READRATE                                                  "Read (B/sec)"
+	IDS_WRITERATE                                                 "Write (B/sec)"
+	IDS_NAMEFILE                                                  "Name"
+	IDS_PIDFILE                                                   "PID"
+	IDS_USERNAME                                                  "User name"
+	IDS_SESSIONID                                                 "Session ID"
+	IDS_CPU                                                       "CPU"
+	IDS_CPUTIME                                                   "CPU time"
+	IDS_CYCLE                                                     "Cycle"
+	IDS_WORKINGSETMEMORY                                          "Working set (memory)"
+	IDS_PEAKWORKINGSETMEMORY                                      "Peak working set (memory)"
+	IDS_WORKINGSETDELTAMEMORY                                     "Working set delta (memory)"
+	IDS_ACTIVEPRIVATEMEMORY                                       "Memory (active private working set)"
+	IDS_PRIVATEMEMORY                                             "Memory (private working set)"
+	IDS_PUBLICMEMORY                                              "Memory (shared working set)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_COMMITSIZE                                                "Commit size"
+	IDS_PAGEDPOOL                                                 "Paged pool"
+	IDS_NPPOOL                                                    "NP pool"
+	IDS_PAGEFAULTS                                                "Page faults"
+	IDS_PFDELTA                                                   "PF Delta"
+	IDS_BASEPRIORITY                                              "Base priority"
+	IDS_PROCESSHANDLES                                            "Handles"
+	IDS_PROCESSTHREADS                                            "Threads"
+	IDS_USEROBJECTSPROC                                           "User objects"
+	IDS_GDIOBJECTSPROC                                            "GDI objects"
+	IDS_IOREAD                                                    "I/O reads"
+	IDS_IOWRITE                                                   "I/O writes"
+	IDS_IOOTHER                                                   "I/O other"
+	IDS_IOREADBYTES                                               "I/O read bytes"
+	IDS_IOWRITEBYTES                                              "I/O write bytes"
+	IDS_IOOTHERBYTES                                              "I/O other bytes"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_IMAGEFILEPATH                                             "Image path name"
+	IDS_OSCOMPATMODE                                              "Operating system context"
+	IDS_PLATFORMBITS                                              "Platform"
+	IDS_PROCESSEXECUTIONSTATUS                                    "Status"
+	IDS_RUNNINGWITHADMIN                                          "Elevated"
+	IDS_UACVIRTUALIZATION                                         "UAC virtualization"
+	IDS_IMAGEFILEDESCRIPTION                                      "Description"
+	IDS_DATAEXECUTIONPREVENTION                                   "Data execution prevention"
+	// Some physics going on here, I guess...
+	IDS_DISKSENDANDRECEIVE                                        "Disk total (B/sec)"
+	IDS_TOTALSENDANDRECEIVE                                       "Total (B/sec)"
+	IDS_SENDRATEVELOCITY                                          "Send (B/sec)"
+	IDS_RECEIVERATEVELOCITY                                       "Receive (B/sec)"
+	IDS_TOTALREADWRITEVELOCITY                                    "Total (B/sec)"
+	IDS_RESPONSETIMEMILLISECON                                    "Response time (ms)"
+	IDS_IMAGENAME                                                 "Name"
+	IDS_IMAGEGROUP                                                "Group"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LOGICALDISK                                               "Logical disk"
+	IDS_IOPRIORITY                                                "I/O priority"
+	IDS_JOBOBJECTID                                               "Job object ID"
+	IDS_PACKAGEAPPX                                               "Package name"
+	IDS_ENTERPRISECONTEXT                                         "Enterprise context"
+	IDS_POWERTHROTTLING                                           "Power throttling"
+	IDS_CPUARCHITECTURE                                           "Architecture"
+	IDS_STACKPROTECTION                                           "Hardware-enforced Stack Protection"
+	IDS_EXTENDEDFLOW                                              "Extended Control Flow Guard"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_STATUSPROCESSCONTINUING                                   "Continuing"
+	IDS_STATUSPROCESSPAUSED                                       "Paused"
+	IDS_STATUSPROCESSPAUSING                                      "Pausing"
+	IDS_STATUSPROCESSRUNNING                                      "Running"
+	IDS_STATUSPROCESSSTARTING                                     "Starting"
+	IDS_STATUSPROCESSSTOPPED                                      "Stopped"
+	IDS_STATUSPROCESSSTOPPING                                     "Stopping"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_STATUSPROCESSNOTRESPONDING                                "Not responding"
+	IDS_STATUSPROCESSISRUNNING                                    "Running"
+	IDS_STATUSPROCESSSUSPENDED                                    "Suspended"
+	IDS_STATUSPROCESSPOWERSAVING                                  "Efficiency mode"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_BACKGROUND                                                "Background"
+    IDS_LOW                                                       "Low"
+    IDS_NORMAL                                                    "Normal"
+    IDS_HIGH                                                      "High"
+    IDS_CRITICAL                                                  "Critical"
+    IDS_PRIORITYLOW                                               "Low"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PRIORITYBELOWNORMAL                                       "Below normal"
+	IDS_PRIORITYNORMAL                                            "Normal"
+	IDS_PRIORITYABOVENORMAL                                       "Above normal"
+	IDS_PRIORITYHIGH                                              "High"
+	IDS_PRIORITYREALTIME                                          "Realtime"
+	IDS_UNKNOWN                                                   "N/A"
+	IDS_MICROSOFTWHISTLER                                         "Windows XP"
+	IDS_MICROSOFTLONGHORN                                         "Windows Vista"
+	IDS_MICROSOFTSEVEN                                            "Windows 7"
+	IDS_MICROSOFTEIGHT                                            "Windows 8"
+	IDS_MICROSOFTBLUE                                             "Windows 8.1"
+	IDS_VARIABLETOBEDEFINED                                       "%1 (%2)"
+	IDS_16BITPROCESS                                              "16 bit"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_32BITPROCESS                                              "32 bit"
+	IDS_64BITPROCESS                                              "64 bit"
+	IDS_32WOW64PROCE                                              "32 bit"
+	IDS_ELEVATIONYES                                              "Yes"
+	IDS_ELEVATIONNO                                               "No"
+	IDS_DEPDISABLED                                               "Disabled"
+	IDS_DEPENABLED                                                "Enabled"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_STACKPROTECTIONDISABLED                                   "Disabled"
+	IDS_STACKPROTECTIONCOMPATIBLEMODULESONLY                      "Compatible modules only"
+	IDS_STACKPROTECTIONALLMODULES                                 "All modules"
+	IDS_STACKPROTECTIONAUDITMODULES                               "Compatible modules only (audit mode)"
+	IDS_STACKPROTECTIONALLAUDITMODULES                            "All modules (audit mode)"
+	IDS_EXTENDEDCONTROLFLOWDISABLED                               "Disabled"
+	IDS_EXTENDEDCONTROLFLOWENABLEDAUDIT                           "Enabled (audit mode)"
+	IDS_EXTENDEDCONTROLFLOWENABLED                                "Enabled"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_RETURNADDRESSSIGNING                                      "Return address signing"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEMINTERRUPTS                                          "System interrupts"
+	IDS_SYSTEMINTERRUPTSDESC                                      "Deferred procedure calls and interrupt service routines"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEMIDLEPROCESS                                         "System Idle Process"
+	IDS_SYSTEMIDLEPROCESSDESC                                     "Percentage of time the processor is idle"
+	IDS_IPV4LOOPBACK                                              "IPv4 loopback"
+	IDS_IPV6LOOPBACK                                              "IPv6 loopback"
+	IDS_IPV4UNSPECIFIED                                           "IPv4 unspecified"
+	IDS_IPV6UNSPECIFIED                                           "IPv6 unspecified"
+	IDS_NETWORKCONNECTED                                          "Connected"
+	IDS_NETWORKDISCONNECTED                                       "Disconnected"
+	IDS_NETWORKCONNECTING                                         "Connecting"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_UNKNOWNCONNECTIONSTATUS                                   "Unknown"
+	IDS_NONOPERATIONAL                                            "Non operational"
+	IDS_UNKNOWN2                                                  "Unknown"
+	IDS_ANY                                                       "Any"
+	IDS_INFRARED                                                  "Infrared baseband"
+	IDS_VENDORTOBEFILLED                                          "Vendor specific"
+	IDS_NULL                                                      "Unknown"
+	IDS_NONE                                                      "None"
+	IDS_GPRS                                                      "GPRS"
+	IDS_EDGE                                                      "EDGE"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_UMTS                                                      "UMTS"
+	IDS_HSDPA                                                     "HSDPA"
+	IDS_HSUPA                                                     "HSUPA"
+	IDS_HSPA                                                      "HSPA"
+	IDS_LTE                                                       "LTE"
+	IDS_1XRTT                                                     "1xRTT"
+	IDS_1XEVDO                                                    "1xEVDO"
+	IDS_1XEVDOA                                                   "1xEVDO RevA"
+	IDS_1XEVDV                                                    "1xEVDV"
+	IDS_3XRTT                                                     "3xRTT"
+	IDS_1XEVDOB                                                   "1xEVDO RevB"
+	IDS_UMB                                                       "UMB"
+	IDS_5G                                                        "5G"
+	IDS_BTHPAN                                                    "Bluetooth PAN"
+	IDS_ETHERNET                                                  "Ethernet"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DETAILSTAB                                                "Details"
+	IDS_SERVICESTAB                                               "Services"
+	IDS_PERFORMANCETAB                                            "Performance"
+	IDS_PROCESSESTAB                                              "Processes"
+	IDS_STARTUPTAB                                                "Startup"
+	IDS_USERSTAB                                                  "Users"
+	IDS_APPHISTORYTAB                                             "App history"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPTITLE                                                  "Task Manager"
+	IDS_KILLPROCESSWARNING                                        "Do you want to end %s?"
+	IDS_KILLPROCESSWARNINGDESC                                    "If an open program is associated with this process, it will close and you will lose any unsaved data. If you end a system process, it might result in system instability. Are you sure you want to continue?"
+	IDS_KILLPROCESS                                               "End process"
+	IDS_KILLPROCESSTREEWARNING                                    "Do you want to end the process tree of %s?"
+	IDS_KILLPROCESSTREEWARNINGDESC                                "If open programs or processes are associated with this process tree, they will close and you will lose any unsaved data. If you end a system process, it might result in system instability. Are you sure you want to continue?"
+	IDS_KILLPROCESSTREE                                           "End process tree"
+	IDS_KILLSELECTEDPROCESSESWARNING                              "Do you want to end the selected processes?"
+	IDS_KILLSELECTEDPROCESSESWARNINGDESC                          "If open programs are associated with the selected processes, they will close and you will lose any unsaved data. If you end a system process, it might result in system instability. Are you sure you want to continue?"
+	IDS_KILLSELECTEDPROCESSESTREEWARNING                          "Do you want to end the selected process trees?"
+	IDS_KILLSELECTEDPROCESSESTREEWARNINGDESC                      "If open programs or processes are associated with the selected process trees, they will close and you will lose any unsaved data. If you end a system process, it might result in system instability. Are you sure you want to continue?"
+	IDS_SELECTCOLUMN                                              "Select columns"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SELECTCOLUMNDESC                                          "Select the columns that will appear in the table."
+	IDS_KILLSYSTEMPROCES                                          "Do you want to end the system process '%s'?"
+	IDS_KILLSYSTEMPROCESDESC                                      "Ending this process will cause Windows to become unusable or shut down, causing you to lose any data hasn't been saved. Are you sure you want to continue?"
+	IDS_KILLSYSTEMPROCE                                           "Shut down"
+	IDS_YESIWANNAKILLITCHECBOX                                    "Abandon unsaved data and shut down."
+	IDS_CHANGEPROCESSPRIORITYWARNING                              "Do you want to change the priority of '%s'?"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHANGEPROCESSPRIORITYWARNINGDESC                          "Changing the priority of certain processes could cause system instability."
+	IDS_CHANGEPROCESSPRIORITY                                     "Change priority"
+	IDS_CHANGEPROCESSPRIORITYERROR                                "Unable to change priority"
+	IDS_SETPRIORTIYTOREALTIMEERROR                                "Unable to set priority to Realtime. The priority was set to High instead."
+	IDS_PRIORITYCHANGEPOWERSAVINGOFF                              "Changing the priority will turn off Efficiency mode. Do you want to continue?"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CANTEXECUTECOMMANDERRORDETAILS                            "When attempting to execute the command, the following system error occurred: "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_1BPERSECOND                                               "1 B/sec"
+	IDS_1KBPERSECOND                                              "1 KB/sec"
+	IDS_10KBPERSECOND                                             "10 KB/sec"
+	IDS_100KBPERSECOND                                            "100 KB/sec"
+	IDS_1MBPERSECOND                                              "1 MB/sec"
+	IDS_10MBPERSECOND                                             "10 MB/sec"
+	IDS_100MBPERSECOND                                            "100 MB/sec"
+	IDS_1GBPERSECOND                                              "1 GB/sec"
+	IDS_1BPS                                                      "1 bps"
+	IDS_10KBPS                                                    "10 Kbps"
+	IDS_1MBPS                                                     "1 Mbps"
+	IDS_10MBPS                                                    "10 Mbps"
+	IDS_100MBPS                                                   "100 Mbps"
+	IDS_1GBPS                                                     "1 Gbps"
+	IDS_10GBPS                                                    "10 Gbps"
+	IDS_100GBPS                                                   "100 Gbps"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_100KBPS                                                   "100 Kbps"
+	IDS_100KBPS2                                                  "100 Kbps"
+	IDS_500KBPS                                                   "500 Kbps"
+	IDS_1MBPS2                                                    "1 Mbps"
+	IDS_11MBPS                                                    "11 Mbps"
+	IDS_54MBPS                                                    "54 Mbps"
+	IDS_100MBPS2                                                  "100 Mbps"
+	IDS_500MBPS                                                   "500 Mbps"
+	IDS_1GBPS2                                                    "1 Gbps"
+	IDS_10GBPS3                                                   "10 Gbps"
+	IDS_100GBPS2                                                  "100 Gbps"
+	IDS_450KBPS                                                   "450 Kbps"
+	IDS_800KBPS                                                   "800 Kbps"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_7MBPS                                                     "7.7 Mbps"
+	IDS_32MBPS                                                    "32 Mbps"
+	IDS_50MBPS                                                    "50 Mbps"
+	IDS_200MBPS                                                   "200 Mbps"
+	IDS_300MBPS                                                   "300 Mbps"
+	IDS_2GBPS                                                     "2 Gbps"
+	IDS_10GBPS2                                                   "10 Gbps"
+	IDS_100KBPERSECOND2                                           "100 KB/s"
+	IDS_500KBPERSECOND                                            "500 KB/s"
+	IDS_1MBPERSECOND2                                             "1 MB/s"
+	IDS_10MBPERSECOND2                                            "10 MB/s"
+	IDS_100MBPERSECOND2                                           "100 MB/s"
+	IDS_250MBPERSECOND2                                           "250 MB/s"
+	IDS_500MBPERSECOND2                                           "500 MB/s"
+	IDS_1GBPERSECOND2                                             "1 GB/s"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_10GBPERSECOND2                                            "10 GB/s"
+	IDS_100GBPERSECOND2                                           "100 GB/s"
+	IDS_450KBPERSECOND2                                           "450 KB/s"
+	IDS_800KBPERSECOND2                                           "800 KB/s"
+	IDS_7MBPERSECOND2                                             "7 MB/s"
+	IDS_60MBPERSECOND2                                            "60 MB/s"
+	IDS_125MBPERSECOND2                                           "125 MB/s"
+	IDS_200MBPERSECOND2                                           "200 MB/s"
+	IDS_300MBPERSECOND2                                           "300 MB/s"
+	IDS_2GBPERSECOND2                                             "2 GB/s"
+	IDS_1GBPERSECOND3                                             "10 GB/s"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BPS                                                       "bps"
+	IDS_KBPS                                                      "Kbps"
+	IDS_MBPS                                                      "Mbps"
+	IDS_GBPS                                                      "Gbps"
+	IDS_BPERSEC                                                   "B/sec"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_KBPERSEC                                                  "KB/s"
+	IDS_MBPERSEC                                                  "MB/s"
+	IDS_GBPERSEC                                                  "GB/s"
+	IDS_THOUSAND                                                  " K"
+	IDS_5MBPS                                                     "5 Mbps"
+	IDS_26MBPS                                                    "26 Mbps"
+	IDS_250MBPS                                                   "250 Mbps"
+	IDS_3MBPS                                                     "3.6 Mbps"
+	IDS_17MBPS                                                    "17 Mbps"
+	IDS_113MBPS                                                   "113 Mbps"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BPERSECDISKIO                                             "%I64d B/sec disk I/O"
+	IDS_KBPERSECDISKIO                                            "%I64d KB/sec disk I/O"
+	IDS_MBPERSECDISKIO                                            "%I64d MB/sec disk I/O"
+	IDS_GBPERSECDISKIO                                            "%I64d GB/sec disk I/O"
+	IDS_BPSNETWORKIOVL                                            "%I64d bps network I/O"
+	IDS_KBPSNETWORKIOVL                                           "%I64d Kbps network I/O"
+	IDS_MBPSNETWORKIOVL                                           "%I64d Mbps network I/O"
+	IDS_GBPSNETWORKIOVL                                           "%I64d Gbps network I/O"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CPUUSAGERATE                                              "%I64d%% CPU usage"
+	IDS_USEDPHYSIMEM                                              "%I64d%% Used physical memory"
+	IDS_HARDFAULTSPERSEC                                          "%I64d Hard faults/sec"
+	IDS_MAXIMUMFREQUENCY                                          "%I64d%% Maximum frequency"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NETWORKUTILITZATIONRATE                                   "%I64d%% network utilization"
+	IDS_HIGHESTACTIVETIMERATING                                   "%I64d%% Highest active time"
+	IDS_MEGABYTESINUSE                                            "%I64d MB in use"
+	IDS_MEGABYTESREMAINING                                        "%I64d MB available"
+	IDS_MBVARIABLE                                                "%d MB"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DISKQUEUELENGTH                                           "Disk %s (%s) queue length"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PROCESSTHREADINFO                                         "%s (PID: %d) Thread: %s"
+	IDS_PROCESSESWAITINGS                                         "One or more threads of %s are in waiting status."
+	IDS_WAITINGFORANOTHER                                         "%s is waiting for another process (%s)."
+	IDS_WAITINGINDEADLOCK                                         "%s is waiting for a process in deadlock (%s). You can end the deadlocked process to resolve the issue immediately, or you can wait to see if the issue resolves itself."
+	IDS_WAITINGMULTIPLEPROCESSESDEADLOCKED                        "%s is waiting for multiple processes in deadlock. You can end the deadlocked processes to resolve the issue immediately, or you can wait to see if the issue resolves itself."
+	IDS_PROCESSINDEADLOCKINDIVIDUALLYALONE                        "%s is in deadlock. You can end the process to resolve the deadlock immediately, or you can wait to see if the issue resolves itself."
+	IDS_PROCESSINDEADLOCKWITHMOREPROCESSES                        "%s is in deadlock with one or more processes. You can end the processes to resolve the deadlock immediately, or you can wait to see if the issue resolves itself."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PROCESSNOTRESPONDING                                      "%s is not responding."
+	IDS_THREADSWAITINGTOFINISHNETIO                               "One or more threads of %s are waiting to finish network I/O."
+	IDS_WAITINGFORANOTHERPROCENETIO                               "%s is waiting for another process (%s) to finish network I/O."
+	IDS_RUNNINGLIKEUSUAL                                          "%s is running normally."
+	IDS_PROCESSSUSPENDED                                          "%s is suspended."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_AND                                                       "-"
+	IDS_PAGEFILEINSCRIPTION                                       " (Page file)"
+	IDS_DISKSTATUSBOOLEAN                                         "%s (%s)"
+	IDS_NTFSVOLUMELOGGING                                         " (NTFS volume log)"
+	IDS_NTFSMASTERFILETAB                                         " (NTFS master file table)"
+	IDS_NTFSFREESPACEMAPS                                         " (NTFS free space map)"
+	IDS_MULTIPLYBY32                                              "%s *32"
+	IDS_VARIABLEDISK                                              "%1%2"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PROCESSID                                                 "Process ID"
+	IDS_TOTALPROCESSORUTILIZE                                     "Total processor utilization across all cores"
+	IDS_TOTALPROCESSORUTILIZETIME                                 "Total processor time, in seconds, used by a process since it started"
+	IDS_CPUCYCLECURRENTPERCENTAGE                                 "Current percent of CPU cycle time consumption by the process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PHYSICALMEMUSEDBYPROCESS                                  "Amount of physical memory currently in use by the process"
+	IDS_MAXPHYSICALMEMUSEDBYPROCESS                               "Maximum amount of physical memory used by the process"
+	IDS_CHANGEWORKINGSETUSAGE                                     "Change in working set usage by the process"
+	IDS_MEMCANTBEUSEDBYOTHERSEXCEPTUWP                            "Amount of physical memory in use by the process that can't be used by other processes (excludes suspended UWP processes)"
+	IDS_MEMCANTBEUSEDBYOTHERS                                     "Amount of physical memory in use by the process that cannot be used by other processes"
+	IDS_MEMCANBEUSEDBYOTHERS                                      "Amount of physical memory in use by the process that can be shared with other processes"
+	IDS_RESERVEDVIRTUALMEMORY                                     "Amount of virtual memory reserved by the operating system for the process"
+	IDS_PAGEABLEKERNELMEMORYA                                     "Amount of pageable kernel memory allocated by the kernel or drivers on behalf of the process"
+	IDS_NONPAGEABLEKERNELMEMORYA                                  "Amount of non-pageable kernel memory allocated by the kernel or drivers on behalf of the process"
+	IDS_GENERATEDPAGEFAULTSBYEXE                                  "Number of page faults generated by the process since it was started"
+	IDS_CHANGENUMBEROFPAGEFAULTS                                  "Change in the number of page faults in the process since the last update"
+	IDS_THREADSCHEDULINGRANKINGS                                  "Ranking that determines the order in which threads of a process are scheduled"
+	IDS_CURRENTNUMBOFHANDLESOPEN                                  "Current number of handles open by the process"
+	IDS_NUMBEROFTHEACTIVETHREADS                                  "Number of active threads"
+	IDS_WINDOWMANAGEROBJECTNUMBE                                  "Number of window manager objects (windows, menus, cursors, keyboard layouts, monitors, etc.) used by the process"
+	IDS_NUMBEROFGDIOBJECTSUSEDBY                                  "Number of GDI objects used by the process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NUMBEROFREADIO                                            "Number of read I/O operations generated by the process since it was started"
+	IDS_NUMBEROFWRITIO                                            "Number of write I/O operations generated by the process since it was started"
+	IDS_NONREADNONWRIT                                            "Number of non-read/non-write I/O operations (for instance, control functions) generated by the process since it was started"
+	IDS_BYTESREADBYIMG                                            "Total number of bytes read by the process in I/O operations"
+	IDS_BYTESWRITBYIMG                                            "Total number of bytes written by the process in I/O operations"
+	IDS_READBUTNOWRITE                                            "Total number of bytes read by the process in I/O operations other than read/write (for instance, control functions)"
+	IDS_EXECUTABLEPATH                                            "Path of the executable file"
+	IDS_COMMANDLINEARG                                            "Full command line specified to create the process"
+	IDS_OSCOMPATDESCRI                                            "Operating system context in which the process is running"
+	IDS_16BITOR32BITEX                                            "Platform (16 bit or 32 bit) on which the process is running"
+	IDS_32BITOR64BITEX                                            "Platform (32 bit or 64 bit) on which the process is running"
+	IDS_EXECUTIONSTATS                                            "Process execution status"
+	IDS_ELEVATIONSTATS                                            "Specifies whether the process is running elevated or not"
+	IDS_DEPENABLSTATUS                                            "Specifies whether Data Execution Prevention (a security feature) enabled or disabled for the process"
+	IDS_JOBOBJECTINFOR                                            "Job object in which the process is running"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NAMEOFFILEINUSE                                           "File: Name of the file in use by the process"
+	IDS_READRATELASTMIN                                           "Read (B/sec): Average number of bytes per second read from the file in the last minute"
+	IDS_WRITRATELASTMIN                                           "Write (B/sec): Average number of bytes per second written to the file in the last minute"
+	IDS_IOPRIORITYTRANS                                           "IO priority: Priority of I/O transfers"
+	IDS_DISKRESPONSETIM                                           "Response time (ms): Disk response time in milliseconds"
+	IDS_SENDBYTESPERSEC                                           "Send (B/sec): Average number of bytes per second sent in the last minute"
+	IDS_RECEBYTESPERSEC                                           "Receive (B/sec): Average number of bytes per second received in the last minute"
+	IDS_TOTABYTESPERSEC                                           "Total (B/sec): Average number of bytes per second transferred in the last minute"
+	IDS_SERVICEPROCNAME                                           "Service name"
+	IDS_SERVICEPROCIDEN                                           "Service process ID"
+	IDS_SERVICEDESCRIPT                                           "Description of the service"
+	IDS_STATUSOFSERVICE                                           "Service status"
+	IDS_GROUPOFSERVICES                                           "Service group"
+	IDS_CPUCONSUMPTIONR                                           "CPU: Current percent of CPU consumption by services within this process"
+	IDS_LOGICALDRIVELET                                           "Logical drive: Logical drive letter"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_AVERAGEREADWRITBYTES                                      "Total (B/sec): Average number of bytes per second read from and written to the file in the last minute"
+	IDS_TIMESPENTBYCPUEXECUT                                      "Amount of time spent by the CPU executing instructions"
+	IDS_AMOUNTOFNETWORKACTIV                                      "Amount of network activity, including downloads and uploads"
+	IDS_NETWORKACTIVITYMETER                                      "Network activity over a metered network connection"
+	IDS_NETWORKUSAGEFORNOTIF                                      "Total network usage for notifications"
+	IDS_NONMETEREDNETACTIVIT                                      "Amount of network activity over a non-metered connection"
+	IDS_APPDOWNLOADSACTIVITY                                      "Download activity by the application"
+	IDS_APPUPLOADINGACTIVITY                                      "Upload activity by the application"
+	IDS_PROCESSEARCHITECTURE                                      "Architecture on which the process is running"
+	IDS_SHADOWSTACKSTATUSIMG                                      "Specifies the status of Hardware-enforced Stack Protection (a security feature using shadow stacks) for the process"
+	IDS_EXTENDEDCONTROLFLIMG                                      "Specifies the status of Extended Control Flow Guard (XFG, a security feature) for the process"
+	IDS_RETURNADDRESSSIGNIMG                                      "Specifies the status of Hardware-enforced Stack Protection (a security feature using return address signing) for the process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_UACVIRTUALIZATIONDESC                                     "Specifies whether User Account Control (UAC) virtualization is enabled, disabled, or not allowed in the process"
+	IDS_APPMANAGEMENTPERFORMA                                     "Manage running apps and view system performance"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DEFAULTSYSTEMSESSION                                      "Default System Session"
+	IDS_ACTIVEXINSTALLERSERV                                      "Service Host: ActiveX Installer"
+	IDS_BLUETOOTHSUPPORTSERV                                      "Service Host: Bluetooth Support"
+	IDS_DCOMSERVERPROCESSERV                                      "Service Host: DCOM Server Process Launcher"
+	IDS_DISKDEFRAGMENTERSERV                                      "Service Host: Disk Defragmenter"
+	IDS_IMAGEACQUISITIONSERV                                      "Service Host: Windows Image Acquisition (WIA)"
+	IDS_LOCALSVCHOSTPROCSERV                                      "Service Host: Local Service"
+	IDS_NOIMPERSONATIONSSERV                                      "Service Host: Local Service (No Impersonation)"
+	IDS_NETWORKRESTRICTSSERV                                      "Service Host: Local Service (Network Restricted)"
+	IDS_NOCONNECTEDNETWOSERV                                      "Service Host: Local Service (No Network)"
+	IDS_PEERNETWORKINGSVSERV                                      "Service Host: Local Service (Peer Networking)"
+	IDS_NETWORKRESTRICT2SERV                                      "Service Host: Local System (Network Restricted)"
+	IDS_LOCALSYSTEMSVCHOSERV                                      "Service Host: Local System"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NETWORKSERVICEHOSTPR                                      "Service Host: Network Service"
+	IDS_NONETIMSERVICEHOSTPR                                      "Service Host: Network Service (No Impersonation)"
+	IDS_RESTRNESERVICEHOSTPR                                      "Service Host: Network Service (Network Restricted)"
+	IDS_BRANCHCACHESERVICEPR                                      "Service Host: BranchCache"
+	IDS_REMOTEREGISTRYSVRCPR                                      "Service Host: Remote Registry"
+	IDS_REMOTEPROCEDURECALPR                                      "Service Host: Remote Procedure Call"
+	IDS_WINDOWSBACKUPSERVIPR                                      "Service Host: Windows Backup"
+	IDS_WINDOWSDEFENDERSERPR                                      "Service Host: Windows Defender"
+	IDS_MSHADOWCOPYSERVICEPR                                      "Service Host: Microsoft Software Shadow Copy Provider"
+	IDS_MICROSOFTHELLOBIOMPR                                      "Service Host: Windows Biometric"
+	IDS_WINDOWSNTVGACOLORSPR                                      "Service Host: Windows Color System"
+	IDS_WINDOWSNTERRORREPOPR                                      "Service Host: Windows Error Reporting"
+	IDS_VIRTUALMACHINEHEARPR                                      "Service Host: Virtual Machine Heartbeat"
+	IDS_IISAPPLICATIONHOSTPR                                      "Service Host: IIS Application Host Helper Service"
+	IDS_INTERNETINFORMATIOPR                                      "Service Host: Internet Information Service"
+	IDS_MSWINNTPRINTINGSERPR                                      "Service Host: Printer Services"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_FILESERVERRESOURCEPR                                      "Service Host: File Server Resource Manager"
+	IDS_GROUPPOLICYOBJECTSPR                                      "Service Host: Group Policy"
+	IDS_UNISTACKSERVICEGROPR                                      "Service Host: Unistack Service Group"
+	IDS_UTCSVCSVCHOSTPROCEPR                                      "Service Host: UtcSvc"
+	IDS_SERVICEHOSTTEXTTOBEF                                      "Service Host: "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MEMORYRESERVEDBYBIOS                                      "Hardware reserved (%1!s! MB)\r\nMemory that is reserved for use by the BIOS and some drivers for other peripherals"
+	IDS_MEMORYUSEDBYDRVAPPOS                                      "In use (%1!s! MB)\r\nMemory used by processes, drivers, or the operating system\r\n\r\nIn use compressed (%2!s! MB)\r\nMemory compression is not enabled"
+	IDS_MEMCONTENTSWRITE2DSK                                      "Modified (%1!s! MB)\r\nMemory whose contents must be written to disk before it can be used for another purpose"
+	IDS_MEMORYCACHEDDATACONT                                      "Standby (%1!s! MB)\r\nMemory that contains cached data and code that is not actively in use"
+	IDS_MEMORYTOBEREPURPOSED                                      "Free (%1!s! MB)\r\nMemory that is not currently in use, and that will be repurposed first when processes, drivers, or the operating system need more memory"
+	IDS_CACHEDMEMFORRAPIDACC                                      "Cached (%1!s! MB)\r\nAmount of memory (including standby and modified memory) containing cached data and code for rapid access by processes, drivers, and the operating system"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_AVAILABLEAMOUNTOFMEM                                      "Available (%1!s! MB)\r\nAmount of memory (including Standby and Free memory) that is immediately available for use by processes, drivers, or the operating system"
+	IDS_USABLEAMOUNTOFMEMORY                                      "In use (%1!s! MB)\r\nMemory used by processes, drivers, or the operating system\r\n\r\nIn use compressed (%2!s! MB)\r\nCompressed memory stores an estimated %3!s! MB of data, saving the system %4!s! MB of memory"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ANYTHINGELSE                                              "Other"
+	IDS_ISUNKNOWN                                                 "Unknown"
+	IDS_RESERVEDITEM                                              "Reserved"
+	IDS_NOTFOUND                                                  "Not Found"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_OTHERTYPEOFCHIP                                           "Other"
+	IDS_UNKNOWNCHIPTYPE                                           "Unknown"
+	IDS_CHIPNAME                                                  "Chip"
+	IDS_PROPRIETARYCARD                                           "Proprietary Card"
+	IDS_ROWOFCHIPS                                                "Row of chips"
+	IDS_CHIPNOTFOUND                                              "Not Found"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MEMCOMPOSITIONCHART                                       "Memory composition chart"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ZERO1                                                     "0"
+	IDS_ZERO2                                                     "0"
+	IDS_ZERO3                                                     "0"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ZERO4                                                     "0"
+	IDS_ZEROPERCENT1                                              "0%"
+	IDS_ZEROPERCENT2                                              "0%"
+	IDS_ZEROPERCENT3                                              "0%"
+	IDS_ZEROPERCENT4                                              "0%"
+	IDS_HUNDREDPERCE                                              "100%"
+	IDS_PAUSED                                                    "Paused"
+	IDS_FOURMINUTES                                               "4 minutes"
+	IDS_SIXTYSECONDS                                              "60 seconds"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_THIRTYSECONDS                                             "30 seconds"
+	IDS_MODIFIED                                                  "Modified"
+	IDS_CPUPPERF                                                  "CPU"
+	IDS_DISKPERF                                                  "Disk"
+	IDS_MEMOUSED                                                  "In Use"
+	IDS_STANDBY                                                   "Standby"
+	IDS_FREEMEM                                                   "Free"
+	IDS_MEMORY                                                    "Memory"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NETWORK                                                   "Network"
+	IDS_GPUPERF                                                   "GPU"
+	IDS_SERVICE                                                   "Services"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CPUPERF2                                                  "CPU"
+	IDS_MEMORYR                                                   "Memory"
+	IDS_GPURATE                                                   "GPU"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_TABCONTROL                                                "Tab control"
+	IDS_CHARTS                                                    "Charts"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_TABLES                                                    "Tables"
+	IDS_PROCESSDETAILS                                            "Process details"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BASESPEED                                                 "Base speed:"
+	IDS_SOCKETS                                                   "Sockets:"
+	IDS_LOGICALPROCESSORS                                         "Logical processors:"
+	IDS_HOSTLOGICALPROCESSORS                                     "Host logical processors:"
+	IDS_VIRTUALIZATION                                            "Virtualization:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VIRTUALMACHINE                                            "Virtual machine:"
+	IDS_L1CACHE                                                   "L1 cache:"
+	IDS_L2CACHE                                                   "L2 cache:"
+	IDS_L3CACHE                                                   "L3 cache:"
+	IDS_VIRTUALIZATIONENABLED                                     "Enabled"
+	IDS_VIRTUALIZATIONDISABLED                                    "Disabled"
+	IDS_VIRTUALIZATIONINCAPABLE                                   "Not capable"
+	IDS_CPUCORES                                                  "Cores:"
+	IDS_VIRTUALPROCESSORS                                         "Virtual processors:"
+	IDS_HYPERVSUPPORT                                             "Hyper-V support:"
+	IDS_UTILIZATION                                               "Utilization"
+	IDS_SPEED                                                     "Speed"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_UPTIME                                                    "Up time"
+	IDS_PROCESSES1                                                "Processes"
+	IDS_THREADS1                                                  "Threads"
+	IDS_HANDLES1                                                  "Handles"
+	IDS_UTILIZATIONOVER4MINS                                      "% Utilization over 4 minutes"
+	IDS_UTILIZATIONOVER30SECS                                     "% Utilization over 30 seconds"
+	IDS_LOGICALPROCESSORS2                                        "Logical processors"
+	IDS_UTILITZATIONOVER60SECS                                    "% Utilization over 60 seconds"
+	IDS_UTILITZATION                                              "% Utilization"
+	IDS_GIGAHERTZ                                                 "%s GHz"
+	IDS_PAUSEDUTILIZATION                                         "% Utilization (Paused)"
+	IDS_OPENRESOURCEMONITOR                                       "Open Resource Monitor"
+	IDS_UNKNOWNVARIABLES                                          "%1!d!%2!s!"
+	IDS_CPUUSAGE                                                  "CPU %d"
+	IDS_CPUNODES                                                  "CPU %1!d! (Node %2!d!)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NUMANODES                                                 "NUMA node %d"
+	IDS_PARKED                                                    "%s - Parked"
+	IDS_NUMAVAR                                                   "%1!d!%2!s!"
+	IDS_NUMAVAR2                                                  "%1!d!%2!s! (%3!d!%4!s!)"
+	IDS_OPENRESMON                                                "Open Resource Monitor icon"
+	IDS_OPENSERVICES                                              "Open Services icon"
+	IDS_CPUHERTZINFO                                              "CPU %d @ %s GHz"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SPEEDS                                                    "Speed:"
+	IDS_USEDSLOTS                                                 "Slots used:"
+	IDS_SLOTSTOTAL                                                "%1!u! of %2!u!"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MEMAVAILABLE                                              "Available"
+	IDS_MEMCACHED                                                 "Cached"
+	IDS_MEMCOMMITTED                                              "Committed"
+	IDS_MEMINUSE                                                  "In use"
+	IDS_MEMPAGEDPOOL                                              "Paged pool"
+	IDS_MEMNONPAGEDPOOL                                           "Non-paged pool"
+	IDS_MEMUSAGE                                                  "Memory usage"
+	IDS_MEMCOMPOS                                                 "Memory composition"
+	IDS_MEMSPEED1                                                 "%0.1f MB %s"
+	IDS_MEMSPEED2                                                 "%0.1f GB %s"
+	IDS_MEMSPEED3                                                 "%1.0f MB %s"
+	IDS_MEMSPEED4                                                 "%1.0f GB %s"
+	IDS_MEMSPEED5                                                 "%u MHz"
+	IDS_MEMSPEED6                                                 "%s KB"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MEMSPEED7                                                 "%1!s!/%2!s! MB"
+	IDS_MEMSPEED8                                                 "%1!s! (%2!s!)"
+	IDS_MEMSPEED9                                                 "%1!s!/%2!s! GB"
+	IDS_FORMFACTOR                                                "Form factor:"
+	IDS_RESERVEDHARDW                                             "Hardware reserved:"
+	IDS_MAXIMUMMEMORY                                             "Maximum memory:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SLOTSPEED                                                 "(%.0f%%)"
+	IDS_SLOTINFO1                                                 "Slot %1!u!: %2!s!, %3!hu! MHz"
+	IDS_SLOTINFO2                                                 "Slot %1!u!: empty"
+	IDS_SLOTINFO3                                                 "%1!s! %2!s!"
+	IDS_SLOTINFO4                                                 "..."
+	IDS_SLOTINFO5                                                 "%1!s!/%2!s! TB"
+	IDS_SLOTINFO6                                                 "%s MB"
+	IDS_SLOTINFO7                                                 "%s GB"
+	IDS_SLOTINFO8                                                 "%s TB"
+	IDS_SLOTINFO9                                                 "%s PB"
+	IDS_SLOTINFO10                                                "%s"
+	IDS_SLOTINFO11                                                "%s"
+	IDS_SLOTINFO12                                                "%s"
+	IDS_SLOTINFO13                                                "%s"
+	IDS_COMPRESSEDMEMINUSE                                        "In use (Compressed)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_RDRIVELETTERSPEED                                         "R: "
+	IDS_WDRIVELETTERSPEED                                         "W: "
+	IDS_DISKDETAILSANDPRP                                         "Disk %1!d! (%2!s!)"
+	IDS_COMPUTERDISKTYPEA                                         "Type:"
+	IDS_COMPUTERDISKVOLUM                                         "Capacity:"
+	IDS_COMPUTERDISKFORMA                                         "Formatted:"
+	IDS_COMPUTERSYSTEMDSK                                         "System disk:"
+	IDS_COMPUTERDISKPAGEF                                         "Page file:"
+	IDS_COMPUTERDISKREADV                                         "Read speed"
+	IDS_COMPUTERDISKWRITV                                         "Write speed"
+	IDS_COMPUTERDISKRESPT                                         "Average response time"
+	IDS_COMPUTERDISKTRNSF                                         "Disk transfer rate"
+	IDS_COMPUTERDISKACTIV                                         "Active time"
+	IDS_COMPUTERDISKHUNDR                                         "100%"
+	IDS_COMPUTERDISKNUMBE                                         "Disk %d"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DISKSPEEDMILLISEC                                         "%s ms"
+	IDS_DISKSPEEDTWOQUANT                                         "%1!s! %2!s! "
+	IDS_DISKSPEEDPERCENTA                                         "%.0f%%"
+	IDS_DISKTYPEHARDDISKD                                         "HDD"
+	IDS_DISKTYPESOLIDSTAD                                         "SSD"
+	IDS_APERSISTENTMEMORY                                         "Persistent Memory"
+	IDS_REMOVABLEDRIVEMED                                         "Removable"
+	IDS_REMOVABLEMISDCARD                                         "SD"
+	IDS_REMOVABLEUSBFLASH                                         "USB"
+	IDS_REMOVABLEUNKNOWNT                                         "Unknown"
+	IDS_REMOVABLEZERODRVS                                         "0"
+	IDS_TOTALMEMORYINSTAL                                         "Total installed memory"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MEMUSAGEINPERCENT                                         "Memory usage in percentage"
+	IDS_OVERALLCPUCHARTPA                                         "Overall CPU chart pane"
+	IDS_LOGICALCPUCHARTPA                                         "Logical CPU chart pane"
+	IDS_NUMANODCPUCHARTPA                                         "Numa node CPU chart pane"
+	IDS_AVAILABLEMEMCPURA                                         "Available range"
+	IDS_THECACHEDMEMCPURA                                         "Cached range"
+	IDS_SEPARATIONGUIBARS                                         "Separator bar"
+	IDS_COMPUTERPROCESICO                                         "CPU Icon"
+	IDS_COMPUTERMEMORYICO                                         "Memory Icon"
+	IDS_COMPUTERDRIVESICO                                         "Disk Icon"
+	IDS_COMPUTERNETWRKICO                                         "Network Icon"
+	IDS_COMPUTERNETDISGRP                                         "Disconnected network graph"
+	IDS_DYNAMICRESINFORMA                                         "Dynamic Resource Information"
+	IDS_THESTATRESINFORMA                                         "Static Resource Information"
+	IDS_RESOURCECHARTVIEW                                         "Resource Chart View"
+	IDS_DISCONNECTNETWICO                                         "Disconnected network icon"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GPUICO                                                    "GPU Icon"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NETWRKADAPTERNAME                                         "Adapter name:"
+	IDS_NETWRKSERVICEPROV                                         "Service provider:"
+	IDS_NETWRKCONNECTTYPE                                         "Connection type:"
+	IDS_IPV4ADDRESSINFORM                                         "IPv4 address:"
+	IDS_IPV6ADDRESSINFORM                                         "IPv6 address:"
+	IDS_DOMAINNAMESYSTEMN                                         "DNS name:"
+	IDS_NETWORKDOMAINNAME                                         "Domain name:"
+	IDS_NETWORKDEVICENAME                                         "Device name:"
+	IDS_NETWORKIDSSIDNAME                                         "SSID:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NETWORKTHROUGHPUT                                         "Throughput"
+	IDS_NETWORKRECEIVE                                            "Receive"
+	IDS_NETWORKSEND                                               "Send"
+	IDS_NETWORKSNDRCVRATE                                         "%1!s! %2!s!"
+	IDS_NETWORKSIGNALSTRE                                         "Signal strength:"
+	IDS_NETSTRENGTH1                                              "%1!s! "
+	IDS_NETSTRENGTH2                                              "%1!s! %2!s! "
+	IDS_NOTCONNECTED                                              "Not connected"
+	IDS_NETWORKDRIVELETTS                                         "S: "
+	IDS_NETWORKDRIVELETTR                                         "R: "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CPUACTIVITY                                               "CPU activity"
+	IDS_PRIVATEWORKINGSET                                         "Private working set"
+	IDS_READWRITEDISKACTI                                         "Read and write activity on this disk"
+	IDS_PERCNTREADWRITTIM                                         "Percentage of time the disk is processing read or write requests"
+	IDS_SENDRECEIVENETACT                                         "Send and receive activity on this network"
+	IDS_GPUACTIVITY                                               "GPU activity"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SENDRECEIVEBTHPAN                                         "Send and receive activity on this Bluetooth personal area network"
+	IDS_UNKNOWNSENDORRECE                                         "N/A"
+	IDS_NETWORKPROPERTIES                                         "Property"
+	IDS_NETWORKUTILIZATIO                                         "Network utilization"
+	IDS_NETWORKLINKINGSPE                                         "Link speed"
+	IDS_CURRENTNETWRSTATE                                         "State"
+	IDS_BYTESSENTTHROUGHP                                         "Bytes sent throughput"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BYTESRECEIVEDTHROUGHPUT                                   "Bytes received throughput"
+	IDS_BYTESTHROUGHPUT                                           "Bytes throughput"
+	IDS_BYTESSENT                                                 "Bytes sent"
+	IDS_BYTESRECEIVED                                             "Bytes received"
+	IDS_BYTES                                                     "Bytes"
+	IDS_BYTESSENTPERINTERVAL                                      "Bytes sent per interval"
+	IDS_BYTESRECEIVEDPERINTERVAL                                  "Bytes received per interval"
+	IDS_BYTESPERINTERVAL                                          "Bytes per interval"
+	IDS_UNICASTSSENT                                              "Unicasts sent"
+	IDS_UNICASTSRECEIVED                                          "Unicasts received"
+	IDS_UNICASTS                                                  "Unicasts"
+	IDS_UNICASTSSENTPERINTERVAL                                   "Unicasts sent per interval"
+	IDS_UNICASTSRECEIVEDPERINTERVAL                               "Unicasts received per interval"
+	IDS_UNICASTSPERINTERVAL                                       "Unicasts per interval"
+	IDS_NONUNICASTSSENT                                           "Nonunicasts sent"
+	IDS_NONUNICASTSSRECEIVED                                      "Nonunicasts received"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NONUNICASTS                                               "Nonunicasts"
+	IDS_NONUNICASTSSENTPERINTERVAL                                "Nonunicasts sent per interval"
+	IDS_NONUNICASTSRECEIVEDPERINTERVAL                            "Nonunicasts received per interval"
+	IDS_NONUNICASTPERINTERVAL                                     "Nonunicasts per interval"
+	IDS_GENERICBLUETOOTHADAPTER                                   "Generic Bluetooth Adapter"
+	IDS_ETHERNETCONNECTION                                        "Ethernet"
+	IDS_WIFIWIRELESSCONNECTION                                    "Wi-Fi"
+	IDS_MOBILEBROADBANDCONNECT                                    "Mobile"
+	IDS_WIFIDIRECTCONNECTION                                      "Wi-Fi Direct"
+	IDS_WLANDIRECTCONNECTION                                      "WLAN Direct"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CPUSTRING                                                 "CPU %1!u!"
+	IDS_CPUNODESTRING                                             "CPU %2!u! (Node %1!d!)"
+	// VPS cloud server hosting will definitely need this. CollabVM and ToiletNodes will definitely love this, so will the users steeldev and ImMonhVinh!
+	// Ehm, you don't need to care. This is me talking to myself. Let's get back to making strings.
+	IDS_ALLPROCESSORS                                             "<All Processors>"
+	IDS_CPUGROUP                                                  "Group %1!u!"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WLAN                                                      "WLAN"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BUSY                                                      "Busy"
+	IDS_DISABLED                                                  "Disabled"
+	IDS_ENABLED                                                   "Enabled"
+	IDS_NOTRESPONDING                                             "Not responding"
+	IDS_SUSPENDEDPROC                                             "Suspended"
+	IDS_WAITINGFORUSER                                            "Waiting for user"
+	IDS_SHADOWING                                                 "Shadowing"
+	IDS_DISCONNECTED                                              "Disconnected"
+	IDS_LOCAL                                                     "Local"
+	IDS_REMOTE                                                    "Remote"
+	IDS_VERYLOW                                                   "Very low"
+	IDS_LOW2                                                      "Low"
+	IDS_MODERATE                                                  "Moderate"
+	IDS_HIGH2                                                     "High"
+	IDS_VERYHIGH                                                  "Very high"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_POWERSAVINGMODE                                           "Efficiency mode"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_USER                                                      "User"
+	IDS_PROCESS                                                   "Process"
+	IDS_WINDOW                                                    "Window"
+	IDS_SERVICE2                                                  "Service"
+	IDS_STARTUPITEM                                               "Startup item"
+	IDS_STARTUPPROCESS                                            "Startup process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTRAYICO                                                "Tray icon"
+	IDS_VARIABLERATIO                                             "%1: %2"
+	IDS_APPSINGULAR                                               "App"
+	IDS_APPPLURAL                                                 "Apps"
+	IDS_TWOVARIABLES                                              "%1 %2"
+	IDS_THREEVARIABLES                                            "%1 %2 %3"
+	IDS_FIVEVARIABLES                                             "%1 %2 %3 %4 %5"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PROCESSNAME                                               "Name"
+	IDS_PROCESSPID                                                "PID"
+	IDS_PROCESSTYPE                                               "Type"
+	IDS_PROCESSSTATUS                                             "Status"
+	IDS_PROCESSPUBLISHER                                          "Publisher"
+	IDS_PROCESSMODULENAME                                         "Process name"
+	IDS_PROCESSCOMMANDLINE                                        "Command line"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CPUCURRENTPERF                                            "CPU"
+	IDS_MEMORYCURRENTPERF                                         "Memory"
+	IDS_DISKCURRENTPERF                                           "Disk"
+	IDS_NETWORKCURRENTPERF                                        "Network"
+	IDS_STARTUPIMPACT                                             "Startup impact"
+	IDS_STARTUPTYPE                                               "Startup type"
+	IDS_DISKIOSTARTUP                                             "Disk I/O at startup"
+	IDS_CPUSTARTUP                                                "CPU at startup"
+	IDS_RUNNINGNOW                                                "Running now"
+	IDS_DISABLEDTIME                                              "Disabled time"
+	IDS_ID                                                        "ID"
+	IDS_CLIENTNAME                                                "Client name"
+	IDS_SESSION                                                   "Session"
+	IDS_CURRENTUSER                                               "User"
+	IDS_CURRENTUSERNAME                                           "%1 (%2!d!)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VARIABLEMEGABYTES                                         "%s MB"
+	IDS_VARIABLEMILLISECONDS                                      "%s ms"
+	IDS_VARIABLEMEGABYTES2                                        "%s MB"
+	IDS_VARIABLEMEGABYTESPERSEC                                   "%s MB/s"
+	IDS_VARIABLEMBPS                                              "%s Mbps"
+	IDS_VARIABLESPEED                                             "%s%%"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPHISTORYNAME                                            "Name"
+	IDS_APPHISTORYCPUTIME                                         "CPU time"
+	IDS_APPHISTORYNETWORK                                         "Network"
+	IDS_APPHISTORYNOTIFICATIONS                                   "Notifications"
+	IDS_APPHISTORYMETEREDNETWORK                                  "Metered network"
+	IDS_APPHISTORYNONMETEREDNETWORK                               "Non-metered network"
+	IDS_APPHISTORYDOWNLOADS                                       "Downloads"
+	IDS_APPHISTORYUPLOADS                                         "Uploads"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SORTEDASCENDINGLY                                         "Sorted (ascending)"
+	IDS_SORTEDDESECNDINGLY                                        "Sorted (descending)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PROCESSTYPEUNKNOWN                                        "None"
+	IDS_USERRUNAPPS                                               "Apps"
+	IDS_NTBACKGROUNDPROCESSES                                     "Background processes"
+	IDS_NTESSENTIALPROCESSES                                      "Windows processes"
+	IDS_RESOURCEVALUES                                            "Resource &values"
+	IDS_DISABLED2                                                 "Disabled"
+	IDS_ENABLED2                                                  "Enabled"
+	IDS_DISALLOWED                                                "Not allowed"
+	IDS_NORMALAPP                                                 "App"
+	IDS_BACKGROUNDPROCESS                                         "Background process"
+	IDS_WINNTPROCESS                                              "Windows process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MOREDETAILS                                               "More details"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_FEWERDETAILS                                              "Fewer details"
+	IDS_ROWDETAILS                                                "Row details"
+	IDS_LISTOFITEMS                                               "List of items"
+	IDS_MOREDETAILSUNDERLINE                                      "More &details"
+	IDS_FEWERDETAILSUNDERLINE                                     "Fewer &details"
+	IDS_CREATENEWTASK                                             "Create new task"
+	IDS_RUNDLGDESCRIPTION                                         "Type the name of a program, folder, document, or Internet resource, and Windows will open it for you."
+	IDS_USERDISCONNECTIONERROR                                    "User %s (SessionId=%d) could not be disconnected.\n"
+	IDS_USERSIGNOUTWARNING                                        "If you sign out a user, the user's unsaved data might be lost."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_STILLWANNASIGNOUT                                         "Do you want to continue?"
+	IDS_SIGNOUT                                                   "Sign out user"
+	IDS_DISCONNECTUSERWARNHEADER                                  "Are you sure you want to disconnect the selected user(s)?"
+	IDS_DISCONNECTUSER                                            "Disconnect user"
+	IDS_MESSAGEFROMUSERTOUSER                                     "Message from %1 - %2"
+	IDS_ERRORSENDINGMESSAGETOUSER                                 "Your message to user with SessionId=%d could not be sent. "
+	IDS_VIEW                                                      "View"
+	IDS_COLUMNHEADER                                              "Column header"
+	IDS_NORUNNINGAPPS                                             "There are no running apps"
+	IDS_OPERATIONFAILED                                           "The operation could not be completed."
+	IDS_OPERATIONNOTSUITABLEFORPROCESS                            "The operation is not valid for this process."
+	IDS_FAILEDTOKILLPROCESS                                       "Unable to terminate process"
+	IDS_FAILEDTOKILLPROCESSTREE                                   "Unable to terminate process tree"
+	IDS_FAILEDTOHOOKDEBUGGER                                      "Unable to attach debugger"
+	IDS_FAILEDTOPRIORITIZEPROCESS                                 "Unable to change priority"
+	IDS_FAILEDTOSETPROCESSAFFINITY                                "Unable to access or set process affinity"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DUMPPROCESS                                               "Dump process"
+	IDS_COMMANDBAR                                                "Command Bar"
+	IDS_ICON                                                      "Icon"
+	IDS_FAILEDTOSTARTSERVICE                                      "Unable to start service"
+	IDS_FAILEDTOKILLSERVICE                                       "Unable to stop service"
+	IDS_FAILEDTORESTARTSERVICE                                    "Unable to restart service"
+	IDS_FAILEDTOSETVIRTUALIZATION                                 "Unable to set virtualization"
+	IDS_SETVIRTUALIZATIONWARNING                                  "Do you want to change virtualization for '%s'?"
+	IDS_SETVIRTUALIZATIONWARNINGDESC                              "Changing virtualization for a process may lead to undesired results including loss of data. You should do this only for debugging."
+	IDS_SETVIRTUALIZATION                                         "Change virtualization"
+	IDS_HARDERRORWHILECONNECTING                                  "Unhandled error occurred while connecting.\n\n#%u %s"
+	IDS_ENTERUSERPASSWORD                                         "Enter the selected user's password"
+	IDS_NEEDSADMINPRIVILEGES                                      "You need administrator privileges to complete this task. Close Task Manager, then run it as an administrator and try again."
+	IDS_ACCESSDENIED                                              "Access denied."
+	IDS_UNABLETOTURNONPOWERSAVING                                 "Unable to turn on Efficiency mode"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_UNABLETOSELECTCOLUMNS                                     "Unable to select columns"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INSUFFICIENTPERMSTODEBUG                                  "The necessary debug privilege could not be acquired. Ensure that you are running Task Manager as an administrator and try again."
+	IDS_DUMPTIMEDOUTORCANCELED                                    "The memory dump timed out or was manually cancelled by the user."
+	IDS_DUMPABORTEDDUETOMEMPRESSURE                               "The memory dump was aborted due to system memory pressure."
+	IDS_MEMORYDUMPERRORCODE                                       "Memory dump error code: NTSTATUS "
+	IDS_LIVEMEMORYDUMPCOULDNOTBECOMPLETE                          "After several attempts, the live memory dump could not be completed. Please try again later."
+	IDS_LIVEMEMDUMPRATELIMIT                                      "Too little time has passed since the last live memory dump request. Please wait at least two seconds for the next attempt."
+	IDS_MEMORYDUMPPROCESS                                         "Memory dump process"
+	IDS_LIVEMEMORYDUMPPROCESS                                     "Live kernel memory dump process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_POWERSAVINGMODETURNONWARNING                              "Do you want to turn on Efficiency mode for '%s'?"
+	IDS_POWERSAVINGMODEDESC                                       "Efficiency mode will lower process priority and improve power efficiency but may cause instability for certain processes. Do you want to continue?"
+	IDS_TURNONPOWERSAVING                                         "Turn on Efficiency mode"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NULL2                                                     "None"
+	IDS_NOTMEASURED                                               "Not measured"
+	IDS_LOW3                                                      "Low"
+	IDS_MEDIUM                                                    "Medium"
+	IDS_HIGH3                                                     "High"
+	IDS_REGISTRY                                                  "Registry"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_FOLDER                                                    "Folder"
+	IDS_TWOUNKNOWNVARIABLES                                       "%1 %2"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ENABLETORUNATSTARTUP                                      "E&nable"
+	IDS_DISABLETORUNATSTARTUP                                     "Dis&able"
+	IDS_LASTFIRMWARESTARTUPTIME                                   "Last BIOS time: "
+	IDS_FIRMWARESTARTUPTIMEVARIABLE                               "%1 seconds"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ENDTASK                                                   "&End task"
+	IDS_RESTARTTASK                                               "&Restart"
+	IDS_SWITCHUSER                                                "&Switch user"
+	IDS_LOGOFF                                                    "Si&gn out"
+	IDS_DISCONNECT                                                "Dis&connect"
+	IDS_OPENSERVICES2                                             "Open Services"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SWITCHTOWINDOW                                            "Switch &to"
+	IDS_RESOURCEUSAGETEXT                                         "Resource usage text"
+	IDS_DELETEUSAGEHISTORY                                        "Delete usage history"
+	IDS_NODATAAVAILABLE                                           "No data available"
+	IDS_RESOURCEUSAGEFORUSERANDSYSTEM                             "Resource usage since %1!s! for current user and system accounts."
+	IDS_UNINSTALLEDPROCESSES                                      "Uninstalled processes"
+	IDS_REMOTEPROCESSES                                           "Remote processes"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEM                                                    "System"
+	IDS_RESOURCEUSAGEFORCURRENTUSER                               "Resource usage since %1!s! for current user account."
+	IDS_DURATION                                                  "Duration :"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CPUDISKNETWORKRAMPERFDET                                  "CPU %1!d!%2!s!\nMemory %3!d!%4!s!\nDisk %5!d!%6!s!\nNetwork %7!d!%8!s!"
+	IDS_CPUMEMPERFDETAILS                                         "CPU %1!d!%2!s!\nMemory %3!d!%4!s!"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NOSTARTUPITEMSTODISPLAY                                   "There are no startup items to display"
+	IDS_TOTALPROCESSORUTILIZATION                                 "Total processor utilization across all cores"
+	IDS_PHYSICALMEMUSEDBYEXES                                     "Physical memory in use by active processes"
+	IDS_TOTALDRIVEUTILIZATION                                     "Total utilization across all physical drives"
+	IDS_NETWORKUTILIZATION                                        "Network utilization on the current primary network"
+	IDS_DEGREEOFIMPACT                                            "Degree of impact from CPU and disk activity, measured during startup and updated with each restart"
+	IDS_DISKACTIVITY                                              "Disk activity, measured during startup and updated with each restart"
+	IDS_CPUACTIVITYSTARTUP                                        "CPU activity, measured during startup and updated with each restart"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_IMPACTNOTMEASUREDYET                                      "Impact hasn't been measured yet. Restart your PC to measure startup impact."
+	IDS_HIGHESTUTILIZATIONGPU                                     "Highest utilization across all GPU engines"
+	IDS_SUSPENDEDMETROGROUP                                       "This UWP process group is suspending processes to improve system performance"
+	IDS_SUSPENDEDMETROPROCESS                                     "This UWP process is suspended to improve system performance"
+	IDS_GROUPINPOWERSAVINGMODE                                    "This process group is in efficiency mode to limit resources used by the process."
+	IDS_PROCESSINPOWERSAVINGMODE                                  "This process is in efficiency mode to limit resources used by the process."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEMPROCESSFORMEMCOMPRESSION                            "Windows system process for memory compression"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PERSONAL                                                  "Personal"
+	IDS_EXEMPT                                                    "Exempt"
+	IDS_LEFTBRACK                                                 " ("
+	IDS_UNENLIGHTENED                                             "Unenlightened"
+	IDS_ENLIGHTENED                                               "Enlightened"
+	IDS_PERMISSIVE                                                "Permissive"
+	IDS_FILECOPYEXEMPT                                            "File copy exempt"
+	IDS_RIGHTBRACK                                                ")"
+	IDS_COMA                                                      ", "
+	IDS_NA                                                        "N/A"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_EDGEEXTENSIONDISABLED                                     "Disabled"
+	IDS_EDGEEXTENSIONENABLED                                      "Enabled"
+	IDS_MICROSOFTEDGEMANAGER                                      "Microsoft Edge Manager"
+	IDS_EDGEBROWSEREXTENSIONS                                     "Browser Extensions"
+	IDS_MSWEBPLATFORMCONTROL                                      "Microsoft Web Platform Control"
+	IDS_USERINTERFACESERVICE                                      "User Interface Service"
+	IDS_CHAKRAJITCOMPILER                                         "Chakra JIT Compiler"
+	IDS_SERVICEWORKERHOST                                         "Service Worker Host"
+	IDS_BACKGROUNDTABPOOL                                         "Background Tab Pool"
+	IDS_ADOBEFLASHPLAYER                                          "Adobe Flash Player"
+	IDS_MICROSOFTEDGESERVICEHOST                                  "Microsoft Edge Service Host"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DEVELOPERTOOLSSERVER                                      "Developer Tools Server"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GRAPHICSADAPTERNAME                                       "Adapter name:"
+	IDS_GRAPHICSDRIVERVERSION                                     "Driver version:"
+	IDS_GRAPHICSDRIVERDATE                                        "Driver date:"
+	IDS_GRAPHICSDIRECTXVER                                        "DirectX version:"
+	IDS_GRAPHICSUTILIZATION                                       "Utilization"
+	IDS_GRAPHICSUTILIZERATE                                       "%1!d!%2!s!"
+	IDS_GRAPHICSUTILIZEPRCNT                                      "% Utilization"
+	IDS_GPUPERFORMANCE                                            "GPU %d"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GPUACTPERCENT                                             "GPU %d (Link %d)"
+	IDS_HUNDREDPERCENT                                            "100%"
+	IDS_ZEROGPU                                                   "0"
+	IDS_GPUMEMORY                                                 "GPU Memory"
+	IDS_DEDICATEDGPUMEMORYUSAGE                                   "Dedicated GPU memory usage"
+	IDS_SHAREDGPUMEMORYUSAGE                                      "Shared GPU memory usage"
+	IDS_DEDICATEDGPUMEMORYUSAGE2                                  "Dedicated GPU memory usage"
+	IDS_SHAREDGPUMEMORYUSAGE2                                     "Shared GPU memory usage"
+	IDS_GPUPERCENTVAR                                             "%.0f%%"
+	IDS_GPU                                                       "GPU"
+	IDS_GPUENGINE                                                 "GPU engine"
+	IDS_GPU2                                                      "GPU"
+	IDS_GPUENGINE2                                                "GPU engine"
+	IDS_GPUDEDICATION                                             "GPU dedicated "
+	IDS_GPUSYSTEM                                                 "GPU system"
+	IDS_HIGHESTUTILIZATIONACROSSENGINES                           "Highest utilization across all GPU engines"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MOSTUTILIZEDGPUENGINE                                     "Most utilized GPU engine"
+	IDS_TOTALGPUMEM                                               "Total amount of GPU dedicated graphics memory in use (across all GPUs) by the process"
+	IDS_TOTALSYSGPUMEM                                            "Total amount of system memory in use (across all GPUs) by the process"
+	IDS_OVERALLGPUCHARTPANE                                       "Overall GPU chart pane"
+	IDS_MULTIPLEENGINEGPUCHARTPANE                                "Multiple engine GPU chart pane"
+	IDS_PHYSICALLOCATION                                          "Physical location:"
+	IDS_HARDWARERESERVEDMEMORY                                    "Hardware reserved memory:"
+	IDS_DEDICATEDGPUMEM                                           "Dedicated GPU memory"
+	IDS_SHAREDGPUMEM                                              "Shared GPU memory"
+	IDS_POWERUSAGE                                                "Power usage"
+	IDS_POWERUSAGETREND                                           "Power usage trend"
+	IDS_CPUDISKGPUIMPACTONPOWER                                   "CPU, Disk, and GPU impact on power consumption"
+	IDS_CPUDISKGPUIMPACTONPOWEROVERTIME                           "CPU, Disk, and GPU impact on power consumption over time"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GPUTEMP                                                   "GPU Temperature"
+	IDS_CELSIUSUNIT                                               "%d \xB0C"
+	IDS_UNITINBRACKETS                                            "(%d \xB0C)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_COMPUTE                                                   "1.0 : Compute"
+	IDS_ENGINE                                                    "Engine %u"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_THREEDIMENSIONAL                                          "3D"
+	IDS_VIDEODECODE                                               "Video Decode"
+	IDS_VIDEOENCODE                                               "Video Encode"
+	IDS_COPY                                                      "Copy"
+	IDS_VIDEOPROCESSING                                           "Video Processing"
+	IDS_SCENEASSEMBLY                                             "Scene Assembly"
+	IDS_LEGACYOVERLAY                                             "Legacy Overlay"
+	IDS_CRYPTO                                                    "Crypto"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_OPTIONMANAGEDBYYOURBUSINESS                               "This option is managed by your organization."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DEVICERUNNINGLOWONMEM                                     "Your device is running low on memory"
+	IDS_LOWMEMORYWARNING                                          "We recommend you close some of the apps and processes below to free up memory."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DPIAWARENESS                                              "DPI Awareness"
+	IDS_DPIAWARENESSDESC                                          "Default mode for how the application interacts with high DPI displays"
+	IDS_UNAVAILABLEDPISTATE                                       "Unavailable"
+	IDS_UNAWAREOFDPI                                              "Unaware"
+	IDS_UNAWAREOFDPIGDISCALED                                     "Unaware (GDI Scaled)"
+	IDS_SYSTEMDPISCALING                                          "System"
+	IDS_DPISCALINGPERMONITOR                                      "Per-Monitor"
+	IDS_DPISCALINGPERMONITORV2                                    "Per-Monitor (v2)"
+	IDS_FAILEDTOSENDWHISTLERBETAFEEDBACK                          "Unable to open feedback hub for selected process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	// Note: this part is for Microsoft Surface Copilot+ PCs, as we are gonna chip AI capabilities with them. They won't apply to the average NT user.
+	IDS_NPU                                                       "NPU"
+	IDS_NPU2                                                      "NPU"
+	IDS_NPUDETAILS                                                "NPU %d"
+	IDS_DEDICATEDGENERALMEMUSAGE                                  "Dedicated memory usage"
+	IDS_SHAREDGENERALMEMUSAGE                                     "Shared memory usage"
+	IDS_DEDICATEDMEMORY                                           "Dedicated memory"
+	IDS_SHAREDMEMORY                                              "Shared memory"
+	IDS_DEDICATEDMEMUSE                                           "Dedicated memory usage"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SHAREDMEMUSE                                              "Shared memory usage"
+	IDS_NPUACTIVITY                                               "NPU activity"
+	IDS_TOTALMEMORY                                               "Total memory"
+	IDS_MEDIA1                                                    "Media"
+	IDS_MEDIA2                                                    "Media"
+	IDS_MEDIAINFO                                                 "Media %d"
+	IDS_MEDIAACCELERATORACTIVITY                                  "Media Accelerator activity"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_TEMPERATURE                                               "Temperature"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ITANIUM32                                                 "x86"
+	IDS_AMD64                                                     "x64"
+	IDS_ARM                                                       "ARM"
+	IDS_ARM64                                                     "ARM64"
+	IDS_ARM64X86COMPAT                                            "ARM64 (x86 compatible)"
+	IDS_ARM64X64COMPAT                                            "ARM64 (x64 compatible)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ARM2                                                      "Arm"
+	IDS_ARM642                                                    "Arm64"
+	IDS_ARM64X86COMPAT2                                           "Arm64 (x86 compatible)"
+	IDS_ARM64X64COMPAT2                                           "Arm64 (x64 compatible)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_OPENPROCESSTOKENFAILURE                                   "Couldn't get current process token. OpenProcessToken returns HRESULT 0x%X."
+	IDS_SEDEBUGPRIVILEGEFAILURE                                   "Couldn't lookup SeDebugPrivilege name. LookupPrivilegeValue returns hr 0x%X."
+	IDS_ACQUIREDEBUGPRIVILEGEFAILURE                              "Couldn't acquire debug privilege. AcquireDebugPrivilege returns hr 0x%X."
+	IDS_ADJUSTTOKENPRIVILEGESFAILURE                              "Couldn't enable debug privilege. AdjustTokenPrivileges returns 0x%X."
+	IDS_LIVEKERNELMEMDUMPTIMEOUT                                  "Timeout expired for live kernel memory dump collection. Please try again in a few seconds."
+	IDS_FAILUREWAITINGFORLIVEKRNLDUMP                             "Failure while waiting for live kernel memory dump collection (status 0x%X). Please try again in a few seconds."
+	IDS_CANCELLATIONTHREADFAILTOWAIT                              "Cancellation thread failed to wait until memory dump procedure timed out. Unknown wait failure 0x%X."
+	IDS_MEMDUMPCOLLTHREADCREATEFAIL                               "Failed to create thread for collecting memory dump. Error 0x%X."
+	IDS_MEMDUMPCOLLTHREADEXITED                                   "Thread for collecting memory dump exited. Status 0x%X."
+	IDS_DIRECTORYHANDLECREATIONFAIL                               "Directory handle creation failed with error 0x%X."
+	IDS_LIVEKERNELMEMORYDUMPFAIL                                  "Live kernel memory dump file creation failed with error 0x%X."
+	IDS_FAILEDTOSETSECURITYDESCRIPTOR                             "Failed to set the security descriptor for the memory dump directory. Status 0x%X."
+	IDS_FAILURETOALLOCATEADMINSID                                 "Failed to allocate Admin SID. Hr 0x%X."
+	IDS_FAILEDTOCREATEACLFORLIVKRNMEMDUMP                         "Failed to create an ACL for live kernel memory dump (error 0x%X). Please check file access settings."
+	IDS_FAILEDTOAPPLYACLTOLIVKRNMEMDUMP                           "Failed to apply ACL to live kernel memory dump file (error 0x%X)."
+	IDS_CURRENTTASKMGRINSTANCENOTHAVINGENOUGHPERMSTODUMP          "Current process does not have elevated privileges to collect live kernel memory dumps. Please run as Administrator."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LIVEKERNELMEMORYDUMPRATELIMIT                             "Too little time has passed since the last live kernel memory dump request. Please wait and try again in a few seconds."
+	IDS_NOREMAININGATTEMPTSTRYAGAINLATER                          "No remaining attempts to retry this request. Please try again in a few seconds."
+	IDS_LIVEKERNMEMDUMPCANCELLED                                  "Live kernel memory dump cancel event was signalled. NtSystemDebugControl returned STATUS_CANCELLED."
+	IDS_LIVKRNMEMDUMPABORTEDUETOMEM                               "The live kernel memory dump collection was aborted due to system memory availability."
+	IDS_LIVKRNMEMDMPFAILED                                        "The live kernel memory dump failed with error code = 0x%X."
+	IDS_LIVKRNMEMDMPSUCCESS                                       "Live kernel memory dump was collected successfully."
+	IDS_COLLECTINGLIVKRNMEMDMP                                    "Collecting live kernel memory dump."
+	IDS_LIVEKERNELMEMORYDUMPWRITTENTOPATH                         "Live kernel memory dump was written to path [%ls]."
+	IDS_ARGUMENTALREADYDEFINED                                    "Error parsing command line: argument already defined: [%ls] (index %d)."
+	IDS_BADCOMMAND                                                "Error parsing command line: unknown argument: [%ls] (index %d)."
+	IDS_APPDEPENDENCIESFAILEDTORUN                                "Failed to initialize app dependencies."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_RUNTASKMGRFROMSTARTUP                                     "Launch Task Manager from Startup page."
+	IDS_RUNTASKMGRINLOWMEM                                        "Run Task Manager in low-memory mode."
+	IDS_DISABLEWINDOWSSUNVALLEYXAML                               "Disable rejuvenated Xaml-based UX."
+	IDS_DISPLAYHELPMSG                                            "Display this help message."
+	IDS_COLLECTLIVEMEMDUMPANDKILLTASKMGR                          "Collect a live memory dump and terminate Task Manager."
+	IDS_ADDUSERPAGESTOLIVEDUMP                                    "Add user mode pages to live memory dump."
+	IDS_ADDSOMEHYPERVPAGESEXCLUDESOME                             "Add Hyper-V pages to live memory dump, excluding some pages unlikely to be useful for debugging (requires Hyper-V)"
+	IDS_ADDALLHYPERVPAGES                                         "Add all Hyper-V pages to live memory dump (requires Hyper-V)"
+	IDS_SPECIFIYCANCELTIMEOUT                                     "Specify a cancel timeout in milliseconds."
+	IDS_ABORTDUMPIFUNDERPRESSURE                                  "Abort live memory dump if system is under memory pressure."
+	IDS_COLLECTKERNELSTACKS                                       "Collect a kernel stacks live memory dump. (This is incompatible with user and hyper-v arguments)."
+	IDS_SPECIFYULONGCODE                                          "Specifies the Hexadecimal Bugcheck code (ULONG) and Bugcheck parameters 1-4 (ULONG_PTR)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PRESSENTERTOSORT                                          "Press Enter to change sorting."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MTPERS                                                    "%u MT/s"
+	IDS_SLOTSP                                                    "Slot %1!u!: %2!s!, %3!hu! MT/s"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SUMMARYVIEW                                               "Summary view"
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// Menus
+//
+
+IDR_CPU_CONTEXT MENUEX
+BEGIN
+    POPUP "CPU Context", 0, MFT_STRING, MFS_ENABLED, 0
+	BEGIN
+	    MENUITEM "&End task", ID_END_TASK, MFT_STRING, MFS_ENABLED
+	    MENUITEM "End process &tree", ID_KILL_PROCESS_TREE, MFT_STRING, MFS_ENABLED
+	    MENUITEM "Provide feed&back", ID_SEND_INSIDER_FDBC, MFT_STRING, MFS_ENABLED
+	    MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+	    MENUITEM "Efficiency &mode", ID_EFFICIENT, MFT_STRING, MFS_ENABLED
+	    POPUP "Set &priority", ID_PRIORITYOP, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "&Realtime", ID_REALTIMEPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&High", ID_HIGHPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Above normal", ID_ABOVEUSUALPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Normal", ID_USUALPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Below normal", ID_BELOWUSUALPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Low", ID_LOWPRI, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "Set a&ffinity", IDM_AFFINITY, MFT_STRING, MFS_ENABLED
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Analyze wait chain", ID_WAITCHAIN, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Debug", ID_DBGPROCESS, MFT_STRING, MFS_ENABLED
+		MENUITEM "UAC &virtualization", ID_UAC, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Create dump file", ID_DUMP, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Create memory dump file", ID_RAMDUMP, MFT_STRING, MFS_ENABLED
+		POPUP "Create &live kernel memory dump file", ID_KERNDUMP, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "&Full live kernel memory dump", ID_FULLKERNDUMP, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Kernel stacks memory dump", ID_KERNSTACKDUMP, MFT_STRING, MFS_ENABLED
+		    MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		    MENUITEM "Change memory dump &settings", ID_DUMPCPL, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Open file location", ID_EXPLORE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Search o&nline", ID_SEARCHIE, MFT_STRING, MFS_ENABLED
+		MENUITEM "P&roperties", ID_PROCPROP, MFT_STRING, MFS_ENABLED
+		MENUITEM "Go to &service(s)", ID_RELIANTSERVICES, MFT_STRING, MFS_ENABLED
+	END
+END
+
+IDR_HEADER_CONTEXT MENU
+BEGIN
+    POPUP "Header Context"
+	BEGIN
+	    MENUITEM "Hi&de column",  ID_DESTROYCOLUMN
+	    MENUITEM "&Select columns",  ID_SELECTCOLUMN
+	END
+END
+
+IDR_SERVICE_CONTEXT MENU
+BEGIN
+    POPUP "Service Context"
+	BEGIN
+	    MENUITEM "&Start",  ID_STARTSERVICE
+		MENUITEM "S&top",  ID_STOPSERVICE
+		MENUITEM "&Restart",  ID_RESTARTSERVICE
+		MENUITEM SEPARATOR
+		MENUITEM "Open Ser&vices",  ID_RUNSERVICESMSC
+		MENUITEM "Search &online",  ID_SEARCHIE
+		MENUITEM "Go to &details",  ID_GOTOPARENTPROCESS
+	END
+END
+
+IDR_OTHER_CONTEXT MENU
+BEGIN
+    POPUP "Other Context"
+	BEGIN
+	    MENUITEM "&End process",  ID_END_TASK
+	END
+END
+
+IDR_MENU MENUEX
+BEGIN
+    POPUP "&File", 0, MFT_STRING, MFS_ENABLED, 0
+    BEGIN
+        MENUITEM "Run &new task", IDM_RUN, MFT_STRING, MFS_ENABLED
+		MENUITEM "E&xit", IDM_EXIT, MFT_STRING, MFS_ENABLED
+    END
+	POPUP "&Options", 0, MFT_STRING, MFS_ENABLED, 0
+	BEGIN
+	    MENUITEM "&Always on top", IDM_ALWAYSONTOP, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Minimize on use", IDM_MINIMIZEONUSE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Hide when minimized", IDM_HIDEWHENMIN, MFT_STRING, MFS_ENABLED
+		POPUP "Set &default tab", ID_SETDEFAULTTAB, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "P&rocesses", ID_PROCESSESTAB, MFT_STRING, MFS_ENABLED
+			MENUITEM "P&erformance", ID_PERFORMANCETAB, MFT_STRING, MFS_ENABLED
+			MENUITEM "App h&istory", ID_APPHISTORYTAB, MFT_STRING, MFS_ENABLED
+			MENUITEM "S&tartup", ID_STARTUPTAB, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Users", ID_USERSTAB, MFT_STRING, MFS_ENABLED
+			MENUITEM "Detai&ls", ID_DETAILSTAB, MFT_STRING, MFS_ENABLED
+			MENUITEM "Ser&vices", ID_SERVICESTAB, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Show full account name", IDM_SHOWDOMAINNAMES, MFT_STRING, MFS_ENABLED
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Show history for all &processes", ID_ENTIREHISTORY, MFT_STRING, MFS_ENABLED
+	END
+	POPUP "&View", ID_VIEWOPTIONS, MFT_STRING, MFS_ENABLED, 0
+	BEGIN
+	    MENUITEM "&Refresh now", IDM_REFRESH, MFT_STRING, MFS_ENABLED
+		POPUP "&Update speed", 0, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "&High", IDM_HIGH, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Normal", IDM_NORMAL, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Low", IDM_LOW, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Paused", IDM_PAUSED, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Group by type", ID_TYPEGROUPING, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Expand all", ID_EXPANDALLGROUPS, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Collapse all", ID_COLLAPSEALLGROUPS, MFT_STRING, MFS_ENABLED
+	END
+END
+
+IDR_DASHBOARD_CONTEXT MENUEX
+BEGIN
+    POPUP "Dashboard Context", 0, MFT_STRING, MFS_ENABLED, 0
+	BEGIN
+	    POPUP "C&hange graph to", ID_GRAPHOPTIONS, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "&Overall utilization", ID_ALLPROCESSORS, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Logical processors", ID_LOGICALPROCESSORS, MFT_STRING, MFS_ENABLED
+			MENUITEM "&NUMA nodes", ID_NUMANODES, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Single engine", ID_ONEENGINE, MFT_STRING, MFS_ENABLED
+			MENUITEM "Multiple &engines", ID_TWOORMOREENGINES, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "Show &kernel times", ID_SHOWKERNELPERF, MFT_STRING, MFS_ENABLED
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Graph summary vie&w", ID_SUMMARYVIEWGRAPH, MFT_STRING, MFS_ENABLED
+		POPUP "&View", ID_PERFTABVIEW, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "C&PU", ID_CPUVIEW, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Memory", ID_RAMVIEW, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Disk", ID_DISKVIEW, MFT_STRING, MFS_ENABLED
+			MENUITEM "&Network", ID_NETVIEW, MFT_STRING, MFS_ENABLED
+			MENUITEM "&GPU", ID_GPUVIEW, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "View network &details", ID_VIEWNETDETAILS, MFT_STRING, MFS_ENABLED
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Copy \tCtrl+C", ID_COPY, MFT_STRING, MFS_ENABLED
+	END
+END
+
+IDR_DASHBOARD_SIDEBAR_CONTEXT MENU
+BEGIN
+    POPUP "Dashboard Sidebar Context"
+	BEGIN
+	    MENUITEM "Summary vie&w",  ID_SUMMARYVIEW
+		MENUITEM "&Show graphs",  ID_SHOWGRAPHS
+		MENUITEM "&Hide graphs",  ID_HIDEGRAPHS
+		MENUITEM SEPARATOR
+		MENUITEM "&Copy \tCtrl+C",  ID_COPY
+	END
+END
+
+IDR_PROCESS_CONTEXT MENUEX
+BEGIN
+    POPUP "Process Context", 0, MFT_STRING, MFS_ENABLED, 0
+	BEGIN
+	    MENUITEM "Ex&pand", ID_EXPANDPROCESSTREE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Colla&pse", ID_COLLAPSEPROCESSTREE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Switch &to", ID_SWITCHTOWINDOW, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Restart", ID_RESTARTPROCESS, MFT_STRING, MFS_ENABLED
+		MENUITEM "&End task", ID_END_PROC, MFT_STRING, MFS_ENABLED
+		POPUP "Resource &values", ID_RESOURCEVALUES, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    POPUP "&Memory", 0, MFT_STRING, MFS_ENABLED, 0
+			BEGIN
+			    MENUITEM "Percents", ID_MEMPERCENTS, MFT_STRING, MFS_ENABLED
+				MENUITEM "Values", ID_MEMVALUES, MFT_STRING, MFS_ENABLED
+			END
+			POPUP "Dis&k", ID_DISKRESOURCEVALUES, MFT_STRING, MFS_ENABLED, 0
+			BEGIN
+			    MENUITEM "Percents", ID_DISKPERCENTS, MFT_STRING, MFS_ENABLED
+				MENUITEM "Values", ID_DISKVALUES, MFT_STRING, MFS_ENABLED
+			END
+			POPUP "&Network", ID_NETWORKRESOURCEVALUES, MFT_STRING, MFS_ENABLED
+			BEGIN
+			    MENUITEM "Percents", ID_NETWORKPERCENTS, MFT_STRING, MFS_ENABLED
+				MENUITEM "Values", ID_NETWORKVALUES, MFT_STRING, MFS_ENABLED
+			END
+		END
+		MENUITEM "Provide feed&back", ID_SEND_INSIDER_FDBC, MFT_STRING, MFS_ENABLED
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Efficiency &mode", ID_EFFICIENT, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Debug", ID_DBGPROCESS, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Create dump file", ID_DUMP, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Create memory dump file", ID_RAMDUMP, MFT_STRING, MFS_ENABLED
+		POPUP "Create &live kernel memory dump file", ID_KERNDUMP, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "&Full live kernel memory dump", ID_FULLKERNDUMP, MFT_STRING, MFS_ENABLED 
+		    MENUITEM "&Kernel stacks memory dump", ID_KERNSTACKDUMP, MFT_STRING, MFS_ENABLED 
+		    MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED 
+		    MENUITEM "Change memory dump &settings", ID_DUMPCPL, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "Run &new task", IDM_RUN, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Always on top", IDM_ALWAYSONTOP, MFT_STRING, MFS_ENABLED
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Go to &details", ID_GOTOPARENTPROCESS, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Open file location", ID_EXPLORE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Search o&nline", ID_SEARCHPROCES, MFT_STRING, MFS_ENABLED
+		MENUITEM "P&roperties", ID_PROCPROP, MFT_STRING, MFS_ENABLED
+	END
+END
+
+IDR_WINDOW_CONTEXT MENU
+BEGIN
+    POPUP "Window Context"
+	BEGIN
+		MENUITEM "Switch &to",  ID_SWITCHTOWINDOW
+		MENUITEM "&Bring to front",  ID_BRINGWINDOWTOFRONT
+		MENUITEM "&Minimize",  ID_MINIMIZEWINDOW
+		MENUITEM "Ma&ximize",  ID_MAXIMIZEWINDOW
+		MENUITEM "&End task",  ID_END_PROC
+	END
+END
+
+IDR_SERVICE_CONTEXT_2 MENU
+BEGIN
+    POPUP "Service Context"
+	BEGIN
+	    MENUITEM "&Stop",  ID_STOPSPECIALSERVICE
+		MENUITEM "Open Ser&vices",  ID_RUNSERVICESMSC
+		MENUITEM "Search &online",  ID_SEARCHPROCES
+	END
+END
+
+IDR_USERS_CONTEXT MENU
+BEGIN
+	POPUP "User Context"
+	BEGIN
+		MENUITEM "Ex&pand",  ID_EXPANDPROCESSTREE
+		MENUITEM "Colla&pse",  ID_COLLAPSEPROCESSTREE
+		MENUITEM "&Connect",  IDM_CONNECT
+		MENUITEM "&Disconnect",  IDM_DISCONNECT
+		MENUITEM "S&ign off",  IDM_LOGOFF
+		MENUITEM "&Send message",  IDM_SENDMESSAGE
+		MENUITEM "S&witch user account",  ID_SWITCHUSERACCS
+		MENUITEM SEPARATOR
+		MENUITEM "&Manage user accounts",  ID_MANAGEUSERACCS
+	END
+END
+
+IDR_STARTUP_ITEM_CONTEXT MENU
+BEGIN
+	POPUP "Startup Item Context"
+	BEGIN
+		MENUITEM "Ex&pand",  ID_EXPANDPROCESSTREE
+		MENUITEM "Colla&pse",  ID_COLLAPSEPROCESSTREE
+		MENUITEM "&Enable",  ID_RUNATSTARTUP
+		MENUITEM "&Disable",  ID_NORUNATSTARTUP
+		MENUITEM SEPARATOR
+		MENUITEM "&Open file location",  ID_EXPLORE
+		MENUITEM "Search &online",  ID_SEARCHPROCES
+		MENUITEM "Propert&ies",  ID_PROCPROP
+	END
+END
+
+IDR_APPHISTORY_CONTEXT MENU
+BEGIN
+	POPUP "App history Context"
+	BEGIN
+		MENUITEM "Switch &to",  ID_SWITCHTOWINDOW
+		MENUITEM "Search &online",  ID_SEARCHPROCES
+		MENUITEM "Propert&ies",  ID_PROCPROP
+	END
+END
+
+IDR_TRAYMENU MENU
+BEGIN
+	POPUP "System Tray Context"
+	BEGIN
+		MENUITEM "&Restore",  IDM_RESTORETASKMAN
+		MENUITEM "&Close",  IDM_EXIT
+		MENUITEM SEPARATOR
+		MENUITEM "&Always on top",  IDM_ALWAYSONTOP
+	END
+END
+
+IDR_ADDITIONAL_COLHEADER_CONTEXT MENUEX
+BEGIN
+	POPUP "Additional ColHeader Context", 0, MFT_STRING, MFS_ENABLED, 0
+	BEGIN
+		POPUP "&Memory", 0, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+			MENUITEM "Percents", ID_MEMPERCENTS, MFT_STRING, MFS_ENABLED
+			MENUITEM "Percents", ID_MEMPERCENTS, MFT_STRING, MFS_ENABLED
+		END
+		POPUP "D&isk", ID_DISKRESOURCEVALUES, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+			MENUITEM "Percents", ID_DISKPERCENTS, MFT_STRING, MFS_ENABLED
+			MENUITEM "Values", ID_DISKVALUES, MFT_STRING, MFS_ENABLED
+		END
+		POPUP "&Network", ID_NETWORKRESOURCEVALUES
+		BEGIN
+			MENUITEM "Percents", ID_NETWORKPERCENTS, MFT_STRING, MFS_ENABLED
+			MENUITEM "Values", ID_NETWORKVALUES, MFT_STRING, MFS_ENABLED
+		END
+	END
+END
+
+IDR_STARTUP_PROCESS_CONTEXT MENU
+BEGIN
+	POPUP "Startup Process Context"
+	BEGIN
+		MENUITEM "&Open file location",  ID_EXPLORE
+		MENUITEM "Search &online",  ID_SEARCHPROCES
+		MENUITEM "Propert&ies",  ID_PROCPROP
+	END
+END
+
+IDR_CPU_CONTEXT2 MENUEX
+BEGIN
+    POPUP "CPU Context", 0, MFT_STRING, MFS_ENABLED, 0
+	BEGIN
+	    MENUITEM "&End task", ID_END_TASK, MFT_STRING, MFS_ENABLED
+	    MENUITEM "End process &tree", ID_KILL_PROCESS_TREE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Restart", ID_RESTARTPROCESS, MFT_STRING, MFS_ENABLED
+	    MENUITEM "Provide feed&back", ID_SEND_INSIDER_FDBC, MFT_STRING, MFS_ENABLED
+	    MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+	    MENUITEM "Efficiency &mode", ID_EFFICIENT, MFT_STRING, MFS_ENABLED
+	    POPUP "Set &priority", ID_PRIORITYOP, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "&Realtime", ID_REALTIMEPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&High", ID_HIGHPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Above normal", ID_ABOVEUSUALPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Normal", ID_USUALPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Below normal", ID_BELOWUSUALPRI, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Low", ID_LOWPRI, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "Set a&ffinity", IDM_AFFINITY, MFT_STRING, MFS_ENABLED
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Analyze wait chain", ID_WAITCHAIN, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Debug", ID_DBGPROCESS, MFT_STRING, MFS_ENABLED
+		MENUITEM "UAC &virtualization", ID_UAC, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Create dump file", ID_DUMP, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Create memory dump file", ID_RAMDUMP, MFT_STRING, MFS_ENABLED
+		POPUP "Create &live kernel memory dump file", ID_KERNDUMP, MFT_STRING, MFS_ENABLED, 0
+		BEGIN
+		    MENUITEM "&Full live kernel memory dump", ID_FULLKERNDUMP, MFT_STRING, MFS_ENABLED
+		    MENUITEM "&Kernel stacks memory dump", ID_KERNSTACKDUMP, MFT_STRING, MFS_ENABLED
+		    MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		    MENUITEM "Change memory dump &settings", ID_DUMPCPL, MFT_STRING, MFS_ENABLED
+		END
+		MENUITEM "", ID_SEPARATE, MFT_STRING, MFS_ENABLED
+		MENUITEM "&Open file location", ID_EXPLORE, MFT_STRING, MFS_ENABLED
+		MENUITEM "Search o&nline", ID_SEARCHIE, MFT_STRING, MFS_ENABLED
+		MENUITEM "P&roperties", ID_PROCPROP, MFT_STRING, MFS_ENABLED
+		MENUITEM "Go to &service(s)", ID_RELIANTSERVICES, MFT_STRING, MFS_ENABLED
+	END
+	
+END
+
+
+
+	
