@@ -1,0 +1,11 @@
+; stub inf file to preserve legacy driver compatibility. The DDK sample inf file for 
+; USB webcams (Intel YC76) used to refer to this file (dshowext.inf)
+
+[Version]
+Signature="$CHICAGO$"
+
+[DSHOWEXT.Registration]
+
+[DSHOWEXT.Registration.NT]
+
+

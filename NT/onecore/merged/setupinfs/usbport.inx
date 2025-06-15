@@ -1,0 +1,532 @@
+; USBPORT.INF  -- This file contains descriptions of all the
+; USB Host Controllers that use USBPORT
+;
+
+[Version]
+Signature="$Windows NT$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+Provider=%Msft%
+DriverVer = 06/21/2006,10.0.10011.16384
+PnpLockdown=1
+
+[ControlFlags]
+BasicDriverOk = *
+ExcludeFromSelect = *
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+usbehci.sys 		= 3426
+usbport.sys 		= 3426
+usbohci.sys 		= 3426
+usbuhci.sys 		= 3426
+usbhub.sys 		= 3426
+usbd.sys 		= 3426
+
+[DestinationDirs]
+;
+; For Windows NT, all drivers go into %windir%\system32\drivers.  Since
+; there isn't a DIRID (LDID) that represents this path on both NT and Win95,
+; we specify the relative path off of %windir%.
+;
+EHCI.CopyFiles.NT         = 10, system32\drivers
+OHCI.CopyFiles.NT         = 10, system32\drivers
+UHCI.CopyFiles.NT         = 10, system32\drivers
+USB.CopyFiles.NT          = 10, system32\drivers
+HUB20.CopyFiles.NT        = 10, system32\drivers
+
+; =================== Table of content =========================
+; note that these are in alphabetical order
+;
+
+[Manufacturer]
+%AMD.Mfg%=AMD.Section
+%ACER.Mfg%=ACER.Section
+%ATI.Mfg%=ATI.Section
+%Compaq.Mfg%=Compaq.Section
+%CMD.Mfg%=CMD.Section
+%Cypress.Mfg%=Cypress.Section
+%Generic.Mfg%=Generic.Section
+%Intel.Mfg%=Intel.Section
+%Lucent.Mfg%=Lucent.Section
+%NEC.Mfg%=NEC.Section
+%OPTi.Mfg%=OPTi.Section
+%Reliance.Mfg%=Reliance.Section
+%SIS.Mfg%=SIS.Section
+%SMSC.Mfg%=SMSC.Section
+%Symbios.Mfg%=Symbios.Section
+%VIA.Mfg%=VIA.Section
+%UD.Mfg%=UnsupportedDevice
+
+[SignatureAttributes]
+usbehci.sys=SignatureAttributes.DRM
+usbhub.sys=SignatureAttributes.DRM
+usbohci.sys=SignatureAttributes.DRM
+usbport.sys=SignatureAttributes.DRM
+usbuhci.sys=SignatureAttributes.DRM
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+; =================== Generic ==================================
+
+[Generic.Section]
+%PCI\CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\CC_0C0300
+%PCI\CC_0C0310.DeviceDesc%=OHCI.Dev,PCI\CC_0C0310
+%PCI\CC_0C0320.DeviceDesc%=EHCI.Dev,PCI\CC_0C0320
+%EHCIHostController.DeviceDesc%=EHCI_SOC.Dev,*PNP0D20
+%EHCIHostController.DeviceDesc%=EHCI_SOC.Dev,ACPI\PNP0D20
+%EHCIHostController.DeviceDesc%=EHCI_SOC.Dev,*PNP0FFC
+%USB.RootHub.DeviceDesc%=ROOTHUB.Dev,USB\ROOT_HUB
+%USB.RootHub.DeviceDesc%=ROOTHUB.Dev,USB\ROOT_HUB20
+
+[UnsupportedDevice]
+%UD.DeviceDesc%=EHCI.UnsupportedDev.NT
+%UD.DeviceDesc%=OHCI.UnsupportedDev.NT
+%UD.DeviceDesc%=UHCI.UnsupportedDev.NT
+
+; --------------------------------------------------------------
+; EHCI 
+; --------------------------------------------------------------
+
+[EHCI.Dev.NT]
+AddReg=EHCI.AddReg.NT
+CopyFiles=EHCI.CopyFiles.NT,USB.CopyFiles.NT
+AddProperty=EHCI.AddProperty.NT
+
+[EHCI.AddReg.NT]
+HKR,,EnumPropPages32,,"usbui.dll,USBControllerPropPageProvider"
+HKR,,Controller,1,01
+
+[EHCI.CopyFiles.NT]
+usbehci.sys,,,0x100
+usbport.sys,,,0x100
+
+[EHCI.AddProperty.NT]
+; DEVPKEY_Device_DebuggerSafe, DEVPROP_TYPE_UINT32
+{540b947e-8b40-45bc-a8a2-6a0b894cbda2},12,7,,1
+
+[EHCI.Dev.NT.Services]
+AddService = usbehci, 0x00000002, EHCI.AddService, EHCI.AddEventLog
+
+[EHCI.AddService]
+DisplayName    = %EHCIMP.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\usbehci.sys
+LoadOrderGroup = Base
+AddReg         = EHCI.AddService.AddReg
+
+[EHCI.AddService.AddReg]
+HKR,,BootFlags,0x00010003,0x4 ; CM_SERVICE_USB_DISK_BOOT_LOAD 
+
+[EHCI.AddEventLog]
+AddReg=EHCI.AddEventLog.AddReg
+
+[EHCI.AddEventLog.AddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\Drivers\usbehci.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[EHCI.UnsupportedDev.NT]
+; Do-nothing section used to avoid "Unknown hardware" installation prompts.
+
+[EHCI.UnsupportedDev.NT.Services]
+AddService = , 0x00000002   ; null service install
+
+; ---------------------------------------------------------------------------
+; EHCI on SOC - This block is created to avoid setting debugger safe property.
+;               References above defined EHCI sections for common definitions.
+; ---------------------------------------------------------------------------
+
+[EHCI_SOC.Dev.NT]
+AddReg=EHCI.AddReg.NT
+CopyFiles=EHCI.CopyFiles.NT,USB.CopyFiles.NT
+
+[EHCI_SOC.Dev.NT.Services]
+AddService = usbehci, 0x00000002, EHCI.AddService, EHCI.AddEventLog
+
+; --------------------------------------------------------------
+; OHCI
+; --------------------------------------------------------------
+
+[OHCI.Dev.NT]
+AddReg=OHCI.AddReg.NT
+CopyFiles=OHCI.CopyFiles.NT,USB.CopyFiles.NT
+
+[OHCI.AddReg.NT]
+HKR,,EnumPropPages32,,"usbui.dll,USBControllerPropPageProvider"
+HKR,,Controller,1,01
+
+[OHCI.CopyFiles.NT]
+usbohci.sys,,,0x100
+usbport.sys,,,0x100
+
+[OHCI.Dev.NT.Services]
+AddService = usbohci, 0x00000002, OHCI.AddService
+
+[OHCI.AddService]
+DisplayName    = %OHCIMP.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\usbohci.sys
+LoadOrderGroup = Base
+
+[OHCI.UnsupportedDev.NT]
+; Do-nothing section used to avoid "Unknown hardware" installation prompts.
+
+[OHCI.UnsupportedDev.NT.Services]
+AddService = , 0x00000002   ; null service install
+
+;
+;  OHCI core flavors
+;
+
+[OHCI_HYDRA.Dev.NT]
+Needs=OHCI.Dev.NT
+AddReg=OHCI_HYDRA.AddReg.NT
+
+[OHCI_HYDRA.AddReg.NT]
+;hydra flavor
+HKR,,"HcFlavor",0x00010001,101
+
+[OHCI_HYDRA.Dev.NT.Services]
+Needs=OHCI.Dev.NT.Services
+
+[OHCI_NEC.Dev.NT]
+Needs=OHCI.Dev.NT
+AddReg=OHCI_NEC.AddReg.NT
+
+[OHCI_NEC.AddReg.NT]
+;nec flavor
+HKR,,"HcFlavor",0x00010001,102
+
+[OHCI_NEC.Dev.NT.Services]
+Needs=OHCI.Dev.NT.Services
+
+[OHCI_NOCC.Dev.NT]
+Needs=OHCI.Dev.NT
+AddReg=OHCI_NOCC.AddReg.NT
+
+[OHCI_NOCC.AddReg.NT]
+;nec companion, disable cc detect
+HKR,,"Usb2cc",0x00010001,-1
+
+[OHCI_NOCC.Dev.NT.Services]
+Needs=OHCI.Dev.NT.Services
+
+[OHCI_NOSS.Dev.NT]
+Needs=OHCI.Dev.NT
+AddReg=OHCI_NOSS.AddReg.NT
+
+[OHCI_NOSS.AddReg.NT]
+HKR,,"HcDisableSelectiveSuspend",0x00010001,1
+
+[OHCI_NOSS.Dev.NT.Services]
+Needs=OHCI.Dev.NT.Services
+
+; --------------------------------------------------------------
+; UHCI
+; --------------------------------------------------------------
+
+[UHCI.Dev.NT]
+AddReg=UHCI.AddReg.NT
+CopyFiles=UHCI.CopyFiles.NT,USB.CopyFiles.NT
+
+[UHCI.AddReg.NT]
+HKR,,EnumPropPages32,,"usbui.dll,USBControllerPropPageProvider"
+HKR,,Controller,1,01
+
+[UHCI.CopyFiles.NT]
+usbuhci.sys,,,0x100
+usbport.sys,,,0x100
+
+[UHCI.Dev.NT.Services]
+AddService = usbuhci, 0x00000002, UHCI.AddService
+
+[UHCI.AddService]
+DisplayName    = %UHCIMP.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\usbuhci.sys
+LoadOrderGroup = Base
+
+[UHCI.UnsupportedDev.NT]
+; Do-nothing section used to avoid "Unknown hardware" installation prompts.
+
+[UHCI.UnsupportedDev.NT.Services]
+AddService = , 0x00000002   ; null service install
+
+[USBPowerSettings.P01]
+SubGroup={2A737441-1930-4402-8D77-B2BEBBA308A3},"@%%SystemRoot%%\system32\usbui.dll,-1200;UsbPowerSettingsName", "@%%SystemRoot%%\system32\usbui.dll,-1201;UsbPowerSettingsDescription"
+Setting={48E6B7A6-50F5-4782-A5D4-53BB8F07E226},"@%%SystemRoot%%\system32\usbui.dll,-1202;UsbPowerSelSupName", "@%%SystemRoot%%\system32\usbui.dll,-1203;UsbPowerSelSupDescription"
+Value=0,"@%%SystemRoot%%\system32\usbui.dll,-1206;ValueOffName","@%%SystemRoot%%\system32\usbui.dll,-1207;ValueOffDesc",0x00010001,0x0
+Value=1,"@%%SystemRoot%%\system32\usbui.dll,-1204;ValueOnName","@%%SystemRoot%%\system32\usbui.dll,-1205;ValueOnDesc",0x00010001,0x1
+Default={8C5E7FDA-E8BF-4A96-9A85-A6E23A8C635C},0,1
+Default={8C5E7FDA-E8BF-4A96-9A85-A6E23A8C635C},1,1
+Default={381B4222-F694-41F0-9685-FF5BB260DF2E},0,1
+Default={381B4222-F694-41F0-9685-FF5BB260DF2E},1,1
+Default={A1841308-3541-4FAB-BC81-F71556F20B4A},0,1
+Default={A1841308-3541-4FAB-BC81-F71556F20B4A},1,1
+
+[USBPowerSettings.P02]
+SubGroup = %GUID_POWER_USB_SUBGROUP%
+Setting = %GUID_POWER_INTERRUPT_PER_TD_ENABLE%, %InterruptPerTdEnableName%, %InterruptPerTdEnableDescription%, ,1
+Value= 0, %ValueDisabledName%, %ValueDisabledDesc%, %FLG_ADDREG_TYPE_DWORD%, 0x0  ; lower power consumption/lower performance
+Value= 1, %ValueEnabledName%, %ValueEnabledDesc%, %FLG_ADDREG_TYPE_DWORD%, 0x1    ; higher power consumption/higher performance
+
+Default = %GUID_MIN_POWER_SAVINGS%, %AC%, 1
+Default = %GUID_MIN_POWER_SAVINGS%, %DC%, 1
+Default = %GUID_MAX_POWER_SAVINGS%, %AC%, 0
+Default = %GUID_MAX_POWER_SAVINGS%, %DC%, 0
+Default = %GUID_TYPICAL_POWER_SAVINGS%, %AC%, 1
+Default = %GUID_TYPICAL_POWER_SAVINGS%, %DC%, 0
+
+; --------------------------------------------------------------
+; USB ROOT HUB
+; --------------------------------------------------------------
+
+[ROOTHUB.Dev.NT]
+CopyFiles=Hub20.CopyFiles.NT
+AddReg=ROOTHUB.AddReg.NT
+AddPowerSetting=USBPowerSettings.P01, USBPowerSettings.P02
+
+[ROOTHUB.AddReg.NT]
+HKR,,EnumPropPages32,,"usbui.dll,USBHubPropPageProvider"
+
+[ROOTHUB.Dev.NT.Services]
+AddService = usbhub, 0x00000002, ROOTHUB.AddService
+
+[ROOTHUB.AddService]
+DisplayName    = %ROOTHUB.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\usbhub.sys
+LoadOrderGroup = Base
+AddReg         = ROOTHUB.AddService.AddReg
+
+[ROOTHUB.AddService.AddReg]
+HKR,,BootFlags,0x00010003,0x4 ; CM_SERVICE_USB_DISK_BOOT_LOAD 
+
+[ROOTHUB.Dev.NT.WMI]
+; Set access permissions for UI WMI GUIDs
+WMIInterface = {4E623B20-CB14-11D1-B331-00A0C959BBD2},,WMIGuidSecurity_AllRights
+WMIInterface = {9bbbf831-a2f2-43b4-96d1-86944b5914b3},,WMIGuidSecurity_AllRights
+WMIInterface = {AD0379E4-72DB-42ed-BA6E-67570479070D},,WMIGuidSecurity_AllReadAdminFul
+WMIInterface = {9C179357-DC7A-4f41-B66B-323B9DDCB5B1},,WMIGuidSecurity_AllReadAdminFul
+WMIInterface = {66C1AA3C-499F-49a0-A9A5-61E2359F6407},,WMIGuidSecurity_AllReadAdminFul
+WMIInterface = {9C179357-DC7A-4f41-B66B-323B9DDCB5B1},,WMIGuidSecurity_AllReadAdminFul
+
+[ACER.Section]
+%PCI\VEN_10B9&DEV_5237&CC_0C0310.DeviceDesc%=OHCI_HYDRA.Dev,PCI\VEN_10B9&DEV_5237&CC_0C0310
+;USB2 Controllers
+%PCI\VEN_10B9&DEV_5239&CC_0C0320.DeviceDesc%=EHCI.Dev,PCI\VEN_10B9&DEV_5239&CC_0C0320 
+
+; =================== AMD ===================================
+[AMD.Section]
+%PCI\VEN_1022&DEV_740C&CC_0C0310.DeviceDesc%=OHCI_HYDRA.Dev,PCI\VEN_1022&DEV_740C&CC_0C0310
+%PCI\VEN_1022.PCIToUSBHostController.DeviceDesc%=OHCI_NOSS.Dev,PCI\VEN_1022&DEV_7464&REV_08
+%PCI\VEN_1022.PCIToUSBHostController.DeviceDesc%=OHCI_NOSS.Dev,PCI\VEN_1022&DEV_7464&REV_09
+%PCI\VEN_1022.PCIToUSBHostController.DeviceDesc%=OHCI_NOSS.Dev,PCI\VEN_1022&DEV_7464&REV_0B
+
+; =================== ATI ==================================
+[ATI.Section]
+%PCI\Ven_1002&Dev_4373%=EHCI.Dev,PCI\Ven_1002&Dev_4373
+%PCI\Ven_1002.1_1_OHCI%=OHCI.Dev,PCI\Ven_1002&Dev_4374
+%PCI\Ven_1002.1_1_OHCI%=OHCI.Dev,PCI\Ven_1002&Dev_4375
+
+; =================== CMD ==================================
+[CMD.Section]
+%PCI\VEN_1095&DEV_0670&CC_0C0310.DeviceDesc%=OHCI.Dev,PCI\VEN_1095&DEV_0670&CC_0C0310
+%PCI\VEN_1095&DEV_0673&CC_0C0310.DeviceDesc%=OHCI.Dev,PCI\VEN_1095&DEV_0673&CC_0C0310
+
+; =================== Compaq ===================================
+[Compaq.Section]
+%PCI\VEN_0E11&DEV_A0F8&CC_0C0310.DeviceDesc%=OHCI_HYDRA.Dev,PCI\VEN_0E11&DEV_A0F8&CC_0C0310
+
+; =================== Cypress ===================================
+[Cypress.Section]
+%PCI\VEN_1080&DEV_C693&CC_0C0310.DeviceDesc%=OHCI_HYDRA.Dev,PCI\VEN_1080&DEV_C693&CC_0C0310
+
+; =================== Intel ====================================
+[Intel.Section]
+%PCI\VEN_8086&DEV_0806.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_0806
+%PCI\VEN_8086&DEV_0811.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_0811
+%PCI\VEN_8086&DEV_1C26.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_1C26
+%PCI\VEN_8086&DEV_1C2D.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_1C2D
+%PCI\VEN_8086&DEV_1D26.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_1D26
+%PCI\VEN_8086&DEV_1D2D.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_1D2D
+%PCI\VEN_8086&DEV_1E26.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_1E26
+%PCI\VEN_8086&DEV_1E2D.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_1E2D
+%PCI\VEN_8086&DEV_2334.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_2334
+%PCI\VEN_8086&DEV_2335.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_2335
+%PCI\VEN_8086&DEV_2359.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2359
+%PCI\VEN_8086&DEV_235A.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_235A
+%PCI\VEN_8086&DEV_2412&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2412&CC_0C0300
+%PCI\VEN_8086&DEV_2422&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2422&CC_0C0300
+%PCI\VEN_8086&DEV_2442&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2442&CC_0C0300
+%PCI\VEN_8086&DEV_2444&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2444&CC_0C0300
+%PCI\VEN_8086&DEV_2482.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2482
+%PCI\VEN_8086&DEV_2484.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2484
+%PCI\VEN_8086&DEV_2487.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2487
+%PCI\VEN_8086&DEV_24C2&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_24C2&CC_0C0300
+%PCI\VEN_8086&DEV_24C4&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_24C4&CC_0C0300
+%PCI\VEN_8086&DEV_24C7&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_24C7&CC_0C0300
+%PCI\VEN_8086&DEV_24CD&CC_0C0320.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_24CD&CC_0C0320
+%PCI\VEN_8086&DEV_24D2.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_24D2
+%PCI\VEN_8086&DEV_24D4.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_24D4
+%PCI\VEN_8086&DEV_24D7.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_24D7
+%PCI\VEN_8086&DEV_24DD.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_24DD
+%PCI\VEN_8086&DEV_24DE.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_24DE
+%PCI\VEN_8086&DEV_25A9.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_25A9
+%PCI\VEN_8086&DEV_25AA.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_25AA
+%PCI\VEN_8086&DEV_25AD.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_25AD
+%PCI\VEN_8086&DEV_2658.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2658
+%PCI\VEN_8086&DEV_2659.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2659
+%PCI\VEN_8086&DEV_265A.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_265A
+%PCI\VEN_8086&DEV_265B.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_265B
+%PCI\VEN_8086&DEV_265C.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_265C
+%PCI\VEN_8086&DEV_2688.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2688
+%PCI\VEN_8086&DEV_2689.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2689
+%PCI\VEN_8086&DEV_268A.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_268A
+%PCI\VEN_8086&DEV_268B.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_268B
+%PCI\VEN_8086&DEV_268C.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_268C
+%PCI\VEN_8086&DEV_27C8.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_27C8
+%PCI\VEN_8086&DEV_27C9.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_27C9
+%PCI\VEN_8086&DEV_27CA.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_27CA
+%PCI\VEN_8086&DEV_27CB.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_27CB
+%PCI\VEN_8086&DEV_27CC.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_27CC
+%PCI\VEN_8086&DEV_2830.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2830
+%PCI\VEN_8086&DEV_2831.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2831
+%PCI\VEN_8086&DEV_2832.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2832
+%PCI\VEN_8086&DEV_2834.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2834
+%PCI\VEN_8086&DEV_2835.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2835
+%PCI\VEN_8086&DEV_2836.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_2836
+%PCI\VEN_8086&DEV_283A.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_283A
+%PCI\VEN_8086&DEV_2934.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2934
+%PCI\VEN_8086&DEV_2935.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2935
+%PCI\VEN_8086&DEV_2936.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2936
+%PCI\VEN_8086&DEV_2937.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2937
+%PCI\VEN_8086&DEV_2938.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2938
+%PCI\VEN_8086&DEV_2939.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_2939
+%PCI\VEN_8086&DEV_293A.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_293A
+%PCI\VEN_8086&DEV_293C.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_293C
+%PCI\VEN_8086&DEV_3A34.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A34
+%PCI\VEN_8086&DEV_3A35.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A35
+%PCI\VEN_8086&DEV_3A36.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A36
+%PCI\VEN_8086&DEV_3A37.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A37
+%PCI\VEN_8086&DEV_3A38.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A38
+%PCI\VEN_8086&DEV_3A39.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A39
+%PCI\VEN_8086&DEV_3A3A.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_3A3A
+%PCI\VEN_8086&DEV_3A3C.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_3A3C
+%PCI\VEN_8086&DEV_3A64.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A64
+%PCI\VEN_8086&DEV_3A65.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A65
+%PCI\VEN_8086&DEV_3A66.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A66
+%PCI\VEN_8086&DEV_3A67.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A67
+%PCI\VEN_8086&DEV_3A68.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A68
+%PCI\VEN_8086&DEV_3A69.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3A69
+%PCI\VEN_8086&DEV_3A6A.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_3A6A
+%PCI\VEN_8086&DEV_3A6C.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_3A6C
+%PCI\VEN_8086&DEV_3B34.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_3B34
+%PCI\VEN_8086&DEV_3B36.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B36
+%PCI\VEN_8086&DEV_3B37.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B37
+%PCI\VEN_8086&DEV_3B38.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B38
+%PCI\VEN_8086&DEV_3B39.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B39
+%PCI\VEN_8086&DEV_3B3A.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B3A
+%PCI\VEN_8086&DEV_3B3B.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B3B
+%PCI\VEN_8086&DEV_3B3C.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_3B3C
+%PCI\VEN_8086&DEV_3B3E.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B3E
+%PCI\VEN_8086&DEV_3B3F.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B3F
+%PCI\VEN_8086&DEV_3B40.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_3B40
+%PCI\VEN_8086&DEV_7020&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_7020&CC_0C0300
+%PCI\VEN_8086&DEV_7112&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_7112&CC_0C0300
+%PCI\VEN_8086&DEV_719A&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_719A&CC_0C0300
+%PCI\VEN_8086&DEV_7602&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_8086&DEV_7602&CC_0C0300
+%PCI\VEN_8086&DEV_8804.DeviceDesc%=OHCI.Dev,PCI\VEN_8086&DEV_8804
+%PCI\VEN_8086&DEV_8805.DeviceDesc%=OHCI.Dev,PCI\VEN_8086&DEV_8805
+%PCI\VEN_8086&DEV_8806.DeviceDesc%=OHCI.Dev,PCI\VEN_8086&DEV_8806
+%PCI\VEN_8086&DEV_8807.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_8807
+%PCI\VEN_8086&DEV_880c.DeviceDesc%=OHCI.Dev,PCI\VEN_8086&DEV_880C
+%PCI\VEN_8086&DEV_880d.DeviceDesc%=OHCI.Dev,PCI\VEN_8086&DEV_880D
+%PCI\VEN_8086&DEV_880e.DeviceDesc%=OHCI.Dev,PCI\VEN_8086&DEV_880E
+%PCI\VEN_8086&DEV_880f.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_880F
+%PCI\VEN_8086&DEV_8C26.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_8C26
+%PCI\VEN_8086&DEV_8C2D.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_8C2D
+%PCI\VEN_8086&DEV_9C26.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_9C26
+%PCI\VEN_8086&DEV_9C2D.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_9C2D
+%PCI\VEN_8086&DEV_1F2C.DeviceDesc%=EHCI.Dev,PCI\VEN_8086&DEV_1F2C
+
+; =================== Lucent ==================================
+[Lucent.Section]
+%PCI\VEN_11C1.USBHostController.DeviceDesc%=OHCI.Dev,PCI\VEN_11C1&DEV_5801&CC_0C0310
+%PCI\VEN_11C1.USBHostController.DeviceDesc%=OHCI.Dev,PCI\VEN_11C1&DEV_5802&CC_0C0310
+%PCI\VEN_11C1&DEV_5803&CC_0C0310.DeviceDesc%=OHCI.Dev,PCI\VEN_11C1&DEV_5803&CC_0C0310
+
+; =================== NEC ==================================
+[NEC.Section]
+%PCI\VEN_1033.PCIToUSBHostController.DeviceDesc%=OHCI_NEC.Dev,PCI\VEN_1033&DEV_0035&CC_0C0310
+%PCI\VEN_1033.PCIToUSBHostController.DeviceDesc%=OHCI_NEC.Dev,PCI\VEN_1033&DEV_0035&REV_02
+%PCI\VEN_1033.PCIToUSBHostController.DeviceDesc%=OHCI_NOCC.Dev,PCI\VEN_1033&DEV_0035&SUBSYS_00011179&REV_41
+;USB2 Companion
+%PCI\VEN_1033.PCIToUSBHostController.DeviceDesc%=OHCI.Dev,PCI\VEN_1033&DEV_0035&REV_41
+;USB2 controllers
+%PCI\VEN_1033&DEV_00E0&REV_01.DeviceDesc%=EHCI.Dev,PCI\VEN_1033&DEV_00E0&REV_01
+%PCI\VEN_1033&DEV_00E0&REV_02.DeviceDesc%=EHCI.Dev,PCI\VEN_1033&DEV_00E0&REV_02
+
+; =================== OPTi =====================================
+[OPTi.Section]
+%PCI\VEN_1045&DEV_C861&CC_0C0310.DeviceDesc%=OHCI_HYDRA.Dev,PCI\VEN_1045&DEV_C861&CC_0C0310
+
+; =================== Reliance =====================================
+[Reliance.Section]
+%PCI\VEN_1166&DEV_0220&CC_0C0310.DeviceDesc%=OHCI.Dev,PCI\VEN_1166&DEV_0220&CC_0C0310
+
+; =================== SIS ======================================
+[SIS.Section]
+%PCI\VEN_1039&DEV_7001&CC_0C0310.DeviceDesc%=OHCI_HYDRA.Dev,PCI\VEN_1039&DEV_7001&CC_0C0310
+
+; =================== SMSC ======================================
+[SMSC.Section]
+%PCI\VEN_1055&DEV_9462.DeviceDesc%=OHCI.Dev,PCI\VEN_1055&DEV_9462
+
+; =================== Symbios ======================================
+[Symbios.Section]
+%PCI\VEN_1000&DEV_0901&CC_0C0310.DeviceDesc%=OHCI_HYDRA.Dev,PCI\VEN_1000&DEV_0901&CC_0C0310
+
+; =================== VIA ====================================
+[VIA.Section]
+%PCI\VEN_1106.Rev0HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_00
+%PCI\VEN_1106.Rev0HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&REV_00
+%PCI\VEN_1106.Rev1HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_01
+%PCI\VEN_1106.Rev1HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&REV_01
+%PCI\VEN_1106.Rev2HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_02
+%PCI\VEN_1106.Rev2HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&REV_02
+%PCI\VEN_1106.Rev3HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_03
+%PCI\VEN_1106.Rev3HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&REV_03
+%PCI\VEN_1106.Rev4HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_04
+%PCI\VEN_1106.Rev4HostController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&REV_04
+%PCI\VEN_1106&DEV_3038&CC_0C0300.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&CC_0C0300
+%PCI\VEN_1106.Rev5CompanionController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&SUBSYS_12340925&REV_50
+%PCI\VEN_1106.Rev5CompanionController.DeviceDesc%=UHCI.Dev,PCI\VEN_1106&DEV_3038&REV_50
+;USB2 controllers
+%PCI\VEN_1106&DEV_3104.DeviceDesc%=EHCI.Dev,PCI\VEN_1106&DEV_3104
+
+; =================== Global ==================================
+
+[USB.CopyFiles.NT]
+usbhub.sys,,,0x100
+
+[HUB20.CopyFiles.NT]
+usbhub.sys,,,0x100
+usbd.sys,,,0x100
+
+[WMIGuidSecurity_AllReadAdminFul]
+security="O:BAG:BAD:(A;;GA;;;BA)(A;;GA;;;LS)(A;;GA;;;NS)(A;;GA;;;SY)(A;;GR;;;BU)"
+
+[WMIGuidSecurity_AllRights]
+security="O:BAG:BAD:(A;;0x12001f;;;BA)(A;;0x12001f;;;LS)(A;;0x12001f;;;NS)(A;;0x12001f;;;SY)(A;;0x12001f;;;BU)"

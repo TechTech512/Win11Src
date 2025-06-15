@@ -1,0 +1,67 @@
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%MSFT%
+PnpLockdown=1
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+acpi.sys 		= 3426
+
+[DestinationDirs]
+AcpiCopyFiles = 12
+
+[ControlFlags]
+BasicDriverOk = *
+ExcludeFromSelect = *
+
+[Manufacturer]
+%MSFT%=Microsoft
+
+[Microsoft]
+%*pnp0c08.DeviceDesc% = ACPI_Inst,*pnp0c08
+%*pnp0c08.DeviceDesc% = ACPI_Inst,pnp0c08
+
+[ACPI_Inst.NT]
+Copyfiles = AcpiCopyFiles
+AddReg = RP_REG_MUTE_IRQ
+Reboot
+
+[AcpiCopyFiles]
+acpi.sys,,,0x100
+
+[SignatureAttributes]
+acpi.sys=SignatureAttributes.DRM
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+[ACPI_Inst.NT.Services]
+AddService = ACPI,%SPSVCINST_ASSOCSERVICE%,ACPI_Service_Inst,ACPI_EventLogInstallSection
+
+[ACPI_Service_Inst]
+DisplayName    = %ACPI.SvcDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\ACPI.sys
+AddReg = acpi_ServiceInstallSection_AddReg
+
+[ACPI_EventLogInstallSection]
+AddReg=ACPI_EventLog_AddReg
+
+[ACPI_EventLog_AddReg]
+HKR,,"EventMessageFile",0x00020002,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\Drivers\acpi.sys"
+HKR,,"TypesSupported",0x00010003,7
+
+[RP_REG_MUTE_IRQ]
+HKR,,ResourcePickerExceptions,0,"IRQ:HAL"
+
+[acpi_ServiceInstallSection_AddReg]
+HKR,,Tag,0x00010001,2
+HKR,,Group,0x00000000,"Core"
+HKR,Parameters,PnpAsyncNewDevices,0x00010001,1
+HKR,Parameters,StorageSupportedFeatures,%REG_DWORD%,0x1

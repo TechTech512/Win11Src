@@ -1,0 +1,46 @@
+[Version]
+Signature      = "$WINDOWS NT$"
+Class          = Volume
+ClassGuid      = {71A27CDD-812A-11D0-BEC7-08002BE2092F}
+Provider       = %Msft%
+PnpLockdown    = 1
+
+[SourceDisksNames]
+3426           = windows cd
+
+[SourceDisksFiles]
+volume.sys         = 3426
+
+[DestinationDirs]
+volume_copyfiles   = 12
+
+[ControlFlags]
+BasicDriverOk      = *
+
+[Manufacturer]
+%Msft%             = MSFT
+
+[MSFT]
+%VolumeDeviceDesc% = volume_install,STORAGE\Volume
+
+[volume_install.NT]
+CopyFiles          = volume_copyfiles
+
+[volume_copyfiles]
+volume.sys,,,0x100
+
+[volume_install.NT.Services]
+AddService         = volume,2,volume_ServiceInstallSection
+
+[volume_ServiceInstallSection]
+DisplayName        = %VolumeServiceDesc%
+ServiceType        = 1
+StartType          = 0
+ErrorControl       = 3
+ServiceBinary      = %12%\volume.sys
+AddReg=storage_supported_features
+
+[storage_supported_features]
+; Support ByPass IO
+HKR, "Parameters", "StorageSupportedFeatures", 0x00010001, 0x1
+

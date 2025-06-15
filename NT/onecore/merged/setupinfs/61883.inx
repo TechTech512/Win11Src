@@ -1,0 +1,84 @@
+; 61883.INF
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+
+[Version]
+Signature="$Windows NT$"
+Class=61883
+ClassGuid={7EBEFBC0-3200-11d2-B4C2-00A0C9697D07}
+Provider=%Msft%
+PnpLockdown=1
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+61883.sys 		= 3426
+
+[DestinationDirs]
+61883_Unit.CopyFiles=10,system32\drivers
+
+[ControlFlags]
+; All PnP devices should be excluded from manual AddDevice Applet list
+ExcludeFromSelect=*
+
+; =================== Table of content =========================
+
+[Manufacturer]
+%MicrosoftMfg%=Microsoft
+
+[SignatureAttributes]
+61883.sys=SignatureAttributes.DRM
+
+; =================== Microsoft ========================
+
+[Microsoft]
+%61883Class.DeviceDesc%=61883_Unit,1394\A02D&10000
+%61883Class.DeviceDesc%=61883_Unit,1394\A02D&10001
+%V61883Class.DeviceDesc%=V61883_Unit,V1394\A02D&10000
+%V61883Class.DeviceDesc%=V61883_Unit,V1394\A02D&10001
+
+; dynamically loaded 61883
+
+[61883_Unit.NT]
+CopyFiles=61883_Unit.CopyFiles
+
+[61883_Unit.CopyFiles]
+61883.sys,,,0x100
+
+[61883_Unit.NT.Services]
+AddService = 61883, 2, 61883_Unit.ServiceInstall
+
+[61883_Unit.ServiceInstall]
+DisplayName = %61883_Unit.ServiceDesc%
+ServiceType   = 1
+StartType     = 3
+ErrorControl  = 1
+ServiceBinary = %12%\61883.sys
+
+; statically loaded 61883
+
+[V61883_Unit.NT]
+AddReg=V61883_Unit.DevDesc
+CopyFiles=61883_Unit.CopyFiles
+
+[V61883_Unit.NT.Services]
+AddService = 61883, 2, V61883_Unit.ServiceInstall
+
+[V61883_Unit.ServiceInstall]
+DisplayName = %V61883_Unit.ServiceDesc%
+ServiceType   = 1
+StartType     = 3
+ErrorControl  = 1
+ServiceBinary = %12%\61883.sys
+
+[V61883_Unit.DevDesc]
+HKR,VDL,VendorId,0x10001,0x50F2
+HKR,VDL,ModelId,0x10001,0x0
+HKR,VDL,SwVersion,0x10001,0x10001
+HKR,VDL,szVendorId,,%Msft%
+HKR,VDL,szModelId,,%61883.ModelID%
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+

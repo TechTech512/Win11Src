@@ -1,0 +1,336 @@
+@*:This file defines default security settings.
+@*:Please do not edit.  Instead, email kirksol with the requested change.
+@*:Thanks!
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+; Security Configuration Template for Security Configuration Editor
+;
+; Template Name:        DSUpT.INF
+; Template Version:     05.10.DT.0000
+;
+; Default Security for Windows NT 5.1 Terminal Servers that have been:
+; 1. Upgraded from NT4 Terminal Server OR
+; 2. Upgraded from Win2k Terminal Server that was running in App Mode.
+; NOT used to upgrade Win2k\Whistler Terminal Servers running in remote admin mode (DSUp.inf should be used for that)
+
+[Profile Description]
+%SCEDSUpProfileDescription%
+
+[version]
+signature="$CHICAGO$"
+revision=1
+
+[System Access]
+;----------------------------------------------------------------
+;Local Policies - Security Options
+;----------------------------------------------------------------
+LSAAnonymousNameLookup = 0
+
+
+;----------------------------------------------------------------
+;Event Log - Log Settings
+;----------------------------------------------------------------
+
+[System Log]
+RestrictGuestAccess = 1
+
+[Security Log]
+RestrictGuestAccess = 1
+
+[Application Log]
+RestrictGuestAccess = 1
+
+;----------------------------------------------------------------
+;Registry Values
+;----------------------------------------------------------------
+[Registry Values]
+;On upgrade, we can only set reg values that meet the following criteria:
+;a.) value did not exist on previous releases
+;b.) default setting was changed from a less secure to a more secure state
+
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\UndockWithoutLogon=4,1
+
+MACHINE\System\CurrentControlSet\Control\Lsa\DisableDomainCreds=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\EveryoneIncludesAnonymous=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\ForceGuest=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymousSAM=4,1
+
+MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths\Machine=8,Add:,Software\Microsoft\Windows NT\CurrentVersion\Print,Software\Microsoft\Windows NT\CurrentVersion\Windows,Remove:,System\CurrentControlSet\Control\ProductOptions,System\CurrentControlSet\Control\Server Applications,Software\Microsoft\Windows NT\CurrentVersion
+MACHINE\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths\Machine=8,Add:,System\CurrentControlSet\Control\ProductOptions,System\CurrentControlSet\Control\Server Applications,Software\Microsoft\Windows NT\CurrentVersion
+
+MACHINE\System\CurrentControlSet\Control\Session Manager\Kernel\ObCaseInsensitive=4,1
+MACHINE\System\CurrentControlSet\Control\Session Manager\ProtectionMode=4,1
+
+MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RestrictNullSessAccess=4,1
+
+MACHINE\System\CurrentControlSet\Services\LDAP\LDAPClientIntegrity=4,1
+MACHINE\System\CurrentControlSet\Services\LDAP\LDAPClientConfidentiality=4,1
+
+MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters\RequireSignOrSeal=4,1
+
+; remove lsarpc, samr and netlogon from anonymously accessible pipes
+MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\NullSessionPipes=8,Remove:,lsarpc,samr,netlogon
+
+;We cannot set the following values which were new for Win2k, because
+;Win2k customers may have already configured them differently.
+;Therefore, the following may not be configured on upgrade from NT4.
+;
+;MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SecurityLevel=4,0
+;MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SetCommand=4,0
+;MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ScRemoveOption=1,0
+
+
+[Privilege Rights]
+;
+;World                          S-1-1-0
+;
+;NT Authority                   S-1-5
+;TERMINAL_SERVER                13
+;LOCAL_SERVICE                  19
+;NETWORK_SERVICE                20
+;
+;Built-In Domain SubAuthority = S-1-5-32
+;ADMINISTRATORS                 544
+;USERS                          545
+;GUESTS                         546
+;POWER_USERS  (DEPRECATED)
+;ACCOUNT_OPS                    548
+;SYSTEM_OPS                     549
+;PRINT_OPS                      550
+;BACKUP_OPS                     551
+;REPLICATOR                     552
+;RAS_SERVERS                    553
+;PREW2KCOMPACCESS               554
+;REMOTE_DESKTOP_USERS           555
+;NETWORK_CONFIGURATION_OPS      556
+;ALL SERVICES			S-1-5-80-0
+;
+;WdiServiceHost                 S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+;All Restricted Services		S-1-5-99-0
+;PrintSpoolerService			S-1-5-99-216390572-1995538116-3857911515-2404958512-2623887229
+;
+SeAssignPrimaryTokenPrivilege = Add:, *S-1-5-19, *S-1-5-20
+SeAuditPrivilege = Add:, *S-1-5-19, *S-1-5-20
+SeBatchLogonRight = Add:, *S-1-5-32-544, *S-1-5-32-551
+SeChangeNotifyPrivilege = Add:, *S-1-5-19, *S-1-5-20
+SeCreateGlobalPrivilege = Add:, *S-1-5-6, *S-1-5-32-544, *S-1-5-19, *S-1-5-20
+SeCreateSymbolicLinkPrivilege = Add:, *S-1-5-32-544
+SeImpersonatePrivilege = Add:, *S-1-5-6, *S-1-5-32-544, *S-1-5-19, *S-1-5-20, *S-1-5-99-216390572-1995538116-3857911515-2404958512-2623887229
+SeIncreaseBasePriorityPrivilege = Add:, *S-1-5-90-0
+SeIncreaseQuotaPrivilege = Add:, *S-1-5-19, *S-1-5-20
+SeIncreaseWorkingSetPrivilege = Add:, *S-1-5-32-545
+SeInteractiveLogonRight = Remove:, &-501
+SeManageVolumePrivilege = Add:, *S-1-5-32-544
+SeRemoteInteractiveLogonRight = Add:, *S-1-5-32-544, *S-1-5-32-555
+SeRemoteShutdownPrivilege = Remove:, *S-1-5-32-545, *S-1-1-0
+SeShutdownPrivilege = Remove:, *S-1-5-32-545, *S-1-1-0
+SeSystemProfilePrivilege = Add:, *S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+SeSystemTimePrivilege = Add:, *S-1-5-19, Remove:, *S-1-5-20
+SeTimeZonePrivilege = Add:, *S-1-5-32-544, *S-1-5-19
+SeServiceLogonRight = Add:, *S-1-5-80-0, *S-1-5-99-0
+
+;Undock was added in Win2k.  Not adding Users because:
+;a.) Win2k customers may have justifiably removed them.
+SeUndockPrivilege = Add:, *S-1-5-32-544
+
+;[Group Membership]
+;During upgrade, use net api's to
+;1 - add Authenticated Users and Interactive into the Users group
+
+
+
+[Service General Setting]
+;Note: startup type should not be configured during setup\dcpromo.
+;autostarted on workstations and servers, standalone or joined
+Browser,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+TrkWks,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+Dnscache,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;NO)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+PolicyAgent,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+dmserver,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+PlugPlay,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+Spooler,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+ProtectedStorage,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+RpcSs,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)(A;;CCLCSWRPLO;;;BU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+NtmsSvc,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+seclogon,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+SamSs,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLO;;;IU)(A;;CCLCSWLO;;;BU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+lanmanserver,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+SENS,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+Schedule,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+Sysmonlog,,"D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCRPLOCR;;;LU)S:AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+LmHosts,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+LanmanWorkstation,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+RemoteRegistry,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+ClipSrv,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+NetDDE,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+NetDDEdsdm,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+EventSystem,,"D:(A;;CCLCSWRPLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+;Not autostarted if machine is standalone
+;Netlogon,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;W32Time,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)(A;;CCLCSWRPLO;;;BU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+;Server Only Services
+Dfs,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+LicenseService,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+;IIS Specific Services - Leave them alone
+;IISADMIN,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;W3SVC,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;MSFTPSVC,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;SMTPSVC,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+
+[Registry Keys]
+;CAPABILITY_SID_RegistryRead - S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681 used for LPAC
+
+;Not same as parent, and this is the target of a symlink - set explicitly.
+
+
+"MACHINE\SOFTWARE\Microsoft\ADs\Providers\LDAP\Extensions",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\EnterpriseCertificates",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\OLAP Server\CurrentVersion\SECURITY",1,"D:AR"
+"MACHINE\SOFTWARE\Microsoft\SystemCertificates",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\SystemCertificates\Authroot",2,"D:AI(A;CIOI;GA;;;S-1-5-80-242729624-280608522-2219052887-3187409060-2225943459)"
+
+"MACHINE\SOFTWARE\Microsoft\Windows",0,"D:AR"
+
+"MACHINE\Software\Microsoft\Windows\CurrentVersion",0,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+
+;The following keys need to be writable by TERMINAL_SERVER_USER for App-Compat
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GRGWSD;;;S-1-5-13)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GRGWSD;;;S-1-5-13)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SharedDLLs",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GRGWSD;;;S-1-5-13)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GRGWSD;;;S-1-5-13)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+
+;The following keys do not exist when we run.
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy",1,"D:AR"
+"MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies",1,"D:AR"
+"MACHINE\SOFTWARE\Microsoft\SMS",1,"D:AR"
+
+"MACHINE\SOFTWARE\Microsoft\Windows NT",0,"D:AR"
+
+"MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EFS",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PerHwIdStorage",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Ports",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole",2,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing",2,"D:P(A;CI;GRGWSD;;;LS)(A;CI;GRGWSD;;;NS)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)"
+
+"MACHINE\System",0,"D:P(A;CI;GR;;;BU)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)(A;CI;GR;;;S-1-15-2-1)(A;CI;GR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+
+"MACHINE\SYSTEM\Clone",1,"D:AR"
+
+"MACHINE\SYSTEM\ControlSet001",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet002",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet003",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet004",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet005",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet006",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet007",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet008",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet009",1,"D:AR"
+"MACHINE\SYSTEM\ControlSet010",1,"D:AR"
+
+"MACHINE\SYSTEM\CurrentControlSet\Control\Class",1,"D:AR"
+
+"MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layouts",2,"D:(A;CI;GR;;;WD)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\LSA\JD",2,"D:P(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\LSA\Skew1",2,"D:P(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\LSA\GBG",2,"D:P(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\LSA\Data",2,"D:P(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CI;GA;;;CO)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\Nsi",2,"D:P(A;CI;KR;;;BU)(A;CI;KA;;;BA)(A;CI;KA;;;SY)(A;CI;CCDCLCSWRPWPSDRC;;;NS)(A;CI;CCDCLCSWRPWPSDRC;;;LS)(A;CI;CCDCLCSWRPSDRC;;;NO)(A;CI;CCDCLCSWRPWPSDRC;;;S-1-5-80-2940520708-3855866260-481812779-327648279-1710889582)(A;CIIO;RC;;;S-1-3-4)(A;CI;KR;;;S-1-15-2-1)(A;CI;KR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\Nsi\{eb004a00-9b1a-11d4-9123-0050047759bc}\4",2,"D:P(A;CI;CCDCLCSWRPRC;;;AU)(A;CI;CCDCLCSWRPWPSDRC;;;LS)(A;CI;CCDCLCSWRPWPSDRC;;;NS)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CIIO;RC;;;S-1-3-4)(A;CI;KR;;;S-1-15-2-1)(A;CI;KR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\Nsi\{eb004a01-9b1a-11d4-9123-0050047759bc}\4",2,"D:P(A;CI;CCDCLCSWRPRC;;;AU)(A;CI;CCDCLCSWRPWPSDRC;;;LS)(A;CI;CCDCLCSWRPWPSDRC;;;NS)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CIIO;RC;;;S-1-3-4)(A;CI;KR;;;S-1-15-2-1)(A;CI;KR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+"MACHINE\SYSTEM\CurrentControlSet\Control\Nsi\{eb004a1C-9b1a-11d4-9123-0050047759bc}\0",2,"D:P(A;CI;CCDCLCSWRPRC;;;AU)(A;CI;CCDCLCSWRPWPSDRC;;;LS)(A;CI;CCDCLCSWRPWPSDRC;;;NS)(A;CI;GA;;;BA)(A;CI;GA;;;SY)(A;CIIO;RC;;;S-1-3-4)(A;CI;KR;;;S-1-15-2-1)(A;CI;KR;;;S-1-15-3-1024-1065365936-1281604716-3511738428-1654721687-432734479-3232135806-4053264122-3456934681)"
+
+"MACHINE\SYSTEM\CurrentControlSet\Enum",1,"D:AR"
+"MACHINE\SYSTEM\CurrentControlSet\Hardware Profiles",1,"D:AR"
+
+;Don't whack more restrictive security subkeys.
+"MACHINE\SYSTEM\CurrentControlSet\Services",0,"D:AR"
+
+;Set security subkey permissions for those services created via default hives
+"MACHINE\SYSTEM\CurrentControlSet\Services\AppMgmt\Security",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+"MACHINE\SYSTEM\CurrentControlSet\Services\kdc\Security",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+"MACHINE\SYSTEM\CurrentControlSet\Services\LicenseInfo",2,"D:AR(A;CI;CCLCSWRPRC;;;NS)(A;CIIO;CCDCLCSWRPRC;;;NS)"
+"MACHINE\SYSTEM\CurrentControlSet\Services\SCardSvr\Security",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+
+;Set security subkey permissions for those services created in GUI-mode setup before SCE runs
+"MACHINE\SYSTEM\CurrentControlSet\Services\STISvc\Security",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+
+"MACHINE\SYSTEM\CurrentControlSet\Services\SysmonLog\Log Queries",2,"D:(A;CI;GA;;;NS)(A;CI;CCDCLCSWSDRC;;;LU)"
+
+"USERS\.DEFAULT\SOFTWARE\Microsoft\SystemCertificates\Root\ProtectedRoots",1,"D:AR"
+
+[File Security]
+
+
+;---------------------------------------------------------------------------------------
+;System Drive
+;---------------------------------------------------------------------------------------
+;SetupSecurity will contain the new root acl.  Ignore docs and settings if it's reapplied (e.g. on conversion from FAT)
+; Directories that might not exist when security is applied; but are listed here
+; so that they get secured correctly on converting the file system to NTFS
+
+
+;---------------------------------------------------------------------------------------------
+;Program Files
+;---------------------------------------------------------------------------------------------
+"%SceInfCommonProgramFiles%\SpeechEngines\Microsoft\TTS",2,"D:P(A;CIOI;GRGX;;;BU)(A;CIOI;GA;;;BA)(A;CIOI;GA;;;SY)(A;CIOI;GA;;;CO)"
+
+;---------------------------------------------------------------------------------------------
+;Win64 ProgramFiles Directory
+;---------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------
+; ProgramData Folder (Typically \ProgramData)
+;---------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------------------
+;System Root (Typically \WINDOWS)
+;---------------------------------------------------------------------------------------------
+
+
+;Profile for LocalService and NetworkService, moved from Users in Longhorn, creator specifies security
+"%SystemRoot%\ServiceProfiles\LocalService",1,"D:P(A;CIOI;GA;;;BA)(A;CIOI;GA;;;SY)(A;CIOI;GA;;;LS)"
+"%SystemRoot%\ServiceProfiles\NetworkService",1,"D:P(A;CIOI;GA;;;BA)(A;CIOI;GA;;;SY)(A;CIOI;GA;;;NS)"
+
+
+;---------------------------------------------------------------------------------------------
+;System Directory (Typically \Windows\System32)
+;---------------------------------------------------------------------------------------------
+
+
+;Profile for system account - moved from Docs and Settings in Whistler. Creator specifies security.
+
+;Directories with no legacy to preserve. Different from parent.
+
+
+;Directories that do not exist when security applied during clean-install - Creator specifies directory security.
+;We explicitly ignore so as not to whack the component-specified DIRECTORY security on upgrade or reapplication of defaults.
+"%SystemDirectory%\appmgmt",1,"D:AR"
+
+; Directories that might not exist when security is applied; but are listed here
+; so that they get secured correctly on converting the file system to NTFS
+
+
+;-----------------------------------------------------------------------------------------
+; SysWOW64 directories
+;-----------------------------------------------------------------------------------------
+
+"%Systemroot%\SysWOW64\Export",2,"D:P(A;CIOI;GRGX;;;BU)(A;CIOI;GA;;;BA)(A;CIOI;GA;;;SY)(A;CIOI;GA;;;CO)"
+
+;-----------------------------------------------------------------------------------------
+;Individual File Settings.
+;-----------------------------------------------------------------------------------------
+"%Systemroot%\repair\default",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+"%Systemroot%\repair\ntuser.dat",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+"%Systemroot%\repair\sam",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+"%Systemroot%\repair\security",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+"%Systemroot%\repair\software",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+"%Systemroot%\repair\system",2,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+

@@ -1,0 +1,55 @@
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Ramdisk
+ClassGuid={9D6D66A6-0B0C-4563-9077-A0E9A7955AE4}
+Provider=%MS%
+PnpLockdown=1
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+ramdisk.sys 		= 3426
+
+[DestinationDirs]
+BusCopyfiles = 12
+
+[BusCopyfiles]
+ramdisk.sys,,,0x100
+
+[Manufacturer]
+%MS% = RamdiskDevice
+
+[RamdiskDevice]
+%RamdiskBusDesc% = BusInstall, Ramdisk, DetectedInternal\Ramdisk, Detected\Ramdisk, Root\Ramdisk
+%RamdiskVolumeDesc% = VolumeInstall, Ramdisk\RamVolume
+
+[ControlFlags]
+ExcludeFromSelect = Ramdisk\RamVolume
+
+[BusInstall.NT]
+CopyFiles = BusCopyfiles
+
+[BusInstall.NT.Services]
+AddService = Ramdisk, %SPSVCINST_ASSOCSERVICE%, BusServiceInst
+
+[VolumeInstall.NT]
+
+[VolumeInstall.NT.Services]
+AddService = , %SPSVCINST_ASSOCSERVICE% ; null service installation
+
+[BusServiceInst]
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+DisplayName   = %RamdiskServiceDesc%
+ServiceBinary = %12%\ramdisk.sys
+AddReg        = BusAddReg
+
+[BusAddReg]
+HKR, "Debug", "DebugComponents",   %REG_DWORD%, 0x7FFFFFFF
+HKR, "Debug", "DebugLevel",        %REG_DWORD%, 0x00000005
+HKR, , BootFlags, %REG_DWORD_NO_CLOBBER%, 0x180 ; CM_SERVICE_WINPE_BOOT_LOAD | CM_SERVICE_RAM_DISK_BOOT_LOAD
+

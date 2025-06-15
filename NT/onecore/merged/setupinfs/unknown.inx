@@ -1,0 +1,24 @@
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Unknown
+ClassGuid={4D36E97E-E325-11CE-BFC1-08002BE10318}
+Provider=%MSFT%
+PnpLockdown=1
+
+[ControlFlags]
+BasicDriverOk=*
+ExcludeFromSelect=*
+
+[Manufacturer]
+%UnknownMfg% = Unknown
+
+[Unknown]
+%*pnpffff.DeviceDesc% = UnsupportedDev, *pnpffff
+%*pnpffff.DeviceDesc% = UnsupportedDev, ACPI\MGMT180
+
+[UnsupportedDev]
+
+[UnsupportedDev.Services]
+AddService = , %SPSVCINST_ASSOCSERVICE%                 ; null service install
+

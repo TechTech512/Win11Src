@@ -1,0 +1,121 @@
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+[Version]
+Signature="$Windows NT$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+ClassVer=2.0
+Provider=%Msft%
+PnpLockdown=1
+
+[ControlFlags]
+ExcludeFromSelect=*
+PreConfigureDriver=*
+
+[Manufacturer]
+%Msft%=Microsoft
+
+[Microsoft]
+%MSPCLOCK.DeviceDesc%=MSPCLOCK,SW\{97ebaacc-95bd-11d0-a3ea-00a0c9223196}
+%MSPQM.DeviceDesc%=MSPQM,SW\{DDF4358E-BB2C-11D0-A42F-00A0C9223196}
+%MSKSSRV.DeviceDesc%=MSKSSRV,SW\{96E080C7-143C-11D1-B40F-00A0C9223196}
+%MSTEE.DeviceDesc%=MSTEE,SW\{cfd669f1-9bc2-11d0-8299-0000f822fe8a}
+%PlugIn_KSOlay%=KSOLAY.Installation    ; for use by Includes/Needs
+
+[KSOLAY.Installation]
+AddReg=KSOLAY.AddReg
+
+;-------------------------------------------------------------------------------
+
+[KSOLAY.AddReg]
+HKCR,CLSID\%KSOLAY_GUID%,,,%PlugIn_KSOlay%
+HKCR,CLSID\%KSOLAY_GUID%\InprocServer32,,,ksproxy.ax
+HKCR,CLSID\%KSOLAY_GUID%\InprocServer32,ThreadingModel,,Both
+HKLM,System\CurrentControlSet\Control\MediaInterfaces\%KSOLAY_GUID%,,,%PlugIn_KSOlay%
+
+;-------------------------------------------------------------------------------
+
+[MSPCLOCK.NT]
+AddReg=MSPCLOCK.AddReg
+
+[MSPCLOCK.AddReg]
+HKR,,DevLoader,,*NTKERN
+HKR,,NTMPDriver,,MSPCLOCK.sys
+
+[MSPCLOCK.NT.Services]
+AddService=MSPCLOCK, 0x00000002, MSPCLOCK.ServiceInstall
+
+[MSPCLOCK.ServiceInstall]
+DisplayName=%MSPCLOCK.DeviceDesc%
+ServiceType=%SERVICE_KERNEL_DRIVER%
+StartType=%SERVICE_DEMAND_START%
+ErrorControl=%SERVICE_ERROR_NORMAL%
+ServiceBinary=%12%\MSPCLOCK.sys
+LoadOrderGroup=Extended Base
+
+;-------------------------------------------------------------------------------
+
+
+[MSPQM.NT]
+AddReg=MSPQM.AddReg
+
+[MSPQM.AddReg]
+HKR,,DevLoader,,*NTKERN
+HKR,,NTMPDriver,,MSPQM.sys
+
+[MSPQM.NT.Services]
+AddService=MSPQM, 0x00000002, MSPQM.ServiceInstall
+
+[MSPQM.ServiceInstall]
+DisplayName=%MSPQM.DeviceDesc%
+ServiceType=%SERVICE_KERNEL_DRIVER%
+StartType=%SERVICE_DEMAND_START%
+ErrorControl=%SERVICE_ERROR_NORMAL%
+ServiceBinary=%12%\MSPQM.sys
+LoadOrderGroup=Extended Base
+
+;-------------------------------------------------------------------------------
+
+[MSKSSRV.NT]
+AddReg=MSKSSRV.AddReg
+
+[MSKSSRV.AddReg]
+HKR,,DevLoader,,*NTKERN
+HKR,,NTMPDriver,,MSKSSRV.sys
+
+[MSKSSRV.NT.HW]
+AddReg = MSKSSRV.HW.AddReg
+
+[MSKSSRV.HW.AddReg]
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GRGWGX;;;WD)(A;;GRGX;;;RC)(A;;GRGWGX;;;LS)"
+
+[MSKSSRV.NT.Services]
+AddService=MSKSSRV, 0x00000002, MSKSSRV.ServiceInstall
+
+[MSKSSRV.ServiceInstall]
+DisplayName=%MSKSSRV.DeviceDesc%
+ServiceType=%SERVICE_KERNEL_DRIVER%
+StartType=%SERVICE_DEMAND_START%
+ErrorControl=%SERVICE_ERROR_NORMAL%
+ServiceBinary=%12%\MSKSSRV.sys
+LoadOrderGroup=Extended Base
+
+;-------------------------------------------------------------------------------
+
+[MSTEE.NT]
+AddReg=MSTEE.AddReg
+
+[MSTEE.AddReg]
+HKR,,DevLoader,,*NTKERN
+HKR,,NTMPDriver,,MSTEE.sys
+
+[MSTEE.NT.Services]
+AddService=MSTEE, 0x00000002, MSTEE.ServiceInstall
+
+[MSTEE.ServiceInstall]
+DisplayName=%MSTEE.DeviceDesc%
+ServiceType=%SERVICE_KERNEL_DRIVER%
+StartType=%SERVICE_DEMAND_START%
+ErrorControl=%SERVICE_ERROR_NORMAL%
+ServiceBinary=%12%\MSTEE.sys
+LoadOrderGroup=Extended Base
+

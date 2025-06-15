@@ -1,0 +1,64 @@
+; Display.inf
+;
+; Installs the in-box Basic Display Adapter driver based on device class PnP matches
+; Inherits service via needs/includes from the non-PnP driver
+;
+
+[Version]
+Signature = "$Windows NT$"
+Class = Display
+ClassGUID = {4D36E968-E325-11CE-BFC1-08002BE10318}
+Provider = %MS%
+PnpLockDown = 1
+
+[ControlFlags]
+ExcludeFromSelect = *
+PreConfigureDriver = *
+
+[Manufacturer]
+%Std% = Std.Mfg
+
+[Std.Mfg]
+%MSBDAName% = MSBDA,PCI\CC_0300
+%MSBDAName% = MSBDA,PCI\CC_0301
+%MSBDAName% = MSBDA,PCI\CC_0380
+%MSBDAName% = MSBDA,ACPI\CLS_0003&SUBCLS_0000
+%MSBDAName% = MSBDA,ACPI\CLS_0003&SUBCLS_0001
+%MSBDAName% = MSBDA,ACPI\CLS_0003&SUBCLS_0003
+%MSBDAName% = MSBDA,ACPI\CLS_0003&SUBCLS_0080
+
+;
+; Basic Display Driver section
+;
+
+[MSBDA]
+FeatureScore = FB
+AddProperty = MSBDA_AddProp
+DelReg = MSBDA_SoftwareCleanup
+ExcludeID = PCI\VEN_1414&DEV_5353
+
+[MSBDA_AddProp]
+GenericDriverInstalled,,,,1
+
+[MSBDA_SoftwareCleanup]
+HKR,, InstalledDisplayDrivers
+HKR,, UserModeDriverName
+HKR,, UserModeDriverNameWoW
+HKR,, UserModeDriverGUID
+HKR,, OpenGLDriverName
+HKR,, OpenGLDriverNameWoW
+HKR,, OpenGLFlags
+HKR,, OpenGLFlagsWoW
+HKR,, OpenGLVersion
+HKR,, OpenGLVersionWoW
+
+;
+; Service Installation
+; Service settings and the files required are inherited from the fallback driver
+;
+
+[MSBDA.Services]
+include=basicdisplay.inf
+needs=MSBDD_Fallback.Services
+
+

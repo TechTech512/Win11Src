@@ -1,0 +1,592 @@
+;
+; INPUT.INF  -- This file contains descriptions of USB HID devices
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=HIDClass
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider=%MSFT%
+PnpLockdown=1
+
+[ControlFlags]
+ExcludeFromSelect = *
+RequestAdditionalSoftware = *
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+hidusb.sys   = 3426
+hidclass.sys = 3426
+hidparse.sys = 3426
+
+[DestinationDirs]
+HID_Inst.CopyFiles.NT = 12
+
+[Manufacturer]
+
+; Keyboards
+;
+%MSMfg%=MICROSOFT_KBD
+%ALPSMfg%=ALPS_KBD
+%CherryMfg%=CHERRY_KBD
+%FujitsuMfg%=FUJITSU_KBD
+%KeytronicMfg%=KEYTRONIC_KBD
+%PhilipsMfg%=PHILIPS_KBD
+%SilitekMfg%=SILITEK_KBD
+%NMBMfg%=NMB_KBD
+%STSLMfg%=STSL_KBD
+%AcerMfg%=ACER_KBD
+%ChiconyMfg%=CHICONY_KBD
+%BTCMfg%=BTC_KBD
+%FOCUSMfg%=FOCUS_KBD
+%JingMoldMfg%=JINGMOLD_KBD
+%MaxiSwitchMfg%=MAXISWITCH_KBD
+%MontereyMfg%=MONTEREY_KBD
+%OrtekMfg%=ORTEK_KBD
+%SamsungMfg%=SAMSUNG_KBD
+%ForwardMfg%=FORWARD_KBD
+%SUHMfg%=SUH_KBD
+%SejinMfg%=SEJIN_KBD
+%SUPERGATEMfg%=SUPERGATE_KBD
+%SolidYearMfg%=SOLIDYEAR_KBD
+%NECMfg%=NEC_KBD
+%QtronixMfg%=QTRONIX_KBD
+
+; Mice
+;
+%MSMfg%   =MSMice               ; Microsoft
+%LogiMfg% =LogiMice             ; Logitech
+%CypressMfg% =CypressMice       ; Cypress
+%ELOMfg%  =ELOMice              ; ELO Touchsystems
+%ChiconyMfg% =ChiconyMice       ; Chicony
+%NMBMfg%  =NMBMice              ; NMB
+%STSLMfg%  =STSLMice            ; STSL
+%SUPERGATEMfg%  =SUPERGATEMice  ; SUPGERGATE
+%BTCMfg%  =BTCMice
+%FinePointMfg%=FinePoint
+%FocusMfg%=FOCUSMice
+%JingMoldMfg%=JINGMOLDMice
+%MaxiSwitchMfg%=MAXISWITCHMice
+%MontereyMfg%=MONTEREYMice
+%OrtekMfg%=ORTEKMice
+%KeytronicMfg%=KEYTRONICMice
+%GeniusMfg%=GeniusMice
+%ItacMfg% =ItacMice             ; Itac Systems
+%SamsungMfg%=SamsungMice        ; Samsung
+%ForwardMfg%=ForwardMice        ; Forward
+%SUHMfg%=SUHMice                ; SUH DART
+%PhilipsMfg%=PhilipsMice        ; Philips
+%AnchorMfg%=AnchorMice          ; Anchor
+%SolidYearMfg%=SOLIDYEARMice    ; Solid Year
+%NECMfg%=NECMice                ; NEC
+%FujitsuMfg%=FUJITSUMice        ; Fujitsu
+%SejinMfg%=SEJINMice            ; Sejin
+%DexinMfg%=DexinMice            ; Dexin
+%AcerMfg%=AcerMice              ; Acer
+%SilitekMfg%=SilitekMice        ; Silitek
+%QtronixMfg%=QtronixMice        ; Qtronix
+
+; Game controllers
+;
+%MSMfg%=MicrosoftGame
+%LogiMfg%=LogitechGame
+%ThrustmasterMfg%=ThrustmasterGame
+%GeniusMfg%=GeniusGame
+%GuillemotMfg%=GuillemotGame
+%StdMfg%=Standard
+
+;  HID audio control devices
+;
+%MSMfg%=MicrosoftHid           ; Microsoft
+%AltecMfg%=AltecAudio          ; Altec
+%PhilipsMfg%=PhilipsAudio      ; Philips
+%LabtecMfg%=LabtecAudio        ; Labtec
+%NECMfg%=NECAudio              ; NEC
+%YamahaMfg%=YamahaAudio        ; Yamaha
+
+; HID monitor control devices
+;
+%CTXMfg%=CTXMonitor
+%LiteOnMfg%=LiteOnMonitor
+%MitsubishiMfg%=MitsubishiMonitor
+%NokiaMfg%=NokiaMonitor
+
+; HID UPS devices
+;
+%APCMfg%=APC_UPS
+%MGEMfg%=MGE_UPS
+
+[Standard]
+; Raw HID Collections
+; Generic support (friendly name only) no service added, no functionality added, just a name
+;
+%HID_DEVICE% =                            HID_Raw_Inst,, HID_DEVICE
+; Vendor defined range
+%HID_DEVICE_VENDOR_DEFINED_RANGE% =       HID_Raw_Inst,, HID_DEVICE_UPR:FF00-FFFF
+; Generic Desktop
+%HID_DEVICE_SYSTEM_GAME% =                HID_Raw_Inst,, HID_DEVICE_SYSTEM_GAME     ; Joystick(u_4)/Gamepad (u_5)
+%HID_DEVICE_SYSTEM_CONTROL% =             HID_Raw_Inst,, hid_device_up:0001_u:0080
+%HID_WIRELESS_RADIO_CONTROLS% =           HID_Raw_Inst,, hid_device_up:0001_u:000C
+%HID_DEVICE_SYSTEM_MULTI_AXIS_CONTROLLER_DEVICE% = HID_Raw_Inst,, hid_device_up:0001_u:000E
+; Telephone
+%HID_DEVICE_PHONE% =                      HID_Raw_Inst,, hid_device_up:000b_u:0001
+%HID_DEVICE_HANDSET% =                    HID_Raw_Inst,, hid_device_up:000b_u:0004
+%HID_DEVICE_HEADSET% =                    HID_Raw_Inst,, hid_device_up:000b_u:0005
+; Digitizers
+%HID_DEVICE_DIGITIZER% =                  HID_Raw_Inst,, hid_device_up:000d_u:0001
+%HID_DEVICE_PEN% =                        HID_Raw_Inst,, hid_device_up:000d_u:0002
+%HID_DEVICE_LIGHT_PEN% =                  HID_Raw_Inst,, hid_device_up:000d_u:0003
+%HID_DEVICE_TOUCH_SCREEN% =               HID_Raw_Inst,, hid_device_up:000d_u:0004
+%HID_DEVICE_TOUCH_PAD% =                  HID_Raw_Inst,, hid_device_up:000d_u:0005
+%HID_DEVICE_WHITE_BOARD% =                HID_Raw_Inst,, hid_device_up:000d_u:0006
+; Barcode scanner
+%HID_DEVICE_BAR_CODE_BADGE_READER% =      HID_Raw_Inst,, hid_device_up:008c_u:0001
+; Weighing Devices
+%HID_DEVICE_WEIGHING_DEVICE% =            HID_Raw_Inst,, hid_device_up:008d_u:0001
+
+; Generic HID Interface (HidUsb as service)
+;
+%HID.DeviceDesc% = HID_Inst,,GENERIC_HID_DEVICE,USB\Class_03&SubClass_01,USB\Class_03
+
+; Used by include/needs so that WakeScreenOnTouch sections can be used on onecore images
+;
+%IncludeNeedsDummyDevice.DeviceDesc% = WakeScreenOnTouch
+
+; Keyboards
+;
+[MICROSOFT_KBD]
+%USB\VID_045E&PID_000B.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_000B
+%USB\VID_045E&PID_001D&MI_00.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_001D&MI_00
+%USB\VID_045E&PID_002B&MI_00.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_002B&MI_00
+%USB\VID_045E&PID_002D&MI_00.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_002D&MI_00
+%USB\VID_045E&PID_0048&MI_00.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0048&MI_00
+%USB\VID_045E&PID_005C&MI_00.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_005C&MI_00
+
+[ALPS_KBD]
+%USB\VID_0433&PID_ABAB.DeviceDesc%=HID_Inst,, USB\VID_0433&PID_ABAB
+%USB\VID_044e&PID_1104.DeviceDesc%=HID_Inst,, USB\VID_044e&PID_1104
+
+[CHERRY_KBD]
+%USB\VID_046A&PID_0001.DeviceDesc%=HID_Inst,, USB\VID_046A&PID_0001
+
+[KEYTRONIC_KBD]
+%USB\VID_03F9.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_03F9&PID_0100
+%USB\VID_03F9.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_03F9&PID_0101
+%USB\VID_03F9.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_03F9&PID_0102&MI_00
+
+[PHILIPS_KBD]
+%USB\VID_0471&PID_0601&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0471&PID_0601&MI_00
+%USB\VID_0471.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_0471&PID_0401
+%USB\VID_0471.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_0471&PID_0402&MI_00
+
+[FUJITSU_KBD]
+%USB\VID_0430&PID_0002&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0430&PID_0002&MI_00
+%USB\VID_04c5&PID_1020&MI_00.DeviceDesc%=HID_Inst,, USB\VID_04c5&PID_1020&MI_00
+%USB\VID_04c5&PID_1020&MI_01.DeviceDesc%=HID_Inst,, USB\VID_04c5&PID_1020&MI_01
+%USB\VID_04c5&PID_1018.DeviceDesc%=HID_Inst,, USB\VID_04c5&PID_1018
+
+[SILITEK_KBD]
+%USB\VID_047B.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_047B&PID_0001
+%USB\VID_047B.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_047B&PID_0002&MI_00
+
+[NMB_KBD]
+; %USB\VID_0446&PID_6782.DeviceDesc%=HID_Inst,, USB\VID_0446&PID_6782
+%USB\VID_0446&PID_6781&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0446&PID_6781&MI_00
+
+[STSL_KBD]
+%USB\VID_05FA&PID_3302.DeviceDesc%=HID_Inst,, USB\VID_05FA&PID_3302
+%USB\VID_05FA.USBKeyboardPS2Mouse.DeviceDesc%=HID_Inst,, USB\VID_05FA&PID_3301&MI_00
+%USB\VID_05FA.USBKeyboardPS2Mouse.DeviceDesc%=HID_Inst,, USB\VID_05FA&PID_3303&MI_00
+
+[ACER_KBD]
+%USB\VID_04A5&PID_0001.DeviceDesc%=HID_Inst,, USB\VID_04A5&PID_0001
+%USB\VID_04A5&PID_0002.DeviceDesc%=HID_Inst,, USB\VID_04A5&PID_0002
+%USB\VID_04A5&PID_0003&MI_00.DeviceDesc%=HID_Inst,, USB\VID_04A5&PID_0003&MI_00
+
+[CHICONY_KBD]
+%USB\VID_04F2.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_04F2&PID_0002
+%USB\VID_04F2.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_04F2&PID_0001&MI_00
+
+[BTC_KBD]
+%USB\VID_046E.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_046E&PID_0100
+%USB\VID_046E.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_046E&PID_6782&MI_00
+
+[FOCUS_KBD]
+%USB\VID_05B2.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_05B2&PID_6200
+%USB\VID_05B2.USBKeyboard.DeviceDesc%=HID_Inst,, USB\VID_05B2&PID_7200&MI_00
+
+[JINGMOLD_KBD]
+%USB\VID_05AF&PID_9167.DeviceDesc%=HID_Inst,, USB\VID_05AF&PID_9167
+%USB\VID_05AF&PID_9267&MI_00.DeviceDesc%=HID_Inst,, USB\VID_05AF&PID_9267&MI_00
+
+[MAXISWITCH_KBD]
+%USB\VID_04C3&PID_1101.DeviceDesc%=HID_Inst,, USB\VID_04C3&PID_1101
+%USB\VID_04C3&PID_1102&MI_00.DeviceDesc%=HID_Inst,, USB\VID_04C3&PID_1102&MI_00
+%USB\VID_04C3&PID_2101.DeviceDesc%=HID_Inst,, USB\VID_04C3&PID_2101
+%USB\VID_04C3&PID_2102&MI_00.DeviceDesc%=HID_Inst,, USB\VID_04C3&PID_2102&MI_00
+
+[MONTEREY_KBD]
+%USB\VID_0566&PID_2800.DeviceDesc%=HID_Inst,, USB\VID_0566&PID_2800
+%USB\VID_0566&PID_2801&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0566&PID_2801&MI_00
+
+[SAMSUNG_KBD]
+%USB\VID_055D&PID_6780.DeviceDesc%=HID_Inst,, USB\VID_055D&PID_6780
+%USB\VID_055D&PID_6781&MI_00.DeviceDesc%=HID_Inst,, USB\VID_055D&PID_6781&MI_00
+%USB\VID_055D&PID_0001.DeviceDesc%=HID_Inst,,USB\VID_055D&PID_0001
+
+[FORWARD_KBD]
+%USB\VID_05BC&PID_0002.DeviceDesc%=HID_Inst,, USB\VID_05BC&PID_0002
+%USB\VID_05BC&PID_0001&MI_00.DeviceDesc%=HID_Inst,, USB\VID_05BC&PID_0001&MI_00
+
+[SUH_KBD]
+%USB\VID_0500&PID_0002.DeviceDesc%=HID_Inst,, USB\VID_0500&PID_0002
+%USB\VID_0500&PID_0001&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0500&PID_0001&MI_00
+
+[SEJIN_KBD]
+%USB\VID_0510&PID_0001.DeviceDesc%=HID_Inst,, USB\VID_0510&PID_0001
+%USB\VID_0510&PID_1000&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0510&PID_1000&MI_00
+
+[SUPERGATE_KBD]
+%USB\VID_05D5&PID_6782&MI_00.DeviceDesc%=HID_Inst,, USB\VID_05D5&PID_6782&MI_00
+
+[ORTEK_KBD]
+%USB\VID_05A4.Keyboard.DeviceDesc%=HID_Inst,, USB\VID_05A4&PID_9722
+%USB\VID_05A4.Keyboard.DeviceDesc%=HID_Inst,, USB\VID_05A4&PID_9720&MI_00
+
+[SOLIDYEAR_KBD]
+%USB\VID_060B&PID_2101&MI_00.DeviceDesc%=HID_Inst,, USB\VID_060B&PID_2101&MI_00
+
+[NEC_KBD]
+%USB\VID_0409&PID_0014&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0014&MI_00
+%USB\VID_0409&PID_0011&MI_00.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0011&MI_00
+%USB\VID_0409&PID_0019.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0019
+%USB\VID_0409&PID_001A.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_001A
+%USB\VID_0409&PID_0025.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0025
+%USB\VID_0409&PID_0034.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0034
+%USB\VID_0409&PID_0094.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0094
+%USB\VID_0409&PID_0095.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0095
+
+[QTRONIX_KBD]
+%USB\VID_05C7&PID_2001.DeviceDesc%=HID_Inst,, USB\VID_05C7&PID_2001
+%USB\VID_05C7&PID_6001.DeviceDesc%=HID_Inst,, USB\VID_05C7&PID_6001
+
+; Mice
+;
+[MSMice]
+%USB\VID_045E&PID_0009.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0009
+%USB\VID_045E&PID_001E.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_001E
+%USB\VID_045E&PID_0023.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0023
+%USB\VID_045E&PID_0024.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0024
+%USB\VID_045E&PID_0025.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0025
+%USB\VID_045E&PID_0029.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0029
+%USB\VID_045E&PID_0039.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0039
+%USB\VID_045E&PID_0040.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0040
+%USB\VID_045E&PID_0047.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0047
+%USB\VID_045E&PID_0059.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0059
+
+[LogiMice]
+%USB\VID_046D&PID_C000.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C000
+%USB\VID_046D&PID_C001.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C001
+%USB\VID_046D&PID_C002.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C002
+%USB\VID_046D&PID_C003.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C003
+%USB\VID_046D&PID_C004.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C004
+%USB\VID_046D&PID_C005.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C005
+%USB\VID_046D&PID_C00B.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C00B
+%USB\VID_046D&PID_C00C.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C00C
+%USB\VID_046D&PID_C00D.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C00D
+%USB\VID_046D&PID_C00E.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C00E
+%USB\VID_046D&PID_C030.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C030
+%USB\VID_046D&PID_C031.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C031
+%USB\VID_046D&PID_C032.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C032
+%USB\VID_046D&PID_C033.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C033
+%USB\VID_046D&PID_C401.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C401
+%USB\VID_046D&PID_C402.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C402
+%USB\VID_046D&PID_C403.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C403
+%USB\VID_046D&PID_C501.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C501
+%USB\VID_046D&PID_C502&MI_00.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C502&MI_00
+%USB\VID_046D&PID_C502&MI_01.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C502&MI_01
+%USB\VID_046D&PID_C503&MI_00.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C503&MI_00
+%USB\VID_046D&PID_C503&MI_01.DeviceDesc%=HID_Inst, USB\VID_046D&PID_C503&MI_01
+
+[CypressMice]
+%USB\VID_04B4&PID_0001.DeviceDesc%=HID_SelSus_Inst,, USB\VID_04B4&PID_0001
+
+[ELOMice]
+%USB\VID_04E7&PID_0001.DeviceDesc%=HID_Inst,, USB\VID_04E7&PID_0001
+
+[ChiconyMice]
+%USB\VID_04F2&PID_0001&MI_01.DeviceDesc%=HID_Inst,, USB\VID_04F2&PID_0001&MI_01
+
+[NMBMice]
+%USB\VID_0446&PID_6781&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0446&PID_6781&MI_01
+
+[STSLMice]
+%USB\VID_05FA.USBKeyboardMouse.DeviceDesc%=HID_Inst,, USB\VID_05FA&PID_3301&MI_01
+%USB\VID_05FA.USBKeyboardMouse.DeviceDesc%=HID_Inst,, USB\VID_05FA&PID_3303&MI_01
+
+[SUPERGATEMice]
+%USB\VID_05d5&PID_6782&MI_01.DeviceDesc%=HID_Inst,, USB\VID_05d5&PID_6782&MI_01
+
+[KEYTRONICMice]
+%USB\VID_03F9&PID_0102&MI_01.DeviceDesc%=HID_Inst,, USB\VID_03F9&PID_0102&MI_01
+
+[GeniusMice]
+%USB\VID_0458&PID_0001.DeviceDesc%=HID_Inst,, USB\VID_0458&PID_0001
+%USB\VID_0458&PID_0002.DeviceDesc%=HID_SelSus_Inst,, USB\VID_0458&PID_0002
+%USB\VID_0458&PID_0003.DeviceDesc%=HID_Inst,, USB\VID_0458&PID_0003
+
+[ItacMice]
+%USB\VID_0431&PID_0100.DeviceDesc%=HID_SelSus_Inst,, USB\VID_0431&PID_0100
+
+[SamsungMice]
+%USB\VID_055D&PID_6781&MI_01.DeviceDesc%=HID_Inst,, USB\VID_055D&PID_6781&MI_01
+
+[ForwardMice]
+%USB\VID_05BC&PID_0001&MI_01.DeviceDesc%=HID_Inst,, USB\VID_05BC&PID_0001&MI_01
+
+[SUHMice]
+%USB\VID_0500&PID_0001&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0500&PID_0001&MI_01
+
+[BTCMice]
+%USB\VID_046E&PID_6782&MI_01.DeviceDesc%=HID_Inst,, USB\VID_046E&PID_6782&MI_01
+
+[FinePoint]
+%USB\VID_0E8A&PID_0100.DeviceDesc%=HID_SelSus_Inst,, USB\VID_0E8A&PID_0100
+
+[FOCUSMice]
+%USB\VID_05B2&PID_7200&MI_01.DeviceDesc%=HID_Inst,, USB\VID_05B2&PID_7200&MI_01
+
+[JINGMOLDMice]
+%USB\VID_05AF&PID_9267&MI_01.DeviceDesc%=HID_Inst,, USB\VID_05AF&PID_9267&MI_01
+
+[MAXISWITCHMice]
+%USB\VID_04C3&PID_1102&MI_01.DeviceDesc%=HID_Inst,, USB\VID_04C3&PID_1102&MI_01
+%USB\VID_04C3&PID_2102&MI_01.DeviceDesc%=HID_Inst,, USB\VID_04C3&PID_2102&MI_01
+
+[MONTEREYMice]
+%USB\VID_0566&PID_2801&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0566&PID_2801&MI_01
+
+[ORTEKMice]
+%USB\VID_05A4&PID_9720&MI_01.DeviceDesc%=HID_Inst,, USB\VID_05A4&PID_9720&MI_01
+
+[PhilipsMice]
+%USB\VID_0471&PID_0601&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0471&PID_0601&MI_01
+%USB\VID_0471&PID_0402&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0471&PID_0402&MI_01
+
+[AnchorMice]
+%USB\VID_0605&PID_0001.DeviceDesc%=HID_Inst,, USB\VID_0605&PID_0001
+
+[NECMice]
+%USB\VID_0409&PID_0014&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0014&MI_01
+%USB\VID_0409&PID_0011&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0409&PID_0011&MI_01
+
+[SOLIDYEARMice]
+%USB\VID_060B&PID_2101&MI_01.DeviceDesc%=HID_Inst,, USB\VID_060B&PID_2101&MI_01
+
+[FUJITSUMice]
+%USB\VID_0430&PID_0002&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0430&PID_0002&MI_01
+
+[SEJINMice]
+%USB\VID_0510&PID_E001.DeviceDesc%=HID_Inst,, USB\VID_0510&PID_E001
+%USB\VID_0510&PID_1000&MI_01.DeviceDesc%=HID_Inst,, USB\VID_0510&PID_1000&MI_01
+
+[DexinMice]
+%USB\VID_05F2&PID_0010.DeviceDesc%=HID_Inst,, USB\VID_05F2&PID_0010
+
+[AcerMice]
+%USB\VID_04A5&PID_0003&MI_01.DeviceDesc%=HID_Inst,, USB\VID_04A5&PID_0003&MI_01
+
+[SilitekMice]
+%USB\VID_047B&PID_0002&MI_01.DeviceDesc%=HID_Inst,, USB\VID_047B&PID_0002&MI_01
+
+[QtronixMice]
+%USB\VID_05C7&PID_1001.DeviceDesc%=HID_SelSus_Inst,, USB\VID_05C7&PID_1001
+
+; Game controllers
+;
+[LogitechGame]
+%USB\VID_046D&PID_0200.DeviceDesc%=HID_Inst,, USB\VID_046d&PID_0200
+%USB\VID_046D&PID_C201.DeviceDesc%=HID_Inst,, USB\VID_046D&PID_C201
+%USB\VID_046D&PID_C202.DeviceDesc%=HID_Inst,, USB\VID_046D&PID_C202
+%USB\VID_046D&PID_C207.DeviceDesc%=HID_Inst,, USB\VID_046D&PID_C207
+%USB\VID_046D&PID_C208.DeviceDesc%=HID_Inst,, USB\VID_046D&PID_C208
+%USB\VID_046D&PID_C209.DeviceDesc%=HID_Inst,, USB\VID_046D&PID_C209
+
+[ThrustmasterGame]
+%USB\VID_044F&PID_A0A0.DeviceDesc%=HID_Inst,,USB\VID_044F&PID_A0A0
+%USB\VID_044F&PID_A0A1.DeviceDesc%=HID_Inst,,USB\VID_044F&PID_A0A1
+%USB\VID_044F&PID_A201.DeviceDesc%=HID_Inst,,USB\VID_044F&PID_A201
+%USB\VID_044F&PID_A01B.DeviceDesc%=HID_Inst,,USB\VID_044F&PID_A01B
+%USB\VID_044F&PID_A003.DeviceDesc%=HID_Inst,,USB\VID_044F&PID_A003
+
+[MicrosoftGame]
+%USB\VID_045E&PID_0007.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0007
+%USB\VID_045E&PID_0008.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0008
+%USB\VID_045E&PID_000E.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_000E
+
+[GeniusGame]
+%USB\VID_0458&PID_1001.DeviceDesc%=HID_Inst,, USB\VID_0458&PID_1001
+%USB\VID_0458&PID_1002.DeviceDesc%=HID_Inst,, USB\VID_0458&PID_1002
+
+[GuillemotGame]
+%USB\VID_06F8&PID_0002.DeviceDesc%=HID_Inst,, USB\VID_06F8&PID_0002
+
+;  Audio control devices
+;
+[MicrosoftHid]
+%USB\VID_045E&PID_0014&MI_02.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0014&MI_02
+%USB\VID_045E&PID_001D&MI_01.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_001D&MI_01
+%USB\VID_045E&PID_002B&MI_01.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_002B&MI_01
+%USB\VID_045E&PID_002D&MI_01.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_002D&MI_01
+%USB\VID_045E&PID_0048&MI_01.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_0048&MI_01
+%USB\VID_045E&PID_005C&MI_01.DeviceDesc%=HID_Inst,, USB\VID_045E&PID_005C&MI_01
+
+[AltecAudio]
+%USB\VID_04D2&PID_FF47&MI_02.DeviceDesc%=HID_Inst,,USB\VID_04D2&PID_FF47&MI_02
+%USB\VID_04D2&PID_FF49&MI_02.DeviceDesc%=HID_Inst,,USB\VID_04D2&PID_FF49&MI_02
+%USB\VID_04D2&PID_0070&MI_02.DeviceDesc%=HID_Inst,,USB\VID_04D2&PID_0070&MI_02
+
+[PhilipsAudio]
+%USB\VID_0471&PID_0101&MI_02.DeviceDesc%=HID_Inst,,USB\VID_0471&PID_0101&MI_02
+
+[LabtecAudio]
+%USB\VID_0672&PID_1041&MI_02.DeviceDesc%=HID_Inst,,USB\VID_0672&PID_1041&MI_02
+
+[NECAudio]
+%USB\VID_0409&PID_0203&MI_03.DeviceDesc%=HID_Inst,,USB\VID_0409&PID_0203&MI_03
+
+[YamahaAudio]
+%USB\VID_0499&PID_3001&MI_02.DeviceDesc%=HID_Inst,,USB\VID_0499&PID_3001&MI_02
+
+; HID monitor control devices
+;
+[CTXMonitor]
+%USB\VID_0698&PID_1786.DeviceDesc%=HID_Inst,,USB\VID_0698&PID_1786
+
+[LiteOnMonitor]
+%USB\VID_04CA&PID_1766.DeviceDesc%=HID_Inst,,USB\VID_04CA&PID_1766
+
+[MitsubishiMonitor]
+%USB\VID_0452&PID_0021.DeviceDesc%=HID_Inst,,USB\VID_0452&PID_0021
+
+[NokiaMonitor]
+%USB\VID_04A6&PID_0181.DeviceDesc%=HID_Inst,,USB\VID_04A6&PID_0181
+
+; UPS devices
+;
+[APC_UPS]
+%USB\VID_051D.USBUPS.DeviceDesc%=HID_Inst,,USB\VID_051D&PID_0000
+%USB\VID_051D.USBUPS.DeviceDesc%=HID_Inst,,USB\VID_051D&PID_0001
+%USB\VID_051D.USBUPS.DeviceDesc%=HID_Inst,,USB\VID_051D&PID_0002
+%USB\VID_051D.USBUPS.DeviceDesc%=HID_Inst,,USB\VID_051D&PID_0003
+
+[MGE_UPS]
+%USB\VID_0463.USBUPS.DeviceDesc%=HID_Inst,,USB\VID_0463&PID_0001
+%USB\VID_0463.USBUPS.DeviceDesc%=HID_Inst,,USB\VID_0463&PID_FFFF
+
+;*****************************************
+; Install Section
+;*****************************************
+
+; Selective Suspend Enabled Devices.
+;
+;=====================================================================
+[HID_SelSus_Inst.NT]
+Needs = HID_Inst.NT
+
+[HID_SelSus_Inst.NT.HW]
+AddReg = HID_SelSus_Inst.AddReg.NT.HW
+
+[HID_SelSus_Inst.AddReg.NT.HW]
+HKR,,"SelectiveSuspendEnabled",0x00000001,0x1
+HKR,,"AllowIdleIrpInD3",0x00010001,0x1
+HKR,,"WriteReportExSupported",0x00010001,0x1
+HKR,,"DeviceResetNotificationEnabled",0x00010001,1
+
+[HID_SelSus_Inst.NT.Services]
+AddService = HidUsb,%SPSVCINST_ASSOCSERVICE%,HID_Service_Inst
+
+; To be referenced in the DDInstall and DDInstall.HW sections of partner
+; INFs to opt-in the policies for touch screens.
+; The DDInstall section [WakeScreenOnTouch] is also required to be referenced
+; in a Models section above so that they can be used on onecore images.
+;
+;=====================================================================
+[WakeScreenOnTouch]
+
+[WakeScreenOnTouch.HW]
+AddReg = WakeScreenOnTouch.HW.AddReg
+
+[WakeScreenOnTouch.HW.AddReg]
+HKR,,"EnhancedPowerManagementEnabled",0x00010001,1
+HKR,,"SystemInputSuppressionEnabled",0x00010001,1
+HKR,,"WakeScreenOnInputSupport",0x00010001,1
+
+; All Devices.
+;
+;=====================================================================
+[HID_Inst.NT]
+Copyfiles = HID_Inst.CopyFiles.NT
+AddProperty = HID_Inst.AddProp.NT
+
+[HID_Inst.NT.HW]
+AddReg = HID_Inst.AddReg.NT.HW
+DelReg = HID_Inst.DelReg.NT.HW
+
+[HID_Inst.AddReg.NT.HW]
+; Defaults
+HKR,,"SelectiveSuspendEnabled",0x00000001,0
+HKR,,"EnhancedPowerManagementEnabled",0x00010001,1
+HKR,,"AllowIdleIrpInD3",0x00010001,0x1
+HKR,,"LegacyTouchScaling",0x00010001,0
+HKR,,"WriteReportExSupported",0x00010001,0x1
+HKR,,"DeviceResetNotificationEnabled",0x00010001,1
+
+; Empty section (only exists to maintain compatibility with external INF files)
+;
+[HID_Inst.DelReg.NT.HW]
+; Remove the ExtPropDescSemaphore flag in case it is present from a previous install
+HKR,,"ExtPropDescSemaphore"
+
+[HID_Inst.CopyFiles.NT]
+hidusb.sys,,,0x100
+hidclass.sys,,,0x100
+hidparse.sys,,,0x100
+
+[HID_Inst.AddProp.NT]
+GenericDriverInstalled,,,,1
+
+[HID_Inst.NT.Services]
+AddService = HidUsb,%SPSVCINST_ASSOCSERVICE%,HID_Service_Inst
+
+;
+; Raw Devices (do nothing)
+;
+;=====================================================================
+[HID_Raw_Inst.NT]
+AddProperty = HID_Raw_Inst.AddProp.NT
+
+[HID_Raw_Inst.AddProp.NT]
+GenericDriverInstalled,,,,1
+
+[HID_Raw_Inst.NT.Services]
+AddService = ,%SPSVCINST_ASSOCSERVICE% ; null service install
+
+;*****************************************
+; Service Installation section
+;*****************************************
+
+[HID_Service_Inst]
+DisplayName    = %HID.SvcDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_DEMAND_START%
+ErrorControl   = %SERVICE_ERROR_IGNORE%
+ServiceBinary  = %12%\hidusb.sys
+LoadOrderGroup = extended base
+AddReg         = HID_Service_Inst.AddReg
+
+[HID_Service_Inst.AddReg]
+HKR, "Parameters", "WppRecorder_UseTimeStamp", 0x00010001, 1
+

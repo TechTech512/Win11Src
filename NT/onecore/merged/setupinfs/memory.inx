@@ -1,0 +1,46 @@
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Memory
+ClassGuid={5099944A-F6B9-4057-A056-8C550228544C}
+Provider=%MSFT%
+PnpLockdown=1
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+pnpmem.sys 		= 3426
+
+[DestinationDirs]
+PNPMEM_Copyfiles = 12
+
+[Manufacturer]
+%MSFT%=Microsoft
+
+[Microsoft]
+%*pnp0c80.DeviceDesc% = PNPMEM_Inst,ACPI\PNP0C80
+
+[PNPMEM_Inst.NT]
+Copyfiles = PNPMEM_Copyfiles
+
+[PNPMEM_Copyfiles]
+pnpmem.sys,,,0x100
+
+[PNPMEM_Inst.NT.Services]
+AddService = PNPMEM,%SPSVCINST_ASSOCSERVICE%,PNPMEM_Service_Inst,PNPMEM_EventLog_Inst
+
+[PNPMEM_Service_Inst]
+DisplayName    = %PNPMEM.SvcDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_DEMAND_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\pnpmem.sys
+
+[PNPMEM_EventLog_Inst]
+AddReg=PNPMEM_EventLog_AddReg
+
+[PNPMEM_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\pnpmem.sys"
+HKR,,TypesSupported,0x00010001,7
+

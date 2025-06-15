@@ -1,0 +1,73 @@
+; gameport.inf - Hooks up known gameports with a NULL service.
+;                Displays a name so the user can understand the device
+;                is not supported out of the box.
+; This avoids the '!' in device manager.
+;
+; Copyright (C) Microsoft Corporation.  All rights reserved.
+;
+[Version]
+Signature="$WINDOWS NT$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%MSFT%
+PnpLockdown=1
+
+[Manufacturer]
+%StdMfg%=Standard
+%AztechLabs%=AztechLabs
+%CHProducts%=CHProducts
+%CreativeLabs%=CreativeLabs
+%Crystal%=Crystal
+%ESS%=ESS
+%MediaVision%=MediaVision
+%NeoMagic%=NeoMagic
+%ThrustMaster%=ThrustMaster
+%Yamaha%=Yamaha
+
+
+[Standard]
+%PNPB02F.DeviceDesc%=STUB_GAMEPORT, *PNPB02F ; an IBM standard joystick port
+
+[AztechLabs]
+%AztechLabsPort.DeviceDesc%=STUB_GAMEPORT, *AZT0003
+%AztechLabsPort.DeviceDesc%=STUB_GAMEPORT, *AZT3001
+
+[CHProducts]
+%CHProductsPort.DeviceDesc%=STUB_GAMEPORT,,*PNPB02F
+
+[CreativeLabs]
+%CreativeLabsPort.DeviceDesc%=STUB_GAMEPORT, *CTL7001
+%CreativeLabsPort.DeviceDesc%=STUB_GAMEPORT, *CTL7002
+%CreativeLabsPort.DeviceDesc%=STUB_GAMEPORT, *CTL7005
+
+[Crystal]
+%CrystalPort.DeviceDesc%=STUB_GAMEPORT, *CSC0001
+%CrystalPort.DeviceDesc%=STUB_GAMEPORT, *CSC0101
+
+[ESS]
+%ESSPort.DeviceDesc%=STUB_GAMEPORT, *ESS0005
+%ESSPort.DeviceDesc%=STUB_GAMEPORT,,*PNPB02F
+
+[MediaVision]
+%MediaVisionPort.DeviceDesc%=STUB_GAMEPORT, MF\PNPB00D_Dev2
+%MediaVisionPort.DeviceDesc%=STUB_GAMEPORT, MF\PNPB00E_Dev3
+%MediaVisionPort.DeviceDesc%=STUB_GAMEPORT, MF\PNPB019_Dev2
+
+[NeoMagic]
+%PNPB02F.DeviceDesc%=STUB_GAMEPORT, *NMX2220
+
+[ThrustMaster]
+%ThrustMasterLowPort.DeviceDesc%=STUB_GAMEPORT,,*PNPB02F
+%ThrustMasterHighPort.DeviceDesc%=STUB_GAMEPORT,,*PNPB02F
+
+[Yamaha]
+%YamahaPort.DeviceDesc%=STUB_GAMEPORT, *YMH0006
+%YamahaPort.DeviceDesc%=STUB_GAMEPORT, *YMH0022
+
+
+[STUB_GAMEPORT.NT]
+DriverVer = 4/11/2006, 1.0.0.0
+
+[STUB_GAMEPORT.NT.Services]
+AddService = , %SPSVCINST_ASSOCSERVICE% ; null service install
+

@@ -1,0 +1,592 @@
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=hdc
+ClassGuid={4D36E96A-E325-11CE-BFC1-08002BE10318}
+Provider=%MS%
+PnpLockdown=1
+DriverVer = 06/21/2006,10.0.27783.1000
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+storahci.sys = 3426
+intelide.sys    = 3426
+atapi.sys   = 3426
+ataport.sys     = 3426
+pciidex.sys     = 3426
+pciide.sys  = 3426
+
+[DestinationDirs]
+IntelIde_CopyFiles = 12 ; DIRID_DRIVERS
+atapi_copyfiles = 12 ; DIRID_DRIVERS
+pciidex_copyfiles = 12 ; DIRID_DRIVERS
+PciIde_CopyFiles = 12 ; DIRID_DRIVERS
+storahci_copyfiles = 12 ; DIRID_DRIVERS
+
+[ControlFlags]
+BasicDriverOk=*
+ExcludeFromSelect=*
+
+[Manufacturer]
+%MS-Drivers%=MS_HDC,...0x01,...0x02,...0x03
+%INTEL%=INTEL_HDC
+%SIS%=SIS_HDC
+%IBM%=IBM_HDC,...0x01,...0x02,...0x03
+%LEXAR%=LEXAR_HDC,...0x01,...0x02,...0x03
+%SONY%=SONY_HDC,...0x01,...0x02,...0x03
+%SERVERWORKS%=SERVERWORKS_HDC
+%NVIDIA%=NVIDIA_HDC
+%MS-AHCI%=AHCI_HDC, ...0x01, ...0x02, ...0x03
+
+[MS_HDC...0x01]
+%pcmcia.DeviceDesc%      = pcmcia_atapi_Inst, PCMCIA\*PNP0600  ; PCMCIA IDE Controller
+%idechannel.DeviceDesc%  = atapi_Inst, Internal_IDE_Channel    ; IDE Channel
+%idechannel.DeviceDesc%  = atapi_Inst, Primary_IDE_Channel     ; Primary IDE Channel
+%idechannel.DeviceDesc%  = atapi_Inst, Secondary_IDE_Channel   ; Secondary IDE Channel
+%PCI\CC_0101.DeviceDesc% = pciide_Inst, PCI\CC_0101            ; PCI IDE Controller
+
+[MS_HDC...0x02]
+%pcmcia.DeviceDesc%      = pcmcia_atapi_Inst_Server, PCMCIA\*PNP0600  ; PCMCIA IDE Controller
+%idechannel.DeviceDesc%  = atapi_Inst_Server, Internal_IDE_Channel    ; IDE Channel
+%idechannel.DeviceDesc%  = atapi_Inst_Server, Primary_IDE_Channel     ; Primary IDE Channel
+%idechannel.DeviceDesc%  = atapi_Inst_Server, Secondary_IDE_Channel   ; Secondary IDE Channel
+%PCI\CC_0101.DeviceDesc% = pciide_Inst, PCI\CC_0101                   ; PCI IDE Controller
+
+[MS_HDC...0x03]
+%pcmcia.DeviceDesc%      = pcmcia_atapi_Inst_Server, PCMCIA\*PNP0600  ; PCMCIA IDE Controller
+%idechannel.DeviceDesc%  = atapi_Inst_Server, Internal_IDE_Channel    ; IDE Channel
+%idechannel.DeviceDesc%  = atapi_Inst_Server, Primary_IDE_Channel     ; Primary IDE Channel
+%idechannel.DeviceDesc%  = atapi_Inst_Server, Secondary_IDE_Channel   ; Secondary IDE Channel
+%PCI\CC_0101.DeviceDesc% = pciide_Inst, PCI\CC_0101                   ; PCI IDE Controller
+
+[INTEL_HDC]
+%PCI\VEN_8086&DEV_1222.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_1222     ; Intel PIIX  
+%PCI\VEN_8086&DEV_1230.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_1230     ; Intel PIIX  
+%PCI\VEN_8086&DEV_7010.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_7010     ; Intel PIIX3 
+%PCI\VEN_8086&DEV_7111.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_7111     ; Intel PIIX4 
+%PCI\VEN_8086&DEV_2411.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2411     ; Intel ICH   
+%PCI\VEN_8086&DEV_2421.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2421     ; Intel ICH-0 
+%PCI\VEN_8086&DEV_244A.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_244A     ; Intel ICH-2 
+%PCI\VEN_8086&DEV_244B.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_244B     ; Intel ICH-2 
+%PCI\VEN_8086&DEV_248A.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_248A     ; Intel ICH-3 
+%PCI\VEN_8086&DEV_248B.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_248B     ; Intel ICH-3 
+%PCI\VEN_8086&DEV_24C1.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_24C1     ; Intel ICH-4 
+%PCI\VEN_8086&DEV_24CA.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_24CA     ; Intel ICH-4 
+%PCI\VEN_8086&DEV_24CB.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_24CB     ; Intel ICH-4 
+%PCI\VEN_8086&DEV_24D1.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_24D1     ; Intel ICH-5 
+%PCI\VEN_8086&DEV_24DB.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_24DB     ; Intel ICH-5 
+%PCI\VEN_8086&DEV_25A2.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_25A2     ; Intel ICH-5 
+%PCI\VEN_8086&DEV_25A3.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_25A3     ; Intel ICH-5
+%PCI\VEN_8086&DEV_2651.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2651&CC_0101  ; Intel ICH-6
+%PCI\VEN_8086&DEV_2652.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2652&CC_0101  ; Intel ICH-6
+%PCI\VEN_8086&DEV_2653.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2653&CC_0101  ; Intel ICH-6
+%PCI\VEN_8086&DEV_266F.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_266F     ; Intel ICH-6 
+%PCI\VEN_8086&DEV_7199.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_7199     ; Intel 7199  (SINGLE)
+%PCI\VEN_8086&DEV_7601.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_7601     ; Intel 7601  (IA64)
+%PCI\VEN_8086&DEV_27C0.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_27C0          ; Intel ICH7 
+%PCI\VEN_8086&DEV_27C4.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_27C4          ; Intel ICH7-M    
+%PCI\VEN_8086&DEV_27DF.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_27DF          ; Intel ICH7
+%PCI\VEN_8086&DEV_2820.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2820         ; Intel ICH8 4 port
+%PCI\VEN_8086&DEV_2825.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2825         ; Intel ICH8 2 port
+%PCI\VEN_8086&DEV_2828.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2828         ; Intel ICH8 3 port
+%PCI\VEN_8086&DEV_2850.DeviceDesc%=intelide_Inst, PCI\VEN_8086&DEV_2850         ; Intel ICH8
+
+[SIS_HDC]
+%PCI\VEN_1039&DEV_0601.DeviceDesc%=pciide_Inst, PCI\VEN_1039&DEV_0601       ; 
+%PCI\VEN_1039&DEV_5513.DeviceDesc%=pciide_Inst, PCI\VEN_1039&DEV_5513       ; 
+
+[IBM_HDC...0x01]
+%PCMCIA\IBM-MICRODRIVE-7F50.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\IBM-MICRODRIVE-7F50 ; IBM Micro Drive
+%PCMCIA\IBM-MICRODRIVE-AA55.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\IBM-MICRODRIVE-AA55 ; IBM Micro Drive
+
+[IBM_HDC...0x02]
+%PCMCIA\IBM-MICRODRIVE-7F50.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\IBM-MICRODRIVE-7F50 ; IBM Micro Drive
+%PCMCIA\IBM-MICRODRIVE-AA55.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\IBM-MICRODRIVE-AA55 ; IBM Micro Drive
+
+[IBM_HDC...0x03]
+%PCMCIA\IBM-MICRODRIVE-7F50.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\IBM-MICRODRIVE-7F50 ; IBM Micro Drive
+%PCMCIA\IBM-MICRODRIVE-AA55.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\IBM-MICRODRIVE-AA55 ; IBM Micro Drive
+
+[SERVERWORKS_HDC]
+%PCI\VEN_1166&DEV_0211.DeviceDesc%=serverworks_Inst, PCI\VEN_1166&DEV_0211       
+%PCI\VEN_1166&DEV_0212&SUBSYS_02121166.DeviceDesc%=serverworks_Inst, PCI\VEN_1166&DEV_0212&SUBSYS_02121166 
+
+[LEXAR_HDC...0x01]
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-HURRIC_-172F
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TIDALWV-0E97
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\____CL_ATA_FLASH_CARD_LEXAR__-HURRIC_-DC37
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TORNADO-29EC
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TIDALWV-FD21
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst, PCMCIA\LEXARMEDIA_ATA_FLASH_CARD-HUR_HP_-0623
+
+[LEXAR_HDC...0x02]
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-HURRIC_-172F
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TIDALWV-0E97
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\____CL_ATA_FLASH_CARD_LEXAR__-HURRIC_-DC37
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TORNADO-29EC
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TIDALWV-FD21
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\LEXARMEDIA_ATA_FLASH_CARD-HUR_HP_-0623
+
+[LEXAR_HDC...0x03]
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-HURRIC_-172F
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TIDALWV-0E97
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\____CL_ATA_FLASH_CARD_LEXAR__-HURRIC_-DC37
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TORNADO-29EC
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\CL_ATA_FLASH_CARD_LEXAR__-TIDALWV-FD21
+%LEXAR.DeviceDesc%=pcmcia_atapi_Inst_Server, PCMCIA\LEXARMEDIA_ATA_FLASH_CARD-HUR_HP_-0623
+
+[SONY_HDC...0x01]
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst,PCMCIA\SONY-MEMORYSTICK(__4M)-E637
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst,PCMCIA\SONY-MEMORYSTICK(__8M)-9EB3
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst,PCMCIA\SONY-MEMORYSTICK(_16M)-D04D
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst,PCMCIA\SONY-MEMORYSTICK(_32M)-1766
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst,PCMCIA\SONY-MEMORYSTICK(_64M)-8C2C 
+
+[SONY_HDC...0x02]
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(__4M)-E637
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(__8M)-9EB3
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(_16M)-D04D
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(_32M)-1766
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(_64M)-8C2C 
+
+[SONY_HDC...0x03]
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(__4M)-E637
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(__8M)-9EB3
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(_16M)-D04D
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(_32M)-1766
+%PCMCIA\SONY-MEMORYSTICK.DeviceDesc%=pcmcia_atapi_Inst_Server,PCMCIA\SONY-MEMORYSTICK(_64M)-8C2C 
+
+[NVIDIA_HDC]
+%PCI\VEN_10DE&DEV_00E3.DeviceDesc%=pciide_Inst, PCI\VEN_10DE&DEV_00E3 ; NVIDIA
+%PCI\VEN_10DE&DEV_00E5.DeviceDesc%=pciide_Inst, PCI\VEN_10DE&DEV_00E5 ; NVIDIA
+%PCI\VEN_10DE&DEV_00EE.DeviceDesc%=pciide_Inst, PCI\VEN_10DE&DEV_00EE ; NVIDIA
+
+; AHCI installation section for Workstation
+[AHCI_HDC...0x01]
+%PCI\CC_010601.DeviceDesc%=msahci_Inst, PCI\CC_010601; Standard SATA AHCI Controller
+%ACPI\CLS_0001&SUBCLS_0006&PI_01.DeviceDesc% = msahci_Inst, ACPI\CLS_0001&SUBCLS_0006&PI_01
+
+; AHCI installation section for Domain Controller
+[AHCI_HDC...0x02]
+%PCI\CC_010601.DeviceDesc%=msahci_Inst_Server, PCI\CC_010601; Standard SATA AHCI Controller
+%ACPI\CLS_0001&SUBCLS_0006&PI_01.DeviceDesc% = msahci_Inst_Server, ACPI\CLS_0001&SUBCLS_0006&PI_01
+%ACPI\AMDI0600.DeviceDesc% = msahci_Inst_Server, ACPI\AMDI0600 ; TODO Needs to be removed once we have final Firmware
+
+; AHCI installation section for Server
+[AHCI_HDC...0x03]
+%PCI\CC_010601.DeviceDesc%=msahci_Inst_Server, PCI\CC_010601; Standard SATA AHCI Controller
+%ACPI\CLS_0001&SUBCLS_0006&PI_01.DeviceDesc% = msahci_Inst_Server, ACPI\CLS_0001&SUBCLS_0006&PI_01
+%ACPI\AMDI0600.DeviceDesc% = msahci_Inst_Server, ACPI\AMDI0600 ; TODO Needs to be removed once we have final Firmware
+
+[atapi_copyfiles]
+atapi.sys,,,0x100
+ataport.sys,,,0x100
+
+[pciidex_copyfiles]
+pciidex.sys,,,0x100
+atapi.sys,,,0x100
+ataport.sys,,,0x100
+
+;*******************************************************
+; Channel driver (atapi.sys) for pcmcia ide controllers
+[pcmcia_atapi_Inst]
+CopyFiles = atapi_copyfiles
+AddReg = atapi_property_provider_AddReg
+
+[pcmcia_atapi_Inst_Server]
+CopyFiles = atapi_copyfiles
+AddReg = atapi_property_provider_AddReg
+
+[pcmcia_atapi_Inst.Services]
+AddService = atapi, %SPSVCINST_ASSOCSERVICE%, atapi_Service_Inst, atapi_EventLog_Inst
+
+[pcmcia_atapi_Inst_Server.Services]
+AddService = atapi, %SPSVCINST_ASSOCSERVICE%, atapi_Service_Inst_Server, atapi_EventLog_Inst
+
+[pcmcia_atapi_Inst.HW]
+AddReg = atapi_interrupt_priority_AddReg
+AddReg = atapi_dma_remapping_AddReg
+
+[pcmcia_atapi_Inst_Server.HW]
+AddReg = atapi_interrupt_priority_AddReg
+AddReg = atapi_dma_remapping_AddReg
+
+;****************************************************
+; Channel driver (atapi.sys) for pci ide controllers
+[atapi_Inst]
+CopyFiles = atapi_copyfiles
+AddReg = atapi_property_provider_AddReg
+
+[atapi_Inst_Server]
+CopyFiles = atapi_copyfiles
+AddReg = atapi_property_provider_AddReg
+
+[atapi_Inst.Services]
+AddService = atapi, %SPSVCINST_ASSOCSERVICE%, atapi_Service_Inst, atapi_EventLog_Inst
+
+[atapi_Inst_Server.Services]
+AddService = atapi, %SPSVCINST_ASSOCSERVICE%, atapi_Service_Inst_Server, atapi_EventLog_Inst
+
+[atapi_Inst.HW]
+AddReg = atapi_interrupt_priority_AddReg
+AddReg = atapi_busdevicedesc_AddReg
+AddReg = atapi_dma_remapping_AddReg
+
+[atapi_Inst_Server.HW]
+AddReg = atapi_interrupt_priority_AddReg
+AddReg = atapi_busdevicedesc_AddReg
+AddReg = atapi_dma_remapping_AddReg
+
+[atapi_Inst.CoInstallers]
+; empty section for compatibility
+
+[atapi_Inst_Server.CoInstallers]
+; empty section for compatibility
+
+;*************************************************************
+; atapi Service
+[atapi_Service_Inst]
+DisplayName    = %idechannel.DeviceDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\atapi.sys
+LoadOrderGroup = SCSI Miniport
+
+[atapi_Service_Inst_Server]
+DisplayName    = %idechannel.DeviceDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\atapi.sys
+LoadOrderGroup = SCSI Miniport
+AddReg         = atapi_server_sku_values_AddReg
+
+[atapi_EventLog_Inst]
+AddReg = atapi_EventLog_AddReg
+
+;*********************
+; Add reg for atapi
+
+[atapi_interrupt_priority_AddReg]
+HKR,"Interrupt Management",,0x00000010
+HKR,"Interrupt Management\Affinity Policy",,0x00000010
+HKR,"Interrupt Management\Affinity Policy","DevicePriority",0x00010003,3
+
+[atapi_property_provider_AddReg]
+HKR,,EnumPropPages32,,"storprop.dll,AtaPropPageProvider"
+
+[atapi_busdevicedesc_AddReg]
+HKR,,UseBusDeviceDesc,%REG_DWORD%,1
+
+[atapi_EventLog_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+[atapi_server_sku_values_AddReg]
+; Registry keys and values required for Server SKUs will be added in this section
+
+[atapi_dma_remapping_AddReg]
+;
+; Opt into DMA remapping, but only for external hot-plug devices
+;
+HKR, DMA Management, RemappingSupported, %REG_DWORD%, 1
+HKR, DMA Management, RemappingFlags, %REG_DWORD%, 0x1
+
+;****************************************************
+; Generic PCI IDE Controller 
+[pciide_Inst]
+CopyFiles = PciIde_CopyFiles, pciidex_copyfiles
+
+[pciide_Inst.Services]
+AddService = pciide, %SPSVCINST_ASSOCSERVICE%, pciide_Service_Inst
+
+[pciide_Service_Inst]
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\pciide.sys
+LoadOrderGroup = System Bus Extender
+
+;**********************************************************
+; Intel PCI IDE Controller 
+[intelide_Inst]
+CopyFiles = IntelIde_CopyFiles, pciidex_copyfiles
+AddReg = intelChannelEnableCheck_AddReg.HW
+
+[IntelIde_CopyFiles]
+intelide.sys,,,0x100
+
+[intelide_Inst.Services]
+AddService = intelide, %SPSVCINST_ASSOCSERVICE%, intelide_Service_Inst
+
+[intelide_Service_Inst]
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\intelide.sys
+LoadOrderGroup = System Bus Extender
+
+[intelChannelEnableCheck_AddReg.HW]
+HKR,Channel0,ChannelStateMask,%REG_DWORD%,0x00000080
+HKR,Channel0,ChannelStateOffset,%REG_DWORD%,0x00000041
+HKR,Channel1,ChannelStateMask,%REG_DWORD%,0x00000080
+HKR,Channel1,ChannelStateOffset,%REG_DWORD%,0x00000043
+
+;**********************************************************
+; SERVER WORKS PCI IDE Controller 
+[serverworks_Inst]
+CopyFiles = PciIde_CopyFiles, pciidex_copyfiles
+
+[PciIde_CopyFiles]
+pciide.sys,,,0x100
+
+[serverworks_Inst.Services]
+AddService = pciide, %SPSVCINST_ASSOCSERVICE%, pciide_Service_Inst
+
+;****************************************************
+; Generic AHCI Controller
+; NOTE that the old section names [msahci_...] are used to install storahci.sys
+
+[storahci_copyfiles]
+storahci.sys,,,0x100
+
+[msahci_Inst]
+CopyFiles = storahci_copyfiles
+AddPowerSetting=AhciPowerSetting1,AhciPowerSetting2
+
+; Exclude Toshiba RAID controllers
+ExcludeId = PCI\VEN_8086&DEV_2653&SUBSYS_0F001179
+ExcludeId = PCI\VEN_8086&DEV_2653&SUBSYS_0F101179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F001179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F101179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F031179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F131179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_FF011179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_0F031179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_0F131179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF011179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF021179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF031179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF041179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF111179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF121179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF131179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF141179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF311179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF321179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF331179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF341179
+
+[msahci_Inst_Server]
+CopyFiles = storahci_copyfiles
+AddPowerSetting=AhciPowerSetting1,AhciPowerSetting2
+
+; Exclude Toshiba RAID controllers
+ExcludeId = PCI\VEN_8086&DEV_2653&SUBSYS_0F001179
+ExcludeId = PCI\VEN_8086&DEV_2653&SUBSYS_0F101179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F001179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F101179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F031179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_0F131179
+ExcludeId = PCI\VEN_8086&DEV_27C5&SUBSYS_FF011179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_0F031179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_0F131179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF011179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF021179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF031179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF041179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF111179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF121179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF131179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF141179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF311179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF321179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF331179
+ExcludeId = PCI\VEN_8086&DEV_2829&SUBSYS_FF341179
+
+[AhciPowerSetting1]
+Subgroup = {0012ee47-9041-4b5d-9b77-535fba8b1442}
+; LPM: Partial - 10us resume time on IO; Slumber - 10ms resume time on IO
+
+;****** HIPM settings 
+Setting =  {0b2d69d7-a2a1-449c-9680-f91c70521c60}, "AHCI Link Power Management - HIPM/DIPM", "Configures the LPM state.",,0x00000001
+
+Value = 0, "Active", "Neither Host or Device initiated allowed", 0x00010001, 0
+Value = 1, "HIPM", "Host initiated allowed only", 0x00010001, 1
+Value = 2, "HIPM+DIPM", "Both Host and Device initiated allowed", 0x00010001, 3 
+Value = 3, "DIPM", "Device initiated allowed only", 0x00010001, 2
+
+; High Performance
+Default = {8C5E7FDA-E8BF-4A96-9A85-A6E23A8C635C}, 0, 0
+Default = {8C5E7FDA-E8BF-4A96-9A85-A6E23A8C635C}, 1, 1
+; Balanced
+Default = {381B4222-F694-41F0-9685-FF5BB260DF2E}, 0, 1
+Default = {381B4222-F694-41F0-9685-FF5BB260DF2E}, 1, 1
+; Power Saving
+Default = {A1841308-3541-4FAB-BC81-F71556F20B4A}, 0, 2
+Default = {A1841308-3541-4FAB-BC81-F71556F20B4A}, 1, 2
+
+[AhciPowerSetting2]
+Subgroup = {0012ee47-9041-4b5d-9b77-535fba8b1442}
+; LPM: Partial - 10us resume time on IO; Slumber - 10ms resume time on IO
+
+;****** Partial to Slumber settings (ms)
+Setting =  {DAB60367-53FE-4fbc-825E-521D069D2456}, "AHCI Link Power Management - Adaptive", "Automatically transit from Partial to Slumber.",,0x00000001
+; range 0 to 5 minutes (unit: ms)
+ValueRange = 0, 300000, 1, "millisecond"
+
+; High Performance
+Default = {8C5E7FDA-E8BF-4A96-9A85-A6E23A8C635C}, 0, 0
+Default = {8C5E7FDA-E8BF-4A96-9A85-A6E23A8C635C}, 1, 0
+; Balanced
+Default = {381B4222-F694-41F0-9685-FF5BB260DF2E}, 0, 100
+Default = {381B4222-F694-41F0-9685-FF5BB260DF2E}, 1, 100
+; Power Saving
+Default = {A1841308-3541-4FAB-BC81-F71556F20B4A}, 0, 100
+Default = {A1841308-3541-4FAB-BC81-F71556F20B4A}, 1, 100
+
+[msahci_Inst.HW]
+AddReg=msahci_Inst_HW_AddReg
+
+[msahci_Inst_Server.HW]
+AddReg=msahci_Inst_HW_AddReg
+
+[msahci_Inst_HW_AddReg]
+; registry values related to MSI support
+HKR, Interrupt Management, 0x00000010
+HKR, Interrupt Management\MessageSignaledInterruptProperties, 0x00000010
+HKR, Interrupt Management\Affinity Policy, 0x00000010
+
+;
+; The MSISupported entry determines whether the device supports MSIs. Set it to 1 to enable MSI support.
+;
+HKR, Interrupt Management\MessageSignaledInterruptProperties, MSISupported,       %REG_DWORD%,   1
+
+;
+; The MessageNumberLimit entry specifies the maximum number of MSIs to allocate. 
+; For PCI 2.2, MessageNumberLimit must be 1, 2, 4, 8, or 16. For PCI 3.0, MessageNumberLimit can be any number up to 2,048.
+; Set it to 8 as it covers most of AHCI controller's needs that implement less than 8 ports.
+;
+HKR, Interrupt Management\MessageSignaledInterruptProperties, MessageNumberLimit, %REG_DWORD%,   8
+
+;
+; Make sure all processor in group are used to serve interrupt from this device. IrqPolicySpreadMessagesAcrossAllProcessors (5)
+;
+HKR, Interrupt Management\Affinity Policy, DevicePolicy,   %REG_DWORD%, 5
+
+;
+; Specifies that the device's interrupts are of high priority. This setting is appropriate for devices that require low latency. IrqPriorityHigh (3)
+;
+HKR, Interrupt Management\Affinity Policy, DevicePriority, %REG_DWORD%, 3
+
+;
+; Allow interrupt happens on processors beyond group 0. (e.g. might be in a single group other than 0)
+;
+HKR, Interrupt Management\Affinity Policy, GroupPolicy, %REG_DWORD%, 1
+
+; Enables Storport IPM for this adapter
+HKR, "StorPort", "EnableIdlePowerManagement", %REG_DWORD%, 0x01
+
+;
+; Opt into DMA remapping, but only for external hot-plug devices
+;
+HKR, DMA Management, RemappingSupported, %REG_DWORD%, 1
+HKR, DMA Management, RemappingFlags, %REG_DWORD%, 0x1
+
+[msahci_Inst.Services]
+AddService = storahci, %SPSVCINST_ASSOCSERVICE%, msahci_Service_Inst_Client, storahci_EventLog_Inst
+
+[msahci_Inst_Server.Services]
+AddService = storahci, %SPSVCINST_ASSOCSERVICE%, msahci_Service_Inst_Server, storahci_EventLog_Inst
+
+[msahci_Service_Inst_Client]
+DisplayName    = %storahci_ServiceDescription%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\storahci.sys
+LoadOrderGroup = SCSI Miniport
+AddReg         = storahci_general_values
+AddReg         = device_specific_values
+AddReg         = client_sku_values
+
+[msahci_Service_Inst_Server]
+DisplayName    = %storahci_ServiceDescription%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_BOOT_START%
+ErrorControl   = %SERVICE_ERROR_CRITICAL%
+ServiceBinary  = %12%\storahci.sys
+LoadOrderGroup = SCSI Miniport
+AddReg         = storahci_general_values
+AddReg         = device_specific_values
+
+[storahci_general_values]
+HKLM, "SYSTEM\CurrentControlSet\Control\Compatibility\Driver\storahci.sys", "Shims", %REG_MULTI_SZ_APPEND%, "Srbshim"
+
+HKR, "Parameters\PnpInterface", "5", %REG_DWORD%, 0x00000001
+HKR, "Parameters", "BusType", %REG_DWORD%, 0x0000000B
+HKR, "Parameters", "IoTimeoutValue", %REG_DWORD%, 0x0000001E
+HKR, "Parameters", "BusyRetryCount", %REG_DWORD%, 0x000000F0
+HKR, "Parameters", "BusyPauseTimeInMs", %REG_DWORD%, 0x000001F4
+
+[device_specific_values]
+HKR, "Parameters\Device", "ResetInInit", %REG_MULTI_SZ_APPEND%, "VEN_1106&DEV_6287&REV_*"
+
+HKR, "Parameters\Device", "SingleIO", %REG_MULTI_SZ_APPEND%, "VEN_1106&DEV_6287&REV_00"
+HKR, "Parameters\Device", "SingleIO", %REG_MULTI_SZ_APPEND%, "VEN_1106&DEV_6287&REV_10"
+HKR, "Parameters\Device", "SingleIO", %REG_MULTI_SZ_APPEND%, "VEN_1106&DEV_6287&REV_20"
+
+HKR, "Parameters\Device", "IgnoreHotPlug", %REG_MULTI_SZ_APPEND%, "VEN_1002&DEV_4380&REV_*"
+
+HKR, "Parameters\Device", "NeverNonQueuedErrorRecovery", %REG_MULTI_SZ_APPEND%, "VEN_1002&DEV_4380&REV_*"
+
+HKR, "Parameters\Device", "EnableCLOReset", %REG_MULTI_SZ_APPEND%, "VEN_1002&DEV_4391&REV_*"
+
+HKR, "Parameters\Device", "ExpectedMsiMessageCount", %REG_MULTI_SZ_APPEND%, "VEN_1022&DEV_7801&REV_00 8"
+
+HKR, "Parameters\Device", "NoFUACommand", %REG_MULTI_SZ_APPEND%, "HTE*"
+HKR, "Parameters\Device", "NoFUACommand", %REG_MULTI_SZ_APPEND%, "Hitachi*"
+HKR, "Parameters\Device", "NoFUACommand", %REG_MULTI_SZ_APPEND%, "HTS*"
+HKR, "Parameters\Device", "NoFUACommand", %REG_MULTI_SZ_APPEND%, "HDS*"
+HKR, "Parameters\Device", "NoFUACommand", %REG_MULTI_SZ_APPEND%, "HDT*"
+
+HKR, "Parameters\Device", "NeedSetTransferModeCommand", %REG_MULTI_SZ_APPEND%, "MCBQE64GBMPP*"
+
+HKR, "Parameters\Device", "NoLPM", %REG_MULTI_SZ_APPEND%, "WD740ADFD?00NLR1*"
+HKR, "Parameters\Device", "NoLPM", %REG_MULTI_SZ_APPEND%, "WDC WD740ADFD?00NLR1*"
+HKR, "Parameters\Device", "NoLPM", %REG_MULTI_SZ_APPEND%, "Maxtor 6V???E0*"
+HKR, "Parameters\Device", "NoLPM", %REG_MULTI_SZ_APPEND%, "Maxtor 6V???F0*"
+HKR, "Parameters\Device", "NoLPM", %REG_MULTI_SZ_APPEND%, "Maxtor 7V???E0*"
+HKR, "Parameters\Device", "NoLPM", %REG_MULTI_SZ_APPEND%, "Maxtor 7V???F0*"
+HKR, "Parameters\Device", "NoLPM", %REG_MULTI_SZ_APPEND%, "SanDisk SSD P4*"
+
+HKR, "Parameters\Device", "NoIdleD3", %REG_MULTI_SZ_APPEND%, "INTEL SSD?C??????A4"
+HKR, "Parameters\Device", "NoIdleD3", %REG_MULTI_SZ_APPEND%, "INTEL SSD?C??????A4?"
+HKR, "Parameters\Device", "NoIdleD3", %REG_MULTI_SZ_APPEND%, "INTEL SSD?C??????A4??"
+HKR, "Parameters\Device", "NoIdleD3", %REG_MULTI_SZ_APPEND%, "INTEL SSD?C??????A5"
+HKR, "Parameters\Device", "NoIdleD3", %REG_MULTI_SZ_APPEND%, "INTEL SSD?C??????A5?"
+HKR, "Parameters\Device", "NoIdleD3", %REG_MULTI_SZ_APPEND%, "INTEL SSD?C??????A5??"
+
+HKR, "Parameters\Device", "PRDTSplit", %REG_MULTI_SZ_APPEND%, "VEN_1022&DEV_43B5&REV_*"
+HKR, "Parameters\Device", "PRDTSplit", %REG_MULTI_SZ_APPEND%, "VEN_1022&DEV_43B6&REV_*"
+HKR, "Parameters\Device", "PRDTSplit", %REG_MULTI_SZ_APPEND%, "VEN_1022&DEV_43B7&REV_*"
+HKR, "Parameters\Device", "PRDTSplit", %REG_MULTI_SZ_APPEND%, "VEN_1022&DEV_43B8&REV_*"
+HKR, "Parameters\Device", "PRDTSplit", %REG_MULTI_SZ_APPEND%, "VEN_1022&DEV_43C8&REV_*"
+
+; this part is specific for Client SKUs
+[client_sku_values]
+HKR, "Parameters", "IoLatencyCap", %REG_DWORD%, 0x000001F4
+
+[storahci_EventLog_Inst]
+AddReg = storahci_EventLog_AddReg
+
+[storahci_EventLog_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+;********************************************************
+; Extra Registry Entries
+

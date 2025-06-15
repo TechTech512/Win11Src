@@ -1,0 +1,272 @@
+@*:This file defines default security settings.
+@*:Please do not edit.  Instead, email kirksol with the requested change.
+@*:Thanks!
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+; Security Configuration Template for Security Configuration Editor
+;
+; Template Name:        DefltWK.INF
+; Template Version:     05.10.DW.0000
+;
+; Default Security for Vista
+
+[Profile Description]
+%SCEDefltWKProfileDescription%
+
+[version]
+signature="$CHICAGO$"
+revision=1
+
+[System Access]
+;----------------------------------------------------------------
+;Account Policies - Password Policy
+;----------------------------------------------------------------
+MinimumPasswordAge = 0
+MaximumPasswordAge = 42
+MinimumPasswordLength = 0
+PasswordComplexity = 0
+PasswordHistorySize = 0
+RequireLogonToChangePassword = 0
+ClearTextPassword = 0
+LSAAnonymousNameLookup = 0
+EnableGuestAccount = 0
+EnableAdminAccount = 0
+
+;----------------------------------------------------------------
+;Account Policies - Lockout Policy
+;----------------------------------------------------------------
+LockoutBadCount = 10
+ResetLockoutCount = 10
+LockoutDuration = 10
+AllowAdministratorLockout = 1
+
+;----------------------------------------------------------------
+;Local Policies - Security Options
+;----------------------------------------------------------------
+;DC Only
+;ForceLogoffWhenHourExpire = 0
+
+;NewAdministatorName =
+;NewGuestName =
+
+;----------------------------------------------------------------
+;Event Log - Log Settings
+;----------------------------------------------------------------
+;Audit Log Retention Period:
+;0 = Overwrite Events As Needed
+;1 = Overwrite Events As Specified by Retention Days Entry
+;2 = Never Overwrite Events (Clear Log Manually)
+
+[System Log]
+MaximumLogSize = 20480
+AuditLogRetentionPeriod = 0
+;RetentionDays = 7
+RestrictGuestAccess = 1
+
+[Security Log]
+MaximumLogSize = 20480
+AuditLogRetentionPeriod = 0
+;RetentionDays = 7
+RestrictGuestAccess = 1
+
+[Application Log]
+MaximumLogSize = 20480
+AuditLogRetentionPeriod = 0
+;RetentionDays = 7
+RestrictGuestAccess = 1
+
+
+;----------------------------------------------------------------
+;Registry Values
+;----------------------------------------------------------------
+[Registry Values]
+; Registry value name in full path = Type, Value
+; REG_SZ                      ( 1 )
+; REG_EXPAND_SZ               ( 2 )  // with environment variables to expand
+; REG_BINARY                  ( 3 )
+; REG_DWORD                   ( 4 )
+; REG_MULTI_SZ                ( 7 )
+
+MACHINE\System\CurrentControlSet\Control\Lsa\AuditBaseObjects=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\CrashOnAuditFail=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\DisableDomainCreds=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\EveryoneIncludesAnonymous=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\ForceGuest=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\FullPrivilegeAuditing=3,0
+MACHINE\System\CurrentControlSet\Control\Lsa\NoLMHash=4,1
+MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymous=4,0
+MACHINE\System\CurrentControlSet\Control\Lsa\RestrictAnonymousSAM=4,1
+
+;Domain Controllers Only
+;MACHINE\System\CurrentControlSet\Control\Lsa\SubmitControl=4,0
+
+MACHINE\System\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers\AddPrinterDrivers=4,0
+
+MACHINE\System\CurrentControlSet\Control\Session Manager\Kernel\ObCaseInsensitive=4,1
+MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\ClearPageFileAtShutdown=4,0
+MACHINE\System\CurrentControlSet\Control\Session Manager\ProtectionMode=4,1
+
+MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableSecuritySignature=4,0
+MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\EnableForcedLogOff=4,1
+MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\AutoDisconnect=4,15
+MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters\RestrictNullSessAccess=4,1
+
+MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnableSecuritySignature=4,1
+MACHINE\System\CurrentControlSet\Services\LanmanWorkstation\Parameters\EnablePlainTextPassword=4,0
+
+MACHINE\System\CurrentControlSet\Services\LDAP\LDAPClientIntegrity=4,1
+MACHINE\System\CurrentControlSet\Services\LDAP\LDAPClientConfidentiality=4,1
+
+;Potential to take on different values during and after setup
+;MACHINE\Software\Microsoft\Driver Signing\Policy=3,1
+;MACHINE\Software\Microsoft\Non-Driver Signing\Policy=3,0
+
+
+;MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableCAD=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\DontDisplayLastUserName=4,0
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeCaption=1,""
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\LegalNoticeText=7,""
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ScForceOption=4,0
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\ShutdownWithoutLogon=4,1
+MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\UndockWithoutLogon=4,1
+
+MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SecurityLevel=4,0
+MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Setup\RecoveryConsole\SetCommand=4,0
+
+MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ScRemoveOption=1,0
+
+MACHINE\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\AuthenticodeEnabled=4,0
+
+; remove lsarpc, samr and netlogon from anonymously accessible pipes
+MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\NullSessionPipes=8,Remove:,lsarpc,samr,netlogon
+
+;----------------------------------------------------------------------
+;   Privileges & Rights
+;----------------------------------------------------------------------
+;
+;World                          S-1-1-0
+;
+;NT Authority                   S-1-5
+;LOCAL_SERVICE                  19
+;NETWORK_SERVICE                20
+;
+;Built-In Domain SubAuthority = S-1-5-32
+;ADMINISTRATORS                 544
+;USERS                          545
+;GUESTS                         546
+;POWER_USERS (DEPRECATED)
+;ACCOUNT_OPS                    548
+;SYSTEM_OPS                     549
+;PRINT_OPS                      550
+;BACKUP_OPS                     551
+;REPLICATOR                     552
+;RAS_SERVERS                    553
+;PREW2KCOMPACCESS               554
+;REMOTE_DESKTOP_USERS           555
+;NETWORK_CONFIGURATION_OPS      556
+;LOGGING_USERS                  559
+;
+;WdiServiceHost                 S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+;ALL SERVICES			S-1-5-80-0
+;All Restricted Services		S-1-5-99-0
+;PrintSpoolerService			S-1-5-99-216390572-1995538116-3857911515-2404958512-2623887229
+
+[Privilege Rights]
+SeAssignPrimaryTokenPrivilege = *S-1-5-19, *S-1-5-20
+SeAuditPrivilege = *S-1-5-19, *S-1-5-20
+SeBatchLogonRight = *S-1-5-32-544, *S-1-5-32-551, *S-1-5-32-559
+SeBackupPrivilege = *S-1-5-32-544, *S-1-5-32-551
+SeChangeNotifyPrivilege = *S-1-5-32-544, *S-1-5-32-551, *S-1-5-32-545, *S-1-1-0, *S-1-5-19, *S-1-5-20
+SeCreateGlobalPrivilege = *S-1-5-6, *S-1-5-32-544, *S-1-5-19, *S-1-5-20
+SeCreatePagefilePrivilege = *S-1-5-32-544
+SeCreatePermanentPrivilege =
+SeCreateSymbolicLinkPrivilege = *S-1-5-32-544
+SeCreateTokenPrivilege =
+SeDebugPrivilege = *S-1-5-32-544
+SeImpersonatePrivilege = *S-1-5-6, *S-1-5-32-544, *S-1-5-19, *S-1-5-20, *S-1-5-99-216390572-1995538116-3857911515-2404958512-2623887229
+SeIncreaseBasePriorityPrivilege = *S-1-5-32-544, *S-1-5-90-0
+SeIncreaseQuotaPrivilege = *S-1-5-32-544, *S-1-5-19, *S-1-5-20
+SeIncreaseWorkingSetPrivilege = *S-1-5-32-545
+SeInteractiveLogonRight = *S-1-5-32-544, *S-1-5-32-551, *S-1-5-32-545, &-501
+SeLoadDriverPrivilege = *S-1-5-32-544
+SeLockMemoryPrivilege =
+SeMachineAccountPrivilege =
+SeManageVolumePrivilege = *S-1-5-32-544
+SeNetworkLogonRight = *S-1-5-32-544, *S-1-5-32-551, *S-1-5-32-545, *S-1-1-0
+SeProfileSingleProcessPrivilege = *S-1-5-32-544
+SeRemoteInteractiveLogonRight = *S-1-5-32-544, *S-1-5-32-555
+SeRemoteShutdownPrivilege = *S-1-5-32-544
+SeRestorePrivilege = *S-1-5-32-544, *S-1-5-32-551
+SeSecurityPrivilege = *S-1-5-32-544
+SeServiceLogonRight = *S-1-5-80-0, *S-1-5-99-0
+SeShutdownPrivilege = *S-1-5-32-544, *S-1-5-32-551, *S-1-5-32-545
+SeSystemEnvironmentPrivilege = *S-1-5-32-544
+SeSystemProfilePrivilege = *S-1-5-32-544, *S-1-5-80-3139157870-2983391045-3678747466-658725712-1809340420
+SeSystemTimePrivilege = *S-1-5-32-544,  *S-1-5-19
+SeTakeOwnershipPrivilege = *S-1-5-32-544
+SeTcbPrivilege =
+SeTimeZonePrivilege = *S-1-5-32-544, *S-1-5-19, *S-1-5-32-545
+;
+SeDenyInteractiveLogonRight = &-501
+SeDenyBatchLogonRight =
+SeDenyServiceLogonRight =
+SeDenyNetworkLogonRight = &-501
+SeDenyRemoteInteractiveLogonRight =
+;
+SeUndockPrivilege = *S-1-5-32-544,  *S-1-5-32-545
+SeSyncAgentPrivilege =
+SeEnableDelegationPrivilege =
+
+[Group Membership]
+*S-1-5-32-545__Memberof =
+*S-1-5-32-545__Members = *S-1-5-11,*S-1-5-4
+
+[Service General Setting]
+;Note: startup type should not be configured during setup\dcpromo.
+Browser,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;TrkWks,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;Dnscache,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCLCSWRPWPDTLOCRRC;;;NO)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;PolicyAgent,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+dmserver,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;PlugPlay,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;Spooler,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;ProtectedStorage,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;RpcSs,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)(A;;CCLCSWRPLO;;;BU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+NtmsSvc,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;seclogon,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+SamSs,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLO;;;IU)(A;;CCLCSWLO;;;BU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;lanmanserver,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;SENS,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;Schedule,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+Sysmonlog,,"D:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCRPLOCR;;;LU)S:AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;LmHosts,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;LanmanWorkstation,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;RemoteRegistry,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+ClipSrv,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+NetDDE,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+NetDDEdsdm,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;EventSystem,,"D:(A;;CCLCSWRPLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+;Not autostarted if machine is standalone
+;Netlogon,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;W32Time,,"D:(A;;CCLCSWLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWRPLO;;;IU)(A;;CCLCSWRPLO;;;BU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+;Server Only Services
+;Dfs,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SO)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;LicenseService,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SO)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+;IIS Specific Services - Leave them alone
+;IISADMIN,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SO)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;W3SVC,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SO)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;MSFTPSVC,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SO)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+;SMTPSVC,,"D:(A;;CCLCSWLOCRRC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SO)(A;;CCLCSWRPWPDTLOCRRC;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+
+
+[Registry Keys]
+
+
+[File Security]
+
+

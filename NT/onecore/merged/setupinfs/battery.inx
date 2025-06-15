@@ -1,0 +1,75 @@
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=Battery
+ClassGuid={72631e54-78a4-11d0-bcf7-00aa00b7b32a}
+Provider=%MSFT%
+PnpLockdown=1
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+battc.sys = 3426
+
+[DestinationDirs]
+BatteryCopyFiles = 12
+
+[ControlFlags]
+BasicDriverOk = *
+ExcludeFromSelect = *
+
+[Manufacturer]
+%MSFT%=Microsoft
+
+[Microsoft]
+%Battery.DeviceDesc% = Battery_Inst ; not installable - needed to deploy battc.sys
+%Battery.DeviceDesc% = HidBatt_Inst   ; for compat
+%Battery.DeviceDesc% = CmBatt_Inst    ; for compat
+%Battery.DeviceDesc% = AcAdapter_Inst ; for compat
+%PowerWareUPS.DeviceDesc% = NO_DRV,SERENUM\DEL0001
+%PowerWareUPS.DeviceDesc% = NO_DRV,SERENUM\EXI0001
+%PowerWareUPS.DeviceDesc% = NO_DRV,SERENUM\FPS0001
+%APC.DeviceDesc% = NO_DRV,SERENUM\APC0000
+%APC.DeviceDesc% = NO_DRV,SERENUM\APC0001
+%APC.DeviceDesc% = NO_DRV,SERENUM\APC0002
+%APC.DeviceDesc% = NO_DRV,SERENUM\APC0003
+
+[Battery_Inst]
+CopyFiles = BatteryCopyFiles
+
+[BatteryCopyFiles]
+battc.sys,,,0x100
+
+[NO_DRV]
+
+[NO_DRV.Services]
+AddService = , %SPSVCINST_ASSOCSERVICE%   ; null service install
+
+; forward to hidbatt.inf for compatibility
+[HidBatt_Inst]
+Include = hidbatt.inf
+Needs   = HidBatt_Inst
+
+[HidBatt_Inst.Services]
+Include = hidbatt.inf
+Needs   = HidBatt_Inst.Services
+
+; forward to cmbatt.inf for compatibility
+[CmBatt_Inst]
+Include = cmbatt.inf
+Needs   = CmBatt_Inst
+
+[CmBatt_Inst.Services]
+Include = cmbatt.inf
+Needs   = CmBatt_Inst.Services
+
+; forward to cmbatt.inf for compatibility
+[AcAdapter_Inst]
+Include = cmbatt.inf
+Needs   = AcAdapter_Inst
+
+[AcAdapter_Inst.Services]
+Include = cmbatt.inf
+Needs   = AcAdapter_Inst.Services
+

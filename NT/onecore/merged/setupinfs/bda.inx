@@ -1,0 +1,113 @@
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+
+[Version]
+Signature="$Windows NT$"
+Class=Media
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%Msft%
+
+[DefaultInstall]
+Include=ks.inf
+Needs=KS.Registration
+AddReg=BDA.CategoryRegistration, BDA.NodeRegistration, BDA.PinNameRegistration
+;
+;   Include the following line for post dx8 builds
+;
+CopyFiles=BdaDriver.Files
+
+[DefaultInstall.NT]
+Include=ks.inf
+Needs=KS.Registration
+AddReg=BDA.CategoryRegistration, BDA.NodeRegistration, BDA.PinNameRegistration
+;
+;   Include the following line for post dx8 builds
+;
+CopyFiles=BdaDriver.Files
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+bdasup.sys 		= 3426
+msdvbnp.ax 		= 3426
+psisrndr.ax 		= 3426
+psisdecd.dll 		= 3426
+bdaplgin.ax 		= 3426
+
+[DestinationDirs]
+AllDll.Files=11
+BdaDriver.Files=12
+AllDriver.Files=12
+
+
+[BDA.Registration]
+;
+;   Registers Filters/Categories but does not install devices
+;
+AddReg=BDA.CategoryRegistration, BDA.NodeRegistration, BDA.PinNameRegistration
+
+
+[BDA.Installation]
+;
+;   Registers Filters/Categories and installs devices on 9x systems.
+;
+AddReg=BDA.CategoryRegistration, BDA.NodeRegistration, BDA.PinNameRegistration, BDA.DeviceInstallation
+;
+;   Include the following line for post dx8 builds
+;
+CopyFiles=BdaDriver.Files
+
+
+[BDA.Installation.NT]
+;
+;   Registers Filters/Categories and installs devices on NT systems.
+;
+AddReg=BDA.CategoryRegistration, BDA.NodeRegistration, BDA.PinNameRegistration, BDA.DeviceInstallation
+;
+;   Include the following line for post dx8 builds
+;
+CopyFiles=BdaDriver.Files
+
+
+[BdaCategoryUnRegistration]
+
+
+[BDA.CategoryRegistration]
+
+; BDA Tuners
+;
+HKCR,%ActiveMovieCategories%\%GUID.BdaTuner%
+HKCR,%ActiveMovieCategories%\%GUID.BdaTuner%,,,%Category_BdaTuner%
+HKCR,%ActiveMovieCategories%\%GUID.BdaTuner%,FriendlyName,,%Category_BdaTuner%
+HKCR,%ActiveMovieCategories%\%GUID.BdaTuner%,CLSID,,%GUID.BdaTuner%
+
+; BDA Receiver Components
+;
+HKCR,%ActiveMovieCategories%\%GUID.BdaComponent%
+HKCR,%ActiveMovieCategories%\%GUID.BdaComponent%,,,%Category_BdaComponent%
+HKCR,%ActiveMovieCategories%\%GUID.BdaComponent%,FriendlyName,,%Category_BdaComponent%
+HKCR,%ActiveMovieCategories%\%GUID.BdaComponent%,CLSID,,%GUID.BdaComponent%
+HKCR,%ActiveMovieCategories%\%GUID.BdaComponent%,Merit,1,00,00,60,00
+
+; BDA Rendering Components
+;
+HKCR,%ActiveMovieCategories%\%GUID.BdaRenderer%
+HKCR,%ActiveMovieCategories%\%GUID.BdaRenderer%,,,%Category_BdaRenderer%
+HKCR,%ActiveMovieCategories%\%GUID.BdaRenderer%,FriendlyName,,%Category_BdaRenderer%
+HKCR,%ActiveMovieCategories%\%GUID.BdaRenderer%,CLSID,,"%GUID.BdaRenderer%"
+
+
+[BDA.NodeRegistration]
+; HKLM,%MediaCategories%\%GUID.Bridge%,Name,,%Node.Bridge%
+; HKLM,%MediaCategories%\%GUID.Bridge%,Display,1,00,00,00,00
+
+
+[BDA.PinNameRegistration]
+HKLM,%MediaCategories%\%PinID.GUID.AtscTS%,Name,,%Pin.Name.AtscTS%
+HKLM,%MediaCategories%\%PinID.GUID.AtscTS%,Display,1,00,00,00,00
+
+
+[BdaDriver.Files]
+BdaSup.sys,,,COPYFLG_NO_VERSION_DIALOG
+
+
