@@ -1,0 +1,810 @@
+//===================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2002 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Windows Code Name "Longhorn" Setup
+// Wizard Page Resources (Azure Stack HCI)
+// 
+//===================================================================
+
+#include "..\\common\\resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Setup Wizard Page Resources"
+#define VER_INTERNALNAME_STR        "w32uiRes.dll"
+#define VER_ORIGINALFILENAME_STR    "w32uiRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WELCOMETOLONGHORN DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Welcome"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "", IDC_LONGHORNLOGO, STATIC, SS_BITMAP | SS_CENTERIMAGE | WS_CHILD | WS_VISIBLE, 166, 23, 48, 77 , WS_EX_TRANSPARENT
+   CONTROL "Azure Stack HCI Setup", IDL_TOPHEADER, STATIC, SS_CENTER | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 86, 320, 16 
+   CONTROL "The installation process consists of a few easy steps, then\r\nWindows will finish installing on its own.", -1, STATIC, SS_CENTER | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 109, 320, 24 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_THANKYOURESTARTING DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Finish"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Azure Stack HCI needs to restart to continue", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "", IDC_RESTARTTIMER, "msctls_progress32", PBS_SMOOTH | WS_CHILD | WS_VISIBLE | WS_BORDER, 20, 33, 300, 6 
+   CONTROL "Restarting in 10 seconds", IDL_TIMERLABEL, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 41, 300, 30 
+   CONTROL "After you restart the computer, Setup will continue automatically.", IDL_EJECTANYDRIVES, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 20, 41, 300, 30 
+   CONTROL "", IDC_RESTARTIMMEDIATELY, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 287, 210, 62, 13 
+END
+
+IDD_PRODUCTKEY DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Product key"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Enter the product key to activate Azure Stack HCI", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "", IDL_LABEL1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 33, 300, 40 
+   CONTROL "", IDL_LABEL2, STATIC, SS_LEFT | SS_CENTERIMAGE | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 55, 300, 8 
+   CONTROL "Dashes will be added automatically.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 65, 300, 15 
+   CONTROL "", IDC_PRODUCTKEYTEXTBOX, EDIT, ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 20, 80, 138, 12 
+   CONTROL "On-screen keyboard", IDC_OSKBUTT, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 160, 80, 12, 12 
+   CONTROL "", IDC_OSKLOGO, STATIC, SS_BITMAP | WS_CHILD | WS_VISIBLE, 20, 105, 10, 10 
+   CONTROL "", IDL_LABEL3, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 34, 105, 267, 19 
+   CONTROL "", IDC_IDONTHAVEPID, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 4, 210, 290, 14 
+   CONTROL "", IDC_PRIVACYSTATEMENT, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 160, 210, 0, 0 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_LONGHORNEULA DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "EULA"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Applicable notices and license terms", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "License terms text control", -1, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "", IDC_EULAVIEW, "RichEdit20W", ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL, 20, 33, 310, 145 
+   CONTROL "I &accept the Microsoft Software License Terms. If an organization is licensing it, I am authorized to bind the organization.", IDC_ACCEPTEULA, BUTTON, BS_AUTOCHECKBOX | BS_MULTILINE | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 20, 186, 300, 20 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_LONGHORNINSTALLKIND DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Install Type"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Which type of installation do you want?", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   // This will no longer work for direct operating system updates by 2012.
+   CONTROL "", IDC_UPGRADEOPTION, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 33, 300, 53 
+   CONTROL "", IDC_NEWINSTALLOPTION, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 88, 300, 63 
+   CONTROL "Static", IDL_STATICLABEL, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 20, 165, 300, 68 
+END
+
+IDD_PROGRESSPAGE DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Progress"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Installing Azure Stack HCI", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "Status", IDL_INSTALLSTATUS, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 35, 300, 28 
+   CONTROL "", IDC_CHECKMARK, STATIC, SS_BITMAP | SS_CENTERIMAGE | WS_CHILD | WS_VISIBLE, 20, 65, 10, 10 , 0, 32
+   CONTROL "", IDL_LABELIST, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 32, 65, 300, 10 
+   CONTROL "", IDL_INSTALLDESC, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 177, 300, 20 
+END
+
+IDD_SETUPCANCEL DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Cancel"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "The installation was canceled", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "Any changes made to your computer won't be saved.", IDL_NOTHINGSAVED, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 33, 300, 24 
+END
+
+IDD_PARTITIONDELETION DIALOGEX 0, 0, 304, 78
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Azure Stack HCI Setup"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Back", IDCANCEL, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 95, 57, 50, 14 
+   CONTROL "&Next", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 157, 57, 50, 14 
+   CONTROL "To select another partition or drive, click Back. To delete everything on this drive and continue with Setup, click Next.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 33, 250, 20 
+   CONTROL "You've chosen to install Azure Stack HCI on drive %d.  If you continue, Setup will delete all partitions and data contained on this drive.", IDL_DRVDELWARN, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 10, 250, 20 
+   CONTROL "", IDC_WRNICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 10, 20, 20 
+END
+
+IDD_PARTITIONFORMAT DIALOGEX 0, 0, 304, 78
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Azure Stack HCI Setup"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Back", IDCANCEL, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 94, 57, 50, 14 
+   CONTROL "&Next", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 159, 57, 50, 14 
+   CONTROL "To select another partition or drive, click Back. To proceed with Setup and delete everything on this partition, click Next.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 33, 250, 20 
+   CONTROL "You've chosen to format partition %d on drive %d. If you continue, Setup will delete all information contained on this partition.", IDL_DRVDELWARN, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 10, 250, 20 
+   CONTROL "", IDC_WRNICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 10, 20, 20 
+END
+
+IDD_SELECTDRV DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Drive Selection"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Where do you want to install Azure Stack HCI?", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "Listview Control", -1, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "DriveListing", IDL_DRVLIST, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 20, 38, 314, 104 
+   CONTROL "", IDC_BUTTON1, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 17, 145, 75, 14 
+   CONTROL "", IDC_BUTTON2, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_DISABLED | WS_TABSTOP, 97, 145, 65, 14 
+   CONTROL "", IDC_BUTTON3, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_DISABLED | WS_TABSTOP, 164, 145, 75, 14 
+   CONTROL "", IDC_BUTTON4, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_DISABLED | WS_TABSTOP, 241, 145, 75, 14 
+   CONTROL "", IDC_BUTTON5, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 17, 160, 75, 14 
+   CONTROL "", IDC_BUTTON6, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_DISABLED | WS_TABSTOP, 97, 160, 65, 14 
+   CONTROL "", IDC_BUTTON7, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 234, 145, 100, 14 
+   CONTROL "&Size:", IDL_SIZE, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 167, 162, 31, 11 
+   CONTROL "", IDC_SIZEEDITBOX, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 196, 161, 37, 12 
+   CONTROL "SizeSelect", IDC_SIZEQUANT, "msctls_updown32", UDS_AUTOBUDDY | WS_CHILD, 232, 161, 56, 11 
+   CONTROL "MB", IDC_VOLCAPACITY, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 245, 162, 20, 11 
+   CONTROL "A&pply", IDC_APPLYSETTINGS, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 260, 161, 44, 12 
+   CONTROL "&Cancel", IDC_CANCELDISKCONFIG, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 308, 161, 37, 12 
+   CONTROL "To make changes to partitions, restart Azure Stack HCI from the installation media.", IDL_REBOOTTOWINPE, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 20, 173, 300, 20 
+   CONTROL "", IDL_PARTINFLABEL, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 35, 182, 200, 40 
+   CONTROL "", IDC_OSKLOGO, STATIC, SS_BITMAP | WS_CHILD | WS_VISIBLE, 4, 184, 10, 10 
+   CONTROL "This partition doesn't have enough free space to install Azure Stack HCI. Delete files, uninstall applications, extend the partition, or format it to free space on this partition, or select another partition.", IDL_NOTENOUGHSPACE, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 20, 184, 300, 28 
+   CONTROL "", IDC_BUTTON8, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 15, 182, 300, 14 
+   CONTROL "", IDC_BUTTON9, BUTTON, BS_OWNERDRAW | WS_CHILD, 20, 186, 211, 14 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_SETUPPROGRESS DIALOGEX 0, 0, 400, 35
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_CLIPCHILDREN | WS_CAPTION
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Azure Stack HCI Setup"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "Progress Phase 1", -1, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 8, 1, 1 
+   CONTROL "", IDD_INFOCOLL, "msctls_progress32", PBS_SMOOTH | WS_CHILD | WS_VISIBLE | WS_BORDER, 0, 0, 119, 6 
+   CONTROL "Progress Phase 2", -1, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 120, 8, 1, 1 
+   CONTROL "", IDD_INSTALLINGWINNT, "msctls_progress32", PBS_SMOOTH | WS_CHILD | WS_VISIBLE | WS_BORDER, 120, 0, 280, 6 
+END
+
+IDD_CANTRUNWINDOWS11 DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "HW Requirements Page"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "This PC doesn't meet the minimum system requirements to install this version of Azure Stack HCI. For more information, visit https://aka.ms/WindowsSysReq", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 33, 300, 24 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_PLACEHOLDDLG DIALOGEX 0, 0, 310, 110
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Azure Stack HCI Setup"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Close", IDCANCEL, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 99, 88, 50, 14 
+   CONTROL "&Next", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 161, 88, 50, 14 
+   CONTROL "", IDL_DRVDELWARN, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 10, 258, 60 
+   CONTROL "", IDC_WRNICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 10, 21, 20 
+END
+
+IDD_SELECTDRIVERS DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Driver Selection"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Select the driver to install", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 15, 300, 16 
+   CONTROL "DriverList", IDC_DRIVERLIST, "SysListView32", LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 20, 33, 300, 134 
+   CONTROL "&Hide drivers that aren't compatible with this computer's hardware.", IDC_DONTSHOWINCOMPATIBLEDRIVERS, BUTTON, BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 178, 300, 16 
+   CONTROL "Br&owse", IDC_BRWSE, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 210, 43, 13 
+   CONTROL "&Rescan", IDC_SCANAGAIN, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 90, 210, 53, 13 
+   CONTROL "", IDC_COMPATCHECKPROGRESS, "msctls_progress32", PBS_SMOOTH | WS_CHILD | WS_BORDER, 20, 194, 300, 6 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_CHECKINGAPPCOMPAT DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Application Compatibility Progress Page"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Checking compatibility", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "", IDC_COMPATCHECKPROGRESS, "msctls_progress32", PBS_SMOOTH | WS_CHILD | WS_VISIBLE | WS_BORDER, 20, 38, 250, 6 
+END
+
+IDD_APPCOMPATREPORT DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "App Compat"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Compatibility report", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "", IDC_BUTTON5, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_TABSTOP, 22, 178, 75, 14 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_CANCLDLG DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Cancel"
+FONT 9, "Segoe UI"
+BEGIN
+END
+
+IDD_UNKWNDLG DIALOGEX 0, 0, 310, 84
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Azure Stack HCI Setup"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "", IDC_WRNICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 10, 21, 20 
+   CONTROL "", IDL_DRVDELWARN, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 10, 250, 46 
+   CONTROL "", IDL_PLACEHOLDLABEL, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 84, 258, 30 
+   CONTROL "&Back", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 99, 62, 50, 14 
+   CONTROL "&Next", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 161, 62, 50, 14 
+END
+
+IDD_DYNAMICUPDATE DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Dynamic Update Welcome Page"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Get important updates for Azure Stack HCI Setup", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "", IDC_APPLYUPDATES, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 20, 33, 290, 57 
+   CONTROL "", IDC_SIZEQUANT, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 91, 290, 36 
+   CONTROL "&I want to help make the Azure Stack HCI installation better", IDC_JOINMSIMPROVEMENTPRG, BUTTON, BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 159, 290, 11 
+   CONTROL "", IDC_PRVSTAT, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 4, 210, 290, 14 
+   CONTROL "", -1, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 20, 200, 290, 8 
+END
+
+IDD_CHECKINGFORUPDATES DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Dynamic Update Progress Page"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Searching for Setup updates", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "", IDC_COMPATCHECKPROGRESS, "msctls_progress32", PBS_SMOOTH | WS_CHILD | WS_VISIBLE | WS_BORDER, 20, 30, 250, 6 
+   CONTROL "Download size display", IDL_SIZEOUTPUT, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 40, 258, 10 
+   CONTROL "Time display", IDL_TIMEOUTPUT, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 54, 258, 10 
+   CONTROL "Your computer needs to stay connected to the Internet while Azure Stack HCI installs.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 67, 258, 30 
+END
+
+IDD_CANTGETUPDATES DIALOGEX 0, 0, 300, 100
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Azure Stack HCI Setup"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Try again", IDC_RETRY, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 170, 75, 50, 14 
+   CONTROL "&Continue", IDC_NEXTBUTTON, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 230, 75, 50, 14 
+   CONTROL "Make sure your computer is connected to the Internet. Do you want to try getting updates again or continue installing without the updates?", IDL_PLACEHOLDLABEL, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 40, 243, 30 
+   CONTROL "We can't get to the updates", IDL_DRVDELWARN, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 20, 240, 14 
+   CONTROL "", IDC_ERRICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 10, 21, 20 
+END
+
+IDD_COMPUTERDISCONNECTED DIALOGEX 0, 0, 300, 100
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Azure Stack HCI Server"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Reconnect", IDC_RETRY, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 170, 75, 50, 14 
+   CONTROL "&Continue", IDC_NEXTBUTTON, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 230, 75, 50, 14 
+   CONTROL "Do you want to reconnect and get the updates or continue installing without the updates?", IDL_PLACEHOLDLABEL, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 40, 243, 30 
+   CONTROL "Your computer isn't connected to the Internet", IDL_DRVDELWARN, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 20, 240, 14 
+   CONTROL "", IDC_ERRICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 10, 21, 20 
+END
+
+IDD_CANTCONNECTTOINTERNET DIALOGEX 0, 0, 300, 100
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Azure Stack HCI Setup"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Try again", IDC_RETRY, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 170, 75, 50, 14 
+   CONTROL "&Continue", IDC_NEXTBUTTON, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 230, 75, 50, 14 
+   CONTROL "To get updates, your computer must be connected to the Internet. Do you want to try getting updates again or continue installing without the updates?", IDL_PLACEHOLDLABEL, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 40, 243, 30 
+   CONTROL "We can't connect to the Internet", IDL_DRVDELWARN, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 45, 20, 240, 14 
+   CONTROL "", IDC_ERRICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 10, 21, 20 
+END
+
+IDD_WELCOMETODEPLOYMENTSERVICES DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Welcome"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Azure Stack HCI Setup", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "Click Next to begin", IDL_PROCEED, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 78, 277, 18 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_SELECTSKU DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Image Selection"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "&Select the operating system you want to install", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "ImageListing", IDC_LISTWIMINDEXES, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 20, 33, 300, 90 
+   CONTROL "", IDL_SKUDESC, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 124, 300, 45 
+   CONTROL "Select a &language to install:", IDL_SELECTLANG, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 172, 200, 15 
+   CONTROL "", IDC_LANGOPTS, COMBOBOX, CBS_DROPDOWNLIST | WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_TABSTOP, 20, 186, 95, 40 
+   CONTROL "&Next", IDC_NEXTBUTTON, BUTTON, BS_OWNERDRAW | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 302, 210, 43, 13 
+END
+
+IDD_WAITINGFORUPDATESRV DIALOGEX 0, 0, 350, 227
+STYLE DS_SHELLFONT | WS_CHILD | WS_CAPTION
+CAPTION "Waiting for Server"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Waiting for server", IDL_TOPHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 9, 300, 14 
+   CONTROL "", IDC_COMPATCHECKPROGRESS, "msctls_progress32", PBS_SMOOTH | WS_CHILD | WS_VISIBLE | WS_BORDER, 20, 38, 250, 6 
+   CONTROL "Azure Stack HCI Setup will continue automatically once the server initiates your session.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 20, 55, 250, 18 
+END
+
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PROJECTNAME                                      "WIN32UI"
+	IDS_LONGHORNSETUP                                    "Azure Stack HCI Setup"
+	IDS_WELCOMETOLONGHORN                                "Welcome to ""Azure Stack HCI"" Setup"
+	IDS_GETTINGDRIVEREADY                                "Azure Stack HCI Setup is getting your drive ready"
+	IDS_RESTARTINGCOMPUTER                               "Restarting the computer"
+	IDS_MOVINGYOURSTUFF                                  "Azure Stack HCI Setup is getting ready to move your things"
+	IDS_PRODUCTIDENTIFICATION                            "Product key"
+	IDS_MICROSOFTLICENSETERMS                            "Microsoft Software License Terms"
+	IDS_LONGHORNINSTALLTYPE                              "Installation type"
+	IDS_COPYINGFILES                                     "Setup is now copying files."
+	IDS_COPYINGSETUPFILES                                "Copying installation files"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LONGHORNSETUPTITLE                               "Azure Stack HCI Setup"
+	IDS_LONGHORNSETUPSECTION                             "Azure Stack HCI Setup - %s"
+	IDS_INSTALLTODRVCONTAINWINNTFLDR                     "The partition you selected might contain files from a previous Azure Stack HCI installation. If it does, these files and folders will be moved to a folder named Windows.old. You will be able to access the information in Windows.old, but you will not be able to use your previous version of Azure Stack HCI."
+	IDS_GETTINGDATATOMIGRATE                             "Getting your data ready to move"
+	IDS_INSTALLATIONPARTITION                            "Installation partition"
+	IDS_COPYINGLONGHORNFILES                             "Copying files"
+	IDS_COPYINGWINPEMEDIA                                "Getting Windows PE ready"
+	IDS_QUITSETUPDESC                                    "Are you sure you want to quit?"
+	IDS_PCWILLRESTARTALOT                                "Your computer will restart several times. This might take a while."
+	IDS_LETDISCSDOTHEJOB                                 "Stay at your computer until the discs are finished being read."
+	IDS_INSERTLONGHORNDISCNUM                            "Insert Azure Stack HCI installation disc %1!d!."
+	IDS_WRONGDISCINSERTED                                "The wrong disc was inserted. Please insert Azure Stack HCI installation disc %1!d!."
+	IDS_SETUPDLGTITLE                                    "Azure Stack HCI Setup"
+	IDS_PLACEHOLDERTEXT                                  " "
+	IDS_SELECTANOTHERPARTITION                           "To select another partition, click Back."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_AMINLEFT                                         "%d minute left"
+	IDS_SEVERALMINSLEFT                                  "%d minutes left"
+	IDS_LONGHORNONLYSUPPORTSNTFS                         "Azure Stack HCI can only be installed on a partition with NTFS formatting. You can reformat or use convert.exe to change this partition to NTFS. Otherwise, select another partition."
+	IDS_DYNAMICVOLSDETECTED                              "Azure Stack HCI can't be installed to this location because it has one or more dynamic volumes."
+	IDS_VERIFYACCESSIBLEDRIVES                           "Restart your computer and verify that your drives are enabled in BIOS."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	// New as of 2021!
+	IDS_CANTRUNWINDOWS11                                 "This PC can't run this version of Azure Stack HCI"
+	// the rest here are usual strings
+	IDS_UPGRADEOPTI                                      "&Upgrade: Install the newer version of Azure Stack HCI and keep files, settings, and applications"
+	IDS_UPGRADEDESC                                      "The files, settings, and applications are moved to the newer Azure Stack HCI with this option. This option is only available when a supported version of Azure Stack HCI is already running on the computer."
+	IDS_CUSTOMINSTALLOPTION                              "&Custom: Install the newer version of Azure Stack HCI only (advanced)"
+	IDS_CUSTOMINSTALLDESCRP                              "The files, settings, and applications aren't moved to the newer version of Azure Stack HCI with this option. If you want to make changes to partitions and drives, start the computer using the installation disc. We recommend backing up your files before you continue."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NEWPARTITION                                     "N&ew"
+	IDS_DELETEPARTITION                                  "&Delete"
+	IDS_EXTENDPARTITION                                  "E&xtend"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_REFRESHPARTITIONLIST                             "&Refresh"
+	IDS_FORMATPARTITION                                  "&Format"
+	IDS_PARTITIONTOOSMALL                                "This partition is too small. Make the size of this partition at least %1!u! MB or select another partition."
+	IDS_PARTITIONTYPENOTSUPPORTED                        "This partition type isn't supported. Please select another partition."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DELETEPARTITIONWARNING                           "This partition might contain important files or applications from your computer manufacturer. If you delete this partition, any data stored on it will be lost."
+	IDS_EXTENDPARTITIONWARNING                           "If you continue and extend a partition, you won't be able to change it later."
+	IDS_FORMATPARTITIONWARNING                           "This partition might contain important files or applications from your computer manufacturer. If you format this partition, any data stored on it will be lost."
+	IDS_UNALLOCATEDSPACEDRIVES                           "Drive %1!d! Unallocated Space"
+	IDS_UNAVAILABLEDRIVESTATUS                           "Unavailable"
+	IDS_MINIMUMDISKSIZEREQUIRE                           "The size must be at least %1!d! MB."
+	IDS_MAXIMUMDISKSIZEREQUIRE                           "The size must be at most %1!d! MB."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DRIVEINFO                                        "Drive %1!d!"
+	IDS_PARTITIONINFO                                    "Partition %1!d!"
+	IDS_PARTITIONSECONDARYINFO                           "Partition %1!d! (%2!c!:)"
+	IDS_DRIVEVARIABLES                                   "%1!s!, %2!s!"
+	IDS_CREATEUSERACCOUNTS                               "Click here to add user accounts"
+	IDS_DETAILEDRIVEINFO                                 "Drive %1!d! %2!s!"
+	IDS_DRIVELETTERORNUM                                 "Drive %1!d!"
+	IDS_COMA                                             ", "
+	IDS_HELPMEWITHTHESEOPTIONS                           "&Tell me more about these options"
+	IDS_CLICKTOSELECTLONGHORNINSTALLPLACE                "Click here to select where to install Azure Stack HCI"
+	IDS_CLICKTOSETCOMPUTERNAME                           "Click here to pick a computer name"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WHATDOESTHATMEAN                                 "&What do these settings mean?"
+	IDS_OKAYSTRING                                       "&OK"
+	IDS_SETTINGHELPTITLE                                 "What do these settings mean?"
+	IDS_DRIVELETTERNUMINFO                               "Drive %1!d! %2!s! (%3!c!:)"
+	IDS_TELLMEDRIVEOPTIONS                               "Tell me more about these options"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CANTTERMINATESETUP                               "Setup can't be canceled right now because doing so might make your computer unstable."
+	IDS_LOADCONTROLLERDRIVERS                            "&Load driver"
+	IDS_GOONLINETOUPDATE                                 "&Go online to install updates now (recommended)"
+	IDS_DONTUPDATE                                       "N&o thanks"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WHYGETUPDATESLINK                                "W&hy should I get updates for Setup?"
+	IDS_WHYGETUPDATESTITL                                "Why should I get updates for Setup?"
+	IDS_PRIVACYSTATEMENTLINK                             "&Privacy Statement"
+	IDS_PRIVACYSTATEMENTTITLE                            "Azure Stack HCI Privacy Statement"
+	IDS_INFORMATIONSENTTOMICROSOFT                       "&What information will be sent to Microsoft?"
+	IDS_UPDATEIMPORTANCEHELP                             "Get the latest updates, such as security updates and hardware drivers, to help successfully install Azure Stack HCI. (Your computer will stay connected to the Internet while Azure Stack HCI installs.)"
+	IDS_NOTUPDATINGCONS                                  "Without these updates, Azure Stack HCI might not install properly and your computer might be more vulnerable to security threats."
+	IDS_UPDATESTOLONGHORNNTSETUP                         "Get important updates for Azure Stack HCI Setup"
+	IDS_GENERICVOLUME                                    "Volume"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SIZEINMB                                         "%1!s! MB"
+	IDS_SIZEMB2                                          "%1!d! MB"
+	IDS_PARTITIONINFORMATION                             "Partition %1!d!"
+	IDS_PARTITIONNAME                                    "Name"
+	IDS_PARTITIONTOTALSIZE                               "Total size"
+	IDS_PARTITIONFREESPACE                               "Free space"
+	IDS_MICROSOFTINFOCOLL                                "What information will be sent to Microsoft?"
+	IDS_DISKNAME                                         "Name"
+	IDS_DISKTOTALSIZE                                    "Total size"
+	IDS_DISKFREESPACE                                    "Free space"
+	IDS_DISKTYPE                                         "Type"
+	IDS_PRIMARYDISK                                      "Primary"
+	IDS_LOGICALDISK                                      "Logical"
+	IDS_UNKNOWNDISK                                      "Unknown"
+	IDS_EXTENDEDPARTITION                                "Extended"
+	IDS_DYNAMICVOLUME                                    "Dynamic"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEMDRIVE                                      "System"
+	IDS_BASICDRIVE                                       "Basic"
+	IDS_FAILEDTOCREATEPARTITION                          "We couldn't create a new partition or locate an existing one. For more information, see the Setup log files."
+	IDS_SIZEINGIGABYTES                                  "%1!s! GB"
+	IDS_PARTITIONRATIO                                   "Partition %1!d!: %3!s!"
+	IDS_RECOMMENDEDPARTITIONSIZE                         "The amount of free space on the selected partition is smaller than the %1!u! MB recommendation. We recommend making it at least %1!u! MB or selecting another partition."
+	IDS_OEMPARTITIONRESERVED                             "OEM (Reserved)"
+	IDS_MSRPARTITIONRESERVED                             "MSR (Reserved)"
+	IDS_VOLUMEINFO                                       "Volume %2!s!%3!s!"
+	IDS_MEDIADRIVERMISSING                               "A media driver your computer needs is missing. This could be a DVD, USB or Hard disk driver. If you have a CD, DVD, or USB flash drive with the driver on it, please insert it now.\r\n\r\nNote: If the installation media for Azure Stack HCI is in the DVD drive or on a USB drive, you can safely remove it for this step."
+	IDS_NODEVICEDRIVERFOUND                              "No device drivers were found. Make sure that the installation media contains the correct drivers, and then click OK."
+	IDS_NONEWDEVICEDRIVERSFOUND                          "No new devices drivers were found. Make sure the installation media contains the correct drivers, and then click OK."
+	IDS_NOSIGNEDDEVICEDRIVERSFOUND                       "No signed device drivers were found. Make sure that the installation media contains the correct drivers, and then click OK."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_STARTINGINSTALLATION                             "Beginning installation"
+	IDS_INSTALLINGWINDOWSHEADER                          "Installing Azure Stack HCI"
+	IDS_UPGRADINGWINDOWSHEADER                           "Upgrading Azure Stack HCI"
+	IDS_INSTALLINGWINDOWSBOTTOMSTATS                     "Installing Azure Stack HCI"
+	IDS_UPGRADINGWINDOWSBOTTOMSTATS                      "Upgrading Azure Stack HCI"
+	IDS_THECOMPUTERWILLRESTART                           "Your computer will restart several times. This might take a while."
+	IDS_STEPNUMBERONE                                    "1"
+	IDS_STEPCOLLECTINGINFORMATION                        "Collecting information"
+	IDS_STEPNUMBERTWO                                    "2"
+	IDS_WINDOWSINSTALLCANCELED                           "Installing Azure Stack HCI was canceled"
+	IDS_CHANGESTOBEUNDONE                                "Any changes made to your computer won't be saved."
+	IDS_USEMINIMUMSIZERECOMMENDED                        "To install this version of Azure Stack HCI, the system drive needs to be 52 GB or larger."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHECKINGCOMPATIBILITY                            "Checking compatibility"
+	IDS_WINDOWSDEPLOYMENT                                "Azure Stack HCI Setup"
+	IDS_RECOVERY                                         "Recovery"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CANTUSETOSTORETEMPFILES                          "Drive [%1!c!:] can't store temporary installation files. Select another drive and try installing Azure Stack HCI again."
+	IDS_CANTFINDTOSTORETEMPFILES                         "Drive [%1!c!:] can't be found to store temporary installation files. Select another drive and try installing Azure Stack HCI again."
+	IDS_CANTUSEREMVABLDRVSFORTEMP                        "Drive [%1!c!:] is a removable drive. Select a local, non-removable drive to store temporary installation files and try installing Azure Stack HCI again."
+	IDS_ALLPARTITIONSTOBEDELETED                         "Drive [%1!c!:] can't store temporary installation files because all of the partitions were selected to be deleted. Select another drive and try installing Azure Stack HCI again."
+	IDS_PARTITIONTOBEFORMATTED                           "Drive [%1!c!:] can't store temporary installation files because the partition was selected to be formatted. Select another drive and try installing Azure Stack HCI again."
+	IDS_NOTENOUGHSPACEFORTEMP                            "Drive [%1!c!:] doesn't have enough free space to store temporary installation files. Select another drive and try installing Azure Stack HCI again."
+	IDS_CANTFINDDRIVEFORTEMP                             "Azure Stack HCI Setup couldn't find a hard drive to store temporary installation files to. Add a new local, non-removable drive and try installing Azure Stack HCI again."
+	IDS_DRIVENOTMEETINGREQUIREMENTFORTEMP                "Drive [%1!c!:] doesn't meet the necessary requirements for storing temporary installation files."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PRODUCTKEYFORACTIVATEDPCS                        "This product key only works on computers that are activated."
+	IDS_CANTDETECTANYDRIVES                              "We couldn't find any drives. To get a storage driver, click Load driver."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BACK                                             "&Back"
+	IDS_CANCEL                                           "Cancel"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SETUPHELP                                        "Help and Support"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INSERTMEDIAFORDRIVER                             "To install the device driver for your drive, insert the installation media containing the driver files, and then click OK.\r\n\r\nNote: The installation media can be a CD, DVD, or USB flash drive."
+	IDS_BROWSETODRIVER                                   "Browse to the driver, and then click OK."
+	IDS_DRIVERLIST                                       "Driver list"
+	IDS_NODRIVERSDETECTED                                "No device drivers were found. Make sure that the installation media contains the correct drivers, and then retry."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ESTIMATEDUPDATETIMEORSIZE                        "%1!s! - %2!s!"
+	IDS_LONGHORNDYNAMICUPDATEGREETING                    "Welcome to Dynamic Update"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ESTIMATEDTIMEINMIN                               "Time left: about %u minutes"
+	IDS_KILOBYTESDOWNLOADED                              "%u KB of %u KB downloaded"
+	IDS_ESTIMATEDTIMEINSEC                               "Time left: about %u seconds"
+	IDS_SEARCHINGFORUPDATES                              "Searching for updates"
+	IDS_DOWNLOADINGUPDATES                               "Downloading updates"
+	IDS_RESTARTINGSETUP                                  "Setup is restarting"
+	IDS_CANTCONNECTTOINTERNET                            "Can't connect to the Internet"
+	IDS_SKIPLONGHORNDYNAMICUPDATE                        "Your computer must be connected to the Internet to get updates. Do you want to try getting the updates again or continue without the updates?"
+	IDS_UPDATEPROCESSINTERRUPTED                         "The update process was interrupted"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CANTDOWNLOADUPDATESRIGHTNOW                      "Setup couldn't download the updates at this time. The latest updates will be available after setup completes through Microsoft Update."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WELCOMETOSETUP                                   "Azure Stack HCI Setup"
+	IDS_SETUPTITLE                                       "Azure Stack HCI Setup"
+	IDS_CANCELSETUP                                      "We haven't finished installing Windows on this computer. Are you sure you want to cancel?"
+	IDS_IMAGEINDEXSELECT                                 "Image Selection"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_IMAGEDESCRIPTION                                 "Description:\r\n%1!s!"
+	IDS_NOOTHERSKUSAVAILABLE                             "No images are available."
+	IDS_ENTERUSERNAME                                    "Enter your user name in the format domain\\user or user@domain.com."
+	IDS_CONNECTTOPC                                      "Connect to %1!s!"
+	IDS_CANTFINISHLOGIN                                  "Something happened so we couldn't finish logging on to this computer. Here's more info about what happened: 0x%1!x!."
+	IDS_RESTARTINGINSECONDS                              "Restarting in %1!ld! seconds"
+	IDS_RESTARTINGINONESEC                               "Restarting in 1 second"
+	IDS_UNPLUGEXTERNALDRIVE                              "Please unplug the following external drive and click OK to restart your computer and finish installing Azure Stack HCI.\n\n%1!c!:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CANTINSTALLDRIVER                                "We couldn't install the [%1!s!] device driver. Contact your vendor for an updated driver."
+	IDS_UNKNOWNDRIVER                                    "(Unknown Driver)"
+	IDS_LOADDRIVER                                       "Load driver"
+	IDS_ONLYNUMERALS                                     "You can only enter a numeric number in this field."
+	IDS_CANTFORMATPARTITION                              "We couldn't format the selected partition. [Error: 0x%1!x!]."
+	IDS_CANTEXTENDPARTITION                              "We couldn't extend the selected partition. [Error: 0x%1!x!]."
+	IDS_CANTDELETEPARTITION                              "We couldn't delete the selected partition. [Error: 0x%1!x!]."
+	IDS_CANTCREATEPARTITION                              "We couldn't create a new partition. [Error: 0x%1!x!]."
+	IDS_CANTINSTALLWINDOWSTOPLACE                        "Azure Stack HCI can't be installed to this location. Select another partition."
+	IDS_INVALIDPLACE                                     "This location is invalid. Select a location again to continue."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DRIVEMUSTBEATLEASTSIZE                           "There needs to be at least %1!u! MB of free space on this partition. Free up space on this partition or select another partition."
+	IDS_CANTINSTALLLONGHORNTOSPECIFIEDPLACE              "We couldn't install Azure Stack HCI in the location you chose. Please check your media drive. Here's more info about what happened: 0x%1!x!."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_RESTARTNOW                                       "&Restart now"
+	IDS_ADVANCEDDRVOPTIONS                               "Drive options (&advanced)"
+	IDS_X86                                              "x86"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MIPS                                             "MIPS"
+	IDS_ALPHA                                            "ALPHA"
+	IDS_PPC                                              "PPC"
+	IDS_SHX                                              "SHX"
+	IDS_ARM                                              "ARM"
+	IDS_IA64                                             "IA64"
+	IDS_ALPHA64                                          "ALPHA64"
+	IDS_MSIL                                             "MSIL"
+	IDS_X64                                              "x64"
+	IDS_IA32ONW64                                        "IA32_ON_WIN64"
+	IDS_UNKNOWNARCH                                      "Unknown"
+	IDS_LONGHORNIMAGENAME                                "Operating system"
+	IDS_LONGHORNIMAGELANGUAGE                            "Language"
+	IDS_LONGHORNIMAGEARCHITECTURE                        "Architecture"
+	IDS_IMAGEDATEMODIFY                                  "Date modified"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ARM64                                            "ARM64"
+	IDS_SETUPWARNTITL                                    "Azure Stack HCI Setup"
+	IDS_INCOMPATAPPS                                     "Installing Azure Stack HCI will affect the following devices or applications:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INCOMPATNOTPREVENTINGLONGHORNFROMINSTALING       "Although these problems won't stop Azure Stack HCI from installing, some applications or devices might not work in Azure Stack HCI."
+	IDS_CLOSESETUPANDDOINSTRUCTIONS                      "Close Azure Stack HCI and do the following:"
+	IDS_DEVICESTOBEMALFUNCTIONING                        "These devices won't work until their drivers are updated. After Azure Stack HCI installs, check Windows Update for device drivers.  If this doesn't work, contact the device manufacturer."
+	IDS_INCOMPATUNAWARENESSWARNING                       "If you don't take care of these things, Azure Stack HCI might not finish installing."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PIDVAR                                           "%1!s! %2!s!"
+	IDS_PIDEDITOR                                        "Product key editor"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_COLLECTINGFILES                                  "Collecting files"
+	IDS_COPYINGLONGHORNSETUPFILES                        "Copying Azure Stack HCI files"
+	IDS_EXPANDINGBOOTFILES                               "Expanding the boot files"
+	IDS_EXPANDINGLONGHORN                                "Expanding Azure Stack HCI"
+	IDS_LINKINGLONGHORNFEATURES                          "Assembling Azure Stack HCI features"
+	IDS_LINKINGMULTILINGUALS                             "Assembling language features"
+	IDS_DEPLOYINGLONGHORNUPDATES                         "Applying Azure Stack HCI updates"
+	IDS_DEPLOYINGOTHERMICROSOFTUPDATES                   "Applying other updates"
+	IDS_INSTALLINGDEVICES                                "Identifying hardware"
+	IDS_CONFIGURINGLONGHORN                              "Initializing Azure Stack HCI"
+	IDS_GETTINGDEVICEREADY                               "Getting the computer ready"
+	IDS_UPGRADINGLONGHORN                                "Upgrading Azure Stack HCI"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CONFIGURINGCOMPUTER                              "Initializing the computer"
+	IDS_GETTINGRIDOFTEMPFILES                            "Cleaning temporary files"
+	IDS_DELETINGBOOTFOLDER                               "Deleting boot folder"
+	IDS_SENDINGDIAGNOSTICSTOMS                           "Sending diagnostic information"
+	IDS_COLLECTINGDATA                                   "Collecting files, settings, and applications"
+	IDS_INITIALIZINGINSTALL                              "Getting files ready for installation"
+	IDS_INSTALLINGFEATURES                               "Installing features"
+	IDS_INSTALLINGUPDATES                                "Installing updates"
+	IDS_INSTALLINGFEATURESANDUPDATES                     "Installing features and updates"
+	IDS_COMPLETINGINSTALLATION                           "Finishing up"
+	IDS_DONEMOVINGSTUFF                                  "Almost done moving files, settings, and applications"
+	IDS_FILECOPYINFO                                     "%1!s! %2!s!"
+	IDS_FILECOPYINFOANDTIME                              "%1!s! (%2!d!%%) %3!s!"
+	IDS_UPDATINGDRIVERS                                  "Updating drivers"
+	IDS_INSTALLINGDRIVERS                                "Installing drivers"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PRODUCTIDNOTWORKING                              "This product key didn't work. Please check it and try again."
+	IDS_PRODUCTIDNOTMATCHINGSKU                          "This product key doesn't match the edition that you're trying to install. Check the edition of Azure Stack HCI you're trying to install and get a product key that will work with it."
+	IDS_CANTVERIFYPRODUCTID                              "We couldn't verify the product key. Try entering it again."
+	IDS_UPGRADEIDONLY                                    "This product key is an upgrade key and can't be used to install this edition of Azure Stack HCI."
+	IDS_REBOOTTOWINDOWSTOUPGRADE                         "This product is an upgrade key and can only be used from your current version of Azure Stack HCI. Start Setup from your current version of Azure Stack HCI."
+	IDS_CLOSESETUP                                       "&Close"
+	IDS_UPGRADETAKINGAWHILE                              "Your upgrade may take a while to complete."
+	IDS_MOREINFORMATION                                  "More info"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NEXTPAGE                                         "&Next"
+	IDS_PROGRAMANDPUBLISHERINFO                          "Program: %1!s!<br />Publisher: %2!s!<br />Path: %3!s!"
+	IDS_INFONOTAVAILABLE                                 "Not Available"
+	IDS_SOMEAPPSMIGHTBEPROBLEMATIC                       "We found some applications or devices that might have some problems. Take care of the problems listed in %1!s!, and then restart Setup"
+	IDS_COMPATTXT                                        "CompatibilityIssues.txt"
+	IDS_CANTINSTALLTODRIVE                               "&Azure Stack HCI can't be installed to this drive.  (Show details)"
+	IDS_CANTINSTALLTOPARTITIONDRIVE                      "&Azure Stack HCI can't be installed to Drive %1!d! Partition %2!d!.  (Show details)"
+	IDS_OFFLINEDRIVE                                     "The selected drive is offline. The drive needs to be online to install Azure Stack HCI.  Click OK to bring the drive online or Cancel to go back."
+	IDS_OFFLINE                                          "Offline"
+	IDS_CANTGETONLINEDRIVE                               "We couldn't get the drive online. [Error: 0x%1!x!]."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INSTALLINGAFFECTSOTHERFEATS                      "Installing Azure Stack HCI will affect the following features:"
+	IDS_LONGHORNINSTALLINCOMPAT                          "You can still install Azure Stack HCI, but the following Windows features aren't available or might not work in Azure Stack HCI:"
+	IDS_PERFORMTHESESTEPS                                "Make these changes:"
+	IDS_DEVICESMIGHTNOTWORKPROPERLY                      "These devices might not work properly in Azure Stack HCI. We recommend you close Azure Stack HCI Setup and update device drivers before you continue. Search for ""update drivers"" in Control Panel or contact the device manufacturer."
+	IDS_APPSMIGHTNOTWORKPROPERLY                         "These applications might not work properly in Azure Stack HCI. We recommend you close Setup and uninstall these applications before you continue. (Note: The applications marked with an asterisk (*) can be reinstalled in Azure Stack HCI.)"
+	IDS_CANNOTUSEPARTBCUZNOFREESPACE                     "Setup was unable to use the existing partition because the system volume does not contain the required free space."
+	IDS_COMPATIBILITYDETAILSTODESKTOP                    "Compatibility report (saved to your desktop)"
+	IDS_COMPATREPORT                                     "Compatibility report"
+	IDS_UPDATEDRIVERSFORDEVICES                          "These devices might not work properly in Azure Stack HCI. We recommend updating the drivers for these devices before you continue."
+	IDS_LOADUPDATEDDRIVERS                               "Install updated drivers for the following devices. If you already have an updated device driver, click <B>Load driver</B> and follow the steps."
+	IDS_TURNOFFWINDOWSFEATURES                           "Turn off these Windows features."
+	IDS_UNINSTALLTHESEAPPS                               "Uninstall these applications."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PRODUCTIDSTYLE                                   "The product key looks like this: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CANNOTFINDMICROSOFTRESERVEDPARTITION             "Azure Stack HCI cannot find a Microsoft Reserved partition on the drive selected for installation. Although recommended, this partition is not required to complete installation."
+	IDS_PARITIONSNOTINRECOMMENDEDORDER                   "The partitions on this drive aren't in the recommended order. For information about installing to GPT drives go to the Microsoft website (www.microsoft.com) and search for GPT."
+	IDS_MUSTTAKEURGENTACTIONSTOCONTINUE                  "Azure Stack HCI won't install unless each of these things is taken care of. Close Setup, take care of each one, and then restart Setup to continue."
+	IDS_MUSTINSTALLUPDATEDDRIVERS                        "Install updated drivers for the following devices. Open Control Panel and search for ""update device driver"". If you already have an updated device driver, click <B>Load driver</B> and follow the steps."
+	IDS_MUSTUNINSTALLAPPS                                "Uninstall these applications. Open Control Panel and search for ""uninstall a program."""
+	IDS_MUSTBECERTAINSUPPORTSLONGHORNSERVER              "Before continuing, make sure the app vendors support your applications on Windows Server 2025. Follow their specific recommendations before and after Azure Stack HCI installs. To make sure your app is compatible and to download tools and documentation, go to https://go.microsoft.com/fwlink/?LinkId=243105 <br></br><br></br>Important: If the software isn't compatible with Windows Server 2025 or if the app vendor doesn't support the app, uninstall it before you install Azure Stack HCI. If you don't uninstall the applications, your system won't be supported, the app might not work, and settings or other information might be lost."
+	IDS_INSTALLINGAFFECTSDEVICES                         "Installing Azure Stack HCI will affect the following devices:"
+	IDS_MUSTUNINSTALLWINDOWSCOMPONENTS                   "Turn off these Windows features. Open Control Panel and search for ""turn Windows features on or off""."
+	IDS_INSTALLINGWILLHARMFEATURES                       "Installing Azure Stack HCI will affect the following features:"
+	IDS_MUSTUNINSTALLSPECIFICCOMPONENTS                  "Turn off these Windows features."
+	IDS_MUSTUNINSTALLTHESEUNSIGNEDDRIVERS                "Uninstall these unsigned system drivers:"
+	IDS_COPYINGMULTICASTFILES                            "Copying multicast files"
+	IDS_COPYLHINSTALLFILES                               "Copying Azure Stack HCI files"
+	IDS_REPRTSAVEDTODESKTOP                              "This compatibility report will be saved to your desktop."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ENTERAPIDFORFIRSTTIME                            "It should be on the back of the box that Azure Stack HCI came in or in a message that shows you bought Azure Stack HCI."
+	IDS_COMPATHTMLFILE                                   "Azure Stack HCI Compatibility Report.htm"
+	IDS_INSTALLSIGNEDDRIVERS                             "To continue installing Azure Stack HCI, use the Load Driver option to install 32-bit and signed 64-bit drivers.  Installing an unsigned 64-bit device driver isn't supported and Azure Stack HCI might not work if you install it."
+	IDS_FORMENTIONEDEVICESINSTALLUPDATEDDRIVERS          "Install updated drivers for the following devices. Open Control Panel and search for ""update device driver""."
+	IDS_BECERTAINITSUPPORTSLONGHORNSERVER                "Before continuing, make sure the app vendors support your applications on Windows Server 2025. Follow their specific recommendations before and after Azure Stack HCI installs. To make sure your app is compatible and to download tools and documentation, go to https://go.microsoft.com/fwlink/?LinkId=243105 <br></br><br></br>Important: If the software isn't compatible with Windows Server 2025 or if the app vendor doesn't support the app, uninstall it before you install Azure Stack HCI. If you don't uninstall the applications, your system won't be supported, the app might not work, and settings or other information might be lost.<br></br><br></br>Note: If you want to use some desktop features, you will have to install Desktop Experience after Azure Stack HCI installs. After Azure Stack HCI installs, run Server Manager, select Add Features, and then install Desktop Experience."
+	IDS_COMPATREPORTTOBESAVEDAS                          "This compatibility report will be saved as"
+	IDS_NOPRODUCTIDWITHME                                "&Skip"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ICON                                             "Icon"
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+APPCOMPAT_FAQ HTML DISCARDABLE "..\\common\\appcompatfaq.html"
+APPCOMPAT_XSL HTML DISCARDABLE "..\\common\\appcompatxsl.xsl"
+LONGHORNPRIVACYSTATEMENT HTML DISCARDABLE "..\\common\\longhornprivacystatement.rtf"
