@@ -1,0 +1,77 @@
+//===================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2002 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Windows Code Name "Longhorn" Autorun
+// Wizard Page Resources (Server)
+// 
+//===================================================================
+
+#include "..\\common\\resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Autorun Wizard Page Resources"
+#define VER_INTERNALNAME_STR        "ARunRes.dll"
+#define VER_ORIGINALFILENAME_STR    "ARunRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ARUNDLG DIALOGEX 0, 0, 350, 227
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Windows Server Setup"
+FONT 9, "Segoe UI"
+BEGIN
+   CONTROL "Windows", IDL_WINLABEL, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 146, 25, 1, 1 
+   CONTROL "flag", IDB_WINBMP, STATIC, SS_BITMAP | SS_CENTERIMAGE | WS_CHILD | WS_VISIBLE, 147, 25, 100, 70 , WS_EX_TRANSPARENT
+   CONTROL "\xA9 Microsoft Corporation. All rights reserved.", IDL_COPYRIGHT, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 16, 207, 250, 16 
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BACK "&Back"
+	IDS_CANCEL "Cancel"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WINDOWSNTSETUPCAPTION1                                    "Windows Server Setup"
+	IDS_WINDOWSNTSETUPCAPTION2                                    "Windows Server Setup"
+	IDS_WINDOWSNTSETUPCAPTION3                                    "Windows Server Setup"
+	IDS_STARTINSTALLATION                                         "&Install now"
+	IDS_READMENOTES                                               "&What to know before installing Windows Server"
+	IDS_WINNTRECOVERYCONSOLE                                      "&Repair your computer"
+	IDS_INSTALLNTSRVFOUNDATIONROLESNOGUI                          "Install Windows Server - &foundation roles only, command-line interface"
+	IDS_INSTALLNTSRVALLROLESGUI                                   "&Install Windows Server - all server roles, graphical interface"
+	IDS_READMERTF                                                 "readme.rtf"
+	IDS_SETUPCLOSEWARN                                            "To install Windows Server, you must finish Windows Server installation. If you cancel the installation, your computer might restart.\r\n\r\nAre you sure you want to cancel Windows Server installation?"
+	IDS_FAILEDTORUNSETUP                                          "Setup initialization failed."
+	IDS_FAILEDTOINITAPP                                           "Failed to launch the setup application."
+	IDS_CANTSETUILANG                                             "An error occurred while trying to set the UI language to [%s]."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CANTDETERMINELANG                                        "An error occurred while trying to determine Setup language. Error code is [0x%X]."
+	IDS_HELPANDSUPPORT                                           "Help and Support"
+	IDS_USE64BITDISC                                             "Use the other installation disc that says 64-bit. When you insert it, Windows Setup will restart automatically."
+	IDS_CANNOTSTARTFROMCURRENTOS                                 "Windows Server installation cannot be started from the current operating system. To install Windows Server, boot from the installation media, or upgrade from a supported operating system and restart the installation."
+	IDS_LAUNCHEDWITHWRONGARG                                     "The installation process was launched with an invalid command line argument."
+	IDS_CONTINUEUPGRADE                                          "It looks like you started an upgrade and booted from installation media. If you want to continue with the upgrade, remove the media from your PC and click Yes. If you want to perform a clean installation instead, click No."
+	IDS_FAILEDTORUNRECCNSLE                                      "Failed to launch the recovery environment."
+END
+
