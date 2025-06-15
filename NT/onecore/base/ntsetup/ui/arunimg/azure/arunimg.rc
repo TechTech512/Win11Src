@@ -1,0 +1,57 @@
+//===================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2002 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Windows Code Name "Longhorn" Autorun
+// Wizard Image Resources (Azure Stack HCI)
+// 
+//===================================================================
+
+#include "..\\common\\resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Autorun Wizard Image Resources"
+#define VER_INTERNALNAME_STR        "ARunImg.dll"
+#define VER_ORIGINALFILENAME_STR    "ARunImg.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_SETUP1 ICON DISCARDABLE "..\\common\\setup.ico"
+IDI_SETUP2 ICON DISCARDABLE "..\\common\\setup1.ico"
+
+/////////////////////////////////////////////////////////////////
+//
+// Image
+//
+
+IDB_SELECT1                  IMAGE DISCARDABLE      "..\\common\\select1.png"
+IDB_SELECT2                  IMAGE DISCARDABLE      "..\\common\\select2.png"
+IDB_SELECTPRESS              IMAGE DISCARDABLE      "..\\common\\selectpress.png"
+IDB_WINNT                    IMAGE DISCARDABLE      "windows.png"
+IDB_FORWARD                  IMAGE DISCARDABLE      "..\\common\\forward.png"
+IDB_FORWARDPRESS             IMAGE DISCARDABLE      "..\\common\\forwardpress.png"
+IDB_FORWARDNEW               IMAGE DISCARDABLE      "..\\common\\forwardnew.png"
+IDB_FORWARDNEWPRESS          IMAGE DISCARDABLE      "..\\common\\forwardpressnew.png"
+IDB_FORWARDNEW2              IMAGE DISCARDABLE      "..\\common\\forwardnew2.png"
+IDB_FORWARDDISABLED          IMAGE DISCARDABLE      "..\\common\\forwarddisabled.png"
+IDB_FORWARDNEWHOT            IMAGE DISCARDABLE      "..\\common\\forwardnewhot.png"
+IDB_FORWARD2                 IMAGE DISCARDABLE      "..\\common\\forward2.png"
+IDB_FORWARDOLDDISABLED       IMAGE DISCARDABLE      "..\\common\\forwardolddisabled.png"
+IDB_FORWARDOLDHOT            IMAGE DISCARDABLE      "..\\common\\forwardoldhot.png"
+IDB_SELECTIONRECTANGLE       IMAGE DISCARDABLE      "..\\common\\selectionrectangle.png"
+IDB_PRESSRECTANGLE           IMAGE DISCARDABLE      "..\\common\\pressrectangle.png"
+IDB_SETUPCLOSE               IMAGE DISCARDABLE      "..\\common\\setupclose.png"
+IDB_SETUPCLOSEPRESS          IMAGE DISCARDABLE      "..\\common\\setupclosepress.png"
+IDB_SETUPCLOSE2              IMAGE DISCARDABLE      "..\\common\\setupclose2.png"
+IDB_SETUPCLOSEHOT            IMAGE DISCARDABLE      "..\\common\\setupclosehot.png"
+
