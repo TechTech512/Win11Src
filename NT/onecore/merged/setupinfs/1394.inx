@@ -1,0 +1,136 @@
+; 1394.INF  -- This file contains descriptions of
+;              all supported 1394 host controllers
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+
+[Version]
+Signature="$Windows NT$"
+Class=1394
+ClassGuid={6BDD1FC1-810F-11D0-BEC7-08002BE2092F}
+Provider=%MSFT%
+PnpLockdown=1
+
+[SourceDisksNames]
+3426=windows cd
+
+[SourceDisksFiles]
+1394ohci.sys            = 3426
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+;
+; ---------------------- Table of content ----------------------
+;
+
+[DestinationDirs]
+Generic.CopyFiles=12
+
+[Manufacturer]
+%Generic.Mfg%=Generic
+%Fujitsu.Mfg%=Fujitsu
+%LSI.Mfg%=LSI
+%NatSemi.Mfg%=NatSemi
+%NEC.Mfg%=NEC
+%Ricoh.Mfg%=Ricoh
+%Sony.Mfg%=Sony
+%TI.Mfg%=TI
+%VIA.Mfg%=VIA
+
+[SignatureAttributes]
+1394ohci.sys=SignatureAttributes.DRM
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+;
+; ---------------------- OHCI Controllers ----------------------
+;
+
+[Generic]
+%PCI\CC_0C0010.DeviceDesc%=Generic.Install,PCI\CC_0C0010
+
+[Generic.Install.NT]
+CopyFiles=Generic.CopyFiles
+
+[Generic.Install.NT.HW]
+AddReg=WDF.Registration
+
+[WDF.Registration]
+HKR,"WDF","IdleInWorkingState", 0x00010001,0       ; Current idle state for WDF driver to off and uncheck the P.M. property page setting.
+
+[Generic.Install.NT.Services]
+AddService=1394ohci, 2, Generic.AddService
+
+[Generic.AddService]
+DisplayName   = %PCI\CC_0C0010.DeviceDesc%
+ServiceType   = 1
+StartType     = 3
+ErrorControl  = 1
+ServiceBinary = %12%\1394ohci.sys
+
+[Generic.CopyFiles]
+1394ohci.sys,,,0x100
+
+;
+; --------------------------- Fujitsu --------------------------
+;
+
+[Fujitsu]
+%PCI\VEN_10CF&CC_0C0010.DeviceDesc%=Generic.Install,PCI\VEN_10CF&CC_0C0010
+
+;
+; ---------------------------- LSI ---------------------------
+;
+
+[LSI]
+%PCI\VEN_11C1&CC_0C0010.DeviceDesc%=Generic.Install,PCI\VEN_11C1&CC_0C0010
+
+;
+; --------------------------- NatSemi --------------------------
+;
+
+[NatSemi]
+%PCI\VEN_100B&DEV_000F.DeviceDesc%=Generic.Install,PCI\VEN_100B&DEV_000F
+%PCI\VEN_100B&CC_0C0010.DeviceDesc%=Generic.Install,PCI\VEN_100B&CC_0C0010
+
+;
+; ----------------------------- NEC ----------------------------
+;
+
+[NEC]
+%PCI\VEN_1033&DEV_0063.DeviceDesc%=Generic.Install,PCI\VEN_1033&DEV_0063
+%PCI\VEN_1033&CC_0C0010.DeviceDesc%=Generic.Install,PCI\VEN_1033&CC_0C0010
+
+;
+; ---------------------------- Ricoh ---------------------------
+;
+
+[Ricoh]
+%PCI\VEN_1180&CC_0C0010.DeviceDesc%=Generic.Install,PCI\VEN_1180&CC_0C0010
+
+;
+; ---------------------------- Sony ----------------------------
+;
+
+[Sony]
+%PCI\VEN_104D&DEV_8039.DeviceDesc%=Generic.Install,PCI\VEN_104D&DEV_8039
+%PCI\VEN_104D&DEV_8039&REV_03.DeviceDesc%=Generic.Install,PCI\VEN_104D&DEV_8039&REV_03
+
+;
+; ----------------------------- TI -----------------------------
+;
+
+[TI]
+%PCI\VEN_104C&DEV_8009.DeviceDesc%=Generic.Install,PCI\VEN_104C&DEV_8009
+%PCI\VEN_104C&DEV_8019.DeviceDesc%=Generic.Install,PCI\VEN_104C&DEV_8019
+%PCI\VEN_104C&CC_0C0010.DeviceDesc%=Generic.Install,PCI\VEN_104C&CC_0C0010
+%PCI\VEN_104C&DEV_8009&SUBSYS_8032104D.DeviceDesc%=Generic.Install,PCI\VEN_104C&DEV_8009&SUBSYS_8032104D
+
+;
+; ----------------------------- VIA ----------------------------
+;
+
+[VIA]
+%PCI\VEN_1106&DEV_3044.DeviceDesc%=Generic.Install,PCI\VEN_1106&DEV_3044
+%PCI\VEN_1106&CC_0C0010.DeviceDesc%=Generic.Install,PCI\VEN_1106&CC_0C0010
