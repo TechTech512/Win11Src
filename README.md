@@ -7,7 +7,6 @@ Be aware that due to the closed-source state of the operating system, and the fa
 
 No copyright infringement intended as well and the Windows 11 operating system is Microsoft's trademark.
 
-This source code is for Windows 11 build 27695 (Windows NT 10.0.27695.1000.rs_prerelease.240823-1224).
 \NT\ is your starting folder. Will update you once I get access to more components.
 
 (c) 2021 Microsoft Corporation.  All rights reserved.
