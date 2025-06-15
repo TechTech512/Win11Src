@@ -29,23 +29,3 @@
 #endif
 
 // String section below for localizers
-
-[strings]
-; localizable strings
-MSFT                  = "Microsoft"
-*pnp0c08.DeviceDesc   = "Microsoft ACPI-Compliant System"
-ACPI.SvcDesc          = "Microsoft ACPI Driver"
-
-; non-localizable strings
-SPSVCINST_TAGTOFRONT   = 0x00000003
-SPSVCINST_ASSOCSERVICE = 0x00000002
-SERVICE_KERNEL_DRIVER  = 1
-SERVICE_BOOT_START     = 0
-SERVICE_SYSTEM_START   = 1
-SERVICE_DEMAND_START   = 3
-SERVICE_ERROR_NORMAL   = 1
-SERVICE_ERROR_IGNORE   = 0
-SERVICE_ERROR_CRITICAL = 3
-REG_EXPAND_SZ          = 0x00020000
-REG_DWORD              = 0x00010001
-REG_SZ                 = 0x00000000

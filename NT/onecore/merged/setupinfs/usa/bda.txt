@@ -1,0 +1,75 @@
+/*:
+@*:  This file is organized into two main blocks. The first block contains
+@*:    code (non-string) sections which are specific to languages. Please put
+@*:    the code sections in the correct language.
+@*:  The second block is reserved for [Strings] which localizers will be
+@*:    working with. It is further divided using "#if LANGUAGE ==" for language
+@*:    specific strings. For strings which are common to all languages
+@*:    place outside the #ifs.
+@*:
+@*:  This file is first precompiled with LANGUAGE_ID
+@*:  set to the language (see inf\win4\inf\makefile.inc for details).
+@*:  For example, for usa builds, the sections under #if LANGUAGE == 0x409
+@*:  will appear.
+@*:
+@*: Important: To support locstudio, this file contains only ONE [Strings] section.
+@*:
+@*/
+
+#if LANGUAGE_ID != 0x804 && LANGUAGE_ID != 0x404 && LANGUAGE_ID != 0x411 &&  LANGUAGE_ID != 0x412
+// This section is for non-FE (chs,cht,jpn,kor) builds. So english, german, ...
+#elif LANGUAGE_ID == 0x804
+//CHS specific sections
+#elif LANGUAGE_ID == 0x404
+//CHT specific sections
+#elif LANGUAGE_ID == 0x411
+//JPN specific sections
+#elif LANGUAGE_ID == 0x412
+//KOR specific sections
+#endif
+
+// String section below for localizers
+[Strings]
+
+; non-localizable
+
+;   Registry Paths
+;
+ActiveMovieCategories="CLSID\{da4e3da0-d07d-11d0-bd50-00a0c911ce86}\Instance"
+MediaCategories="SYSTEM\CurrentControlSet\Control\MediaCategories"
+
+;   Category and Interface GUIDs
+;   Note that some category GUIDs are defined in ks.inf
+;
+VBIcatID="{07DAD660-22F1-11d1-A9F4-00C04FBBDE8F}"
+GUID.BdaTuner="{71985F48-1CA1-11d3-9CC8-00C04F7971E0}"
+GUID.BdaComponent="{FD0A5AF4-B41D-11d2-9C95-00C04F7971E0}"
+GUID.BdaRenderer= "{71985F4A-1CA1-11d3-9CC8-00C04F7971E0}"
+
+;   SWEnum Device GUIDs
+;
+Slip.DeviceID="{03884CB6-E89A-4deb-B69E-8DC621686E6A}"
+CCDecode.DeviceId="{562370a8-f8dd-11d2-bc64-00a0c95ec22e}"
+WSTCodec.DeviceId="{70BC06E0-5666-11d3-A184-00105AEF9F33}"
+
+;   Pin and Filter Name GUIDs
+;   Note that some pin and filter name GUIDs are defined in ks.inf
+;
+PinID.GUID.AtscTS="{78216A81-CFA8-493e-9711-36A61C08BD9D}"
+
+;   Category Names
+;   Note that some categorys are defined in ks.inf
+;
+Category_BdaTuner="BDA Source Filters"
+Category_BdaComponent="BDA Receiver Components"
+Category_BdaRenderer="BDA Rendering Filters"
+
+;   Pin and Filter Names
+;   Note that some pin and filter names are defined in ks.inf
+;
+Pin.Name.AtscTS="MPEG2 Transport"
+
+; localizable
+
+Msft="Microsoft"
+MsftMfg="Microsoft"

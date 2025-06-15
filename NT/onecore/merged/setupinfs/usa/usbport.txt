@@ -1,0 +1,247 @@
+[Strings]
+;Non-Localizable
+Msft="Microsoft"
+
+;Localizable
+EHCIMP.SvcDesc="Microsoft USB 2.0 Enhanced Host Controller Miniport Driver"
+OHCIMP.SvcDesc="Microsoft USB Open Host Controller Miniport Driver"
+UHCIMP.SvcDesc="Microsoft USB Universal Host Controller Miniport Driver"
+ROOTHUB.SvcDesc="Microsoft USB Standard Hub Driver"
+USB.RootHub.DeviceDesc="USB Root Hub"
+Generic.Mfg="(Standard USB Host Controller)"
+PCI\CC_0C0320.DeviceDesc="Standard Enhanced PCI to USB Host Controller"
+PCI\CC_0C0310.DeviceDesc="Standard OpenHCD USB Host Controller"
+PCI\CC_0C0300.DeviceDesc="Standard Universal PCI to USB Host Controller"
+EHCIHostController.DeviceDesc="Standard EHCI-compliant Host Controller"
+
+;Non-Localizable
+ACER.MFG="ULi Electronics Inc."
+
+;Localizable
+PCI\VEN_10B9&DEV_5239&CC_0C0320.DeviceDesc="ULi USB 2.0 Enhanced Host Controller" 
+PCI\VEN_10B9&DEV_5237&CC_0C0310.DeviceDesc="ULi PCI to USB Open Host Controller" 
+
+;Non-Localizable
+AMD.Mfg="Advanced Micro Devices (AMD)"
+
+;Localizable
+PCI\VEN_1022&DEV_740C&CC_0C0310.DeviceDesc="AMD 756 PCI to USB Open Host Controller"
+PCI\VEN_1022.PCIToUSBHostController.DeviceDesc="AMD PCI to USB Open Host Controller"
+
+;Non-Localizable
+ATI.Mfg="ATI Technology"
+
+;Localizable
+PCI\Ven_1002&Dev_4373="ATI I/O Communications Processor USB 2.0 EHCI controller"
+PCI\Ven_1002.1_1_OHCI="ATI I/O Communications Processor USB 1.1 OHCI controller"
+
+;Non-Localizable
+Compaq.Mfg="Compaq"
+
+;Localizable
+PCI\VEN_0E11&DEV_A0F8&CC_0C0310.DeviceDesc="Compaq PCI to USB Open Host Controller"
+
+;Non-Localizable
+CMD.Mfg="CMD Technology"
+
+;Localizable
+PCI\VEN_1095&DEV_0670&CC_0C0310.DeviceDesc="CMD USB0670 PCI to USB Open Host Controller"
+PCI\VEN_1095&DEV_0673&CC_0C0310.DeviceDesc="CMD USB0673 PCI to USB Open Host Controller"
+
+;Non-Localizable
+Cypress.Mfg="Cypress Semiconductor Corporation"
+
+;Localizable
+PCI\VEN_1080&DEV_C693&CC_0C0310.DeviceDesc="Cypress USB Open Host Controller"
+
+;Non Localizable
+Intel.Mfg="Intel"
+
+;Non Localizable
+UD.Mfg="Unsupported Device"
+UD.DeviceDesc="Unsupported Device"
+
+;Localizable
+PCI\VEN_8086&DEV_0806.DeviceDesc="Intel(R) SM35 Express Chipset USB2 Enhanced Host Controller MPH  - 0806"
+PCI\VEN_8086&DEV_0811.DeviceDesc="Intel(R) SM35 Express Chipset USB2 Enhanced Host Controller SPM  - 0811"
+PCI\VEN_8086&DEV_1C26.DeviceDesc="Intel(R) 6 Series/C200 Series Chipset Family USB Enhanced Host Controller - 1C26"
+PCI\VEN_8086&DEV_1C2D.DeviceDesc="Intel(R) 6 Series/C200 Series Chipset Family USB Enhanced Host Controller - 1C2D"
+PCI\VEN_8086&DEV_1D26.DeviceDesc="Intel(R) C600/X79 series chipset USB2 Enhanced Host Controller #1 - 1D26"
+PCI\VEN_8086&DEV_1D2D.DeviceDesc="Intel(R) C600/X79 series chipset USB2 Enhanced Host Controller #2 - 1D2D"
+PCI\VEN_8086&DEV_1E26.DeviceDesc="Intel(R) 7 Series/C216 Chipset Family USB Enhanced Host Controller - 1E26"
+PCI\VEN_8086&DEV_1E2D.DeviceDesc="Intel(R) 7 Series/C216 Chipset Family USB Enhanced Host Controller - 1E2D"
+PCI\VEN_8086&DEV_2334.DeviceDesc="DH89xxCC USB 2.0 Controller 1 - 2334"
+PCI\VEN_8086&DEV_2335.DeviceDesc="DH89xxCC USB 2.0 Controller 1 - 2335"
+PCI\VEN_8086&DEV_2359.DeviceDesc="DH89xxCC USB EHCI virtual HC #1 - 2359"
+PCI\VEN_8086&DEV_235A.DeviceDesc="DH89xxCC USB EHCI virtual HC #2 - 235A"
+PCI\VEN_8086&DEV_2412&CC_0C0300.DeviceDesc="Intel(R) 82801AA USB Universal Host Controller"
+PCI\VEN_8086&DEV_2422&CC_0C0300.DeviceDesc="Intel(R) 82801AB USB Universal Host Controller"
+PCI\VEN_8086&DEV_2442&CC_0C0300.DeviceDesc="Intel(R) 82801BA/BAM USB Universal Host Controller - 2442"
+PCI\VEN_8086&DEV_2444&CC_0C0300.DeviceDesc="Intel(R) 82801BA/BAM USB Universal Host Controller - 2444"
+PCI\VEN_8086&DEV_2482.DeviceDesc="Intel(R) 82801CA/CAM USB Universal Host Controller - 2482"
+PCI\VEN_8086&DEV_2484.DeviceDesc="Intel(R) 82801CA/CAM USB Universal Host Controller - 2484"
+PCI\VEN_8086&DEV_2487.DeviceDesc="Intel(R) 82801CA/CAM USB Universal Host Controller - 2487"
+PCI\VEN_8086&DEV_24C2&CC_0C0300.DeviceDesc="Intel(R) 82801DB/DBM USB Universal Host Controller - 24C2"
+PCI\VEN_8086&DEV_24C4&CC_0C0300.DeviceDesc="Intel(R) 82801DB/DBM USB Universal Host Controller - 24C4"
+PCI\VEN_8086&DEV_24C7&CC_0C0300.DeviceDesc="Intel(R) 82801DB/DBM USB Universal Host Controller - 24C7"
+PCI\VEN_8086&DEV_24CD&CC_0C0320.DeviceDesc="Intel(R) 82801DB/DBM USB 2.0 Enhanced Host Controller - 24CD"
+PCI\VEN_8086&DEV_24D2.DeviceDesc="Intel(R) 82801EB USB Universal Host Controller - 24D2"
+PCI\VEN_8086&DEV_24D4.DeviceDesc="Intel(R) 82801EB USB Universal Host Controller - 24D4"
+PCI\VEN_8086&DEV_24D7.DeviceDesc="Intel(R) 82801EB USB Universal Host Controller - 24D7"
+PCI\VEN_8086&DEV_24DD.DeviceDesc="Intel(R) 82801EB USB2 Enhanced Host Controller - 24DD"
+PCI\VEN_8086&DEV_24DE.DeviceDesc="Intel(R) 82801EB USB Universal Host Controller - 24DE"
+PCI\VEN_8086&DEV_25A9.DeviceDesc="Intel(R) 6300ESB USB Universal Host Controller - 25A9"
+PCI\VEN_8086&DEV_25AA.DeviceDesc="Intel(R) 6300ESB USB Universal Host Controller - 25AA"
+PCI\VEN_8086&DEV_25AD.DeviceDesc="Intel(R) 6300ESB USB2 Enhanced Host Controller - 25AD"
+PCI\VEN_8086&DEV_2658.DeviceDesc="Intel(R) 82801FB/FBM USB Universal Host Controller - 2658"
+PCI\VEN_8086&DEV_2659.DeviceDesc="Intel(R) 82801FB/FBM USB Universal Host Controller - 2659"
+PCI\VEN_8086&DEV_265A.DeviceDesc="Intel(R) 82801FB/FBM USB Universal Host Controller - 265A"
+PCI\VEN_8086&DEV_265B.DeviceDesc="Intel(R) 82801FB/FBM USB Universal Host Controller - 265B"
+PCI\VEN_8086&DEV_265C.DeviceDesc="Intel(R) 82801FB/FBM USB2 Enhanced Host Controller - 265C"
+PCI\VEN_8086&DEV_2688.DeviceDesc="Intel(R) 631xESB/6321ESB/3100 Chipset USB Universal Host Controller - 2688"
+PCI\VEN_8086&DEV_2689.DeviceDesc="Intel(R) 631xESB/6321ESB/3100 Chipset USB Universal Host Controller - 2689"
+PCI\VEN_8086&DEV_268A.DeviceDesc="Intel(R) 631xESB/6321ESB/3100 Chipset USB Universal Host Controller - 268A"
+PCI\VEN_8086&DEV_268B.DeviceDesc="Intel(R) 631xESB/6321ESB/3100 Chipset USB Universal Host Controller - 268B"
+PCI\VEN_8086&DEV_268C.DeviceDesc="Intel(R) 631xESB/6321ESB/3100 Chipset USB2 Enhanced Host Controller - 268C"
+PCI\VEN_8086&DEV_27C8.DeviceDesc="Intel(R) 82801G (ICH7 Family) USB Universal Host Controller - 27C8"
+PCI\VEN_8086&DEV_27C9.DeviceDesc="Intel(R) 82801G (ICH7 Family) USB Universal Host Controller - 27C9"
+PCI\VEN_8086&DEV_27CA.DeviceDesc="Intel(R) 82801G (ICH7 Family) USB Universal Host Controller - 27CA"
+PCI\VEN_8086&DEV_27CB.DeviceDesc="Intel(R) 82801G (ICH7 Family) USB Universal Host Controller - 27CB"
+PCI\VEN_8086&DEV_27CC.DeviceDesc="Intel(R) 82801G (ICH7 Family) USB2 Enhanced Host Controller - 27CC"
+PCI\VEN_8086&DEV_2830.DeviceDesc="Intel(R) ICH8 Family USB Universal Host Controller - 2830"
+PCI\VEN_8086&DEV_2831.DeviceDesc="Intel(R) ICH8 Family USB Universal Host Controller - 2831"
+PCI\VEN_8086&DEV_2832.DeviceDesc="Intel(R) ICH8 Family USB Universal Host Controller - 2832"
+PCI\VEN_8086&DEV_2834.DeviceDesc="Intel(R) ICH8 Family USB Universal Host Controller - 2834"
+PCI\VEN_8086&DEV_2835.DeviceDesc="Intel(R) ICH8 Family USB Universal Host Controller - 2835"
+PCI\VEN_8086&DEV_2836.DeviceDesc="Intel(R) ICH8 Family USB2 Enhanced Host Controller - 2836"
+PCI\VEN_8086&DEV_283A.DeviceDesc="Intel(R) ICH8 Family USB2 Enhanced Host Controller - 283A"
+PCI\VEN_8086&DEV_2934.DeviceDesc="Intel(R) ICH9 Family USB Universal Host Controller - 2934"
+PCI\VEN_8086&DEV_2935.DeviceDesc="Intel(R) ICH9 Family USB Universal Host Controller - 2935"
+PCI\VEN_8086&DEV_2936.DeviceDesc="Intel(R) ICH9 Family USB Universal Host Controller - 2936"
+PCI\VEN_8086&DEV_2937.DeviceDesc="Intel(R) ICH9 Family USB Universal Host Controller - 2937"
+PCI\VEN_8086&DEV_2938.DeviceDesc="Intel(R) ICH9 Family USB Universal Host Controller - 2938"
+PCI\VEN_8086&DEV_2939.DeviceDesc="Intel(R) ICH9 Family USB Universal Host Controller - 2939"
+PCI\VEN_8086&DEV_293A.DeviceDesc="Intel(R) ICH9 Family USB2 Enhanced Host Controller - 293A"
+PCI\VEN_8086&DEV_293C.DeviceDesc="Intel(R) ICH9 Family USB2 Enhanced Host Controller - 293C"
+PCI\VEN_8086&DEV_3A34.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A34"
+PCI\VEN_8086&DEV_3A35.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A35"
+PCI\VEN_8086&DEV_3A36.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A36"
+PCI\VEN_8086&DEV_3A37.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A37"
+PCI\VEN_8086&DEV_3A38.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A38"
+PCI\VEN_8086&DEV_3A39.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A39"
+PCI\VEN_8086&DEV_3A3A.DeviceDesc="Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A"
+PCI\VEN_8086&DEV_3A3C.DeviceDesc="Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3C"
+PCI\VEN_8086&DEV_3A64.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A64"
+PCI\VEN_8086&DEV_3A65.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A65"
+PCI\VEN_8086&DEV_3A66.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A66"
+PCI\VEN_8086&DEV_3A67.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A67"
+PCI\VEN_8086&DEV_3A68.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A68"
+PCI\VEN_8086&DEV_3A69.DeviceDesc="Intel(R) ICH10 Family USB Universal Host Controller - 3A69"
+PCI\VEN_8086&DEV_3A6A.DeviceDesc="Intel(R) ICH10 Family USB Enhanced Host Controller - 3A6A"
+PCI\VEN_8086&DEV_3A6C.DeviceDesc="Intel(R) ICH10 Family USB Enhanced Host Controller - 3A6C"
+PCI\VEN_8086&DEV_3B34.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Enhanced Host Controller - 3B34"
+PCI\VEN_8086&DEV_3B36.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B36"
+PCI\VEN_8086&DEV_3B37.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B37"
+PCI\VEN_8086&DEV_3B38.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B38"
+PCI\VEN_8086&DEV_3B39.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B39"
+PCI\VEN_8086&DEV_3B3A.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B3A"
+PCI\VEN_8086&DEV_3B3B.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B3B"
+PCI\VEN_8086&DEV_3B3C.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Enhanced Host Controller - 3B3C"
+PCI\VEN_8086&DEV_3B3E.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B3E"
+PCI\VEN_8086&DEV_3B3F.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B3F"
+PCI\VEN_8086&DEV_3B40.DeviceDesc="Intel(R) 5 Series/3400 Series Chipset Family USB Universal Host Controller - 3B40"
+PCI\VEN_8086&DEV_7020&CC_0C0300.DeviceDesc="Intel(R) 82371SB PCI to USB Universal Host Controller"
+PCI\VEN_8086&DEV_7112&CC_0C0300.DeviceDesc="Intel(R) 82371AB/EB PCI to USB Universal Host Controller"
+PCI\VEN_8086&DEV_719A&CC_0C0300.DeviceDesc="Intel(R) 82440MX USB Universal Host Controller"
+PCI\VEN_8086&DEV_7602&CC_0C0300.DeviceDesc="Intel(R) 82372FB PCI to USB Universal Host Controller"
+PCI\VEN_8086&DEV_8804.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB OHCI Controller #4 - 8804"
+PCI\VEN_8086&DEV_8805.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB OHCI Controller #5 - 8805"
+PCI\VEN_8086&DEV_8806.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB OHCI Controller #6 - 8806"
+PCI\VEN_8086&DEV_8807.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB2 EHCI Controller #2 - 8807"
+PCI\VEN_8086&DEV_880c.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB OHCI Controller #1 - 880c"
+PCI\VEN_8086&DEV_880d.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB OHCI Controller #2 - 880d"
+PCI\VEN_8086&DEV_880e.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB OHCI Controller #3 - 880e"
+PCI\VEN_8086&DEV_880f.DeviceDesc="Intel(R) Platform Controller Hub EG20T USB2 EHCI Controller #1 - 880f"
+PCI\VEN_8086&DEV_8C26.DeviceDesc="Intel(R) 8 Series/C220 Series USB EHCI #1 - 8C26"
+PCI\VEN_8086&DEV_8C2D.DeviceDesc="Intel(R) 8 Series/C220 Series USB EHCI #2 - 8C2D"
+PCI\VEN_8086&DEV_9C26.DeviceDesc="Intel(R) 8 Series USB Enhanced Host Controller #1 - 9C26"
+PCI\VEN_8086&DEV_9C2D.DeviceDesc="Intel(R) 8 Series USB Enhanced Host Controller #2 - 9C2D"
+PCI\VEN_8086&DEV_1F2C.DeviceDesc="Intel(R) Atom(TM) processor C2000 product family USB Enhanced Host Controller - 1F2C"
+
+;Non-Localizable
+Lucent.Mfg="Lucent Technology"
+
+;Localizable
+PCI\VEN_11C1.USBHostController.DeviceDesc="Lucent USB Open Host Controller"
+PCI\VEN_11C1&DEV_5803&CC_0C0310.DeviceDesc="Lucent QuadraBus USB Open Host Controller"
+
+;Non-Localizable
+NEC.Mfg="NEC"
+
+;Localizable
+PCI\VEN_1033.PCIToUSBHostController.DeviceDesc="NEC PCI to USB Open Host Controller"
+PCI\VEN_1033&DEV_00E0&REV_01.DeviceDesc="NEC PCI to USB Enhanced Host Controller (B0)"
+PCI\VEN_1033&DEV_00E0&REV_02.DeviceDesc="NEC PCI to USB Enhanced Host Controller (B1)"
+
+;Non-Localizable
+
+;Non-Localizable
+OPTi.MFG="OPTi"
+
+;Localizable
+PCI\VEN_1045&DEV_C861&CC_0C0310.DeviceDesc="OPTi 82C861 PCI to USB Open Host Controller"
+
+;Non-Localizable
+Reliance.Mfg="ServerWorks (RCC)"
+
+;Localizable
+PCI\VEN_1166&DEV_0220&CC_0C0310.DeviceDesc="ServerWorks (RCC) PCI to USB Open Host Controller"
+
+;Non-Localizable
+SIS.Mfg="Silicon Integrated Systems"
+
+;Localizable
+PCI\VEN_1039&DEV_7001&CC_0C0310.DeviceDesc="SiS 7001 PCI to USB Open Host Controller"
+
+;Non-Localizable
+Symbios.Mfg="Symbios Logic"
+
+;Localizable
+PCI\VEN_1000&DEV_0901&CC_0C0310.DeviceDesc="Symbios Logic SYM61C102 USB Host Controller"
+
+;Non-Localizable
+SMSC.Mfg="Standard Microsystems Corp."
+
+;Localizable
+PCI\VEN_1055&DEV_9462.DeviceDesc="SMSC SLC90E66 PCI to USB Open Host Controller"
+
+;Non-Localizable
+VIA.Mfg="VIA Technologies"
+
+;Localizable
+PCI\VEN_1106.Rev0HostController.DeviceDesc="VIA Rev 0 USB Universal Host Controller"
+PCI\VEN_1106.Rev1HostController.DeviceDesc="VIA Rev 1 USB Universal Host Controller"
+PCI\VEN_1106.Rev2HostController.DeviceDesc="VIA Rev 2 USB Universal Host Controller"
+PCI\VEN_1106.Rev3HostController.DeviceDesc="VIA Rev 3 USB Universal Host Controller"
+PCI\VEN_1106.Rev4HostController.DeviceDesc="VIA Rev 4 USB Universal Host Controller"
+PCI\VEN_1106&DEV_3038&CC_0C0300.DeviceDesc="VIA Rev 5 or later USB Universal Host Controller"
+PCI\VEN_1106&DEV_3104.DeviceDesc="VIA USB Enhanced Host Controller"
+PCI\VEN_1106.Rev5CompanionController.DeviceDesc="VIA Rev 5 or later USB Universal Host Companion Controller"
+
+;Non-Localizable
+GUID_MAX_POWER_SAVINGS = "{a1841308-3541-4fab-bc81-f71556f20b4a}"
+GUID_TYPICAL_POWER_SAVINGS = "{381b4222-f694-41f0-9685-ff5bb260df2e}"
+GUID_MIN_POWER_SAVINGS = "{8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c}"
+AC = 0
+DC = 1
+FLG_ADDREG_TYPE_DWORD = 0x00010001
+GUID_POWER_USB_SUBGROUP = "{2A737441-1930-4402-8D77-B2BEBBA308A3}"
+GUID_POWER_INTERRUPT_PER_TD_ENABLE = "{498C044A-201B-4631-A522-5C744ED4E678}"
+
+;Localizable
+InterruptPerTdEnableName = "Setting IOC on all TDs"
+InterruptPerTdEnableDescription = "Should IOC be set for all TDs"
+ValueEnabledName="Enabled"
+ValueEnabledDesc="Set IOC for for all TDs"
+ValueDisabledName="Disabled"
+ValueDisabledDesc="Set IOC only for the last TD in a transfer"

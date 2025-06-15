@@ -1,0 +1,107 @@
+/*:
+@*:  This file is organized into two main blocks. The first block contains
+@*:    code (non-string) sections which are specific to languages. Please put
+@*:    the code sections in the correct language.
+@*:  The second block is reserved for [Strings] which localizers will be
+@*:    working with. It is further divided using "#if LANGUAGE ==" for language
+@*:    specific strings. For strings which are common to all languages
+@*:    place outside the #ifs.
+@*:
+@*:  This file is first precompiled with LANGUAGE_ID
+@*:  set to the language (see inf\win4\inf\makefile.inc for details).
+@*:  For example, for usa builds, the sections under #if LANGUAGE == 0x409
+@*:  will appear.
+@*:
+@*: Important: To support locstudio, this file contains only ONE [Strings] section.
+@*:
+@*/
+
+#if LANGUAGE_ID != 0x804 && LANGUAGE_ID != 0x404 && LANGUAGE_ID != 0x411 &&  LANGUAGE_ID != 0x412
+// This section is for non-FE (chs,cht,jpn,kor) builds. So english, german, ...
+#elif LANGUAGE_ID == 0x804
+//CHS specific sections
+#elif LANGUAGE_ID == 0x404
+//CHT specific sections
+#elif LANGUAGE_ID == 0x411
+//JPN specific sections
+#elif LANGUAGE_ID == 0x412
+//KOR specific sections
+#endif
+
+// String section below for localizers
+[Strings]
+;Localizable
+MS                      = "Microsoft"
+MS-Drivers              = "(Standard IDE ATA/ATAPI controllers)"
+idechannel.DeviceDesc   = "IDE Channel"
+PCI\CC_0101.DeviceDesc  = "Standard Dual Channel PCI IDE Controller"
+SERVERWORKS="ServerWorks"
+PCI\VEN_1166&DEV_0211.DeviceDesc="OSB4 IDE Controller"
+PCI\VEN_1166&DEV_0212&SUBSYS_02121166.DeviceDesc="CSB5 IDE Controller"
+INTEL="Intel"
+PCI\VEN_8086&DEV_1222.DeviceDesc="Intel(R) 82092AA PCI IDE Controller"
+PCI\VEN_8086&DEV_1230.DeviceDesc="Intel(R) 82371FB PCI Bus Master IDE Controller"
+PCI\VEN_8086&DEV_7010.DeviceDesc="Intel(R) 82371SB PCI Bus Master IDE Controller"
+PCI\VEN_8086&DEV_7111.DeviceDesc="Intel(R) 82371AB/EB PCI Bus Master IDE Controller"
+PCI\VEN_8086&DEV_2411.DeviceDesc="Intel(R) 82801AA Bus Master IDE Controller"
+PCI\VEN_8086&DEV_2421.DeviceDesc="Intel(R) 82801AB Bus Master IDE Controller"
+PCI\VEN_8086&DEV_7199.DeviceDesc="Intel(R) 82440MX Bus Master IDE Controller"
+PCI\VEN_8086&DEV_244A.DeviceDesc="Intel(R) 82801BAM Ultra ATA Storage Controller - 244A"
+PCI\VEN_8086&DEV_244B.DeviceDesc="Intel(R) 82801BA Ultra ATA Storage Controller - 244B"
+PCI\VEN_8086&DEV_248A.DeviceDesc="Intel(R) 82801CAM Ultra ATA Storage Controller-248A"
+PCI\VEN_8086&DEV_248B.DeviceDesc="Intel(R) 82801CA Ultra ATA Storage Controller-248B"
+PCI\VEN_8086&DEV_24C1.DeviceDesc="Intel(R) 82801DBM Ultra ATA Storage Controller - 24C1"
+PCI\VEN_8086&DEV_24CA.DeviceDesc="Intel(R) 82801DBM Ultra ATA Storage Controller - 24CA"
+PCI\VEN_8086&DEV_24CB.DeviceDesc="Intel(R) 82801DB Ultra ATA Storage Controller-24CB"
+PCI\VEN_8086&DEV_24D1.DeviceDesc="Intel(R) 82801EB Ultra ATA Storage Controllers - 24D1"
+PCI\VEN_8086&DEV_24DB.DeviceDesc="Intel(R) 82801EB Ultra ATA Storage Controllers - 24DB"
+PCI\VEN_8086&DEV_25A2.DeviceDesc="Intel(R) 6300ESB Ultra ATA Storage Controller - 25A2"
+PCI\VEN_8086&DEV_25A3.DeviceDesc="Intel(R) 6300ESB Ultra ATA Storage/SATA Controller - 25A3" 
+PCI\VEN_8086&DEV_2651.DeviceDesc="Intel(R) 82801FB Ultra ATA Storage Controllers - 2651"
+PCI\VEN_8086&DEV_2652.DeviceDesc="Intel(R) 82801FB Ultra ATA Storage Controllers - 2652"
+PCI\VEN_8086&DEV_2653.DeviceDesc="Intel(R) 82801FBM Ultra ATA Storage Controllers - 2653"
+PCI\VEN_8086&DEV_266F.DeviceDesc="Intel(R) 82801FB/FBM Ultra ATA Storage Controllers - 266F"
+PCI\VEN_8086&DEV_7601.DeviceDesc="Intel(R) IA64 Bus Master IDE Controller"
+PCI\VEN_8086&DEV_27C0.DeviceDesc="Intel(R) 82801GB/GR/GH (ICH7 Family) Serial ATA Storage Controller - 27C0"
+PCI\VEN_8086&DEV_27C4.DeviceDesc="Intel(R) 82801GBM/GHM (ICH7-M Family) Serial ATA Storage Controller - 27C4"
+PCI\VEN_8086&DEV_27DF.DeviceDesc="Intel(R) 82801G (ICH7 Family) Ultra ATA Storage Controllers - 27DF"
+PCI\VEN_8086&DEV_2820.DeviceDesc="Intel(R) ICH8 4 port Serial ATA Storage Controller - 2820"
+PCI\VEN_8086&DEV_2825.DeviceDesc="Intel(R) ICH8 2 port Serial ATA Storage Controller - 2825"
+PCI\VEN_8086&DEV_2828.DeviceDesc="Intel(R) ICH8M 3 port Serial ATA Storage Controller - 2828"
+PCI\VEN_8086&DEV_2850.DeviceDesc="Intel(R) ICH8M Ultra ATA Storage Controllers - 2850"
+
+SIS="Silicon Integrated System"
+PCI\VEN_1039&DEV_0601.DeviceDesc="SiS PCI IDE Controller"
+PCI\VEN_1039&DEV_5513.DeviceDesc="SiS PCI IDE Controller"
+
+IBM="IBM"
+PCMCIA\IBM-MICRODRIVE-7F50.DeviceDesc="IBM Microdrive"
+PCMCIA\IBM-MICRODRIVE-AA55.DeviceDesc="IBM Microdrive"
+SONY="SONY"
+PCMCIA\SONY-MEMORYSTICK.DeviceDesc="Sony Memory Stick" 
+LEXAR="Lexar Microsystems"
+LEXAR.DeviceDesc="Lexar Media Digital Film Card"
+NVIDIA="NVIDIA"
+PCI\VEN_10DE&DEV_00E3.DeviceDesc="NVIDIA nForce3 250 Serial ATA Controller"
+PCI\VEN_10DE&DEV_00E5.DeviceDesc="NVIDIA nForce3 250 Parallel ATA Controller"
+PCI\VEN_10DE&DEV_00EE.DeviceDesc="NVIDIA nForce3 250 Serial ATA Controller"
+
+pcmcia.DeviceDesc               = "PCMCIA IDE/ATAPI Controller"
+
+storahci_ServiceDescription = "Microsoft Standard SATA AHCI Driver"
+MS-AHCI="Standard SATA AHCI Controller"
+PCI\CC_010601.DeviceDesc  = "Standard SATA AHCI Controller"
+ACPI\CLS_0001&SUBCLS_0006&PI_01.DeviceDesc = "Standard SATA AHCI Controller"
+ACPI\AMDI0600.DeviceDesc = "<TEMP> AMD SoC SATA AHCI Controller"
+
+;*******************************************
+;Non-localizable, Handy macro substitutions
+SPSVCINST_ASSOCSERVICE = 0x00000002
+SERVICE_KERNEL_DRIVER  = 1
+SERVICE_BOOT_START     = 0
+SERVICE_ERROR_NORMAL   = 1
+SERVICE_ERROR_CRITICAL = 3
+REG_EXPAND_SZ          = 0x00020000
+REG_DWORD              = 0x00010001
+REG_MULTI_SZ           = 0x00010000
+REG_MULTI_SZ_APPEND    = 0x00010008
