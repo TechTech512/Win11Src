@@ -1,0 +1,13 @@
+MAJORCOMP=setup
+MINORCOMP=ui
+
+TARGETNAME=spwizres
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+RESOURCE_ONLY_DLL=1
+
+BINPLACE_PLACEFILE=placefil.txt
+
+SOURCES= \
+        spwizres.rc
