@@ -1,0 +1,448 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Windows Recovery Environment
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Recovery Environment"
+#define VER_INTERNALNAME_STR        "RecEnv.exe"
+#define VER_ORIGINALFILENAME_STR    "RecEnv.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN       ICON DISCARDABLE     "main.ico"
+
+/////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEARCH DIALOGEX 0, 0, 194, 70
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Searching for Windows installations...", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 11, 174, 19 
+   CONTROL "", IDC_PROGRESS, "msctls_progress32", WS_CHILD | WS_VISIBLE | WS_BORDER, 10, 33, 174, 12 
+END
+
+IDD_LANGKBD DIALOGEX 0, 0, 235, 120
+STYLE DS_SYSMODAL | DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Select a language:", IDL_SELECTLANG, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 15, 215, 12 
+   CONTROL "", IDC_LANGCOMBO, COMBOBOX, CBS_DROPDOWNLIST | WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_TABSTOP, 10, 30, 215, 15 
+   CONTROL "Select a keyboard input method:", IDL_SELECTKBD, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 52, 215, 12 
+   CONTROL "", IDC_KBDCOMBO, COMBOBOX, CBS_DROPDOWNLIST | CBS_SORT | WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_TABSTOP, 10, 65, 215, 15 
+   CONTROL "&Next>", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 121, 98, 50, 14 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 175, 98, 50, 14 
+END
+
+IDD_SELECTLONGHORNINSTALL DIALOGEX 0, 0, 255, 166
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Use recovery tools that can help fix problems starting Windows. Select an operating system to repair.\r\n\r\nIf your operating system isn't listed, click Load Drivers and then install drivers for your hard disks.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 27, 7, 220, 48 
+   CONTROL "List", IDC_LONGHORNLIST, "SysListView32", LVS_REPORT | LVS_ALIGNLEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 27, 55, 220, 56 
+   CONTROL "Restore your computer using a system image that you created earlier.", IDL_RESTOREWITHIMG, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 27, 120, 220, 20 
+   CONTROL "Scan", IDC_SCANINSTALLS, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_TABSTOP, 39, 145, 50, 13 
+   CONTROL "&Load Drivers", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 135, 145, 50, 13 
+   CONTROL "&Next >", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 193, 145, 54, 13 
+   CONTROL "", IDC_USERECTOOLS, BUTTON, BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE, 8, 7, 16, 10 
+   CONTROL "", IDC_USEIMGTORSTR, BUTTON, BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE, 8, 120, 16, 10 
+END
+
+IDD_NTAUTHORIZATION DIALOGEX 0, 0, 252, 121
+STYLE DS_SYSMODAL | DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "To access recovery options, log on as a local user.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 8, 236, 15 
+   CONTROL "To access the command prompt as well, log on using an administrator account.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 29, 236, 21 
+   CONTROL "User name:", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 58, 78, 13 
+   CONTROL "", IDC_USERCOMBO, COMBOBOX, CBS_DROPDOWNLIST | WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_GROUP | WS_TABSTOP, 88, 57, 156, 15 
+   CONTROL "Password:", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 82, 78, 8 
+   CONTROL "", IDC_PASSBOX, EDIT, ES_LEFT | ES_PASSWORD | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 88, 79, 156, 13 
+   CONTROL "&OK", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 112, 101, 60, 12 
+   CONTROL "&Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 182, 101, 62, 12 
+END
+
+IDD_FOUNDPROBLEMS DIALOGEX 0, 0, 260, 96
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CONTROL | DS_CENTER | WS_CAPTION
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Windows found problems with your computer's startup options.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 8, 244, 12 
+   CONTROL "Do you want to apply repairs and restart your computer?", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 24, 244, 12 
+   CONTROL "<A>View details</A>", IDC_VIEWDETAILS, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 40, 244, 12 
+   CONTROL "Repair and restart", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 82, 64, 110, 12 
+   CONTROL "No", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 200, 64, 50, 12 
+END
+
+IDD_REPAIRDETAILS DIALOGEX 0, 0, 300, 160
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_VISIBLE | WS_CAPTION
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Repair details:", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 8, 284, 12 
+   CONTROL "", IDC_DETS, EDIT, ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL, 8, 21, 284, 116 
+   CONTROL "Close", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 242, 142, 50, 14 
+END
+
+IDD_TOOL1 DIALOGEX 0, 0, 319, 92
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 70, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 70, 54, 14 
+END
+
+IDD_TOOL2 DIALOGEX 0, 0, 319, 119
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "", IDC_TOOL2ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 67, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL2LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 66, 250, 11 
+   CONTROL "", IDC_TOOL2DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 78, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 97, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 97, 54, 14 
+END
+
+IDD_TOOL3 DIALOGEX 0, 0, 319, 149
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "", IDC_TOOL2ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 67, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL2LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 66, 250, 11 
+   CONTROL "", IDC_TOOL2DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 78, 250, 11 
+   CONTROL "", IDC_TOOL3ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 97, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL3LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 96, 250, 11 
+   CONTROL "", IDC_TOOL3DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 108, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 127, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 127, 54, 14 
+END
+
+IDD_TOOL4 DIALOGEX 0, 0, 319, 178
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "", IDC_TOOL2ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 67, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL2LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 66, 250, 11 
+   CONTROL "", IDC_TOOL2DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 78, 250, 11 
+   CONTROL "", IDC_TOOL3ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 97, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL3LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 96, 250, 11 
+   CONTROL "", IDC_TOOL3DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 108, 250, 11 
+   CONTROL "", IDC_TOOL4ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 127, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL4LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 126, 250, 11 
+   CONTROL "", IDC_TOOL4DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 138, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 156, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 156, 54, 14 
+END
+
+IDD_TOOL5 DIALOGEX 0, 0, 319, 208
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "", IDC_TOOL2ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 67, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL2LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 66, 250, 11 
+   CONTROL "", IDC_TOOL2DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 78, 250, 11 
+   CONTROL "", IDC_TOOL3ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 97, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL3LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 96, 250, 11 
+   CONTROL "", IDC_TOOL3DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 108, 250, 11 
+   CONTROL "", IDC_TOOL4ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 127, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL4LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 126, 250, 11 
+   CONTROL "", IDC_TOOL4DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 138, 250, 11 
+   CONTROL "", IDC_TOOL5ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 157, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL5LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 156, 250, 11 
+   CONTROL "", IDC_TOOL5DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 168, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 186, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 186, 54, 14 
+END
+
+IDD_TOOL6 DIALOGEX 0, 0, 319, 239
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "", IDC_TOOL2ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 67, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL2LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 66, 250, 11 
+   CONTROL "", IDC_TOOL2DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 78, 250, 11 
+   CONTROL "", IDC_TOOL3ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 97, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL3LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 96, 250, 11 
+   CONTROL "", IDC_TOOL3DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 108, 250, 11 
+   CONTROL "", IDC_TOOL4ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 127, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL4LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 126, 250, 11 
+   CONTROL "", IDC_TOOL4DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 138, 250, 11 
+   CONTROL "", IDC_TOOL5ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 157, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL5LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 156, 250, 11 
+   CONTROL "", IDC_TOOL5DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 168, 250, 11 
+   CONTROL "", IDC_TOOL6ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 187, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL6LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 186, 250, 11 
+   CONTROL "", IDC_TOOL6DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 198, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 217, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 217, 54, 14 
+END
+
+IDD_TOOL7 DIALOGEX 0, 0, 319, 269
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "", IDC_TOOL2ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 67, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL2LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 66, 250, 11 
+   CONTROL "", IDC_TOOL2DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 78, 250, 11 
+   CONTROL "", IDC_TOOL3ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 97, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL3LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 96, 250, 11 
+   CONTROL "", IDC_TOOL3DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 108, 250, 11 
+   CONTROL "", IDC_TOOL4ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 127, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL4LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 126, 250, 11 
+   CONTROL "", IDC_TOOL4DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 138, 250, 11 
+   CONTROL "", IDC_TOOL5ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 157, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL5LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 156, 250, 11 
+   CONTROL "", IDC_TOOL5DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 168, 250, 11 
+   CONTROL "", IDC_TOOL6ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 187, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL6LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 186, 250, 11 
+   CONTROL "", IDC_TOOL6DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 198, 250, 11 
+   CONTROL "", IDC_TOOL7ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 217, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL7LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 216, 250, 11 
+   CONTROL "", IDC_TOOL7DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 228, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 247, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 247, 54, 14 
+END
+
+
+IDD_TOOL8 DIALOGEX 0, 0, 319, 299
+STYLE DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "System Recovery Options"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Choose a recovery tool", IDL_RECENVCAPTION, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 7, 169, 11 
+   CONTROL "", IDC_OSINFO, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 11, 20, 260, 11 
+   CONTROL "", IDC_TOOL1ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 37, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL1LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 36, 250, 11 
+   CONTROL "", IDC_TOOL1DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 48, 250, 11 
+   CONTROL "", IDC_TOOL2ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 67, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL2LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 66, 250, 11 
+   CONTROL "", IDC_TOOL2DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 78, 250, 11 
+   CONTROL "", IDC_TOOL3ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 97, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL3LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 96, 250, 11 
+   CONTROL "", IDC_TOOL3DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 108, 250, 11 
+   CONTROL "", IDC_TOOL4ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 127, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL4LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 126, 250, 11 
+   CONTROL "", IDC_TOOL4DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 138, 250, 11 
+   CONTROL "", IDC_TOOL5ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 157, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL5LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 156, 250, 11 
+   CONTROL "", IDC_TOOL5DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 168, 250, 11 
+   CONTROL "", IDC_TOOL6ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 187, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL6LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 186, 250, 11 
+   CONTROL "", IDC_TOOL6DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 198, 250, 11 
+   CONTROL "", IDC_TOOL7ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 217, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL7LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 216, 250, 11 
+   CONTROL "", IDC_TOOL7DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 228, 250, 11 
+   CONTROL "", IDC_TOOL8ICO, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE, 13, 247, 21, 20 
+   CONTROL "<A>Startup Repair</A>", IDC_TOOL8LNK, "SysLink", WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 246, 250, 11 
+   CONTROL "", IDC_TOOL8DESC, EDIT, ES_LEFT | ES_AUTOHSCROLL | ES_READONLY | WS_CHILD | WS_VISIBLE, 44, 258, 250, 11 
+   CONTROL "&Shut Down", IDC_SHUTDOWN, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 195, 277, 54, 14 
+   CONTROL "&Restart", IDC_LOADDRV, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 257, 277, 54, 14 
+END
+
+IDD_ADDDRIVERS DIALOGEX 0, 0, 179, 70
+STYLE DS_SYSMODAL | DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Add Drivers"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "&OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 64, 48, 50, 14 
+   CONTROL "&Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 122, 48, 50, 14 
+   CONTROL "Insert the installation media for the device and click OK to select the driver.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 14, 13, 158, 33 
+END
+
+IDD_DRIVERLISTS DIALOGEX 0, 0, 205, 230
+STYLE DS_SYSMODAL | DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Add Drivers"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "&Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 148, 209, 50, 14 
+   CONTROL "To load drivers for the following devices, click Add Drivers.  (If the hardware is not installed, the driver for the specific device will not be loaded).", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 13, 191, 33 
+   CONTROL "&Add Drivers...", IDOK, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 89, 209, 50, 14 
+   CONTROL "&Browse", IDC_BRWSE, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 148, 186, 50, 14 
+   CONTROL "To locate another driver, click Browse.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 188, 124, 14 
+   CONTROL "", IDC_DRVLST, LISTBOX, LBS_STANDARD | LBS_NOINTEGRALHEIGHT | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 7, 41, 191, 135 
+END
+
+IDD_ADDINGDRV DIALOGEX 0, 0, 186, 68
+STYLE DS_SYSMODAL | DS_SHELLFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Add Drivers"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Adding drivers...", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 17, 16, 137, 19 
+   CONTROL "", IDC_DRVPRG, "msctls_progress32", WS_CHILD | WS_VISIBLE | WS_BORDER, 17, 35, 149, 14 
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LONGHORNNAME                                    "Operating System"
+	IDS_PARTITIONSIZE                                   "Partition Size"
+	IDS_INSTALLLOCATION                                 "Location"
+	IDS_UNKNOWN1                                        "Unknown"
+	IDS_SIZEMEGABYTES                                   "%u MB"
+	IDS_CHOOSEWINDOWS                                   "Please choose an operating system to repair."
+	IDS_SYSTEMRECOVERY                                  "System Recovery Options"
+END
+
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INVALIDUSERPASSWORD                              "The user name or the password is incorrect."
+	IDS_TOOL                                             "Tool"
+	IDS_DESCRIPTION                                      "Description"
+	IDS_SELECTTOOL                                       "Please choose a tool to run and click Run Tool."
+	IDS_COMMANDPROMPT                                    "Command Prompt"
+	IDS_OPENNEWCMD                                       "Open a command prompt window"
+	IDS_MEMDIAG                                          "Windows Memory Diagnostic"
+	IDS_CHECKMEMERRS                                     "Check your computer for memory hardware errors"
+	IDS_STARTREP                                         "Startup Repair"
+	IDS_CHECKSTARTPROBLEMS                               "Automatically fix problems that are preventing Windows from starting"
+	IDS_FAILEDTOEXECUTE                                  "The tool failed to run. Try choosing another tool."
+	IDS_NOMOREWINDOWSINSTALLS                            "No additional operating systems were found."
+	IDS_REPAIRSUPPORT                                    "Support and repair tool"
+	IDS_DRIVERFAILURE                                    "Load driver failed."
+	IDS_FOUNDONEINSTALL                                  "A Windows installation that is currently inaccessible has been found, would you like to repair the startup options and set this Windows installation as the default operating system?"
+	IDS_FOUNDMOREINSTALLS                                "Windows installations that are currently inaccessible have been found, would you like to repair the startup options?"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEMRESTORE                                    "System Restore"
+	IDS_RESTOREPOINTOFTIME                               "Restore Windows to an earlier point in time"
+	IDS_SYSTEMIMAGEREC                                   "System Image Recovery"
+	IDS_RECOVERWITHIMAGE                                 "Recover your computer using a system image you created earlier"
+	IDS_RECENVFAILEDTORUN                                "The recovery application failed to launch. Please contact your support organization for help."
+	IDS_EXITRECENV                                       "Are you sure you want to exit and restart your computer?"
+	IDS_RESTARTCONFIRM                                   "Would you like to restart the computer?"
+	IDS_INVALIDUSERNAME                                  "The user name is invalid."
+	IDS_PROBLEMLOGGINGON                                 "You are having trouble logging in. Please contact your computer administrator for assistance."
+	IDS_LOCALDRIVE                                       "Local Disk"
+	IDS_OPERATINGSYSTEMINFO                              "Operating system: %s on (%s) %s"
+	IDS_ACCOUNTDISABLED                                  "Your account has been disabled. Please see your system administrator."
+	IDS_MISMATCHEDVERSION                                "This version of System Recovery Options is not compatible with the version of Windows you are trying to repair. Try using a recovery disc that is compatible with this version of Windows."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INSTALLEDAPPCANTRUN                              "The installed program cannot start. Click OK to turn off the computer."
+	IDS_SELECTLANGCLICKNEXT                              "Please select a language and click Next."
+	IDS_FAILEDTOSETLANGUAGE                              "Failed to set the selected language."
+	IDS_FAILEDTOSETKEYBOARD                              "Failed to set the selected keyboard layout."
+	IDS_LOGONAUTHREQUIRED                                "You must log in to access System Recovery Options. If you are having trouble logging in, please contact your computer administrator for assistance. Click OK to restart the computer."
+	IDS_FAILEDTOSETBOOTARGS                              "Failed to save startup options."
+	IDS_FAILEDOPERATIONUSEANOTHERTOOL                    "The Recovery operation failed. Try choosing another tool."
+	IDS_WINDOWSSETUP                                     "Reinstall Windows"
+	IDS_REINSTALLDESC                                    "Are you sure you want to reinstall Windows?\r\n\r\nThe existing Windows installation will be moved to the Windows.old directory.  You can retrieve data from that location after the restore completes.  Any program you've installed will need to be reinstalled using the original installation discs or files.\r\n\r\nIf the operating system drive is protected using BitLocker Drive Encryption, the protection will be suspended.  After Windows is reinstalled, you can resume protection on the drive from BitLocker Drive Encryption in control panel."
+	IDS_PCRESTORE                                        "Restore your computer"
+	IDS_PCRESTOREDESC                                    "Restore Windows and programs to their original condition"
+	IDS_MISSINGFILESFORTOOL                              "Some required files are missing.  Try choosing another tool."
+	IDS_CANTFINDINSTALLFILES                             "Do you have a Windows installation disc?\r\n\r\nWindows could not find the files needed to reinstall Windows.  If you have a Windows installation disc, insert it into the DVD drive, and then click Yes.  If you do not have a Windows installation disc, click No to restart the computer, or contact your system administrator or computer manufacturer."
+	IDS_INSTALLDISCNOTFOUND                              "No valid Windows installation disc can be detected.\r\n\r\nPlease insert a Windows installation disc into the DVD drive, and then click Retry.  If you do not have a Windows installation disc, click Cancel to restart the computer and contact your system administrator or computer manufacturer."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LOCATIONDOESNTHAVEINFS                           "The specified location does not contain information about your hardware."
+	IDS_FAILEDINSTALLATION                               "The installation has failed."
+	IDS_ADDDRVCAPTION                                    "Add Drivers"
+	IDS_SETUPINFS                                        "Setup Information\x00*.inf"
+	IDS_DRIVERNEEDSRESTART                               "The software that supports your device requires that you restart your computer."
+	IDS_F6DRV                                            "F6DRV"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_STARTUPOPTIONREPAIRED                            "The following startup option will be repaired:"
+	IDS_STARTUPOPTIONDELETED                             "The following startup options will be deleted:"
+	IDS_STARTUPOPTIONADDED                               "The following startup options will be added:"
+	IDS_BOOTNAME                                         "Name: %s"
+	IDS_BOOTIDENTIFIER                                   "Identifier: {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}"
+	IDS_BOOTPATH                                         "Path: %s"
+	IDS_BOOTDEVICE                                       "Windows Device: Partition=%s"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VARIABLENAME                                     " (%s) "
+	IDS_VARIABLESIZE                                     " (%u MB) "
+	IDS_NOTFOUND                                         "Not found"
+	IDS_RECOVERED                                        " (recovered) "
+	IDS_BOOTCFGCOPY                                      "A copy of the current boot configuration data will be saved as: %s"
+END
+
+
