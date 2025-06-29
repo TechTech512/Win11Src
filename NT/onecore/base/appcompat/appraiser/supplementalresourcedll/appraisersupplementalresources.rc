@@ -23,4 +23,4 @@
 // RCData
 //
 
-1 RCDATA DISCARDABLE "compatinfo.txt"
+500 RCDATA DISCARDABLE "compatinfo.txt"
