@@ -1,0 +1,13 @@
+MAJORCOMP=appcompat
+MINORCOMP=appraiser
+
+TARGETNAME=appraiserres
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+BINPLACE_PLACEFILE=placefil.txt
+
+RESOURCE_ONLY_DLL=1
+
+SOURCES= \
+        appraisersupplementalresources.rc
