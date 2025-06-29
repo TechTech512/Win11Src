@@ -1,0 +1,26 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Compatibility Appraiser Supplemental Resources
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Compatibility Appraiser Supplemental Resources"
+#define VER_INTERNALNAME_STR        "AppraiserRes.dll"
+#define VER_ORIGINALFILENAME_STR    "AppraiserRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// RCData
+//
+
+1 RCDATA DISCARDABLE "compatinfo.txt"
