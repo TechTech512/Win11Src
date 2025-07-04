@@ -1,0 +1,235 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Welcome Center
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Getting Started"
+#define VER_INTERNALNAME_STR        "OobeFldr.dll"
+#define VER_ORIGINALFILENAME_STR    "OobeFldr.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// DUI
+//
+
+IDU_DUI1 UIFILE DISCARDABLE "dui1.uipp"
+IDU_DUI2 UIFILE DISCARDABLE "dui2.uipp"
+
+/////////////////////////////////////////////////////////////////
+//
+// Wevt
+//
+
+IDW_TMP WEVT_TEMPLATE DISCARDABLE "wevttempl.bin"
+
+/////////////////////////////////////////////////////////////////
+//
+// XML
+//
+
+IDX_HOMEPAGE XML DISCARDABLE "homepage.xml"
+
+/////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BLUELINK BITMAP DISCARDABLE "bluelink.bmp"
+IDB_GREENLINK BITMAP DISCARDABLE "greenlink.bmp"
+IDB_BANNER BITMAP DISCARDABLE "banner.bmp"
+IDB_BAR BITMAP DISCARDABLE "bar.bmp"
+IDB_HOVER BITMAP DISCARDABLE "hover.bmp"
+IDB_PRESS BITMAP DISCARDABLE "press.bmp"
+IDB_HILIGHT BITMAP DISCARDABLE "hilight.bmp"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_CDPLAY ICON DISCARDABLE "cdplay.ico"
+IDI_CONTACTS ICON DISCARDABLE "contacts.ico"
+IDI_WEB ICON DISCARDABLE "web.ico"
+
+/////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDM_WELCOMECENTERMENU MENU DISCARDABLE
+BEGIN
+  POPUP ""
+  BEGIN
+    MENUITEM "&Open",  IDM_OPENWELCOMECENTERITEM
+  END
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_KOREAMEDIACENTER                                  "Korea Media Player Center"
+	IDS_KOREAMEDIACENTERINFO                              "Provides users in Korea with information about third-party media player software."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_KOREAMESSENGER                                    "Korea Messenger Center"
+	IDS_KOREAMESSENGERINFO                                "Provides users in Korea with information about third-party instant messaging software."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ONLINEFINDOUTWHATSNEWINWINDOWSVISTA1              "Go online to find out what's new in Windows 7"
+	IDS_DISCOVERWINDOWSVISTA                              "Discover Windows 7"
+	IDS_LEARNMOREABOUTVISTAONLINE                         "Go online to make setting up your computer easier and learn more about Windows 7."
+	IDS_LEARNMORE                                         "Go online to learn more"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ONLINEFINDOUTWHATSNEWINWINDOWSVISTA2              "Go online to find out what's new in Windows 7"
+	IDS_DISCOVERPRODUCTIVEFEATURES                        "Discover new features that can help you be productive, stay safer, and have fun"
+	IDS_SETUPYOURCOMPUTER                                 "Find out everything you need to know about setting up your computer"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PERSONALIZEWINDOWS1                               "Personalize Windows"
+	IDS_PERSONALIZEWINDOWS2                               "Personalize Windows"
+	IDS_PERSONALIZEDESC1                                  "Change your desktop background, window color, sounds, and screen saver."
+	IDS_PERSONALIZEWINDOWS3                               "Personalize Windows"
+	IDS_PERSONALIZEWINDOWS4                               "Personalize Windows"
+	IDS_PERSONALIZEDESC2                                  "Make your computer look the way you want it to"
+	IDS_PERSONALIZEDESC3                                  "Choose a theme to change the desktop background, window color, sounds, and screen saver all at once"
+	IDS_PERSONALIZEDESC4                                  "Create and save your own themes"
+	IDS_PERSONALIZEDESC5                                  "Share themes with friends and family"
+	IDS_PERSONALIZEDESC6                                  "Or change the pictures, color, and sounds individually"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_TRANSFERYOURFILESINFO1                            "Transfer files and settings from another computer"
+	IDS_TRANSFERYOURFILES                                 "Transfer your files"
+	IDS_TRANSFERYOURFILESDESC1                            "Transfer your files and settings from another computer."
+	IDS_OPENFILESANDSETTINGSTRANSFERWIZARD                "Open Windows Easy Transfer"
+	IDS_TRANSFERYOURFILESINFO2                            "Transfer files and settings from another computer"
+	IDS_TRANSFERYOURFILESDESC2                            "Make the move to your new computer easier by transferring files and settings from your old computer all at once"
+	IDS_TRANSFERYOURFILESDESC3                            "Move documents, music, photos, favorites, e-mail, program settings, and more"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_USEAHOMEGROUPINYOURHOME1                          "Use a homegroup to share with other computers in your home"
+	IDS_SHAREINAHOMEGROUP                                 "Share with a homegroup"
+	IDS_SHAREFILESANDPRINTERS                             "Share files and printers with other computers in your home."
+	IDS_SETUPAHOMEGROUP                                   "Set up a homegroup"
+	IDS_USEAHOMEGROUPINYOURHOME2                          "Use a homegroup to share with other computers in your home"
+	IDS_SHAREMUSICDOCSVIDSPICSINHOMEGROUP                 "Share pictures, music, videos, documents, and printers with other computers in your homegroup"
+	IDS_CHOOSEFILESANDFOLDERS                             "Choose which files and folders to share"
+	IDS_CREATENEWHOMEGROUP                                "Create a new homegroup or add this computer to an existing one"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHOOSEWHENTOBENOTIFIED1                           "Choose when to be notified about changes to your computer"
+	IDS_CHANGEUACSETTINGS                                 "Change UAC settings"
+	IDS_CHOOSEUACNOTIFYSETTINGS                           "Choose when you want User Account Control (UAC) to notify you about changes to your computer."
+	IDS_CHANGESETTINGS                                    "Change settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHOOSEWHENTOBENOTIFIED2                           "Choose when to be notified about changes to your computer"
+	IDS_MAKEUACCHANGES                                    "Make changes to your User Account Control settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GOONLINETOGETWINDOWSLIVE1                         "Go online to get Windows Live Essentials"
+	IDS_GETWINDOWSLIVE                                    "Get Windows Live Essentials"
+	IDS_GOONLINETOGETWINDOWSLIVETOCOMMUNICATE             "Go online to get Windows Live Essentials to communicate, share, and publish online."
+	IDS_GOONLINETOGETWINDOWSLIVE2                         "Go online to get Windows Live Essentials"
+	IDS_GOONLINETOGETWINDOWSLIVE3                         "Go online to get Windows Live Essentials"
+	IDS_WINDOWSLIVEISASETOFPROGRAMS                       "Windows Live Essentials is a set of free programs to help you:"
+	IDS_STAYINTOUCHWITHPEOPLE                             "Stay in touch with the people you care about using Windows Live Messenger and Mail"
+	IDS_EDITANDPUBLISHPHOTOS                              "Edit and publish photos, blogs, and videos using Windows Live Photo Gallery, Writer, and Movie Maker"
+	IDS_CUSTOMIZEYOURWEBBROWSER                           "Customize your web browser and stay safer online using Windows Live Toolbar and Family Safety"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_BACKUPYOURFILES1                                  "Back up your files"
+	IDS_BACKUPYOURFILES2                                  "Back up your files"
+	IDS_CONFIGUREWINDOWSTOBACKUPFILES                     "Configure Windows to back up your photos, music, and other files automatically."
+	IDS_BACKUPYOURFILES3                                  "Back up your files"
+	IDS_BACKUPYOURFILES4                                  "Back up your files"
+	IDS_AUTOSAVEFILECOPIES                                "Automatically save copies of your photos, music, and other files"
+	IDS_SETAUTOBACKUP                                     "Set up automatic backup and learn about other ways to recover information"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ADDNEWUSERSTOYOURCOMPUTER1                        "Add new users to your computer"
+	IDS_ADDNEWUSERS1                                      "Add new users"
+	IDS_CREATEUSERACCOUNTSFOROTHERPEOPLE                  "Create user accounts for other people who will use this computer."
+	IDS_ADDNEWUSERS2                                      "Add new users"
+	IDS_ADDNEWUSERSTOYOURCOMPUTER2                        "Add new users to your computer"
+	IDS_GIVEOTHERSACCESSTOCOMPUTER                        "Give other users access to this computer"
+	IDS_CHANGEYOURACCOUNTTYPE                             "Change your account type"
+	IDS_CHANGEYOURACCOUNTPICTURE                          "Change your account picture"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHANGESIZEOFTEXTONSCREEN1                         "Change the size of the text on your screen"
+	IDS_CHANGETEXTSIZE1                                   "Change text size"
+	IDS_MAKETEXTSMALLERORBIGGER1                          "Make text and other items on your screen larger or smaller."
+	IDS_CHANGETEXTSIZE2                                   "Change text size"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHANGESIZEOFTEXTONSCREEN2                         "Change the size of the text on your screen"
+	IDS_MAKETEXTSMALLERORBIGGER2                          "Make text and other items on your screen larger or smaller."
+	IDS_ADJUSTYOURSCREENRESOLUTION1                       "Adjust your screen resolution"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NAME                                              "Name"
+	IDS_DESCRIPTION                                       "Description"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CATEGORY                                          "Category"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GETTINGSTARTED                                    "Getting Started"
+	IDS_LEARNABOUTWINDOWSFEATURES                         "Learn about Windows features and start using them."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WELCOME                                           "welcome"
+	IDS_SHOWMEDETAILS                                     "Show more details"
+END
