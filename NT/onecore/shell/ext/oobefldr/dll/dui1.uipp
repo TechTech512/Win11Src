@@ -1,0 +1,25 @@
+<duixml>
+<Element resid="FolderLayout" layout="borderlayout()" sheet="UserOobeLayoutStyle">
+<element layoutpos="top" layout="filllayout()" height="196rp" background="argb(0,0,0,0)">
+<element id="atom(background)" class="background"/>
+<UserOobePreviewModule id="atom(UserOobePreviewContainer)" layout="filllayout()"/>
+<element id="atom(picAway)" layoutpos="absolute"/>
+</element>
+<Element id="atom(ViewHostContainer)" layoutpos="Client" sheet="genericlayoutstyle" layout="filllayout()">
+<ViewHost id="atom(clientviewhost)" layout="borderlayout()">
+</ViewHost>
+</Element>
+</Element>
+<stylesheets>
+<style resid="UserOobeLayoutStyle">
+<element font="gtf(TEXTSTYLE, 4, 0)"/>
+<CCCheckbox font="gtf(TEXTSTYLE, 4, 0)"/>
+<if class="background">
+<element background="themeable(resbmp(102,6,-1,0,0,0,0,library(oobefldr.dll)), gradient(ARGB(0,4,80,130), ARGB(0,17,101,132), ARGB(0,28,121,132), 3))"/>
+</if>
+<if class="background-hc">
+<element background="highlight" foreground="highlighttext"/>
+</if>
+</style>
+</stylesheets>
+</duixml>

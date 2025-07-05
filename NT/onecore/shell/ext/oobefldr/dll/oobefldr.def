@@ -1,0 +1,5 @@
+LIBRARY OOBEFLDR
+EXPORTS
+	ShowWelcomeCenter
+	DllCanUnloadNow
+	DllGetClassObject

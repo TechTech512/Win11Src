@@ -1,0 +1,86 @@
+<duixml>
+<element resid="UserOobePreviewModule" id="atom(userOobePreviewModule)" layout="filllayout()" accrole="pane" sheet="UserOobeStyle">
+<element id="atom(root)" layoutpos="top" layout="filllayout()" height="196rp"/>
+</element>
+<element resid="defaulttask" id="atom(defaulttask)" layout="filllayout()">
+<element id="atom(welcome)" accessible="true" accrole="statictext" content="resstr(50437, library(oobefldr.dll))" contentalign="bottomright" font="CaptionFont;622%;Normal;None" padding="rect(0rp,0rp,-9rp,-17rp)" alpha="0" animation="alpha|s|slow|delayshort" sheet="UserOobeStyle"/>
+<element id="atom(fadeIn)" layout="borderlayout()" padding="rect(0rp,16rp,0rp,8rp)" alpha="0" animation="alpha|s|fast">
+<element layoutpos="left" width="160rp">
+<element id="atom(previewPic)" width="128rp" height="128rp" layoutpos="absolute" x="16rp" y="16rp" animation="rectangle|exp|veryfast" accessible="true" accrole="graphic"/>
+</element>
+<element id="atom(title)" contentalign="wrapleft" layoutpos="top" padding="rect(-2rp,0rp,0rp,0rp)" font="CaptionFont;178%;Normal" fontstyle="shadow" accessible="true" accrole="statictext">
+</element>
+<element id="atom(main)" layoutpos="client" layout="filllayout()"/>
+<element id="atom(startTextColumn)" layoutpos="right" layout="borderlayout()" padding="rect(0rp,0rp,6rp,0rp)">
+<button id="atom(startTextButton)" layoutpos="top" layout="borderlayout()" class="commandButton" accessible="true" accrole="link">
+<element layoutpos="left" class="commandGlyph"/>
+<element layoutpos="client" class="commandText" id="atom(startText)"/>
+</button>
+</element>
+</element>
+</element>
+<element resid="UserOobePreviewWrapper" class="wrapper" layout="filllayout()">
+<element id="atom(previewBackground)"/>
+<element id="atom(fadeIn)" layout="borderlayout()" padding="rect(0rp,16rp,0rp,8rp)" alpha="0" animation="alpha|s|fast">
+<element layoutpos="left" width="160rp">
+<element id="atom(previewPic)" width="128rp" height="128rp" layoutpos="absolute" x="16rp" y="16rp" animation="rectangle|exp|veryfast" accessible="true" accrole="graphic"/>
+</element>
+<element id="atom(title)" contentalign="wrapleft" layoutpos="top" padding="rect(-2rp,0rp,0rp,0rp)" font="CaptionFont;178%;Normal" fontstyle="shadow" accessible="true" accrole="statictext">
+</element>
+<element id="atom(main)" layoutpos="client" layout="filllayout()"/>
+<element id="atom(startTextColumn)" layoutpos="bottom" layout="borderlayout()" padding="rect(0rp,0rp,6rp,0rp)">
+<button id="atom(startTextButton)" layoutpos="right" layout="borderlayout()" class="commandButton" accessible="true" accrole="link">
+<element layoutpos="left" class="commandGlyph"/>
+<element layoutpos="client" class="commandText" id="atom(startText)"/>
+</button>
+</element>
+</element>
+</element>
+<element resid="UserOobePreviewColumn" padding="rect(0,0,80rp,0)" class="UserOobePreviewColumn" sheet="UserOobeStyle" layout="borderlayout()">
+</element>
+<CColumnOverflowElement resid="UserOobePreviewOverflowColumn" columnwidth="250rp" class="UserOobePreviewOverflowColumn" sheet="UserOobeStyle">
+</CColumnOverflowElement>
+<element resid="UserOobePreviewItem" class="PreviewItem" sheet="UserOobeStyle" layoutpos="top" layout="flowlayout(0,0,0,0)">
+</element>
+<element resid="UserOobePreviewItemText" class="PreviewItemText" sheet="UserOobeStyle" accessible="true" accrole="statictext" contentalign="wrapleft | wordellipsis">
+</element>
+<element resid="UserOobePreviewItemGraphic" class="PreviewItemGraphic" accessible="true" accrole="graphic" sheet="UserOobeStyle">
+</element>
+<button resid="UserOobePreviewItemHyperlink" class="PreviewItemHyperlink" accessible="true" accrole="link" sheet="UserOobeStyle">
+</button>
+<stylesheets>
+<style resid="UserOobeStyle">
+<element foreground="themeable(windowtext, highlighttext)" fontstyle="shadow"/>
+<if id="atom(welcome)">
+<element foreground="themeable(windowtext, highlighttext)"/>
+</if>
+<if class="PreviewItemHyperlink">
+<button cursor="hand" fontstyle="underline | shadow"/>
+<if mousefocused="true">
+<button foreground="hotlight" fontstyle="underline | shadow"/>
+</if>
+</if>
+<if class="commandText">
+<element background="argb(0,0,0,0)" font="CaptionFont;133%;Normal;None" foreground="themeable(windowtext, highlighttext)" contentalign="wordellipsis"/>
+</if>
+<if class="commandButton">
+<button background="argb(0,0,0,0)" padding="rect(4rp,4rp,5rp,5rp)" cursor="hand" contentalign="middleleft"/>
+<if mousefocused="true">
+<button background="graphic(105,7,-1,0,0,0,0,library(oobefldr.dll))" borderthickness="rect(4rp,4rp,4rp,4rp)" padding="rect(0rp,0rp,1rp,1rp)"/>
+</if>
+<if pressed="true">
+<button background="graphic(106,7,-1,0,0,0,0,library(oobefldr.dll))" borderthickness="rect(4rp,4rp,4rp,4rp)" padding="rect(1rp,1rp,0rp,0rp)"/>
+</if>
+<if keyfocused="true" mousefocused="false">
+<button background="graphic(107,7,-1,0,0,0,0,library(oobefldr.dll))" borderthickness="rect(4rp,4rp,4rp,4rp)" padding="rect(0rp,0rp,1rp,1rp)"/>
+</if>
+</if>
+<if class="commandGlyph">
+<element background="argb(0,0,0,0)" contentalign="middlecenter" padding="rect(0,3rp,0,0)" content="themeable(dtb(BUTTON, 7, 1), resbmp(100,2,-1,0,0,1,1,library(oobefldr.dll)))"/>
+<if mousefocused="true">
+<element content="themeable(dtb(BUTTON, 7, 2), resbmp(101,2,-1,0,0,1,1,library(oobefldr.dll)))"/>
+</if>
+</if>
+</style>
+</stylesheets>
+</duixml>
