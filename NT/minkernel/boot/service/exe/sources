@@ -1,0 +1,33 @@
+TARGETNAME=bfsvc
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_NTDLL=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+SOURCES=bfsvc.c \
+		bfsvc.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=console
+UMENTRY=winmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(BASEDIR)\public\internal\base\lib\*\bfsvc.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SDK_LIB_PATH)\shlwapi.lib \
+	$(SDK_LIB_PATH)\user32.lib 
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=bfsvc.manifest
+SXS_ASSEMBLY_VERSION=5.1
+SXS_ASSEMBLY_NAME=Microsoft.Windows.Boot.Servicing
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
