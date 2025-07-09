@@ -1,0 +1,21 @@
+TARGETNAME=bfsvc
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+SOURCES=checksum.c \
+        environ.c \
+        filever.c \
+        security.c \
+        service.c \
+        log.c \
+        utils.c \
+
+UMTYPE=console
+UMENTRY=winmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\imagehlp.lib \
+        $(SDK_LIB_PATH)\advapi32.lib
+
+PASS1_PUBLISH= \
+    {$(O)\bfsvc.lib=$(BASEDIR)\public\internal\base\lib\*\bfsvc.lib}
+
