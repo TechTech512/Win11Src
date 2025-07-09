@@ -1,0 +1,17 @@
+TARGETNAME=umbcd_static
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+SOURCES=..\bios.c \
+        ..\efi.c \
+        ..\guiddef.c \
+        ..\priv.c    \
+        ..\syspart.c \
+        ..\utility.c 
+
+
+UMTYPE=console
+UMENTRY=winmain
+
+
+
