@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "sysboot.h"
 
 long SiDisambiguateSystemDevice(ulong *param1, ulong *param2) {
