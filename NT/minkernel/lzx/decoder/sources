@@ -17,5 +17,4 @@ SOURCES = \
     decblk.c \
     decout.c \
     decinit.c \
-    decapi.c \
-    ldi.c
+    decapi.c 

@@ -6,12 +6,11 @@
 
 #include "decoder.h"
 
+#include <memory.h>
+#pragma intrinsic(memcpy)
 
 void copy_data_to_output(t_decoder_context *context, long amount, const byte *data)
 {
-    if (context->dec_output_buffer == NULL)
-        return;
-
     memcpy(
         context->dec_output_buffer,
         data,

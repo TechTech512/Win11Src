@@ -1,4 +1,4 @@
-/* 
+/*
  * decproto.h
  *
  * Decoder function prototypes
@@ -14,7 +14,7 @@ void NEAR fillbuf(t_decoder_context *context, int n);
 ulong NEAR getbits(t_decoder_context *context, int n);
 
 /* decinit.c */
-bool NEAR allocate_decompression_memory(t_decoder_context *context); 
+bool NEAR allocate_decompression_memory(t_decoder_context *context);
 void NEAR free_decompression_memory(t_decoder_context *context);
 void NEAR decoder_misc_init(t_decoder_context *context);
 void NEAR reset_decoder_trees(t_decoder_context *context);
@@ -27,17 +27,17 @@ bool NEAR read_main_and_secondary_trees(t_decoder_context *context);
 bool NEAR read_aligned_offset_tree(t_decoder_context *context);
 
 /* maketbl.c */
-bool NEAR make_table(
-	t_decoder_context *context, 
-	int			nchar,
-	const byte	*bitlen,
-	byte		tablebits,
-	short		*table,
-	short		*leftright
+bool NEAR __cdecl make_table(
+        t_decoder_context *context,
+        int                     nchar,
+        const byte      *bitlen,
+        byte            tablebits,
+        short           *table,
+        short           *leftright
 );
 
 bool NEAR make_table_8bit(t_decoder_context *context, byte *bitlen, byte *table);
-	
+
 /* decxlat.c */
 void NEAR init_decoder_translation(t_decoder_context *context);
 void NEAR decoder_translate_e8(t_decoder_context *context, byte *mem, long bytes);
