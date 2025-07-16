@@ -1,0 +1,41 @@
+TARGETNAME=Setup
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_STL=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+SOURCES=autorun.cpp \
+		autorun.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS= \
+	$(BASEDIR)\onecore\base\ntsetup\lib\uilib\src\$(O)\uilib.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\gdi32.lib \
+	$(SDK_LIB_PATH)\winspool.lib \
+	$(SDK_LIB_PATH)\comdlg32.lib \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SDK_LIB_PATH)\ole32.lib \
+	$(SDK_LIB_PATH)\oleaut32.lib \
+	$(SDK_LIB_PATH)\uuid.lib \
+	$(SDK_LIB_PATH)\odbc32.lib \
+	$(SDK_LIB_PATH)\odbccp32.lib 
+	
+BINPLACE_PLACEFILE=placefil.txt
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=AutoRun.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.Setup.Setup
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
