@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2005 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Unmanaged BCL
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Unmanaged BCL"
+#define VER_INTERNALNAME_STR        "unbcl.dll"
+#define VER_ORIGINALFILENAME_STR    "unbcl.dll"
+
+#include "common.ver"

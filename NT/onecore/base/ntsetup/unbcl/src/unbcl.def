@@ -1,0 +1,15 @@
+LIBRARY UNBCL
+EXPORTS
+	IsRunning
+	SetRunningFlag
+	UnBCLReleaseResources
+	pExecuteWmiQuery
+	pGetDirectoriesAndFiles
+	pGetPath
+	pReallocateBuffer
+	pRemoveReparsePointData
+	pSanitizePath
+	pShouldEnumerateReparsePoint
+	pWin32ErrorText
+	WIN32_FROM_HRESULT
+

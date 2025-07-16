@@ -1,4 +1,4 @@
-// abandonedmutexexception.cpp
+// argumentexception.cpp
 
 #include <windows.h>
 
@@ -28,20 +28,20 @@ public:
     }
 };
 
-class AbandonedMutexException : public SystemException
+class ArgumentException : public SystemException
 {
 public:
-    AbandonedMutexException()
-        : SystemException(L"Abandoned mutex exception.")
+    ArgumentException()
+        : SystemException(L"Argument exception.")
     {
     }
 
-    AbandonedMutexException(LPCWSTR message)
+    ArgumentException(LPCWSTR message)
         : SystemException(message)
     {
     }
 
-    ~AbandonedMutexException()
+    ~ArgumentException()
     {
     }
 };

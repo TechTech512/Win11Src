@@ -1,4 +1,4 @@
-// abandonedmutexexception.cpp
+// arithmeticexception.cpp
 
 #include <windows.h>
 
@@ -28,21 +28,20 @@ public:
     }
 };
 
-class AbandonedMutexException : public SystemException
+class ArithmeticException : public SystemException
 {
 public:
-    AbandonedMutexException()
-        : SystemException(L"Abandoned mutex exception.")
+    ArithmeticException()
+        : SystemException(L"Arithmetic operation resulted in an overflow or divide by zero.")
     {
     }
 
-    AbandonedMutexException(LPCWSTR message)
+    ArithmeticException(LPCWSTR message)
         : SystemException(message)
     {
     }
 
-    ~AbandonedMutexException()
+    ~ArithmeticException()
     {
     }
 };
-
