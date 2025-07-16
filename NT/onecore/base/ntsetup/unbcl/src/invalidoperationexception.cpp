@@ -20,13 +20,13 @@ public:
         if (!str) str = L"";
         size_t len = wcslen(str);
         m_Data = new wchar_t[len + 1];
-        wcscpy_s(m_Data, len + 1, str);
+        wcscpy(m_Data, str);
     }
 
     String(const String& other) {
         size_t len = wcslen(other.m_Data);
         m_Data = new wchar_t[len + 1];
-        wcscpy_s(m_Data, len + 1, other.m_Data);
+        wcscpy(m_Data, other.m_Data);
     }
 
     ~String() {
