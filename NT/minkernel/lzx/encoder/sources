@@ -18,6 +18,5 @@ SOURCES = \
     block.c \
     blkinit.c \
     io.c \
-    lci.c \
     init.c \
     encapi.c

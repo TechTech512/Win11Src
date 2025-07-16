@@ -14,25 +14,25 @@
 
 static void tally_aligned_bits(t_encoder_context *context, ulong dist_to_end_at)
 {
-	ulong	*dist_ptr;
-	ulong	i;
-	ulong	match_pos;
+        ulong   *dist_ptr;
+        ulong   i;
+        ulong   match_pos;
 
-	/*
+        /*
      * Tally the lower 3 bits
      */
-	dist_ptr = context->enc_DistData;
+        dist_ptr = context->enc_DistData;
 
-	for (i = dist_to_end_at; i > 0; i--)
-	{
-		match_pos = *dist_ptr++;
+        for (i = dist_to_end_at; i > 0; i--)
+        {
+                match_pos = *dist_ptr++;
 
-		/*
-		 * Only for matches which have >= 3 extra bits 
-		 */
-		if (match_pos >= MPSLOT3_CUTOFF)
-			context->enc_aligned_tree_freq[match_pos & 7]++;
-	}
+                /*
+                 * Only for matches which have >= 3 extra bits
+                 */
+                if (match_pos >= MPSLOT3_CUTOFF)
+                        context->enc_aligned_tree_freq[match_pos & 7]++;
+        }
 }
 
 
@@ -42,36 +42,36 @@ static void tally_aligned_bits(t_encoder_context *context, ulong dist_to_end_at)
  */
 lzx_block_type get_aligned_stats(t_encoder_context *context, ulong dist_to_end_at)
 {
-	byte		i;
-	ulong		total_L3 = 0;
-	ulong		largest_L3 = 0;
+        byte            i;
+        ulong           total_L3 = 0;
+        ulong           largest_L3 = 0;
 
-	memset(
-		context->enc_aligned_tree_freq, 
-		0, 
-		ALIGNED_NUM_ELEMENTS * sizeof(context->enc_aligned_tree_freq[0])
-	);
+        memset(
+                context->enc_aligned_tree_freq,
+                0,
+                ALIGNED_NUM_ELEMENTS * sizeof(context->enc_aligned_tree_freq[0])
+        );
 
-	tally_aligned_bits(context, dist_to_end_at);
+        tally_aligned_bits(context, dist_to_end_at);
 
-	for (i = 0; i < ALIGNED_NUM_ELEMENTS; i++)
-	{
-		if (context->enc_aligned_tree_freq[i] > largest_L3)
-			largest_L3 = context->enc_aligned_tree_freq[i];
+        for (i = 0; i < ALIGNED_NUM_ELEMENTS; i++)
+        {
+                if (context->enc_aligned_tree_freq[i] > largest_L3)
+                        largest_L3 = context->enc_aligned_tree_freq[i];
 
-		total_L3 += context->enc_aligned_tree_freq[i];
-	}
+                total_L3 += context->enc_aligned_tree_freq[i];
+        }
 
-	/*
-	 * Do aligned offsets if the largest frequency accounts for 20%
-	 * or more (as opposed to 12.5% for non-aligned offset blocks).
-	 *
-	 * Not worthwhile to do aligned offsets if we have < 100 matches
-	 */
-	if ((largest_L3 > total_L3/5) && dist_to_end_at >= 100)
-		return BLOCKTYPE_ALIGNED;
-	else
-		return BLOCKTYPE_VERBATIM;
+        /*
+         * Do aligned offsets if the largest frequency accounts for 20%
+         * or more (as opposed to 12.5% for non-aligned offset blocks).
+         *
+         * Not worthwhile to do aligned offsets if we have < 100 matches
+         */
+        if ((largest_L3 > total_L3/5) && dist_to_end_at >= 100)
+                return BLOCKTYPE_ALIGNED;
+        else
+                return BLOCKTYPE_VERBATIM;
 }
 
 
@@ -80,45 +80,52 @@ lzx_block_type get_aligned_stats(t_encoder_context *context, ulong dist_to_end_a
  * number of uncompressed bytes compressed in the block.
  */
 static ulong tally_frequency(
-	t_encoder_context *context, 
-	ulong literal_to_start_at, 
-	ulong distance_to_start_at,
-	ulong literal_to_end_at
+        t_encoder_context *context,
+        ulong literal_to_start_at,
+        ulong distance_to_start_at,
+        ulong literal_to_end_at
 )
 {
-	ulong   i;
-	ulong	d;
-	ulong   compressed_bytes = 0;
+        ulong   i;
+        ulong   d;
+        ulong   compressed_bytes = 0;
 
-	d = distance_to_start_at;
+        d = distance_to_start_at;
 
-	for (i = literal_to_start_at; i < literal_to_end_at; i++)
-	{
-		if (!IsMatch(i))
-		{
-			/* Uncompressed symbol */
-			context->enc_main_tree_freq[context->enc_LitData[i]]++;
-			compressed_bytes++;
-		}
-		else
-		{
-			/* Match */
-			if (context->enc_LitData[i] < NUM_PRIMARY_LENGTHS)
-			{
-				context->enc_main_tree_freq[ NUM_CHARS + (MP_SLOT(context->enc_DistData[d])<<NL_SHIFT) + context->enc_LitData[i]] ++;
-			}
-			else
-			{
-				context->enc_main_tree_freq[ (NUM_CHARS + NUM_PRIMARY_LENGTHS) + (MP_SLOT(context->enc_DistData[d])<<NL_SHIFT)] ++;
-				context->enc_secondary_tree_freq[context->enc_LitData[i] - NUM_PRIMARY_LENGTHS] ++;
-			}
+        for (i = literal_to_start_at; i < literal_to_end_at; i++)
+        {
+                if (!IsMatch(i))
+                {
+                        /* Uncompressed symbol */
+                        context->enc_main_tree_freq[context->enc_LitData[i]]++;
+                        compressed_bytes++;
+                }
+                else
+                {
+                        /* Match */
+                        if (context->enc_LitData[i] < NUM_PRIMARY_LENGTHS)
+                        {
+                                context->enc_main_tree_freq[ NUM_CHARS + (MP_SLOT(context->enc_DistData[d])<<NL_SHIFT) + context->enc_LitData[i]] ++;
+                        }
+                        else
+                        {
+                                context->enc_main_tree_freq[ (NUM_CHARS + NUM_PRIMARY_LENGTHS) + (MP_SLOT(context->enc_DistData[d])<<NL_SHIFT)] ++;
+                                context->enc_secondary_tree_freq[context->enc_LitData[i] - NUM_PRIMARY_LENGTHS] ++;
+                        }
 
-			compressed_bytes += context->enc_LitData[i]+MIN_MATCH;
-			d++;
-		}
-	}
+                        compressed_bytes += context->enc_LitData[i]+MIN_MATCH;
 
-	return compressed_bytes;
+#ifdef EXTRALONGMATCHES
+                        if (( context->enc_LitData[ i ] + MIN_MATCH ) == MAX_MATCH ) {
+                            compressed_bytes += context->enc_ExtraLength[ i ];
+                            }
+#endif
+
+                        d++;
+                }
+        }
+
+        return compressed_bytes;
 }
 
 
@@ -126,30 +133,30 @@ static ulong tally_frequency(
  * Get statistics
  */
 ulong get_block_stats(
-	t_encoder_context *context, 
-	ulong literal_to_start_at, 
-	ulong distance_to_start_at,
-	ulong literal_to_end_at
+        t_encoder_context *context,
+        ulong literal_to_start_at,
+        ulong distance_to_start_at,
+        ulong literal_to_end_at
 )
 {
-	memset(
-		context->enc_main_tree_freq, 
-		0, 
-		MAIN_TREE_ELEMENTS * sizeof(context->enc_main_tree_freq[0])
-	);
+        memset(
+                context->enc_main_tree_freq,
+                0,
+                MAIN_TREE_ELEMENTS * sizeof(context->enc_main_tree_freq[0])
+        );
 
-	memset(
-		context->enc_secondary_tree_freq, 
-		0, 
-		NUM_SECONDARY_LENGTHS * sizeof(context->enc_secondary_tree_freq[0])
-	);
+        memset(
+                context->enc_secondary_tree_freq,
+                0,
+                NUM_SECONDARY_LENGTHS * sizeof(context->enc_secondary_tree_freq[0])
+        );
 
-	return tally_frequency(
-		context,
-		literal_to_start_at, 
-		distance_to_start_at,
-		literal_to_end_at
-	);
+        return tally_frequency(
+                context,
+                literal_to_start_at,
+                distance_to_start_at,
+                literal_to_end_at
+        );
 }
 
 
@@ -157,18 +164,18 @@ ulong get_block_stats(
  * Update cumulative statistics
  */
 ulong update_cumulative_block_stats(
-	t_encoder_context *context, 
-	ulong literal_to_start_at, 
-	ulong distance_to_start_at,
-	ulong literal_to_end_at
+        t_encoder_context *context,
+        ulong literal_to_start_at,
+        ulong distance_to_start_at,
+        ulong literal_to_end_at
 )
 {
-	return tally_frequency(
-		context,
-		literal_to_start_at, 
-		distance_to_start_at,
-		literal_to_end_at
-	);
+        return tally_frequency(
+                context,
+                literal_to_start_at,
+                distance_to_start_at,
+                literal_to_end_at
+        );
 }
 
 
@@ -176,13 +183,13 @@ ulong update_cumulative_block_stats(
 /*
  * Used in block splitting
  *
- * This routine calculates the "difference in composition" between 
+ * This routine calculates the "difference in composition" between
  * two different sections of compressed data.
  *
  * Resolution must be evenly divisible by STEP_SIZE, and must be
  * a power of 2.
  */
-#define RESOLUTION				1024
+#define RESOLUTION                              1024
 
 /*
  * Threshold for determining if two blocks are different
@@ -191,7 +198,7 @@ ulong update_cumulative_block_stats(
  * splitter will start investigating, narrowing down the
  * area where the change occurs.
  *
- * It will then look for two areas which are 
+ * It will then look for two areas which are
  * EARLY_BREAK_THRESHOLD (or more) different.
  *
  * If THRESHOLD is too small, it will force examination
@@ -199,12 +206,12 @@ ulong update_cumulative_block_stats(
  *
  * The EARLY_BREAK_THRESHOLD is the more important value.
  */
-#define THRESHOLD				1400
+#define THRESHOLD                               1400
 
 /*
  * Threshold for determining if two blocks are REALLY different
  */
-#define EARLY_BREAK_THRESHOLD	1700
+#define EARLY_BREAK_THRESHOLD   1700
 
 /*
  * Must be >= 8 because ItemType[] array is in bits
@@ -220,7 +227,7 @@ ulong update_cumulative_block_stats(
  * Minimum # literals required to perform block
  * splitting at all.
  */
-#define MIN_LITERALS_REQUIRED	6144
+#define MIN_LITERALS_REQUIRED   6144
 
 /*
  * Minimum # literals we will allow to be its own block.
@@ -229,12 +236,12 @@ ulong update_cumulative_block_stats(
  * of literals, otherwise the static tree output will
  * take up too much space.
  */
-#define MIN_LITERALS_IN_BLOCK	4096
+#define MIN_LITERALS_IN_BLOCK   4096
 
 
 static const long square_table[17] =
 {
-	0,1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256
+        0,1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256
 };
 
 
@@ -256,38 +263,38 @@ static const long square_table[17] =
  */
 static const byte log2_table[256] =
 {
-	0,1,2,2,3,3,3,3,
-	4,4,4,4,4,4,4,4,
-	5,5,5,5,5,5,5,5,
-	5,5,5,5,5,5,5,5,
-	6,6,6,6,6,6,6,6,
-	6,6,6,6,6,6,6,6,
-	6,6,6,6,6,6,6,6,
-	6,6,6,6,6,6,6,6,
-	7,7,7,7,7,7,7,7,
-	7,7,7,7,7,7,7,7,
-	7,7,7,7,7,7,7,7,
-	7,7,7,7,7,7,7,7,
-	7,7,7,7,7,7,7,7,
-	7,7,7,7,7,7,7,7,
-	7,7,7,7,7,7,7,7,
-	7,7,7,7,7,7,7,7,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8,
-	8,8,8,8,8,8,8,8
+        0,1,2,2,3,3,3,3,
+        4,4,4,4,4,4,4,4,
+        5,5,5,5,5,5,5,5,
+        5,5,5,5,5,5,5,5,
+        6,6,6,6,6,6,6,6,
+        6,6,6,6,6,6,6,6,
+        6,6,6,6,6,6,6,6,
+        6,6,6,6,6,6,6,6,
+        7,7,7,7,7,7,7,7,
+        7,7,7,7,7,7,7,7,
+        7,7,7,7,7,7,7,7,
+        7,7,7,7,7,7,7,7,
+        7,7,7,7,7,7,7,7,
+        7,7,7,7,7,7,7,7,
+        7,7,7,7,7,7,7,7,
+        7,7,7,7,7,7,7,7,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8,
+        8,8,8,8,8,8,8,8
 };
 
 
@@ -295,84 +302,84 @@ static const byte log2_table[256] =
  * Return the difference between two sets of matches/distances
  */
 static ulong return_difference(
-	t_encoder_context *context, 
-	ulong item_start1,
-	ulong item_start2,
-	ulong dist_at_1,
-	ulong dist_at_2,
-	ulong size
+        t_encoder_context *context,
+        ulong item_start1,
+        ulong item_start2,
+        ulong dist_at_1,
+        ulong dist_at_2,
+        ulong size
 )
 {
-	ushort	freq1[800];
-	ushort	freq2[800];
-	ulong	i;
-	ulong	cum_diff;
-	int		element;
+        ushort  freq1[800];
+        ushort  freq2[800];
+        ulong   i;
+        ulong   cum_diff;
+        int             element;
 
-	/*
-	 * Error!  Too many main tree elements
-	 */
-	if (MAIN_TREE_ELEMENTS >= (sizeof(freq1)/sizeof(freq1[0])))
-		return 0;
+        /*
+         * Error!  Too many main tree elements
+         */
+        if (MAIN_TREE_ELEMENTS >= (sizeof(freq1)/sizeof(freq1[0])))
+                return 0;
 
-	memset(freq1, 0, sizeof(freq1[0])*MAIN_TREE_ELEMENTS);
-	memset(freq2, 0, sizeof(freq2[0])*MAIN_TREE_ELEMENTS);
+        memset(freq1, 0, sizeof(freq1[0])*MAIN_TREE_ELEMENTS);
+        memset(freq2, 0, sizeof(freq2[0])*MAIN_TREE_ELEMENTS);
 
-	for (i = 0; i < size; i++)
-	{
-		if (!IsMatch(item_start1))
-		{
-			element = context->enc_LitData[item_start1];
-		}
-		else
-		{
-			if (context->enc_LitData[item_start1] < NUM_PRIMARY_LENGTHS)
-				element = NUM_CHARS + (MP_SLOT(context->enc_DistData[dist_at_1])<<NL_SHIFT) + context->enc_LitData[item_start1];
-			else
-				element = (NUM_CHARS + NUM_PRIMARY_LENGTHS) + (MP_SLOT(context->enc_DistData[dist_at_1]) << NL_SHIFT);
+        for (i = 0; i < size; i++)
+        {
+                if (!IsMatch(item_start1))
+                {
+                        element = context->enc_LitData[item_start1];
+                }
+                else
+                {
+                        if (context->enc_LitData[item_start1] < NUM_PRIMARY_LENGTHS)
+                                element = NUM_CHARS + (MP_SLOT(context->enc_DistData[dist_at_1])<<NL_SHIFT) + context->enc_LitData[item_start1];
+                        else
+                                element = (NUM_CHARS + NUM_PRIMARY_LENGTHS) + (MP_SLOT(context->enc_DistData[dist_at_1]) << NL_SHIFT);
 
-			dist_at_1++;
-		}
+                        dist_at_1++;
+                }
 
-		item_start1++;
-		freq1[element]++;
+                item_start1++;
+                freq1[element]++;
 
-		if (!IsMatch(item_start2))
-		{
-			element = context->enc_LitData[item_start2];
-		}
-		else
-		{
-			if (context->enc_LitData[item_start2] < NUM_PRIMARY_LENGTHS)
-				element = NUM_CHARS + (MP_SLOT(context->enc_DistData[dist_at_2])<<NL_SHIFT) + context->enc_LitData[item_start2];
-			else
-				element = (NUM_CHARS + NUM_PRIMARY_LENGTHS) + (MP_SLOT(context->enc_DistData[dist_at_2]) << NL_SHIFT);
+                if (!IsMatch(item_start2))
+                {
+                        element = context->enc_LitData[item_start2];
+                }
+                else
+                {
+                        if (context->enc_LitData[item_start2] < NUM_PRIMARY_LENGTHS)
+                                element = NUM_CHARS + (MP_SLOT(context->enc_DistData[dist_at_2])<<NL_SHIFT) + context->enc_LitData[item_start2];
+                        else
+                                element = (NUM_CHARS + NUM_PRIMARY_LENGTHS) + (MP_SLOT(context->enc_DistData[dist_at_2]) << NL_SHIFT);
 
-			dist_at_2++;
-		}
+                        dist_at_2++;
+                }
 
-		item_start2++;
-		freq2[element]++;
-	}
+                item_start2++;
+                freq2[element]++;
+        }
 
-	cum_diff = 0;
+        cum_diff = 0;
 
-	for (i = 0; i < (ulong) MAIN_TREE_ELEMENTS; i++) 
-	{
-		ulong log2a, log2b, diff;
+        for (i = 0; i < (ulong) MAIN_TREE_ELEMENTS; i++)
+        {
+                ulong log2a, log2b, diff;
 
 #define log2(x) ((x) < 256 ? log2_table[(x)] : 8+log2_table[(x) >> 8])
 
-		log2a = (ulong) log2(freq1[i]);
-		log2b = (ulong) log2(freq2[i]);
+                log2a = (ulong) log2(freq1[i]);
+                log2b = (ulong) log2(freq2[i]);
 
-		/* diff = (log2a*log2a) - (log2b*log2b); */
-		diff = square_table[log2a] - square_table[log2b];
+                /* diff = (log2a*log2a) - (log2b*log2b); */
+                diff = square_table[log2a] - square_table[log2b];
 
-		cum_diff += abs(diff);
-	}
+                cum_diff += abs(diff);
+        }
 
-	return cum_diff;
+        return cum_diff;
 }
 
 
@@ -394,177 +401,177 @@ static ulong return_difference(
  * Returns whether we split the block or not.
  */
 bool split_block(
-	t_encoder_context *context, 
-	ulong literal_to_start_at,
-	ulong literal_to_end_at,
-	ulong distance_to_end_at,	/* corresponds to # distances at literal_to_end_at */
-	ulong *split_at_literal,
-	ulong *split_at_distance	/* optional parameter (may be NULL) */
+        t_encoder_context *context,
+        ulong literal_to_start_at,
+        ulong literal_to_end_at,
+        ulong distance_to_end_at,       /* corresponds to # distances at literal_to_end_at */
+        ulong *split_at_literal,
+        ulong *split_at_distance        /* optional parameter (may be NULL) */
 )
 {
-	ulong	i, j, d;
-	int		nd;
+        ulong   i, j, d;
+        int             nd;
 
-	/*
-	 * num_dist_at_item[n] equals the cumulative number of matches
-	 * at literal "n / STEP_SIZE".
-	 */
-	ushort	num_dist_at_item[(MAX_LITERAL_ITEMS/STEP_SIZE)+8]; /* +8 is slop */
+        /*
+         * num_dist_at_item[n] equals the cumulative number of matches
+         * at literal "n / STEP_SIZE".
+         */
+        ushort  num_dist_at_item[(MAX_LITERAL_ITEMS/STEP_SIZE)+8]; /* +8 is slop */
 
-	/*
-	 * default return
-	 */
-	*split_at_literal	= literal_to_end_at;
+        /*
+         * default return
+         */
+        *split_at_literal       = literal_to_end_at;
 
-	if (split_at_distance)
-		*split_at_distance	= distance_to_end_at;
+        if (split_at_distance)
+                *split_at_distance      = distance_to_end_at;
 
-	/* Not worth doing if we don't have many literals */
-	if (literal_to_end_at - literal_to_start_at < MIN_LITERALS_REQUIRED)
-		return false;
+        /* Not worth doing if we don't have many literals */
+        if (literal_to_end_at - literal_to_start_at < MIN_LITERALS_REQUIRED)
+                return false;
 
     /* Not allowed to split blocks any more, so we don't overflow MAX_GROWTH? */
     if (context->enc_num_block_splits >= MAX_BLOCK_SPLITS)
         return false;
 
-	/*
-	 * Keep track of the number of distances (matches) we've had,
-	 * at each step of STEP_SIZE literals.
-	 *
-	 * Look at 8 items at a time, and ignore the last
-	 * 0..7 items if they exist.
-	 */
-	nd = 0;
-	d = 0;
+        /*
+         * Keep track of the number of distances (matches) we've had,
+         * at each step of STEP_SIZE literals.
+         *
+         * Look at 8 items at a time, and ignore the last
+         * 0..7 items if they exist.
+         */
+        nd = 0;
+        d = 0;
 
-	for (i = 0; i < (literal_to_end_at >> 3); i++)
-	{
-		/*
-		 * if (i % (STEP_SIZE >> 3)) == 0
-		 */
-		if ((i & ((STEP_SIZE >> 3)-1)) == 0)
-			num_dist_at_item[nd++] = (ushort) d;
+        for (i = 0; i < (literal_to_end_at >> 3); i++)
+        {
+                /*
+                 * if (i % (STEP_SIZE >> 3)) == 0
+                 */
+                if ((i & ((STEP_SIZE >> 3)-1)) == 0)
+                        num_dist_at_item[nd++] = (ushort) d;
 
-		d += context->enc_ones[ context->enc_ItemType[i] ];
-	}
+                d += context->enc_ones[ context->enc_ItemType[i] ];
+        }
 
-	/*
-	 * Must be a multiple of STEP_SIZE
-	 */
-	literal_to_start_at = (literal_to_start_at + (STEP_SIZE-1)) & (~(STEP_SIZE-1));
+        /*
+         * Must be a multiple of STEP_SIZE
+         */
+        literal_to_start_at = (literal_to_start_at + (STEP_SIZE-1)) & (~(STEP_SIZE-1));
 
-	/*
-	 * See where the change in composition occurs
-	 */
-	for (	i = literal_to_start_at + 2*RESOLUTION; 
-			i < literal_to_end_at - 4*RESOLUTION; 
-			i += RESOLUTION)
-	{
-		/*
-		 * If there appears to be a significant variance in composition
-		 * between
-		 *                    ___________
-		 *                   /           \
-		 *                A  B  i     X  Y  Z
-		 *                \      \___/      /
-		 *                 \_______________/
-		 */
-		if (
-			return_difference(
-				context,
-				i,
-				i+1*RESOLUTION, 
-				(ulong) num_dist_at_item[i/STEP_SIZE], 
-				(ulong) num_dist_at_item[(i+1*RESOLUTION)/STEP_SIZE], 
-				RESOLUTION) > THRESHOLD
-			&& 
-			
-			return_difference(
-				context,
-				i-RESOLUTION,   
-				i+2*RESOLUTION, 
-				(ulong) num_dist_at_item[(i-RESOLUTION)/STEP_SIZE], 
-				(ulong) num_dist_at_item[(i+2*RESOLUTION)/STEP_SIZE], 
-				RESOLUTION) > THRESHOLD
-			 
-			&& 
-			
-			return_difference(
-				context,
-				i-2*RESOLUTION, 
-				i+3*RESOLUTION, 
-				(ulong) num_dist_at_item[(i-2*RESOLUTION)/STEP_SIZE], 
-				(ulong) num_dist_at_item[(i+3*RESOLUTION)/STEP_SIZE], 
-				RESOLUTION) > THRESHOLD
-			)
-		{
-			ulong max_diff = 0;
-			ulong literal_split;
+        /*
+         * See where the change in composition occurs
+         */
+        for (   i = literal_to_start_at + 2*RESOLUTION;
+                        i < literal_to_end_at - 4*RESOLUTION;
+                        i += RESOLUTION)
+        {
+                /*
+                 * If there appears to be a significant variance in composition
+                 * between
+                 *                    ___________
+                 *                   /           \
+                 *                A  B  i     X  Y  Z
+                 *                \      \___/      /
+                 *                 \_______________/
+                 */
+                if (
+                        return_difference(
+                                context,
+                                i,
+                                i+1*RESOLUTION,
+                                (ulong) num_dist_at_item[i/STEP_SIZE],
+                                (ulong) num_dist_at_item[(i+1*RESOLUTION)/STEP_SIZE],
+                                RESOLUTION) > THRESHOLD
+                        &&
 
-			/*
-			 * Narrow down the best place to split block
-			 *
-			 * This really could be done much better; we could end up
-			 * doing a lot of stepping;
-			 *
-			 * basically ((5/2 - 1/2) * RESOLUTION) / STEP_SIZE
-			 *
-			 * which is (2 * RESOLUTION) / STEP_SIZE,
-			 * which with RESOLUTION = 1024 and STEP_SIZE = 32,
-			 * equals 2048/32 = 64 steps.
-			 */
-			for (j = i+RESOLUTION/2; j<i+(5*RESOLUTION)/2; j += STEP_SIZE)
-			{
-				ulong	diff;
+                        return_difference(
+                                context,
+                                i-RESOLUTION,
+                                i+2*RESOLUTION,
+                                (ulong) num_dist_at_item[(i-RESOLUTION)/STEP_SIZE],
+                                (ulong) num_dist_at_item[(i+2*RESOLUTION)/STEP_SIZE],
+                                RESOLUTION) > THRESHOLD
 
-				diff = return_difference(
-					context,
-					j - RESOLUTION, 
-					j, 
-					(ulong) num_dist_at_item[(j-RESOLUTION)/STEP_SIZE], 
-					(ulong) num_dist_at_item[j/STEP_SIZE], 
-					RESOLUTION
-				);
+                        &&
 
-				/* Get largest difference */
-				if (diff > max_diff)
-				{
-					/*
-					 * j should not be too small, otherwise we'll be outputting
-					 * a very small block
-					 */
-					max_diff = diff;
-					literal_split = j;
-				}
-			}
+                        return_difference(
+                                context,
+                                i-2*RESOLUTION,
+                                i+3*RESOLUTION,
+                                (ulong) num_dist_at_item[(i-2*RESOLUTION)/STEP_SIZE],
+                                (ulong) num_dist_at_item[(i+3*RESOLUTION)/STEP_SIZE],
+                                RESOLUTION) > THRESHOLD
+                        )
+                {
+                        ulong max_diff = 0;
+                        ulong literal_split = 0;
 
-			/*
-			 * There could be multiple changes in the data in our literals,
-			 * so if we find something really weird, make sure we break the
-			 * block now, and not on some later change.
-			 */
-			if (max_diff >= EARLY_BREAK_THRESHOLD && 
-				(literal_split-literal_to_start_at) >= MIN_LITERALS_IN_BLOCK)
-			{
+                        /*
+                         * Narrow down the best place to split block
+                         *
+                         * This really could be done much better; we could end up
+                         * doing a lot of stepping;
+                         *
+                         * basically ((5/2 - 1/2) * RESOLUTION) / STEP_SIZE
+                         *
+                         * which is (2 * RESOLUTION) / STEP_SIZE,
+                         * which with RESOLUTION = 1024 and STEP_SIZE = 32,
+                         * equals 2048/32 = 64 steps.
+                         */
+                        for (j = i+RESOLUTION/2; j<i+(5*RESOLUTION)/2; j += STEP_SIZE)
+                        {
+                                ulong   diff;
+
+                                diff = return_difference(
+                                        context,
+                                        j - RESOLUTION,
+                                        j,
+                                        (ulong) num_dist_at_item[(j-RESOLUTION)/STEP_SIZE],
+                                        (ulong) num_dist_at_item[j/STEP_SIZE],
+                                        RESOLUTION
+                                );
+
+                                /* Get largest difference */
+                                if (diff > max_diff)
+                                {
+                                        /*
+                                         * j should not be too small, otherwise we'll be outputting
+                                         * a very small block
+                                         */
+                                        max_diff = diff;
+                                        literal_split = j;
+                                }
+                        }
+
+                        /*
+                         * There could be multiple changes in the data in our literals,
+                         * so if we find something really weird, make sure we break the
+                         * block now, and not on some later change.
+                         */
+                        if (max_diff >= EARLY_BREAK_THRESHOLD &&
+                                (literal_split-literal_to_start_at) >= MIN_LITERALS_IN_BLOCK)
+                        {
                 context->enc_num_block_splits++;
 
-				*split_at_literal = literal_split;
+                                *split_at_literal = literal_split;
 
-				/* 
-				 * Return the associated # distances, if required.
-				 * Since we split on a literal which is % STEP_SIZE, we
-				 * can read the # distances right off
-				 */
-				if (split_at_distance)
-					*split_at_distance = num_dist_at_item[literal_split/STEP_SIZE];
+                                /*
+                                 * Return the associated # distances, if required.
+                                 * Since we split on a literal which is % STEP_SIZE, we
+                                 * can read the # distances right off
+                                 */
+                                if (split_at_distance)
+                                        *split_at_distance = num_dist_at_item[literal_split/STEP_SIZE];
 
-				return true;
-			}
-		}
-	}
+                                return true;
+                        }
+                }
+        }
 
-	/*
-	 * No good place found to split
-	 */
-	return false;
+        /*
+         * No good place found to split
+         */
+        return false;
 }

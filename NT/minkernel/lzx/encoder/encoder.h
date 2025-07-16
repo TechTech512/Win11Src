@@ -24,14 +24,32 @@
 #include <stdlib.h>
 #include <string.h>
 
-#if 0 // #ifdef _X86_
-#include <crtdbg.h>
-#else
-#define _ASSERTE(x) ;
-#define _RPT2(a,b,c,d) ;
-#define _RPT3(a,b,c,d,e) ;
-#define _CrtSetReportMode(a,b) ;
-#define _CrtSetReportFile(a,b) ;
+#ifndef ASSERT
+
+    #if defined( DEBUG ) || defined( DBG ) || defined( TESTCODE )
+
+        int
+        __stdcall
+        Assert(
+            const char *szText,
+            const char *szFile,
+            unsigned    uLine
+            );
+
+        #define ASSERT( a ) (( a ) ? 1 : Assert( #a, __FILE__, __LINE__ ))
+
+    #else
+
+        #define ASSERT( a )
+
+    #endif
+
+#endif // ASSERT
+
+#ifndef _ASSERTE
+
+    #define _ASSERTE( a ) ASSERT( a )
+
 #endif
 
 #include "../common/typedefs.h"
@@ -41,33 +59,5 @@
 #include "encmacro.h"
 #include "encapi.h"
 #include "encproto.h"
-
-
-#ifdef __BOUNDSCHECKER__
-
-/* LZX uses mangled pointers throughout as an optimization.             */
-/* Various buffers which are related to the sliding window get their    */
-/* base addresses adjusted downward as the offsets increase, to avoid   */
-/* wrap-around logic throughout.  Of course, BoundsChecker doesn't      */
-/* understand this, and even though each dereference hits the intended  */
-/* buffer, BoundsChecker can't determine what the buffer is or its      */
-/* size.  Defining STRICT_POINTERS prevents the code from adjusting     */
-/* buffer base addresses, so BoundsChecker will be able to follow it.   */
-
-#ifndef STRICT_POINTERS
-#define STRICT_POINTERS
-#endif
-
-/* The byte value BoundsChecker uses to signify "uninitialized" memory. */
-
-#define BC_FILL_BYTE (0xBF)
-
-#endif  __BOUNDSCHECKER__
-
-
-#ifdef STRICT_POINTERS
-/* SLIDE = how far the window has moved so far */
-#define SLIDE (((ulong) (context->enc_RealMemWindow)) - ((ulong) (context->enc_MemWindow)))
-#endif
 
 #endif  /* ENCODER_H */

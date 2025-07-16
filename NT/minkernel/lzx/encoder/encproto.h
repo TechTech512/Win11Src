@@ -20,6 +20,7 @@ void quick_insert_bsearch_findmatch(t_encoder_context *context, long BufPos, lon
 void binary_search_remove_node(t_encoder_context *context, long BufPos, ulong end_pos);
 
 /* encdata.c */
+void output_bits( t_encoder_context *context, ulong numbits, ulong value );
 void encode_verbatim_block(t_encoder_context *context, ulong literal_to_end_at);
 void encode_aligned_block(t_encoder_context *context, ulong literal_to_end_at);
 void encode_uncompressed_block(t_encoder_context *context, ulong bufpos, ulong block_size);
@@ -31,26 +32,26 @@ void get_final_repeated_offset_states(t_encoder_context *context, ulong distance
 lzx_block_type get_aligned_stats(t_encoder_context *context, ulong dist_to_end_at);
 
 ulong get_block_stats(
-	t_encoder_context *context, 
-	ulong literal_to_start_at, 
-	ulong distance_to_start_at,
-	ulong literal_to_end_at
+        t_encoder_context *context,
+        ulong literal_to_start_at,
+        ulong distance_to_start_at,
+        ulong literal_to_end_at
 );
 
 ulong update_cumulative_block_stats(
-	t_encoder_context *context, 
-	ulong literal_to_start_at, 
-	ulong distance_to_start_at,
-	ulong literal_to_end_at
+        t_encoder_context *context,
+        ulong literal_to_start_at,
+        ulong distance_to_start_at,
+        ulong literal_to_end_at
 );
 
 bool split_block(
-	t_encoder_context *context, 
-	ulong literal_to_start_at,
-	ulong literal_to_end_at,
-	ulong distance_to_end_at,
-	ulong *split_at_literal,
-	ulong *split_at_distance	
+        t_encoder_context *context,
+        ulong literal_to_start_at,
+        ulong literal_to_end_at,
+        ulong distance_to_end_at,
+        ulong *split_at_literal,
+        ulong *split_at_distance
 );
 
 /* enctree.c */
@@ -63,11 +64,8 @@ void prevent_far_matches(t_encoder_context *context);
 /* init.c */
 void init_compression_memory(t_encoder_context *context);
 bool comp_alloc_compress_memory(t_encoder_context *context);
-void comp_free_compress_memory(t_encoder_context *context);
 
 /* io.c */
-void output_bits(t_encoder_context *context, int n, ulong x);
-void free_compressed_output_buffer(t_encoder_context *context);
 bool init_compressed_output_buffer(t_encoder_context *context);
 void flush_compressed_output_buffer(t_encoder_context *context);
 void reset_translation(t_encoder_context *context);
@@ -79,16 +77,12 @@ void reset_encoder_variables(t_encoder_context *context);
 void flush_all_pending_blocks(t_encoder_context *context);
 void encoder_start(t_encoder_context *context);
 
-/* tree.c */
-bool allocate_tree_building_data(t_encoder_context *context);
-void free_tree_building_data(t_encoder_context *context);
-
 void make_tree(
-	t_encoder_context *context,
-	int		nparm, 
-	ushort	*freqparm, 
-	byte	*lenparm, 
-	ushort	*codeparm,
-	bool	make_codes	
+        t_encoder_context *context,
+        int             nparm,
+        ushort  *freqparm,
+        byte    *lenparm,
+        ushort  *codeparm,
+        bool    make_codes
 );
 

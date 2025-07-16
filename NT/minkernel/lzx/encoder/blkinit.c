@@ -15,7 +15,7 @@ void create_slot_lookup_table(t_encoder_context *context)
    int			j;
    int 			p;
    int 			elements_to_init;
-   byte   		slotnum;
+   ushort       slotnum;
 
    context->enc_slot_table[0] = 0;
    context->enc_slot_table[1] = 1;

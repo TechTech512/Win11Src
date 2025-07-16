@@ -10,39 +10,23 @@
 #define right   context->enc_Right
 
 
-#ifdef __BOUNDSCHECKER__
-#include "nmevtrpt.h"
-#endif
-
 /*
  * Define this to force checking that all search locations visited
  * are valid.
  *
  * For debugging purposes only.
  */
-#ifdef DIAMOND_DEBUG
-#   define VERIFY_SEARCHES
+#ifdef _DEBUG
+    #define VERIFY_SEARCHES
 #endif
 
 #define VERIFY_SEARCH_CODE(routine_name) \
 { \
-	int debug_search; \
-	for (debug_search = 0; debug_search < clen; debug_search++) \
-	{ \
-		if (context->enc_MemWindow[ptr+debug_search] != context->enc_MemWindow[BufPos+debug_search]) \
-		{ \
-			_RPT2( \
-				_CRT_WARN, \
-				routine_name \
-				" char mismatch @%3d (clen=%d)\n", \
-				debug_search, clen); \
-			\
-			_RPT3( \
-				_CRT_WARN, \
-				" ptr=%8d, bufpos=%8d, end_pos=%8d\n\n", \
-				ptr, BufPos, end_pos); \
-		} \
-	} \
+        int debug_search; \
+        for (debug_search = 0; debug_search < clen; debug_search++) \
+        { \
+            _ASSERTE( context->enc_MemWindow[ptr+debug_search] == context->enc_MemWindow[BufPos+debug_search]); \
+        } \
 }
 
 #define VERIFY_MULTI_TREE_SEARCH_CODE(routine_name) \
@@ -63,358 +47,287 @@ _ASSERTE (context->enc_MemWindow[BufPos+1] == context->enc_MemWindow[ptr+1]);
 #ifndef ASM_BSEARCH_FINDMATCH
 long binary_search_findmatch(t_encoder_context *context, long BufPos)
 {
-	ulong       ptr;
-	ulong       a, b;
-	ulong       *small_ptr, *big_ptr;
-	ulong       end_pos;
-	int         val; /* must be signed */
-	int         bytes_to_boundary;
-	int         clen;
-	int         same;
-	int         match_length;
-	int         small_len, big_len;
-	int         i, best_repeated_offset;
-#ifdef MULTIPLE_SEARCH_TREES
-	ushort      tree_to_use;
+    ulong       ptr;
+    ulong       a, b;
+    ulong       *small_ptr, *big_ptr;
+    ulong       end_pos;
+    int         val; /* must be signed */
+    int         bytes_to_boundary;
+    int         clen;
+    int         same;
+    int         match_length;
+    int         small_len, big_len;
+    int         i, best_repeated_offset;
+    #ifdef MULTIPLE_SEARCH_TREES
+    ushort      tree_to_use;
 
-#ifdef __BOUNDSCHECKER__
-    //
-    //  we're going to pickup two bytes of uncompressed data and use them as a direct index
-    //  to select a tree root.  If those two bytes just happen to be 0xBF, 0xBF, BC6 will
-    //  think bad things are happening.  We don't always disable because we'd still like to
-    //  see checks and it's faster to do it only when needed.
-    //
-    int fReenable = 0;
+    /*
+     * Retrieve root node of tree to search, and insert current node at
+     * the root.
+     */
+    tree_to_use = *((ushort UNALIGNED *) &context->enc_MemWindow[BufPos]);
 
-    if ((context->enc_RealMemWindow[BufPos - SLIDE] == BC_FILL_BYTE) &&
-        (context->enc_RealMemWindow[BufPos - SLIDE + 1] == BC_FILL_BYTE))
-    {
-        fReenable = StopEvtReporting();
-    }
-#endif
+    ptr        = context->enc_tree_root[tree_to_use];
+    context->enc_tree_root[tree_to_use] = BufPos;
+    #else
+    ptr = context->enc_single_tree_root;
+    context->enc_single_tree_root = BufPos;
+    #endif
+    /*
+     * end_pos is the furthest location back we will search for matches
+     *
+     * Remember that our window size is reduced by 3 bytes because of
+     * our repeated offset codes.
+     *
+     * Since BufPos starts at context->enc_window_size when compression begins,
+     * end_pos will never become negative.
+     */
+    end_pos = BufPos - (context->enc_window_size-4);
 
-	/*
-	 * Retrieve root node of tree to search, and insert current node at
-	 * the root.
-	 */
-#ifdef STRICT_POINTERS
-    tree_to_use = *((ushort UNALIGNED *) &context->enc_RealMemWindow[BufPos - SLIDE]);
-#else
-	tree_to_use = *((ushort UNALIGNED *) &context->enc_MemWindow[BufPos]);
-#endif
-	
-	ptr        = context->enc_tree_root[tree_to_use];
-	context->enc_tree_root[tree_to_use] = BufPos;
+    /*
+     * Root node is either NULL, or points to a really distant position.
+     */
+    if (ptr <= end_pos)
+        {
+        left[BufPos] = right[BufPos] = 0;
+        return 0;
+        }
 
-#ifdef __BOUNDSCHECKER__
-    if (fReenable)
-    {
-        StartEvtReporting();
-    }
-#endif
+    #ifdef MULTIPLE_SEARCH_TREES
+    /*
+     * confirmed length (no need to check the first clen chars in a search)
+     *
+     * note: clen is always equal to min(small_len, big_len)
+     */
+    clen            = 2;
 
-#else
-	ptr = context->enc_single_tree_root;
-	context->enc_single_tree_root = BufPos;
-#endif
-	/*
-	 * end_pos is the furthest location back we will search for matches 
-	 *
-	 * Remember that our window size is reduced by 3 bytes because of
-	 * our repeated offset codes.
-	 *
-	 * Since BufPos starts at context->enc_window_size when compression begins,
-	 * end_pos will never become negative.  
-	 */
-	end_pos = BufPos - (context->enc_window_size-4);
+    /*
+     * current best match length
+     */
+    match_length    = 2;
 
-	/*
-	 * Root node is either NULL, or points to a really distant position.
-	 */
-	if (ptr <= end_pos)
-	{
-#ifdef STRICT_POINTERS
-        context->enc_RealLeft[BufPos - SLIDE] = context->enc_RealRight[BufPos - SLIDE] = 0; //BC6
-#else
-		left[BufPos] = right[BufPos] = 0;
-#endif
-		return 0;
-	}
+    /*
+     * longest match which is < our string
+     */
+    small_len       = 2;
 
-#ifdef MULTIPLE_SEARCH_TREES
-	/*
-	 * confirmed length (no need to check the first clen chars in a search)
-	 *
-	 * note: clen is always equal to min(small_len, big_len)
-	 */
-	clen            = 2;
+    /*
+     * longest match which is > our string
+     */
+    big_len         = 2;
 
-	/*
-	 * current best match length
-	 */
-	match_length    = 2;
+    /*
+     * record match position for match length 2
+     */
+    context->enc_matchpos_table[2] = BufPos - ptr + 2;
 
-	/*
-	 * longest match which is < our string
-	 */
-	small_len       = 2;
+        #ifdef VERIFY_SEARCHES
+    VERIFY_MULTI_TREE_SEARCH_CODE("binary_search_findmatch()");
+        #endif
 
-	/*
-	 * longest match which is > our string
-	 */
-	big_len         = 2;
+    #else /* !MULTIPLE_SEARCH_TREES */
 
-	/*
-	 * record match position for match length 2
-	 */
-	context->enc_matchpos_table[2] = BufPos - ptr + 2;
+    clen            = 0;
+    match_length    = 0;
+    small_len       = 0;
+    big_len         = 0;
 
-#ifdef VERIFY_SEARCHES
-	VERIFY_MULTI_TREE_SEARCH_CODE("binary_search_findmatch()");
-#endif
+    #endif /* MULTIPLE_SEARCH_TREES */
 
-#else /* !MULTIPLE_SEARCH_TREES */
+    /*
+     * pointers to nodes to check
+     */
+    small_ptr             = &left[BufPos];
+    big_ptr               = &right[BufPos];
 
-	clen            = 0;
-	match_length    = 0;
-	small_len       = 0;
-	big_len         = 0;
+    do
+        {
+        /* compare bytes at current node */
+        same = clen;
 
-#endif /* MULTIPLE_SEARCH_TREES */
+    #ifdef VERIFY_SEARCHES
+        VERIFY_SEARCH_CODE("binary_search_findmatch()")
+    #endif
 
-	/*
-	 * pointers to nodes to check
-	 */
-#ifdef STRICT_POINTERS
-	small_ptr             = &context->enc_RealLeft[BufPos - SLIDE];     //BC6
-	big_ptr               = &context->enc_RealRight[BufPos - SLIDE];    //BC6
-#else
-	small_ptr             = &left[BufPos];
-	big_ptr               = &right[BufPos];
-#endif
+        /* don't need to check first clen characters */
+        a    = ptr + clen;
+        b    = BufPos + clen;
 
-	do
-	{
-		/* compare bytes at current node */
-		same = clen;
+        while ((val = ((int) context->enc_MemWindow[a++]) - ((int) context->enc_MemWindow[b++])) == 0)
+            {
+            /* don't exceed MAX_MATCH */
+            if (++same >= MAX_MATCH)
+                goto long_match;
+            }
 
-#ifdef VERIFY_SEARCHES
-		VERIFY_SEARCH_CODE("binary_search_findmatch()")
-#endif
+        if (val < 0)
+            {
+            if (same > big_len)
+                {
+                if (same > match_length)
+                    {
+                    long_match:
+                    do
+                        {
+                        context->enc_matchpos_table[++match_length] = BufPos-ptr+(NUM_REPEATED_OFFSETS-1);
+                        } while (match_length < same);
 
-		/* don't need to check first clen characters */
-		a    = ptr + clen;
-		b    = BufPos + clen;
+                    if (same >= BREAK_LENGTH)
+                        {
+                        *small_ptr = left[ptr];
+                        *big_ptr   = right[ptr];
+                        goto end_bsearch;
+                        }
+                    }
 
-#ifdef STRICT_POINTERS
-		while ((val = ((int) context->enc_RealMemWindow[a++ - SLIDE]) - ((int) context->enc_RealMemWindow[b++ - SLIDE])) == 0)  //BC6
-#else
-		while ((val = ((int) context->enc_MemWindow[a++]) - ((int) context->enc_MemWindow[b++])) == 0)
-#endif
-		{
-			/* don't exceed MAX_MATCH */
-			if (++same >= MAX_MATCH)
-				goto long_match;
-		}
+                big_len = same;
+                clen = min(small_len, big_len);
+                }
 
-		if (val < 0)
-		{
-			if (same > big_len)
-			{
-				if (same > match_length)
-				{
-long_match:
-					do
-					{
-						context->enc_matchpos_table[++match_length] = BufPos-ptr+(NUM_REPEATED_OFFSETS-1);
-					} while (match_length < same);
+            *big_ptr = ptr;
+            big_ptr  = &left[ptr];
+            ptr      = *big_ptr;
+            }
+        else
+            {
+            if (same > small_len)
+                {
+                if (same > match_length)
+                    {
+                    do
+                        {
+                        context->enc_matchpos_table[++match_length] = BufPos-ptr+(NUM_REPEATED_OFFSETS-1);
+                        } while (match_length < same);
 
-					if (same >= BREAK_LENGTH)
-					{
-#ifdef STRICT_POINTERS
-                        *small_ptr = context->enc_RealLeft[ptr - SLIDE];
-                        *big_ptr   = context->enc_RealRight[ptr - SLIDE];
-#else
-						*small_ptr = left[ptr];
-						*big_ptr   = right[ptr];
-#endif
-						goto end_bsearch;
-					}
-				}
+                    if (same >= BREAK_LENGTH)
+                        {
+                        *small_ptr = left[ptr];
+                        *big_ptr   = right[ptr];
+                        goto end_bsearch;
+                        }
+                    }
 
-				big_len = same;
-				clen = min(small_len, big_len);
-			}
+                small_len = same;
+                clen = min(small_len, big_len);
+                }
 
-			*big_ptr = ptr;
-#ifdef STRICT_POINTERS
-   			big_ptr  = &context->enc_RealLeft[ptr - SLIDE];
-#else
-			big_ptr  = &left[ptr];
-#endif
-			ptr      = *big_ptr;
-		}
-		else
-		{
-			if (same > small_len)
-			{
-				if (same > match_length)
-				{
-					do
-					{
-						context->enc_matchpos_table[++match_length] = BufPos-ptr+(NUM_REPEATED_OFFSETS-1);
-					} while (match_length < same);
+            *small_ptr = ptr;
+            small_ptr  = &right[ptr];
+            ptr        = *small_ptr;
+            }
+        } while (ptr > end_pos); /* while we don't go too far backwards */
 
-					if (same >= BREAK_LENGTH)
-					{
-#ifdef STRICT_POINTERS
-                        *small_ptr = context->enc_RealLeft[ptr - SLIDE];
-                        *big_ptr   = context->enc_RealRight[ptr - SLIDE];
-#else
-						*small_ptr = left[ptr];
-						*big_ptr   = right[ptr];
-#endif
-						goto end_bsearch;
-					}
-				}
-
-				small_len = same;
-				clen = min(small_len, big_len);
-			}
-		
-			*small_ptr = ptr;
-#ifdef STRICT_POINTERS
-			small_ptr  = &context->enc_RealRight[ptr - SLIDE];
-#else
-			small_ptr  = &right[ptr];
-#endif
-			ptr        = *small_ptr;
-		}
-	} while (ptr > end_pos); /* while we don't go too far backwards */
-
-	*small_ptr = 0;
-	*big_ptr   = 0;
+    *small_ptr = 0;
+    *big_ptr   = 0;
 
 
-end_bsearch:
+    end_bsearch:
 
-	/*
-	 * If we have multiple search trees, we are already guaranteed
-	 * a minimum match length of 2 when we reach here.
-	 *
-	 * If we only have one tree, then we're not guaranteed anything.
-	 */
-#ifndef MULTIPLE_SEARCH_TREES
-	if (match_length < MIN_MATCH)
-		return 0;
-#endif
+    /*
+     * If we have multiple search trees, we are already guaranteed
+     * a minimum match length of 2 when we reach here.
+     *
+     * If we only have one tree, then we're not guaranteed anything.
+     */
+    #ifndef MULTIPLE_SEARCH_TREES
+    if (match_length < MIN_MATCH)
+        return 0;
+    #endif
 
-	/*
-	 * Check to see if any of our match lengths can 
-	 * use repeated offsets.
-	 */
+    /*
+     * Check to see if any of our match lengths can
+     * use repeated offsets.
+     */
 
-	/*
-	 * repeated offset 1 
-	 */
-	for (i = 0; i < match_length; i++)
-	{
-#ifdef STRICT_POINTERS
-		if (context->enc_RealMemWindow[BufPos+i - SLIDE] != context->enc_RealMemWindow[BufPos-context->enc_last_matchpos_offset[0]+i - SLIDE])
-#else
-		if (context->enc_MemWindow[BufPos+i] != context->enc_MemWindow[BufPos-context->enc_last_matchpos_offset[0]+i])
-#endif
-			break;
-	}
+    /*
+     * repeated offset 1
+     */
+    for (i = 0; i < match_length; i++)
+        {
+        if (context->enc_MemWindow[BufPos+i] != context->enc_MemWindow[BufPos-context->enc_last_matchpos_offset[0]+i])
+            break;
+        }
 
-	/*
-	 * the longest repeated offset
-	 */
-	best_repeated_offset = i;
+    /*
+     * the longest repeated offset
+     */
+    best_repeated_offset = i;
 
-	if (i >= MIN_MATCH)
-	{
-		/*
-		 * Yes, we can do a repeated offset for some match lengths; replace
-		 * their positions with the repeated offset position
-		 */
-		do
-		{
-			context->enc_matchpos_table[i] = 0; /* first repeated offset position */
-		} while (--i >= MIN_MATCH);
+    if (i >= MIN_MATCH)
+        {
+        /*
+         * Yes, we can do a repeated offset for some match lengths; replace
+         * their positions with the repeated offset position
+         */
+        do
+            {
+            context->enc_matchpos_table[i] = 0; /* first repeated offset position */
+            } while (--i >= MIN_MATCH);
 
-		/* A speed optimization to cope with long runs of bytes */
-		if (best_repeated_offset > BREAK_LENGTH)
-			goto quick_return;
-	}
+        /* A speed optimization to cope with long runs of bytes */
+        if (best_repeated_offset > BREAK_LENGTH)
+            goto quick_return;
+        }
 
-	/*
-	 * repeated offset 2 
-	 */
-	for (i = 0; i < match_length; i++)
-	{
-#ifdef STRICT_POINTERS
-		if (context->enc_RealMemWindow[BufPos+i - SLIDE] != context->enc_RealMemWindow[BufPos-context->enc_last_matchpos_offset[1]+i - SLIDE])
-#else
-		if (context->enc_MemWindow[BufPos+i] != context->enc_MemWindow[BufPos-context->enc_last_matchpos_offset[1]+i])
-#endif
-			break;
-	}
-		
-	/*
-	 * Does the second repeated offset provide a longer match?
-	 *
-	 * If so, leave the first repeated offset alone, but fill out the
-	 * difference in match lengths in the table with repeated offset 1.
-	 */
-	if (i > best_repeated_offset)
-	{               
-		do
-		{
-			context->enc_matchpos_table[++best_repeated_offset] = 1;
-		} while (best_repeated_offset < i);
-	}
+    /*
+     * repeated offset 2
+     */
+    for (i = 0; i < match_length; i++)
+        {
+        if (context->enc_MemWindow[BufPos+i] != context->enc_MemWindow[BufPos-context->enc_last_matchpos_offset[1]+i])
+            break;
+        }
 
-	/* 
-	 * repeated offset 3 
-	 */
-	for (i = 0; i < match_length; i++)
-	{
-#ifdef STRICT_POINTERS
-		if (context->enc_RealMemWindow[BufPos+i - SLIDE] != context->enc_RealMemWindow[BufPos-context->enc_last_matchpos_offset[2]+i - SLIDE])
-#else
-		if (context->enc_MemWindow[BufPos+i] != context->enc_MemWindow[BufPos-context->enc_last_matchpos_offset[2]+i])
-#endif
-			break;
-	}
-		
-	/*
-	 * Does the third repeated offset provide a longer match?
-	 */
-	if (i > best_repeated_offset)
-	{               
-		do
-		{
-			context->enc_matchpos_table[++best_repeated_offset] = 2;
-		} while (best_repeated_offset < i);
-	}
+    /*
+     * Does the second repeated offset provide a longer match?
+     *
+     * If so, leave the first repeated offset alone, but fill out the
+     * difference in match lengths in the table with repeated offset 1.
+     */
+    if (i > best_repeated_offset)
+        {
+        do
+            {
+            context->enc_matchpos_table[++best_repeated_offset] = 1;
+            } while (best_repeated_offset < i);
+        }
 
-quick_return:
+    /*
+     * repeated offset 3
+     */
+    for (i = 0; i < match_length; i++)
+        {
+        if (context->enc_MemWindow[BufPos+i] != context->enc_MemWindow[BufPos-context->enc_last_matchpos_offset[2]+i])
+            break;
+        }
 
-	/*
-	 * Don't let a match cross a 32K boundary
-	 */
-	bytes_to_boundary = (CHUNK_SIZE-1) - ((int) BufPos & (CHUNK_SIZE-1));
+    /*
+     * Does the third repeated offset provide a longer match?
+     */
+    if (i > best_repeated_offset)
+        {
+        do
+            {
+            context->enc_matchpos_table[++best_repeated_offset] = 2;
+            } while (best_repeated_offset < i);
+        }
 
-	if (match_length > bytes_to_boundary)
-	{
-		match_length = bytes_to_boundary;
-		
-		if (match_length < MIN_MATCH)
-			match_length = 0;
-	}
+    quick_return:
 
-	return (long) match_length;
+    /*
+     * Don't let a match cross a 32K boundary
+     */
+    bytes_to_boundary = (CHUNK_SIZE-1) - ((int) BufPos & (CHUNK_SIZE-1));
+
+    if (match_length > bytes_to_boundary)
+        {
+        match_length = bytes_to_boundary;
+
+        if (match_length < MIN_MATCH)
+            match_length = 0;
+        }
+
+    return (long) match_length;
 }
 #endif
 
@@ -430,171 +343,112 @@ quick_return:
 #ifndef ASM_QUICK_INSERT_BSEARCH_FINDMATCH
 void quick_insert_bsearch_findmatch(t_encoder_context *context, long BufPos, long end_pos)
 {
-	long        ptr;
-	ulong       a,b;
-	ulong       *small_ptr, *big_ptr;
-	int         val;
-	int         small_len, big_len;
-	int         same;
-	int         clen;
-#ifdef MULTIPLE_SEARCH_TREES
-	ushort      tree_to_use;
+    long        ptr;
+    ulong       a,b;
+    ulong       *small_ptr, *big_ptr;
+    int         val;
+    int         small_len, big_len;
+    int         same;
+    int         clen;
+    #ifdef MULTIPLE_SEARCH_TREES
+    ushort      tree_to_use;
 
-#ifdef __BOUNDSCHECKER__
-    //
-    //  we're going to pickup two bytes of uncompressed data and use them as a direct index
-    //  to select a tree root.  If those two bytes just happen to be 0xBF, 0xBF, BC6 will
-    //  think bad things are happening.  We don't always disable because we'd still like to
-    //  see checks and it's faster to do it only when needed.
-    //
-    int fReenable = 0;
+    tree_to_use = *((ushort UNALIGNED *) &context->enc_MemWindow[BufPos]);
+    ptr        = context->enc_tree_root[tree_to_use];
+    context->enc_tree_root[tree_to_use] = BufPos;
+    #else
+    ptr = context->enc_single_tree_root;
+    context->enc_single_tree_root = BufPos;
+    #endif
 
-    if ((context->enc_RealMemWindow[BufPos - SLIDE] == BC_FILL_BYTE) &&
-        (context->enc_RealMemWindow[BufPos - SLIDE + 1] == BC_FILL_BYTE))
-    {
-        fReenable = StopEvtReporting();
-    }
-#endif
+    if (ptr <= end_pos)
+        {
+        left[BufPos] = right[BufPos] = 0;
+        return;
+        }
 
-#ifdef STRICT_POINTERS
-	tree_to_use = *((ushort UNALIGNED *) &context->enc_RealMemWindow[BufPos - SLIDE]);
-#else
-	tree_to_use = *((ushort UNALIGNED *) &context->enc_MemWindow[BufPos]);
-#endif
-	ptr        = context->enc_tree_root[tree_to_use];
-	context->enc_tree_root[tree_to_use] = BufPos;
+    #ifdef MULTIPLE_SEARCH_TREES
+    clen            = 2;
+    small_len       = 2;
+    big_len         = 2;
 
-#ifdef __BOUNDSCHECKER__
-    if (fReenable)
-    {
-        StartEvtReporting();
-    }
-#endif
+        #ifdef VERIFY_SEARCHES
+    VERIFY_MULTI_TREE_SEARCH_CODE("quick_insert_bsearch_findmatch()");
+        #endif
 
-#else
-	ptr = context->enc_single_tree_root;
-	context->enc_single_tree_root = BufPos;
-#endif
+    #else
+    clen            = 0;
+    small_len       = 0;
+    big_len         = 0;
+    #endif
 
-	if (ptr <= end_pos)
-	{
-#ifdef STRICT_POINTERS
-        context->enc_RealLeft[BufPos - SLIDE] = context->enc_RealRight[BufPos - SLIDE] = 0;
-#else
-		left[BufPos] = right[BufPos] = 0;
-#endif
-		return;
-	}
+    small_ptr       = &left[BufPos];
+    big_ptr         = &right[BufPos];
 
-#ifdef MULTIPLE_SEARCH_TREES
-	clen            = 2;
-	small_len       = 2;
-	big_len         = 2;
+    do
+        {
+        _ASSERTE ((ulong) ptr >= (ulong) (context->enc_RealLeft - context->enc_Left));
 
-#ifdef VERIFY_SEARCHES
-	VERIFY_MULTI_TREE_SEARCH_CODE("quick_insert_bsearch_findmatch()");
-#endif
+        same = clen;
 
-#else
-	clen            = 0;
-	small_len       = 0;
-	big_len         = 0;
-#endif
+        a    = ptr+clen;
+        b    = BufPos+clen;
 
-#ifdef STRICT_POINTERS
-    small_ptr       = &context->enc_RealLeft[BufPos - SLIDE];
-    big_ptr         = &context->enc_RealRight[BufPos - SLIDE];
-#else
-	small_ptr       = &left[BufPos];
-	big_ptr         = &right[BufPos];
-#endif
+    #ifdef VERIFY_SEARCHES
+        VERIFY_SEARCH_CODE("quick_insert_bsearch_findmatch()")
+    #endif
 
-	do
-	{
-		_ASSERTE ((ulong) ptr >= (ulong) (context->enc_RealLeft - context->enc_Left));
+        while ((val = ((int) context->enc_MemWindow[a++]) - ((int) context->enc_MemWindow[b++])) == 0)
+            {
+            /*
+             * Here we break on BREAK_LENGTH, not MAX_MATCH
+             */
+            if (++same >= BREAK_LENGTH)
+                break;
+            }
 
-		same = clen;
+        if (val < 0)
+            {
+            if (same > big_len)
+                {
+                if (same >= BREAK_LENGTH)
+                    {
+                    *small_ptr = left[ptr];
+                    *big_ptr = right[ptr];
+                    return;
+                    }
 
-		a    = ptr+clen;
-		b    = BufPos+clen;
+                big_len = same;
+                clen = min(small_len, big_len);
+                }
 
-#ifdef VERIFY_SEARCHES
-		VERIFY_SEARCH_CODE("quick_insert_bsearch_findmatch()")
-#endif
+            *big_ptr = ptr;
+            big_ptr  = &left[ptr];
+            ptr      = *big_ptr;
+            }
+        else
+            {
+            if (same > small_len)
+                {
+                if (same >= BREAK_LENGTH)
+                    {
+                    *small_ptr = left[ptr];
+                    *big_ptr = right[ptr];
+                    return;
+                    }
 
-#ifdef STRICT_POINTERS
-		while ((val = ((int) context->enc_RealMemWindow[a++ - SLIDE]) - ((int) context->enc_RealMemWindow[b++ - SLIDE])) == 0)
-#else
-		while ((val = ((int) context->enc_MemWindow[a++]) - ((int) context->enc_MemWindow[b++])) == 0)
-#endif
-		{
-			/*
-			 * Here we break on BREAK_LENGTH, not MAX_MATCH
-			 */
-			if (++same >= BREAK_LENGTH) 
-				break;
-		}
+                small_len = same;
+                clen = min(small_len, big_len);
+                }
 
-		if (val < 0)
-		{
-			if (same > big_len)
-			{
-				if (same >= BREAK_LENGTH)
-				{
-#ifdef STRICT_POINTERS
-                    *small_ptr = context->enc_RealLeft[ptr - SLIDE];
-                    *big_ptr = context->enc_RealRight[ptr - SLIDE];
-#else
-					*small_ptr = left[ptr];
-					*big_ptr = right[ptr];
-#endif
-					return;
-				}
+            *small_ptr = ptr;
+            small_ptr  = &right[ptr];
+            ptr        = *small_ptr;
+            }
+        } while (ptr > end_pos);
 
-				big_len = same;
-				clen = min(small_len, big_len);
-			}
-			
-			*big_ptr = ptr;
-#ifdef STRICT_POINTERS
-            big_ptr  = &context->enc_RealLeft[ptr - SLIDE];
-#else
-			big_ptr  = &left[ptr];
-#endif
-			ptr      = *big_ptr;
-		}
-		else
-		{
-			if (same > small_len)
-			{
-				if (same >= BREAK_LENGTH)
-				{
-#ifdef STRICT_POINTERS
-                    *small_ptr = context->enc_RealLeft[ptr - SLIDE];
-                    *big_ptr = context->enc_RealRight[ptr - SLIDE];
-#else
-					*small_ptr = left[ptr];
-					*big_ptr = right[ptr];
-#endif
-					return;
-				}
-
-				small_len = same;
-				clen = min(small_len, big_len);
-			}
-
-			*small_ptr = ptr;
-#ifdef STRICT_POINTERS
-            small_ptr  = &context->enc_RealRight[ptr - SLIDE];
-#else
-			small_ptr  = &right[ptr];
-#endif
-			ptr        = *small_ptr;
-		}
-   } while (ptr > end_pos);
-
-	*small_ptr = 0;
-	*big_ptr   = 0;
+    *small_ptr = 0;
+    *big_ptr   = 0;
 }
 #endif
 
@@ -610,178 +464,111 @@ void quick_insert_bsearch_findmatch(t_encoder_context *context, long BufPos, lon
  */
 void binary_search_remove_node(t_encoder_context *context, long BufPos, ulong end_pos)
 {
-	ulong   ptr;
-	ulong   left_node_pos;
-	ulong   right_node_pos;
-	ulong   *link;
+    ulong   ptr;
+    ulong   left_node_pos;
+    ulong   right_node_pos;
+    ulong   *link;
 #ifdef MULTIPLE_SEARCH_TREES
-	ushort  tree_to_use;
+    ushort  tree_to_use;
 
-#ifdef __BOUNDSCHECKER__
-    //
-    //  we're going to pickup two bytes of uncompressed data and use them as a direct index
-    //  to select a tree root.  If those two bytes just happen to be 0xBF, 0xBF, BC6 will
-    //  think bad things are happening.  We don't always disable because we'd still like to
-    //  see checks and it's faster to do it only when needed.
-    //
-    int fReenable = 0;
+    /*
+     * The root node of tree_to_use should equal BufPos, since that is
+     * the most recent insertion into that tree - but if we never
+     * inserted this string (because it was a near match or a long
+     * string of zeroes), then we can't remove it.
+     */
+    tree_to_use = *((ushort UNALIGNED *) &context->enc_MemWindow[BufPos]);
 
-    if ((context->enc_RealMemWindow[BufPos - SLIDE] == BC_FILL_BYTE) &&
-        (context->enc_RealMemWindow[BufPos - SLIDE + 1] == BC_FILL_BYTE))
-    {
-        fReenable = StopEvtReporting();
-    }
-#endif
 
-	/*
-	 * The root node of tree_to_use should equal BufPos, since that is
-	 * the most recent insertion into that tree - but if we never
-	 * inserted this string (because it was a near match or a long
-	 * string of zeroes), then we can't remove it.
-	 */
-#ifdef STRICT_POINTERS
-	tree_to_use = *((ushort UNALIGNED *) &context->enc_RealMemWindow[BufPos - SLIDE]);
+    /*
+     * If we never inserted this string, do not attempt to remove it
+     */
+
+    if (context->enc_tree_root[tree_to_use] != (ulong) BufPos)
+        return;
+
+    link = &context->enc_tree_root[tree_to_use];
 #else
-	tree_to_use = *((ushort UNALIGNED *) &context->enc_MemWindow[BufPos]);
+    if (context->enc_single_tree_root != (ulong) BufPos)
+        return;
+
+    link = &context->enc_single_tree_root;
 #endif
 
-
-	/*
-	 * If we never inserted this string, do not attempt to remove it
-	 */
-
-	if (context->enc_tree_root[tree_to_use] != (ulong) BufPos)
-    {
-#ifdef __BOUNDSCHECKER__
-        if (fReenable)
+    /*
+     * If the last occurence was too far away
+     */
+    if (*link <= end_pos)
         {
-            StartEvtReporting();
+        *link = 0;
+        left[BufPos] = right[BufPos] = 0;
+        return;
         }
-#endif
 
-		return;
-    }
+    /*
+     * Most recent location of these chars
+     */
+    ptr             = BufPos;
 
-	link = &context->enc_tree_root[tree_to_use];
+    /*
+     * Most recent location of a string which is "less than" it
+     */
+    left_node_pos   = left[ptr];
 
-#ifdef __BOUNDSCHECKER__
-    if (fReenable)
-    {
-        StartEvtReporting();
-    }
-#endif
+    if (left_node_pos <= end_pos)
+        left_node_pos = left[ptr] = 0;
 
-#else
-	if (context->enc_single_tree_root != (ulong) BufPos)
-		return;
+    /*
+     * Most recent location of a string which is "greater than" it
+     */
+    right_node_pos  = right[ptr];
 
-	link = &context->enc_single_tree_root;
-#endif
+    if (right_node_pos <= end_pos)
+        right_node_pos = right[ptr] = 0;
 
-	/*
-	 * If the last occurence was too far away
-	 */
-	if (*link <= end_pos)
-	{
-		*link = 0;
-#ifdef STRICT_POINTERS
-        context->enc_RealLeft[BufPos - SLIDE] = context->enc_RealRight[BufPos - SLIDE] = 0;
-#else
-		left[BufPos] = right[BufPos] = 0;
-#endif
-		return;
-	}
-
-	/*
-	 * Most recent location of these chars
-	 */
-	ptr             = BufPos;
-
-	/*
-	 * Most recent location of a string which is "less than" it
-	 */
-#ifdef STRICT_POINTERS
-    left_node_pos   = context->enc_RealLeft[ptr - SLIDE];
-#else
-	left_node_pos   = left[ptr];
-#endif
-
-	if (left_node_pos <= end_pos)
-#ifdef STRICT_POINTERS
-        left_node_pos = context->enc_RealLeft[ptr - SLIDE];
-#else
-		left_node_pos = left[ptr] = 0;
-#endif
-
-	/*
-	 * Most recent location of a string which is "greater than" it
-	 */
-#ifdef STRICT_POINTERS
-    right_node_pos  = context->enc_RealRight[ptr - SLIDE];
-#else
-	right_node_pos  = right[ptr];
-#endif
-
-	if (right_node_pos <= end_pos)
-#ifdef STRICT_POINTERS
-        right_node_pos = context->enc_RealRight[ptr - SLIDE] = 0;
-#else
-		right_node_pos = right[ptr] = 0;
-#endif
-
-	while (1)
-	{
+    while (1)
+        {
 #ifdef VERIFY_SEARCHES
-		_ASSERTE (left_node_pos < (ulong) BufPos);
-		_ASSERTE (right_node_pos < (ulong) BufPos);
+        _ASSERTE (left_node_pos < (ulong) BufPos);
+        _ASSERTE (right_node_pos < (ulong) BufPos);
 #endif
 
-		/*
-		 * If left node position is greater than right node position
-		 * then follow the left node, since that is the more recent
-		 * insertion into the tree.  Otherwise follow the right node.
-		 */
-		if (left_node_pos > right_node_pos)
-		{
-			/*
-			 * If it's too far away, then store that it never happened
-			 */
-			if (left_node_pos <= end_pos)
-				left_node_pos = 0;
+        /*
+         * If left node position is greater than right node position
+         * then follow the left node, since that is the more recent
+         * insertion into the tree.  Otherwise follow the right node.
+         */
+        if (left_node_pos > right_node_pos)
+            {
+            /*
+             * If it's too far away, then store that it never happened
+             */
+            if (left_node_pos <= end_pos)
+                left_node_pos = 0;
 
-			ptr = *link = left_node_pos;
+            ptr = *link = left_node_pos;
 
-			if (!ptr)
-				break;
+            if (!ptr)
+                break;
 
-#ifdef STRICT_POINTERS
-            left_node_pos   = context->enc_RealRight[ptr - SLIDE];
-            link            = &context->enc_RealRight[ptr - SLIDE];
-#else
-			left_node_pos   = right[ptr];
-			link            = &right[ptr];
-#endif
-		}
-		else
-		{
-			/*
-			 * If it's too far away, then store that it never happened
-			 */
-			if (right_node_pos <= end_pos)
-				right_node_pos = 0;
+            left_node_pos   = right[ptr];
+            link            = &right[ptr];
+            }
+        else
+            {
+            /*
+             * If it's too far away, then store that it never happened
+             */
+            if (right_node_pos <= end_pos)
+                right_node_pos = 0;
 
-			ptr = *link = right_node_pos;
+            ptr = *link = right_node_pos;
 
-			if (!ptr) 
-				break;
+            if (!ptr)
+                break;
 
-#ifdef STRICT_POINTERS
-            right_node_pos  = context->enc_RealLeft[ptr - SLIDE];
-            link            = &context->enc_RealLeft[ptr - SLIDE];
-#else
-			right_node_pos  = left[ptr];
-			link            = &left[ptr];
-#endif
-		}
-	}
+            right_node_pos  = left[ptr];
+            link            = &left[ptr];
+            }
+        }
 }

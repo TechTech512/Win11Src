@@ -85,7 +85,7 @@ static void __inline downheap(t_encoder_context *context, short i)
 
 	while ((j = (i<<1)) <= context->enc_tree_heapsize)
 	{
-		if (j < context->enc_tree_heapsize &&
+		if (j < context->enc_tree_heapsize && 
 			context->enc_tree_freq[context->enc_tree_heap[j]] > context->enc_tree_freq[context->enc_tree_heap[j + 1]])
 		 	j++;
 
@@ -105,7 +105,6 @@ static void make_code(t_encoder_context *context, int n, char len[], ushort code
     int    i;
 	ushort start[18];
 
-	start[0] = 0;   //BC6 we don't care about 0-length codes anyway
 	start[1] = 0;
 
 	for (i = 1; i <= 16; i++)
@@ -120,9 +119,9 @@ static void make_code(t_encoder_context *context, int n, char len[], ushort code
 
 void make_tree(
 	t_encoder_context *context,
-	int		nparm,
-	ushort	*freqparm,
-	byte	*lenparm,
+	int		nparm, 
+	ushort	*freqparm, 
+	byte	*lenparm, 
 	ushort	*codeparm,
 	bool	make_codes	/* for estimations, we only want the lengths */
 )
@@ -132,8 +131,8 @@ void make_tree(
 REDO_TREE:
 	context->enc_tree_n			= nparm;
 	context->enc_tree_freq		= freqparm;
-	context->enc_len			= lenparm;
-	avail				        = (short)context->enc_tree_n;
+	context->enc_len				= lenparm;
+	avail				= (short)context->enc_tree_n;
     context->enc_depth          = 0;
 	context->enc_tree_heapsize	= 0;
 	context->enc_tree_heap[1]	= 0;
@@ -171,8 +170,8 @@ REDO_TREE:
 
 static void make_tree2(
 	t_encoder_context *context,
-	short avail,
-	ushort freqparm[],
+	short avail, 
+	ushort freqparm[], 
 	ushort codeparm[]
 )
 {

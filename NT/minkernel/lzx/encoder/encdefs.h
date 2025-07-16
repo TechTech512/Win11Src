@@ -18,7 +18,7 @@
 
 
 /*
- * See optenc.c 
+ * See optenc.c
  *
  * EXTRA_SIZE is the amount of extra data we allocate in addition
  * to the window, and LOOK is the amount of data the optimal
@@ -27,17 +27,12 @@
  * Changing EXTRA_SIZE to 8K doesn't really do anything for
  * compression.  4K is a fairly optimal value.
  *
- * Be careful; our cumbits[] array and counters are all
- * ushort's in optenc.c, so make sure they don't overflow
- * (e.g. outputting all LOOK bytes as 9 bit uncompressed
- * symbols, say).  If necessary, change the typedef in optenc.c
- * to ulong.
  */
-#define EXTRA_SIZE   4096
-#define LOOK		(EXTRA_SIZE-MAX_MATCH-2)
+#define EXTRA_SIZE   16384
+#define LOOK         (EXTRA_SIZE-MAX_MATCH-2)
 
 
-/* 
+/*
  * Number of search trees used (for storing root nodes)
  */
 #define NUM_SEARCH_TREES 65536
@@ -147,7 +142,7 @@
  *
  * Don't make this number >= (MAX_MATCH-2); see bsearch.c.
  */
-#define BREAK_LENGTH 50
+#define BREAK_LENGTH 100
 
 
 /*
@@ -156,6 +151,7 @@
  * idea, since matches like that are generally zeroes, which we
  * want to avoid inserting into the search tree.
  */
+
 //#define INSERT_NEAR_LONG_MATCHES
 
 
@@ -164,7 +160,7 @@
  * longer, it will take it automatically.  The compression
  * penalty is basically zero, and it helps performance.
  */
-#define FAST_DECISION_THRESHOLD 50
+#define FAST_DECISION_THRESHOLD 100
 
 
 /*
@@ -206,7 +202,7 @@
 /*
  * Number of elements in the main tree
  */
-#define MAIN_TREE_ELEMENTS			(NUM_CHARS+(((long) context->enc_num_position_slots) << NL_SHIFT))
+#define MAIN_TREE_ELEMENTS                      (NUM_CHARS+(((long) context->enc_num_position_slots) << NL_SHIFT))
 
 
 /*

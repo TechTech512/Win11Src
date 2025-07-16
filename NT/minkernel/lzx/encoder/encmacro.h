@@ -10,10 +10,10 @@
  */
 #define MP_SLOT(matchpos) \
    ((matchpos) < 1024 ?										\
-		(byte) context->enc_slot_table[(matchpos)] :					\
+		context->enc_slot_table[(matchpos)] :					\
 			( (matchpos) < 524288L ?						\
-				(byte) 18 + (byte) context->enc_slot_table[(matchpos) >> 9] :   \
-				((byte) 34 + (byte) ((matchpos) >> 17))		\
+				(18 + context->enc_slot_table[(matchpos) >> 9]) :   \
+				(34 + ((matchpos) >> 17))		\
 		)													\
    )
 
