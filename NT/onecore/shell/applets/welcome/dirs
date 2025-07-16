@@ -1,0 +1,2 @@
+DIRS = winnt win98{x86} nt4 win95{x86}
+
