@@ -1,0 +1,12 @@
+TARGETNAME=winpelib
+TARGETPATH=$(BASEDIR)\public\internal\base\lib
+TARGETTYPE=LIBRARY
+
+SOURCES=logging.cpp \
+        msg.cpp
+
+TARGETLIBS=$(SDK_LIB_PATH)\kernel32.lib
+
+UMTYPE=console
+UMENTRY=winmain
+
