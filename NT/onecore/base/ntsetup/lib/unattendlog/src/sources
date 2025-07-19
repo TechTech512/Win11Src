@@ -1,0 +1,11 @@
+TARGETNAME=unattendlog
+TARGETPATH=$(BASEDIR)\public\internal\base\lib
+TARGETTYPE=LIBRARY
+USE_STL=1
+USE_ATL=1
+
+SOURCES=unattendlog.cpp
+
+UMTYPE=console
+UMENTRY=winmain
+
