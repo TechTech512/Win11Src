@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2010 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Setup Unattend
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Unattend Library"
+#define VER_INTERNALNAME_STR        "unattend.dll"
+#define VER_ORIGINALFILENAME_STR    "UNATTEND.DLL"
+
+#include "common.ver"
