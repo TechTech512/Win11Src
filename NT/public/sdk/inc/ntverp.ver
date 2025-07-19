@@ -1,0 +1,20 @@
+// @@BEGIN_DDKSPLIT
+#if 0
+// @@END_DDKSPLIT
+#define VER_COMPANYNAME_STR         "Windows (R) Win 7 DDK provider"
+#define VER_PRODUCTNAME_STR         "Windows (R) Win 7 DDK driver"
+#define VER_LEGALTRADEMARKS_STR     \
+"Windows (R) is a registered trademark of Microsoft Corporation."
+// @@BEGIN_DDKSPLIT
+#else
+
+#define VER_COMPANYNAME_STR         "Microsoft Corporation"
+#ifdef RC_INVOKED
+#define VER_PRODUCTNAME_STR         L"Microsoft\256 Windows\256 Operating System"
+#else
+#define VER_PRODUCTNAME_STR         "Microsoft\256 Windows\256 Operating System"
+#endif
+#define VER_LEGALTRADEMARKS_STR     \
+"Microsoft\256 is a registered trademark of Microsoft Corporation. Windows\256 is a registered trademark of Microsoft Corporation."
+#endif
+// @@END_DDKSPLIT
