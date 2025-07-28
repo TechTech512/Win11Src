@@ -1,0 +1,111 @@
+TARGETNAME=unbcl
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=..\unbcl.def
+USE_MSVCRT=1
+USE_NTDLL=1
+USE_STL=1
+USE_ATL=1
+USE_LIBC=1
+
+INCLUDES=.;$(BASE_INC_PATH);$(BASEDIR)\onecore\base\ntsetup\unbcl\src\system;$(BASEDIR)\onecore\base\ntsetup\unbcl\src\system\collections;$(BASEDIR)\onecore\base\ntsetup\unbcl\src\system\io;$(BASEDIR)\onecore\base\ntsetup\unbcl\src\system\runtime\serialization;$(BASEDIR)\onecore\base\ntsetup\unbcl\src\system\xml;$(BASEDIR)\onecore\base\ntsetup\unbcl\src\support
+SOURCES=..\abandonedmutexexception.cpp \
+        ..\allocator.cpp \
+        ..\applicationexception.cpp \
+        ..\argumentexception.cpp \
+        ..\argumentnullexception.cpp \
+        ..\argumentoutofrangeexception.cpp \
+        ..\arithmeticexception.cpp \
+        ..\array.cpp \
+        ..\asciiencoding.cpp \
+        ..\bufferedstream.cpp \
+        ..\char.cpp \
+        ..\collectionbase.cpp \
+        ..\consoleloghandler.cpp \
+        ..\datetime.cpp \
+        ..\directory.cpp \
+        ..\dllentry.cpp \
+        ..\encoding.cpp \
+        ..\environment.cpp \
+        ..\exception.cpp \
+        ..\externalexception.cpp \
+        ..\file.cpp \
+        ..\fileenum.cpp \
+        ..\filestream.cpp \
+        ..\formatexception.cpp \
+        ..\heapmemorymanager.cpp \
+        ..\indexoutofrangeexception.cpp \
+        ..\int32ops.cpp \
+        ..\invalidcastexception.cpp \
+        ..\invalidoperationexception.cpp \
+        ..\logging.cpp \
+        ..\memorystream.cpp \
+        ..\monitor.cpp \
+        ..\multisz.cpp \
+        ..\mutex.cpp \
+        ..\notsupportedexception.cpp \
+        ..\object.cpp \
+        ..\objectdisposedexception.cpp \
+        ..\operatingsystem.cpp \
+        ..\outofmemoryexception.cpp \
+        ..\overflowexception.cpp \
+        ..\path.cpp \
+        ..\pathtoolongexception.cpp \
+        ..\process.cpp \
+        ..\processstartinfo.cpp \
+        ..\reghandle.cpp \
+        ..\registry.cpp \
+        ..\registrykey.cpp \
+        ..\regsubkeyenum.cpp \
+        ..\securityexception.cpp \
+        ..\sehexception.cpp \
+        ..\serializablebase.cpp \
+        ..\serializationexception.cpp \
+        ..\serializationstream.cpp \
+        ..\stack.cpp \
+        ..\stream.cpp \
+        ..\streamreader.cpp \
+        ..\streamwriter.cpp \
+        ..\string.cpp \
+        ..\stringbuilder.cpp \
+        ..\stringptr.cpp \
+        ..\systemexception.cpp \
+        ..\textreader.cpp \
+        ..\textwriter.cpp \
+        ..\thread.cpp \
+        ..\threadstateexception.cpp \
+        ..\timespan.cpp \
+        ..\type.cpp \
+        ..\unbcl.cpp \
+        ..\unicodeencoding.cpp \
+        ..\version.cpp \
+        ..\waithandle.cpp \
+        ..\win32exception.cpp \
+        ..\xml.cpp \
+        ..\xmlexception.cpp \
+        ..\xpathexception.cpp \
+		..\ver.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+LINKENTRY=DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\oleaut32.lib \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\dbghelp.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SDK_LIB_PATH)\ole32.lib \
+	$(SDK_LIB_PATH)\uuid.lib \
+	$(SDK_LIB_PATH)\msxml6.lib \
+	$(SDK_LIB_PATH)\wbemuuid.lib \
+	$(BASEDIR)\public\internal\mincore\priv_sdk\lib\*\mincore_downlevel_adk.lib \
+	$(SDK_LIB_PATH)\xmllite.lib
+
+BINPLACE_PLACEFILE=placefil.txt
+
+
