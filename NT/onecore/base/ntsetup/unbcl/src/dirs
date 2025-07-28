@@ -1,1 +1,2 @@
-DIRS=dll
+DIRS=dll \
+     media 
