@@ -1,0 +1,19 @@
+TARGETNAME=findicon
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+USE_STL=1
+USE_MSVCRT=1
+USE_ATL=1
+
+PRECOMPILED_INCLUDE=precomp.h
+PRECOMPILED_PCH=precomp.pch
+PRECOMPILED_OBJ=precomp.obj
+
+INCLUDES=.;$(BASE_INC_PATH);$(SDK_INC_PATH)\gdiplus
+
+SOURCES=deviceicon.cpp \
+        appicon.cpp
+
+UMTYPE=console
+UMENTRY=winmain
+

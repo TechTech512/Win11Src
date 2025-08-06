@@ -1,5 +1,4 @@
-#include <windows.h>
-#include <strsafe.h>
+#include "precomp.h"
 #include <setupapi.h>
 #include <initguid.h>
 #include <guiddef.h>
