@@ -1,0 +1,14 @@
+TARGETNAME=telemetrypermission
+TARGETPATH=$(BASEDIR)\public\internal\base\lib
+TARGETTYPE=LIBRARY
+USE_STL=1
+USE_MSVCRT=1
+USE_ATL=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+
+SOURCES=telemetrypermission.cpp
+
+UMTYPE=console
+UMENTRY=winmain
+
