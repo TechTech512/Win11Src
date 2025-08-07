@@ -1,0 +1,14 @@
+TARGETNAME=OneSettingsQuery
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+USE_STL=1
+USE_MSVCRT=1
+USE_ATL=1
+
+INCLUDES=.;$(BASE_INC_PATH);$(BASEDIR)\public\internal\minwin\priv_sdk\inc
+
+SOURCES=onesettingsquery.cpp
+
+UMTYPE=console
+UMENTRY=winmain
+
