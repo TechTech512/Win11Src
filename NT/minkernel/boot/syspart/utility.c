@@ -1,71 +1,84 @@
 #include "sysboot.h"
 
 long SiGetDeviceNumberInformation(wchar_t *devicePath, ulong *outDiskNum, ulong *outPartitionNum) {
-    (void)devicePath;
+    if (!devicePath || !outDiskNum || !outPartitionNum) return STATUS_INVALID_PARAMETER;
+
+#ifdef _KERNEL_MODE
+    UNICODE_STRING devName;
+    OBJECT_ATTRIBUTES attr;
+    IO_STATUS_BLOCK ioStatus;
+    HANDLE fileHandle;
+    NTSTATUS status;
+
+    RtlInitUnicodeString(&devName, devicePath);
+    InitializeObjectAttributes(&attr, &devName, OBJ_CASE_INSENSITIVE | OBJ_KERNEL_HANDLE, NULL, NULL);
+
+    status = ZwCreateFile(&fileHandle, GENERIC_READ, &attr, &ioStatus, NULL,
+                          FILE_ATTRIBUTE_NORMAL, FILE_SHARE_READ | FILE_SHARE_WRITE,
+                          FILE_OPEN, FILE_NON_DIRECTORY_FILE | FILE_SYNCHRONOUS_IO_NONALERT,
+                          NULL, 0);
+    if (!NT_SUCCESS(status)) return STATUS_UNSUCCESSFUL;
+
+    FILE_FS_DEVICE_INFORMATION deviceInfo;
+    status = ZwQueryVolumeInformationFile(fileHandle, &ioStatus, &deviceInfo, sizeof(deviceInfo), FileFsDeviceInformation);
+
+    ZwClose(fileHandle);
+
+    if (!NT_SUCCESS(status)) return STATUS_UNSUCCESSFUL;
+
+    *outDiskNum = deviceInfo.DeviceType;
+    *outPartitionNum = deviceInfo.Characteristics; // Simplified
+    return STATUS_SUCCESS;
+
+#else
+    // User-mode stub
     *outDiskNum = 0;
     *outPartitionNum = 1;
     return STATUS_SUCCESS;
+#endif
 }
 
-long SiGetDiskPartitionInformation(wchar_t *path, PARTITION_INFORMATION_EX *info) {
+long SiGetDiskPartitionInformation(wchar_t *path, void *info) {
     (void)path;
     (void)info;
-    return STATUS_SUCCESS;
+    return STATUS_SUCCESS;  // Stubbed for both modes
 }
 
-long SiGetDriveLayoutInformation(wchar_t *path, DRIVE_LAYOUT_INFORMATION_EX **layout) {
-    (void)path;
-    *layout = (DRIVE_LAYOUT_INFORMATION_EX *)malloc(sizeof(DRIVE_LAYOUT_INFORMATION_EX));
+long SiGetDriveLayoutInformation(wchar_t *path, void **layout) {
+    if (!path || !layout) return STATUS_INVALID_PARAMETER;
+
+    *layout = MemAlloc(sizeof(int)); // dummy structure
     if (!*layout) return STATUS_NO_MEMORY;
-    (*layout)->dummy = 42;
+
     return STATUS_SUCCESS;
 }
 
-long SiGetFirmwareBootDeviceNameFromRegistry(wchar_t **outName) {
-    *outName = (wchar_t *)malloc(128 * sizeof(wchar_t));
-    if (!*outName) return STATUS_NO_MEMORY;
-    wcscpy(*outName, L"multi(0)disk(0)rdisk(0)partition(1)");
-    return STATUS_SUCCESS;
-}
-
-long SiGetFirmwareBootDeviceName(SYSPART_DEVICE_TYPE type, wchar_t **outPath) {
-    (void)type;
-    wchar_t *regValue = NULL;
-    long status = SiGetFirmwareBootDeviceNameFromRegistry(&regValue);
-    if (status != STATUS_SUCCESS) return status;
-
-    *outPath = (wchar_t *)malloc(256 * sizeof(wchar_t));
-    if (!*outPath) {
-        free(regValue);
-        return STATUS_NO_MEMORY;
-    }
-
-    swprintf(*outPath, 256, L"\\ArcName\\%s", regValue);
-    free(regValue);
-    return STATUS_SUCCESS;
-}
-
-long SiValidateSystemPartition(wchar_t *device, PARTITION_INFORMATION_EX *info) {
+long SiValidateSystemPartition(wchar_t *device, void *info) {
     (void)device;
     (void)info;
-    return STATUS_SUCCESS;
-}
-
-long SiTranslateSymbolicLink(wchar_t *path, wchar_t **translated) {
-    return SiGetFirmwareBootDeviceNameFromRegistry(translated);  // simulated
+    return STATUS_SUCCESS;  // Stubbed
 }
 
 long SiIssueSynchronousIoctl(wchar_t *device, ulong ctrlCode, void *inBuf, ulong inLen, void *outBuf, ulong outLen) {
+#ifdef _KERNEL_MODE
     (void)device;
     (void)ctrlCode;
     (void)inBuf;
     (void)inLen;
     (void)outBuf;
     (void)outLen;
-    return STATUS_SUCCESS;
-}
+    return STATUS_NOT_IMPLEMENTED;
+#else
+    HANDLE h = CreateFileW(device, GENERIC_READ | GENERIC_WRITE,
+                           FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,
+                           OPEN_EXISTING, 0, NULL);
+    if (h == INVALID_HANDLE_VALUE) return STATUS_UNSUCCESSFUL;
 
-uchar SiIsWinPEBoot(void) {
-    return 0;
+    DWORD bytesReturned;
+    BOOL result = DeviceIoControl(h, ctrlCode, inBuf, inLen, outBuf, outLen, &bytesReturned, NULL);
+    CloseHandle(h);
+
+    return result ? STATUS_SUCCESS : STATUS_UNSUCCESSFUL;
+#endif
 }
 

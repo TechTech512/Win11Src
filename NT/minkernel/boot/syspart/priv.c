@@ -1,63 +1,94 @@
-#include <windows.h>
-#include <stdio.h>
+#include "sysboot.h"
 
-long BiOpenEffectiveToken(HANDLE *outToken) {
-    HANDLE token = NULL;
-    BOOL result = FALSE;
+#ifdef _KERNEL_MODE
 
-    if (!OpenThreadToken(GetCurrentThread(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, TRUE, &token)) {
-        if (GetLastError() == ERROR_NO_TOKEN) {
-            result = OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &token);
-        }
-    } else {
-        result = TRUE;
-    }
+long BiOpenEffectiveToken(void **outToken) {
+    if (!outToken) return STATUS_INVALID_PARAMETER;
 
-    if (!result || token == NULL) {
-        return -1;  // NTSTATUS-style failure
-    }
+    PACCESS_TOKEN token = PsReferencePrimaryToken(PsGetCurrentProcess());
+    if (!token) return STATUS_UNSUCCESSFUL;
 
-    *outToken = token;
-    return 0;  // STATUS_SUCCESS
+    *outToken = (void *)token;
+    return STATUS_SUCCESS;
 }
 
 long BiAdjustPrivilege(ULONG privilegeId, UCHAR enable, UCHAR *wasEnabled) {
-    HANDLE token = NULL;
+    void *token = NULL;
+    long status = BiOpenEffectiveToken(&token);
+    if (status != STATUS_SUCCESS) return status;
+
     LUID luid;
-    TOKEN_PRIVILEGES tp, oldTp;
-    DWORD returnLength = 0;
+    RtlConvertLongToLuid(privilegeId, &luid);
 
-    if (wasEnabled) *wasEnabled = FALSE;
+    PRIVILEGE_SET privSet;
+    privSet.PrivilegeCount = 1;
+    privSet.Control = PRIVILEGE_SET_ALL_NECESSARY;
+    privSet.Privilege[0].Luid = luid;
+    privSet.Privilege[0].Attributes = enable ? SE_PRIVILEGE_ENABLED : 0;
 
-    if (BiOpenEffectiveToken(&token) != 0) {
-        return -1;
+    BOOLEAN hasPrivilege = SePrivilegeCheck(&privSet, (PACCESS_TOKEN)token, KernelMode);
+    if (wasEnabled) {
+        *wasEnabled = hasPrivilege ? 1 : 0;
     }
 
+    ObDereferenceObject(token);
+    return STATUS_SUCCESS;
+}
+
+#else // USER MODE
+
+long BiOpenEffectiveToken(void **outToken) {
+    if (!outToken) return STATUS_INVALID_PARAMETER;
+
+    HANDLE token;
+    if (!OpenThreadToken(GetCurrentThread(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, TRUE, &token)) {
+        if (GetLastError() == ERROR_NO_TOKEN) {
+            if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &token)) {
+                return STATUS_UNSUCCESSFUL;
+            }
+        } else {
+            return STATUS_UNSUCCESSFUL;
+        }
+    }
+
+    *outToken = (void *)token;
+    return STATUS_SUCCESS;
+}
+
+long BiAdjustPrivilege(ULONG privilegeId, UCHAR enable, UCHAR *wasEnabled) {
+    void *tokenVoid = NULL;
+    long status = BiOpenEffectiveToken(&tokenVoid);
+    if (status != STATUS_SUCCESS) return status;
+
+    HANDLE token = (HANDLE)tokenVoid;
+
+    LUID luid;
     if (!LookupPrivilegeValue(NULL, SE_DEBUG_NAME, &luid)) {
         CloseHandle(token);
-        return -1;
+        return STATUS_UNSUCCESSFUL;
     }
 
+    TOKEN_PRIVILEGES tp;
     tp.PrivilegeCount = 1;
     tp.Privileges[0].Luid = luid;
     tp.Privileges[0].Attributes = enable ? SE_PRIVILEGE_ENABLED : 0;
 
-    if (!AdjustTokenPrivileges(token, FALSE, &tp, sizeof(tp), &oldTp, &returnLength)) {
+    TOKEN_PRIVILEGES previous;
+    DWORD returnLength = sizeof(previous);
+
+    if (!AdjustTokenPrivileges(token, FALSE, &tp, sizeof(previous), &previous, &returnLength)) {
         CloseHandle(token);
-        return -1;
+        return STATUS_UNSUCCESSFUL;
     }
 
-    if (GetLastError() == ERROR_NOT_ALL_ASSIGNED) {
-        CloseHandle(token);
-        return -1;
-    }
-
-    if (wasEnabled && returnLength >= sizeof(TOKEN_PRIVILEGES)) {
-        *wasEnabled = (oldTp.PrivilegeCount > 0 &&
-                       (oldTp.Privileges[0].Attributes & SE_PRIVILEGE_ENABLED)) ? TRUE : FALSE;
+    if (wasEnabled) {
+        *wasEnabled = (previous.PrivilegeCount > 0 &&
+                       (previous.Privileges[0].Attributes & SE_PRIVILEGE_ENABLED)) ? 1 : 0;
     }
 
     CloseHandle(token);
-    return 0;
+    return STATUS_SUCCESS;
 }
+
+#endif
 

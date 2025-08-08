@@ -1,45 +1,138 @@
 #include "sysboot.h"
 
-// Declare functions this file uses (that are implemented elsewhere)
-uchar SiIsWinPEBoot(void);
-long SiGetBiosSystemPartition(wchar_t **outPath);
-long SiGetEfiSystemDevice(SYSPART_DEVICE_TYPE type, ulong arg, wchar_t **outPath);
+#define SystemFirmwareTableInformation 0x4E
 
-FIRMWARE_TYPE SiGetFirmwareType(void) {
-    return FirmwareTypeBios;  // Stub return for BIOS
-}
-
-long SiGetFirmwareBootDeviceName(SYSPART_DEVICE_TYPE type, wchar_t **outPath) {
-    (void)type;
-
-    *outPath = (wchar_t *)malloc(128 * sizeof(wchar_t));
-    if (!*outPath) return STATUS_NO_MEMORY;
-
-    wcscpy(*outPath, L"\\ArcName\\multi(0)disk(0)rdisk(0)partition(1)");
-    return STATUS_SUCCESS;
+int SiGetFirmwareType(void) {
+#ifdef _KERNEL_MODE
+    // In kernel mode, assume BIOS unless overridden
+    return 1; // 1 = BIOS, 2 = UEFI (match FirmwareType enum)
+#else
+    ULONG type = 0;
+    if (NtQuerySystemInformation(SystemFirmwareTableInformation, NULL, 0, &type) == 0) {
+        return 2; // assume UEFI if firmware table exists
+    }
+    return 1; // default to BIOS
+#endif
 }
 
 long SiTranslateSymbolicLink(wchar_t *path, wchar_t **translated) {
-    // Stub: simply return the input path as-is
-    size_t len = wcslen(path) + 1;
-    *translated = (wchar_t *)malloc(len * sizeof(wchar_t));
-    if (!*translated) return STATUS_NO_MEMORY;
+    if (!path || !translated) return STATUS_INVALID_PARAMETER;
 
-    wcscpy(*translated, path);
+#ifdef _KERNEL_MODE
+    UNICODE_STRING linkName, target;
+    OBJECT_ATTRIBUTES attr;
+    HANDLE linkHandle;
+    NTSTATUS status;
+
+    RtlInitUnicodeString(&linkName, path);
+    InitializeObjectAttributes(&attr, &linkName, OBJ_CASE_INSENSITIVE, NULL, NULL);
+
+    status = ZwOpenSymbolicLinkObject(&linkHandle, SYMBOLIC_LINK_QUERY, &attr);
+    if (!NT_SUCCESS(status)) return STATUS_NOT_FOUND;
+
+    target.Buffer = (wchar_t *)MemAlloc(512 * sizeof(wchar_t));
+    if (!target.Buffer) {
+        ZwClose(linkHandle);
+        return STATUS_NO_MEMORY;
+    }
+
+    target.Length = 0;
+    target.MaximumLength = 512 * sizeof(wchar_t);
+
+    status = ZwQuerySymbolicLinkObject(linkHandle, &target, NULL);
+    ZwClose(linkHandle);
+
+    if (!NT_SUCCESS(status)) {
+        MemFree(target.Buffer);
+        return STATUS_UNSUCCESSFUL;
+    }
+
+    target.Buffer[target.Length / sizeof(wchar_t)] = L'\0';
+    *translated = target.Buffer;
+    return STATUS_SUCCESS;
+
+#else
+    UNICODE_STRING linkName, target;
+    OBJECT_ATTRIBUTES attr;
+    HANDLE linkHandle;
+    NTSTATUS status;
+
+    RtlInitUnicodeString(&linkName, path);
+    InitializeObjectAttributes(&attr, &linkName, OBJ_CASE_INSENSITIVE, NULL, NULL);
+
+    status = NtOpenSymbolicLinkObject(&linkHandle, SYMBOLIC_LINK_QUERY, &attr);
+    if (!NT_SUCCESS(status)) return STATUS_NOT_FOUND;
+
+    target.Buffer = (wchar_t *)MemAlloc(512 * sizeof(wchar_t));
+    if (!target.Buffer) {
+        NtClose(linkHandle);
+        return STATUS_NO_MEMORY;
+    }
+
+    target.Length = 0;
+    target.MaximumLength = 512 * sizeof(wchar_t);
+
+    status = NtQuerySymbolicLinkObject(linkHandle, &target, NULL);
+    NtClose(linkHandle);
+
+    if (!NT_SUCCESS(status)) {
+        MemFree(target.Buffer);
+        return STATUS_UNSUCCESSFUL;
+    }
+
+    target.Buffer[target.Length / sizeof(wchar_t)] = L'\0';
+    *translated = target.Buffer;
+    return STATUS_SUCCESS;
+#endif
+}
+
+long SiGetFirmwareBootDeviceName(int type, wchar_t **outPath) {
+    (void)type;
+
+    if (!outPath) return STATUS_INVALID_PARAMETER;
+
+    wchar_t *buf = (wchar_t *)MemAlloc(128 * sizeof(wchar_t));
+    if (!buf) return STATUS_NO_MEMORY;
+
+#ifdef _KERNEL_MODE
+    swprintf(buf, L"\\ArcName\\multi(0)disk(0)rdisk(0)partition(1)");
+#else
+    swprintf_s(buf, 128, L"\\ArcName\\multi(0)disk(0)rdisk(0)partition(1)");
+#endif
+
+    *outPath = buf;
     return STATUS_SUCCESS;
 }
 
-long SiGetSystemPartition(FIRMWARE_TYPE fwType, wchar_t **outPath) {
-    long status;
+uchar SiIsWinPEBoot(void) {
+#ifdef _KERNEL_MODE
+    return 0; // stubbed for kernel mode (real logic may query registry/memory)
+#else
+    HKEY hKey;
+    DWORD value = 0, size = sizeof(value);
+    if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SYSTEM\\CurrentControlSet\\Control\\MiniNT", 0, KEY_READ, &hKey) == ERROR_SUCCESS) {
+        if (RegQueryValueExW(hKey, L"SystemPartition", NULL, NULL, (LPBYTE)&value, &size) == ERROR_SUCCESS) {
+            RegCloseKey(hKey);
+            return 1;
+        }
+        RegCloseKey(hKey);
+    }
+    return 0;
+#endif
+}
+
+long SiGetSystemPartition(int fwType, wchar_t **outPath) {
+    if (!outPath) return STATUS_INVALID_PARAMETER;
 
     if (SiIsWinPEBoot()) {
-        return SiGetFirmwareBootDeviceName(SyspartDeviceTypeUnknown, outPath);
+        return SiGetFirmwareBootDeviceName(0, outPath);
     }
 
-    if (fwType == FirmwareTypeBios) {
+    long status;
+    if (fwType == 1) { // BIOS
         status = SiGetBiosSystemPartition(outPath);
-    } else if (fwType == FirmwareTypeUefi) {
-        status = SiGetEfiSystemDevice(SyspartDeviceTypeUnknown, 0, outPath);
+    } else if (fwType == 2) { // UEFI
+        status = SiGetEfiSystemDevice(0, 0, outPath);
     } else {
         return STATUS_INVALID_PARAMETER;
     }
@@ -47,7 +140,7 @@ long SiGetSystemPartition(FIRMWARE_TYPE fwType, wchar_t **outPath) {
     if (status == STATUS_SUCCESS) {
         wchar_t *translated = NULL;
         if (SiTranslateSymbolicLink(*outPath, &translated) == STATUS_SUCCESS) {
-            free(*outPath);
+            MemFree(*outPath);
             *outPath = translated;
         }
     }
@@ -56,40 +149,22 @@ long SiGetSystemPartition(FIRMWARE_TYPE fwType, wchar_t **outPath) {
 }
 
 long SiGetSystemDeviceName(void *buf, wchar_t *output, ulong maxSize, ulong *written) {
-    wchar_t *deviceName = NULL;
-    long status = SiGetSystemPartition(SiGetFirmwareType(), &deviceName);
-    if (status < 0) return status;
+    (void)buf;
 
-    size_t nameLen = wcslen(deviceName);
-    if (nameLen + 1 > maxSize) {
-        free(deviceName);
+    wchar_t *name = NULL;
+    long status = SiGetSystemPartition(SiGetFirmwareType(), &name);
+    if (status != STATUS_SUCCESS) return status;
+
+    size_t len = wcslen(name);
+    if (len + 1 > maxSize) {
+        MemFree(name);
         return STATUS_BUFFER_TOO_SMALL;
     }
 
-    wcscpy(output, deviceName);
-    if (written) *written = (ulong)nameLen;
-    free(deviceName);
+    wcscpy(output, name);
+    if (written) *written = (ulong)len;
+
+    MemFree(name);
     return STATUS_SUCCESS;
-}
-
-long SiQuerySystemPartitionInformation(wchar_t *buffer, ulong bufferSize, ulong *outLen) {
-    const wchar_t *fakeValue = L"\\Device\\Harddisk0\\Partition1";
-    size_t len = wcslen(fakeValue);
-
-    if (bufferSize < len + 1) {
-        return STATUS_BUFFER_TOO_SMALL;
-    }
-
-    wcscpy(buffer, fakeValue);
-    if (outLen) *outLen = (ulong)len;
-    return STATUS_SUCCESS;
-}
-
-long SyspartGetSystemPartition(wchar_t *buffer, ulong size, ulong *written) {
-    long status = SiQuerySystemPartitionInformation(buffer, size, written);
-    if (status != STATUS_SUCCESS && status != STATUS_BUFFER_TOO_SMALL) {
-        status = SiGetSystemDeviceName(NULL, buffer, size, written);
-    }
-    return status;
 }
 

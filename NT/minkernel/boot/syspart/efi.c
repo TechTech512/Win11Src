@@ -1,37 +1,50 @@
-#include <windows.h>
 #include "sysboot.h"
 
-long SiDisambiguateSystemDevice(ulong *param1, ulong *param2) {
-    // Stub logic for disambiguating a device
-    *param1 = 0x1234;
-    *param2 = 0x5678;
+// Stub or real implementation: resolves \Device path of ESP (UEFI boot partition)
+long SiGetEfiSystemDevice(int type, ulong arg, wchar_t **outPath) {
+    (void)type;
+    (void)arg;
+
+    if (!outPath) return STATUS_INVALID_PARAMETER;
+
+    wchar_t *device = (wchar_t *)MemAlloc(128 * sizeof(wchar_t));
+    if (!device) return STATUS_NO_MEMORY;
+
+#ifdef _KERNEL_MODE
+    swprintf(device, L"\\Device\\Harddisk0\\Partition1");
+#else
+    swprintf(device, 128, L"\\Device\\Harddisk0\\Partition1");
+#endif
+
+    *outPath = device;
     return STATUS_SUCCESS;
 }
 
+// Not originally named in the decompiled code but used elsewhere — this resolves if a device string looks like a disk
+uchar SiIsValidDiskDevice(wchar_t *device, wchar_t *query) {
+    (void)query;
+
+    if (!device) return 0;
+
+#ifdef _KERNEL_MODE
+    return (wcsncmp(device, L"\\Device\\Harddisk", 17) == 0);
+#else
+    return (wcsncmp(device, L"\\Device\\Harddisk", 17) == 0);
+#endif
+}
+
+// Kernel stub for ESP logic (placeholder)
 long SiGetEspFromFirmware(wchar_t *device, ulong partIndex) {
-    // Stub logic to simulate reading ESP partition from firmware
     (void)device;
     (void)partIndex;
     return STATUS_SUCCESS;
 }
 
-uchar SiIsValidDiskDevice(wchar_t *device, wchar_t *query) {
-    (void)query;
-    // Basic check for stub
-    if (device && wcsncmp(device, L"Harddisk", 8) == 0) {
-        return 1;
-    }
-    return 0;
-}
-
-long SiGetEfiSystemDevice(SYSPART_DEVICE_TYPE type, ulong arg, wchar_t **outPath) {
-    (void)type;
-    (void)arg;
-
-    *outPath = (wchar_t *)malloc(128 * sizeof(wchar_t));
-    if (!*outPath) return STATUS_NO_MEMORY;
-
-    swprintf(*outPath, 128, L"\\Device\\Harddisk0\\Partition1");
+// Kernel stub for disambiguating ESP candidates (placeholder)
+long SiDisambiguateSystemDevice(ulong *out1, ulong *out2) {
+    if (!out1 || !out2) return STATUS_INVALID_PARAMETER;
+    *out1 = 0;
+    *out2 = 1;
     return STATUS_SUCCESS;
 }
 
