@@ -1,0 +1,21 @@
+TARGETNAME=aecrypto_downlevel
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+USE_STL=1
+USE_MSVCRT=1
+USE_ATL=1
+
+PRECOMPILED_INCLUDE=stdafx.h
+PRECOMPILED_PCH=stdafx.pch
+PRECOMPILED_OBJ=stdafx.obj
+
+INCLUDES=.;$(BASE_INC_PATH)
+
+SOURCES=..\aecrypto.cpp \
+        ..\cryptobasic.cpp \
+        ..\md5.cpp 
+
+UMTYPE=console
+UMENTRY=winmain
+TARGETLIBS= \
+	$(BASEDIR)\public\internal\mincore\priv_sdk\lib\*\mincore_downlevel_adk.lib 
