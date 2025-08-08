@@ -1,0 +1,13 @@
+TARGETNAME=pathcchapis
+TARGETPATH=$(BASEDIR)\public\internal\mincore\priv_sdk\lib
+TARGETTYPE=LIBRARY
+USE_STL=1
+USE_MSVCRT=1
+USE_ATL=1
+
+INCLUDES=.;$(BASEDIR)\public\internal\mincore\priv_sdk\inc
+
+SOURCES=..\pathcch.c
+
+UMTYPE=console
+UMENTRY=winmain
