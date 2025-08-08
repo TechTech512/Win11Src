@@ -6,6 +6,7 @@
 #include <strsafe.h>
 #include <wchar.h>
 #include <ctype.h>
+#include <stdint.h>
 
 // Common type definitions
 typedef unsigned int uint;
