@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 
 // Helper macros for error handling
 #define HRESULT_FROM_WIN32(x) ((x) <= 0 ? ((DWORD)(x)) : (((x) & 0x0000FFFF) | (FACILITY_WIN32 << 16) | 0x80000000))

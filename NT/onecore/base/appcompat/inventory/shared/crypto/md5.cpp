@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include <memory.h>
-#include <stdint.h>
 
 // Constants for MD5Transform routine
 #define S11 7

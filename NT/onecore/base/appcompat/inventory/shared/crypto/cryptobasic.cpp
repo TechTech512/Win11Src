@@ -1,8 +1,5 @@
 #include "stdafx.h"
 
-// Ensure stdint.h is included for uint32_t/uint8_t
-#include <stdint.h>
-
 // MD5 context structure - use consistent types with md5.cpp
 typedef struct _MD5Context {
     unsigned int state[4];       // Changed from uint32_t to unsigned int
