@@ -1,0 +1,24 @@
+ASSEMBLY_IDENTITY_KEY_FORM=x86_servicexml_none_12.4.56.0_none_332a9f65d8d63368
+ASSEMBLY_IDENTITY_XP_KEY_FORM=x86_servicexml_no-public-key_12.4.56.0_x-ww_88608b38
+ASSEMBLY_IDENTITY_CULTURE=
+ASSEMBLY_IDENTITY_NAME=servicexml
+ASSEMBLY_IDENTITY_PROCESSOR_ARCHITECTURE=x86
+ASSEMBLY_IDENTITY_PUBLIC_KEY=
+ASSEMBLY_IDENTITY_PUBLIC_KEY_TOKEN=
+ASSEMBLY_IDENTITY_TYPE=
+ASSEMBLY_IDENTITY_TYPE_NAME=
+ASSEMBLY_IDENTITY_VERSION=12.4.56.0
+XP_KEY_FORM=x86_servicexml_no-public-key_12.4.56.0_x-ww_88608b38
+XP_MANIFEST_DIRECTORY=manifests
+XP_MANIFEST_NAME=x86_servicexml_no-public-key_12.4.56.0_x-ww_88608b38.manifest
+XP_MANIFEST_PATH=manifests\x86_servicexml_no-public-key_12.4.56.0_x-ww_88608b38.manifest
+XP_CATALOG_DIRECTORY=manifests
+XP_CATALOG_NAME=x86_servicexml_no-public-key_12.4.56.0_x-ww_88608b38.cat
+XP_CATALOG_PATH=manifests\x86_servicexml_no-public-key_12.4.56.0_x-ww_88608b38.cat
+XP_PAYLOAD_PATH=x86_servicexml_no-public-key_12.4.56.0_x-ww_88608b38
+_DELAY_SIGN=0
+!if [set _ASMIDTOATTRIBS_TLBIMP=]
+!endif
+CODESIGN_TESTKEY=
+_TLBIMP_FLAGS=$(_TLBIMP_FLAGS)  /asmversion:12.4.56.0
+_ASSEMBLY_IDENTITY=servicexml,processorArchitecture=x86,version=12.4.56.0,publicKeyToken=neutral 
