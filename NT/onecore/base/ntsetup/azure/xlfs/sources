@@ -1,0 +1,11 @@
+TARGETNAME=ServiceXml
+TARGETPATH=obj
+TARGETTYPE= NOTARGET
+
+BINPLACE_PLACEFILE=placefil.txt
+
+MISCFILES = service.xml
+
+SOURCES =
+
+
