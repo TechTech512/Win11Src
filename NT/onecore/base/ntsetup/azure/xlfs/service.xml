@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service name="Xbox Live File Service Deployment" release="Xbox Live Service" xmlns="http://schemas.microsoft.com/Octopus/2005/01/Service">
+
+  <property name="GLOBAL_SUBSCRIPTION_ID">
+    <userInput
+      prompt="Subscription Id"
+      help="The subscription id of the account to deploy to."
+      required="true">
+      <textbox />
+    </userInput>
+  </property>
+
+  <property name="GLOBAL_API_CERTIFICATE_THUMBPRINT">
+    <userInput
+      prompt="Management Certificate Thumbprint"
+      help="Identifies the certificate to use to authenticate to the Azure Management APIs.  This certificate must be present in the Current User certificate store on the target deployment machine."
+      required="true">
+      <textbox />
+    </userInput>
+  </property>
+
+  <property name="GLOBAL_STORAGE_ACCOUNT">
+    <userInput
+      prompt="Storage Account"
+      help="Storage Account that the deployment package will be uploaded to prior to deployment."
+      required="true">
+      <textbox />
+    </userInput>
+  </property>
+
+  <property name="GLOBAL_DIAGNOSTICS_STORAGE_ACCOUNT">
+    <userInput
+      prompt="Diagnostics Storage Account"
+      help="Storage Account that diagnostics information will be copied to."
+      required="true">
+      <textbox />
+    </userInput>
+  </property>
+
+  <property name="GLOBAL_DEPLOYMENT_SLOT">
+    <userInput
+      prompt="Deployment Slot"
+      required="true"
+      default="staging">
+      <select>
+        <option value="staging" displayValue="Staging" />
+        <option value="production" displayValue="Production" />
+      </select>
+    </userInput>
+  </property>
+
+  <property name="GLOBAL_DEPLOYMENT_MODE">
+    <userInput
+      prompt="Deployment Mode"
+      help="Specifies whether to just deploy the service, deploy and then run, or deploy, run and then wait for all services to be ready."
+      required="true"
+      default="DeployRun">
+      <select>
+        <option value="DeployOnly" displayValue="Deploy the service, but do not run it." />
+        <option value="DeployRun" displayValue="Deploy and run the service, but do not wait for services to enter the ready state." />
+        <option value="DeployRunWait" displayValue="Deploy, run and wait for all services to enter the ready state." />
+      </select>
+    </userInput>
+  </property>
+
+  <property name="GLOBAL_DEFAULT_PAGE_SHOW_DETAILS">
+    <userInput
+      prompt="Show Default Page Details"
+      help="Specifies whether certificate information will be displayed on the default.aspx page of each front door."
+      required="false"
+      default="false">
+      <checkbox checkedValue="true" uncheckedValue="false" />
+    </userInput>
+  </property>
+
+  <property name="GLOBAL_STORAGE_ACCOUNT_REFRESH_INTERVAL_MS">
+    <userInput
+      prompt="Storage Account Refresh Interval (ms)"
+      help="Specifies the interval, in milliseconds, that the front doors will refresh storage account information from the Storage Account table."
+      default="60000">
+      <textbox />
+    </userInput>
+  </property>
+  
+  <topologies>
+
+    <topology name="Cloud">
+      <role name="Client Front Door" minServers="0" maxServers="1" />
+      <role name="Admin Front Door" minServers="0" maxServers="1" />
+      <role name="Garbage Collection Worker" minServers="0" maxServers="1" />
+    </topology>
+
+  </topologies>
+
+  <components>
+
+    <component name="Client Front Door">
+
+      <property name="STORAGE_ACCOUNT" value="[GLOBAL_STORAGE_ACCOUNT]" />
+      <property name="DIAGNOSTICS_STORAGE_ACCOUNT" value="[GLOBAL_DIAGNOSTICS_STORAGE_ACCOUNT]" />
+      <property name="SUBSCRIPTION_ID" value="[GLOBAL_SUBSCRIPTION_ID]" />
+      <property name="DEPLOYMENT_SLOT" value="[GLOBAL_DEPLOYMENT_SLOT]" />
+      <property name="DEPLOYMENT_MODE" value="[GLOBAL_DEPLOYMENT_MODE]" />
+      <property name="API_CERTIFICATE_THUMBPRINT" value="[GLOBAL_API_CERTIFICATE_THUMBPRINT]" />
+      <property name="DEFAULT_PAGE_SHOW_DETAILS" value="[GLOBAL_DEFAULT_PAGE_SHOW_DETAILS]" />
+      <property name="STORAGE_ACCOUNT_REFRESH_INTERVAL_MS" value="[GLOBAL_STORAGE_ACCOUNT_REFRESH_INTERVAL_MS]" />
+
+      <property name="SERVICE_NAME">
+        <userInput
+          prompt="Hosted Service Name"
+          help="The name of the Azure hosted service that will host the Client Front Door."
+          required="true">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="INSTANCE_COUNT">
+        <userInput
+          prompt="Instance Count"
+          help="The Instance Count is the number of 'copies' of the service that are running simultaneously."
+          default="10">
+          <textbox/>
+        </userInput>
+      </property>
+
+      <property name="SAS_EXPIRY_MINUTES">
+        <userInput
+          prompt="SAS Expiry Minutes"
+          help="Amount of time, in minutes, that SAS URLs returned from the Client Front Door will remain valid for storage operations.  Azure enforces a 60 minute expiration, regardless of what is entered here.  It is recommended to enter a value less than that; 55 minutes is the recommended default.  Smaller values will result in more frequent SAS URL refreshes and more requests/sec to the Client Front Door."
+          default="55">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="SSL_CERTIFICATE_THUMBPRINT">
+        <userInput
+          prompt="SSL Certificate Thumbprint"
+          help="Thumbprint of the certificate in the Azure Certificate Store to use for SSL."
+          required="true">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="SAML_TOKEN_REQUIRED">
+        <userInput
+          prompt="SAML Token Required"
+          help="Check this box if the Client Front Door should require that a valid SAML token is presented with each request.  This should always be checked in production environments."
+          default="true">
+          <checkbox checkedValue="true" uncheckedValue="false" />
+        </userInput>
+      </property>
+
+      <property name="MD5_ENFORCED">
+        <userInput
+          prompt="MD5 Enforced"
+          help="Check this box if the Client Front Door should verify that the MD5 hash of uploaded file provided by the caller matches the value retrieved from storage.  This should always be checked in production environments."
+          default="true">
+          <checkbox checkedValue="true" uncheckedValue="false" />
+        </userInput>
+      </property>
+      
+      <property name="SAML_CERT_THUMBPRINTS">
+        <userInput
+          prompt="Allowed SAML Certificate Thumbprints"
+          help="Semi-colon separated list of certificate thumbprints that are legal signers of SAML tokens.  Requests containing SAML tokens not signed by one of these certificates will be rejected."
+          default="3304fa28e59211632ebbec00298dc5128c158b31;919117671c40bec33482e3b292f9875ecdad27e4;e24ec24ede766efc9128dd80c85eec158a165991;A3771BC3870127CF9D0E43E178796EADF6A12EC6;919117671c40bec33482e3b292f9875ecdad27e4">
+          <textbox length="2048" />
+        </userInput>
+      </property>
+
+      <property name="ALLOWED_TITLES">
+        <userInput
+          prompt="Allowed Title Ids"
+          help="Semi-colon separated list of title ids that are allowed to access the client front door."
+          default="0x4D5308B3;0x4D5308FB;0x4D5308FC;0x4D530907;0x4D53093A;0x4D53891A;0x4D538921;0x584807DC;0x584807F0;0xFFFE07D1;0xFFFF0072;0xFFFF063F;0xFFFF0640;0xFFFF0641;0xFFFF0642;0xFFFF0643;0xFFFF0644;0xFFFF0645;0xFFFF0646;0xFFFF0647">
+          <textbox length="2048" />
+        </userInput>
+      </property>
+      
+      <prerequisiteChecks>
+        <commandCheck
+          name="XlfsFdPrerequisites"
+          cmd="AzureRunner.exe PreRequisitesCheck -StorageAccount [STORAGE_ACCOUNT] -DiagnosticsStorageAccount [DIAGNOSTICS_STORAGE_ACCOUNT] -SubscriptionId [SUBSCRIPTION_ID] -ApiCertificateThumbprint [API_CERTIFICATE_THUMBPRINT] -ServiceName [SERVICE_NAME]"
+          help="Azure prerequisites failed."
+          >
+          <statusCodes>
+            <statusCode value="0" type="success" message="PreRequisiteCheck succeeded." />
+            <statusCode value="-1" type="failure" message="Invalid parameters passed to the AzureRunner PreRequisitesCheck command.  This indicates that AzureRunner and service.xml are out of sync.  Make sure that you are using a self-consistent build drop.  If you are, then escalate to the product group immediately with contents of the deployment log." />
+            <statusCode value="-2" type="failure" message="Failed to retrieve storage key for the specified storage account.  Make sure that the storage account name, subscription id and certificate are all correct, and that you have connecitivty to Azure.  Check the output of AzureRunner in the deployment log for additional details." />
+            <statusCode value="-3" type="failure" message="Failed to hosted service properties.  Make sure that the subscription id, service name and certificate are correct, and that you have connectivity to Azure.  This may indicate an invalid certificate file, or an incorrect certificate password.  Check the output of AzureRunner in the deployment log for additional details." />
+            <statusCode value="-4" type="failure" message="Certificate error.  Check the output of AzureRunner in the deployment log for additional details." />
+          </statusCodes>
+          <inputFiles>
+            <file sourcePath="azurerunner.exe" destinationPath="azurerunner.exe" />
+            <file sourcePath="azurerunner.pdb" destinationPath="azurerunner.pdb" />
+            <file sourcePath="xblconsole.dll" destinationPath="xblconsole.dll" />
+            <file sourcePath="xblconsole.pdb" destinationPath="xblconsole.pdb" />
+            <file sourcePath="xonline.common.azure.dll" destinationPath="xonline.common.azure.dll" />
+            <file sourcePath="xonline.common.azure.pdb" destinationPath="xonline.common.azure.pdb" />
+            <file sourcePath="Microsoft.WindowsAzure.StorageClient.dll" destinationPath="Microsoft.WindowsAzure.StorageClient.dll" />
+          </inputFiles>
+        </commandCheck>
+      </prerequisiteChecks>
+
+      <installCommand
+        name="XlfsFdDeployment"
+        cmd="AzureRunner.exe Deploy -StorageAccount [STORAGE_ACCOUNT] -DiagnosticsStorageAccount [DIAGNOSTICS_STORAGE_ACCOUNT] -DeploymentName XlfsFd -DeployMode [DEPLOYMENT_MODE] -Slot [DEPLOYMENT_SLOT] -SubscriptionId [SUBSCRIPTION_ID] -PackagePath xlfsfd\xlfsfd.cspkg -DeploymentLabel XlfsFd -Configuration xlfsfd\serviceconfiguration.cscfg -ApiCertificateThumbprint [API_CERTIFICATE_THUMBPRINT] -ServiceName [SERVICE_NAME] -Settings samlTokenRequired=[SAML_TOKEN_REQUIRED]:sasExpiryMinutes=[SAS_EXPIRY_MINUTES]:md5Enforced=[MD5_ENFORCED]:allowedTitles=[ALLOWED_TITLES]:samlCertThumbprints=[SAML_CERT_THUMBPRINTS]:defaultPageShowDetails=[DEFAULT_PAGE_SHOW_DETAILS]:storageAccountRefreshIntervalMs=[STORAGE_ACCOUNT_REFRESH_INTERVAL_MS] -CertificateThumbprints SSLCertificate=[SSL_CERTIFICATE_THUMBPRINT] -Upgrade -InstanceCount [INSTANCE_COUNT]"
+        >
+        <inputFiles>
+          <file sourcePath="azurerunner.exe" destinationPath="azurerunner.exe" />
+          <file sourcePath="azurerunner.pdb" destinationPath="azurerunner.pdb" />
+          <file sourcePath="xblconsole.dll" destinationPath="xblconsole.dll" />
+          <file sourcePath="xblconsole.pdb" destinationPath="xblconsole.pdb" />
+          <file sourcePath="xonline.common.azure.dll" destinationPath="xonline.common.azure.dll" />
+          <file sourcePath="xonline.common.azure.pdb" destinationPath="xonline.common.azure.pdb" />
+          <file sourcePath="Microsoft.WindowsAzure.StorageClient.dll" destinationPath="Microsoft.WindowsAzure.StorageClient.dll" />
+          <file sourcePath="xlfsfd\xlfsfd.cspkg" destinationPath="xlfsfd\xlfsfd.cspkg" />
+          <file sourcePath="xlfsfd\serviceconfiguration.cscfg" destinationPath="xlfsfd\serviceconfiguration.cscfg" />
+        </inputFiles>
+      </installCommand>
+    </component>
+    
+    <component name="Admin Front Door">
+
+      <property name="STORAGE_ACCOUNT" value="[GLOBAL_STORAGE_ACCOUNT]" />
+      <property name="DIAGNOSTICS_STORAGE_ACCOUNT" value="[GLOBAL_DIAGNOSTICS_STORAGE_ACCOUNT]" />
+      <property name="SUBSCRIPTION_ID" value="[GLOBAL_SUBSCRIPTION_ID]" />
+      <property name="DEPLOYMENT_SLOT" value="[GLOBAL_DEPLOYMENT_SLOT]" />
+      <property name="DEPLOYMENT_MODE" value="[GLOBAL_DEPLOYMENT_MODE]" />
+      <property name="API_CERTIFICATE_THUMBPRINT" value="[GLOBAL_API_CERTIFICATE_THUMBPRINT]" />
+      <property name="DEFAULT_PAGE_SHOW_DETAILS" value="[GLOBAL_DEFAULT_PAGE_SHOW_DETAILS]" />
+      <property name="STORAGE_ACCOUNT_REFRESH_INTERVAL_MS" value="[GLOBAL_STORAGE_ACCOUNT_REFRESH_INTERVAL_MS]" />
+      
+      <property name="SERVICE_NAME">
+        <userInput
+          prompt="Hosted Service Name"
+          help="The name of the Azure hosted service to deploy XlfsAdminFD to."
+          required="true">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="INSTANCE_COUNT">
+        <userInput
+          prompt="Instance Count"
+          help="The Instance Count is the number of 'copies' of the service that are running simultaneously."
+          default="10">
+          <textbox/>
+        </userInput>
+      </property>
+
+      <property name="SAS_EXPIRY_MINUTES">
+        <userInput
+          prompt="SAS Expiry Minutes"
+          help="Amount of time, in minutes, that SAS URLs returned from the Client Front Door will remain valid for storage operations.  Azure enforces a 60 minute expiration, regardless of what is entered here.  It is recommended to enter a value less than that; 55 minutes is the recommended default.  Smaller values will result in more frequent SAS URL refreshes and more requests/sec to the Client Front Door."
+          default="55">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="SSL_CERTIFICATE_THUMBPRINT">
+        <userInput
+          prompt="SSL Certificate Thumbprint"
+          help="Thumbprint of the certificate in the Azure Certificate Store to use for SSL."
+          required="true">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="ENUM_RESULTS_MAXIMUM">
+        <userInput
+          prompt="Maximum Results"
+          help="The maximum number of enumeration results that the Admin Front Door will return to the caller from a single request."
+          default="1000">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="ALLOWED_IP_ADDRESSES_ENABLED">
+        <userInput
+          prompt="Allowed IP Addresses Enabled"
+          help="Check this box if the Admin Front Door should block requests originating from IP addresses that are not in the Allowed Client IP Address list."
+          default="true">
+          <checkbox checkedValue="true" uncheckedValue="false" />
+        </userInput>
+      </property>
+
+      <property name="ALLOWED_IP_ADDRESSES">
+        <userInput
+          prompt="Allowed IP Addresses"
+          help="Semi-colon separated list of IP Addresses that are allowed to access the Admin Front Door.  Requests originating from IP addresses not in this list will be rejected if Allowed IP Addresses Enabled is checked."
+          default="127.0.0.1;131.107.*.*;205.248.*.*">
+          <textbox length="2048" />
+        </userInput>
+      </property>
+
+      <property name="ALLOWED_CLIENT_CERTS_ENABLED">
+        <userInput
+          prompt="Allowed Client Certificates Enabled"
+          help="Check this box if the Admin Front Door should block requests containing client certificates that are not in the Allowed Client Certificate Thumbprint list."
+          default="true">
+          <checkbox checkedValue="true" uncheckedValue="false" />
+        </userInput>
+      </property>
+
+      <property name="ALLOWED_CLIENT_CERT_THUMBPRINTS">
+        <userInput
+          prompt="Allowed Client Certificate Thumbprints"
+          help="Semi-colon separated list of certificate thumbprints that are allowed to access the Admin Front Door.  Requests containing client certificates not in this will be rejected if Allowed Client Certificates Enabled is checked."
+          default="474F330522AB1937A99F3CE4B5AA7ADB6B5790AA=xlfsAdminGetChangedBlobs,xlfsAdminGetChangedBlobsContinue,xlfsAdminGetStorageAccount,xlfsAdminPutStorageAccount;90EA962C1A3A7AE220F8A5A4A43B72A13F024465=xlfsAdminGetChangedBlobs,xlfsAdminGetChangedBlobsContinue,xlfsAdminGetStorageAccount,xlfsAdminPutStorageAccount;ca845b46b3e662eadf694d13418e127f2234510a=xlfsAdminGetChangedBlobs,xlfsAdminGetChangedBlobsContinue,xlfsAdminGetStorageAccount,xlfsAdminPutStorageAccount">
+          <textbox length="2048" />
+        </userInput>
+      </property>
+
+      <prerequisiteChecks>
+        <commandCheck
+          name="XlfsAdminFdPrerequisites"
+          cmd="AzureRunner.exe PreRequisitesCheck -StorageAccount [STORAGE_ACCOUNT] -DiagnosticsStorageAccount [DIAGNOSTICS_STORAGE_ACCOUNT] -SubscriptionId [SUBSCRIPTION_ID] -ApiCertificateThumbprint [API_CERTIFICATE_THUMBPRINT] -ServiceName [SERVICE_NAME]"
+          help="xlfsAdminFd prerequisites failed."
+          >
+          <statusCodes>
+            <statusCode value="0" type="success" message="PreRequisiteCheck succeeded." />
+            <statusCode value="-1" type="failure" message="Invalid parameters passed to the AzureRunner PreRequisitesCheck command.  This indicates that AzureRunner and service.xml are out of sync.  Make sure that you are using a self-consistent build drop.  If you are, then escalate to the product group immediately with contents of the deployment log." />
+            <statusCode value="-2" type="failure" message="Failed to retrieve storage key for the specified storage account.  Make sure that the storage account name, subscription id and certificate are all correct, and that you have connecitivty to Azure.  Check the output of AzureRunner in the deployment log for additional details." />
+            <statusCode value="-3" type="failure" message="Failed to hosted service properties.  Make sure that the subscription id, service name and certificate are correct, and that you have connectivity to Azure.  This may indicate an invalid certificate file, or an incorrect certificate password.  Check the output of AzureRunner in the deployment log for additional details." />
+            <statusCode value="-4" type="failure" message="Certificate error.  Check the output of AzureRunner in the deployment log for additional details." />
+          </statusCodes>
+          <inputFiles>
+            <file sourcePath="azurerunner.exe" destinationPath="azurerunner.exe" />
+            <file sourcePath="azurerunner.pdb" destinationPath="azurerunner.pdb" />
+            <file sourcePath="xblconsole.dll" destinationPath="xblconsole.dll" />
+            <file sourcePath="xblconsole.pdb" destinationPath="xblconsole.pdb" />
+            <file sourcePath="xonline.common.azure.dll" destinationPath="xonline.common.azure.dll" />
+            <file sourcePath="xonline.common.azure.pdb" destinationPath="xonline.common.azure.pdb" />
+            <file sourcePath="Microsoft.WindowsAzure.StorageClient.dll" destinationPath="Microsoft.WindowsAzure.StorageClient.dll" />
+          </inputFiles>
+        </commandCheck>
+      </prerequisiteChecks>
+
+      <installCommand
+        name="XlfsAdminFdDeployment"
+        cmd="AzureRunner.exe Deploy -StorageAccount [STORAGE_ACCOUNT] -DiagnosticsStorageAccount [DIAGNOSTICS_STORAGE_ACCOUNT] -DeploymentName XlfsAdminFD -DeployMode [DEPLOYMENT_MODE] -Slot [DEPLOYMENT_SLOT] -SubscriptionId [SUBSCRIPTION_ID] -PackagePath xlfsadminfd\xlfsadminfd.cspkg -DeploymentLabel XlfsAdminFD -Configuration xlfsadminfd\serviceconfiguration.cscfg -ApiCertificateThumbprint [API_CERTIFICATE_THUMBPRINT] -ServiceName [SERVICE_NAME] -Upgrade -Settings sasExpiryMinutes=[SAS_EXPIRY_MINUTES]:enumResultsMaximum=[ENUM_RESULTS_MAXIMUM]:allowedIPAddressesEnabled=[ALLOWED_IP_ADDRESSES_ENABLED]:allowedIPAddresses=[ALLOWED_IP_ADDRESSES]:allowedClientCertEnabled=[ALLOWED_CLIENT_CERTS_ENABLED]:allowedClientCertThumbprints=[ALLOWED_CLIENT_CERT_THUMBPRINTS]:defaultPageShowDetails=[DEFAULT_PAGE_SHOW_DETAILS]:storageAccountRefreshIntervalMs=[STORAGE_ACCOUNT_REFRESH_INTERVAL_MS] -CertificateThumbprints SSLCertificate=[SSL_CERTIFICATE_THUMBPRINT] -InstanceCount [INSTANCE_COUNT]"
+        >
+        <inputFiles>
+          <file sourcePath="azurerunner.exe" destinationPath="azurerunner.exe" />
+          <file sourcePath="azurerunner.pdb" destinationPath="azurerunner.pdb" />
+          <file sourcePath="xblconsole.dll" destinationPath="xblconsole.dll" />
+          <file sourcePath="xblconsole.pdb" destinationPath="xblconsole.pdb" />
+          <file sourcePath="xonline.common.azure.dll" destinationPath="xonline.common.azure.dll" />
+          <file sourcePath="xonline.common.azure.pdb" destinationPath="xonline.common.azure.pdb" />
+          <file sourcePath="Microsoft.WindowsAzure.StorageClient.dll" destinationPath="Microsoft.WindowsAzure.StorageClient.dll" />
+          <file sourcePath="xlfsadminfd\xlfsadminfd.cspkg" destinationPath="xlfsadminfd\xlfsadminfd.cspkg" />
+          <file sourcePath="xlfsadminfd\serviceconfiguration.cscfg" destinationPath="xlfsadminfd\serviceconfiguration.cscfg" />
+        </inputFiles>
+      </installCommand>
+
+    </component>
+
+    <component name="Garbage Collection Worker">
+      
+      <property name="STORAGE_ACCOUNT" value="[GLOBAL_STORAGE_ACCOUNT]" />
+      <property name="DIAGNOSTICS_STORAGE_ACCOUNT" value="[GLOBAL_DIAGNOSTICS_STORAGE_ACCOUNT]" />
+      <property name="SUBSCRIPTION_ID" value="[GLOBAL_SUBSCRIPTION_ID]" />
+      <property name="DEPLOYMENT_SLOT" value="[GLOBAL_DEPLOYMENT_SLOT]" />
+      <property name="DEPLOYMENT_MODE" value="[GLOBAL_DEPLOYMENT_MODE]" />
+      <property name="API_CERTIFICATE_THUMBPRINT" value="[GLOBAL_API_CERTIFICATE_THUMBPRINT]" />
+
+      <property name="INSTANCE_COUNT">
+        <userInput
+          prompt="Instance Count"
+          help="The Instance Count is the number of 'copies' of the service that are running simultaneously."
+          default="10">
+          <textbox/>
+        </userInput>
+      </property>
+
+      <property name="SERVICE_NAME">
+        <userInput
+          prompt="Hosted Service Name"
+          help="The name of the Azure hosted service to deploy XlfsAdminFD to."
+          required="true">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="FILE_RETENTION_DAYS">
+        <userInput
+          prompt="File Retention Days"
+          help="The number of days that uploaded files will be retained in XLFS."
+          required="true"
+          default="90">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="GARBAGE_COLLECTION_FREQUENCY_HOURS">
+        <userInput
+          prompt="Garbage Collection Frequency Hours"
+          help="Number of hours between each garbage collection cycle."
+          required="true"
+          default="24">
+          <textbox />
+        </userInput>
+      </property>
+
+      <property name="MINIMUM_PARTITION_DATE_TIME">
+        <userInput
+          prompt="Minimum Partition DateTime"
+          help="This field specifies the farthest point in the past that the garbage collector will scan for age-outs, at day resolution.  This field must be in the form MM/DD/YYYY."
+          required="true"
+          default="1/1/2010">
+          <textbox />
+        </userInput>
+      </property>
+      
+      <prerequisiteChecks>
+        <commandCheck
+          name="XlfsGcPrerequisites"
+          cmd="AzureRunner.exe PreRequisitesCheck -StorageAccount [STORAGE_ACCOUNT] -DiagnosticsStorageAccount [DIAGNOSTICS_STORAGE_ACCOUNT] -SubscriptionId [SUBSCRIPTION_ID] -ApiCertificateThumbprint [API_CERTIFICATE_THUMBPRINT] -ServiceName [SERVICE_NAME]"
+          help="xlfsGc prerequisites failed."
+          >
+          <statusCodes>
+            <statusCode value="0" type="success" message="PreRequisiteCheck succeeded." />
+            <statusCode value="-1" type="failure" message="Invalid parameters passed to the AzureRunner PreRequisitesCheck command.  This indicates that AzureRunner and service.xml are out of sync.  Make sure that you are using a self-consistent build drop.  If you are, then escalate to the product group immediately with contents of the deployment log." />
+            <statusCode value="-2" type="failure" message="Failed to retrieve storage key for the specified storage account.  Make sure that the storage account name, subscription id and certificate are all correct, and that you have connecitivty to Azure.  Check the output of AzureRunner in the deployment log for additional details." />
+            <statusCode value="-3" type="failure" message="Failed to hosted service properties.  Make sure that the subscription id, service name and certificate are correct, and that you have connectivity to Azure.  This may indicate an invalid certificate file, or an incorrect certificate password.  Check the output of AzureRunner in the deployment log for additional details." />
+            <statusCode value="-4" type="failure" message="Certificate error.  Check the output of AzureRunner in the deployment log for additional details." />
+          </statusCodes>
+          <inputFiles>
+            <file sourcePath="azurerunner.exe" destinationPath="azurerunner.exe" />
+            <file sourcePath="azurerunner.pdb" destinationPath="azurerunner.pdb" />
+            <file sourcePath="xblconsole.dll" destinationPath="xblconsole.dll" />
+            <file sourcePath="xblconsole.pdb" destinationPath="xblconsole.pdb" />
+            <file sourcePath="xonline.common.azure.dll" destinationPath="xonline.common.azure.dll" />
+            <file sourcePath="xonline.common.azure.pdb" destinationPath="xonline.common.azure.pdb" />
+            <file sourcePath="Microsoft.WindowsAzure.StorageClient.dll" destinationPath="Microsoft.WindowsAzure.StorageClient.dll" />
+          </inputFiles>
+        </commandCheck>
+      </prerequisiteChecks>
+
+      <installCommand
+        name="XlfsGcDeployment"
+        cmd="AzureRunner.exe Deploy -StorageAccount [STORAGE_ACCOUNT] -DiagnosticsStorageAccount [DIAGNOSTICS_STORAGE_ACCOUNT] -DeploymentName XlfsGc -DeployMode [DEPLOYMENT_MODE] -Slot [DEPLOYMENT_SLOT] -SubscriptionId [SUBSCRIPTION_ID] -PackagePath xlfsgc\xlfsgc.cspkg -DeploymentLabel XlfsGC -Configuration xlfsgc\serviceconfiguration.cscfg -ApiCertificateThumbprint [API_CERTIFICATE_THUMBPRINT] -ServiceName [SERVICE_NAME] -Upgrade -Settings AgeOutGcFrequencyHours=[GARBAGE_COLLECTION_FREQUENCY_HOURS]:AgeOutGcLifetimeDays=[FILE_RETENTION_DAYS]:MinimumPartitionDateTime=&quot;[MINIMUM_PARTITION_DATE_TIME]&quot; -InstanceCount [INSTANCE_COUNT]"
+        >
+        <inputFiles>
+          <file sourcePath="azurerunner.exe" destinationPath="azurerunner.exe" />
+          <file sourcePath="azurerunner.pdb" destinationPath="azurerunner.pdb" />
+          <file sourcePath="xblconsole.dll" destinationPath="xblconsole.dll" />
+          <file sourcePath="xblconsole.pdb" destinationPath="xblconsole.pdb" />
+          <file sourcePath="xonline.common.azure.dll" destinationPath="xonline.common.azure.dll" />
+          <file sourcePath="xonline.common.azure.pdb" destinationPath="xonline.common.azure.pdb" />
+          <file sourcePath="Microsoft.WindowsAzure.StorageClient.dll" destinationPath="Microsoft.WindowsAzure.StorageClient.dll" />
+          <file sourcePath="xlfsgc\xlfsgc.cspkg" destinationPath="xlfsgc\xlfsgc.cspkg" />
+          <file sourcePath="xlfsgc\serviceconfiguration.cscfg" destinationPath="xlfsgc\serviceconfiguration.cscfg" />
+        </inputFiles>
+      </installCommand>
+
+    </component>
+    
+  </components>
+
+</service>
