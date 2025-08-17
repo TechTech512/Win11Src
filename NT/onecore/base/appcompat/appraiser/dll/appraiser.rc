@@ -1,0 +1,49 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Appraiser
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Compatibility Appraiser"
+#define VER_INTERNALNAME_STR        "Appraiser.dll"
+#define VER_ORIGINALFILENAME_STR    "Appraiser.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Wevt
+//
+
+1 WEVT_TEMPLATE DISCARDABLE "wevttmpl.bin"
+
+/////////////////////////////////////////////////////////////////
+//
+// Message Table
+//
+
+1 MESSAGETABLE DISCARDABLE "msg.bin"
+
+/////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+#define IDS_MICROSOFTCORP1 500
+#define IDS_MICROSOFTCORP2 501
+#define IDS_APPRAISERDESCR 502
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MICROSOFTCORP1                                    "Microsoft Corporation"
+	IDS_MICROSOFTCORP2                                    "Microsoft Corporation"
+	IDS_APPRAISERDESCR                                    "Collects program telemetry information if opted-in to the Microsoft Customer Experience Improvement Program."
+END
