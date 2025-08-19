@@ -1,0 +1,19 @@
+TARGETNAME=IndicatorTransaction
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+USE_STL=1
+USE_MSVCRT=1
+USE_ATL=1
+
+INCLUDES=.;$(BASE_INC_PATH);$(BASEDIR)\public\internal\minwin\priv_sdk\inc
+
+SOURCES=hashprovider.cpp \
+        indicatortelemetry.cpp \
+        indicatortransaction.cpp \
+        indicatorwriter.cpp \
+        registrychecksum.cpp \
+        registrykey.cpp
+
+UMTYPE=console
+UMENTRY=winmain
+
