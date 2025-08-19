@@ -5,6 +5,7 @@
 #include <evntprov.h>
 #include <shlwapi.h>
 #include <traceloggingprovider.h>
+#include <traceloggingcorrelationvector.hpp>
 #include <guiddef.h>
 #include <appmodel.h>
 #include <vector>
