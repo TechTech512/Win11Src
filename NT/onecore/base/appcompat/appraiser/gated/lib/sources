@@ -5,7 +5,7 @@ USE_STL=1
 USE_MSVCRT=1
 USE_ATL=1
 
-INCLUDES=.;$(BASE_INC_PATH)
+INCLUDES=.;$(BASE_INC_PATH);$(BASEDIR)\public\internal\minwin\priv_sdk\inc
 
 SOURCES=gatedscenario.cpp
 
