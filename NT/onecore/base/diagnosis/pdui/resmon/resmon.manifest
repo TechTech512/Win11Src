@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Copyright (c) Microsoft Corporation -->
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0">
+<assemblyIdentity
+	processorArchitecture="x86"
+	version="5.1.0.0"
+	name="Microsoft.Windows.Perfmon.Resmon"
+	type="win32"
+/>
+<description>Resource Monitor</description>
+<trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+	<security>
+		<requestedPrivileges>
+			<requestedExecutionLevel
+				level="asInvoker"
+				uiAccess="false"
+			/>
+		</requestedPrivileges>
+	</security>
+</trustInfo>
+</assembly>

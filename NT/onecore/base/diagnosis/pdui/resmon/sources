@@ -1,0 +1,17 @@
+TARGETNAME=resmon
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+SOURCES=resmon.cpp \
+		resmon.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib 
+

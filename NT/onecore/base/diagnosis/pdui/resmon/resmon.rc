@@ -1,0 +1,33 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Resource Monitor
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Resource Monitor"
+#define VER_INTERNALNAME_STR        "resmon.exe"
+#define VER_ORIGINALFILENAME_STR    "resmon.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Manifest
+//
+
+1 MANIFEST DISCARDABLE "resmon.manifest"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+1 ICON DISCARDABLE "resmon.ico"
