@@ -10,7 +10,7 @@
 #include <windows.h>
 #include <ntverp.h>
 
-#define VER_FILETYPE                VFT_DLL
+#define VER_FILETYPE                VFT_APP
 #define VER_FILESUBTYPE             VFT2_UNKNOWN
 #define VER_FILEDESCRIPTION_STR     "Task Manager Launcher"
 #define VER_INTERNALNAME_STR        "LaunchTM.exe"
@@ -31,3 +31,4 @@
 //
 
 1001 ICON DISCARDABLE "launchtm.ico"
+
