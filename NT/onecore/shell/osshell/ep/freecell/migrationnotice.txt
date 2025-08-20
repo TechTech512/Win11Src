@@ -1,0 +1,1 @@
+This will move to d:\nt\shell\osshell\games\freecell for DirectX FreeCell. Contact Oberon for more information.
