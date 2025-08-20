@@ -1,0 +1,20 @@
+TARGETNAME=LaunchTM
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+PRECOMPILED_INCLUDE=pch.h
+PRECOMPILED_OBJ=pch.obj
+PRECOMPILED_PCH=pch.pch
+
+SOURCES=main.cpp \
+		launchtm.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS= \
+    $(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SHELL_LIB_PATH)\shell32p.lib
+
