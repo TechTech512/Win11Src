@@ -1,0 +1,1 @@
+This will move to d:\nt\shell\osshell\games\minesweeper for DirectX Minesweeper. Contact Oberon for more information.
