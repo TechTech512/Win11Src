@@ -1,0 +1,16 @@
+DIRS=	carddll	\
+	winmine \
+        aboutwep \
+        cruel    \
+        golf     \
+        idlewild \
+        oldtp    \
+        pegged   \
+        snake    \
+        taipei   \
+        tetris   \
+        tictac   \
+        freecell
+
+
+
