@@ -1,0 +1,47 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2005 Microsoft Corporation. All rights reserved.
+//
+// Resource table for WinHlp32 stub
+//
+// WinHlp32 is no longer working after the release of Windows Vista.
+// To use Windows help features, use HTML Help.
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Winhlp32 Stub"
+#define VER_INTERNALNAME_STR        "WINHSTB"
+#define VER_ORIGINALFILENAME_STR    "WINHLP32.EXE"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	2  "The winhlp32.exe binary in the Windows directory is corrupt, please reinstall."
+	3  "Incorrect executable name, must be winhlp32.exe, located in the System directory. "
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// Manifest
+//
+
+1 MANIFEST DISCARDABLE "winhstb.manifest"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+4000 ICON DISCARDABLE "winhstb.ico"
