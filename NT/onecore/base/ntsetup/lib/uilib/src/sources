@@ -1,0 +1,23 @@
+TARGETNAME=uilib
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+USE_STL=1
+
+PRECOMPILED_INCLUDE=pch.h
+PRECOMPILED_PCH=pch.pch
+PRECOMPILED_OBJ=pch.obj
+
+INCLUDES=.;$(BASEDIR)\onecore\base\ntsetup\lib\uilib\inc;$(BASE_INC_PATH)
+
+SOURCES=utlstring.cpp \
+        adjustui.cpp \
+		debug.cpp \
+		findresource.cpp \
+		dpi.cpp \
+		uilibutil.cpp \
+		language.cpp \
+		cdlginfo.cpp
+
+UMTYPE=console
+UMENTRY=winmain
+
