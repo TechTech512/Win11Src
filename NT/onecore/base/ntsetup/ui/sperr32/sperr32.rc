@@ -1,0 +1,40 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Setup Error
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Welcome to Windows"
+#define VER_INTERNALNAME_STR        "Setup"
+#define VER_ORIGINALFILENAME_STR    "SETUP.EXE"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_SETUPICON ICON DISCARDABLE "sperr32.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WINDOWSSETUP                                "Windows Setup"
+	IDS_32BITDETECTED                               "Your Installation Media cannot be used to install Windows.\n\nYour current version of Windows is 32-Bit and does not match the architecture of the 64-Bit installation media. Please insert the 32-Bit media and restart Windows Setup."
+	IDS_CANTRUNVERSION                              "Your computer can't run this version of Windows. You need an installation disc that's compatible with your computer. For more information, check your computer's system information."
+END
