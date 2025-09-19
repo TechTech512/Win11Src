@@ -1,0 +1,26 @@
+TARGETNAME=TimeDateMUICallback
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=timedatemuicallback.def
+USE_MSVCRT=1
+
+PRECOMPILED_INCLUDE=stdafx.h
+PRECOMPILED_OBJ=stdafx.obj
+PRECOMPILED_PCH=stdafx.pch
+
+INCLUDES=.;$(BASE_INC_PATH)
+
+SOURCES=timedatemuicallback.cpp \
+		timedatemuicallback.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+LINKENTRY=DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\advapi32.lib 
+
+
