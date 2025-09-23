@@ -1,0 +1,14 @@
+TARGETNAME=setuperrors
+TARGETPATH=$(BASEDIR)\public\internal\base\lib
+TARGETTYPE=LIBRARY
+
+PRECOMPILED_INCLUDE=pch.h
+PRECOMPILED_PCH=pch.pch
+PRECOMPILED_OBJ=pch.obj
+
+SOURCES=errors.cpp
+
+
+UMTYPE=console
+UMENTRY=winmain
+
