@@ -1,0 +1,349 @@
+
+ Start  Stop   Length Name                   Class
+ 00000H 0403AH 0403BH _TEXT                  CODE 16-bit
+               at offset 00000H 00757H bytes from obj\i386\su.obj (..\i386\su.asm)
+               at offset 00760H 00CEDH bytes from obj\i386\exp.obj (..\i386\exp.asm)
+               at offset 01450H 0006AH bytes from obj\i386\eisaa.obj (..\i386\eisaa.asm)
+               at offset 014C0H 00077H bytes from obj\i386\a20.obj (..\i386\a20.asm)
+               at offset 01540H 00252H bytes from obj\i386\trap.obj (..\i386\trap.asm)
+               at offset 01792H 005ADH bytes from obj\i386\eisac.obj (..\i386\eisac.c)
+               at offset 01D40H 00B6AH bytes from obj\i386\main.obj (..\i386\main.c)
+               at offset 028AAH 0055AH bytes from obj\i386\trapdump.obj (..\i386\trapdump.c)
+               at offset 02E04H 007B5H bytes from obj\i386\display.obj (..\i386\display.c)
+               at offset 035BAH 0082AH bytes from obj\i386\mtftp.obj (..\i386\mtftp.c)
+               at offset 03DE4H 00061H bytes from ..\..\startup\long.lib (uldiv.asm)
+               at offset 03E46H 0006CH bytes from ..\..\startup\long.lib (ulrem.asm)
+               at offset 03EB2H 0009CH bytes from ..\..\startup\long.lib (ldiv.asm)
+               at offset 03F4EH 000A2H bytes from ..\..\startup\long.lib (lrem.asm)
+               at offset 03FF0H 00034H bytes from ..\..\startup\long.lib (lmul.asm)
+               at offset 04024H 0000BH bytes from ..\..\startup\long.lib (lshl.asm)
+               at offset 04030H 0000BH bytes from ..\..\startup\long.lib (ulshr.asm)
+
+ 04040H 0410AH 000CBH _TEXT32                CODE 32-bit
+               at offset 00000H 000CBH bytes from obj\i386\exp.obj (..\i386\exp.asm)
+
+ 04110H 06051H 01F42H _DATA                  DATA 16-bit
+               at offset 00000H 01658H bytes from obj\i386\sudata.obj (..\i386\sudata.asm)
+               at offset 01660H 00141H bytes from obj\i386\eisaa.obj (..\i386\eisaa.asm)
+               at offset 017B0H 00002H bytes from obj\i386\eisac.obj (..\i386\eisac.c)
+               at offset 017B2H 0037BH bytes from obj\i386\main.obj (..\i386\main.c)
+               at offset 01B2EH 00393H bytes from obj\i386\trapdump.obj (..\i386\trapdump.c)
+               at offset 01EC2H 00014H bytes from obj\i386\display.obj (..\i386\display.c)
+               at offset 01ED6H 0006BH bytes from obj\i386\mtftp.obj (..\i386\mtftp.c)
+
+ 06060H 06060H 00000H CONST                  CONST 16-bit
+ 06060H 06060H 00000H _BSS                   BSS 16-bit
+ 06060H 0654FH 004F0H c_common               BSS 16-bit
+
+ Origin   Group
+ 0411:0   DGROUP
+
+  Address         Publics by Name
+
+ 0000:4100       BiosRedirectService
+ 0411:1656       BiosRevision
+ 0000:40AC       ComPort
+ 0411:0D28       DblFaultStack
+ 0000:40A0       DetectHardware
+ 0000:1517       Empty8042
+ 0000:4070       GetCounter
+ 0000:0B52       GetCounterReal
+ 0000:4094       GetDateTime
+ 0000:4058       GetEddsSector
+ 0000:40DC       GetElToritoStatus
+ 0000:40E8       GetExtendedInt13Params
+ 0000:4064       GetKey
+ 0000:09FC       GetKeyEx
+ 0000:40D0       GetMemoryDescriptor
+ 0000:404C       GetSector
+ 0000:40B8       GetStallCount
+ 0000:4088       HardwareCursor
+ 0000:40C4       InitializeDisplayForNt
+ 0411:1654       MachineModel
+ 0411:1655       MachineSubmodel
+ 0000:40F4       NetPcRomServices
+ 0000:407C       Reboot
+ 0000:4040       RebootProcessor
+ 0411:15BC       saveDS
+ 0411:15C0       SaveSP
+ 0000:0000       Start
+ 0411:1528       SuStack
+ 0000:1540       Trap0
+ 0000:154F       Trap1
+ 0000:155E       Trap2
+ 0000:156D       Trap3
+ 0000:157C       Trap4
+ 0000:158B       Trap5
+ 0000:159A       Trap6
+ 0000:15A9       Trap7
+ 0000:15B8       Trap8
+ 0000:15C5       Trap9
+ 0000:15D4       TrapA
+ 0000:15E1       TrapB
+ 0000:15EE       TrapC
+ 0000:15FB       TrapD
+ 0000:1608       TrapE
+ 0000:1615       TrapF
+ 0411:0000       _Beginx86Relocation
+ 0000:02E2       _biosint
+ 0000:2EA2       _BlPrint
+ 0411:1644       _BootFlags
+ 0411:161C       _BootRecord
+ 0000:1482       _BtGetEisaFunctionInformation
+ 0000:1450       _BtGetEisaSlotInformation
+ 0000:1499       _BtIsEisaSystem
+ 0000:355E       _clrscrn
+ 0000:1BCC       _ConstructMemoryDescriptors
+ 0411:243E       _DebuggerPresent
+ 0000:14EB       _DisableA20
+ 0411:0C00       _DiskBaseTable
+ 0000:2700       _DisplayArgs
+ 0000:2B6E       _DisplayFlags
+ 0000:2A2A       _DumpCommonRegisters
+ 0000:29C2       _DumpProcessorContext
+ 0000:29D2       _DumpSystemRegisters
+ 0000:2C7C       _DumpTSS
+ 0411:1F50       _edata
+ 0411:0C0F       _EddsAddressPacket
+ 0000:19D6       _EisaConstructMemoryDescriptors
+ 0411:1657       _Empty_8042Failed
+ 0000:14C0       _EnableA20
+ 0000:0264       _EnableProtectPaging
+ 0411:2440       _end
+ 0411:0C00       _Endx86Relocation
+ 0411:15D0       _ExportEntryTable
+ 0411:0CBE       _FileStart
+ 0000:1792       _FindFunctionInformation
+ 0000:3744       _FindOption
+ 0000:37A8       _FindVendorOption
+ 0411:15C8       _FsContext
+ 0411:1660       _FunctionInformation
+ 0411:1EC6       _fw
+ 0411:0000       _GDT
+ 0411:15A8       _GDTregister
+ 0000:35BA       _GetPacket
+ 0000:074C       _GetTickCount
+ 0411:0400       _IDT
+ 0411:15B0       _IDTregister
+ 0411:15B6       _IDTregisterZero
+ 0411:15BE       _InDebugger
+ 0000:2E04       _InitializeVideoSubSystem
+ 0000:18C6       _InsertDescriptor
+ 0000:0569       _Int15E820
+ 0000:04AC       _IsaConstructMemoryDescriptors
+ 0411:1628       _MachineType
+ 0411:15CC       _MemoryDescriptorList
+ 0000:38FE       _memset
+ 0000:0390       _MoveMemory
+ 0411:15C2       _NetPcRomEntry
+ 0411:164C       _NtDetectEnd
+ 0411:1648       _NtDetectStart
+ 0411:163C       _OsLoaderBase
+ 0411:1630       _OsLoaderEnd
+ 0411:1640       _OsLoaderExports
+ 0411:162C       _OsLoaderStart
+ 0411:1F50       _packet
+ 0000:364E       _pFindOption
+ 0000:33F0       _putc
+ 0000:32F6       _puti
+ 0000:322C       _puts
+ 0000:338C       _putu
+ 0000:325A       _putx
+ 0000:05E0       _PxenvApiCall
+ 0000:05B4       _PxenvGetEntry
+ 0000:392C       _PxenvTftp
+ 0000:2726       _PxenvVerifyEntry
+ 0000:0422       _RealMode
+ 0000:2840       _Reboot
+ 0411:1EC2       _Redirect
+ 0000:234C       _RelocateLoaderSections
+ 0000:26AC       _Relocatex86Structures
+ 0411:1634       _ResourceDirectory
+ 0411:1638       _ResourceOffset
+ 0411:0C0B       _RomDiskBasePointer
+ 0411:1EC4       _sc
+ 0411:1ECE       _ScreenStart
+ 0000:34A0       _scroll
+ 0411:1650       _SdiAddress
+ 0000:03ED       _SetMemory
+ 0000:3852       _strcpy
+ 0000:3818       _strlen
+ 0000:389A       _strncpy
+ 0000:1D40       _SuMain
+ 0411:0D28       _SuStackBegin
+ 0000:0475       _TransferToLoader
+ 0411:243C       _TrapFrame
+ 0000:28AA       _TrapHandler
+ 0411:0C20       _TssDblFault
+ 0411:1530       _TssKernel
+ 0000:041A       _TurnMotorOff
+ 0411:1ECA       _vp
+ 0000:285C       _Wait
+ 0000:03C1       _ZeroMemory
+ 0411:17B2       __acrtused
+ 0000:3EB2       __aNldiv
+ 0000:3FF0       __aNlmul
+ 0000:3F4E       __aNlrem
+ 0000:4024       __aNlshl
+ 0000:3DE4       __aNuldiv
+ 0000:3FF0       __aNulmul
+ 0000:3E46       __aNulrem
+ 0000:4030       __aNulshr
+ 0411:1F50       __edata
+ 0411:2440       __end
+
+  Address         Publics by Value
+
+ 0000:0000       Start
+ 0000:0264       _EnableProtectPaging
+ 0000:02E2       _biosint
+ 0000:0390       _MoveMemory
+ 0000:03C1       _ZeroMemory
+ 0000:03ED       _SetMemory
+ 0000:041A       _TurnMotorOff
+ 0000:0422       _RealMode
+ 0000:0475       _TransferToLoader
+ 0000:04AC       _IsaConstructMemoryDescriptors
+ 0000:0569       _Int15E820
+ 0000:05B4       _PxenvGetEntry
+ 0000:05E0       _PxenvApiCall
+ 0000:074C       _GetTickCount
+ 0000:09FC       GetKeyEx
+ 0000:0B52       GetCounterReal
+ 0000:1450       _BtGetEisaSlotInformation
+ 0000:1482       _BtGetEisaFunctionInformation
+ 0000:1499       _BtIsEisaSystem
+ 0000:14C0       _EnableA20
+ 0000:14EB       _DisableA20
+ 0000:1517       Empty8042
+ 0000:1540       Trap0
+ 0000:154F       Trap1
+ 0000:155E       Trap2
+ 0000:156D       Trap3
+ 0000:157C       Trap4
+ 0000:158B       Trap5
+ 0000:159A       Trap6
+ 0000:15A9       Trap7
+ 0000:15B8       Trap8
+ 0000:15C5       Trap9
+ 0000:15D4       TrapA
+ 0000:15E1       TrapB
+ 0000:15EE       TrapC
+ 0000:15FB       TrapD
+ 0000:1608       TrapE
+ 0000:1615       TrapF
+ 0000:1792       _FindFunctionInformation
+ 0000:18C6       _InsertDescriptor
+ 0000:19D6       _EisaConstructMemoryDescriptors
+ 0000:1BCC       _ConstructMemoryDescriptors
+ 0000:1D40       _SuMain
+ 0000:234C       _RelocateLoaderSections
+ 0000:26AC       _Relocatex86Structures
+ 0000:2700       _DisplayArgs
+ 0000:2726       _PxenvVerifyEntry
+ 0000:2840       _Reboot
+ 0000:285C       _Wait
+ 0000:28AA       _TrapHandler
+ 0000:29C2       _DumpProcessorContext
+ 0000:29D2       _DumpSystemRegisters
+ 0000:2A2A       _DumpCommonRegisters
+ 0000:2B6E       _DisplayFlags
+ 0000:2C7C       _DumpTSS
+ 0000:2E04       _InitializeVideoSubSystem
+ 0000:2EA2       _BlPrint
+ 0000:322C       _puts
+ 0000:325A       _putx
+ 0000:32F6       _puti
+ 0000:338C       _putu
+ 0000:33F0       _putc
+ 0000:34A0       _scroll
+ 0000:355E       _clrscrn
+ 0000:35BA       _GetPacket
+ 0000:364E       _pFindOption
+ 0000:3744       _FindOption
+ 0000:37A8       _FindVendorOption
+ 0000:3818       _strlen
+ 0000:3852       _strcpy
+ 0000:389A       _strncpy
+ 0000:38FE       _memset
+ 0000:392C       _PxenvTftp
+ 0000:3DE4       __aNuldiv
+ 0000:3E46       __aNulrem
+ 0000:3EB2       __aNldiv
+ 0000:3F4E       __aNlrem
+ 0000:3FF0       __aNulmul
+ 0000:3FF0       __aNlmul
+ 0000:4024       __aNlshl
+ 0000:4030       __aNulshr
+ 0000:4040       RebootProcessor
+ 0000:404C       GetSector
+ 0000:4058       GetEddsSector
+ 0000:4064       GetKey
+ 0000:4070       GetCounter
+ 0000:407C       Reboot
+ 0000:4088       HardwareCursor
+ 0000:4094       GetDateTime
+ 0000:40A0       DetectHardware
+ 0000:40AC       ComPort
+ 0000:40B8       GetStallCount
+ 0000:40C4       InitializeDisplayForNt
+ 0000:40D0       GetMemoryDescriptor
+ 0000:40DC       GetElToritoStatus
+ 0000:40E8       GetExtendedInt13Params
+ 0000:40F4       NetPcRomServices
+ 0000:4100       BiosRedirectService
+ 0411:0000       _GDT
+ 0411:0000       _Beginx86Relocation
+ 0411:0400       _IDT
+ 0411:0C00       _DiskBaseTable
+ 0411:0C00       _Endx86Relocation
+ 0411:0C0B       _RomDiskBasePointer
+ 0411:0C0F       _EddsAddressPacket
+ 0411:0C20       _TssDblFault
+ 0411:0CBE       _FileStart
+ 0411:0D28       _SuStackBegin
+ 0411:0D28       DblFaultStack
+ 0411:1528       SuStack
+ 0411:1530       _TssKernel
+ 0411:15A8       _GDTregister
+ 0411:15B0       _IDTregister
+ 0411:15B6       _IDTregisterZero
+ 0411:15BC       saveDS
+ 0411:15BE       _InDebugger
+ 0411:15C0       SaveSP
+ 0411:15C2       _NetPcRomEntry
+ 0411:15C8       _FsContext
+ 0411:15CC       _MemoryDescriptorList
+ 0411:15D0       _ExportEntryTable
+ 0411:161C       _BootRecord
+ 0411:1628       _MachineType
+ 0411:162C       _OsLoaderStart
+ 0411:1630       _OsLoaderEnd
+ 0411:1634       _ResourceDirectory
+ 0411:1638       _ResourceOffset
+ 0411:163C       _OsLoaderBase
+ 0411:1640       _OsLoaderExports
+ 0411:1644       _BootFlags
+ 0411:1648       _NtDetectStart
+ 0411:164C       _NtDetectEnd
+ 0411:1650       _SdiAddress
+ 0411:1654       MachineModel
+ 0411:1655       MachineSubmodel
+ 0411:1656       BiosRevision
+ 0411:1657       _Empty_8042Failed
+ 0411:1660       _FunctionInformation
+ 0411:17B2       __acrtused
+ 0411:1EC2       _Redirect
+ 0411:1EC4       _sc
+ 0411:1EC6       _fw
+ 0411:1ECA       _vp
+ 0411:1ECE       _ScreenStart
+ 0411:1F50       __edata
+ 0411:1F50       _edata
+ 0411:1F50       _packet
+ 0411:243C       _TrapFrame
+ 0411:243E       _DebuggerPresent
+ 0411:2440       _end
+ 0411:2440       __end
+
+Program entry point at 0000:0000
