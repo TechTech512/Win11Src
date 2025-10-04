@@ -1,0 +1,19 @@
+TARGETNAME=HyperVComplCheck
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=hypervcomplcheck.def
+USE_MSVCRT=1
+
+SOURCES=hypervcomplcheck.cpp \
+		ver.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+LINKENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1

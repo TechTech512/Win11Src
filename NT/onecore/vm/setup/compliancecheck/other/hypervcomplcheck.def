@@ -1,0 +1,4 @@
+LIBRARY HYPERVCOMPLCHECK
+EXPORTS
+    HyperVUpgradeComplianceCheck @1
+
