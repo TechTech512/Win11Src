@@ -1,0 +1,4 @@
+LIBRARY NTFRSUPG
+EXPORTS
+    NtfrsUpgradeComplianceCheck 
+

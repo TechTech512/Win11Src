@@ -1,0 +1,24 @@
+TARGETNAME=ntfrsupg
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=ntfrsupg.def
+USE_LIBCMT=1
+
+PRECOMPILED_INCLUDE=precomp.h
+PRECOMPILED_OBJ=precomp.obj
+PRECOMPILED_PCH=precomp.pch
+
+SOURCES=ntfrsupg.cpp \
+		ver.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+LINKENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
