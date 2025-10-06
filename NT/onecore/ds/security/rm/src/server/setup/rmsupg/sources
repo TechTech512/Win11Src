@@ -1,0 +1,21 @@
+TARGETNAME=rmsupg
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=rmsupg.def
+USE_LIBCMT=1
+
+SOURCES=rmscomp.cpp \
+		ver.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\ntstc_libcmt.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\Advapi32.lib 
+	
+NT_SIGNCODE=1
