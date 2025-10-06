@@ -1,0 +1,7 @@
+LIBRARY RDSUPGCHECK
+EXPORTS
+    IDMUUpgradeComplianceCheck 
+    RDConnectionBrokerUpgradeCheck 
+    RdsUpgradeComplianceCheck 
+    TelnetServerUpgradeComplianceCheck 
+

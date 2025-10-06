@@ -1,0 +1,27 @@
+TARGETNAME=RdsUpgCheck
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=rdsupgcheck.def
+USE_LIBCMT=1
+USE_ATL=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+
+SOURCES=rdsupgcheck.cpp \
+		ver.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+LINKENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(BASE_LIB_PATH)\dismapi.lib \
+	$(SDK_LIB_PATH)\ole32.lib \
+	$(SDK_LIB_PATH)\oleaut32.lib \
+	$(SDK_LIB_PATH)\wbemuuid.lib 
+	
+NT_SIGNCODE=1
