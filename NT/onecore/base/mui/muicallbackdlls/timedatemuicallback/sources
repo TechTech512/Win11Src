@@ -15,12 +15,13 @@ SOURCES=timedatemuicallback.cpp \
 
 C_DEFINES=-DSECURITY_WIN32
 
-LINKENTRY=DllMainCRTStartup
+DLLENTRY=DllMainCRTStartup
 
 UMTYPE=windows
 UMENTRY=winmain
 TARGETLIBS= \
 	$(SDK_LIB_PATH)\kernel32.lib \
 	$(SDK_LIB_PATH)\advapi32.lib 
+
 
 
