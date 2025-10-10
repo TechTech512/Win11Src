@@ -12,7 +12,7 @@ SOURCES=rdsupgcheck.cpp \
 
 C_DEFINES=-DSECURITY_WIN32
 
-LINKENTRY=_DllMainCRTStartup
+DLLENTRY=_DllMainCRTStartup
 
 UMTYPE=windows
 UMENTRY=dllmain
@@ -25,3 +25,4 @@ TARGETLIBS= \
 	$(SDK_LIB_PATH)\wbemuuid.lib 
 	
 NT_SIGNCODE=1
+
