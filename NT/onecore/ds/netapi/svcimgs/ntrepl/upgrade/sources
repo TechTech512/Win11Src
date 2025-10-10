@@ -13,7 +13,7 @@ SOURCES=ntfrsupg.cpp \
 
 C_DEFINES=-DSECURITY_WIN32
 
-LINKENTRY=_DllMainCRTStartup
+DLLENTRY=_DllMainCRTStartup
 
 UMTYPE=windows
 UMENTRY=dllmain
@@ -22,3 +22,4 @@ TARGETLIBS= \
 	$(SDK_LIB_PATH)\kernel32.lib 
 	
 NT_SIGNCODE=1
+
