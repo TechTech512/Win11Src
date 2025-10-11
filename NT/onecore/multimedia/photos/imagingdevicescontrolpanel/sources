@@ -1,0 +1,35 @@
+TARGETNAME=ImagingDevices
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+PRECOMPILED_INCLUDE=precomp.h
+PRECOMPILED_OBJ=precomp.obj
+PRECOMPILED_PCH=precomp.pch
+
+SOURCES=imagingdevices.cpp \
+		imagingdevices.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\kernel32.lib \
+    $(SDK_LIB_PATH)\user32.lib \
+    $(SDK_LIB_PATH)\comctl32.lib \
+    $(SDK_LIB_PATH)\ole32.lib \
+    $(SDK_LIB_PATH)\oleaut32.lib \
+    $(SDK_LIB_PATH)\shlwapi.lib \
+    $(SDK_LIB_PATH)\sti.lib \
+    $(SDK_LIB_PATH)\shell32.lib \
+    $(SDK_LIB_PATH)\PhotoAcquireUID.lib \
+    $(SDK_LIB_PATH)\wiaguid.lib 
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=ImagingDevices.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.ImageDevicesControlPanel
+SXS_ASSEMBLY_VERSION=1.0
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1

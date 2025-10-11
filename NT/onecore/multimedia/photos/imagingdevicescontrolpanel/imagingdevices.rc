@@ -1,0 +1,42 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Imaging Devices Control Panel
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Imaging Devices Control Panel"
+#define VER_INTERNALNAME_STR        "ImagingDevices.cpl"
+#define VER_ORIGINALFILENAME_STR    "ImagingDevices.cpl"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN ICON DISCARDABLE "main.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPLETTITLE                       "Scanners and Cameras"
+	IDS_APPLETDESCRIPTION                 "Add, remove, and configure scanners and cameras."
+	IDS_DIALOGTITLE                       "Scanners and Cameras"
+	IDS_SCANNERS                          "Scanners"
+	IDS_SCANNERUNAVAILABLE                "The scanner isn't available. Make sure the device is turned on and is connected to your computer or the network."
+END
