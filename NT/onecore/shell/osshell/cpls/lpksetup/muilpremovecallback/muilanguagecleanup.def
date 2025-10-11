@@ -1,0 +1,8 @@
+LIBRARY MUILANGUAGECLEANUP
+EXPORTS
+    OnMachineUILanguageClear 
+    OnMachineUILanguageInit 
+    OnMachineUILanguageSwitch 
+    OnUILanguageAdd 
+    OnUILanguageRemove 
+

@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+//
+// Resource table for MUILangCleanUp
+//
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "MUI Callback for Language pack cleanup"
+#define VER_INTERNALNAME_STR        "MUILanguageCleanup"
+#define VER_ORIGINALFILENAME_STR    "MUILanguageCleanup.dll"
+
+#include "common.ver"
