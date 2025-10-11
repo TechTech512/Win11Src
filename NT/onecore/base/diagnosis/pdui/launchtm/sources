@@ -18,3 +18,9 @@ TARGETLIBS= \
     $(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
 	$(SHELL_LIB_PATH)\shell32p.lib
 
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=LaunchTM.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.LaunchTM
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
