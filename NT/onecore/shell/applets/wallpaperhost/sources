@@ -1,0 +1,28 @@
+TARGETNAME=WallpaperHost
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+INCLUDES=.;$(SHELL_INC_PATH)
+SOURCES=wallpaperhost.cpp \
+		wallpaperhost.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=WinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SDK_LIB_PATH)\shell32.lib 
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=WallpaperHost.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.Shell.WallpaperHost
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
