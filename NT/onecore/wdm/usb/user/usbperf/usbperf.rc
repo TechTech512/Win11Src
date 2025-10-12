@@ -1,0 +1,26 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+//
+// Resource table for perf dll
+//
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "USB Performance Objects DLL"
+#define VER_INTERNALNAME_STR        "USBPERF.DLL"
+#define VER_ORIGINALFILENAME_STR    "USBPERF.DLL"
+
+#include "common.ver"
+
+// Due to message compiler limitations, and to also make the message table editable,
+// it's included as an RES file. You can edit said RES file in software like Resource
+// Hacker. You can download it from http://www.angusj.com/resourcehacker.
+
+LANGUAGE 0x9,0x1
+1 11 "msg.res"
