@@ -3,7 +3,7 @@
 // Microsoft Windows
 // Copyright (c) 2018 Microsoft Corporation. All rights reserved.
 //
-// Resource table for Recovery Agent Tasks
+// Resource table
 // 
 //=================================================================
 
@@ -17,3 +17,4 @@
 #define VER_ORIGINALFILENAME_STR    "WallpaperHost.EXE"
 
 #include "common.ver"
+
