@@ -1,0 +1,6 @@
+LIBRARY USBPERF
+EXPORTS
+    CloseUsbPerformanceData 
+    CollectUsbPerformanceData 
+    OpenUsbPerformanceData 
+
