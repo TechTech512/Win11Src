@@ -18,9 +18,4 @@
 
 #include "common.ver"
 
-// Due to message compiler limitations, and to also make the message table editable,
-// it's included as an RES file. You can edit said RES file in software like Resource
-// Hacker. You can download it from http://www.angusj.com/resourcehacker.
-
-LANGUAGE 0x9,0x1
-1 11 "msg.res"
+1 11 "msg.bin"
