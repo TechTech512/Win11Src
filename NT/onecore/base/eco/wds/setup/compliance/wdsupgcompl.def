@@ -1,0 +1,4 @@
+LIBRARY WDSUPGCOMPL
+EXPORTS
+    WdsUpgradeComplianceCheck 
+

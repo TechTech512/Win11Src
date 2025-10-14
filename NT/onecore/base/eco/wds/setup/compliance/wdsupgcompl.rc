@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// compliance check rc table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Deployment Services Upgrade Compliance Check"
+#define VER_INTERNALNAME_STR        "WdsUpgCompl.dll"
+#define VER_ORIGINALFILENAME_STR    "WdsUpgCompl.dll"
+
+#include "common.ver"
