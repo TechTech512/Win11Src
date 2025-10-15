@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1"  xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0">
+<assemblyIdentity
+    type="win32"
+    name=SXS_ASSEMBLY_NAME
+    version=SXS_ASSEMBLY_VERSION
+    processorArchitecture=SXS_PROCESSOR_ARCHITECTURE/>
+
+    <description>Eject Device</description>
+
+    <!-- Identify the application security requirements. -->
+    <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+        <security>
+            <requestedPrivileges>
+                <requestedExecutionLevel level="requireAdministrator" uiAccess="false"/>
+            </requestedPrivileges>
+        </security>
+    </trustInfo>
+
+    <asmv3:application>
+       <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
+            <autoElevate>true</autoElevate>
+       </asmv3:windowsSettings>
+    </asmv3:application>
+
+</assembly>

@@ -1,0 +1,1 @@
+#define IDI_HARDWARE 1501

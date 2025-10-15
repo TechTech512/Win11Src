@@ -1,0 +1,30 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2010 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Device Ejector
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Eject Device"
+#define VER_INTERNALNAME_STR        "DeviceEject.EXE"
+#define VER_ORIGINALFILENAME_STR    "DeviceEject.EXE"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_HARDWARE ICON DISCARDABLE "deviceeject.ico"
+
+
