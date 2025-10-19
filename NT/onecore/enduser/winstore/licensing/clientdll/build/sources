@@ -1,0 +1,22 @@
+TARGETNAME=WSClient
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=wsclient.def
+USE_MSVCRT=1
+
+SOURCES=wsclient.cpp \
+		resources.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(BASEDIR)\public\internal\moderncore\priv_sdk\lib\*\api-ms-win-appmodel-unlock-l1.lib \
+	
+NT_SIGNCODE=1

@@ -1,0 +1,33 @@
+LIBRARY WSCLIENT
+EXPORTS
+    AcquireDeveloperLicense @2
+    CheckDeveloperLicense @3
+    GetApplicationURL @4
+    RefreshBannedAppsList @5
+    RemoveDeveloperLicense @6
+    WSCallServer @7
+    WSCheckForConsumable @8
+    WSEvaluatePackage @9
+    WSGetEvaluatePackageAttempted @10
+    WSLicenseCleanUpState @11
+    WSLicenseClose @12
+    WSLicenseFilterValidAppCategoryIds @13
+    WSLicenseGetAllUserTokens @14
+    WSLicenseGetAllValidAppCategoryIds @15
+    WSLicenseGetDevInstalledApps @16
+    WSLicenseGetExtendedUserInfo @17
+    WSLicenseGetFeatureLicenseResults @18
+    WSLicenseGetLicensesForProducts @19
+    WSLicenseGetOAuthServiceTicket @20
+    WSLicenseGetProductLicenseResults @21
+    WSLicenseInstallLicense @22
+    WSLicenseOpen @23
+    WSLicenseRefreshLicense @24
+    WSLicenseRetrieveMachineID @25
+    WSLicenseRevokeLicenses @26
+    WSLicenseUninstallLicense @27
+    WSNotifyOOBECompletion @28
+    WSNotifyPackageInstalled @29
+    WSTriggerOOBEFileValidation @30
+    WSpTLRW @1
+
