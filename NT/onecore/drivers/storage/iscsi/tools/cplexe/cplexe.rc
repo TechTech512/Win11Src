@@ -1,0 +1,26 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for iSCSI
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Microsoft iSCSI Initiator Configuration Tool"
+#define VER_INTERNALNAME_STR        "iscsicpl"
+#define VER_ORIGINALFILENAME_STR    "iscsicpl.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+1       ICON DISCARDABLE     "cplexe.ico"

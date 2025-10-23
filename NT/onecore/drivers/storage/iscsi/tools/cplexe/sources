@@ -1,0 +1,29 @@
+TARGETNAME=iscsicpl
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+SOURCES=cplexe.c \
+		cplexe.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\gdi32.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SDK_LIB_PATH)\shlwapi.lib 
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=CplExe.Manifest
+SXS_ASSEMBLY_NAME=Microsoft-Windows-iSCSI-Initiator-Service.iscsicplexe
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
