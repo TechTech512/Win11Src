@@ -1,0 +1,4 @@
+LIBRARY ITGTUPG
+EXPORTS
+    ItgtUpgradeComplianceCheck @1
+

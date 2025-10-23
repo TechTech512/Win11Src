@@ -1,0 +1,27 @@
+TARGETNAME=itgtupg
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=itgtupg.def
+USE_LIBCMT=1
+
+PRECOMPILED_INCLUDE=precomp.h
+PRECOMPILED_OBJ=precomp.obj
+PRECOMPILED_PCH=precomp.pch
+
+SOURCES=upgradecheck.cpp \
+		ver.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\User32.lib \
+	$(SDK_LIB_PATH)\ole32.lib \
+	$(SDK_LIB_PATH)\oleaut32.lib 
+	
+NT_SIGNCODE=1
