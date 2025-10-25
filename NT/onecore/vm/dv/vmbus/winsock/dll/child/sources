@@ -1,0 +1,21 @@
+TARGETNAME=wshhyperv
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=..\wshhyperv.def
+
+SOURCES=..\wshhyperv.c \
+		..\wshhyperv.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflow.lib \
+	$(SDK_LIB_PATH)\int64.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(BASEDIR)\public\sdk\lib\onecore\*\onecore.lib
+	
+NT_SIGNCODE=1
