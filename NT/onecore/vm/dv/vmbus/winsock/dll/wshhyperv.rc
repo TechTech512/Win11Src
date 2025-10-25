@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// Hyper-V Winsock
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Hyper-V Winsock2 Helper DLL"
+#define VER_INTERNALNAME_STR        "wshhyperv.dll"
+#define VER_ORIGINALFILENAME_STR    "wshhyperv.dll"
+
+#include "common.ver"

@@ -1,0 +1,19 @@
+LIBRARY WSHHYPERV
+EXPORTS
+    WSHAddressToString @1
+    WSHEnumProtocols @2
+    WSHGetBroadcastSockaddr @3
+    WSHGetProviderGuid @4
+    WSHGetSockaddrType @5
+    WSHGetSocketInformation @6
+    WSHGetWSAProtocolInfo @7
+    WSHGetWildcardSockaddr @8
+    WSHGetWinsockMapping @9
+    WSHIoctl @10
+    WSHJoinLeaf @11
+    WSHNotify @12
+    WSHOpenSocket @14
+    WSHOpenSocket2 @13
+    WSHSetSocketInformation @15
+    WSHStringToAddress @16
+
