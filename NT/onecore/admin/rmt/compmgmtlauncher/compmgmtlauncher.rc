@@ -1,0 +1,28 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2013 Microsoft Corporation. All rights reserved.
+//
+// Resource table for CompMgmtLauncher
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Computer Management Snapin Launcher"
+#define VER_INTERNALNAME_STR        "CompMgmtLauncher.exe"
+#define VER_ORIGINALFILENAME_STR    "CompMgmtLauncher.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN_ICON ICON DISCARDABLE "compmgmtlauncher.ico"

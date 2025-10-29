@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1"  xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0">
+    <assemblyIdentity
+        name=SXS_ASSEMBLY_NAME
+        processorArchitecture=SXS_PROCESSOR_ARCHITECTURE
+        version=SXS_ASSEMBLY_VERSION
+        />
+    <description>Snapin Launcher</description>
+    <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+        <security>
+            <requestedPrivileges>
+                <requestedExecutionLevel
+                    level="asInvoker"
+                    uiAccess="false"
+                />
+            </requestedPrivileges>
+        </security>
+    </trustInfo>
+    <asmv3:application>
+       <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
+            <autoElevate>false</autoElevate>
+       </asmv3:windowsSettings>
+    </asmv3:application>
+</assembly>
