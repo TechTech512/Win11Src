@@ -1,0 +1,32 @@
+TARGETNAME=NewDev
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_NTDLL=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+SOURCES=newdev.c \
+		newdev.rc \
+		refreshdev.cpp
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=WinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(BASE_LIB_PATH)\sputilsu.lib
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=NewDev.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.PlugAndPlay.NewDev.Exe
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1

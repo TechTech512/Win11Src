@@ -1,0 +1,46 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2003 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Device Installer
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+
+1 VERSIONINFO
+ FILEVERSION 5,2,3668,0
+ PRODUCTVERSION 5,2,3668,0
+ FILEOS 0x40004
+ FILETYPE 0x1
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "Device driver software installation\0"
+            VALUE "FileVersion", "5.2.3668.0\0"
+            VALUE "InternalName", "NewDev.EXE\0"
+            VALUE "LegalCopyright", "\xA9 Microsoft Corporation. All rights reserved.\0"
+            VALUE "OriginalFilename", "NewDev.EXE\0"
+            VALUE "ProductName", "Microsoft\xAE Windows\xAE Operating System\0"
+            VALUE "ProductVersion", "5.2.3668.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409 0x04B0
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN ICON DISCARDABLE "newdev.ico"
+
