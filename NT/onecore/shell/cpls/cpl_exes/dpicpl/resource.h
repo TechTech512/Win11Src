@@ -1,0 +1,4 @@
+#define IDS_TITLE 41
+#define IDS_DESCRIPTION 42
+#define IDS_DISABLED 43
+#define IDI_MAIN 100

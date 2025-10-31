@@ -1,0 +1,32 @@
+TARGETNAME=DpiScaling
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+SOURCES=dpicpl.cpp \
+		dpicpl.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SHELL_LIB_PATH)\shlwapip.lib \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SDK_LIB_PATH)\ole32.lib \
+	$(SDK_LIB_PATH)\comctl32.lib \
+	$(SDK_LIB_PATH)\uuid.lib
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=DpiCpl.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.DpiScaling
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
