@@ -1,0 +1,28 @@
+TARGETNAME=DeviceProperties
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+SOURCES=devprop.cpp \
+		devprop.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wmainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=DevProp.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.DeviceProperties
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1

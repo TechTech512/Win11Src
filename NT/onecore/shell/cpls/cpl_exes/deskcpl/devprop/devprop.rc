@@ -1,0 +1,39 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for DevProp
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Device Properties"
+#define VER_INTERNALNAME_STR        "DeviceProperties"
+#define VER_ORIGINALFILENAME_STR    "DeviceProperties.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN ICON DISCARDABLE "devprop.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	1 "DeviceProperties placeholder to cause a .mui file to be generated"
+END
+
