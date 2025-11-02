@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 1995 Microsoft Corporation. All rights reserved.
+//
+// Resource table for NTVDM stub
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "allows lua to launch 16-bit applications"
+#define VER_INTERNALNAME_STR        "csrstub.exe"
+#define VER_ORIGINALFILENAME_STR    "csrstub.exe"
+
+#include "common.ver"
