@@ -1,0 +1,22 @@
+TARGETNAME=OskSupport
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=osksupport.def
+USE_MSVCRT=1
+
+INCLUDES=.;$(ENDUSER_INC_PATH)
+SOURCES=dllmain.cpp \
+        osksupport.cpp \
+		osksupport.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\user32.lib
+
+

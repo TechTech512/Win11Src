@@ -1,0 +1,5 @@
+LIBRARY OSKSUPPORT
+EXPORTS
+    InitializeOSKSupport @1
+    UninitializeOSKSupport @2
+
