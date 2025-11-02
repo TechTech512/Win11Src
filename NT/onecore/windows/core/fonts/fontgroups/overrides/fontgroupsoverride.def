@@ -1,0 +1,4 @@
+LIBRARY FONTGROUPSOVERRIDE
+EXPORTS
+    GetFontOverrides 
+
