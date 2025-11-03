@@ -1,0 +1,27 @@
+TARGETNAME=TimeSyncTask
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=timesynctask.def
+USE_MSVCRT=1
+USE_STL=1
+
+INCLUDES=.;$(ADMIN_INC_PATH)
+
+SOURCES=timesynctask.cpp \
+        utility.cpp \
+		timesynctask.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SDK_LIB_PATH)\taskschd.lib \
+	$(SDK_LIB_PATH)\uuid.lib 
+
+
+

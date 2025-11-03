@@ -1,0 +1,33 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2011 Microsoft Corporation. All rights reserved.
+//
+// Resource table for W32TIMESYNC
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Time Synchronization Task"
+#define VER_INTERNALNAME_STR        "TimeSyncTask"
+#define VER_ORIGINALFILENAME_STR    "TimeSyncTask.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPPROVIDER                                 "Microsoft Corporation"
+	IDS_APPCOMPANY                                  "Microsoft Corporation"
+	IDS_APPDESCRIPTION                              "This task performs time synchronization."
+END
