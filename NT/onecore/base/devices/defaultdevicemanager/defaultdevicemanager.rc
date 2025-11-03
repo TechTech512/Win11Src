@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2010 Microsoft Corporation. All rights reserved.
+//
+// Resource table for DefaultDeviceManager
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Default Device Manager"
+#define VER_INTERNALNAME_STR        "DefaulDeviceManager"
+#define VER_ORIGINALFILENAME_STR    "DefaultDeviceManager.dll"
+
+#include "common.ver"
