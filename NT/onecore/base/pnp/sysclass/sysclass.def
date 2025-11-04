@@ -1,0 +1,3 @@
+LIBRARY SYSCLASS
+EXPORTS
+	StorageCoInstaller @1;

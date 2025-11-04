@@ -1,0 +1,85 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2020 Microsoft Corporation. All rights reserved.
+//
+// Resource table for SysClass
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "System Class Installer Library"
+#define VER_INTERNALNAME_STR        "sysclass"
+#define VER_ORIGINALFILENAME_STR    "sysclass.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_FINGERPRINT ICON DISCARDABLE "fingerprint.ico"
+IDI_CARD        ICON DISCARDABLE "card.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SECUREDIGITALSTORAGEDEVICE                           "Secure Digital storage device"
+	IDS_MMCSTORAGEDEVICE                                     "MMC storage device"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_COMPUTER                                             "Computer"
+	IDS_IDEATAATAPICONTROLLERS                               "IDE ATA/ATAPI controllers"
+	IDS_KEYBOARDS                                            "Keyboards"
+	IDS_NONPLUGANDPLAY                                       "Non-Plug and Play drivers"
+	IDS_MICEANDOTHERPOINTERS                                 "Mice and other pointing devices"
+	IDS_STORAGECONTROLLERS                                   "Storage controllers"
+	IDS_TAPEDRIVERS                                          "Tape drives"
+	IDS_STORAGEVOLUMES                                       "Storage volumes"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEMDEVICES                                        "System devices"
+	IDS_OTHERDEVICES                                         "Other devices"
+	IDS_PCMCIAADAPTERS                                       "PCMCIA adapters"
+	IDS_STORAGEVOLUMESHADOWCOPIES                            "Storage volume shadow copies"
+	IDS_SDHOSTADAPTERS                                       "SD host adapters"
+	IDS_FLOPPYDRIVECONTROLLERS                               "Floppy drive controllers"
+	IDS_MULTIFUNCTIONADAPTERS                                "Multifunction adapters"
+	IDS_FLOPPYDISKDRIVES                                     "Floppy disk drives"
+	IDS_IEEE1394HOSTCONTROLLERS                              "IEEE 1394 host controllers"
+	IDS_SBP2IEEE1394DEVICES                                  "SBP2 IEEE 1394 devices"
+	IDS_MEMORYDEVICES                                        "Memory devices"
+	IDS_61883DEVICES                                         "61883 devices"
+	IDS_SECURITYDEVICES                                      "Security devices"
+	IDS_MEMORYTECHNOLOGYDEVICES                              "Memory technology devices"
+	IDS_MULTIPOINTSERIALADAPTERS                             "Multi-port serial adapters"
+	IDS_IEEE1284POINT4DEVICES                                "IEEE 1284.4 devices"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_IEEE1284POINT4COMPATIBLEPRINTERS                     "IEEE 1284.4 compatible printers"
+	IDS_USBCONTROLLERS                                       "Universal Serial Bus controllers"
+	IDS_MOBILEDEVICES                                        "Mobile devices"
+	IDS_AUDIOVIDEOCONTROLDEVICES                             "Audio/video control devices"
+	IDS_BIOMETRICDEVICES                                     "Biometric devices"
+	IDS_USBDEVICES                                           "Universal Serial Bus devices"
+	IDS_USBFUNCTIONDEVICES                                   "Universal Serial Bus Function controllers"
+	IDS_SMARTCARDS                                           "Smart cards"
+	IDS_SMARTCARDFILTERS                                     "Smart card filters"
+END
