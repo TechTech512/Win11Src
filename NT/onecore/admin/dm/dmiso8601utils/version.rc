@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// dmiso8601utils
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "dmiso8601utils"
+#define VER_INTERNALNAME_STR        "dmiso8601utils"
+#define VER_ORIGINALFILENAME_STR    "dmiso8601utils.dll"
+
+#include "common.ver"

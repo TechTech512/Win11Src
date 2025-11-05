@@ -1,0 +1,7 @@
+LIBRARY DMISO8601UTILS
+EXPORTS
+    FileTimeToISO8601String @1
+    ISO8601StringToFileTime @2
+    ISO8601StringToSystemTime @3
+    SystemTimeToISO8601String @4
+

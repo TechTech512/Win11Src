@@ -1,0 +1,19 @@
+TARGETNAME=dmiso8601utils
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=dmiso8601utils.def
+USE_MSVCRT=1
+
+SOURCES=dmiso8601utils.cpp \
+		version.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib
+
+NT_SIGNCODE=1
