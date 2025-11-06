@@ -1,0 +1,34 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Spot Verifier
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Microsoft\\Spot Verifier"
+#define VER_INTERNALNAME_STR        "svsvc.dll"
+#define VER_ORIGINALFILENAME_STR    "svsvc.dll"
+
+#include "common.ver"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPFRIENDLYNAME           "Spot Verifier"
+	IDS_APPDESCRIPTION            "Verifies potential file system corruptions."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPPROVIDER               "Microsoft Corporation"
+	IDS_APPCOMPANY                "Microsoft Corporation"
+	IDS_SVTASKHASCOM              "svtask has a COM Task Handler"
+END

@@ -1,0 +1,5 @@
+LIBRARY SVSVC
+EXPORTS
+    ServiceCtrlHandler @1
+    ServiceMain @2
+
