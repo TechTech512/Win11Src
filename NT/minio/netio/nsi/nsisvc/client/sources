@@ -1,0 +1,24 @@
+TARGETNAME=winnsi
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=winnsi.def
+USE_MSVCRT=1
+
+SOURCES=init.c \
+		midluser.c \
+		nsiclient.c \
+		winnsi.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\rpcrt4.lib \
+	$(MINWIN_PRIV_SDK_LIB_PATH)\nsi.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(COM_LIB_PATH)\uuidcom.lib
+	
+NT_SIGNCODE=1

@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for NSI
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Network Store Information RPC interface"
+#define VER_INTERNALNAME_STR        "winnsi.dll"
+#define VER_ORIGINALFILENAME_STR    "winnsi.dll"
+
+#include "common.ver"
