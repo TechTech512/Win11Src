@@ -1,0 +1,27 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Printer installer stub
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Printer driver software installation"
+#define VER_INTERNALNAME_STR        "ntprint"
+#define VER_ORIGINALFILENAME_STR    "ntprint.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+8001 ICON DISCARDABLE "ntprintexe.ico"
+
