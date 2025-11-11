@@ -1,0 +1,22 @@
+TARGETNAME=ktmw32
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=ktmw32.def
+
+SOURCES=ktmw32.c \
+		msg.mc \
+		ktmw32.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\int64.lib
+	
+NT_SIGNCODE=1

@@ -1,0 +1,40 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for KTMW32
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows KTM Win32 Client DLL"
+#define VER_INTERNALNAME_STR        "ktmw32"
+#define VER_ORIGINALFILENAME_STR    "ktmw32"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Precompiled message table
+//
+
+1 11 DISCARDABLE "msg.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// MUI
+//
+
+1 MUI DISCARDABLE "mui.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WEVT_TEMPLATE
+//
+
+1 WEVT_TEMPLATE DISCARDABLE "wevttmpl.bin"
