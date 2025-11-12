@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2000 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Performance Logs Server
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Performance Logs and Alerts DCOM Server"
+#define VER_INTERNALNAME_STR        "plasrv.exe"
+#define VER_ORIGINALFILENAME_STR    "plasrv.exe"
+
+#include "common.ver"
