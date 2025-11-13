@@ -1,0 +1,5 @@
+LIBRARY TPMCOMPC
+EXPORTS
+    CHOOSER2_PickTargetComputer 
+    DllMain 
+

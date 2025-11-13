@@ -1,0 +1,69 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for TPM MMC dialogs
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Computer Chooser Dialog"
+#define VER_INTERNALNAME_STR        "tpmcompc.dll"
+#define VER_ORIGINALFILENAME_STR    "tpmcompc.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SELECTCOMPUTER DIALOGEX 0, 0, 331, 124
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Computer"
+FONT 8, "MS Shell Dlg"
+BEGIN
+   CONTROL "Select the computer you want this snap-in to manage.", IDL_COMPSELECTHEADER, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 6, 317, 8 
+   CONTROL "This snap-in will always manage:", -1, BUTTON, BS_GROUPBOX | WS_CHILD | WS_VISIBLE, 7, 20, 317, 76 
+   CONTROL "&Local computer:  (the computer this console is running on)", IDC_CURRENTPC, BUTTON, BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 16, 34, 297, 10 
+   CONTROL "&Another computer:", IDC_ANOTHERPC, BUTTON, BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE, 16, 51, 83, 10 
+   CONTROL "", IDC_PCNAMETEXTBOX, EDIT, ES_LEFT | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 102, 50, 154, 13 
+   CONTROL "B&rowse...", IDC_BROWSECOMPUTERS, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 262, 49, 53, 14 
+   CONTROL "OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 222, 104, 50, 14 
+   CONTROL "Cancel", IDCANCEL, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 274, 104, 50, 14 
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPFRIENDLYNAME       "TPM Management"
+	IDS_APPFRIENDLYDESC       "The Trusted Platform Module (TPM) Management snap-in allows you to configure and manage the TPM security hardware."
+	IDS_APPMANUFACTURER       "Microsoft Corporation"
+	IDS_APPVERSION            "1.0"
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TPMBIG BITMAP DISCARDABLE "tpmbig.bmp"
+IDB_TPMSML BITMAP DISCARDABLE "tpmsml.bmp"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_TPMMAIN ICON DISCARDABLE "chooser2.ico"
