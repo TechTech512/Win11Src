@@ -1,0 +1,1109 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2000 Microsoft Corporation. All rights reserved.
+//
+// Resource table for FSM
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Microsoft\xAE File Server Resource Manager Common Library"
+#define VER_INTERNALNAME_STR        "srm.lib"
+#define VER_ORIGINALFILENAME_STR    "srm.lib"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Typelib
+//
+
+1 TYPELIB DISCARDABLE "typelib1.bin"
+2 TYPELIB DISCARDABLE "typelib2.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+101 BITMAP DISCARDABLE "fsrmsml.bmp"
+102 BITMAP DISCARDABLE "fsrmbig.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+100 ICON DISCARDABLE "srm.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1, 	"Template"
+  2, 	"Command Action"
+  3, 	"Email Action"
+  4, 	"Eventlog Action"
+  5, 	"Report Action"
+  10, 	"Eventlog Type"
+  11, 	"Eventlog Message"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  20, 	"Mail To"
+  21, 	"Mail From"
+  22, 	"Mail Reply To"
+  23, 	"Mail Cc"
+  24, 	"Mail Bcc"
+  25, 	"Mail Subject"
+  26, 	"Message Text"
+  30, 	"Executable Path"
+  31, 	"Account"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  32, 	"Sid"
+  33, 	"Working Directory"
+  34, 	"Monitor Command"
+  35, 	"Kill Timeout"
+  36, 	"Log Result"
+  37, 	"Arguments"
+  40, 	"Mail To"
+  42, 	"Report Type"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  50, 	"Action Type"
+  51, 	"Action Name"
+  52, 	"Run Limit Interval"
+  53, 	"Last Run Time"
+  60, 	"[Invalid User, SID=%s]"
+  61, 	"[all users]"
+  62, 	"Process ID (%d)"
+  63, 	"System Process"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  64, 	"Unknown error"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  100, 	"FSRM"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  501, 	"[Quota Path]"
+  502, 	"[Quota Remote Paths]"
+  503, 	"[Quota System Path]"
+  504, 	"[Quota Limit]"
+  505, 	"[Quota Limit KB]"
+  506, 	"[Quota Limit MB]"
+  507, 	"[Quota Threshold]"
+  508, 	"[Quota Used]"
+  509, 	"[Quota Used KB]"
+  510, 	"[Quota Used MB]"
+  511, 	"[Quota Used Percent]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  512, 	"[Quota Peak]"
+  513, 	"[Quota Peak KB]"
+  514, 	"[Quota Peak MB]"
+  515, 	"[Quota Peak Percent]"
+  516, 	"[Quota Peak Time]"
+  517, 	"[Quota Free]"
+  518, 	"[Quota Free KB]"
+  519, 	"[Quota Free MB]"
+  520, 	"[Quota Free Percent]"
+  521, 	"[Source File Path]"
+  522, 	"[Source File Owner]"
+  523, 	"[Source File Owner Email]"
+  524, 	"[Source Process Id]"
+  525, 	"[Source Process Image]"
+  526, 	"[Source Io Owner]"
+  527, 	"[Source Io Owner Email]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  528, 	"[Server]"
+  529, 	"[Server Domain]"
+  530, 	"[Admin Email]"
+  531, 	"[Source File Remote Paths]"
+  532, 	"[Quota Limit GB]"
+  533, 	"[Quota Limit TB]"
+  534, 	"[Quota Used GB]"
+  535, 	"[Quota Used TB]"
+  536, 	"[Quota Peak GB]"
+  537, 	"[Quota Peak TB]"
+  538, 	"[Quota Free GB]"
+  539, 	"[Quota Free TB]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  580, 	"[Quota High Water Mark]"
+  581, 	"[Quota High Water Mark KB]"
+  582, 	"[Quota High Water Mark MB]"
+  583, 	"[Quota High Water Mark Percent]"
+  584, 	"[Quota High Water Time]"
+  590, 	"[Quota Owner]"
+  591, 	"[Quota Owner Email]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  601, 	"Directory path of the quota"
+  602, 	"Remote paths of the quota"
+  603, 	"Canonical path of the quota"
+  604, 	"Quota limit in bytes"
+  605, 	"Quota limit in Kbytes"
+  606, 	"Quota limit in Mbytes"
+  607, 	"Quota threshold (percent)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  608, 	"Used quota in bytes"
+  609, 	"Used quota in Kbytes"
+  610, 	"Used quota in Mbytes"
+  611, 	"Quota used percent"
+  612, 	"Peak used quota in bytes"
+  613, 	"Peak used quota in Kbytes"
+  614, 	"Peak used quota in Mbytes"
+  615, 	"Peak used quota percent"
+  616, 	"The time of the highest used quota"
+  617, 	"Free quota in bytes"
+  618, 	"Free quota in Kbytes"
+  619, 	"Free quota in Mbytes"
+  620, 	"Free quota percent"
+  621, 	"Quota event source file"
+  622, 	"Quota event source file owner"
+  623, 	"Quota event source file owner email"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  624, 	"Quota event source process id"
+  625, 	"Quota event source process image name"
+  626, 	"Quota event source i/o owner"
+  627, 	"Quota event source i/o owner email"
+  628, 	"NETBIOS name of the server"
+  629, 	"Server domain name"
+  630, 	"Administrator email recipient list"
+  631, 	"Remote paths for the quota event source file"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  640, 	"Quota owner account name"
+  641, 	"Quota owner email address"
+  642, 	"Quota limit in Gbytes"
+  643, 	"Quota limit in Tbytes"
+  644, 	"Used quota in Gbytes"
+  645, 	"Used quota in Tbytes"
+  646, 	"Peak used quota in Gbytes"
+  647, 	"Peak used quota in Tbytes"
+  648, 	"Free quota in Gbytes"
+  649, 	"Free quota in Tbytes"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  701, 	"[File Screen Path]"
+  702, 	"[File Screen Remote Paths]"
+  703, 	"[File Screen System Path]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  704, 	"[Violated File Group]"
+  705, 	"[Source File Path]"
+  706, 	"[Source File Owner]"
+  707, 	"[Source File Owner Email]"
+  708, 	"[Source Process Id]"
+  709, 	"[Source Process Image]"
+  710, 	"[Source Io Owner]"
+  711, 	"[Source Io Owner Email]"
+  712, 	"[Server]"
+  713, 	"[Server Domain]"
+  714, 	"[Admin Email]"
+  715, 	"[Source File Remote Paths]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  801, 	"Directory path of the file screen"
+  802, 	"Remote paths of the file screen"
+  803, 	"Volume GUID path of the file screen"
+  804, 	"File screen event source file group"
+  805, 	"File screen event source file"
+  806, 	"File screen event source file owner"
+  807, 	"File screen event source file owner email"
+  808, 	"File screen event source process id"
+  809, 	"File screen event source process image name"
+  810, 	"File screen event source i/o owner"
+  811, 	"File screen event source i/o owner email"
+  812, 	"NETBIOS name of the server"
+  813, 	"Server domain name"
+  814, 	"Administrator email recipient list"
+  815, 	"Remote paths for the file screen event source file"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1002, 	"Operation:"
+  1003, 	"Context:"
+  1004, 	"Error-specific details:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1008, 	"Error"
+  1010, 	"Action type"
+  1011, 	"Event Log Action"
+  1012, 	"Email Action"
+  1013, 	"Command Action"
+  1014, 	"Report Action"
+  1015, 	"Action name"
+  1016, 	"SMTP server"
+  1020, 	"Executable path"
+  1021, 	"Account"
+  1022, 	"Working directory"
+  1023, 	"Monitor command"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1024, 	"Kill timeout"
+  1025, 	"Log result"
+  1026, 	"Arguments"
+  1027, 	"Validation of executable path <%s> failed"
+  1028, 	"Validation of executable arguments <%s> failed"
+  1029, 	"Validation of working directory <%s> for executable <%s> failed"
+  1030, 	"Eventlog type"
+  1031, 	"Informational"
+  1032, 	"Warning"
+  1033, 	"Error"
+  1034, 	"Eventlog text"
+  1035, 	"Expanded text is longer than the maximum allowed of %d characters"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1040, 	"Mail-to address"
+  1041, 	"Mail-from address"
+  1042, 	"Mail-reply-to address"
+  1043, 	"Mail-CC address"
+  1044, 	"Mail-BCC address"
+  1045, 	"Mail subject"
+  1046, 	"Mail message text"
+  1047, 	"Expanded address is longer than the maximum allowed of %d characters"
+  1050, 	"Mail-to address"
+  1051, 	"Report type"
+  1052, 	"Large files report"
+  1053, 	"Files by type report"
+  1054, 	"Least-recently accessed report"
+  1055, 	"Most-recently accessed report"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1056, 	"Quota usage report"
+  1057, 	"Files by owner report"
+  1058, 	"Export report"
+  1059, 	"Files not backed-up report"
+  1060, 	"Duplicate files report"
+  1061, 	"Best practices report"
+  1062, 	"File screening audit report"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1220, 	"The %1 '%%s' was initiated in response to quota %2 threshold exceeded notification on '%3'."
+  1221, 	"The %1 '%%s' was initiated in response to quota %2 threshold exceeded notification on '%3' for user %4."
+  1222, 	"The %1 '%%s' was initiated in response to quota limit exceeded notification on directory '%3'."
+  1223, 	"The %1 '%%s' was initiated in response to quota limit exceeded notification on directory '%3' for user %4."
+  1224, 	"Generated in response to a quota %2 threshold exceeded notification on '%3'."
+  1225, 	"Generated in response to a quota %2 threshold exceeded notification on '%3' for user %4."
+  1226, 	"Generated in response to a quota limit exceeded notification on '%3'."
+  1227, 	"Generated in response to a quota limit exceeded notification on '%3' for user %4."
+  1228, 	"Report action for quota on %ws for threshold %d"
+  1230, 	"Quota type"
+  1231, 	"Quota path"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1232, 	"File ID"
+  1233, 	"User SID"
+  1234, 	"User name"
+  1235, 	"Reference time"
+  1236, 	"Threshold percent"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1300, 	"File group ID"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1320, 	"The %1 '%%s' was initiated in response to file screen notification on '%2'."
+  1321, 	"Generated in response to a file screen notification on '%2'."
+  1322, 	"File screen path"
+  1323, 	"File screen file ID"
+  1324, 	"Report action for file screen on %ws"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1500, 	"WMI class"
+  1501, 	"Volume name"
+  1502, 	"Shadow copy volume"
+  1503, 	"Configuration file"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1504, 	"Import-export file"
+  1505, 	"The domain controller is unavailable"
+  1506, 	"File screen audit log"
+  1507, 	"Server"
+  1508, 	"Domain"
+  1509, 	"FileName"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1550, 	"Is enabled"
+  1551, 	"Module name"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1552, 	"Module type"
+  1553, 	"Module CLSID"
+  1554, 	"Module account type"
+  1555, 	"Company"
+  1556, 	"Module version"
+  1557, 	"Module hosting phase"
+  1558, 	"Scan phase"
+  1559, 	"Rule name"
+  1560, 	"Process PID"
+  1561, 	"Hosting user account"
+  1562, 	"MIID"
+  1563, 	"Failed method call"
+  1564, 	"Possible Values"
+  1565, 	"Name"
+  1566, 	"Type"
+  1567, 	"Properties set"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1570, 	"Supported extensions"
+  1571, 	"Execution option"
+  1572, 	"Property value"
+  1573, 	"Property affected"
+  1574, 	"Namespace roots"
+  1575, 	"The following property definition was created:"
+  1576, 	"The following property definition was modified:"
+  1577, 	"The following property definition was deleted:"
+  1578, 	"The following classification rule was created:"
+  1579, 	"The following classification rule was modified:"
+  1580, 	"The following classification rule was deleted:"
+  1581, 	"The following custom classifier was registered:"
+  1582, 	"The following custom classifier was unregistered:"
+  1583, 	"The following storage provider was registered:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1584, 	"The following storage provider was unregistered:"
+  1585, 	"Parameters"
+  1586, 	" (Deleted)"
+  1587, 	" (Deprecated)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1600, 	"Processing File Server Resource Manager event"
+  1601, 	"Quota limit reached."
+  1602, 	"Quota threshold reached."
+  1603, 	"Configuring auto apply quota on a new folder."
+  1604, 	"Quota folder deleted. Purging quota configuration."
+  1605, 	"Quota volume online."
+  1610, 	"Creating quota on folder '%s'."
+  1611, 	"Creating auto apply quota on folder '%s'."
+  1612, 	"Getting quota object on folder '%s'."
+  1613, 	"Getting auto apply quota object on folder '%s'."
+  1614, 	"Getting restrictive quota object on folder '%s'."
+  1615, 	"Enumerating quotas on path '%s'."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1616, 	"Enumerating quotas on the system."
+  1617, 	"Enumerating effective quotas on folder '%s'."
+  1618, 	"Enumerating quotas on tag '%s'."
+  1619, 	"Enumerating auto apply quotas on path '%s'."
+  1620, 	"Performing quota scan on path '%s'."
+  1621, 	"Committing quota on folder '%s'."
+  1622, 	"Committing auto apply quota on folder '%s'."
+  1623, 	"Creating a collection of quotas."
+  1624, 	"Modifying a collection of quotas."
+  1625, 	"Deleting a collection of quotas."
+  1626, 	"Regenerating missing quota configuration records."
+  1627, 	"Checking whether folder '%s' is subject to quota."
+  1630, 	"Creating quota template."
+  1631, 	"Getting quota template object '%s'."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1632, 	"Importing quota templates from file, '%s'."
+  1633, 	"Enumerating quota templates."
+  1634, 	"Exporting quota templates to file, '%s'."
+  1635, 	"Upgrading quotas."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1650, 	"Running email action."
+  1651, 	"Running command line action."
+  1652, 	"Running report action."
+  1653, 	"Running event log action."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1700, 	"Handling a file screen audit event."
+  1701, 	"File screen folder deleted. Purging file screen configuration."
+  1702, 	"Sending file screen configuration to the driver."
+  1703, 	"Committing file screen on folder '%s'."
+  1704, 	"Committing file group '%s'."
+  1705, 	"Trimming deleted file groups from the driver"
+  1710, 	"Creating file screen on folder '%s'."
+  1711, 	"Getting file screen on folder '%s'."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1712, 	"Enumerating file screens on path '%s'."
+  1713, 	"Enumerating file screens on the system."
+  1720, 	"Getting file group with ID {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}."
+  1721, 	"Creating file group."
+  1722, 	"Getting file group '%s'."
+  1723, 	"Enumerating file groups."
+  1724, 	"Importing file groups from file, '%s'."
+  1725, 	"Exporting file groups to file, '%s'."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1730, 	"Creating file screen template."
+  1731, 	"Getting file screen template '%s'."
+  1732, 	"Enumerating file screen templates."
+  1733, 	"Importing file screen templates from file, '%s'."
+  1734, 	"Exporting file screen templates to file, '%s'."
+  1740, 	"Creating file screen exception on folder '%s'."
+  1741, 	"Getting file screen exception on folder '%s'."
+  1742, 	"Enumerating file screen exceptions on path '%s'."
+  1743, 	"Enumerating file screen exceptions on the system."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1744, 	"Upgrading file screens."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1800, 	"Creating shadow copy set."
+  1801, 	"Scanning volume %s for storage report data."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1850, 	"Starting File Server Resource Manager Service."
+  1851, 	"Stopping File Server Resource Manager Service."
+  1852, 	"Checking the File Server Resource Manager global configuration store."
+  1853, 	"Installing the default file groups on the system."
+  1854, 	"Installing the default file screening templates on the system."
+  1855, 	"Installing the default quota templates on the system."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1856, 	"Installing the default storage modules on the system."
+  1857, 	"Installing the default classifier modules on the system."
+  1858, 	"Installing the default property definitions on the system."
+  1870, 	"Upgrading FSRM global configuration."
+  1871, 	"Upgrading FSRM volume configuration."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1900, 	"Initializing connection to file system filter '%s'."
+  1901, 	"Handling events from file system filter '%s'."
+  1902, 	"Mapping local path '%s' to network share paths."
+  1903, 	"Sending a WMI event."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1904, 	"Writing a file screen audit log record."
+  1905, 	"Flushing the file screen audit log file."
+  1906, 	"Sending backup components list to VSS system."
+  1907, 	"Preparing for backup."
+  1908, 	"Performing pre-restore operations."
+  1909, 	"Performing post-restore operations."
+  1910, 	"Initializing local to network share path mapping."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1950, 	"Initializing Pipeline Module"
+  1951, 	"IFsrmPipelineModuleImplementation::OnLoad"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  2000, 	"TRUE"
+  2001, 	"FALSE"
+  2002, 	"<Unknown enum value %ld - configuration error?>"
+  2003, 	"<Unknown>"
+  2004, 	", "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  3001, 	"File Server Resource Manager"
+  3002, 	"Manages directory quotas and file screens."
+  3003, 	"Scheduled Storage Tasks"
+  3004, 	"Manages configuration, scheduling, and generation of storage reports."
+  3005, 	"File Server Resource Manager Extension"
+  3006, 	"Scheduled Storage Tasks Extension"
+  3007, 	"Microsoft Corporation"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  3008, 	"10.0"
+  3009, 	"Manages directory quotas, file screens, and storage reports for Windows file servers."
+  3020, 	"File Server Resource Manager"
+  3021, 	"Implements the File Server Resource Manager protocol for management of storage resources. It controls the management of quotas, file screens, storage reports, file management tasks, and file classification. The File Server Resource Manager service provides access to these capabilities through scriptable COM providers. When the File Server Resource Manager service is not running, quotas, file screens, storage reports, file management tasks and classification will not be active or enforced."
+  3022, 	"File Server Storage Reports Manager"
+  3023, 	"The File Server Storage Reports Manager service implements the runtime functionality to run file server storage reports, file management tasks, and file classification. The service is started whenever one of these tasks is scheduled to start, and is shut down after the report or task is complete."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  3900, 	"2 GB Limit"
+  3901, 	"5 GB Limit"
+  3902, 	"10 GB Limit"
+  3903, 	"Monitor 3 TB Volume Usage"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  3904, 	"Monitor 5 TB Volume Usage"
+  3905, 	"Monitor 10 TB Volume Usage"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4001, 	"100 MB Limit"
+  4002, 	"200 MB Limit Reports to User"
+  4003, 	"Monitor 200 GB Volume Usage"
+  4004, 	"Monitor 500 MB Share"
+  4005, 	"200 MB Limit with 50 MB Extension"
+  4006, 	"250 MB Extended Limit"
+  4011, 	"Block Audio and Video Files"
+  4012, 	"Block Executable Files"
+  4013, 	"Block Image Files"
+  4014, 	"Block E-mail Files"
+  4015, 	"Monitor Executable and System Files"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4021, 	"Audio and Video Files"
+  4022, 	"Image Files"
+  4023, 	"Office Files"
+  4024, 	"E-mail Files"
+  4025, 	"Executable Files"
+  4026, 	"System Files"
+  4027, 	"Compressed Files"
+  4028, 	"Web Page Files"
+  4029, 	"Text Files"
+  4030, 	"Backup Files"
+  4031, 	"Temporary Files"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4051, 	"User [Source Io Owner] has exceed the [Quota Threshold]% quota threshold for quota on [Quota Path] on server [Server]. The quota limit is [Quota Limit MB] MB and the current usage is [Quota Used MB] MB ([Quota Used Percent]% of limit)."
+  4052, 	"User [Source Io Owner] has reached the quota limit for quota on [Quota Path] on server [Server]. The quota limit is [Quota Limit MB] MB and the current usage is [Quota Used MB] MB ([Quota Used Percent]% of limit)."
+  4053, 	"The [Quota Threshold]% quota threshold for quota on [Quota Path] on server [Server] has been exceeded. The quota limit is [Quota Limit MB] MB and the current usage is [Quota Used MB] MB ([Quota Used Percent]% of limit)."
+  4054, 	"The quota limit for quota on [Quota Path] on server [Server] has been exceeded. The quota limit is [Quota Limit MB] MB and the current usage is [Quota Used MB] MB ([Quota Used Percent]% of limit)."
+  4055, 	"[Quota Threshold]% quota threshold exceeded"
+  4056, 	"Quota limit exceeded"
+  4057, 	"Quota limit reached and extended"
+  4058, 	"User [Source Io Owner] has reached the quota limit for quota on [Quota Path] on server [Server]. The quota limit is [Quota Limit MB] MB and the current usage is [Quota Used MB] MB ([Quota Used Percent]% of limit). An automatic one-time extension has been granted, and the quota limit has been increased to 250 MB."
+  4059, 	"The system detected that user [Source Io Owner] attempted to save [Source File Path] on [File Screen Path] on server [Server]. This file matches the [Violated File Group] file group which is not permitted on the system."
+  4060, 	"Unauthorized file matching [Violated File Group] file group detected"
+  4061, 	"The system detected that user [Source Io Owner] saved [Source File Path] on [File Screen Path] on server [Server]. This file matches the [Violated File Group] file group. These files can be harmful as they may contain malicious code or viruses."
+  4062, 	"File matching [Violated File Group] file group detected"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4070, 	"Microsoft Corporation"
+  4071, 	"1.0.0.0"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4080, 	"Office 2007 In-File Storage Module"
+  4081, 	"System Cache Storage Module"
+  4082, 	"Folder Classifier"
+  4083, 	"Office 97 - 2003 In-File Storage Module"
+  4084, 	"Content Classifier"
+  4085, 	"Secure Storage Module"
+  4086, 	"Windows PowerShell Classifier"
+  4090, 	"Storage module for Office 2007 files."
+  4091, 	"Stores properties in Alternate Data Streams as a cache and storage mechanism for files that do not support other types of storage"
+  4092, 	"Classifies all files in folders included in the scope of this rule."
+  4093, 	"Storage module for Office 97 - 2003 files."
+  4094, 	"Searches for strings and regular expression patterns in files."
+  4095, 	"Stores secure properties within the security descriptor for all file types."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4096, 	"Classifies files using Windows PowerShell scripts."
+  4100, 	"Folder Owner Email"
+  4101, 	"The Folder Owner Email property specifies the email addresses that should be contacted when users request assistance after being denied access to the folder. We recommend that you use a distribution list instead of listing specific email addresses."
+  4102, 	"Folder Usage"
+  4103, 	"The Folder Usage property specifies the purpose of the folder and the kind of files stored in it."
+  4104, 	"User Files"
+  4105, 	"This folder contains files that belong to a single user."
+  4106, 	"Group Files"
+  4107, 	"This folder contains files that are shared between users."
+  4108, 	"Application Files"
+  4109, 	"This folder contains files used by applications such as Hyper-V."
+  4110, 	"Backup and Archival Files"
+  4111, 	"This folder contains files that have been backed up or archived."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4112, 	"Access-Denied Assistance Message"
+  4113, 	"The Access-Denied Assistance Message property specifies what users see when denied access to the folder. Users denied access to folders that do not have this property assigned instead see the access-denied assistance message specified in File Server Resource Manager."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4201, 	"Searches for strings and regular expression patterns in files. The classification rule assigns the property only if all expressions that you specify are found. Strings are not case sensitive unless you choose the StringCaseSensitive or RegularExpression types.\n\nImportant: Complex regular expressions can reduce classification speed and consume large amounts of memory. See MSDN for more information about regular expressions."
+  4202, 	"The Windows PowerShell classifier requires that the Windows PowerShell execution policy allow the script to run."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4300, 	"Unknown"
+  4301, 	"Ordered List"
+  4302, 	"Multi Choice List"
+  4303, 	"Single Choice List"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4304, 	"String"
+  4305, 	"Multi String"
+  4306, 	"Integer"
+  4307, 	"Boolean"
+  4308, 	"Date"
+  4309, 	"File"
+  4310, 	"Folder"
+  4311, 	"created"
+  4312, 	"modified"
+  4313, 	"deleted"
+  4314, 	"Global"
+  4315, 	"Deprecated"
+  4316, 	"Secure"
+  4317, 	"<Value is provided by classification method>"
+  4318, 	"Unknown"
+  4319, 	"Keep exisitng value"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4320, 	"Aggregate existing value with new value"
+  4321, 	"Overwrite existing value with new value"
+  4322, 	"All properties"
+  4323, 	"All files"
+  4324, 	"Allow email requests"
+  4325, 	"Show device troubleshooting"
+  4326, 	"Put data owner on TO line"
+  4327, 	"Put administrator on TO line"
+  4328, 	"Include device claims"
+  4329, 	"Include user information"
+  4330, 	"Generate an event log when sending mail"
+  4331, 	"Access assistance requested from User: %s\\%s to Path: %s"
+  4332, 	"Help user find a file or folder. User: %s\\%s Path: %s"
+  4333, 	"Unknown"
+  4334, 	"Not provided"
+  4335, 	"None"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4336, 	"Access Denied - ERROR_ACCESS_DENIED 0x5"
+  4337, 	"File Not Found - ERROR_FILE_NOT_FOUND 0x2"
+  4338, 	"This can occur if you don't have permission to access the file or folder, or if your computer doesn't meet security policy requirements.\n\nMessage from the administrator of the file server:\n- Ask your manager if you're in the right security groups\n- For troubleshooting information, go to <a href=""http://support.microsoft.com"">Microsoft Support</a>\n\nIf you need more help, click Request assistance."
+  4339, 	"For general support, contact: [Provide email address]\n\nFor share permissions support, contact: [Provide email address]"
+  4340, 	"File/Folder Permissions"
+  4341, 	"Share"
+  4342, 	"Central Policy"
+  4343, 	"Unable to determine"
+  4344, 	"<font color=""#C74824"">Blocked</font>"
+  4345, 	"<font color=""#008800"">Allowed</font>"
+  4346, 	" (Local)"
+  4347, 	"(cleared)"
+  4348, 	"(unknown)"
+  4349, 	"<tr><td colspan=""2"">No available attributes.</td></tr>"
+  4350, 	"<tr><td colspan=""2"">Attributes display is not enabled.</td></tr>"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4400, 	"The path '%s' does not exist. This path will be ignored for now. The directory was probably deleted and will not be included in reporting or classification. Please reconfigure reporting or classification settings appropriately."
+  4401, 	"Invalid namespace root specified for reporting or classification: the path '%s' is not a valid directory (for example - it might be a file). Please reconfigure reporting or classification settings appropriately."
+  4402, 	"File Server Resource Manager was unable to access the following directory: '%s'. You must give Local System access to this directory to do further operations on it."
+  4403, 	"The volume mounted at '%s' ('%s') for namespace root '%s' is not a valid volume for reporting or classification. Make sure that you include only paths on fixed NTFS volumes in the report. This path will be ignored for now. Please reconfigure reporting or classification settings appropriately."
+  4407, 	"File Server Resource Manager encountered an error during a volume scan of the volume mounted at '%s' ('%s'): '%#x'"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4420, 	"Module name"
+  4421, 	"Rules"
+  4422, 	"File name"
+  4423, 	"Property name"
+  4424, 	"Property value"
+  4430, 	"The properties in the file were modified during this classification session so they will not be updated. Another attempt to update the properties will be made during the next classification session."
+  4431, 	"The file was modified during this classification session so its properties will not be updated. Another attempt to update the properties will be made during the next classification session."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4439, 	"Bulk Classification Consumer"
+  4440, 	"Load Properties"
+  4441, 	"Save Properties"
+  4442, 	"Check File State Before Saving Properties"
+  4445, 	"Begin File Processing"
+  4446, 	"End File Processing"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4448, 	"Get File Properties"
+  4449, 	"Set File Properties"
+  4450, 	"HRESULT = %#x (%s)"
+  4452, 	"The value for property '%s' could not be determined due to an aggregation error.  The sources that led to the failure are: %s"
+  4453, 	"The value for property '%s' from the property cache for the file could not be applied. HRESULT = %#x (%s)"
+  4454, 	"The file resides under a protected namespace (such as %WINDIR%\\System32). Its classification properties will not be updated."
+  4455, 	"No applicable storage module was available to save the specified property."
+  4460, 	"The value for property '%s' could not be determined. The property will not be updated in the file. HRESULT = %#x (%s)"
+  4461, 	"The content type %s is not defined for the Office storage module. Please check the rule that sets the content type to make sure it uses an existing type."
+  4462, 	"Failed to create new property '%s' in parser."
+  4463, 	"Failed to set value '%s' for property '%s' in parser."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4464, 	"Failed to remove existing property '%s' in parser."
+  4465, 	"Failed to open file %s."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  4500, 	"Test notification message for File Server Resource Manager"
+  4501, 	"This email address has been configured as a default for quota, file screening, and file management notifications on server %s. To update this information, in File Server Resource Manager, on the Action menu, click Configure Options, and then update the email addresses on the Email Notifications tab."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  5001, 	"FSRM global configuration, including template definitions, file group definitions, classification properties and rules, file management and report settings that apply to the entire system"
+  5002, 	"FSRM configuration on volume %s, including its quota configuration, file screen configuration, and file screen audit logs"
+  5003, 	"FSRM reports, classification and file management logs repository, including any scheduled, incident, and on-demand reports and logs"
+  5004, 	"FSRM encountered a failure during pre-restore of global configuration; HRESULT = %#x"
+  5005, 	"FSRM encountered a failure during post-restore of global configuration; HRESULT = %#x"
+  5006, 	"FSRM encountered a failure during pre-restore of volume %s; HRESULT = %#x"
+  5007, 	"FSRM encountered a failure during post-restore of volume %s; HRESULT = %#x"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  5008, 	"FSRM classification module configuration, captured when the module registers with FSRM"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7001, 	"[Source File Path]"
+  7002, 	"[Source File Remote Paths]"
+  7003, 	"[Source File Owner]"
+  7004, 	"[Source File Owner Email]"
+  7005, 	"[Server]"
+  7006, 	"[Server Domain]"
+  7007, 	"[Admin Email]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7008, 	"[Result List File]"
+  7009, 	"[Error List File]"
+  7010, 	"[Destination Directory]"
+  7011, 	"[Task Name]"
+  7012, 	"[File Action Date]"
+  7013, 	"[Days Before File Action]"
+  7014, 	"[Number Of Files Under Action]"
+  7015, 	"[File Management Path]"
+  7016, 	"[File Management Remote Paths]"
+  7017, 	"[File Management System Path]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7101, 	"File management task source file"
+  7102, 	"Remote paths for the file management task source file"
+  7103, 	"File management task source file owner"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7104, 	"File management task source file owner email"
+  7105, 	"NETBIOS name of the server"
+  7106, 	"Server domain name"
+  7107, 	"Administrator email recipient list"
+  7108, 	"Path to the file that contains all the files with action applied during an execution of file management task"
+  7109, 	"Path to the file that contains all the errors that happened during an execution of file management task"
+  7110, 	"The directory where files are expired to"
+  7111, 	"The file management task name"
+  7112, 	"The date when file management task applies action to a source file"
+  7113, 	"Number of days before file management task applies action to a source file"
+  7114, 	"Number of files with action applied during an execution of file management task"
+  7115, 	"Directory path of the file management task"
+  7116, 	"Remote paths of the file management task"
+  7117, 	"Volume GUID path of the file management task"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7201, 	"[Original File Path]"
+  7202, 	"[Original File Path Folder]"
+  7203, 	"[Admin Email]"
+  7204, 	"[Data Owner Email]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7251, 	"Original file path accessed by user"
+  7252, 	"Folder containing the original file path accessed by user"
+  7253, 	"Administrator email recipient list"
+  7254, 	"Data owner email recipient list"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7301, 	"[UNC FILE PATH]"
+  7302, 	"[UNC PARENT PATH]"
+  7303, 	"[DOMAIN NAME]"
+  7304, 	"[USER NAME]"
+  7305, 	"[USER EMAIL]"
+  7306, 	"[FULL ACCESS GRANTED]"
+  7307, 	"[MODIFY ACCESS GRANTED]"
+  7308, 	"[READ EXEC ACCESS GRANTED]"
+  7309, 	"[FULL LIMITERS]"
+  7310, 	"[MODIFY LIMITERS]"
+  7311, 	"[READ EXEC LIMITERS]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  7312, 	"[ADMIN MESSAGE]"
+  7313, 	"[USER MESSAGE]"
+  7314, 	"[USER CLAIMS]"
+  7315, 	"[DEVICE CLAIMS]"
+  7316, 	"[UNC SHARE]"
+  7317, 	"[READ ACCESS GRANTED]"
+  7318, 	"[WRITE ACCESS GRANTED]"
+  7319, 	"[READ LIMITERS]"
+  7320, 	"[WRITE LIMITERS]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  17001, 	"Quota"
+  17002, 	"Quota Management Filter Driver"
+  17003, 	"Datascrn"
+  17004, 	"File Screening Filter Driver"
+  17005, 	"Cbafilt"
+  17006, 	"CBA Cache Filter Driver"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  18000, 	"Microsoft Corporation"
+  18001, 	"Microsoft Corporation"
+  18002, 	"Synchronizes the File Classification Infrastructure taxonomy on the computer with the resource property definitions stored in Active Directory Domain Services."
+  18003, 	"Starts a scheduled file management task."
+  18004, 	"Starts a scheduled report job."
+  18005, 	"Starts the scheduled automatic classification."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  19000, 	"Create"
+  19001, 	"Retrieve"
+  19002, 	"Process"
+  19003, 	"Modify"
+  19004, 	"Delete"
+  19005, 	"Operation: %s, Object: %s"
+  19006, 	"Operation: %s, Object: %s, Object Identifier (%s): %s"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  19008, 	"Operation: %s, Object: %s, Result:%s"
+  19009, 	"Property name"
+  19010, 	"property"
+  19011, 	"quota"
+  19012, 	"quota template"
+  19013, 	"auto-quota"
+  19014, 	"quota threshold"
+  19015, 	"classification"
+  19016, 	"classification property definition"
+  19017, 	"classification rule"
+  19018, 	"file management job action"
+  19019, 	"file management job"
+  19020, 	"file management job condition"
+  19021, 	"file management job notification"
+  19022, 	"file management job notification action"
+  19023, 	"storage report"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  19024, 	"action"
+  19025, 	"access-denied assistance setting"
+  19026, 	"file group"
+  19027, 	"file screen"
+  19028, 	"file screen exception"
+  19029, 	"file screen template"
+  19030, 	"folder management property"
+  19031, 	"folder management property value"
+  19032, 	"scheduled task"
+  19033, 	"FSRM setting"
+  19034, 	"quotas"
+  19035, 	"quota templates"
+  19036, 	"auto-quotas"
+  19037, 	"quota thresholds"
+  19038, 	"classification property definitions"
+  19039, 	"classification rules"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  19040, 	"file management job actions"
+  19041, 	"file management jobs"
+  19042, 	"file management job conditions"
+  19043, 	"file management job notifications"
+  19044, 	"file management job notification actions"
+  19045, 	"storage reports"
+  19046, 	"actions"
+  19047, 	"access-denied assistance settings"
+  19048, 	"file groups"
+  19049, 	"file screens"
+  19050, 	"file screen exceptions"
+  19051, 	"file screen templates"
+  19052, 	"folder management properties"
+  19053, 	"folder management property values"
+  19054, 	"scheduled tasks"
+  19055, 	"FSRM settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  19056, 	"Start"
+  19057, 	"Stop"
+  19058, 	"Wait"
+  19059, 	"Update"
+  19060, 	"Send"
+  19061, 	"test email"
+  19062, 	"Reset"
+  19063, 	"effective namespaces"
+  19064, 	"Success"
+  19065, 	"Failed"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  19072, 	"RMS templates"
+  19073, 	"macros"
+  19074, 	"classification property value"
+  19075, 	"classification property values"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  20000, 	"OK"
+  20001, 	"The file was in use and could not be classified. Another attempt to classify the file will be made after the retry period."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  30001, 	"Initializing..."
+  30002, 	"Creating snapshots on volume(s): %s"
+  30003, 	"Analyzing directory structure for volume %s (%u of %u)."
+  30004, 	"Waiting for existing job(s) to complete..."
+  30005, 	"Summarizing data on volume %s (%u of %u)."
+  30006, 	"Processing data on volume %s (%u of %u)."
+  30007, 	"%u files processed."
+  30008, 	"Finalizing..."
+  30009, 	"Classifying files"
+  30010, 	"Running file management task: %s"
+  30011, 	"Running storage report: %s"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Message table
+//
+
+1 11 DISCARDABLE "srmmsg.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+120 HTML DISCARDABLE "srm1.htm"
+121 HTML DISCARDABLE "srm2.htm"
