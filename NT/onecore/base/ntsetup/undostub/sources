@@ -8,7 +8,7 @@ TARGETPATH=obj
 TARGETTYPE=DYNLINK
 
 # compiler options
-USE_CRTDLL=1
+USE_MSVCRT=1
 C_DEFINES=$(C_DEFINES) -DUNICODE
 
 # linker options
@@ -23,3 +23,4 @@ PASS1_PUBLISH={$(O)\$(TARGETNAME).lib=$(PROJECT_LIB_PATH)\$(TARGETNAME).lib}
 
 TARGETLIBS=\
         $(SDK_LIB_PATH)\kernel32.lib
+
