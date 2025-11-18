@@ -1,0 +1,27 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for NSI
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Network Store Interface RPC server"
+#define VER_INTERNALNAME_STR        "nsisvc.dll"
+#define VER_ORIGINALFILENAME_STR    "nsisvc.dll"
+
+#include "common.ver"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SERVICENAME                        "Network Store Interface Service"
+	IDS_SERVICEDESCRIPTION                 "This service delivers network notifications (e.g. interface addition/deleting etc) to user mode clients. Stopping this service will cause loss of network connectivity. If this service is disabled, any other services that explicitly depend on this service will fail to start."
+END

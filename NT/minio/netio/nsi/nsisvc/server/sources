@@ -1,0 +1,51 @@
+TARGETNAME=nsisvc
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=nsisvc.def
+USE_MSVCRT=1
+
+SOURCES=init.c \
+		midluser.c \
+		nsiserver.c \
+		nsisvc.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+INCLUDES=$(INCLUDES);$(OBJ_PATH)
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\ntdll.lib \
+	$(SDK_LIB_PATH)\rpcrt4.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\dloadhelper.lib \
+	$(MINWIN_PRIV_SDK_LIB_PATH)\nsi.lib
+	
+NT_SIGNCODE=1
+
+# WPP Tracing Configuration
+RUN_WPP=nsiserver.c init.c
+WPP_LOGGER_SUPPORT=1
+WPP_TRACE_W2K_COMPATIBILITY=1
+WPP_INIT_TRACING=1
+
+WPP_CFLAGS=/Wpp- -func:WPP_SF_(MSG, ...) -func:WPP_SF_D(MSG, ...)
+
+# WPP preprocessor options
+WPP_FLAGS=-D_WPP_TRACE
+
+# TMH file output directory (optional - defaults to same as source)
+WPP_TARGET_DIR=$(TARGETPATH)
+
+# WPP tracing function name
+WPP_TRACE_FUNCTION_PREFIX=WPP_
+
+# Enable WPP recursion (if tracing within trace functions)
+WPP_RECURSION=1
+
+# WPP logging level (adjust as needed)
+WPP_LOGGING_LEVEL=WPP_LEVEL_LOGGER
+
