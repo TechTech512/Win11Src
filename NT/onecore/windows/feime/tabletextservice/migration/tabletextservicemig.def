@@ -1,0 +1,6 @@
+LIBRARY TABLETEXTSERVICEMIG
+EXPORTS
+    ApplySuccess 
+    Gather 
+    PreApply 
+

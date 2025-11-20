@@ -1,0 +1,28 @@
+TARGETNAME=TableTextServiceMig
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=tabletextservicemig.def
+USE_MSVCRT=1
+
+INCLUDES=.;$(WINDOWS_INC_PATH)
+
+SOURCES=locales.cpp \
+        strary.cpp \
+        tabletextservicemig.cpp \
+		tabletextservicemig.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\ntstc_msvcrt.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\oleaut32.lib \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\vccomsup.lib \
+	$(SDK_LIB_PATH)\uuid.lib
+	
+NT_SIGNCODE=1
