@@ -1,0 +1,23 @@
+TARGETNAME=wiatrace
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=wiatrace.def
+USE_MSVCRT=1
+
+PRECOMPILED_INCLUDE=precomp.h
+PRECOMPILED_OBJ=precomp.obj
+PRECOMPILED_PCH=precomp.pch
+
+SOURCES=traceoutput.cpp \
+		wiatrace.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
