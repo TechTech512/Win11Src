@@ -1,0 +1,22 @@
+TARGETNAME=dciman32
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=dciman32.def
+USE_MSVCRT=1
+
+SOURCES=dciman.c \
+		dllinit.c \
+		dciman.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(WINDOWS_LIB_PATH)\gdi32p.lib \
+	$(SDK_LIB_PATH)\user32.lib
+	
+NT_SIGNCODE=1
