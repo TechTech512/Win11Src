@@ -1,0 +1,29 @@
+TARGETNAME=RpcNs4
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=rpcns4.def
+
+SOURCES=autohand.cxx \
+		deprerror.cxx \
+		nsiclnt.cxx \
+		nsimgmt.cxx \
+		nsisvr.cxx \
+		ntutil.cxx \
+		rpcns4.rc \
+
+C_DEFINES= -DSECURITY_WIN32
+
+DLLENTRY=InitializeDLL
+
+UMTYPE=console
+UMENTRY=dllmain
+UMRES=$(O)\rpcns4.res
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\ntdll.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\rpcrt4.lib \
+	$(SDK_LIB_PATH)\kernel32.lib
+	
+NT_SIGNCODE=1
