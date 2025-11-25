@@ -1,0 +1,34 @@
+TARGETNAME=locator
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+PRECOMPILED_INCLUDE=locatorpch.h
+PRECOMPILED_OBJ=locatorpch.obj
+PRECOMPILED_PCH=locatorpch.pch
+
+SOURCES=service.cxx \
+		locator.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+LINKENTRY=mainCRTStartup
+
+UMTYPE=console
+UMENTRY=main
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\mincore.lib \
+    $(SDK_LIB_PATH)\mincore_downlevel.lib \
+    $(SDK_LIB_PATH)\onecore.lib \
+    $(SDK_LIB_PATH)\onecore_apiset.lib \
+    $(SDK_LIB_PATH)\onecore_downlevel.lib \
+    $(SDK_LIB_PATH)\onecoreuap.lib \
+    $(SDK_LIB_PATH)\onecoreuap_apiset.lib \
+    $(SDK_LIB_PATH)\onecoreuap_downlevel.lib \
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=Locator.Manifest
+SXS_ASSEMBLY_NAME=Microsoft-Windows-RPC-Locator
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1

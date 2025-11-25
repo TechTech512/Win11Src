@@ -1,0 +1,30 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for RPC Locator
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Rpc Locator"
+#define VER_INTERNALNAME_STR        "locator.exe"
+#define VER_ORIGINALFILENAME_STR    "locator.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  2, 	"Remote Procedure Call (RPC) Locator"
+  3, 	"In Windows 2003 and earlier versions of Windows, the Remote Procedure Call (RPC) Locator service manages the RPC name service database. In Windows Vista and later versions of Windows, this service does not provide any functionality and is present for application compatibility."
+END
