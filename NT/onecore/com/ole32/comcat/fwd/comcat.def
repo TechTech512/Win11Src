@@ -1,0 +1,6 @@
+LIBRARY COMCAT
+EXPORTS
+    DllCanUnloadNow PRIVATE
+    DllRegisterServer PRIVATE
+    DllUnregisterServer PRIVATE
+
