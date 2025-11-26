@@ -1,0 +1,7 @@
+LIBRARY NETFXPERF
+EXPORTS
+    ClosePerformanceData 
+    CollectPerformanceData 
+    OpenPerformanceData 
+    TraceServiceStart 
+
