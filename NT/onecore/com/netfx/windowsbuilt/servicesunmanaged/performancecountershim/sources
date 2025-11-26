@@ -1,0 +1,21 @@
+TARGETNAME=netfxperf
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=netfxperf.def
+USE_LIBCMT=1
+
+SOURCES=netfxprf.cpp \
+		netfxprf.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\mscoree.lib
+	
+NT_SIGNCODE=1

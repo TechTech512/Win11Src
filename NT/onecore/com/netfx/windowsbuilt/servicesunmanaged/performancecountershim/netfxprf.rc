@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2015 Microsoft Corporation. All rights reserved.
+//
+// Resource table for netfxperf
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Extensible Performance Counter Shim"
+#define VER_INTERNALNAME_STR        "netfxperf.dll"
+#define VER_ORIGINALFILENAME_STR    "netfxperf.dll"
+
+#include "common.ver"
