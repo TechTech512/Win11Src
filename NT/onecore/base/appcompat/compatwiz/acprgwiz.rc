@@ -1,0 +1,24 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2001 Microsoft Corporation. All rights reserved.
+//
+// Program Compatibility Wizard Resource Table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Application Compatibility Program Wizard"
+#define VER_INTERNALNAME_STR
+
+#include "common.ver"
+
+ACWIZARD.ICO   HTML DISCARDABLE "acwizard.ico"
+BEHAVIORS.CSS  HTML DISCARDABLE "behaviors.css"
+COMPATMODE.HTA HTML DISCARDABLE "compatmode.hta"
+LAYOUT.CSS     HTML DISCARDABLE "layout.css"
+SHARED.CSS     HTML DISCARDABLE "shared.css"
