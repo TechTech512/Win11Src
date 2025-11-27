@@ -1,0 +1,92 @@
+BUILD: Examining r:\rs_prerelease\onecore\base\appcompat\compatwiz directory for files to compile.
+Compiling r:\rs_prerelease\onecore\base\appcompat\compatwiz directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 386=1'
+1>BUILDMSG: Processing r:\rs_prerelease\onecore\base\appcompat\compatwiz
+Elapsed time [0:00:00.109] ********************
+1>    rc -l 409 -DSXS_ASSEMBLY_NAME=""""""  -DSXS_ASSEMBLY_VERSION=""""""  -DSXS_ASSEMBLY_LANGUAGE=""""""  -DSXS_PROCESSOR_ARCHITECTURE="""x86"""  -DSXS_TARGET="""acprgwiz.dll"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -z "MS Sans Serif,Helv/MS Shell Dlg"  -r -fo obj\i386\acprgwiz.res -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1 -DNT_UP=1  -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0A00 /DWINVER=0x0A00 -D_WIN32_IE=0x0B00    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDDATE__=250325-1224 -D__BUILDMACHINE__=Administrator -DFPO=1  -DNDEBUG    -Iobj\i386 -IR:\rs_prerelease\onecore\base\inc -IR:\rs_prerelease\onecore\base\inc\obj\i386 -IR:\rs_prerelease\public\internal\base\inc -IR:\rs_prerelease\public\oak\inc -IR:\rs_prerelease\public\sdk\inc -IR:\rs_prerelease\public\sdk\inc\crt .\acprgwiz.rc
+1>Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>	link -out:obj\i386\acprgwiz.dll -machine:ix86 @C:\Users\ADMINI~1\AppData\Local\Temp\nm6D12.tmp
+1>Microsoft (R) Incremental Linker Version 14.43.34809.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>-MERGE:_PAGE=PAGE 
+1>-MERGE:_TEXT=.text 
+1>-SECTION:INIT,d 
+1>-OPT:REF 
+1>-OPT:ICF 
+1>-IGNORE:4010,4037,4039,4065,4070,4078,4087,4089,4221,4198 
+1>-INCREMENTAL:NO 
+1>-FULLBUILD 
+1>-NODEFAULTLIB 
+1>-debug:NONE 
+1>-debugtype:cv 
+1>-version:10.0 
+1>-osversion:10.0 
+1>-merge:.rdata=.text 
+1>-STACK:0x40000,0x1000 
+1>-dll 
+1>-base:@R:\rs_prerelease\Tools\coffbase.txt,acprgwiz 
+1>-subsystem:console,4.10 
+1>-noentry 
+1>obj\i386\acprgwiz.res 
+1>R:\rs_prerelease\public\sdk\lib\i386\BufferOverflowU.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\kernel32.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\int64.lib 
+1>	compact /c /q obj\i386\acprgwiz.pdb
+1>
+1> Compressing files in r:\rs_prerelease\onecore\base\appcompat\compatwiz\obj\i386\
+1>
+1>
+1>0 files within 1 directories were compressed.
+1>0 total bytes of data are stored in 0 bytes.
+1>The compression ratio is 1.0 to 1.
+1>	echo.
+1>
+1>
+1>Stop.
+Linking r:\rs_prerelease\onecore\base\appcompat\compatwiz directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i LINKONLY=1 NOPASS0=1 NTTEST= UMTEST= MAKEDLL=1 386=1'
+Elapsed time [0:00:11.781] ********************
+1>	link -out:obj\i386\acprgwiz.dll -machine:ix86 @C:\Users\ADMINI~1\AppData\Local\Temp\nm92BB.tmp
+1>Microsoft (R) Incremental Linker Version 14.43.34809.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>-MERGE:_PAGE=PAGE 
+1>-MERGE:_TEXT=.text 
+1>-SECTION:INIT,d 
+1>-OPT:REF 
+1>-OPT:ICF 
+1>-IGNORE:4010,4037,4039,4065,4070,4078,4087,4089,4221,4198 
+1>-INCREMENTAL:NO 
+1>-FULLBUILD 
+1>-NODEFAULTLIB 
+1>-debug:NONE 
+1>-debugtype:cv 
+1>-version:10.0 
+1>-osversion:10.0 
+1>-merge:.rdata=.text 
+1>-STACK:0x40000,0x1000 
+1>-dll 
+1>-base:@R:\rs_prerelease\Tools\coffbase.txt,acprgwiz 
+1>-subsystem:console,4.10 
+1>-noentry 
+1>obj\i386\acprgwiz.res 
+1>R:\rs_prerelease\public\sdk\lib\i386\BufferOverflowU.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\kernel32.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\int64.lib 
+1>	compact /c /q obj\i386\acprgwiz.pdb
+1>
+1> Compressing files in r:\rs_prerelease\onecore\base\appcompat\compatwiz\obj\i386\
+1>
+1>
+1>0 files within 1 directories were compressed.
+1>0 total bytes of data are stored in 0 bytes.
+1>The compression ratio is 1.0 to 1.
+1>	echo.
+1>
+1>	( echo. )
+1> 
+1>
+1>Stop.

@@ -1,0 +1,39 @@
+/*
+** Copyright (c) 2001 Microsoft Corporation
+*/
+
+BODY
+{
+    cursor : default;
+    margin : 0px;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*---                     generic font/color classes                           ---*/
+/*--------------------------------------------------------------------------------*/
+
+/* used throughout the hsc, primary font that all information uses */
+.sys-font-body
+{
+    font : messagebox; /* default Whistler system typeface is Tahoma 8pt */
+}
+
+/* bold variant of the body text font */
+.sys-font-body-bold
+{
+    font        : messagebox; /* default Whistler system typeface is Tahoma 8pt */
+    font-weight : bold;
+}
+
+/* color of normal text (usually black) */
+.sys-color-body
+{
+    color : windowtext;
+}
+
+/* used on subsite and centers content pages and search label in header */
+.sys-font-heading3
+{
+    font-family : Franklin Gothic Medium;
+    font-size   : 14pt;
+}
