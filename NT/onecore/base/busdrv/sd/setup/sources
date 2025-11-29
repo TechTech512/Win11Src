@@ -1,0 +1,19 @@
+TARGETNAME=sdhcinst
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=sdhcinst.def
+USE_MSVCRT=1
+
+SOURCES=sdhcinst.c \
+		sdhcinst.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib 
+	
+NT_SIGNCODE=1
