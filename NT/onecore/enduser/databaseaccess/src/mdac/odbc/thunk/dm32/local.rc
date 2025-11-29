@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 1999 Microsoft Corporation. All rights reserved.
+//
+// Resource table for ODBC
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ODBC Driver Generic Thunk"
+#define VER_INTERNALNAME_STR        "odbc32gt.dll"
+#define VER_ORIGINALFILENAME_STR    "odbc32gt.dll"
+
+#include "common.ver"
