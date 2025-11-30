@@ -1,0 +1,31 @@
+TARGETNAME=verclsid
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+INCLUDES=.;$(SHELL_INC_PATH)
+SOURCES=verclsid.cpp \
+		verclsid.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\kernl32p.lib \
+	$(SDK_LIB_PATH)\ole32.lib \
+	$(SDK_LIB_PATH)\dloadhelper.lib \
+	$(SDK_LIB_PATH)\uuid.lib \
+	$(BASE_LIB_PATH)\apphelp.lib
+	
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=VerCLSID.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.verclsid
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1

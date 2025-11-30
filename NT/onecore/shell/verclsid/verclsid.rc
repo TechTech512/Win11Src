@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Extension CLSID Verification Host"
+#define VER_INTERNALNAME_STR        "verclsid.exe"
+#define VER_ORIGINALFILENAME_STR    "verclsid.exe"
+
+#include "common.ver"
