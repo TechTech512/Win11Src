@@ -1,0 +1,26 @@
+TARGETNAME=drprov
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=drprov.def
+USE_MSVCRT=1
+
+SOURCES=dllmain.c \
+		drenum.c \
+		drprov.c \
+		drprov.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\ntdll.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\winsta.lib \
+	$(SDK_LIB_PATH)\dloadhelper.lib \
+	$(SDK_LIB_PATH)\advapi32.lib 
+	
+NT_SIGNCODE=1

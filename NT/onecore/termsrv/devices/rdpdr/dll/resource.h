@@ -1,0 +1,2 @@
+#define IDS_APPNAME 100
+#define IDS_APPDESC 101

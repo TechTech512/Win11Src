@@ -1,0 +1,31 @@
+/****************************************************************************/
+// drprov.rc
+//
+// DRPROV version resource
+//
+// Copyright (C) 2000 Microsoft Corp.
+/****************************************************************************/
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Microsoft Remote Desktop Session Host Server Network Provider"
+#define VER_INTERNALNAME_STR        "DRPROV.DLL"
+#define VER_ORIGINALFILENAME_STR    "DRPROV.DLL"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPNAME "Microsoft Remote Desktop Session Host Server Network Provider"
+	IDS_APPDESC "Supports file sharing over Remote Desktop connection for this computer. If this service is stopped, these functions will be unavailable. "
+END
