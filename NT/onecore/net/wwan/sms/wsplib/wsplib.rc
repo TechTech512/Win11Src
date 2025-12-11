@@ -1,0 +1,21 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2021 Microsoft Corporation. All rights reserved.
+//
+// Resource table for WSP Decoder
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "WSP decode library"
+#define VER_INTERNALNAME_STR        "wsplib.dll"
+#define VER_ORIGINALFILENAME_STR    "wsplib.dll"
+
+#include "common.ver"
+
+1 MUI DISCARDABLE "mui.bin"

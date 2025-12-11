@@ -1,0 +1,32 @@
+TARGETNAME=wsplib
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=wsplib.def
+USE_MSVCRT=1
+
+INCLUDES=.;$(NET_INC_PATH)
+SOURCES=cache.c \
+		charsets.c \
+		dummy.cpp \
+		freedoc.c \
+		header.cpp \
+		heap.c \
+		mbufman.c \
+		rtc.cpp \
+		sgllists.c \
+		urlutil.c \
+		wsp_wrap.cpp \
+		wsppdu.cpp \
+		wsplib.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\msvcprt.lib \
+	$(SDK_LIB_PATH)\mincore.lib
+	
+NT_SIGNCODE=1
