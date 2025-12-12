@@ -1,0 +1,19 @@
+TARGETNAME=stub
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=stub.def
+USE_MSVCRT=1
+
+SOURCES=dllmain.cpp \
+		stub.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1

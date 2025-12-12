@@ -1,0 +1,21 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+//
+// Resource table for DXWCODStub
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "DirectPlay Stub"
+#define VER_INTERNALNAME_STR        "wcodstub.dll"
+#define VER_ORIGINALFILENAME_STR    "wcodstub.dll"
+
+#include "common.ver"
+
+1 MUI DISCARDABLE "mui.bin"
