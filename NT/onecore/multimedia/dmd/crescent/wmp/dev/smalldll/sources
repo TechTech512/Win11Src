@@ -1,0 +1,20 @@
+TARGETNAME=smalldll
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+TARGETEXT=ocx
+DLLDEF=smalldll.def
+
+SOURCES=smalldll.cpp \
+		smalldll.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
