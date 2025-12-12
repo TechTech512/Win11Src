@@ -1,0 +1,13 @@
+LIBRARY SHIMENG
+EXPORTS
+	SE_DllLoaded = apphelp.SE_DllLoaded
+	SE_DllUnloaded = apphelp.SE_DllUnloaded
+	SE_DynamicShim = apphelp.SE_DynamicShim
+	SE_GetHookAPIs = apphelp.SE_GetHookAPIs
+	SE_GetMaxShimCount = apphelp.SE_GetMaxShimCount
+	SE_GetProcAddressIgnoreIncExc = apphelp.SE_GetProcAddressIgnoreIncExc
+	SE_GetShimCount = apphelp.SE_GetShimCount
+	SE_InstallAfterInit = apphelp.SE_InstallAfterInit
+	SE_InstallBeforeInit = apphelp.SE_InstallBeforeInit
+	SE_IsShimDll = apphelp.SE_IsShimDll
+	SE_ProcessDying = apphelp.SE_ProcessDying

@@ -1,0 +1,22 @@
+TARGETNAME=ShimEng
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=shimeng.def
+USE_MSVCRT=1
+
+SOURCES=shimengstub.c \
+		shimengstub.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=DllMain
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\kernel32.lib 
+
+LINKLIBS=$(BASE_LIB_PATH)\apphelp.lib
+	
+NT_SIGNCODE=1
