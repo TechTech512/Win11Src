@@ -1,0 +1,24 @@
+TARGETNAME=Firewall
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+TARGETEXT=cpl
+DLLDEF=firewall.def
+
+PRECOMPILED_INCLUDE=stdafx.h
+PRECOMPILED_OBJ=stdafx.obj
+PRECOMPILED_PCH=stdafx.pch
+
+SOURCES=dllmain.cpp \
+		firewallcpl.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\mincore.lib
+	
+NT_SIGNCODE=1
