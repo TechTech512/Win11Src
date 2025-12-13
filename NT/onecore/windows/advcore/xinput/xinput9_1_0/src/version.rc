@@ -1,0 +1,26 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for XInput
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "XNA Common Controller"
+#define VER_INTERNALNAME_STR        "Xinput9_1_0"
+#define VER_ORIGINALFILENAME_STR    "Xinput9_1_0.dll"
+
+#include "common.ver"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPNAME        "Microsoft Common Controller For Windows Class"
+END

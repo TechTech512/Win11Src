@@ -1,0 +1,24 @@
+TARGETNAME=XInput9_1_0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=xinput9_1_0.def
+USE_MSVCRT=1
+
+PRECOMPILED_INCLUDE=xinputi.h
+PRECOMPILED_OBJ=xinputi.obj
+PRECOMPILED_PCH=xinputi.pch
+
+SOURCES=dllmain.cpp \
+        xinputapi.cpp \
+		version.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
