@@ -1,0 +1,20 @@
+TARGETNAME=shfolder
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=folder.def
+USE_MSVCRT=1
+
+SOURCES=folder.c \
+		folder.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\shell32.lib
+	
+NT_SIGNCODE=1
