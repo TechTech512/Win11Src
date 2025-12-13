@@ -1,0 +1,19 @@
+TARGETNAME = GetUName
+TARGETTYPE = DYNLINK
+TARGETPATH = obj
+TARGETLIBS = $(SDK_LIB_PATH)\kernel32.lib   \
+             $(SDK_LIB_PATH)\user32.lib
+
+DLLENTRY = DllMain
+
+UMTYPE = windows
+
+INCLUDES = $(WINDOWS_INC_PATH);$(BASE_INC_PATH);..\inc
+
+C_DEFINES = -DWIN32 -DUNICODE -D_UNICODE
+
+USE_MSVCRT = 1
+
+SOURCES = getuname.rc   \
+          getuname.c
+
