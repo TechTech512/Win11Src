@@ -1,0 +1,19 @@
+TARGETNAME=Nlsdl
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=nlsdl.def
+USE_MSVCRT=1
+
+SOURCES=..\nlsdl.cpp \
+		..\nlsdl.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
