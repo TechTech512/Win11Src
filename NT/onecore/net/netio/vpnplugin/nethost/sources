@@ -1,0 +1,25 @@
+TARGETNAME=nethost
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+INCLUDES=.;$(NET_INC_PATH)
+SOURCES=main.c \
+		nethost.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wmainCRTStartup
+
+DELAYLOAD = rasapi32.dll
+DLOAD_ERROR_HANDLER = kernel32.dll
+
+UMTYPE=console
+UMENTRY=wmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\onecore.lib \
+	$(SDK_LIB_PATH)\dloadhelper.lib \
+	$(SDK_LIB_PATH)\rasapi32.lib
+
