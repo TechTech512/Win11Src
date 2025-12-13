@@ -1,0 +1,636 @@
+<html DIR="LTR" xmlns:tool="http://www.microsoft.com/tooltip" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>Release Notes for This Beta Release of Windows Server Code Name "Longhorn" and Windows Vista</title>
+    
+          
+    
+    
+    
+      
+    
+  <STYLE TYPE="text/css">
+body
+{
+	background:	#FFFFFF;
+	color: #000000;
+	font-family:	Verdana;
+	font-size: medium;
+	font-style: normal;
+	font-weight: normal;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	width:	100%;
+}
+
+a
+{
+	color:	#0000FF;
+}
+
+a:visited
+{
+	color:	#0000FF;
+}
+
+a:link
+{
+	color:	#0000FF;
+}
+
+a:hover
+{
+	color:	#FF0000;
+	cursor: hand;
+}
+
+a:active
+{
+	color:	#FF0000;
+	cursor: hand;
+}
+
+div.#mainSection
+{
+	font-size: 70%;
+	width: 100%;
+}
+
+div.#mainBody
+{
+	font-size: 90%;
+	margin-left:	5;
+	margin-top: 10;
+	padding-bottom: 20;
+}
+
+div.#header
+{
+	background-color: #D4DFFF;
+	padding-top:	0;
+	padding-bottom:	0;
+	padding-left:	0;
+	padding-right:	0;
+	width:	100%;
+}
+
+div.#header table
+{
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	width:	100%;
+}
+
+span.#runningHeaderText
+{
+	color: #003399;
+	font-size: 90%;
+}
+
+span.#nsrTitle
+{
+	color: #003399;
+	font-size: 125%;
+	font-weight: 600;
+}
+
+div.#header table td
+{
+	color: #0000FF;
+	font-size: 70%;
+	margin-top:	0;
+	margin-bottom:	0;
+	padding-right: 20;
+}
+
+div.#header table tr.#headerTableRow3 td
+{
+	padding-bottom: 2;
+	padding-top: 5;
+}
+
+div.#header table.#bottomTable
+{
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	text-align: left;
+}
+
+div.#footer
+{
+	font-size: 90%;
+	margin-top:	0;
+	margin-bottom:	0;
+	margin-left:	0;
+	margin-right:	0;
+	padding-top:	2;
+	padding-bottom:	2;
+	padding-left:	2;
+	padding-right:	2;
+	width:	100%;
+}
+
+hr.#footerHR
+{
+	border-bottom-color: #EEEEFF;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	border-top-color: C8CDDE;
+	border-top-style: solid;
+	border-top-width: 1;
+	height: 3;
+	color: #D4DFFF;
+}
+
+div.section
+{
+	padding-top:	2;
+	padding-bottom:	2;
+	padding-left:	16;
+	padding-right:	15;
+	width:	100%;
+}
+
+.heading
+{
+	font-weight:	bold;
+	margin-top:		18;
+	margin-bottom:	8;
+}
+
+h1.heading
+{
+	color: #003399;
+	font-size:	125%;
+}
+
+.subHeading
+{
+	font-weight:	bold;
+	margin-bottom:	4;
+}
+
+h3.subHeading
+{
+	color:  #003399;
+	font-size: 115%;
+    font-weight: bold;
+}
+
+h4.subHeading
+{
+	color: #003399;
+	font-size: 105%;
+}
+
+h5.subHeading
+{
+	color: #003399;
+	font-size: 100%;
+}
+
+img.toggle
+{
+	border: 0;
+	margin-right: 5;
+}
+
+img.copyCodeImage
+{
+	border: 0;
+	margin-right: 3;
+}
+
+img.downloadCodeImage
+{
+	border: 0;
+	margin-right: 3;
+}
+
+img.viewCodeImage
+{
+	border: 0;
+	margin-right: 3;
+}
+
+img.note
+{
+	border: 0;
+	margin-right: 3;
+}
+
+img.#languageFilterImage
+{
+	border: 0;
+	margin-left: 10;
+	vertical-align: middle;
+}
+
+img.#membersOptionsFilterImage
+{
+	border: 0;
+	margin-left: 10;
+	vertical-align: middle;
+}
+
+img.#toggleAllImage
+{
+	margin-left: 4;
+	vertical-align: middle;
+}
+
+div.#mainSection table
+{
+	border: 0;
+	font-size: 100%;
+	width:	100%;
+}
+
+div.#mainSection table th
+{
+	background:	#EFEFF7;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	color: #000066;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.#mainSection table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.#mainSection table td.imageCell
+{
+	white-space: nowrap;
+}
+
+div.code table
+{
+	border: 0;
+	font-size: 95%;
+	margin-bottom: 5;
+	width: 100%
+}
+
+div.code table th
+{	
+	background:	#EFEFF7;
+	border-bottom-color: #C8CDDE;
+	border-bottom-style: solid;
+	border-bottom-width: 1;
+	color: #000066;
+	font-weight: bold;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.code table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+	padding-top: 5;
+}
+
+div.alert table
+{
+	border: 0;
+	font-size: 100%;
+	width:	100%;
+}
+
+div.alert table th
+{
+	background:	#EFEFF7;
+	border-bottom-width: 0;
+	color: #000066;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+div.alert table td
+{
+	background:	#F7F7FF;
+	border-top-color: #FFFFFF;
+	border-top-style: solid;
+	border-top-width: 1;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+.copyCode
+{
+	color: #0000ff;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+.downloadCode
+{
+	color: #0000ff;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+.viewCode
+{
+	color: #0000ff;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+div.code pre
+{
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066;
+	word-wrap:	break-word;
+}
+
+code
+{
+	font-family:	Monospace, Courier New, Courier;
+	font-size: 105%;
+	color:	#000066;
+}
+
+dl
+{
+	margin-top:	0;
+	padding-left:	1;
+}
+
+dt
+{
+	font-style:	italic;
+}
+
+dd
+{
+	margin-bottom:	0;
+	margin-left:	0;
+}
+
+ul
+{
+	margin-left: 17;
+	list-style-type: disc;
+}
+
+ul ul
+{
+	margin-bottom: 4;
+	margin-left: 17;
+	margin-top: 3;
+	list-style-type: disc;
+}
+
+ol
+{
+	margin-left: 24;
+	list-style-type: decimal;
+}
+
+ol ol
+{
+	margin-bottom: 4;
+	margin-left: 24;
+	margin-top: 3;
+	list-style-type: lower-alpha;
+}
+
+li
+{
+	margin-bottom: 3;
+}
+
+p
+{
+	margin-top: 0;
+	margin-bottom: 15;
+}
+
+.tip
+{
+	color:	#0000FF;
+	font-style: italic;
+	cursor:hand;
+	text-decoration:underline;
+}
+
+.languageFilter
+{
+	color:	#0000FF;
+	cursor:hand;
+	text-decoration:underline;
+	padding-bottom:4;
+}
+
+.math
+{
+	font-family: Times New Roman;
+	font-size: 125%
+}
+
+.sourceCodeList
+{
+	font-family: Verdana;
+	font-size: 90%;	
+}
+
+pre.viewCode
+{
+	width: 100%;
+	overflow: auto;
+}
+
+MSHelp\:link
+{
+	text-decoration: underline;
+	color: #0000ff; 
+	hoverColor: #3366ff;
+	filterString: ;
+}
+</STYLE>
+</head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle">
+    </input>
+    <input type="hidden" id="hiddenScrollOffset">
+    </input>
+
+    <div id="header">
+      <table width="100%" id="topTable">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">
+              
+            </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">Release Notes for This Beta Release of Windows Server Code Name "Longhorn" and Windows Vista</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory">
+        </div>
+        
+    <p>These release notes address late-breaking issues and information about this beta release of the Microsoft(R) Windows Server(TM) Code Name "Longhorn" operating system and the Microsoft Windows Vista(TM) operating system. Unless otherwise specified, these notes apply to both versions of the product.</p>
+  <h1 class="heading">Features Not Included in These Products</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">The following components and features are being phased out and are not present in this beta release of Windows Server "Longhorn" and Windows Vista.</p>
+      <ul xmlns=""><li>
+          Winlogon notification packages are no longer supported. To achieve the functionality formerly provided by notification packages, either create a Group Policy script or create a service.<br></br>
+        </li><li>
+          Graphical identification and authentication (GINA) modules are no longer supported. If you have any custom GINA modules, they will not function after you install this beta version. The GINA module functionality has been replaced by the Credential Provider model. For more information about creating Credential Providers, see the Windows Vista software developer kit at the <a href="http://go.microsoft.com/fwlink/?LinkID=61391" target="_blank" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">Windows Vista Development Center</linkText></a> (http://go.microsoft.com/fwlink/?LinkId=61391).<br></br>
+        </li><li>
+          The concept of interactive services is being phased out. Session 0 is now reserved for services and system processes, and users can no longer interactively log on to session 0. Services that assume session 0 is an interactive session might not work correctly. Windows and dialog boxes that were displayed directly from services will not be visible to the user, and the service might stop responding if the user interface requires user input.<br></br>
+        </li></ul>
+    </content></div><h1 class="heading">Partners</h1><div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">Microsoft Office "12" Beta 1 will not function properly and is not supported. The Office support team will not accept bug submissions or newsgroup questions regarding Office "12" Beta 1.</p>
+    </content></div><h1 class="heading">Printing</h1><div id="sectionSection2" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">This information applies to this beta version of Windows Vista.</p>
+      <p xmlns="">To use Print Management to monitor print servers from a computer running Windows Vista, use Windows Firewall to enable the <b>File and Printer Sharing</b> exception.</p>
+    </content></div><h1 class="heading">Security</h1><div id="sectionSection3" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    </content><sections xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <h3 class="subHeading" xmlns="">BitLocker Drive Encryption</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">This information about known volume encryption issues applies only to this beta version of Windows Vista.</p>
+          <ul xmlns=""><li>
+              You must install Windows Vista on an unencrypted volume. If you have been testing earlier versions of Vista and have turned on BitLocker Drive Encryption, decrypt the volume and then install the new version of Windows Vista. You can then re-encrypt the volume.<br></br>
+            </li><li>
+               If a bootable Windows(R) CD was present in the CD/DVD drive when the computer was started, BitLocker Drive Encryption will enter recovery mode unless the Windows CD is present. This behavior does not occur with other CDs or Windows DVDs. To prevent this, ensure that there is no bootable Windows CD in the drive before running BitLocker Drive Encryption. If your system enters recovery mode every time the computer starts, restart the computer without the bootable CD present, follow the steps of the recovery process, and then decrypt and re-encrypt the volume (without a bootable CD present).<br></br>
+            </li><li>
+              Normally, BitLocker Drive Encryption requires Trusted Platform Module (TPM) hardware to store the encryption keys. However, you can use a removable universal serial bus (USB) flash drive for the keys instead. To use a flash drive for this purpose, the BIOS in your computer must recognize USB devices during the boot process. If you encrypted the flash drive and find that the BIOS does not support USB devices, you can still recover the data with the 48-digit recovery password.<br></br>
+            </li><li>
+              When a TPM-equipped computer wakes from hibernation, the TPM may not successfully wake along with the rest of the system. In this circumstance, the wizard used to enable BitLocker Drive Encryption will request a startup key. If this occurs, cancel the wizard, restart the computer, and confirm that TPM is enabled.<br></br>
+            </li><li>
+              BitLocker Drive Encryption does not support any non-Microsoft disk utilities or the Disk Management expand or shrink functions. If you enable BitLocker Drive Encryption and then attempt to expand or shrink the volume, you will lose the data in the changed area of the volume. To change the size of an encrypted volume, decrypt the volume by turning off BitLocker Drive Encryption, change the volume size, and then re-encrypt the volume by turning BitLocker Drive Encryption on again.<br></br>
+            </li></ul>
+        </content></div>
+      <h3 class="subHeading" xmlns="">IPsec</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">The Microsoft implementation of Internet Protocol security (IPsec) no longer supports the default response rule. If a policy with a default response rule is applied to computers running Windows Vista or Windows Server "Longhorn", the rule will be ignored. The default response rule is still valid for policies created for use with computers running Windows 2000, Windows XP, or Windows Server 2003.</p>
+          <p xmlns="">If you create a policy for use on computers running Windows Vista or Windows Server "Longhorn" that requires the same behavior as the default response rule, include a rule with the following properties:</p>
+          <ul xmlns=""><li>
+              The rule does not specify a tunnel.<br></br>
+            </li><li>
+              The rule applies to all network connections.<br></br>
+            </li><li>
+              The filter list for the rule has an IP Traffic Source of <b>Any IP Address</b>, an IP Traffic Destination of <b>Any IP Address</b>, and applies to <b>Any</b> protocol.<br></br>
+            </li><li>
+              The filter actions <b>Negotiate security</b> and <b>Allow unsecured communication if a secure communication cannot be established</b> are selected.<br></br>
+            </li></ul>
+        </content></div>
+      <h3 class="subHeading" xmlns="">Rights Management Services</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">This information applies to this beta version of Windows Server "Longhorn".</p>
+          <p xmlns="">The Rights Management Services role cannot be successfully installed using the Role Management Tool. There is currently no workaround.</p>
+        </content></div>
+      <h3 class="subHeading" xmlns="">Security Configuration Wizard</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">This information applies to this beta version of Windows Server "Longhorn".</p>
+          <p xmlns="">With Security Configuration Wizard, you can configure security settings appropriate for various server roles. To ensure full compatibility, all server roles are disabled by default. However, you can still enable individual server roles manually.</p>
+          <procedure>
+            <b xmlns="">To manually enable a server role</b>
+            <ddue:steps><ol xmlns=""><li>
+                <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+                  <p xmlns="">If Security Configuration Wizard is running, close it.</p>
+                </content>
+              </li><li>
+                <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+                  <p xmlns="">Browse to <i>systemroot</i><b>\security\msscs\kbs</b>.</p>
+                </content>
+              </li><li>
+                <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+                  <p xmlns="">Locate the XML file for the server role that you want to enable. For example, the file for the Exchange server role is Exchange.xml.</p>
+                </content>
+              </li><li>
+                <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+                  <p xmlns="">In the <b>Status</b> field, replace the string <b>Disable</b> with <b>Enable</b>.</p>
+                </content>
+              </li><li>
+                <content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+                  <p xmlns="">Restart the wizard.</p>
+                </content>
+              </li></ol></ddue:steps>
+          </procedure>
+        </content></div>
+      <h3 class="subHeading" xmlns="">Windows Firewall</h3><div class="subSection" xmlns=""><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+          <p xmlns="">This information applies to this beta version of Windows Vista.</p>
+          <p xmlns="">The Advanced Security snap-in for Microsoft Management Console (MMC) may incorrectly show the status of service exceptions that have been enabled using the Windows Firewall control panel.</p>
+          <p xmlns="">To view the correct status of service exceptions, use the Windows Firewall control panel.</p>
+        </content></div>
+    </sections></div><h1 class="heading">Server Core</h1><div id="sectionSection4" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">This note applies to this beta version of Windows Server "Longhorn".</p>
+      <p xmlns="">Several changes have been made to Server Core functionality.</p>
+      <ul xmlns=""><li>
+          You can remotely activate Server Core by typing <b>cscript windows\system32\slmgr.vbs </b><i>servername</i><b> </b><i>username</i><b> </b><i>password</i><b> -ato</b> at a command prompt.<br></br>
+        </li><li>
+          To promote a Server Core-based computer to an Active Directory(R) domain controller, use the command <b>dcpromo</b> at a command prompt. The command <b>dcpromocmd</b> is no longer available.<br></br>
+        </li><li>
+          To change the time zone on Server Core, use the Date and Time Properties control panel. You can open this control panel by typing <b>timedate.cpl</b> at a command prompt.<br></br>
+        </li><li>
+          To change international settings on Server Core, use the Regional and Language Options control panel. You can open this control panel by typing <b>intl.cpl</b> at a command prompt.<br></br>
+        </li><li>
+          The script formerly named SFregedit.vbs is now named Scregedit.wsf. It is in the \windows\system32 folder.<br></br>
+        </li><li>
+          To allow Terminal Services clients that are running an operating system earlier than Windows Server "Longhorn" to connect to Server Core, type <b>cscript \windows\system32\scregedit /CS 0</b> at a command prompt on the Server Core computer.<br></br>
+        </li></ul>
+    </content></div><h1 class="heading">Speech Recognition</h1><div id="sectionSection5" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">This information applies to this beta version of Windows Vista.</p>
+      <p xmlns="">When you upgrade a computer from Windows XP Service Pack 2 to this release, all previous speech and text-to-speech engines are removed from the registry. Any files in C:\Program Files\Common Files\SpeechEngines\Microsoft are untouched. The impact of the registry change varies with the specific speech or text-to-speech engines that are installed. For more information, contact the appropriate software vendor.</p>
+    </content></div><h1 class="heading">Terminal Services</h1><div id="sectionSection6" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">This information applies to this beta version of Windows Server "Longhorn".</p>
+      <p xmlns="">The TS Session Directory service is no longer installed by default. To set up the TS Session Directory service, use the Add Roles Wizard.</p>
+    </content></div><h1 class="heading">Copyright</h1><div id="sectionSection7" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+      <p xmlns="">
+        <i>This document supports a preliminary release of a software product that may be changed substantially prior to final commercial release, and is the confidential and proprietary information of Microsoft Corporation.  It is disclosed pursuant to a non-disclosure agreement between the recipient and Microsoft. This document is provided for informational purposes only and Microsoft makes no warranties, either express or implied, in this document.  Information in this document, including URL and other Internet Web site references, is subject to change without notice.  The entire risk of the use or the results from the use of this document remains with the user.  Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place, or event is intended or should be inferred.  Complying with all applicable copyright laws is the responsibility of the user.  Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation. </i>
+      </p>
+      <p xmlns="">
+      </p>
+      <p xmlns="">
+        <i>Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document.  Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.</i>
+      </p>
+      <p xmlns="">
+      </p>
+      <p xmlns="">
+        <i>(C) 2006 Microsoft Corporation.  All rights reserved.</i>
+      </p>
+      <p xmlns="">
+      </p>
+      <p xmlns="">
+        <i>Microsoft, Windows, Windows XP, Windows Server, and Windows Vista are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
+      </p>
+      <p xmlns="">
+      </p>
+      <p xmlns="">
+        <i>All other trademarks are property of their respective owners.</i>
+      </p>
+    </content></div><!--[if gte IE 5]>
+			<tool:tip element="languageFilterToolTip" avoidmouse="false"/>
+		<![endif]--></div>
+      <div id="footer">
+        <hr /><p />
+      </div>
+    </div>
+  </body>
+</html>
