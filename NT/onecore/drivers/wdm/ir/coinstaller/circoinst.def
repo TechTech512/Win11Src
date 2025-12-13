@@ -1,0 +1,4 @@
+LIBRARY CIRCOINST
+EXPORTS
+    IRCoInstaller 
+
