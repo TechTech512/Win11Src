@@ -1,0 +1,20 @@
+TARGETNAME=circoinst
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=circoinst.def
+USE_MSVCRT=1
+
+SOURCES=coinst.c \
+		ircoinst.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\setupapi.lib \
+	$(SDK_LIB_PATH)\kernel32.lib
+	
+NT_SIGNCODE=1
