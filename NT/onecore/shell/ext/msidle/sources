@@ -1,0 +1,21 @@
+TARGETNAME=msidle
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=msidle.def
+USE_MSVCRT=1
+
+SOURCES=msidle.cpp \
+		msidle.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\int64.lib
+	
+NT_SIGNCODE=1
