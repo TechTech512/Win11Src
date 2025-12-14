@@ -1,0 +1,58 @@
+/****************************** Module Header ******************************\
+* Module Name: res.rc
+*
+* Copyright (c) 1991, Microsoft Corporation
+*
+* Main winlogon resource file.
+*
+* History:
+* 12-09-91 Davidc       Created.
+\***************************************************************************/
+
+#include <windows.h>
+#include <userenv.h>
+#include <ntverp.h>
+#include "rdpcfgex.h"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+   IDS_LOW              "Low"
+   IDS_COMPATIBLE       "Client Compatible"
+   IDS_HIGH             "High"
+   IDS_FIPS             "FIPS Compliant"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+   IDS_LOW_DESCR        "All data sent from the client to the server is protected by 56-bit encryption."
+   IDS_COMPATIBLE_DESCR "All data sent between the client and the server is protected by encryption based on the maximum key strength supported by the client."
+   IDS_HI_DESCR         "All data sent between the client and the server is protected by encryption based on the server's maximum key strength. Clients that do not support this level of encryption cannot connect."
+   IDS_FIPS_DESCR       "All data sent between the client and the server uses Federal Information Processing Standard (FIPS) compliant algorithms for encryption, hashing, and signing."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_RDPSECLAYER     "RDP Security Layer"
+	IDS_NEGOTIATE       "Negotiate"
+	IDS_SSL             "SSL"
+	IDS_RDPSECDESCR     "Communication between the server and the client will use native RDP encryption."
+	IDS_NEGOTDESC       "The most secure layer that is supported by the client will be used. If supported, TLS 1.0 will be used."
+	IDS_SSLDESC         "SSL (TLS 1.0) will be used for server authentication as well as for encrypting all data transferred between the server and the client."
+	IDS_MAX_DESCRIPT    "All data sent from client to server is protected by encryption based on the maximum key strength supported by the client."
+	IDS_MAX_PROTECT     "All data sent between the client and the server is protected by encryption based on the maximum key strength supported by the client."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_HI_DESCR2       "All data sent between the client and the server is protected by encryption based on the server's maximum key strength. Clients that do not support this level of encryption cannot connect."
+	IDS_FIPS_DESCR2     "All data sent between the client and the server uses Federal Information Processing Standard (FIPS) compliant algorithms for encryption, hashing, and signing."
+END
+
+#define VER_FILETYPE                            VFT_DLL
+#define VER_FILESUBTYPE                         VOS_NT_WINDOWS32
+#define VER_FILEDESCRIPTION_STR     "Remote Desktop Session Host Server Connection Configuration Extension for the RDP protocol"
+#define VER_INTERNALNAME_STR        "RDPCFGEX\0"
+#define VER_ORIGINALFILENAME_STR    "RDPCFGEX.DLL"
+
+#include "common.ver"
+

@@ -1,0 +1,21 @@
+TARGETNAME=rdpcfgex
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=rdpcfgex.def
+USE_MSVCRT=1
+
+SOURCES=rdpcfgex.c \
+		res.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib
+	
+NT_SIGNCODE=1
