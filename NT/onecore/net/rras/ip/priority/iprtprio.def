@@ -1,0 +1,8 @@
+LIBRARY iprtprio
+
+EXPORTS
+       CleanUpIpPriority
+       ComputeRouteMetric
+       ComputeRouteMetricEx
+       SetPriorityInfo
+       GetPriorityInfo
