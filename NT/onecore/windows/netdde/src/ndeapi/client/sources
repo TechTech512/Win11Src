@@ -1,0 +1,19 @@
+TARGETNAME=nddeapi
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=nddeapi.def
+USE_MSVCRT=1
+
+SOURCES=nddeapic.c \
+		nddeapi.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
