@@ -1,0 +1,26 @@
+TARGETNAME=wuapihost
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_STL=1
+
+INCLUDES=.;$(ENDUSER_INC_PATH)
+SOURCES=main.cpp \
+		resources.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\onecore.lib \
+	$(SDK_LIB_PATH)\onecore_apiset.lib \
+	$(SDK_LIB_PATH)\onecoreuap.lib \
+	$(SDK_LIB_PATH)\onecoreuap_apiset.lib \
+	$(SDK_LIB_PATH)\uuid.lib
+
