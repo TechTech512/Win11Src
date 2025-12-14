@@ -1,0 +1,354 @@
+     ----------------------------------------
+       Microsoft Windows Millennium Edition
+           README for Installing Windows Me 
+                Onto a New Hard Disk
+                   June 2000           
+     ----------------------------------------
+
+    (c) Copyright Microsoft Corporation, 2000
+
+
+If you have added a new hard disk to a personal computer, 
+you will need to carry out the following six tasks to prepare 
+it to run the Microsoft(R) Windows(R) Millennium Edition 
+(Windows Me) operating system:
+
+- Getting Ready
+- Creating the Boot Disk
+- Partitioning the Hard Disk
+- Using Fdisk to Partition the Hard Disk
+- Formatting the Drives
+- Installing Windows Millennium Edition
+
+If you are installing Windows Me onto a formatted hard disk
+just follow the last two steps.
+
+IMPORTANT: All the steps you need for preparing a hard disk and 
+installing Windows Me are included here. However, if you are an 
+inexperienced user, it is not recommended that you install 
+the hard disk and prepare it for use yourself. If you are not 
+familiar with the related technical issues, it is recommended 
+that you contact a computer hardware service organization to 
+do this.
+
+
+=============
+GETTING READY
+=============
+
+The following hardware should already be set up and working:
+
+- The hard disk drive is already physically installed in the 
+  computer. That is, it is screwed into position, and the power 
+  and data cables are connected.
+
+- The computer recognizes the hard disk drive. The two common 
+  types of hard disk drives are SCSI and IDE. 
+
+  - If you have a SCSI drive, the SCSI adapter card will 
+    identify the hard disk drive.
+
+  - If you have an IDE drive, you must make sure the computer's 
+    CMOS is set to recognize the drive. If you have the option 
+    for "auto detect," you can initially try selecting that 
+    option. However, check your hardware documentation, as 
+    there are many differences among BIOS manufacturers and 
+    revisions.
+
+Before you start, make sure you have the following available:
+
+- A floppy disk that can be used to start the computer and 
+  provide the utilities you need to make the new hard disk 
+  drive usable.
+
+- A Windows Millennium Edition CD.
+
+- An earlier Windows product disk, if you have the Windows 
+  Millennium Edition upgrade product (rather than the "full" 
+  version, such as the version that comes installed on a new 
+  computer).
+
+  When you are installing Windows Me, The Upgrade Compliance 
+  Check asks you to show proof of possession of a qualifying 
+  earlier version of Windows. You do not have to install the 
+  older version first, but you must insert the disk to show 
+  the Setup program that you have it. The Windows 95 or 
+  Windows 98 CD product disk, or Windows 95 floppy disks 
+  work for this purpose.
+
+- Driver disks from manufacturers. If you have hardware that 
+  requires drivers that are not part of Windows Me, you need 
+  the disk or CD that the manufacturer provided with these 
+  drivers.
+
+- Documentation for your computer hardware, in case your need 
+  to change CMOS settings or check other information.
+
+Before you start, do the following:
+
+- Make sure that the computer's built-in anti-virus protection 
+  is disabled before you start. Your computer may not have 
+  this feature, but if it does, you may need to check your 
+  computer's documentation to learn how to turn it off. This 
+  protection can be turned on again after Windows Me is 
+  completely set up.
+
+- Determine whether your computer requires "drive overlay 
+  software" to allow it to see large hard drives. If it does, 
+  you might need to use that software to prepare the drive. 
+  However, even though this software comes with most hard 
+  drives, you should not install it unless it's required to 
+  properly access the drive. Most recently manufactured 
+  computers do not require this software.
+
+NOTE: You may encounter some differences in the following 
+      procedures, depending on your system and your preferences. 
+      For example, some steps differ if your computer has more 
+      than one physical hard disk drive, such as when the 
+      second drive has applications installed on it and you 
+      want to install Windows Me on the D drive rather than 
+      on the C drive.
+
+
+======================
+CREATING THE BOOT DISK
+======================
+
+If you do not have a boot disk, also called a Windows Me 
+Emergency Startup (boot) Disk (EBD), follow these instructions 
+to create one.
+
+
+If you have access to a computer that is currently running Windows Me
+
+1. In Control Panel, double-click Add/Remove Programs, and then 
+   click the Startup Disk tab.
+
+2. Click Create Disk, and then follow the instructions on the 
+   screen.
+
+
+- An EBD from Windows 98 will also work with this procedure. 
+  The startup disk you created can find and allow access to 
+  most, but not all, CD drives. If it can't find or access your 
+  drive, follow the instructions that came with your hardware 
+  to create a boot disk that will allow access to the CD-ROM 
+  drive.
+
+- If an error message appears, your computer may be set to boot 
+  from the hard disk rather than from the floppy disk. To change 
+  this option in the computer's CMOS setup, see your computer's 
+  documentation.
+
+
+==========================
+PARTITIONING THE HARD DISK
+==========================
+
+Hard disk drives are divided into areas called partitions. 
+There are two types: Primary and Extended. Drive letters are 
+assigned automatically by the system, so you can't choose to 
+assign a particular letter to a drive. Drive letters are 
+assigned in order, as follows:
+
+- The Primary partition gets the drive letter C. If the computer 
+  has more than one physical hard disk and each has a primary 
+  partition, the first drive's primary partition gets the 
+  letter C, the second drive's primary partition gets D, the 
+  third drive's primary partition gets E, and so on.
+
+- An extended partition takes whatever space on the drive that  
+  the primary partition isn't using. After you create extended  
+  partitions, you can create logical drives in these partitions, 
+  and those logical drives are assigned drive letters. (The 
+  extended partition itself does not receive a drive letter.)
+
+- After the system assigns letters to all primary partitions on 
+  the physical hard disks, it gives the first logical drive in 
+  the first extended partition the next letter, then the next 
+  logical drive in that partition is assigned the next available 
+  letter, and so on.
+
+- When all logical drives in that partition have drive letters 
+  assigned, the system finds the next physical drive that might 
+  be available and looks for logical drives in any extended 
+  partitions and continues this process.
+
+A second, third, or fourth drive is not required to have a 
+primary partition. Such a drive can have just an extended 
+partition with logical drives in that partition.
+
+
+Example: Creating Multiple Drives on a Single Disk
+
+For this example, assume your computer has a single new empty 
+6-GB hard disk and no CD-ROM drive. With no partition, the hard 
+disk is unusable. You make a 2-GB primary partition. Because 
+it's a primary partition and it's the first drive, it gets the 
+letter C. You decide to make the remaining 4 GB, which has not 
+been claimed, into an extended partition. You now have your 
+C drive defined and an extended partition taking the rest of 
+the drive.
+
+You decide to make a 3-GB logical drive in the extended 
+partition, which gets drive letter D. This computer now has 
+a 2-GB C drive, a 3-GB D drive, and 1 GB of disk space left 
+over that could be used to make a 1-GB drive (which would 
+get the letter E) or two 500-MB drives (which would get 
+letters E and F).
+
+
+======================================
+USING FDISK TO PARTITION THE HARD DISK
+======================================
+
+To partition the drive, you use a program called Fdisk that's 
+on the Emergency Startup Disk (EBD) disk you made earlier.
+
+NOTE: Always follow the Fdisk on-screen prompts carefully. The 
+      program tells you how to maneuver through the menus, when 
+      to press the ESC key to go back, when you need to restart 
+      your computer, and so on.
+
+To partition the hard disk:
+
+1. At the A command prompt, type fdisk, and then press ENTER.
+   If the hard disk is larger than 512 MB, Fdisk asks whether 
+   to enable Large Disk Support:
+
+   - If you want to install other operating systems on this  
+     computer, you need to know whether they can read FAT32.   
+     If they cannot, choose No. Operating systems such as  
+     Windows NT(R) 4.0, for example, cannot read FAT32, but 
+     Windows 2000 can.
+     
+   - If you don't plan to install operating systems other than 
+     Windows Me or Windows 2000, you will probably want to use 
+     Large Disk Support. It allows you to create partitions 
+     larger than 2 GB (which is the limit for FAT16) and 
+     provides greater file storage efficiency.
+
+2. When you are prompted about enabling Large Disk Support, type 
+   Y or N, and then press ENTER. The Fdisk main menu appears.
+
+3. At the command prompt, type 1 to create a Primary partition. 
+   You are then asked whether you want to use the maximum space 
+   (the entire drive):
+   
+   - If you choose Yes, this uses up to 2 GB for a FAT16 
+     partition or the entire drive for a FAT32 partition.
+     
+   - If you choose No, you can specify how large you want the 
+     partition to be.
+     
+     If you want to use only part of the drive as the Primary 
+     partition, you can return to this menu later to choose 
+     Option 2 to create the Extended partition. When you choose 
+     Option 2, you are prompted whether to use the remainder of 
+     the drive; then follow the prompts through the process of 
+     creating logical drives in that partition. Continue with
+     this process until all the space is used up on the hard 
+     disk.
+
+4. Optionally, to make the Primary partition "Active," select 
+   Option 2 from the Fdisk main menu. Follow the instructions.
+
+   The Active partition is the partition that the computer boots 
+   from. You need to set the Active partition if you created both 
+   Primary and Extended partitions. If you created only a Primary 
+   partition, it will automatically be set to Active.
+
+5. When all this is finished, press the ESC key to exit Fdisk. 
+   When you are prompted to start your computer, leave the EBD 
+   disk in the A drive and restart your computer by using the  
+   power switch or by pressing CRTL+ALT+DEL.
+
+
+=====================
+FORMATTING THE DRIVES
+=====================
+
+After the partitions and logical drives are created, you need 
+to format them.
+
+To enable CD-ROM support:
+
+1. After you restart your computer, a menu appears prompting you  
+   to choose whether you want CD-ROM support. 
+
+   - Select Option 1 or 2 to boot with CD-ROM support if you are 
+     using a Windows Me Startup Disk.
+
+   - Select Option 1 if you are using a Windows 98 Startup Disk.
+
+2. Watch for any error messages. There will be several 
+   informational messages crossing the screen while the EBD 
+   looks for your CD-ROM drive, but these are not necessarily 
+   error messages.
+
+When the display returns to the A prompt, you must format the 
+Primary partition (the C drive) you just created with Fdisk, 
+plus any logical drives created in any extended partitions.
+
+IMPORTANT: If the computer has more than one hard disk drive, 
+           make sure you are formatting the correct drive. 
+           Otherwise, you can lose information that you cannot 
+           recover. For example, before formatting drive D, at 
+           the A prompt, type "dir d:" to make sure there is no 
+           data on it. If the drive is empty, you should receive 
+           an error message when you try to perform this command.
+
+To format the hard drive:
+
+1. To format drive C, at the A prompt type the following:
+
+   format c:
+
+   and then press ENTER. You will be warned that all data will be 
+   lost. 
+
+   Select Yes to continue with the format.
+
+2. For each logical drive you created (such as D and E), at the 
+   A prompt type the following:
+
+   format d: (or the appropriate drive letter)
+
+Make sure you are formatting only the new drives you created, 
+not other drives on other hard disks in your computer.
+
+
+=====================================
+INSTALLING WINDOWS MILLENNIUM EDITION
+=====================================
+
+If you use a Windows Me Emergency Startup Disk (EBD), the CD-ROM 
+drive is automatically assigned the drive letter two higher than 
+the last hard-disk partition. If you have only a C drive, the 
+CD-ROM drive will be E. If you have C and D hard drives, the 
+CD-ROM will be drive F, and so on. The drive letter immediately 
+after your last hard drive is assigned to the Ramdrive used by 
+the EBD.
+
+To install Windows Me on the new drive:
+
+1. Insert the Windows Millennium Edition CD in the drive.
+
+2. To change to the CD-ROM drive, at the A prompt type E: 
+   (or the appropriate drive letter), and then press ENTER.
+
+3. Type the following:
+
+   setup
+
+   and then press ENTER.
+
+4. Follow the instructions on the screen. If you have the Windows
+   Me Upgrade product, you must insert a CD or floppy disk from
+   a previous version of Windows. The instructions will tell you 
+   when to insert the Windows Me CD back into the drive.
+
+5. You're on the way! Just continue to follow the instructions 
+   on the screen.
+
+
