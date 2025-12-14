@@ -1,0 +1,221 @@
+     ----------------------------------------
+       Microsoft Windows Millennium Edition
+     README for Pan-European Regional Settings
+     ----------------------------------------
+
+     (c)Copyright Microsoft Corporation, 2000
+
+This document provides complementary or late-breaking 
+information to supplement the Microsoft(R) Windows(R) 
+Millennium (Windows Me) documentation.
+
+
+------------------------
+HOW TO USE THIS DOCUMENT
+------------------------
+
+To view Intl.txt on-screen in Notepad, maximize the 
+Notepad window.
+
+To print Intl.txt, open it in Notepad or another word 
+processor, and then on the File menu, click Print.
+
+
+--------
+CONTENTS
+--------
+
+INSTALLATION INSTRUCTIONS FOR
+  PAN-EUROPEAN COUNTRIES
+
+PROGRAM SUPPORT
+
+DOCUMENT SUPPORT
+
+INSTALLING SUPPORT FOR YOUR COUNTRY
+
+REGIONAL SETTINGS
+
+UPGRADING FROM THE PAN-EUROPEAN EDITION 
+OF MICROSOFT WINDOWS 95, U.S. EDITION
+OF WINDOWS 98, OR WINDOWS 98 SECOND EDITION
+
+UPGRADING FROM THE U.S. EDITION OF
+MICROSOFT WINDOWS 95, WINDOWS 98, OR
+WINDOWS 98 SECOND EDITION
+
+MULTILINGUAL FEATURES IN WINDOWS Me
+
+
+=============================
+INSTALLATION INSTRUCTIONS FOR 
+PAN-EUROPEAN COUNTRIES
+=============================
+
+Windows Me includes all the support provided in the Pan-
+European Edition of Windows 95 and the support provided in 
+Windows 98 and Windows 98 Second Edition. It provides both 
+program support and document support for markets that did 
+not have a localized version of Windows 95, Windows 98, or 
+Windows 98 Second Edition.
+
+
+===============
+PROGRAM SUPPORT
+===============
+
+Windows Me provides support for localized programs. For example, 
+you can run Russian Microsoft Office 2000 on Microsoft Me.
+
+
+================
+DOCUMENT SUPPORT
+================
+
+You can use Windows Me to create a multilingual document with 
+TrueType fonts in all programs that support TrueType fonts. For 
+example, you can now create a document in Microsoft Word 2000 
+for Windows that includes Czech, Russian, Greek, and French text.
+
+
+===================================
+INSTALLING SUPPORT FOR YOUR COUNTRY
+===================================
+
+You can install this version of Windows Me by upgrading from an 
+existing installation of Windows 95, Windows 98, or Windows 98 
+Second Edition. By default, your existing settings are detected 
+and maintained. For example, when you upgrade from Polish 
+Microsoft Windows 95, your default regional settings are still 
+in Polish, your default keyboard still generates Polish 
+characters, and you run your Windows-based programs as you 
+did before.
+
+If you install Windows Me on a computer that is currently 
+running MS-DOS only, you should specify the language, country/
+region and keyboard layout you want during Setup. The default 
+is English and the United States. 
+
+To change your regional settings:
+
+1. During Setup, select the Custom option in the Windows Me 
+   Setup wizard.
+ 
+2. In the Language dialog box, click your spoken language. 
+   Click Next to continue.
+
+3. In the Country/Region dialog box, click your country. 
+   Click Next to continue.
+
+4. In the Keyboard Layout dialog box, click your preferred 
+   keyboard. Click Next to continue.
+
+Setup then installs these regional settings and keyboard 
+layout values for Windows-based and MS-DOS-based programs. 
+
+NOTE: Some languages default to the U.S. keyboard that is 
+defined for MS-DOS windows and MS-DOS-based programs.
+
+
+=================
+REGIONAL SETTINGS
+=================
+
+Windows Me defines which Windows and MS-DOS code pages and 
+system fonts are installed on your computer. You cannot change 
+these settings after Setup. 
+
+Regional Settings also defines which international settings--
+such as date, currency, time formats, and sort orders for 
+programs your computer will use. 
+
+To change your international settings after Setup:
+
+1. Click Start, point to Settings, and then click Control Panel.
+
+2. Open Regional Settings. If you do not see the Regional Settings 
+   icon, click View All Control Panel Options.
+
+3. On the Regional Settings tab, select the appropriate language 
+   and country/region.
+
+4. To change your number, currency, time, and date settings, 
+   click the respective tab, and then make your changes.
+
+5. Click OK.
+
+Regardless of whether you are upgrading over Windows 95, 
+Windows 98, or Windows 98 Second Edition, it is recommended 
+that you verify that your regional settings have been detected 
+correctly.
+
+
+========================================
+UPGRADING FROM THE PAN-EUROPEAN EDITION 
+OF MICROSOFT WINDOWS 95, U.S. EDITION OF 
+WINDOWS 98, OR WINDOWS 98 SECOND EDITION
+========================================
+
+When you are upgrading from the Pan-European Edition of 
+Windows 95, U.S. Edition of Windows 98, or Windows 98 Second 
+Edition, the upgrade is performed automatically, using the 
+current regional settings and keyboard values.
+
+
+==================================
+UPGRADING FROM THE U.S. EDITION OF
+MICROSOFT WINDOWS 95, WINDOWS 98, 
+OR WINDOWS 98 SECOND EDITION
+==================================
+
+When you are upgrading from the U.S. Edition of Windows 95, 
+Windows 98, or Windows 98 Second Edition, the Language, 
+Country, and Keyboard screens will appear if the following 
+two conditions are met: 
+
+- At least two keyboards are installed.
+
+- Multilanguage Support is installed.
+
+NOTE: If these two conditions are not met, these screens do 
+not appear. The existing settings are used and upgraded 
+automatically.
+
+If the Language, Country/Region and Keyboard screens appear, 
+you can select your respective settings and then during
+Setup these values are used.
+
+
+SWEDISH KEYBOARD ISSUE
+======================
+A Swedish user booting off the Windows Millennium Edition 
+Emergency Boot Disk finds that the keyboard has Slovenian 
+characters instead of Swedish characters.
+
+CAUSE
+=====
+Inconsistency between W95 and W98 in using SW or SV for Swedish 
+and Slovenian in MsDOS mode.  Correct abbreviation for Swedish 
+in Windows Millennium Edition is SW.
+
+RESOLUTION
+==========
+Edit config.sys on the EBD and change regional and keyboard 
+settings installed to SW.
+
+
+
+MULTILINGUAL FEATURES IN WINDOWS ME
+===================================
+
+You can use Windows Me to create documents in many different 
+languages. For example, you can create documents in Central 
+European, Cyrillic, Baltic-based languages, Greek, or Turkish. 
+After Windows Me is installed, refer to "Multilingual Documents, 
+Creating" in Windows Help and Support for more information.
+
+In Windows Me, you can also load multiple keyboard layouts in 
+Windows programs. This makes it easy to create multilingual 
+documents. To switch between keyboards, press the left 
+ALT+SHIFT. For more information, refer to "Keyboard, layout" 
+in Windows Help and Support.
