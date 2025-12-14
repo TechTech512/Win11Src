@@ -1,0 +1,6 @@
+LIBRARY TAPIPERF
+EXPORTS
+    CloseTapiPerformanceData 
+    CollectTapiPerformanceData 
+    OpenTapiPerformanceData 
+
