@@ -1,7 +1,4 @@
-#include <windows.h>
-#include <shellapi.h>
-#include <shlwapi.h>
-#include <strsafe.h>
+#include "regedt32.h"
 
 #pragma comment(lib, "shlwapi.lib")
 
