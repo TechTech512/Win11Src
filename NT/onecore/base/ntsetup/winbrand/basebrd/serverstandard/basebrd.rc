@@ -1,0 +1,302 @@
+//===============================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for basebrd.dll
+// 
+//===============================================================
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE VFT_DLL
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Base Branding Resource Dll"
+#define VER_INTERNALNAME_STR        "BASEBRD"
+#define VER_ORIGINALFILENAME_STR    "BASEBRD.DLL"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_LOGONBANNER1              IMAGE  DISCARDABLE     "logonbanner.png"
+IDB_ABOUT_EMBEDDED1           IMAGE  DISCARDABLE     "idb_aboutembedded458.png"
+IDB_ABOUT_EMBEDDED1_2         IMAGE  DISCARDABLE     "idb_aboutembedded458_2.png"
+IDB_ABOUT_EMBEDDED1_3         IMAGE  DISCARDABLE     "idb_aboutembedded458_3.png"
+IDB_ABOUT_WINSRV2012_1        IMAGE  DISCARDABLE     "idb_aboutwin8srv458.png"
+IDB_ABOUT_OUTLINE_1           IMAGE  DISCARDABLE     "idb_aboutembeddedoutline458.png"
+IDB_LOGONBANNER2              IMAGE  DISCARDABLE     "logonbanner438.png"
+IDB_ABOUT_EMBEDDED2           IMAGE  DISCARDABLE     "idb_aboutembedded573.png"
+IDB_ABOUT_EMBEDDED2_2         IMAGE  DISCARDABLE     "idb_aboutembedded573_2.png"
+IDB_ABOUT_EMBEDDED2_3         IMAGE  DISCARDABLE     "idb_aboutembedded573_3.png"
+IDB_ABOUT_WINSRV2012_2        IMAGE  DISCARDABLE     "idb_aboutwin8srv573.png"
+IDB_ABOUT_OUTLINE_2           IMAGE  DISCARDABLE     "idb_aboutembeddedoutline573.png"
+IDB_LOGONBANNER3              IMAGE  DISCARDABLE     "logonbanner525.png"
+IDB_ABOUT_EMBEDDED3           IMAGE  DISCARDABLE     "idb_aboutembedded687.png"
+IDB_ABOUT_EMBEDDED3_2         IMAGE  DISCARDABLE     "idb_aboutembedded687_2.png"
+IDB_ABOUT_EMBEDDED3_3         IMAGE  DISCARDABLE     "idb_aboutembedded687_2.png"
+IDB_ABOUT_WINSRV2012_3        IMAGE  DISCARDABLE     "idb_aboutwin8srv687.png"
+IDB_ABOUT_OUTLINE_3           IMAGE  DISCARDABLE     "idb_aboutembeddedoutline687.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap (UPDATE MAY 6 2021: We gotta do the same thing we did to Workstation
+//                            to Server too!)
+//
+//
+// IDB_LOGONBANNER1              BITMAP  DISCARDABLE     "logonbanner.png"
+// IDB_ABOUT_EMBEDDED1           BITMAP  DISCARDABLE     "idb_aboutembedded458.png"
+// IDB_ABOUT_EMBEDDED1_2         BITMAP  DISCARDABLE     "idb_aboutembedded458_2.png"
+// IDB_ABOUT_EMBEDDED1_3         BITMAP  DISCARDABLE     "idb_aboutembedded458_3.png"
+// IDB_ABOUT_WINSRV2012_1        BITMAP  DISCARDABLE     "idb_aboutwin8srv458.png"
+// IDB_ABOUT_OUTLINE_1           BITMAP  DISCARDABLE     "idb_aboutembeddedoutline458.png"
+// IDB_LOGONBANNER2              BITMAP  DISCARDABLE     "logonbanner438.png"
+// IDB_ABOUT_EMBEDDED2           BITMAP  DISCARDABLE     "idb_aboutembedded573.png"
+// IDB_ABOUT_EMBEDDED2_2         BITMAP  DISCARDABLE     "idb_aboutembedded573_2.png"
+// IDB_ABOUT_EMBEDDED2_3         BITMAP  DISCARDABLE     "idb_aboutembedded573_3.png"
+// IDB_ABOUT_WINSRV2012_2        BITMAP  DISCARDABLE     "idb_aboutwin8srv573.png"
+// IDB_ABOUT_OUTLINE_2           BITMAP  DISCARDABLE     "idb_aboutembeddedoutline573.png"
+// IDB_LOGONBANNER3              BITMAP  DISCARDABLE     "logonbanner525.png"
+// IDB_ABOUT_EMBEDDED3           BITMAP  DISCARDABLE     "idb_aboutembedded687.png"
+// IDB_ABOUT_EMBEDDED3_2         BITMAP  DISCARDABLE     "idb_aboutembedded687_2.png"
+// IDB_ABOUT_EMBEDDED3_3         BITMAP  DISCARDABLE     "idb_aboutembedded687_2.png"
+// IDB_ABOUT_WINSRV2012_3        BITMAP  DISCARDABLE     "idb_aboutwin8srv687.png"
+// IDB_ABOUT_OUTLINE_3           BITMAP  DISCARDABLE     "idb_aboutembeddedoutline687.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table (UPDATE MAR 2021: Copyright year removed)
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LEGALCOPYRIGHT        "\xA9 Microsoft Corporation. All rights reserved."
+    IDS_COMPANYNAME           "Microsoft"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS_LIVE_ID                  "Microsoft account"
+    IDS_WINDOWS_LIVE_ID_PLURAL           "Microsoft accounts"
+	// Need those Windows 7 brandings anymore?
+    IDS_WINDOWS_7                        "Windows 7"
+    IDS_WINDOWS_SERVER_7                 "Windows Server 2008 R2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    // Need Windows 8.x's either?
+    IDS_WINDOWS_8                        "Windows 8"
+    IDS_WINDOWS_SERVER_8                 "Windows Server 2012"
+    IDS_WINDOWS_XP_ARM                   "Windows RT"
+    IDS_WINDOWS_81                       "Windows 8.1"
+    IDS_WINDOWS_SERVER_81                "Windows Server 2012 R2"
+    IDS_WINDOWS_XP_ARM_SE                "Windows RT 8.1"
+    IDS_WHISTLER_BETA                    "Windows Technical Preview"
+    IDS_WHISTLER_SERVER_BETA             "Windows Server Technical Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WHISTLER_BETA2                    "Windows Technical Preview"
+    IDS_WINDOWS_10                        "Windows 10"
+    IDS_WINDOWS_SERVER_2016               "Windows Server 2016"
+    IDS_WINDOWS_SERVER_2019               "Windows Server 2019"
+    IDS_WHISTLER_SERVER                   "Windows Server"
+    IDS_WINDOWS_SERVER_2022               "Windows Server 2022"
+    IDS_WINDOWS_SERVER_11                 "Windows Server 2025"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWSSERVER                     "Windows Server"
+    IDS_HYPERVSERVER                      "Hyper-V Server"
+    IDS_WINDOWS_SRV_2                     "Windows Server"
+    IDS_BLADE_SERVER_WHISTLER             "Windows Web Server"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINNT_EMBEDDED                           "Windows Embedded 8.1"
+	IDS_WINDOWS_2000_SERVER                      "Windows Server 2025"
+	IDS_VIRTUAL_PC_SERVER                        "Hyper-V Server"
+	IDS_WHISTLER_BLADE_SRV                       "Windows Server 2025 Web Server"
+	IDS_WHISTLER_SRV                             "Windows Server"
+	IDS_AZURE_HCI_STACK                          "Azure Stack HCI"
+	IDS_AZURE_HCI_STACK2                         "Azure Stack HCI"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_WHISTLER_EDU_PLACEHOLDER_1                                       "Windows Server 2025 NanoTest"
+    IDS_WHISTLER_EDU_PLACEHOLDER_2                                       "NanoTest"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WIN2K_DATACENTER_SRV                            "Windows Server 2025 Datacenter"
+    IDS_WIN2K_DATACENTER_SRV2                           "Datacenter"
+    IDS_WIN2K_PRO_CHINA_1                               "Windows Server 2025 Datacenter Evaluation"
+    IDS_WIN2K_PRO_CHINA_2                               "Datacenter Evaluation"
+    IDS_WIN2K_PRO_WORKSTATION_PLACEHOLDER_1             "Hyper-V Server"
+    IDS_WIN2K_PRO_WORKSTATION_PLACEHOLDER_2             "Hyper-V"
+    IDS_WIN2K_PROFESSIONAL_STUDENT_PLACEHOLDER_1        "Windows Server 2025 Standard"
+    IDS_WIN2K_PROFESSIONAL_STUDENT_PLACEHOLDER_2        "Standard"
+    IDS_WIN2K_PROFESSIONAL_EUR_STUDENT_PLACEHOLDER_1    "Windows Server 2025 Standard Evaluation"
+    IDS_WIN2K_PROFESSIONAL_EUR_STUDENT_PLACEHOLDER_2    "Standard Evaluation"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS_ENTERPRISE_G_PLACEHOLDER_1                     "Windows Server 2025 Web Server"
+    IDS_WINDOWS_ENTERPRISE_G_PLACEHOLDER_2                     "Web"
+    IDS_WINDOWS_ENTERPRISE_MULTIPROCESSOR_PLACEHOLDER_1        "Windows Server 2025 Datacenter"
+    IDS_WINDOWS_ENTERPRISE_MULTIPROCESSOR_PLACEHOLDER_2        "Datacenter"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS_INTERNET_OF_THINGS_PROLONGED_UPD_PLACEHOLDER_1        "Windows Server 2025 Standard"
+    IDS_WINDOWS_INTERNET_OF_THINGS_PROLONGED_UPD_PLACEHOLDER_2        "Standard"
+    IDS_WINDOWS_CLOUD_EDITION_PLACEHOLDER_1                           "Windows Server 2025 Standard Evaluation"
+    IDS_WINDOWS_CLOUD_EDITION_PLACEHOLDER_2                           "Standard Evaluation"
+    IDS_WINDOWS_EUROPEAN_CLOUD_EDITION_PLACEHOLDER_1                  "Windows Server 2025 Datacenter"
+    IDS_WINDOWS_EUROPEAN_CLOUD_EDITION_PLACEHOLDER_2                  "Datacenter"
+    IDS_WINDOWS_IOT_MICROSOFT_SUBSCRIPTION_LTSC_PLACEHOLDER_1         "Windows Server 2025 Datacenter Evaluation"
+    IDS_WINDOWS_IOT_MICROSOFT_SUBSCRIPTION_LTSC_PLACEHOLDER_2         "Datacenter Evaluation"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_SUBSCRIPTION1                        "Windows Server 2025 Azure"
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_SUBSCRIPTION2                        "Azure"
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_LTSC_SUBSCRIPTION1                   "Azure Stack HCI"
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_LTSC_SUBSCRIPTION2                   "Azure Stack HCI"
+    IDS_MICROSOFT_WHISTLER_DATACENTER_SERVER_AZURE_EDITION                    "Windows Server 2025 Datacenter Azure Edition"
+    IDS_MICROSOFT_WHISTLER_DATACENTER_SERVER_AZURE_EDITION2                   "Datacenter Azure Edition"
+	IDS_MICROSOFT_WHISTLER_DATACENTER_SERVER_AZURE_EDITION3                   "Windows Server 2025 Datacenter Azure Edition"
+	IDS_MICROSOFT_WHISTLER_DATACENTER_SERVER_AZURE_EDITION4                   "Datacenter Azure Edition"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_SERVER_NANOTEST1                                  "Windows Server 2025 NanoTest"
+    IDS_SERVER_NANOTEST2                                  "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_SERVER_NANOTEST3                                  "Windows Server 2025 NanoTest"
+    IDS_SERVER_NANOTEST4                                  "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_SERVER_NANOTEST5                                  "Windows Server 2025 NanoTest"
+    IDS_SERVER_NANOTEST6                                  "This option installs a complete installation of Windows Server, with some optional features available for installation remotely. This installation includes the entire user interface, and it supports all of the server roles."
+    IDS_SERVER_DATACENTER_WITH_DESKTOP_EXPERIENCE         "Windows Server 2025 Datacenter (Desktop Experience)"
+    IDS_SERVER_DATACENTER_WITH_DESKTOP_DESC               "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_SERVER_DATACENTER                                 "Windows Server 2025 Datacenter"
+    IDS_SERVER_DATACENTER_DESC                            "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_SERVER_DATACENTER_ONDEMAND                        "Windows Server 2025 Datacenter (Features On Demand)"
+    IDS_SERVER_DATACENTER_ONDEMAND_DESC                   "This option installs a complete installation of Windows Server, with some optional features available for installation remotely. This installation includes the entire user interface, and it supports all of the server roles."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_DATACENTER_EVAL_DESKTOP_EXPERIENCE                "Windows Server 2025 Datacenter Evaluation (Desktop Experience)"
+    IDS_DATACENTER_EVAL_DESKTOP_EXPERIENCE_DESC           "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_DATACENTER_EVAL                                   "Windows Server 2025 Datacenter Evaluation"
+    IDS_DATACENTER_EVAL_DESC                              "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_DATACENTER_EVAL_ONDEMAND                          "Windows Server 2025 Datacenter Evaluation (Features On Demand)"
+    IDS_DATACENTER_EVAL_ONDEMAND_DESC                     "This option installs a complete installation of Windows Server, with some optional features available for installation remotely. This installation includes the entire user interface, and it supports all of the server roles."
+    IDS_HYPERVSERVER_SETUP                                "Hyper-V Server"
+    IDS_HYPERVSERVER_SETUP_DESC                           "This option installs Hyper-V."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_STANDARD_SERVER_DESKTOP                            "Windows Server 2025 Standard (Desktop Experience)"
+    IDS_STANDARD_SERVER_DESKTOP_DESC                       "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_STANDARD_SERVER                                    "Windows Server 2025 Standard"
+    IDS_STANDARD_SERVER_DESC                               "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_STANDARD_SERVER_ONDEMAND                           "Windows Server 2025 Standard (Features On Demand)"
+    IDS_STANDARD_SERVER_ONDEMAND_DESC                      "This option installs a complete installation of Windows Server, with some optional features available for installation remotely. This installation includes the entire user interface, and it supports all of the server roles."
+    IDS_STANDARD_SERVER_EVAL_DESKTOP                       "Windows Server 2025 Standard Evaluation (Desktop Experience)"
+    IDS_STANDARD_SERVER_EVAL_DESKTOP_DESC                  "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_STANDARD_SERVER_EVAL                               "Windows Server 2025 Standard Evaluation"
+    IDS_STANDARD_SERVER_EVAL_DESC                          "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_STANDARD_SERVER_EVAL_ONDEMAND                      "Windows Server 2025 Standard Evaluation (Features On Demand)"
+    IDS_STANDARD_SERVER_EVAL_ONDEMAND_DESC                 "This option installs a complete installation of Windows Server, with some optional features available for installation remotely. This installation includes the entire user interface, and it supports all of the server roles."
+    IDS_STANDARD_SERVER_BLADE_DESKTOP                      "Windows Server 2025 Web Server (Desktop Experience)"
+    IDS_STANDARD_SERVER_BLADE_DESKTOP_DESC                 "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_STANDARD_SERVER_BLADE_CMD                          "Windows Server 2025 Web Server"
+    IDS_STANDARD_SERVER_BLADE_CMD_DESC                     "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_DATACENTER                                         "Windows Server Datacenter"
+    IDS_DATACENTER_DESC                                    "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_DATACENTER_CMD                                     "Windows Server Datacenter"
+    IDS_DATACENTER_CMD_DES                                 "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_DATACENTER_ONDEMAND                                "Windows Server Datacenter"
+    IDS_DATACENTER_ONDEMAND_DES                            "This option installs a complete installation of Windows Server, with some optional features available for installation remotely. This installation includes the entire user interface, and it supports all of the server roles."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_STANDARD_DESKTOP                                    "Windows Server 2025 Standard"
+    IDS_STANDARD_DESKTOP_DESC                               "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_STANDARD_EVAL_DESKTOP                               "Windows Server 2025 Standard Evaluation"
+    IDS_STANDARD_EVAL_DESKTOP_DESC                          "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_DTC_DESKTOPEXPERIENCE                               "Windows Server 2025 Datacenter"
+    IDS_DTC_DESKTOPEXPERIENCE_DESC                          "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_DTC_EVAL_DESKTOPEXPERIENCE                          "Windows Server 2025 Datacenter Evaluation"
+    IDS_DTC_EVAL_DESKTOPEXPERIENCE_DESC                     "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_AZURE_1                                             "Windows Server 2025 Azure"
+    IDS_AZURE_2                                             "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_AZURE_3                                             "Windows Server 2025 Azure"
+    IDS_AZURE_4                                             "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_AZURE_5                                             "Windows Server 2025 Azure"
+    IDS_AZURE_6                                             "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_AZURE_7                                             "Azure Stack HCI"
+    IDS_AZURE_8                                             "This option installs Azure Stack HCI."
+    IDS_AZURE_9                                             "Windows Server 2025 Datacenter Azure Edition (Desktop Experience)"
+    IDS_AZURE_10                                            "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+    IDS_AZURE_11                                            "Windows Server 2025 Datacenter Azure Edition"
+    IDS_AZURE_12                                            "(Recommended) This option omits most of the Windows graphical environment. Manage with a command prompt and PowerShell, or remotely with Windows Admin Center or other tools."
+    IDS_AZURE_13                                            "Windows Server 2025 Datacenter Azure Edition (Features On Demand)"
+    IDS_AZURE_14                                            "This option installs a complete installation of Windows Server, with some optional features available for installation remotely. This installation includes the entire user interface, and it supports all of the server roles."
+    IDS_AZURE_15                                            "Windows Server 2025 Datacenter Azure Edition"
+    IDS_AZURE_16                                            "This option installs the full Windows graphical environment, consuming extra drive space. It can be useful if you want to use the Windows desktop or have an app that requires it."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IN_PROTECTED_MODE                        " in S mode"
+    IDS_INSIDER_PREVIEW                          " Insider Preview"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCData
+//
+
+IDRC_BRANDING              RCDATA  DISCARDABLE     "branding.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Resource maps
+//
+
+IDRCAP_BRANDING              BRANDING_REQUIRED_RESOURCEID_MAP  DISCARDABLE     "resourcemap.bin"
+IDRCAP_BRANDING_OPTIONAL     BRANDING_OPTIONAL_RESOURCEID_MAP  DISCARDABLE     "optionalresourcemap.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Metadata
+//
+
+IDRCMETADATA_BRANDING              BRANDING_METADATA_RES  DISCARDABLE     "metadata.bin"
