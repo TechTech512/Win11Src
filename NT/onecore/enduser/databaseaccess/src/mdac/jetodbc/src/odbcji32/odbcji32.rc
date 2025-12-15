@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 1999 Microsoft Corporation. All rights reserved.
+//
+// Resource table for ODBC
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Microsoft ODBC Desktop Driver Pack 3.5"
+#define VER_INTERNALNAME_STR        "odbcji32.dll"
+#define VER_ORIGINALFILENAME_STR    "odbcji32.dll"
+
+#include "common.ver"

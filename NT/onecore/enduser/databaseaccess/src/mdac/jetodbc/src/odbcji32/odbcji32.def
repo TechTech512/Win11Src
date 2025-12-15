@@ -1,0 +1,5 @@
+LIBRARY ODBCJI32
+EXPORTS
+    DllMain @500
+    IntlLibHinst @1
+
