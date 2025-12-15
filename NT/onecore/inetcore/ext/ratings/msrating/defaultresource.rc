@@ -1,0 +1,20 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for MSRating
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     """msrating.DYNLINK"""
+#define VER_INTERNALNAME_STR        """msrating.DYNLINK"""
+#define VER_ORIGINALFILENAME_STR    """msrating.DYNLINK"""
+
+#include "common.ver"
+
