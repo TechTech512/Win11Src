@@ -1,0 +1,253 @@
+//===============================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for basebrd.dll
+// 
+//===============================================================
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE VFT_DLL
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Base Branding Resource Dll"
+#define VER_INTERNALNAME_STR        "BASEBRD"
+#define VER_ORIGINALFILENAME_STR    "BASEBRD.DLL"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_LOGONBANNER1              IMAGE  DISCARDABLE     "logonbanner.png"
+IDB_ABOUT1                    IMAGE  DISCARDABLE     "idb_about458.png"
+IDB_ABOUT_EMBEDDED1           IMAGE  DISCARDABLE     "idb_aboutembedded458.png"
+IDB_LOGONBANNER2              IMAGE  DISCARDABLE     "logonbanner438.png"
+IDB_ABOUT2                    IMAGE  DISCARDABLE     "idb_about573.png"
+IDB_ABOUT_EMBEDDED2           IMAGE  DISCARDABLE     "idb_aboutembedded573.png"
+IDB_LOGONBANNER3              IMAGE  DISCARDABLE     "logonbanner525.png"
+IDB_ABOUT3                    IMAGE  DISCARDABLE     "idb_about687.png"
+IDB_ABOUT_EMBEDDED3           IMAGE  DISCARDABLE     "idb_aboutembedded687.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap (UPDATE MAY 6 2021: My folks, brothers in Christ and Adam and Eve...
+//                            we are shifting to PNG format for transparency
+//                            support for the branding of the new Windows 10
+//                            Sun Valley update (y not call it a W11 already?!)
+//                            so this section will be obsolete do not use in next
+//                            SV W10 update.)
+//
+//
+// IDB_LOGONBANNER1              BITMAP  DISCARDABLE     "logonbanner.bmp"
+// IDB_ABOUT1                    BITMAP  DISCARDABLE     "idb_about458.bmp"
+// IDB_ABOUT_EMBEDDED1           BITMAP  DISCARDABLE     "idb_aboutembedded458.bmp"
+// IDB_LOGONBANNER2              BITMAP  DISCARDABLE     "logonbanner438.bmp"
+// IDB_ABOUT2                    BITMAP  DISCARDABLE     "idb_about573.bmp"
+// IDB_ABOUT_EMBEDDED2           BITMAP  DISCARDABLE     "idb_aboutembedded573.bmp"
+// IDB_LOGONBANNER3              BITMAP  DISCARDABLE     "logonbanner525.bmp"
+// IDB_ABOUT3                    BITMAP  DISCARDABLE     "idb_about687.bmp"
+// IDB_ABOUT_EMBEDDED3           BITMAP  DISCARDABLE     "idb_aboutembedded687.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table (UPDATE MAR 2021: Copyright year removed)
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LEGALCOPYRIGHT        "\xA9 Microsoft Corporation. All rights reserved."
+    IDS_COMPANYNAME           "Microsoft"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS_LIVE_ID                  "Microsoft account"
+    IDS_WINDOWS_LIVE_ID_PLURAL           "Microsoft accounts"
+	// Need those Windows 7 brandings anymore?
+    IDS_WINDOWS_7                        "Windows 7"
+    IDS_WINDOWS_SERVER_7                 "Windows Server 2008 R2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    // Need Windows 8.x's either?
+    IDS_WINDOWS_8                        "Windows 8"
+    IDS_WINDOWS_SERVER_8                 "Windows Server 2012"
+    IDS_WINDOWS_XP_ARM                   "Windows RT"
+    IDS_WINDOWS_81                       "Windows 8.1"
+    IDS_WINDOWS_SERVER_81                "Windows Server 2012 R2"
+    IDS_WINDOWS_XP_ARM_SE                "Windows RT 8.1"
+    IDS_WHISTLER_BETA                    "Windows Technical Preview"
+    IDS_WHISTLER_SERVER_BETA             "Windows Server Technical Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WHISTLER_BETA2                    "Windows Technical Preview"
+    IDS_WINDOWS_10                        "Windows 10"
+    IDS_WINDOWS_SERVER_2016               "Windows Server 2016"
+    IDS_WINDOWS_SERVER_2019               "Windows Server 2019"
+    IDS_WHISTLER_SERVER                   "Windows Server"
+    IDS_WINDOWS_SERVER_2022               "Windows Server 2022"
+    IDS_WINDOWS_SERVER_11                 "Windows Server 2025"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS                           "Windows"
+    IDS_WINNT                             "Windows"
+    IDS_WINDOWS_10_2                      "Windows 10"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINNT_EMBEDDED                           "Windows Embedded 8.1"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WHISTLER_PERSONAL_PLACEHOLDER_1                           "Windows 11 Home%1%2"
+    IDS_WHISTLER_PERSONAL_PLACEHOLDER_2                           "Windows 11 Home%1%2"
+    IDS_WHISTLER_PERSONAL_PLACEHOLDER_CHINA_1                     "Windows 11 Home%1 China%2"
+    IDS_WHISTLER_PERSONAL_PLACEHOLDER_CHINA_2                     "Windows 11 Home%1 China%2"
+    IDS_WHISTLER_PERSONAL_PLACEHOLDER_EUROPEANUNION_1             "Windows 11 Home N%1%2"
+    IDS_WHISTLER_PERSONAL_PLACEHOLDER_EUROPEANUNION_2             "Windows 11 Home N%1%2"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_WHISTLER_PERSONAL_UNILNG_PLACEHOLDER_1                           "Windows 11 Home%1 Single Language%2"
+    IDS_WHISTLER_PERSONAL_UNILNG_PLACEHOLDER_2                           "Windows 11 Home%1 Single Language%2"
+    IDS_WHISTLER_EDU_PLACEHOLDER_1                                       "Windows 11 Education%1%2"
+    IDS_WHISTLER_EDU_PLACEHOLDER_2                                       "Windows 11 Education%1%2"
+    IDS_WHISTLER_EDU_EUROPE_PLACEHOLDER_1                                "Windows 11 Education N%1%2"
+    IDS_WHISTLER_EDU_EUROPE_PLACEHOLDER_2                                "Windows 11 Education N%1%2"
+    IDS_WHISTLER_EDU_A3_PLACEHOLDER_1                                    "Windows 11 Education A3%1%2"
+    IDS_WHISTLER_EDU_A5_PLACEHOLDER_2                                    "Windows 11 Education A5%1%2"
+    IDS_WHISTLER_ENT_E3_PLACEHOLDER_2                                    "Windows 11 Enterprise E3 (device)%1%2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WHISTLER_ENTERPRISE_PLACEHOLDER_1                           "Windows 11 Enterprise%1%2"
+    IDS_WHISTLER_ENTERPRISE_PLACEHOLDER_2                           "Windows 11 Enterprise%1%2"
+    IDS_WHISTLER_ENTERPRISE_EVAL_PLACEHOLDER_1                      "Windows 11 Enterprise Evaluation%1%2"
+    IDS_WHISTLER_ENTERPRISE_EVAL_PLACEHOLDER_2                      "Windows 11 Enterprise Evaluation%1%2"
+    IDS_WHISTLER_ENTERPRISE_EUROPE_PLACEHOLDER_1                    "Windows 11 Enterprise N%1%2"
+    IDS_WHISTLER_ENTERPRISE_EUROPE_PLACEHOLDER_2                    "Windows 11 Enterprise N%1%2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WHISTLER_ENTERPRISE_EUROPE_EVAL_PLACEHOLDER_1                    "Windows 11 Enterprise N Evaluation%1%2"
+    IDS_WHISTLER_ENTERPRISE_EUROPE_EVAL_PLACEHOLDER_2                    "Windows 11 Enterprise N Evaluation%1%2"
+    IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_PLACEHOLDER_1                 "Windows 11 Enterprise LTSC%1%2"
+    IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_PLACEHOLDER_2                 "Windows 11 Enterprise LTSC%1%2"
+    IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_EVAL_PLACEHOLDER_1            "Windows 11 Enterprise LTSC Evaluation%1%2"
+    IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_EVAL_PLACEHOLDER_2            "Windows 11 Enterprise LTSC Evaluation%1%2"
+	IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_EUROPE_PLACEHOLDER_1          "Windows 11 Enterprise N LTSC%1%2"
+    IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_EUROPE_PLACEHOLDER_2          "Windows 11 Enterprise N LTSC%1%2"
+	IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_EUROPE_EVAL_PLACEHOLDER_1     "Windows 11 Enterprise N LTSC Evaluation%1%2"
+    IDS_WHISTLER_LONG_TERM_SUPPORT_CHANNEL_EUROPE_EVAL_PLACEHOLDER_2     "Windows 11 Enterprise N LTSC Evaluation%1%2"	
+    IDS_WHISTLER_PPIPRO_SURFACE_HUB_1                                    "Windows 11 Team"	
+    IDS_WHISTLER_PPIPRO_SURFACE_HUB_2                                    "Windows 11 Team"	
+    IDS_WIN2K_PROFESSIONAL_PLACEHOLDER_1                                 "Windows 11 Pro%1%2"	
+    IDS_WIN2K_PROFESSIONAL_PLACEHOLDER_2                                 "Windows 11 Pro%1%2"	
+    IDS_WIN2K_PROFESSIONAL_EUROPE_PLACEHOLDER_1                          "Windows 11 Pro N%1%2"	
+    IDS_WIN2K_PROFESSIONAL_EUROPE_PLACEHOLDER_2                          "Windows 11 Pro N%1%2"	
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINXP_STARTER_SKU_LONG                        "Windows 10 Starter"	
+    IDS_WINXP_STARTER_SKU_SHORT                       "Starter"	
+	IDS_WINXP_STARTER_SKU_EUROPE_LONG                 "Windows 10 Starter N"	
+    IDS_WINXP_STARTER_SKU_EUROPE_SHORT                "Starter N"	
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WIN2K_PRO_CHINA_1                               "Windows 11 Pro China Only"
+    IDS_WIN2K_PRO_CHINA_2                               "Windows 11 Pro China Only"
+    IDS_WIN2K_PRO_UNILANG_1                             "Windows 11 Pro Single Language"
+    IDS_WIN2K_PRO_UNILANG_2                             "Windows 11 Pro Single Language"
+    IDS_WIN2K_PRO_WORKSTATION_PLACEHOLDER_1             "Windows 11 Pro for Workstations%1%2"
+    IDS_WIN2K_PRO_WORKSTATION_PLACEHOLDER_2             "Windows 11 Pro for Workstations%1%2"
+    IDS_WIN2K_PRO_WORKSTATION_EUR_PLACEHOLDER_1         "Windows 11 Pro N for Workstations%1%2"
+    IDS_WIN2K_PRO_WORKSTATION_EUR_PLACEHOLDER_2         "Windows 11 Pro N for Workstations%1%2"
+    IDS_WIN2K_PROFESSIONAL_STUDENT_PLACEHOLDER_1        "Windows 11 Pro Education%1%2"
+    IDS_WIN2K_PROFESSIONAL_STUDENT_PLACEHOLDER_2        "Windows 11 Pro Education%1%2"
+    IDS_WIN2K_PROFESSIONAL_EUR_STUDENT_PLACEHOLDER_1    "Windows 11 Pro Education N%1%2"
+    IDS_WIN2K_PROFESSIONAL_EUR_STUDENT_PLACEHOLDER_2    "Windows 11 Pro Education N%1%2"
+    IDS_WINDOWS_LONGHORN_BUSINESS_PLACEHOLDER_1         "Windows 11 Business%1%2"
+    IDS_WINDOWS_LONGHORN_BUSINESS_PLACEHOLDER_2         "Windows 11 Business%1%2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS_LONGHORN_BUSINESS_EUROPE_PLACEHOLDER_1         "Windows 11 Business N%1%2"
+    IDS_WINDOWS_LONGHORN_BUSINESS_EUROPE_PLACEHOLDER_2         "Windows 11 Business N%1%2"
+    IDS_WINDOWS_ENTERPRISE_G_PLACEHOLDER_1                     "Windows 11 Enterprise G%1%2"
+    IDS_WINDOWS_ENTERPRISE_G_PLACEHOLDER_2                     "Windows 11 Enterprise G%1%2"
+    IDS_WINDOWS_ENTERPRISE_G_EUR_PLACEHOLDER_1                 "Windows 11 Enterprise G N%1%2"
+    IDS_WINDOWS_ENTERPRISE_G_EUR_PLACEHOLDER_2                 "Windows 11 Enterprise G N%1%2"
+    IDS_WINDOWS_ENTERPRISE_MULTIPROCESSOR_PLACEHOLDER_1        "Windows 11 Enterprise multi-session%1%2"
+    IDS_WINDOWS_ENTERPRISE_MULTIPROCESSOR_PLACEHOLDER_2        "Windows 11 Enterprise multi-session%1%2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS_INTERNET_OF_THINGS_PLACEHOLDER_1                      "Windows 11 IoT Enterprise%1%2"
+    IDS_WINDOWS_INTERNET_OF_THINGS_PLACEHOLDER_2                      "Windows 11 IoT Enterprise%1%2"
+    IDS_WINDOWS_INTERNET_OF_THINGS_PROLONGED_UPD_PLACEHOLDER_1        "Windows 11 IoT Enterprise LTSC%1%2"
+    IDS_WINDOWS_INTERNET_OF_THINGS_PROLONGED_UPD_PLACEHOLDER_2        "Windows 11 IoT Enterprise LTSC%1%2"
+    IDS_WINDOWS_CLOUD_EDITION_PLACEHOLDER_1                           "Windows 11 SE%1"
+    IDS_WINDOWS_CLOUD_EDITION_PLACEHOLDER_2                           "Windows 11 SE%1"
+    IDS_WINDOWS_EUROPEAN_CLOUD_EDITION_PLACEHOLDER_1                  "Windows 11 SE N%1"
+    IDS_WINDOWS_EUROPEAN_CLOUD_EDITION_PLACEHOLDER_2                  "Windows 11 SE N%1"
+    IDS_WINDOWS_IOT_MICROSOFT_SUBSCRIPTION_LTSC_PLACEHOLDER_1         "Windows 11 IoT Enterprise Subscription LTSC%1%2"
+    IDS_WINDOWS_IOT_MICROSOFT_SUBSCRIPTION_LTSC_PLACEHOLDER_2         "Windows 11 IoT Enterprise Subscription LTSC%1%2"
+    IDS_MICROSOFT_WINDOWS_365_PC_PLACEHOLDER_1                        "Windows WNC%1%2"
+    IDS_MICROSOFT_WINDOWS_365_PC_PLACEHOLDER_2                        "Windows WNC%1%2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_SUBSCRIPTION1                        "Windows 11 IoT Enterprise Subscription%1%2"
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_SUBSCRIPTION2                        "Windows 11 IoT Enterprise Subscription%1%2"
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_LTSC_SUBSCRIPTION1                   "Windows 11 IoT Enterprise LTSC Evaluation%1%2"
+    IDS_MICROSOFT_WINDOWS_IOT_ENTERPRISE_LTSC_SUBSCRIPTION2                   "Windows 11 IoT Enterprise LTSC Evaluation%1%2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IN_PROTECTED_MODE                        " in S mode"
+    IDS_INSIDER_PREVIEW                          " Insider Preview"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCData
+//
+
+IDRC_BRANDING              RCDATA  DISCARDABLE     "branding.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Resource maps
+//
+
+IDRCAP_BRANDING              BRANDING_REQUIRED_RESOURCEID_MAP  DISCARDABLE     "resourcemap.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Metadata
+//
+
+IDRCMETADATA_BRANDING              BRANDING_METADATA_RES  DISCARDABLE     "metadata.bin"

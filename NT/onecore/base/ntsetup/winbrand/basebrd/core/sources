@@ -1,0 +1,14 @@
+MAJORCOMP=setup
+MINORCOMP=winbrand
+
+TARGETNAME=basebrd
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+RESOURCE_ONLY_DLL=1
+
+BINPLACE_PLACEFILE=placefil.txt
+
+SOURCES= \
+        basebrd.c \
+        basebrd.rc
