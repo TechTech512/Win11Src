@@ -1,0 +1,26 @@
+TARGETNAME=msrating
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=..\msrating.def
+USE_MSVCRT=1
+
+SOURCES=..\stubs.cpp \
+		..\defaultresource.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib
+	
+NT_SIGNCODE=1
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=123
+SXS_APPLICATION_MANIFEST=msrating.manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.InetCore.msrating
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
