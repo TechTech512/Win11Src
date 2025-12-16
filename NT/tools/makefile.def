@@ -674,8 +674,8 @@ SXS_ASSEMBLY_VERSION=$(SXS_ASSEMBLY_VERSION).$(SXS_ASSEMBLY_VERSION_PART_3).$(SX
 # and it is the root of where they appear on the CD. This string appears in
 # a number of places:
 #   \nt\tools\PostBuildScripts
-#   \nt\admin\ntsetup\inf\win4\inf\dosnet.inx
-#   \nt\admin\ntsetup\inf\win4\inf\syssetup.inx
+#   \nt\mergedcomponents\setupinfs\dosnet.inx
+#   \nt\mergedcomponents\setupinfs\syssetup.inx
 #
 !if $(SXS_MANAGED)
 SXS_BINPLACE_DIR1=managed_asms
@@ -3067,6 +3067,8 @@ BINPLACE_FLAGS = -dl $(TARGETNAME).$(TARGETEXT),$(DLOAD_ERROR_HANDLER) $(BINPLAC
 !  if "$(DLOAD_ERROR_HANDLER)" == "kernel32"
 CRTLIBS=$(CRTLIBS) $(BASE_LIB_PATH)\kernel32dloadhandler.lib
 TARGETLIBS = $(TARGETLIBS) $(SDK_LIB_PATH)\kernl32p.lib
+!  else if "$(DLOAD_ERROR_HANDLER)" == "dloadhelper"
+CRTLIBS=$(CRTLIBS) $(SDK_LIB_PATH)\dloadhelper.lib
 !  else
 CRTLIBS=$(CRTLIBS) $(SDK_LIB_PATH)\delayimp.lib
 !  endif
@@ -4169,7 +4171,10 @@ MANIFEST_PREPROCESSOR_NAME=preprocessor.exe
 MANIFEST_VALIDATOR_SCHEMA=$(NTMAKEENV)\appschema.xml
 !endif
 !ifndef MANIFEST_VALIDATOR_NAME
-MANIFEST_VALIDATOR_NAME=FusionManifestValidator /b /s:$(MANIFEST_VALIDATOR_SCHEMA)
+MANIFEST_VALIDATOR_NAME=mt.exe -validate_manifest -manifest:
+!endif
+!ifndef MANIFEST_EMBED_TOOL
+MANIFEST_EMBED_TOOL=mt.exe -manifest
 !endif
 
 #
@@ -4177,68 +4182,54 @@ MANIFEST_VALIDATOR_NAME=FusionManifestValidator /b /s:$(MANIFEST_VALIDATOR_SCHEM
 #
 {}.manifest-src{$(O)}.man:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..}.manifest-src{$(O)}.man:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..\..}.manifest-src{$(O)}.man:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 #
 # .manifest-src -> .manifest
 #
 {}.manifest-src{$(O)}.manifest:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..}.manifest-src{$(O)}.manifest:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..\..}.manifest-src{$(O)}.manifest:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 #
 # .manifest -> .man
 #
 {}.manifest{$(O)}.man:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..}.manifest{$(O)}.man:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..\..}.manifest{$(O)}.man:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {$(SXS_MANIFEST_SOURCE)}.manifest{$(O)}.man:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 #
 # .manifest -> .manifest
 #
 {}.manifest{$(O)}.manifest:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..}.manifest{$(O)}.manifest:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {..\..}.manifest{$(O)}.manifest:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 {$(SXS_MANIFEST_SOURCE)}.manifest{$(O)}.manifest:
     $(MANIFEST_PREPROCESSOR_NAME) -o $@ -i $< $(SXS_MANIFEST_DEFINES)
-    $(MANIFEST_VALIDATOR_NAME) /m:$@
 
 #
 # Standard inference rule for generating machine specific def files.
