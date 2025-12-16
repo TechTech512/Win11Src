@@ -31,7 +31,8 @@ LINKLIBS = \
     $(SDK_LIB_PATH)\wintrust.lib
 
 TARGETLIBS = \
-    $(SDK_LIB_PATH)\kernel32.lib
+    $(SDK_LIB_PATH)\mincore.lib
 
 PASS1_PUBLISH= \
    {$(O)\mscat32.lib=$(DS_LIB_PATH)\mscat32.lib}
+
