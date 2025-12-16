@@ -14,7 +14,7 @@ C_DEFINES=-DSECURITY_WIN32
 DLLENTRY=_DllMainCRTStartup
 
 DELAYLOAD = mi.dll
-DLOAD_ERROR_HANDLER = kernel32.dll
+DLOAD_ERROR_HANDLER = dloadhelper
 
 UMTYPE=windows
 UMENTRY=dllmain
@@ -24,3 +24,4 @@ TARGETLIBS= \
 	$(SDK_LIB_PATH)\mi.lib
 	
 NT_SIGNCODE=1
+
