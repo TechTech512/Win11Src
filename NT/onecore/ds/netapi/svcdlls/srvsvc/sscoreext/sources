@@ -1,0 +1,26 @@
+TARGETNAME=sscoreext
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=sscoreext.def
+USE_MSVCRT=1
+
+INCLUDES=.;$(DS_INC_PATH)
+SOURCES=dllmain.c \
+		sscoreext.c \
+		sscoreext.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+DELAYLOAD = mi.dll
+DLOAD_ERROR_HANDLER = kernel32.dll
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\dloadhelper.lib \
+	$(SDK_LIB_PATH)\mi.lib
+	
+NT_SIGNCODE=1

@@ -1,0 +1,21 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2000 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Server Service Core
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Server Service Core DLL"
+#define VER_INTERNALNAME_STR        "SSCORE.DLL"
+#define VER_ORIGINALFILENAME_STR    "SSCORE.DLL"
+
+#include "common.ver"
+
+1 MUI DISCARDABLE "mui.bin"

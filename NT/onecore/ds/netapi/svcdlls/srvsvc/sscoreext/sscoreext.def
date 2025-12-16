@@ -1,0 +1,16 @@
+LIBRARY SSCOREEXT
+EXPORTS
+    SsCoreExtMiApplicationClose 
+    SsCoreExtMiApplicationInitialize 
+    SsCoreExtMiApplicationNewOperationOptions 
+    SsCoreExtMiApplicationNewParameterSet 
+    SsCoreExtMiApplicationNewSession 
+    SsCoreExtMiInstanceAddElement 
+    SsCoreExtMiInstanceDelete 
+    SsCoreExtMiOperationClose 
+    SsCoreExtMiOperationGetInstance 
+    SsCoreExtMiOperationOptionsDelete 
+    SsCoreExtMiOperationOptionsSetResourceUriPrefix 
+    SsCoreExtMiSessionClose 
+    SsCoreExtMiSessionInvoke 
+
