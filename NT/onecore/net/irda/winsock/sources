@@ -1,0 +1,16 @@
+TARGETNAME=wshirda
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+USE_NTDLL=1
+USE_MSVCRT=1
+DLLENTRY=_DllMainCRTStartup
+
+TARGETLIBS=\
+    $(SDK_LIB_PATH)\msvcrt.lib \
+    $(SDK_LIB_PATH)\ntdll.lib \
+    $(SDK_LIB_PATH)\kernel32.lib
+
+SOURCES=\
+    wshirda.c \
+    wshirda.rc
