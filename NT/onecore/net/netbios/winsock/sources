@@ -1,0 +1,20 @@
+TARGETNAME=wshnetbs
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=wshnetbs.def
+USE_MSVCRT=1
+
+SOURCES=wshnetbs.c \
+		wshnetbs.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\ntdll.lib
+	
+NT_SIGNCODE=1
