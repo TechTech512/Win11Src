@@ -31,4 +31,5 @@ LINKLIBS = \
     $(SDK_LIB_PATH)\wintrust.lib
 
 TARGETLIBS = \
-    $(SDK_LIB_PATH)\kernel32.lib
+    $(SDK_LIB_PATH)\mincore.lib
+
