@@ -1,0 +1,8 @@
+TARGETNAME=OOBEResources
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+RESOURCE_ONLY_DLL=1
+
+SOURCES= \
+        ooberesources.rc

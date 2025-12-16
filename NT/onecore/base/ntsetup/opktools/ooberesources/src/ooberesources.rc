@@ -1,0 +1,40 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2005 Microsoft Corporation. All rights reserved.
+//
+// Resource table for OOBE Resources
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "OOBE Branding Images"
+#define VER_INTERNALNAME_STR        "OOBEResource"
+#define VER_ORIGINALFILENAME_STR    "OOBEResources.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCData
+//
+
+OOBE_BACKGROUND_0           RCDATA    DISCARDABLE     "bckgrnd0.png"
+OOBE_BACKGROUND_LARGE_0     RCDATA    DISCARDABLE     "bckgrndlarge0.png"
+OOBE_ICON_0                 RCDATA    DISCARDABLE     "icon0.png"
+OOBE_ICON_1                 RCDATA    DISCARDABLE     "icon1.png"
+OOBE_ICON_2                 RCDATA    DISCARDABLE     "icon2.png"
+OOBE_ICON_3                 RCDATA    DISCARDABLE     "icon3.png"
+OOBE_ICON_4                 RCDATA    DISCARDABLE     "icon4.png"
+OOBE_ICON_5                 RCDATA    DISCARDABLE     "icon5.png"
+OOBE_ICON_LARGE_0           RCDATA    DISCARDABLE     "iconlarge0.png"
+OOBE_ICON_LARGE_1           RCDATA    DISCARDABLE     "iconlarge1.png"
+OOBE_ICON_LARGE_2           RCDATA    DISCARDABLE     "iconlarge2.png"
+OOBE_ICON_LARGE_3           RCDATA    DISCARDABLE     "iconlarge3.png"
+OOBE_ICON_LARGE_4           RCDATA    DISCARDABLE     "iconlarge4.png"
+OOBE_ICON_LARGE_5           RCDATA    DISCARDABLE     "iconlarge5.png"
+
