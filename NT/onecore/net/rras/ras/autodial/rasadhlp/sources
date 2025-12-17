@@ -1,0 +1,21 @@
+TARGETNAME=rasadhlp
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+USE_MSVCRT=1
+USE_NTDLL=1
+DLLENTRY=_DllMainCRTStartup
+
+DELAYLOAD = ws2_32.dll
+DLOAD_ERROR_HANDLER = dloadhelper
+
+TARGETLIBS=\
+    $(SDK_LIB_PATH)\msvcrt.lib \
+    $(SDK_LIB_PATH)\mincore.lib \
+    $(SDK_LIB_PATH)\ws2_32.lib
+
+SOURCES=\
+    autodial.c \
+    init.c \
+    rasadhlp.rc \
+    winsock.c

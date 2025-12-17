@@ -1,0 +1,7 @@
+LIBRARY rasadhlp
+EXPORTS
+    AcsHlpNbConnection 
+    WSAttemptAutodialAddr 
+    WSAttemptAutodialName 
+    WSNoteSuccessfulHostentLookup 
+
