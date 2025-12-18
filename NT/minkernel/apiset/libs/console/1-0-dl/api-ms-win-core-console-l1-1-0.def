@@ -1,0 +1,16 @@
+LIBRARY api-ms-win-core-console-l1-1-0
+EXPORTS
+	AllocConsole = kernel32.AllocConsole
+	GetConsoleCP = kernel32.GetConsoleCP
+	GetConsoleMode = kernel32.GetConsoleMode
+	GetConsoleOutputCP = kernel32.GetConsoleOutputCP
+	GetNumberOfConsoleInputEvents = kernel32.GetNumberOfConsoleInputEvents
+	PeekConsoleInputA = kernel32.PeekConsoleInputA
+	ReadConsoleA = kernel32.ReadConsoleA
+	ReadConsoleInputA = kernel32.ReadConsoleInputA
+	ReadConsoleInputW = kernel32.ReadConsoleInputW
+	ReadConsoleW = kernel32.ReadConsoleW
+	SetConsoleCtrlHandler = kernel32.SetConsoleCtrlHandler
+	SetConsoleMode = kernel32.SetConsoleMode
+	WriteConsoleA = kernel32.WriteConsoleA
+	WriteConsoleW = kernel32.WriteConsoleW
