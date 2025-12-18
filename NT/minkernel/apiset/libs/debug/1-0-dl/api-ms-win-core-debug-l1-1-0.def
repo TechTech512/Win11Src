@@ -1,0 +1,6 @@
+LIBRARY api-ms-win-core-debug-l1-1-0
+EXPORTS
+	DebugBreak = kernel32.DebugBreak
+	IsDebuggerPresent = kernel32.IsDebuggerPresent
+	OutputDebugStringA = kernel32.OutputDebugStringA
+	OutputDebugStringW = kernel32.OutputDebugStringW

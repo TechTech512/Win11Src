@@ -1,0 +1,7 @@
+LIBRARY api-ms-win-core-debug-l1-1-1
+EXPORTS
+	CheckRemoteDebuggerPresent = kernel32.CheckRemoteDebuggerPresent
+	ContinueDebugEvent = kernel32.ContinueDebugEvent
+	DebugActiveProcess = kernel32.DebugActiveProcess
+	DebugActiveProcessStop = kernel32.DebugActiveProcessStop
+	WaitForDebugEvent = kernel32.WaitForDebugEvent
