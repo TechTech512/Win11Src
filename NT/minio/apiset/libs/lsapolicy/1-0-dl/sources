@@ -1,0 +1,14 @@
+TARGETNAME=API-MS-Win-Security-LsaPolicy-L1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-security-lsapolicy-l1-1-0.def
+
+SOURCES=lsapolicy.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib 
+	
+NT_SIGNCODE=1
