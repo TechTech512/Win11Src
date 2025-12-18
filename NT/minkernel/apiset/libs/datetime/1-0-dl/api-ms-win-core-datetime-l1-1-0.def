@@ -1,0 +1,6 @@
+LIBRARY api-ms-win-core-datetime-l1-1-0
+EXPORTS
+	GetDateFormatA = kernel32.GetDateFormatA
+	GetDateFormatW = kernel32.GetDateFormatW
+	GetTimeFormatA = kernel32.GetTimeFormatA
+	GetTimeFormatW = kernel32.GetTimeFormatW
