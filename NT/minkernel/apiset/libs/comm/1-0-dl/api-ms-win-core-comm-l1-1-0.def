@@ -1,0 +1,20 @@
+LIBRARY api-ms-win-core-comm-l1-1-0
+EXPORTS
+	ClearCommBreak = kernel32.ClearCommBreak
+	ClearCommError = kernel32.ClearCommError
+	EscapeCommFunction = kernel32.EscapeCommFunction
+	GetCommConfig = kernel32.GetCommConfig
+	GetCommMask = kernel32.GetCommMask
+	GetCommModemStatus = kernel32.GetCommModemStatus
+	GetCommProperties = kernel32.GetCommProperties
+	GetCommState = kernel32.GetCommState
+	GetCommTimeouts = kernel32.GetCommTimeouts
+	PurgeComm = kernel32.PurgeComm
+	SetCommBreak = kernel32.SetCommBreak
+	SetCommConfig = kernel32.SetCommConfig
+	SetCommMask = kernel32.SetCommMask
+	SetCommState = kernel32.SetCommState
+	SetCommTimeouts = kernel32.SetCommTimeouts
+	SetupComm = kernel32.SetupComm
+	TransmitCommChar = kernel32.TransmitCommChar
+	WaitCommEvent = kernel32.WaitCommEvent
