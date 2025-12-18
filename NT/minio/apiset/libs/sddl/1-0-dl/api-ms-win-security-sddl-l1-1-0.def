@@ -1,0 +1,6 @@
+LIBRARY api-ms-win-security-sddl-l1-1-0
+EXPORTS
+	ConvertSecurityDescriptorToStringSecurityDescriptorW = advapi32.ConvertSecurityDescriptorToStringSecurityDescriptorW
+	ConvertSidToStringSidW = advapi32.ConvertSidToStringSidW
+	ConvertStringSecurityDescriptorToSecurityDescriptorW = advapi32.ConvertStringSecurityDescriptorToSecurityDescriptorW
+	ConvertStringSidToSidW = advapi32.ConvertStringSidToSidW
