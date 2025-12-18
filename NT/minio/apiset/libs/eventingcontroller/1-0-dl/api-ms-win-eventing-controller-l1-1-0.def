@@ -1,0 +1,13 @@
+LIBRARY api-ms-win-eventing-controller-l1-1-0
+EXPORTS
+	ControlTraceW = advapi32.ControlTraceW
+	EnableTraceEx2 = advapi32.EnableTraceEx2
+	EnumerateTraceGuidsEx = advapi32.EnumerateTraceGuidsEx
+	EventAccessControl = advapi32.EventAccessControl
+	EventAccessQuery = advapi32.EventAccessQuery
+	EventAccessRemove = advapi32.EventAccessRemove
+	QueryAllTracesW = advapi32.QueryAllTracesW
+	StartTraceW = advapi32.StartTraceW
+	StopTraceW = advapi32.StopTraceW
+	TraceQueryInformation = advapi32.TraceQueryInformation
+	TraceSetInformation = advapi32.TraceSetInformation
