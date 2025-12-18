@@ -1,0 +1,5 @@
+LIBRARY api-ms-win-eventing-consumer-l1-1-0
+EXPORTS
+	CloseTrace = advapi32.CloseTrace
+	OpenTraceW = advapi32.OpenTraceW
+	ProcessTrace = advapi32.ProcessTrace
