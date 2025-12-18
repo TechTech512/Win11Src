@@ -1,0 +1,24 @@
+LIBRARY api-ms-win-security-lsapolicy-l1-1-0
+EXPORTS
+	LsaAddAccountRights = advapi32.LsaAddAccountRights
+	LsaClose = advapi32.LsaClose
+	LsaCreateSecret = advapi32.LsaCreateSecret
+	LsaEnumerateAccountRights = advapi32.LsaEnumerateAccountRights
+	LsaEnumerateAccountsWithUserRight = advapi32.LsaEnumerateAccountsWithUserRight
+	LsaFreeMemory = advapi32.LsaFreeMemory
+	LsaICLookupNames = advapi32.LsaICLookupNames
+	LsaICLookupNamesWithCreds = advapi32.LsaICLookupNamesWithCreds
+	LsaICLookupSids = advapi32.LsaICLookupSids
+	LsaICLookupSidsWithCreds = advapi32.LsaICLookupSidsWithCreds
+	LsaLookupNames2 = advapi32.LsaLookupNames2
+	LsaLookupSids = advapi32.LsaLookupSids
+	LsaLookupSids2 = advapi32.LsaLookupSids2
+	LsaOpenPolicy = advapi32.LsaOpenPolicy
+	LsaOpenSecret = advapi32.LsaOpenSecret
+	LsaQueryInformationPolicy = advapi32.LsaQueryInformationPolicy
+	LsaQuerySecret = advapi32.LsaQuerySecret
+	LsaRemoveAccountRights = advapi32.LsaRemoveAccountRights
+	LsaRetrievePrivateData = advapi32.LsaRetrievePrivateData
+	LsaSetInformationPolicy = advapi32.LsaSetInformationPolicy
+	LsaSetSecret = advapi32.LsaSetSecret
+	LsaStorePrivateData = advapi32.LsaStorePrivateData
