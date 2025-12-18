@@ -1,0 +1,14 @@
+TARGETNAME=API-MS-Win-Eventing-Consumer-L1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-eventing-consumer-l1-1-0.def
+
+SOURCES=eventingconsumerapi.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib 
+	
+NT_SIGNCODE=1
