@@ -1,7 +1,7 @@
-TARGETNAME=api-ms-win-core-errorhandling-l1-1-0
+TARGETNAME=api-ms-win-core-errorhandling-l1-1-1
 TARGETPATH=obj
 TARGETTYPE=DYNLINK
-DLLDEF=api-ms-win-core-errorhandling-l1-1-0.def
+DLLDEF=api-ms-win-core-errorhandling-l1-1-1.def
 
 SOURCES=errhandlingapi.c \
 		apistub.rc
@@ -12,3 +12,4 @@ LINKLIBS= \
 	$(SDK_LIB_PATH)\kernel32.lib 
 	
 NT_SIGNCODE=1
+
