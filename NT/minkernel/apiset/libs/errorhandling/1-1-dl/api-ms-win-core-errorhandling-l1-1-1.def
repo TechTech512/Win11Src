@@ -1,0 +1,7 @@
+LIBRARY api-ms-win-core-errorhandling-l1-1-1
+EXPORTS
+	AddVectoredContinueHandler = kernel32.AddVectoredContinueHandler
+	AddVectoredExceptionHandler = kernel32.AddVectoredExceptionHandler
+	RemoveVectoredContinueHandler = kernel32.RemoveVectoredContinueHandler
+	RemoveVectoredExceptionHandler = kernel32.RemoveVectoredExceptionHandler
+	RestoreLastError = kernel32.RestoreLastError

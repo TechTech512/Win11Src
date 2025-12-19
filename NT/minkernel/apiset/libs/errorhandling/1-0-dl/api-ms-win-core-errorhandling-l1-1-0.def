@@ -1,0 +1,9 @@
+LIBRARY api-ms-win-core-errorhandling-l1-1-0
+EXPORTS
+	GetErrorMode = kernel32.GetErrorMode
+	GetLastError = kernel32.GetLastError
+	RaiseException = kernel32.RaiseException
+	SetErrorMode = kernel32.SetErrorMode
+	SetLastError = kernel32.SetLastError
+	SetUnhandledExceptionFilter = kernel32.SetUnhandledExceptionFilter
+	UnhandledExceptionFilter = kernel32.UnhandledExceptionFilter
