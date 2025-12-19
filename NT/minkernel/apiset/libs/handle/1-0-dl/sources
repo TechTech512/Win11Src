@@ -3,7 +3,7 @@ TARGETPATH=obj
 TARGETTYPE=DYNLINK
 DLLDEF=api-ms-win-core-handle-l1-1-0.def
 
-SOURCES=commapi.c \
+SOURCES=handleapi.c \
 		apistub.rc
 
 UMTYPE=windows
@@ -12,3 +12,4 @@ LINKLIBS= \
 	$(SDK_LIB_PATH)\kernel32.lib 
 	
 NT_SIGNCODE=1
+
