@@ -1,0 +1,3 @@
+LIBRARY api-ms-win-core-fibers-l1-1-1
+EXPORTS
+	IsThreadAFiber = kernel32.IsThreadAFiber

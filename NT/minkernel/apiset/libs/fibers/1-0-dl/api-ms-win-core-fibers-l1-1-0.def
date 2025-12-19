@@ -1,0 +1,6 @@
+LIBRARY api-ms-win-core-fibers-l1-1-0
+EXPORTS
+	FlsAlloc = kernel32.FlsAlloc
+	FlsFree = kernel32.FlsFree
+	FlsGetValue = kernel32.FlsGetValue
+	FlsSetValue = kernel32.FlsSetValue
