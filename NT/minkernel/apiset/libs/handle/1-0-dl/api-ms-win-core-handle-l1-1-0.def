@@ -1,0 +1,7 @@
+LIBRARY api-ms-win-core-handle-l1-1-0
+EXPORTS
+	CloseHandle = kernel32.CloseHandle
+	CompareObjectHandles = kernel32.CompareObjectHandles
+	DuplicateHandle = kernel32.DuplicateHandle
+	GetHandleInformation = kernel32.GetHandleInformation
+	SetHandleInformation = kernel32.SetHandleInformation
