@@ -1,0 +1,6 @@
+LIBRARY api-ms-win-core-file-l1-2-0
+EXPORTS
+	CreateFile2 = kernel32.CreateFile2
+	GetTempPathW = kernel32.GetTempPathW
+	GetVolumeNameForVolumeMountPointW = kernel32.GetVolumeNameForVolumeMountPointW
+	GetVolumePathNamesForVolumeNameW = kernel32.GetVolumePathNamesForVolumeNameW
