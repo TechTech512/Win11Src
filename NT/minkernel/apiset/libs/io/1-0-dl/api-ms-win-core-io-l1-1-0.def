@@ -1,0 +1,9 @@
+LIBRARY api-ms-win-core-io-l1-1-0
+EXPORTS
+	CancelIoEx = kernel32.CancelIoEx
+	CreateIoCompletionPort = kernel32.CreateIoCompletionPort
+	DeviceIoControl = kernel32.DeviceIoControl
+	GetOverlappedResult = kernel32.GetOverlappedResult
+	GetQueuedCompletionStatus = kernel32.GetQueuedCompletionStatus
+	GetQueuedCompletionStatusEx = kernel32.GetQueuedCompletionStatusEx
+	PostQueuedCompletionStatus = kernel32.PostQueuedCompletionStatus

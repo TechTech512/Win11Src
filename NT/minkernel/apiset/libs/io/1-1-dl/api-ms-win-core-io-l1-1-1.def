@@ -1,0 +1,5 @@
+LIBRARY api-ms-win-core-io-l1-1-1
+EXPORTS
+	CancelIo = kernel32.CancelIo
+	CancelSynchronousIo = kernel32.CancelSynchronousIo
+	GetOverlappedResultEx = kernel32.GetOverlappedResultEx
