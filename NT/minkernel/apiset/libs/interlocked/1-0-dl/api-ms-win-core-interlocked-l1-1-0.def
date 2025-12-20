@@ -1,0 +1,8 @@
+LIBRARY api-ms-win-core-interlocked-l1-1-0
+EXPORTS
+	InitializeSListHead = kernel32.InitializeSListHead
+	InterlockedFlushSList = kernel32.InterlockedFlushSList
+	InterlockedPopEntrySList = kernel32.InterlockedPopEntrySList
+	InterlockedPushEntrySList = kernel32.InterlockedPushEntrySList
+	InterlockedPushListSList = kernel32.InterlockedPushListSList
+	QueryDepthSList = kernel32.QueryDepthSList
