@@ -1,0 +1,18 @@
+LIBRARY api-ms-win-core-heap-l1-1-0
+EXPORTS
+	GetProcessHeap = kernel32.GetProcessHeap
+	GetProcessHeaps = kernel32.GetProcessHeaps
+	HeapAlloc = kernel32.HeapAlloc
+	HeapCompact = kernel32.HeapCompact
+	HeapCreate = kernel32.HeapCreate
+	HeapDestroy = kernel32.HeapDestroy
+	HeapFree = kernel32.HeapFree
+	HeapLock = kernel32.HeapLock
+	HeapQueryInformation = kernel32.HeapQueryInformation
+	HeapReAlloc = kernel32.HeapReAlloc
+	HeapSetInformation = kernel32.HeapSetInformation
+	HeapSize = kernel32.HeapSize
+	HeapSummary = kernel32.HeapSummary
+	HeapUnlock = kernel32.HeapUnlock
+	HeapValidate = kernel32.HeapValidate
+	HeapWalk = kernel32.HeapWalk
