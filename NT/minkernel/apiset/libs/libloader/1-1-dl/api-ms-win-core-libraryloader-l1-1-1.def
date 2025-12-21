@@ -1,0 +1,8 @@
+LIBRARY api-ms-win-core-libraryloader-l1-1-1
+EXPORTS
+	EnumResourceLanguagesExA = kernel32.EnumResourceLanguagesExA
+	EnumResourceLanguagesExW = kernel32.EnumResourceLanguagesExW
+	EnumResourceNamesExA = kernel32.EnumResourceNamesExA
+	EnumResourceNamesExW = kernel32.EnumResourceNamesExW
+	EnumResourceTypesExA = kernel32.EnumResourceTypesExA
+	EnumResourceTypesExW = kernel32.EnumResourceTypesExW
