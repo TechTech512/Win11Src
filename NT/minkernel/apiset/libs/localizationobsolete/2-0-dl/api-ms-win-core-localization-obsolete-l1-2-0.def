@@ -1,0 +1,12 @@
+LIBRARY api-ms-win-core-localization-obsolete-l1-2-0
+EXPORTS
+	CompareStringA = kernel32.CompareStringA
+	EnumLanguageGroupLocalesW = kernel32.EnumLanguageGroupLocalesW
+	EnumSystemLanguageGroupsW = kernel32.EnumSystemLanguageGroupsW
+	EnumUILanguagesW = kernel32.EnumUILanguagesW
+	GetNumberFormatW = kernel32.GetNumberFormatW
+	GetStringTypeA = kernel32.GetStringTypeA
+	GetSystemDefaultLocaleName = kernel32.GetSystemDefaultLocaleName
+	GetSystemDefaultUILanguage = kernel32.GetSystemDefaultUILanguage
+	GetUserDefaultUILanguage = kernel32.GetUserDefaultUILanguage
+	LCIDToLocaleName = kernel32.LCIDToLocaleName

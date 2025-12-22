@@ -1,0 +1,14 @@
+TARGETNAME=api-ms-win-core-localization-obsolete-l1-2-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-core-localization-obsolete-l1-2-0.def
+
+SOURCES=obsoletelocalization.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib
+	
+NT_SIGNCODE=1
