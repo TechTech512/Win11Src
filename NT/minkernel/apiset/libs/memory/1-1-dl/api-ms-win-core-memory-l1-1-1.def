@@ -1,0 +1,20 @@
+LIBRARY api-ms-win-core-memory-l1-1-1
+EXPORTS
+	CreateFileMappingFromApp = kernel32.CreateFileMappingFromApp
+	CreateFileMappingNumaW = kernel32.CreateFileMappingNumaW
+	CreateMemoryResourceNotification = kernel32.CreateMemoryResourceNotification
+	GetLargePageMinimum = kernel32.GetLargePageMinimum
+	GetProcessWorkingSetSize = kernel32.GetProcessWorkingSetSize
+	GetProcessWorkingSetSizeEx = kernel32.GetProcessWorkingSetSizeEx
+	GetSystemFileCacheSize = kernel32.GetSystemFileCacheSize
+	GetWriteWatch = kernel32.GetWriteWatch
+	MapViewOfFileFromApp = kernel32.MapViewOfFileFromApp
+	PrefetchVirtualMemory = kernel32.PrefetchVirtualMemory
+	QueryMemoryResourceNotification = kernel32.QueryMemoryResourceNotification
+	ResetWriteWatch = kernel32.ResetWriteWatch
+	SetProcessWorkingSetSize = kernel32.SetProcessWorkingSetSize
+	SetProcessWorkingSetSizeEx = kernel32.SetProcessWorkingSetSizeEx
+	SetSystemFileCacheSize = kernel32.SetSystemFileCacheSize
+	UnmapViewOfFileEx = kernel32.UnmapViewOfFileEx
+	VirtualLock = kernel32.VirtualLock
+	VirtualUnlock = kernel32.VirtualUnlock

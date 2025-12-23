@@ -1,0 +1,18 @@
+LIBRARY api-ms-win-core-memory-l1-1-0
+EXPORTS
+	CreateFileMappingW = kernel32.CreateFileMappingW
+	FlushViewOfFile = kernel32.FlushViewOfFile
+	MapViewOfFile = kernel32.MapViewOfFile
+	MapViewOfFileEx = kernel32.MapViewOfFileEx
+	OpenFileMappingW = kernel32.OpenFileMappingW
+	ReadProcessMemory = kernel32.ReadProcessMemory
+	UnmapViewOfFile = kernel32.UnmapViewOfFile
+	VirtualAlloc = kernel32.VirtualAlloc
+	VirtualAllocEx = kernel32.VirtualAllocEx
+	VirtualFree = kernel32.VirtualFree
+	VirtualFreeEx = kernel32.VirtualFreeEx
+	VirtualProtect = kernel32.VirtualProtect
+	VirtualProtectEx = kernel32.VirtualProtectEx
+	VirtualQuery = kernel32.VirtualQuery
+	VirtualQueryEx = kernel32.VirtualQueryEx
+	WriteProcessMemory = kernel32.WriteProcessMemory

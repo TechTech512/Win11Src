@@ -1,0 +1,13 @@
+LIBRARY api-ms-win-core-memory-l1-1-2
+EXPORTS
+	AllocateUserPhysicalPages = kernel32.AllocateUserPhysicalPages
+	AllocateUserPhysicalPagesNuma = kernel32.AllocateUserPhysicalPagesNuma
+	DiscardVirtualMemory = kernel32.DiscardVirtualMemory
+	FreeUserPhysicalPages = kernel32.FreeUserPhysicalPages
+	GetMemoryErrorHandlingCapabilities = kernel32.GetMemoryErrorHandlingCapabilities
+	MapUserPhysicalPages = kernel32.MapUserPhysicalPages
+	OfferVirtualMemory = kernel32.OfferVirtualMemory
+	ReclaimVirtualMemory = kernel32.ReclaimVirtualMemory
+	RegisterBadMemoryNotification = kernel32.RegisterBadMemoryNotification
+	UnregisterBadMemoryNotification = kernel32.UnregisterBadMemoryNotification
+	VirtualAllocExNuma = kernel32.VirtualAllocExNuma
