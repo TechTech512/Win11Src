@@ -1,0 +1,12 @@
+LIBRARY api-ms-win-core-namedpipe-l1-1-0
+EXPORTS
+	ConnectNamedPipe = kernel32.ConnectNamedPipe
+	CreateNamedPipeW = kernel32.CreateNamedPipeW
+	CreatePipe = kernel32.CreatePipe
+	DisconnectNamedPipe = kernel32.DisconnectNamedPipe
+	GetNamedPipeClientComputerNameW = kernel32.GetNamedPipeClientComputerNameW
+	ImpersonateNamedPipeClient = advapi32.ImpersonateNamedPipeClient
+	PeekNamedPipe = kernel32.PeekNamedPipe
+	SetNamedPipeHandleState = kernel32.SetNamedPipeHandleState
+	TransactNamedPipe = kernel32.TransactNamedPipe
+	WaitNamedPipeW = kernel32.WaitNamedPipeW

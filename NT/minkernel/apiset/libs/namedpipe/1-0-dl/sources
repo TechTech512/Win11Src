@@ -1,0 +1,15 @@
+TARGETNAME=api-ms-win-core-namedpipe-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-core-namedpipe-l1-1-0.def
+
+SOURCES=namedpipeapi.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib
+	
+NT_SIGNCODE=1
