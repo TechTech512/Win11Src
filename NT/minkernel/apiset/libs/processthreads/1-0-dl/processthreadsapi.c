@@ -55,20 +55,14 @@ void GetCurrentProcess(void)
 	return 1;
 }
 
-void GetCurrentProcessId(void)
-{
-	return 1;
-}
+extern void GetCurrentProcessId(void);
 
 void GetCurrentThread(void)
 {
 	return 1;
 }
 
-void GetCurrentThreadId(void)
-{
-	return 1;
-}
+extern void GetCurrentThreadId(void);
 
 void GetExitCodeProcess(void)
 {
