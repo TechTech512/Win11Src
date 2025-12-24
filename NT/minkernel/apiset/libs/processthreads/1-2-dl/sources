@@ -1,0 +1,14 @@
+TARGETNAME=api-ms-win-core-processthreads-l1-1-2
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-core-processthreads-l1-1-2.def
+
+SOURCES=processthreadsapi.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib
+	
+NT_SIGNCODE=1

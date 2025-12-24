@@ -1,0 +1,11 @@
+LIBRARY api-ms-win-core-processthreads-l1-1-2
+EXPORTS
+	GetProcessPriorityBoost = kernel32.GetProcessPriorityBoost
+	GetSystemTimes = kernel32.GetSystemTimes
+	GetThreadIOPendingFlag = kernel32.GetThreadIOPendingFlag
+	GetThreadInformation = kernel32.GetThreadInformation
+	IsProcessCritical = kernel32.IsProcessCritical
+	QueryProtectedPolicy = kernel32.QueryProtectedPolicy
+	SetProcessPriorityBoost = kernel32.SetProcessPriorityBoost
+	SetProtectedPolicy = kernel32.SetProtectedPolicy
+	SetThreadInformation = kernel32.SetThreadInformation

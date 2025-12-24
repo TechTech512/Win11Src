@@ -1,0 +1,16 @@
+LIBRARY api-ms-win-core-processthreads-l1-1-1
+EXPORTS
+	FlushInstructionCache = kernel32.FlushInstructionCache
+	GetCurrentProcessorNumber = kernel32.GetCurrentProcessorNumber
+	GetCurrentProcessorNumberEx = kernel32.GetCurrentProcessorNumberEx
+	GetCurrentThreadStackLimits = kernel32.GetCurrentThreadStackLimits
+	GetProcessHandleCount = kernel32.GetProcessHandleCount
+	GetProcessMitigationPolicy = kernel32.GetProcessMitigationPolicy
+	GetThreadContext = kernel32.GetThreadContext
+	GetThreadIdealProcessorEx = kernel32.GetThreadIdealProcessorEx
+	GetThreadTimes = kernel32.GetThreadTimes
+	IsProcessorFeaturePresent = kernel32.IsProcessorFeaturePresent
+	OpenProcess = kernel32.OpenProcess
+	SetProcessMitigationPolicy = kernel32.SetProcessMitigationPolicy
+	SetThreadContext = kernel32.SetThreadContext
+	SetThreadIdealProcessorEx = kernel32.SetThreadIdealProcessorEx
