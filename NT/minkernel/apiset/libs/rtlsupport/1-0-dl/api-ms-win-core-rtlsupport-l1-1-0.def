@@ -1,0 +1,16 @@
+LIBRARY api-ms-win-core-rtlsupport-l1-1-0
+EXPORTS
+	RtlAddFunctionTable = ntdll.RtlAddFunctionTable
+	RtlCaptureContext = ntdll.RtlCaptureContext
+	RtlCaptureStackBackTrace = ntdll.RtlCaptureStackBackTrace
+	RtlCompareMemory = ntdll.RtlCompareMemory
+	RtlDeleteFunctionTable = ntdll.RtlDeleteFunctionTable
+	RtlInstallFunctionTableCallback = ntdll.RtlInstallFunctionTableCallback
+	RtlIsEcCode = ntdll.RtlIsEcCode
+	RtlLookupFunctionEntry = ntdll.RtlLookupFunctionEntry
+	RtlPcToFileHeader = ntdll.RtlPcToFileHeader
+	RtlRaiseException = ntdll.RtlRaiseException
+	RtlRestoreContext = ntdll.RtlRestoreContext
+	RtlUnwind = ntdll.RtlUnwind
+	RtlUnwindEx = ntdll.RtlUnwindEx
+	RtlVirtualUnwind = ntdll.RtlVirtualUnwind
