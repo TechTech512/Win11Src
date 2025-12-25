@@ -1,0 +1,4 @@
+LIBRARY api-ms-win-core-profile-l1-1-0
+EXPORTS
+	QueryPerformanceCounter = kernel32.QueryPerformanceCounter
+	QueryPerformanceFrequency = kernel32.QueryPerformanceFrequency
