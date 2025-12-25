@@ -1,0 +1,7 @@
+LIBRARY api-ms-win-core-realtime-l1-1-0
+EXPORTS
+	QueryIdleProcessorCycleTime = kernel32.QueryIdleProcessorCycleTime
+	QueryIdleProcessorCycleTimeEx = kernel32.QueryIdleProcessorCycleTimeEx
+	QueryProcessCycleTime = kernel32.QueryProcessCycleTime
+	QueryThreadCycleTime = kernel32.QueryThreadCycleTime
+	QueryUnbiasedInterruptTime = kernel32.QueryUnbiasedInterruptTime
