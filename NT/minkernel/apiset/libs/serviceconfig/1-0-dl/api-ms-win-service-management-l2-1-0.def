@@ -1,0 +1,10 @@
+LIBRARY api-ms-win-service-management-l2-1-0
+EXPORTS
+	ChangeServiceConfig2W = advapi32.ChangeServiceConfig2W
+	ChangeServiceConfigW = advapi32.ChangeServiceConfigW
+	NotifyServiceStatusChangeW = advapi32.NotifyServiceStatusChangeW
+	QueryServiceConfig2W = advapi32.QueryServiceConfig2W
+	QueryServiceConfigW = advapi32.QueryServiceConfigW
+	QueryServiceObjectSecurity = advapi32.QueryServiceObjectSecurity
+	QueryServiceStatusEx = advapi32.QueryServiceStatusEx
+	SetServiceObjectSecurity = advapi32.SetServiceObjectSecurity
