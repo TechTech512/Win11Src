@@ -1,0 +1,9 @@
+LIBRARY api-ms-win-service-management-l1-1-0
+EXPORTS
+	CloseServiceHandle = advapi32.CloseServiceHandle
+	ControlServiceExW = advapi32.ControlServiceExW
+	CreateServiceW = advapi32.CreateServiceW
+	DeleteService = advapi32.DeleteService
+	OpenSCManagerW = advapi32.OpenSCManagerW
+	OpenServiceW = advapi32.OpenServiceW
+	StartServiceW = advapi32.StartServiceW
