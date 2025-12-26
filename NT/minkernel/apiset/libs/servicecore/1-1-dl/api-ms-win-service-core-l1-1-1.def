@@ -1,0 +1,5 @@
+LIBRARY api-ms-win-service-core-l1-1-1
+EXPORTS
+	EnumDependentServicesW = advapi32.EnumDependentServicesW
+	EnumServicesStatusExW = advapi32.EnumServicesStatusExW
+	QueryServiceDynamicInformation = advapi32.QueryServiceDynamicInformation

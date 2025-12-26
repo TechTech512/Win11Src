@@ -1,0 +1,14 @@
+TARGETNAME=api-ms-win-service-core-l1-1-1
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-service-core-l1-1-1.def
+
+SOURCES=servicecore.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib 
+	
+NT_SIGNCODE=1
