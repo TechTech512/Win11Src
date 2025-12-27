@@ -1,0 +1,20 @@
+LIBRARY api-ms-win-service-private-l1-1-1
+EXPORTS
+	I_QueryTagInformation = advapi32.I_QueryTagInformation
+	I_ScBroadcastServiceControlMessage = advapi32.I_ScBroadcastServiceControlMessage
+	I_ScIsSecurityProcess = advapi32.I_ScIsSecurityProcess
+	I_ScPnPGetServiceName = advapi32.I_ScPnPGetServiceName
+	I_ScQueryServiceConfig = advapi32.I_ScQueryServiceConfig
+	I_ScRegisterDeviceNotification = advapi32.I_ScRegisterDeviceNotification
+	I_ScRegisterPreshutdownRestart = advapi32.I_ScRegisterPreshutdownRestart
+	I_ScRpcBindA = advapi32.I_ScRpcBindA
+	I_ScRpcBindW = advapi32.I_ScRpcBindW
+	I_ScSendPnPMessage = advapi32.I_ScSendPnPMessage
+	I_ScSendTSMessage = advapi32.I_ScSendTSMessage
+	I_ScSetServiceBitsA = advapi32.I_ScSetServiceBitsA
+	I_ScSetServiceBitsW = advapi32.I_ScSetServiceBitsW
+	I_ScUnregisterDeviceNotification = advapi32.I_ScUnregisterDeviceNotification
+	I_ScValidatePnPService = advapi32.I_ScValidatePnPService
+	SubscribeServiceChangeNotifications = advapi32.SubscribeServiceChangeNotifications
+	UnsubscribeServiceChangeNotifications = advapi32.UnsubscribeServiceChangeNotifications
+	WaitServiceState = advapi32.WaitServiceState
