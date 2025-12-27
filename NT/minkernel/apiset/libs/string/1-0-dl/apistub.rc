@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
+//
+// Resource table for ApiSets
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Stub DLL"
+#define VER_INTERNALNAME_STR        "apisetstub"
+#define VER_ORIGINALFILENAME_STR    "apisetstub"
+
+#include "common.ver"

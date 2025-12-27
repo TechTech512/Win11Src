@@ -1,0 +1,10 @@
+LIBRARY api-ms-win-core-string-l1-1-0
+EXPORTS
+	CompareStringEx = kernel32.CompareStringEx
+	CompareStringOrdinal = kernel32.CompareStringOrdinal
+	CompareStringW = kernel32.CompareStringW
+	FoldStringW = kernel32.FoldStringW
+	GetStringTypeExW = kernel32.GetStringTypeExW
+	GetStringTypeW = kernel32.GetStringTypeW
+	MultiByteToWideChar = kernel32.MultiByteToWideChar
+	WideCharToMultiByte = kernel32.WideCharToMultiByte
