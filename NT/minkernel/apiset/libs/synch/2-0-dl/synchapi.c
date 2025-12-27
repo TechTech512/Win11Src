@@ -1,0 +1,17 @@
+void DeleteSynchronizationBarrier(void){}
+void EnterSynchronizationBarrier(void){}
+void InitOnceBeginInitialize(void){}
+void InitOnceComplete(void){}
+void InitOnceExecuteOnce(void){}
+void InitOnceInitialize(void){}
+void InitializeConditionVariable(void){}
+void InitializeSynchronizationBarrier(void){}
+void SignalObjectAndWait(void){}
+void Sleep(void){}
+void SleepConditionVariableCS(void){}
+void SleepConditionVariableSRW(void){}
+void WaitOnAddress(void){}
+void WakeAllConditionVariable(void){}
+void WakeByAddressAll(void){}
+void WakeByAddressSingle(void){}
+void WakeConditionVariable(void){}
