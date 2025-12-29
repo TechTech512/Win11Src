@@ -1,0 +1,10 @@
+LIBRARY api-ms-win-core-threadpool-legacy-l1-1-0
+EXPORTS
+	ChangeTimerQueueTimer = kernel32.ChangeTimerQueueTimer
+	CreateTimerQueue = kernel32.CreateTimerQueue
+	CreateTimerQueueTimer = kernel32.CreateTimerQueueTimer
+	DeleteTimerQueue = kernel32.DeleteTimerQueue
+	DeleteTimerQueueEx = kernel32.DeleteTimerQueueEx
+	DeleteTimerQueueTimer = kernel32.DeleteTimerQueueTimer
+	QueueUserWorkItem = kernel32.QueueUserWorkItem
+	UnregisterWaitEx = kernel32.UnregisterWaitEx
