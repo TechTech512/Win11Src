@@ -1,0 +1,13 @@
+void EnumDynamicTimeZoneInformation(void){}
+void FileTimeToSystemTime(void){}
+void GetDynamicTimeZoneInformation(void){}
+void GetDynamicTimeZoneInformationEffectiveYears(void){}
+void GetTimeZoneInformation(void){}
+void GetTimeZoneInformationForYear(void){}
+void SetDynamicTimeZoneInformation(void){}
+void SetTimeZoneInformation(void){}
+void SystemTimeToFileTime(void){}
+void SystemTimeToTzSpecificLocalTime(void){}
+void SystemTimeToTzSpecificLocalTimeEx(void){}
+void TzSpecificLocalTimeToSystemTime(void){}
+void TzSpecificLocalTimeToSystemTimeEx(void){}

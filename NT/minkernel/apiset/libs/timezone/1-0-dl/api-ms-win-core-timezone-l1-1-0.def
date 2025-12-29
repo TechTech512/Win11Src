@@ -1,0 +1,15 @@
+LIBRARY api-ms-win-core-timezone-l1-1-0
+EXPORTS
+	EnumDynamicTimeZoneInformation = advapi32.EnumDynamicTimeZoneInformation
+	FileTimeToSystemTime = kernel32.FileTimeToSystemTime
+	GetDynamicTimeZoneInformation = kernel32.GetDynamicTimeZoneInformation
+	GetDynamicTimeZoneInformationEffectiveYears = advapi32.GetDynamicTimeZoneInformationEffectiveYears
+	GetTimeZoneInformation = kernel32.GetTimeZoneInformation
+	GetTimeZoneInformationForYear = kernel32.GetTimeZoneInformationForYear
+	SetDynamicTimeZoneInformation = kernel32.SetDynamicTimeZoneInformation
+	SetTimeZoneInformation = kernel32.SetTimeZoneInformation
+	SystemTimeToFileTime = kernel32.SystemTimeToFileTime
+	SystemTimeToTzSpecificLocalTime = kernel32.SystemTimeToTzSpecificLocalTime
+	SystemTimeToTzSpecificLocalTimeEx = kernel32.SystemTimeToTzSpecificLocalTimeEx
+	TzSpecificLocalTimeToSystemTime = kernel32.TzSpecificLocalTimeToSystemTime
+	TzSpecificLocalTimeToSystemTimeEx = kernel32.TzSpecificLocalTimeToSystemTimeEx
