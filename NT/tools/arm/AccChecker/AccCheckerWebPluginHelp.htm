@@ -1,0 +1,1226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>AccChecker Web Plug-in Help</title>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#365F91;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#4F81BD;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:11.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#4F81BD;}
+h4
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 4 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:11.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#4F81BD;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:11.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:39;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:22.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-noshow:yes;
+	mso-style-priority:40;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:33.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Comment Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-priority:35;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Macro Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:26.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+code
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Consolas;
+	mso-bidi-font-family:"Courier New";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Comment Subject Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{mso-style-priority:1;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{mso-style-priority:39;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	color:#365F91;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	color:#365F91;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 3";
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 4";
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	color:#4F81BD;
+	font-weight:bold;
+	font-style:italic;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Comment Text";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Footer;}
+span.MacroTextChar
+	{mso-style-name:"Macro Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Macro Text";
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:Title;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	color:#17365D;
+	letter-spacing:.25pt;}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Comment Subject";
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+p.msotitlecxspfirst, li.msotitlecxspfirst, div.msotitlecxspfirst
+	{mso-style-name:msotitlecxspfirst;
+	mso-style-unhide:no;
+	mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:26.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.msotitlecxspmiddle, li.msotitlecxspmiddle, div.msotitlecxspmiddle
+	{mso-style-name:msotitlecxspmiddle;
+	mso-style-unhide:no;
+	mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:26.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.msotitlecxsplast, li.msotitlecxsplast, div.msotitlecxsplast
+	{mso-style-name:msotitlecxsplast;
+	mso-style-unhide:no;
+	mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:26.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.msolistparagraphcxspfirst, li.msolistparagraphcxspfirst, div.msolistparagraphcxspfirst
+	{mso-style-name:msolistparagraphcxspfirst;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.msolistparagraphcxspmiddle, li.msolistparagraphcxspmiddle, div.msolistparagraphcxspmiddle
+	{mso-style-name:msolistparagraphcxspmiddle;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.msolistparagraphcxsplast, li.msolistparagraphcxsplast, div.msolistparagraphcxsplast
+	{mso-style-name:msolistparagraphcxsplast;
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+p.msopapdefault, li.msopapdefault, div.msopapdefault
+	{mso-style-name:msopapdefault;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+-->
+</style>
+</head>
+<body lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in">
+
+<div style="border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 4.0pt 0in">
+
+<p class="MsoTitle">UI Accessibility Checker Web Plug-in</p>
+
+</div>
+
+<p class="MsoTocHeading">Contents</p>
+
+<p class="MsoToc1"><span class="MsoHyperlink"><a href="#WebVerificationLogMessages">Web Verification
+Log Messages</a></span></p>
+
+
+<p class="MsoToc2"><span class="MsoHyperlink"><a href="#WebCheckHtml">Web
+– Check Html</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#HeaderMissing">Error
+- HeaderMissing</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#TableShouldHaveHeader">Warning
+- TableShouldHaveHeader</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#TableShouldNotHaveHeader">Error
+- TableShouldNotHaveHeader</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#TableHasNoName">Error
+- TableHasNoName</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#TableShouldNotHaveName">Error
+- TableShouldNotHaveName</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#FrameHasNoName">Error
+- FrameHasNoName</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#HeaderAndTitleShouldMatch">Error
+- HeaderAndTitleShouldMatch</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#LackOfHeaders">Error
+- LackOfHeaders</a></span></p>
+
+
+
+
+<p class="MsoToc2"><span class="MsoHyperlink"><a href="#WebCheckRole">Web
+– Check Role</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#InvalidRole">Error -
+InvalidRole</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a
+href="#ControlShouldHaveValue">Error - ControlShouldHaveValue</a></span></p>
+
+
+
+<p class="MsoToc2"><span class="MsoHyperlink"><a href="#WebCheckName">Web
+– Check Name</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#ElementHasNoName">Error
+- ElementHasNoName</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#ElementHasNoNameLabel">Error
+- ElementHasNoNameLabel</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#ElementHasEmptyStringAsName">Warning
+- ElementHasEmptyStringAsName</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#RepeatLinkNameWithDifferentValue">Error
+- RepeatLinkNameWithDifferentValue</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a href="#AccNameLengthTooLong">Error
+- AccNameLengthTooLong</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a
+href="#AccNameContainsInvalidString">Error - AccNameContainsInvalidString</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a
+href="#AccNameShouldNotContainRole">Warning -
+AccNameShouldNotContainRole</a></span></p>
+
+
+
+<p class="MsoToc2"><span class="MsoHyperlink"><a href="#MiscellaneousErrors">Miscellaneous Errors
+</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a
+href="#UnexpectedTestError">Error -
+UnexpectedTestError</a></span></p>
+
+<p class="MsoToc3"><span class="MsoHyperlink"><a
+href="#MemberNotImplememented">Error -
+MemberNotImplememented</a></span></p>
+
+
+
+
+
+<!--
+Begin Log Messages section.
+-->
+        <h1><a name="WebVerificationLogMessages"></a><span
+style='mso-fareast-font-family:"Times New Roman"'>Web Verification Log Messages</span></h1>
+
+<!--
+Web – Check Html.
+-->
+
+<h2><a name="WebCheckHtml"><span style='mso-fareast-font-family:
+"Times New Roman"'>Web – Check Html</span></a></h2>
+
+<!--
+HeaderMissing
+-->
+<h3><a name="HeaderMissing"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Error - HeaderMissing</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>There is no &lt h1&gt present, there should be at least one.</span></h4>
+
+<p class="MsoNormal">This error indicates that the document does not contain an h1.</p>
+
+<p>&nbsp;</p>
+
+
+<!--
+TableShouldHaveHeader
+-->
+<h3><a name="TableShouldHaveHeader"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Warning - TableShouldHaveHeader</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Table has no headers, are you missing column headers?</span></h4>
+
+<p class="MsoNormal">This warning indicates that a table, if it is a data table, should use &lt th&gt tags instead of &lt td&gt 
+in the first row.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader because they will be unable to determine which column a particular 
+table cell belongs to when navigating though the table cells.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The table has more than one row but has at least one 'td' instead of 'th' in the first row.</p>
+
+<p>&nbsp;</p>
+
+<!--
+TableShouldNotHaveHeader
+-->
+<h3><a name="TableShouldNotHaveHeader"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Warning - TableShouldNotHaveHeader</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Table has headers but shouldn't (table has less than 2 rows).</span></h4>
+
+<p class="MsoNormal">This warning indicates that a table appears to be a layout table, and therefore should use not &lt th&gt tags 
+in the first row.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader because the table will be interpreted as a data table.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The table has only one row and has at least one 'th' in the first row.</p>
+
+<p>&nbsp;</p>
+
+<!--
+TableHasNoName
+-->
+<h3><a name="TableHasNoName" /><span style="mso-fareast-font-family: 'Times New Roman'">Warning - TableHasNoName</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Table has no name, are you missing a caption?</span></h4>
+
+<p class="MsoNormal">This warning indicates that a table, if it is a data table, should have a caption.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader because the screen reader uses the caption to identify a table to 
+the user. Without a caption, the screen-reader cannot identify the table.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The table has more than one row and has no caption.</p>
+
+<p>&nbsp;</p>
+
+<!--
+TableShouldNotHaveName
+-->
+<h3><a name="TableShouldNotHaveName"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Warning - TableShouldNotHaveName</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Table has name but shouldn't (table has less than 2 rows).</span></h4>
+
+<p class="MsoNormal">This warning indicates that a table appears to be a layout table, and therefore should not have a caption.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader because the table will be interpreted as a data table.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The table has only one row, but also has a caption.</p>
+
+<p>&nbsp;</p>
+
+<!--
+FrameHasNoName
+-->
+<h3><a name="FrameHasNoName"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Warning - FrameHasNoName</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Frame has no title tag defined in main page.</span></h4>
+
+<p class="MsoNormal">This warning indicates that the frame tag is missing the recommended title attribute.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>Even though AccChecker is not checking for it,
+the title attribute in the frame tag should match the title tag in the file being included in the frame.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Frame tag has no title attribute. </p>
+
+<p>&nbsp;</p>
+
+<!--
+HeaderAndTitleShouldMatch
+-->
+<h3><a name="HeaderAndTitleShouldMatch"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Warning - HeaderAndTitleShouldMatch</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>The document title and first &lt h1&gt should match.</span></h4>
+
+<p class="MsoNormal">This warning indicates that the document's title and the first &lt h1&gt content don't match.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&lt title&gt content is not equal to first &lt h1&gt content. </p>
+
+<p>&nbsp;</p>
+
+<!--
+LackOfHeaders
+-->
+<h3><a name="LackOfHeaders"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Warning - LackOfHeaders</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>There are too few headers. There should be one for every x characters.</span></h4>
+
+<p class="MsoNormal">This warning indicates there should be more headers in the document, due to the amount of content in it.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>The number of characters per header set is currently fixed to 800.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>There are more than x characters per header on the page. </p>
+
+<p>&nbsp;</p>
+
+
+
+
+<!--
+Web – Check Role.
+-->
+
+
+<h2><a name="WebCheckRole" /><span style='mso-fareast-font-family:"Times New Roman"'>Web
+– Check Role</span></h2>
+
+<!--
+InvalidRole
+-->
+<h3><a name=InvalidRole><span style='mso-fareast-font-family:"Times New Roman"'>Error - InvalidRole</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>The int returned
+from get_accRole is not a valid role constant, ie ROLE_SYSTEM_*</span></h4>
+
+<p class="MsoNormal">This error indicates that an element is reporting an invalid
+Active Accessibility role. For example, the get_accRole method used to retrieve
+the Active Accessibility role of an element returns an integer value that does
+not map to a valid object role constant (such as ROLE_SYSTEM_LISTITEM).</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader and keyboard for navigation because elements may be incorrectly
+identified to the user.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The element, or its parent, has an Active
+Accessibility role set inappropriately. </p>
+
+<p class="MsoNormal">Related Resources</p>
+
+<p class="MsoNormal"><a
+href="http://msdn.microsoft.com/en-us/library/dd318485(VS.85).aspx">IAccessible::get_accRole</a></p>
+
+<p class="MsoNormal"><a
+href="http://msdn.microsoft.com/en-us/library/dd373608(VS.85).aspx">Object Roles</a></p>
+
+<p>&nbsp;</p>
+
+<!--
+ControlShouldHaveValue
+-->
+<h3><a name=ControlShouldHaveValue><span style='mso-fareast-font-family:
+"Times New Roman"'>Error - ControlShouldHaveValue</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>A control with role
+of {0} should have a value but get_accValue is not implemented</span></h4>
+
+<p class="MsoNormal">This error indicates that an element does not supply an 
+expected value based on the element’s assigned Active Accessibility role. This 
+implies that the element does not have the get_accValue method implemented. The 
+following Active Accessibility roles should all supply a value:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_COMBOBOX</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_SLIDER</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_LINK</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_TEXT</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_SPINBUTTON</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_SCROLLBAR</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_PROGRESSBAR</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_OUTLINEITEM</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ROLE_SYSTEM_IPADDRESS</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader and keyboard for navigation because an element that has an
+intrinsic value must be able to report that value to a user.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The element, or its parent, has an Active
+Accessibility role set inappropriately. </p>
+
+<p class="MsoNormal">Related Resources</p>
+
+<p class="MsoNormal"><a
+href="http://msdn.microsoft.com/en-us/library/dd318485(VS.85).aspx">IAccessible::get_accRole</a></p>
+
+<p class="MsoNormal"><a
+href="http://msdn.microsoft.com/en-us/library/dd373608(VS.85).aspx">Object Roles</a></p>
+    <p>
+        <span class="MsoHyperlink"><span style="text-decoration: none; text-underline: none">
+        </span></span>&nbsp;</p>
+
+
+
+
+
+
+
+<!--
+Web – Check Name.
+-->
+
+<h2><a name="WebCheckName"><span style='mso-fareast-font-family:
+"Times New Roman"'>Web – Check Name</span></a></h2>
+
+<!--
+ElementHasNoName
+-->
+<h3><a name="ElementHasNoName"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Error - ElementHasNoName</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Element has no name</span></h4>
+
+<p class="MsoNormal">This error indicates that an element does not have a name. For example, 
+an image that is missing an alt tag.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a screen-reader 
+and keyboard for navigation because the screen reader might incorrectly identify an element to the user. 
+An image that serves a strictly decorative purpose shouldn't have a name. Use alt="" 
+as the alt text.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>An image doesn't have an alt tag.</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>2.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>A link does not contain text or an element with a name.</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>3.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The document doesn't have a title.</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>4.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>A button doesn't have a name.</p>
+
+<p>&nbsp;</p>
+
+
+<!--
+ElementHasNoNameLabel
+-->
+<h3><a name="ElementHasNoNameLabel"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Error - ElementHasNoNameLabel</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Element has no name, are you missing a label?</span></h4>
+
+<p class="MsoNormal">This error indicates that an element should have a label to 
+provide its name,
+but doesn't have one.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a screen-reader 
+and keyboard for navigation because the screen reader might incorrectly identify an element to the user.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Radio button doesn't have a label.</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>2.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Check button doesn't have a label.</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>3.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Text field or similar doesn't have a name.</p>
+
+<p>&nbsp;</p>
+
+<!--
+ElementHasEmptyStringAsName
+-->
+<h3><a name="ElementHasEmptyStringAsName"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Warning - ElementHasEmptyStringAsName</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Element has empty string as name.</span></h4>
+
+<p class="MsoNormal">This warning indicates the element has "" as a name.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is not an issue, as long as the element serves
+only decorative purposes, as the screen reader user will be unaware of the existence of this element.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>An image has alt="".</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>2.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Element has name set to empty string.</p>
+
+<p>&nbsp;</p>
+
+<!--
+RepeatLinkNameWithDifferentValue
+-->
+<h3><a name="RepeatLinkNameWithDifferentValue"></a><span style='mso-fareast-font-family:
+"Times New Roman"'>Error - RepeatLinkNameWithDifferentValue</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Link name has already been used with a different href.</span></h4>
+
+<p class="MsoNormal">This error indicates that multiple links have the same 
+name, but they link to different destinations.</p>
+
+<p class="MsoNormal"><strong>Note:</strong> This is an issue for people who rely 
+on a screen-reader. Because the screen reader communicates the links to the user 
+only by reading the names, theuser will assume that the links are the same.</p>
+
+<p class="MsoNormal">Possible causes for this warning:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>At least two links have same name, but different href values. The name of 
+the link is determined from the text within the link. If there is no text, the 
+link gets its name from the element name within it.</p>
+
+<p>&nbsp;</p>
+
+<!--
+AccNameLengthTooLong
+-->
+
+<h3><a name=AccNameLengthTooLong><span style='mso-fareast-font-family:
+"Times New Roman"'>Error - AccNameLengthTooLong</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Element's accName
+should not return a string longer than {0} characters</span></h4>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>This error indicates that the name of an element contains too many
+characters. For example, the get_accName method used to retrieve the Active
+Accessibility name of an element returns a string greater than the limit of
+32000 characters.</p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader and keyboard for navigation because an element may have an
+unpronounceable, non-intuitive name.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The element, or its parent<a name="msoanchor_72" id="_anchor_72"></a><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%;
+font-family:"Calibri","sans-serif"'></span></span>, has an incorrectly
+assigned name or label. </p>
+
+
+<!--
+AccNameContainsInvalidString
+-->
+
+<h3><a name=AccNameContainsInvalidString></a><span style='mso-fareast-font-family:
+"Times New Roman"'></span>&nbsp;</h3>
+    <h3>
+        <span style="mso-fareast-font-family: 'Times New Roman'">Error</span><a name="msoanchor_73" id="_anchor_73"></a><span style='mso-bookmark:_msoanchor_73'></span><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%;
+font-family:"Calibri","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:windowtext;font-weight:normal'>&nbsp;</span></span><span
+style='mso-fareast-font-family:"Times New Roman"'> - AccNameContainsInvalidString</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>accName should not
+contain the string {0}</span><a name="msoanchor_74" id="_anchor_74"></a><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%;
+font-family:"Calibri","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:windowtext;font-weight:normal;font-style:normal'></span></span><span
+style='mso-fareast-font-family:"Times New Roman"'></span></h4>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>This error indicates that the name of an element contains invalid
+characters (these characters are replaced by AccChecker). For example, the
+get_accName method used to retrieve the Active Accessibility name of an element
+returns a string that contains tab, newline, or ampersand characters. </p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader and keyboard for navigation because an element may have an
+unpronounceable, non-intuitive name.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The element, or its parent<a name="msoanchor_76" id="_anchor_76"></a><span style='mso-bookmark:_msoanchor_76'></span><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%;
+font-family:"Calibri","sans-serif"'>&nbsp;</span></span>, has an incorrectly
+assigned name or label. </p>
+
+
+<!--
+AccNameShouldNotContainRole
+-->
+
+<h3><a name=AccNameShouldNotContainRole></a><span style='mso-fareast-font-family:
+"Times New Roman"'></span>&nbsp;</h3>
+    <h3>
+        <span style="mso-fareast-font-family: 'Times New Roman'">Warning</span><a name="msoanchor_77" id="_anchor_77"></a><span style='mso-bookmark:_msoanchor_77'></span><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%;
+font-family:"Calibri","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:windowtext;font-weight:normal'>&nbsp;</span></span><span
+style='mso-fareast-font-family:"Times New Roman"'> -
+AccNameShouldNotContainRole</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>accName ({0})
+should not contain the text of the Role ({1})</span><a name="msoanchor_78"
+id="_anchor_78"></a><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%;
+font-family:"Calibri","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:windowtext;font-weight:normal;font-style:normal'></span></span><span
+style='mso-fareast-font-family:"Times New Roman"'></span></h4>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'><span style='font-family:
+Symbol'>·</span><span style='font-size:7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>This error indicates that the name of an element incorporates its Active
+Accessibility role. For example, the get_accName method used to retrieve the
+Active Accessibility name of an element returns “ROLE_SYSTEM_SCROLLBAR_*”. </p>
+
+<p class="MsoNormal"><strong>Note: </strong>This is an issue for people who rely on a
+screen-reader and keyboard for navigation because an element may have an
+unpronounceable, non-intuitive name.</p>
+
+<p class="MsoNormal">Possible causes for this error:</p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>1.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The element, or its parent<a name="msoanchor_80" id="_anchor_80"></a><span
+class=MsoCommentReference><span style='font-size:8.0pt;line-height:115%;
+font-family:"Calibri","sans-serif"'></span></span>, has an incorrectly
+assigned name or label. </p>
+
+<p class="MsoListParagraph" style='text-indent:-.25in'>2.<span style='font-size:
+7.0pt;line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The element, or its parent, has a default name that has not been revised
+to a friendly name. For example, button1. </p>
+
+
+<p>&nbsp;</p>
+
+
+
+<!--
+Miscellaneous errors.
+-->
+    <h2>
+        <a name="MiscellaneousErrors" /><span style="mso-fareast-font-family: 'Times New Roman'">Miscellaneous Errors</span></h2>
+
+<!-- 
+UnexpectedTestError 
+-->
+    <h3>
+        <a name="UnexpectedTestError" /><span style="mso-fareast-font-family: 'Times New Roman'">Error -
+UnexpectedTestError</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>Exception :({0})</span></h4>
+
+<p class="MsoNormal">This error specifies that an exception unrelated to the verifications has been raised by AccChecker.</p>
+<p class="MsoNormal">To report issues such as this, see the AccChecker 'About' dialog for contact information.</p>
+<p>&nbsp;</p>
+<!-- 
+MemberNotImplememented 
+-->
+    <h3>
+        <a name="MemberNotImplememented" /><span style="mso-fareast-font-family: 'Times New Roman'">Error -
+MemberNotImplememented</span></h3>
+
+<h4><span style='mso-fareast-font-family:"Times New Roman"'>The method is not implemented on this particular element.</span></h4>
+
+<p class="MsoNormal">This error specifies that a method call has failed unexpectedly.</p>
+
+</body>
+
+</html>

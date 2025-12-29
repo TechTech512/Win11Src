@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>AccChecker Custom Verification Routines</title>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#365F91;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#4F81BD;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:11.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#4F81BD;}
+h4
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 4 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:11.0pt;
+	font-family:"Cambria","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:#4F81BD;
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+code
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Consolas;
+	mso-bidi-font-family:"Courier New";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-priority:35;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-bidi-font-family:"Times New Roman";
+	color:#4F81BD;
+	font-weight:bold;}
+-->
+</style>
+</head>
+<body lang="EN-US" link="blue" vlink="purple" style="tab-interval:.5in">
+    <h1>AccChecker Custom Verification Routines</h1>
+    <p class="MsoNormal">This document describes how to create a custom verification routine for the UI Accessibility Checker (AccChecker) tool. </p>
+    <h2>Overview</h2>
+    <p class="MsoNormal">
+    UI Accessibility Checker (AccChecker) is an accessibility test tool designed to verify the implementation of Microsoft Active Accessibility (Active Accessibility) in a control or application user interface (UI). High impact accessibility issues that might be exposed by the Active Accessibility implementation are tested with a set of built-in automated verification routines. These native verification routines can be augmented with customized routines using the extensible AccChecker platform. 
+    </p>
+    <h2>Creating a Custom Verification</h2>
+    <p class="MsoNormal">A custom verification is built as a class library (DLL) that implements a single interface (IVerificationRoutine) containing one member (Execute):
+    </p>
+    <pre><code>
+     void Execute(System.IntPtr hwnd, AccCheck.Logging.ILogger logger, bool AllowUI, AccCheck.GraphicsHelper graphics)
+    </code></pre>
+    <p class="MsoNormal">
+    <strong>Parameters</strong>
+    </p>
+    <p class="MsoNormal">
+    hwnd<br />
+    Type: System.IntPtr
+    </p>
+    <p class="MsoNormal">
+    The hWnd of the element being verified.
+    </p>
+    <p class="MsoNormal">
+    logger<br />
+    Type: AccCheck.Logging.ILogger
+    </p>
+    <p class="MsoNormal">
+    The selected logging method. Possible types include AccumulatingLogger (used by AccChecker to cache all log entries until verifications are complete), ConsoleLogger, TextFileLogger, and XMLSerializingLogger.
+    </p>
+    <p class="MsoNormal">
+    AllowUI<br />
+    Type: bool
+    </p>
+    <p class="MsoNormal">
+    Indicates whether the verification routine displays the UI it is testing. Generally set to false in automated testing scenarios.
+    </p>
+    <p class="MsoNormal">
+    graphics<br />
+    Type: AccCheck.GraphicsHelper
+    </p>
+    <p class="MsoNormal">
+    Used for screenshots and other visualizations within AccChecker.
+    </p>
+     <a name="SampleCustomVerification" /><h3>Sample Custom Verification</h3>
+     <p class="MsoNormal">
+    The following is a C# custom verification that performs a simple element tree depth check. An error is logged if the element tree is greater than 50 levels deep, a warning is logged if the element tree is 20 
+         to 50 levels deep, and an informational message is logged otherwise.
+    </p>
+    <pre>
+<code>using System;
+using System.Collections.Generic;
+using System.Text;
+using AccCheck;
+using AccCheck.Logging;
+using AccCheck.Verification;
+
+namespace VerificationRoutines
+{
+    \\ Verification routine attributes.
+    \\ If these values are not specified, the verification will not be displayed in the 
+    \\ AccChecker UI. However, it is still loaded and will be included in all subsequent 
+    \\ verification runs since it cannot be unchecked and excluded.
+    [Verification(
+        // Title - the title of the verification routine.
+        "Sample Check Tree Depth",
+        // Description - this attribute is not currently displayed.
+        "Checks that the accessibility tree isn't excessively deep.",
+        // Group Title - the verification group to add the routine. This can be a new or existing group.
+        Group = "TreeDepthCheck"
+        )]
+
+    public class CheckTreeDepth : IVerificationRoutine
+    {
+        private const int S_OK = 0;
+        private const int ERROR_TREE_DEPTH = 50;
+        private const int WARNING_TREE_DEPTH = 20;
+        private int _depth = 0;
+
+        private void TraverseTree(Accessible parent, int level)
+        {
+            if (level > _depth)
+            {
+                _depth = level;
+            }
+
+            // never go deeper than ERROR_TREE_DEPTH, that's a sign of a loop
+            if (_depth > ERROR_TREE_DEPTH)
+            {
+                return;
+            }
+
+            Accessible[] children;
+            if (parent.Children(out children) == S_OK)
+            {
+                foreach (Accessible child in children)
+                {
+                    TraverseTree(child, level + 1);
+                }
+            }
+        }
+
+        public void Execute(IntPtr hwnd, ILogger logger, bool AllowUI, GraphicsHelper graphics)
+        {
+            Accessible root;
+            if (Accessible.FromWindow(hwnd, out root) == S_OK)
+            {
+                TraverseTree(root, 0);
+            }
+            else
+            {
+                return;
+            }
+
+            if (_depth >= ERROR_TREE_DEPTH)
+            {
+                logger.Log(new LogEvent(EventLevel.Error, "DepthCheck", String.Format("The tree is too deep; the tree is {0} levels deep", _depth), "", System.Drawing.Rectangle.Empty, this.GetType()));
+            }
+            else if (_depth >= WARNING_TREE_DEPTH)
+            {
+                logger.Log(new LogEvent(EventLevel.Warning, "DepthCheck", String.Format("The tree might be too deep; the tree is {0} levels deep", _depth), "", System.Drawing.Rectangle.Empty, this.GetType()));
+            }
+            else
+            {
+                logger.Log(new LogEvent(EventLevel.Information, "DepthCheck", string.Format("The tree is {0} levels deep", _depth), "", System.Drawing.Rectangle.Empty, this.GetType()));
+            }
+        }
+    }
+}</code></pre>
+<p class="MsoNormal">
+<strong>Note: </strong>
+A Microsoft Visual Studio 2008 solution that contains verification sample code is included with the help documentation. The files are located in the  AccChecker installation path.
+</p>
+    <h2>Using a Custom Verification</h2>
+    <p class="MsoNormal">
+    This section describes how to incorporate a custom verification into AccChecker test scenarios.
+    </p>
+    <h3>The AccChecker Graphical User Interface (GUI)</h3>
+    <p class="MsoNormal">
+    To include a custom verification routine in the AccChecker application, simply click <strong>Open DLL</strong> from the <strong>File</strong> menu and locate the DLL for the routine. The custom routine will be added to the bottom of the list of verifications in the <strong>Select verification routines</strong> pane.
+    </p>
+    <p class="MsoNormal">
+    The following screen shot shows the <a href="#SampleCustomVerification">Sample Check Tree Depth</a> custom verification added to AccChecker. 
+    </p>
+    <p>
+    <img border="0" width="266" height="381" id="AccChecker_CustomVerification"
+src="AccChecker_HelpFiles/AccChecker_CustomVerification.PNG" alt="The Sample Check Tree Depth custom verification routine added to the AccChecker UI."/>
+    </p>
+    <p class=MsoCaption>Figure 1. The Sample Check Tree Depth custom verification routine added to the AccChecker UI.</p>
+    <p class="MsoNormal">
+    <strong>Note: </strong>If the verification attribute values are not specified in the custom verification routine, the verification is still loaded into AccChecker even though it does not appear in the UI. Since it is not displayed in the UI, it cannot be unchecked and excluded from subsequent verification runs.
+    </p>
+    <h3>AccChecker Automation</h3>
+    <p class="MsoNormal">
+    Incorporating a custom verification routine into an automated AccChecker framework is as simple as adding the verification DLL and enabling the desired verification routines.  
+    </p> 
+<p class="MsoNormal">The following code snippet demonstrates how to use the AccChecker API to test tabbing functionality
+in the Windows Firewall control panel application.</p>
+
+<pre>
+<code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using AccCheck.Logging;
+
+public class TestCases : TestBase
+{
+    public void AccessibilityTestCase()
+    {
+        //  Get our user interface ready for AccChecker.
+        Setup();
+
+        //  AccChecker's class representing verifications that you can run
+        AccCheck.Verification.VerificationManager vm = new AccCheck.Verification.VerificationManager();
+
+        //  Create a console logger to get output in the console.
+        ConsoleLogger consoleLogger = new ConsoleLogger();
+
+        //  Add the AccChecker Console Logger.
+        vm.AddLogger(consoleLogger);
+
+        //  Disable all verifications; all verifications are enabled by default.
+        vm.DisableVerifications(AccCheck.Verification.VerificationFilter.All);
+
+        // Add a custom verification DLL.
+        vm.AddVerificationDll("CheckTreeDepthVerification.dll");
+        
+        // Enable the routine we want to run.
+        vm.EnableRoutine("Sample Check Tree Depth");
+
+        //  Run the verification routine against the firewall.
+        vm.ExecuteEnabled(_fireWallHwnd);
+
+        //  Check the logger to see if the verification failed.
+        if (consoleLogger.ErrorCount > 0)
+        {
+            Console.WriteLine("Test failed!");
+
+            Console.WriteLine("Error count = " + consoleLogger.ErrorCount);
+        }
+
+        // Cleanup the user interface.
+        Cleanup();
+    }
+}</code></pre>
+<p class="MsoNormal">
+<strong>Note: </strong>
+A Microsoft Visual Studio 2008 solution that contains verification sample code is included with the help documentation. The files are located in the  AccChecker installation path.
+</p>
+</body>
+</html>
