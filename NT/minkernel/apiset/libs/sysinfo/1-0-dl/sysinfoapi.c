@@ -11,7 +11,7 @@ void GetSystemTimeAdjustment(void){}
 void GetSystemTimeAsFileTime(void){}
 void GetSystemWindowsDirectoryA(void){}
 void GetSystemWindowsDirectoryW(void){}
-void GetTickCount(void){}
+void GetTickCount(void);
 void GetTickCount64(void){}
 void GetVersion(void){}
 void GetVersionExA(void){}
@@ -20,3 +20,4 @@ void GetWindowsDirectoryA(void){}
 void GetWindowsDirectoryW(void){}
 void GlobalMemoryStatusEx(void){}
 void SetLocalTime(void){}
+
