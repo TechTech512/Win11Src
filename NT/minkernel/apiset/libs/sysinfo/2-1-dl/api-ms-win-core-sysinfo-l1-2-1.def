@@ -1,0 +1,7 @@
+LIBRARY api-ms-win-core-sysinfo-l1-2-1
+EXPORTS
+	DnsHostnameToComputerNameExW = kernel32.DnsHostnameToComputerNameExW
+	GetPhysicallyInstalledSystemMemory = kernel32.GetPhysicallyInstalledSystemMemory
+	InstallELAMCertificateInfo = kernel32.InstallELAMCertificateInfo
+	SetComputerNameEx2W = kernel32.SetComputerNameEx2W
+	SetSystemTimeAdjustment = kernel32.SetSystemTimeAdjustment

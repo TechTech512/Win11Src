@@ -1,0 +1,9 @@
+void EnumSystemFirmwareTables(void){}
+void GetNativeSystemInfo(void){}
+void GetOsSafeBootMode(void){}
+void GetProductInfo(void){}
+void GetSystemFirmwareTable(void){}
+void GetSystemTimePreciseAsFileTime(void){}
+void SetComputerNameExW(void){}
+void SetSystemTime(void){}
+void VerSetConditionMask(void){}

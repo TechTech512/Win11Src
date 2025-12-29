@@ -1,0 +1,11 @@
+LIBRARY api-ms-win-core-sysinfo-l1-2-0
+EXPORTS
+	EnumSystemFirmwareTables = kernel32.EnumSystemFirmwareTables
+	GetNativeSystemInfo = kernel32.GetNativeSystemInfo
+	GetOsSafeBootMode = kernel32.GetOsSafeBootMode
+	GetProductInfo = kernel32.GetProductInfo
+	GetSystemFirmwareTable = kernel32.GetSystemFirmwareTable
+	GetSystemTimePreciseAsFileTime = kernel32.GetSystemTimePreciseAsFileTime
+	SetComputerNameExW = kernel32.SetComputerNameExW
+	SetSystemTime = kernel32.SetSystemTime
+	VerSetConditionMask = kernel32.VerSetConditionMask
