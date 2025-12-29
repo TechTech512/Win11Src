@@ -1,0 +1,7 @@
+LIBRARY api-ms-win-core-util-l1-1-0
+EXPORTS
+	Beep = kernel32.Beep
+	DecodePointer = kernel32.DecodePointer
+	DecodeSystemPointer = kernel32.DecodeSystemPointer
+	EncodePointer = kernel32.EncodePointer
+	EncodeSystemPointer = kernel32.EncodeSystemPointer
