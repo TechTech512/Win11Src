@@ -3,4 +3,4 @@ EXPORTS
 	IsWow64Process = kernel32.IsWow64Process
 	Wow64DisableWow64FsRedirection = kernel32.Wow64DisableWow64FsRedirection
 	Wow64EnableWow64FsRedirection = kernel32.Wow64EnableWow64FsRedirection
-	Wow64RevertWow64FsRedirection = kernel32.ControlServiceExA
+	Wow64RevertWow64FsRedirection = kernel32.Wow64RevertWow64FsRedirection
