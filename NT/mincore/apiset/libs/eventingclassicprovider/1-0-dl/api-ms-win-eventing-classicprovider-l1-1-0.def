@@ -1,0 +1,10 @@
+LIBRARY
+EXPORTS
+	GetTraceEnableFlags = advapi32.GetTraceEnableFlags
+	GetTraceEnableLevel = advapi32.GetTraceEnableLevel
+	GetTraceLoggerHandle = advapi32.GetTraceLoggerHandle
+	RegisterTraceGuidsW = advapi32.RegisterTraceGuidsW
+	TraceEvent = advapi32.TraceEvent
+	TraceMessage = advapi32.TraceMessage
+	TraceMessageVa = advapi32.TraceMessageVa
+	UnregisterTraceGuids = advapi32.UnregisterTraceGuids
