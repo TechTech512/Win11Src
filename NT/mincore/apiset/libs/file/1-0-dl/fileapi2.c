@@ -1,0 +1,11 @@
+void CopyFile2(void){}
+void CopyFileExW(void){}
+void CreateDirectoryExW(void){}
+void CreateHardLinkW(void){}
+void CreateSymbolicLinkW(void){}
+void GetFileInformationByHandleEx(void){}
+void MoveFileExW(void){}
+void MoveFileWithProgressW(void){}
+void ReOpenFile(void){}
+void ReadDirectoryChangesW(void){}
+void ReplaceFileW(void){}

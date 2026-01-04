@@ -1,0 +1,13 @@
+LIBRARY
+EXPORTS
+	CopyFile2 = kernel32.CopyFile2
+	CopyFileExW = kernel32.CopyFileExW
+	CreateDirectoryExW = kernel32.CreateDirectoryExW
+	CreateHardLinkW = kernel32.CreateHardLinkW
+	CreateSymbolicLinkW = kernel32.CreateSymbolicLinkW
+	GetFileInformationByHandleEx = kernel32.GetFileInformationByHandleEx
+	MoveFileExW = kernel32.MoveFileExW
+	MoveFileWithProgressW = kernel32.MoveFileWithProgressW
+	ReOpenFile = kernel32.ReOpenFile
+	ReadDirectoryChangesW = kernel32.ReadDirectoryChangesW
+	ReplaceFileW = kernel32.ReplaceFileW

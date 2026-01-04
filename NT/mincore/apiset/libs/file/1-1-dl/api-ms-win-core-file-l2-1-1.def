@@ -1,0 +1,3 @@
+LIBRARY
+EXPORTS
+	OpenFileById = kernel32.OpenFileById
