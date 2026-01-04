@@ -1,0 +1,7 @@
+LIBRARY
+EXPORTS
+	GetActiveProcessorCount = kernel32.GetActiveProcessorCount
+	GetProcessAffinityMask = kernel32.GetProcessAffinityMask
+	GetProcessIoCounters = kernel32.GetProcessIoCounters
+	SetProcessAffinityMask = kernel32.SetProcessAffinityMask
+	SetThreadAffinityMask = kernel32.SetThreadAffinityMask
