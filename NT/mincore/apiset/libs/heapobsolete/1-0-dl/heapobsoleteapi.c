@@ -1,0 +1,15 @@
+void GlobalAlloc(void){}
+void GlobalFlags(void){}
+void GlobalFree(void){}
+void GlobalHandle(void){}
+void GlobalLock(void){}
+void GlobalReAlloc(void){}
+void GlobalSize(void){}
+void GlobalUnlock(void){}
+void LocalAlloc(void){}
+void LocalFlags(void){}
+void LocalFree(void){}
+void LocalLock(void){}
+void LocalReAlloc(void){}
+void LocalSize(void){}
+void LocalUnlock(void){}

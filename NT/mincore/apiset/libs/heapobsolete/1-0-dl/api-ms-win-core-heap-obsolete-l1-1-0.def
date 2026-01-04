@@ -1,0 +1,17 @@
+LIBRARY
+EXPORTS
+	GlobalAlloc = kernel32.GlobalAlloc
+	GlobalFlags = kernel32.GlobalFlags
+	GlobalFree = kernel32.GlobalFree
+	GlobalHandle = kernel32.GlobalHandle
+	GlobalLock = kernel32.GlobalLock
+	GlobalReAlloc = kernel32.GlobalReAlloc
+	GlobalSize = kernel32.GlobalSize
+	GlobalUnlock = kernel32.GlobalUnlock
+	LocalAlloc = kernel32.LocalAlloc
+	LocalFlags = kernel32.LocalFlags
+	LocalFree = kernel32.LocalFree
+	LocalLock = kernel32.LocalLock
+	LocalReAlloc = kernel32.LocalReAlloc
+	LocalSize = kernel32.LocalSize
+	LocalUnlock = kernel32.LocalUnlock
