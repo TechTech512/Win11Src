@@ -1,0 +1,8 @@
+LIBRARY
+EXPORTS
+	LookupAccountNameW = advapi32.LookupAccountNameW
+	LookupAccountSidW = advapi32.LookupAccountSidW
+	LookupPrivilegeDisplayNameW = advapi32.LookupPrivilegeDisplayNameW
+	LookupPrivilegeNameW = advapi32.LookupPrivilegeNameW
+	LookupPrivilegeValueW = advapi32.LookupPrivilegeValueW
+	LsaEnumerateTrustedDomains = advapi32.LsaEnumerateTrustedDomains
