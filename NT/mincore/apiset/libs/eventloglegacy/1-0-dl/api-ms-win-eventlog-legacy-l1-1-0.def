@@ -1,0 +1,8 @@
+LIBRARY
+EXPORTS
+	DeregisterEventSource = advapi32.DeregisterEventSource
+	GetEventLogInformation = advapi32.GetEventLogInformation
+	RegisterEventSourceA = advapi32.RegisterEventSourceA
+	RegisterEventSourceW = advapi32.RegisterEventSourceW
+	ReportEventA = advapi32.ReportEventA
+	ReportEventW = advapi32.ReportEventW

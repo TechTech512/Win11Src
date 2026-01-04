@@ -1,0 +1,14 @@
+void ControlTraceA(void){}
+void EnableTrace(void){}
+void EnableTraceEx(void){}
+void EnumerateTraceGuids(void){}
+void FlushTraceA(void){}
+void FlushTraceW(void){}
+void OpenTraceA(void){}
+void QueryAllTracesA(void){}
+void QueryTraceA(void){}
+void QueryTraceW(void){}
+void StartTraceA(void){}
+void StopTraceA(void){}
+void UpdateTraceA(void){}
+void UpdateTraceW(void){}

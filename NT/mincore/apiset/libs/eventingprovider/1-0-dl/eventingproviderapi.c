@@ -1,0 +1,10 @@
+void EventActivityIdControl(void){}
+void EventEnabled(void){}
+void EventProviderEnabled(void){}
+void EventRegister(void){}
+void EventSetInformation(void){}
+void EventUnregister(void){}
+void EventWrite(void){}
+void EventWriteEx(void){}
+void EventWriteString(void){}
+void EventWriteTransfer(void){}

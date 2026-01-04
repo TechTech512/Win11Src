@@ -1,0 +1,12 @@
+LIBRARY
+EXPORTS
+	EventActivityIdControl = advapi32.EventActivityIdControl
+	EventEnabled = advapi32.EventEnabled
+	EventProviderEnabled = advapi32.EventProviderEnabled
+	EventRegister = advapi32.EventRegister
+	EventSetInformation = advapi32.EventSetInformation
+	EventUnregister = advapi32.EventUnregister
+	EventWrite = advapi32.EventWrite
+	EventWriteEx = advapi32.EventWriteEx
+	EventWriteString = advapi32.EventWriteString
+	EventWriteTransfer = advapi32.EventWriteTransfer

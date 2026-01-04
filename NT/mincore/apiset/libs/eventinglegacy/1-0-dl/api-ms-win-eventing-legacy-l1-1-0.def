@@ -1,0 +1,16 @@
+LIBRARY
+EXPORTS
+	ControlTraceA = advapi32.ControlTraceA
+	EnableTrace = advapi32.EnableTrace
+	EnableTraceEx = advapi32.EnableTraceEx
+	EnumerateTraceGuids = advapi32.EnumerateTraceGuids
+	FlushTraceA = advapi32.FlushTraceA
+	FlushTraceW = advapi32.FlushTraceW
+	OpenTraceA = advapi32.OpenTraceA
+	QueryAllTracesA = advapi32.QueryAllTracesA
+	QueryTraceA = advapi32.QueryTraceA
+	QueryTraceW = advapi32.QueryTraceW
+	StartTraceA = advapi32.StartTraceA
+	StopTraceA = advapi32.StopTraceA
+	UpdateTraceA = advapi32.UpdateTraceA
+	UpdateTraceW = advapi32.UpdateTraceW
