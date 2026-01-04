@@ -1,0 +1,14 @@
+TARGETNAME=API-MS-Win-Core-PrivateProfile-L1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-core-privateprofile-l1-1-0.def
+
+SOURCES=privateprofileapi.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1

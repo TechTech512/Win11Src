@@ -1,0 +1,14 @@
+void GetPrivateProfileIntA(void){}
+void GetPrivateProfileIntW(void){}
+void GetPrivateProfileSectionW(void){}
+void GetPrivateProfileStringA(void){}
+void GetPrivateProfileStringW(void){}
+void GetProfileIntA(void){}
+void GetProfileIntW(void){}
+void GetProfileSectionA(void){}
+void GetProfileSectionW(void){}
+void GetProfileStringA(void){}
+void GetProfileStringW(void){}
+void WritePrivateProfileSectionA(void){}
+void WritePrivateProfileStringA(void){}
+void WritePrivateProfileStringW(void){}

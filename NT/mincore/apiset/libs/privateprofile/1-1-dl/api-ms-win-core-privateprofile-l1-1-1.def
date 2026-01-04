@@ -1,0 +1,4 @@
+LIBRARY
+EXPORTS
+	GetPrivateProfileSectionA = kernel32.GetPrivateProfileSectionA
+	WritePrivateProfileSectionW = kernel32.WritePrivateProfileSectionW

@@ -1,0 +1,16 @@
+LIBRARY
+EXPORTS
+	GetPrivateProfileIntA = kernel32.GetPrivateProfileIntA
+	GetPrivateProfileIntW = kernel32.GetPrivateProfileIntW
+	GetPrivateProfileSectionW = kernel32.GetPrivateProfileSectionW
+	GetPrivateProfileStringA = kernel32.GetPrivateProfileStringA
+	GetPrivateProfileStringW = kernel32.GetPrivateProfileStringW
+	GetProfileIntA = kernel32.GetProfileIntA
+	GetProfileIntW = kernel32.GetProfileIntW
+	GetProfileSectionA = kernel32.GetProfileSectionA
+	GetProfileSectionW = kernel32.GetProfileSectionW
+	GetProfileStringA = kernel32.GetProfileStringA
+	GetProfileStringW = kernel32.GetProfileStringW
+	WritePrivateProfileSectionA = kernel32.WritePrivateProfileSectionA
+	WritePrivateProfileStringA = kernel32.WritePrivateProfileStringA
+	WritePrivateProfileStringW = kernel32.WritePrivateProfileStringW
