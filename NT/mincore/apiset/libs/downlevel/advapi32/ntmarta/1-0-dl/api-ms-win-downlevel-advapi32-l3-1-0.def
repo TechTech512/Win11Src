@@ -1,0 +1,8 @@
+LIBRARY
+EXPORTS
+	GetExplicitEntriesFromAclW = advapi32.GetExplicitEntriesFromAclW
+	GetNamedSecurityInfoW = advapi32.GetNamedSecurityInfoW
+	GetSecurityInfo = advapi32.GetSecurityInfo
+	SetEntriesInAclW = advapi32.SetEntriesInAclW
+	SetNamedSecurityInfoW = advapi32.SetNamedSecurityInfoW
+	SetSecurityInfo = advapi32.SetSecurityInfo

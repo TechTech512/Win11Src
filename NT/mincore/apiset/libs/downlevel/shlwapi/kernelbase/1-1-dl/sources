@@ -1,0 +1,14 @@
+TARGETNAME=api-ms-win-downlevel-shlwapi-l1-1-1
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-downlevel-shlwapi-l1-1-1.def
+
+SOURCES=shlwapikernelbase.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\shlwapi.lib 
+	
+NT_SIGNCODE=1

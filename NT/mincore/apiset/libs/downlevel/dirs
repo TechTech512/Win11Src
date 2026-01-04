@@ -1,0 +1,6 @@
+DIRS=advapi32 \
+     kernel32 \
+     ole32 \
+     shlwapi \
+     user32 \
+     version

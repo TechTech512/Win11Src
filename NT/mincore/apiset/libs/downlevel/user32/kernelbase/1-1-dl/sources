@@ -1,0 +1,14 @@
+TARGETNAME=api-ms-win-downlevel-user32-l1-1-1
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-downlevel-user32-l1-1-1.def
+
+SOURCES=user32kernelbase.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\user32.lib 
+	
+NT_SIGNCODE=1

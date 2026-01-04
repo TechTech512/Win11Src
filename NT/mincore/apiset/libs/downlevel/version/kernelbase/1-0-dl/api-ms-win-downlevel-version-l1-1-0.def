@@ -1,0 +1,8 @@
+LIBRARY
+EXPORTS
+	GetFileVersionInfoExW = version.GetFileVersionInfoExW
+	GetFileVersionInfoSizeExW = version.GetFileVersionInfoSizeExW
+	VerFindFileA = version.VerFindFileA
+	VerFindFileW = version.VerFindFileW
+	VerQueryValueA = version.VerQueryValueA
+	VerQueryValueW = version.VerQueryValueW
