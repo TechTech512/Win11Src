@@ -1,0 +1,15 @@
+void FindFirstVolumeMountPointW(void){}
+void FindNextVolumeMountPointW(void){}
+void FindVolumeMountPointClose(void){}
+void GetFileAttributesTransactedW(void){}
+void GetFirmwareType(void){}
+void GetNumaAvailableMemoryNodeEx(void){}
+void GetNumaNodeProcessorMask(void){}
+void GetNumaProcessorNodeEx(void){}
+void PowerClearRequest(void){}
+void PowerCreateRequest(void){}
+void PowerSetRequest(void){}
+void SetDllDirectoryW(void){}
+void SetThreadIdealProcessor(void){}
+void SetVolumeMountPointW(void){}
+void VerifyVersionInfoW(void){}

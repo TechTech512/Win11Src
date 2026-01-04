@@ -1,0 +1,17 @@
+LIBRARY
+EXPORTS
+	FindFirstVolumeMountPointW = kernel32.FindFirstVolumeMountPointW
+	FindNextVolumeMountPointW = kernel32.FindNextVolumeMountPointW
+	FindVolumeMountPointClose = kernel32.FindVolumeMountPointClose
+	GetFileAttributesTransactedW = kernel32.GetFileAttributesTransactedW
+	GetFirmwareType = kernel32.GetFirmwareType
+	GetNumaAvailableMemoryNodeEx = kernel32.GetNumaAvailableMemoryNodeEx
+	GetNumaNodeProcessorMask = kernel32.GetNumaNodeProcessorMask
+	GetNumaProcessorNodeEx = kernel32.GetNumaProcessorNodeEx
+	PowerClearRequest = kernel32.PowerClearRequest
+	PowerCreateRequest = kernel32.PowerCreateRequest
+	PowerSetRequest = kernel32.PowerSetRequest
+	SetDllDirectoryW = kernel32.SetDllDirectoryW
+	SetThreadIdealProcessor = kernel32.SetThreadIdealProcessor
+	SetVolumeMountPointW = kernel32.SetVolumeMountPointW
+	VerifyVersionInfoW = kernel32.VerifyVersionInfoW
