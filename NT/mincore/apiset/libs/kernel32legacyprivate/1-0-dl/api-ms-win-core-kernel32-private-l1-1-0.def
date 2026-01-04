@@ -1,0 +1,19 @@
+LIBRARY
+EXPORTS
+	BaseSetLastNTError = kernel32.BaseSetLastNTError
+	CheckElevation = kernel32.CheckElevation
+	CheckElevationEnabled = kernel32.CheckElevationEnabled
+	CompareCalendarDates = kernel32.CompareCalendarDates
+	DosPathToSessionPathW = kernel32.DosPathToSessionPathW
+	EnumerateLocalComputerNamesW = kernel32.EnumerateLocalComputerNamesW
+	GetCalendarMonthsInYear = kernel32.GetCalendarMonthsInYear
+	RegisterWaitForInputIdle = kernel32.RegisterWaitForInputIdle
+	RemoveLocalAlternateComputerNameW = kernel32.RemoveLocalAlternateComputerNameW
+	SetLocalPrimaryComputerNameW = kernel32.SetLocalPrimaryComputerNameW
+	Wow64EnableWow64FsRedirection = kernel32.Wow64EnableWow64FsRedirection
+	_lclose = kernel32._lclose
+	_lcreat = kernel32._lcreat
+	_llseek = kernel32._llseek
+	_lopen = kernel32._lopen
+	_lread = kernel32._lread
+	_lwrite = kernel32._lwrite

@@ -1,0 +1,17 @@
+void BaseSetLastNTError(void){}
+void CheckElevation(void){}
+void CheckElevationEnabled(void){}
+void CompareCalendarDates(void){}
+void DosPathToSessionPathW(void){}
+void EnumerateLocalComputerNamesW(void){}
+void GetCalendarMonthsInYear(void){}
+void RegisterWaitForInputIdle(void){}
+void RemoveLocalAlternateComputerNameW(void){}
+void SetLocalPrimaryComputerNameW(void){}
+void Wow64EnableWow64FsRedirection(void){}
+void _lclose(void){}
+void _lcreat(void){}
+void _llseek(void){}
+void _lopen(void){}
+void _lread(void){}
+void _lwrite(void){}

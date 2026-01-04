@@ -1,0 +1,14 @@
+TARGETNAME=API-MS-Win-Core-Kernel32-Private-L1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-core-kernel32-private-l1-1-0.def
+
+SOURCES=kernel32legacyprivateapi.c \
+		apistub.rc
+
+UMTYPE=windows
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
