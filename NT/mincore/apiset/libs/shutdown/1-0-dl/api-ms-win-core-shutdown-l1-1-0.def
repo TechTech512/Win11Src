@@ -1,0 +1,5 @@
+LIBRARY
+EXPORTS
+	AbortSystemShutdownW = advapi32.AbortSystemShutdownW
+	InitiateSystemShutdownExW = advapi32.InitiateSystemShutdownExW
+	InitiateSystemShutdownW = advapi32.InitiateSystemShutdownW
