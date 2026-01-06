@@ -1,0 +1,12 @@
+void CharLowerA(void){}
+void CharLowerBuffA(void){}
+void CharNextA(void){}
+void CharNextExA(void){}
+void CharPrevA(void){}
+void CharPrevExA(void){}
+void CharUpperA(void){}
+void CharUpperBuffA(void){}
+void IsCharAlphaA(void){}
+void IsCharAlphaNumericA(void){}
+void IsCharLowerA(void){}
+void IsCharUpperA(void){}

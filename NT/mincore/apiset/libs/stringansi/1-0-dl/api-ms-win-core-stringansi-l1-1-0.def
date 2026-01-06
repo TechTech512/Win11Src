@@ -1,0 +1,14 @@
+LIBRARY
+EXPORTS
+	CharLowerA = user32.CharLowerA
+	CharLowerBuffA = user32.CharLowerBuffA
+	CharNextA = user32.CharNextA
+	CharNextExA = user32.CharNextExA
+	CharPrevA = user32.CharPrevA
+	CharPrevExA = user32.CharPrevExA
+	CharUpperA = user32.CharUpperA
+	CharUpperBuffA = user32.CharUpperBuffA
+	IsCharAlphaA = user32.IsCharAlphaA
+	IsCharAlphaNumericA = user32.IsCharAlphaNumericA
+	IsCharLowerA = user32.IsCharLowerA
+	IsCharUpperA = user32.IsCharUpperA
