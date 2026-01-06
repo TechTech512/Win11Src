@@ -1,0 +1,10 @@
+void CharLowerBuffW(void){}
+void CharLowerW(void){}
+void CharNextW(void){}
+void CharPrevW(void){}
+void CharUpperBuffW(void){}
+void CharUpperW(void){}
+void IsCharAlphaNumericW(void){}
+void IsCharAlphaW(void){}
+void IsCharLowerW(void){}
+void IsCharUpperW(void){}
