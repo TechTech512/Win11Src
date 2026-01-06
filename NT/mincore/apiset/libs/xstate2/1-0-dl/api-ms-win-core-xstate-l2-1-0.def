@@ -1,0 +1,8 @@
+LIBRARY
+EXPORTS
+	CopyContext = kernel32.CopyContext
+	GetEnabledXStateFeatures = kernel32.GetEnabledXStateFeatures
+	GetXStateFeaturesMask = kernel32.GetXStateFeaturesMask
+	InitializeContext = kernel32.InitializeContext
+	LocateXStateFeature = kernel32.LocateXStateFeature
+	SetXStateFeaturesMask = kernel32.SetXStateFeaturesMask
