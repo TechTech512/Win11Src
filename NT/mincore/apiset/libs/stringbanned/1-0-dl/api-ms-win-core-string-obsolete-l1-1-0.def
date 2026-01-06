@@ -1,0 +1,12 @@
+LIBRARY
+EXPORTS
+	lstrcatW = kernel32.lstrcatW
+	lstrcmpA = kernel32.lstrcmpA
+	lstrcmpW = kernel32.lstrcmpW
+	lstrcmpiA = kernel32.lstrcmpiA
+	lstrcmpiW = kernel32.lstrcmpiW
+	lstrcpyW = kernel32.lstrcpyW
+	lstrcpynA = kernel32.lstrcpynA
+	lstrcpynW = kernel32.lstrcpynW
+	lstrlenA = kernel32.lstrlenA
+	lstrlenW = kernel32.lstrlenW

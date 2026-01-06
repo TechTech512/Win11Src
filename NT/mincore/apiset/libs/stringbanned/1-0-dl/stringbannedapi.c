@@ -1,0 +1,10 @@
+void lstrcatW(void){}
+void lstrcmpA(void){}
+void lstrcmpW(void){}
+void lstrcmpiA(void){}
+void lstrcmpiW(void){}
+void lstrcpyW(void){}
+void lstrcpynA(void){}
+void lstrcpynW(void){}
+void lstrlenA(void){}
+void lstrlenW(void){}
