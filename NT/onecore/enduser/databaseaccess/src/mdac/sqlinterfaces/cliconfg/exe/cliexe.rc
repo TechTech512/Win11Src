@@ -1,0 +1,41 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for cliconfg
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "SQL Client Configuration Utility EXE"
+#define VER_INTERNALNAME_STR        "cliconfg.exe"
+#define VER_ORIGINALFILENAME_STR    "cliconfg.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WINDBVER DIALOG 100, 100, 122, 61
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+CLASS  "WindbverWndClass"
+FONT 8, "MS Shell Dlg"
+BEGIN
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN ICON DISCARDABLE "cliexe.ico"
