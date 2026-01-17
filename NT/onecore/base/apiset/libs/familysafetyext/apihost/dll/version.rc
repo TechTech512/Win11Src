@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2020 Microsoft Corporation. All rights reserved.
+//
+// Resource table for FamilySafetyExt
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "FamilySafety ChildAccount Extensions"
+#define VER_INTERNALNAME_STR        "FamilySafetyExt"
+#define VER_ORIGINALFILENAME_STR    "FamilySafetyExt.dll"
+
+#include "common.ver"

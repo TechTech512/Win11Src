@@ -1,0 +1,4 @@
+LIBRARY FAMILYSAFETYEXT
+EXPORTS
+    IsChildAccount 
+
