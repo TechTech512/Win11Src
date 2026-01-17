@@ -1,3 +1,0 @@
-DIRS=client \
-     azure  \
-     server
