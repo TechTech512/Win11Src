@@ -16,8 +16,7 @@ DLLENTRY=_DllMainCRTStartup
 UMTYPE=windows
 UMENTRY=dllmain
 TARGETLIBS= \
-	$(BASEDIR)\public\internal\sdk\lib\*\nothrownew.lib \
-	$(SDK_LIB_PATH)\ucrt.lib \
-	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\mincore.lib
 	
 NT_SIGNCODE=1
+
