@@ -4,7 +4,7 @@
 // Copyright (c) 2002 Microsoft Corporation. All rights reserved.
 //
 // Resource table for Microsoft Windows Code Name "Longhorn" Setup
-// Wizard Framework Resources (Azure Stack HCI)
+// Wizard Framework Resources (Workstation)
 // 
 //=================================================================
 #include "..\\common\\resource.h"
@@ -29,7 +29,7 @@ IDB_INFODLG      IMAGE DISCARDABLE "..\\common\\infodlg.png"
 IDB_HELP         IMAGE DISCARDABLE "..\\common\\help.png"
 IDB_LHDLG        IMAGE DISCARDABLE "..\\common\\olddlg.png"
 IDB_DIALOG       IMAGE DISCARDABLE "..\\common\\dialog.png"
-IDB_WINNT        IMAGE DISCARDABLE "..\\server\\mswin.png"
+IDB_WINNT        IMAGE DISCARDABLE "mswin.png"
 IDB_WINNTAU      IMAGE DISCARDABLE "mswinautorun.png"
 IDB_SELECT1      IMAGE DISCARDABLE "..\\common\\blank.png"
 IDB_SELECT2      IMAGE DISCARDABLE "..\\common\\blank2.png"

@@ -1,0 +1,13 @@
+MAJORCOMP=setup
+MINORCOMP=ui
+
+TARGETNAME=spwizimg
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+RESOURCE_ONLY_DLL=1
+
+BINPLACE_PLACEFILE=placefil.txt
+
+SOURCES= \
+        spwizimg.rc
