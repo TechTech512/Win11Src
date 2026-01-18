@@ -1,0 +1,75 @@
+//===============================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for basebrd.dll
+// 
+//===============================================================
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE VFT_DLL
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Base Branding Resource Dll"
+#define VER_INTERNALNAME_STR        "BASEBRD"
+#define VER_ORIGINALFILENAME_STR    "BASEBRD.DLL"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGONBANNER1              BITMAP  DISCARDABLE     "idb_logonbanner1.bmp"
+IDB_ABOUT1                    BITMAP  DISCARDABLE     "idb_about1.bmp"
+IDB_LOGONBANNER2              BITMAP  DISCARDABLE     "idb_logonbanner2.bmp"
+IDB_ABOUT2                    BITMAP  DISCARDABLE     "idb_about2.bmp"
+IDB_LOGONBANNER3              BITMAP  DISCARDABLE     "idb_logonbanner3.bmp"
+IDB_ABOUT3                    BITMAP  DISCARDABLE     "idb_about3.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS               "Windows Server"
+    IDS_WINNT                 "Windows Server 2012 R2 Essentials"
+    IDS_ULTIMLONG             "Windows Server 2012 R2 Essentials"
+    IDS_ULTIMSHOR             "Essentials"
+    IDS_LEGALCOPYRIGHT        "\xA9 2013 Microsoft Corporation. All rights reserved."
+    IDS_COMPANYNAME           "Microsoft"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_SRV_ESSEN                        "Windows Server 2012 R2 Essentials"
+	IDS_GUISRVDESC                       "This option is useful when a GUI is required—for example, to provide backward compatibility for an application that cannot be run on a Server Core installation. All server roles and features are supported. You can switch to a different installation option later. See ""Windows Server Installation Options."""
+    IDS_WINDOWS_LIVE_ID                  "Microsoft account"
+    IDS_WINDOWS_LIVE_ID_PLURAL           "Microsoft accounts"
+	// Need those Windows 7 brandings anymore?
+    IDS_WINDOWS_7                        "Windows 7"
+    IDS_WINDOWS_SERVER_7                 "Windows Server 2008 R2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS_8                        "Windows 8"
+    IDS_WINDOWS_SERVER_8                 "Windows Server 2012"
+    IDS_WINDOWS_XP_ARM                   "Windows RT"
+    IDS_WINDOWS_81                       "Windows 8.1"
+    IDS_WINDOWS_SERVER_81                "Windows Server 2012 R2"
+    IDS_WINDOWS_XP_ARM_SE                "Windows RT 8.1"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Metadata
+//
+
+IDRCMETADATA_BRANDING              BRANDING_METADATA_RES  DISCARDABLE     "metadata.bin"
