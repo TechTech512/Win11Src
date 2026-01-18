@@ -1,0 +1,55 @@
+//===============================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for basebrd.dll
+// 
+//===============================================================
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE VFT_DLL
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Base Branding Resource Dll"
+#define VER_INTERNALNAME_STR        "BASEBRD"
+#define VER_ORIGINALFILENAME_STR    "BASEBRD.DLL"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGONBANNER1              BITMAP  DISCARDABLE     "idb_logonbanner1.bmp"
+IDB_ABOUT1                    BITMAP  DISCARDABLE     "idb_about1.bmp"
+IDB_LOGONBANNER2              BITMAP  DISCARDABLE     "idb_logonbanner2.bmp"
+IDB_ABOUT2                    BITMAP  DISCARDABLE     "idb_about2.bmp"
+IDB_LOGONBANNER3              BITMAP  DISCARDABLE     "idb_logonbanner3.bmp"
+IDB_ABOUT3                    BITMAP  DISCARDABLE     "idb_about3.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WINDOWS               "Windows"
+    IDS_WINNT                 "Windows"
+    IDS_ULTIMLONG             "Windows 7 Home Premium"
+    IDS_ULTIMSHOR             "Home Premium"
+    IDS_LEGALCOPYRIGHT        "Copyright \xA9 2011 Microsoft Corporation.  All rights reserved."
+    IDS_COMPANYNAME           "Microsoft"
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Metadata
+//
+
+IDRCMETADATA_BRANDING              BRANDING_METADATA_RES  DISCARDABLE     "metadata.bin"
