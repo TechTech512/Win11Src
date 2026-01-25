@@ -1,0 +1,33 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2018 Microsoft Corporation. All rights reserved.
+//
+// Resource table for SRVMGRINST
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Microsoft \xAE Windows \xAE Server Manager Instrumentation"
+#define VER_INTERNALNAME_STR        "SrvMgrInst.dll"
+#define VER_ORIGINALFILENAME_STR    "SrvMgrInst.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Message Table
+//
+
+1 11 DISCARDABLE "msg.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Wevt
+//
+
+1 WEVT_TEMPLATE DISCARDABLE "wevttmpl.bin"
