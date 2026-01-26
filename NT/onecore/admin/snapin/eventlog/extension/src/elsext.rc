@@ -1,0 +1,32 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2018 Microsoft Corporation. All rights reserved.
+//
+// Resource table for ElsExt
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ELSEXT"
+#define VER_INTERNALNAME_STR        "elsext.dll"
+#define VER_ORIGINALFILENAME_STR    "elsext.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MESSAGENOTFOUND      "Message for this event could not be found"
+	IDS_EVENTXML             "\n\nEvent XML\n\n"
+END
