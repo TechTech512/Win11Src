@@ -1,0 +1,14 @@
+TARGETNAME=api-ms-win-core-apiquery-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=api-ms-win-core-apiquery-l1-1-0.def
+
+SOURCES=apiquery.cpp
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\ntdll.lib 
+	
+NT_SIGNCODE=1
