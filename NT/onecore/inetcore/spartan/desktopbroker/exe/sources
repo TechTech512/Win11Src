@@ -1,0 +1,42 @@
+TARGETNAME=browser_broker
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+
+PRECOMPILED_INCLUDE=precomp.h
+PRECOMPILED_OBJ=precomp.obj
+PRECOMPILED_PCH=precomp.pch
+
+INCLUDES=.;$(INETCORE_INC_PATH)
+SOURCES=..\mainloop.cpp \
+		..\browser_broker.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\mincore_downlevel.lib \
+	$(SDK_LIB_PATH)\onecore.lib \
+	$(SDK_LIB_PATH)\onecore_apiset.lib \
+	$(SDK_LIB_PATH)\onecore_downlevel.lib \
+	$(SDK_LIB_PATH)\onecoreuap.lib \
+	$(SDK_LIB_PATH)\onecoreuap_apiset.lib \
+	$(SDK_LIB_PATH)\onecoreuap_downlevel.lib \
+	$(SDK_LIB_PATH)\windowscoreheadless.lib \
+	$(SDK_LIB_PATH)\windowscoreheadless_apiset.lib \
+	$(SDK_LIB_PATH)\WindowsApp.lib \
+	$(SDK_LIB_PATH)\WindowsApp_downlevel.lib \
+	$(SDK_LIB_PATH)\uuid.lib
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=Browser_Broker.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Browser_Broker
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1

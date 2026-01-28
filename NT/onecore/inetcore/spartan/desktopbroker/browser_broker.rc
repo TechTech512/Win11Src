@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table for browser broker
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ieverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Browser_Broker"
+#define VER_INTERNALNAME_STR        "Browser_Broker"
+#define VER_ORIGINALFILENAME_STR    "browser_broker.EXE"
+
+#include "common.ver"
