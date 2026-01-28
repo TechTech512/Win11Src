@@ -1,5 +1,5 @@
 // mainloop.cpp
-#include "precomp.h"
+#include "exe/precomp.h"
 
 // Global variables
 bool g_fMayExitProcess = TRUE;
@@ -433,5 +433,6 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmd
     __security_check_cookie(securityCookie);
     return lastError;
 }
+
 
 
