@@ -1,0 +1,20 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2013 Microsoft Corporation. All rights reserved.
+//
+// Resource table for eap3
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Eap Third Party Surrogate Host"
+#define VER_INTERNALNAME_STR        "Eap3Host"
+#define VER_ORIGINALFILENAME_STR    "Eap3Host.EXE"
+
+#include "common.ver"
+
