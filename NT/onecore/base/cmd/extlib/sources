@@ -1,0 +1,25 @@
+TARGETNAME=cmdext
+TARGETPATH=$(ONECOREBASE_INTERNAL_PRIVATE_LIB_DEST)
+TARGETTYPE=LIBRARY
+
+DELAYLOAD = \
+    advapi32.dll \
+    kernel32.dll \
+    mpr.dll \
+    shell32.dll \
+    user32.dll \
+
+DLOAD_ERROR_HANDLER = kernelbase
+
+SOURCES=..\cmdext.cpp
+
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SDK_LIB_PATH)\mpr.lib
+
+UMTYPE=console
+UMENTRY=winmain
+
