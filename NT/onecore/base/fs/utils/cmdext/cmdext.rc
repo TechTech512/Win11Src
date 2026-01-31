@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2010 Microsoft Corporation. All rights reserved.
+//
+// Resource table for cmdext
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "cmd.exe Extension DLL"
+#define VER_INTERNALNAME_STR        "CmdExt"
+#define VER_ORIGINALFILENAME_STR    "CmdExt.DLL"
+
+#include "common.ver"

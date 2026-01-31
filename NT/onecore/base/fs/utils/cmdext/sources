@@ -1,0 +1,29 @@
+TARGETNAME=cmdext
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=cmdext.def
+USE_MSVCRT=1
+
+DLOAD_ERROR_HANDLER = kernelbase
+
+SOURCES=dllmain.cxx \
+		cmdext.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\kernl32p.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\shell32.lib \
+	$(SDK_LIB_PATH)\mpr.lib
+
+LINKLIBS= \
+	$(ONECOREBASE_INTERNAL_PRIVATE_LIB_PATH)\cmdext.lib
+	
+NT_SIGNCODE=1
