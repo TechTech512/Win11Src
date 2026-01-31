@@ -6,27 +6,57 @@
 #include <winbase.h>
 #include <appmodel.h>
 #include <winsafer.h>
+#include <winternl.h>
+#include <shlobj.h>
 
 // External function declarations
 extern "C" {
     void CmdBatNotification();
-    void SHChangeNotify();
     DWORD GetVDMCurrentDirectories(DWORD, LPSTR);
-    
-    // Network functions
-    DWORD WNetAddConnection2W(LPNETRESOURCEW, LPCWSTR, LPCWSTR, DWORD);
-    DWORD WNetCancelConnection2W(LPCWSTR, DWORD, BOOL);
-    DWORD WNetGetConnectionW(LPCWSTR, LPWSTR, LPDWORD);
 }
 
-void CmdBatNotificationStub(void)
+BOOL CmdBatNotificationStub(DWORD dwNotificationType)
 {
-    CmdBatNotification();
+    HMODULE hNtdll = GetModuleHandleW(L"ntdll.dll");
+    if (!hNtdll) return FALSE;
+    
+    // Get function pointers
+    FARPROC pCsrClientCallServer = GetProcAddress(hNtdll, "CsrClientCallServer");
+    if (!pCsrClientCallServer) return FALSE;
+    
+    // Simple message structure
+    struct {
+        DWORD Unknown[2];
+        DWORD ApiNumber;
+        DWORD Unknown2[2];
+        NTSTATUS Status;
+        DWORD ProcessId;
+        DWORD NotificationType;
+    } csrMsg = {0};
+    
+    // Get console host PID (simplified)
+    DWORD dwHostPid = 0;
+    NtQueryInformationProcess(GetCurrentProcess(), (PROCESSINFOCLASS)0x31, 
+                              &dwHostPid, sizeof(DWORD), NULL);
+    
+    if ((dwHostPid & 1) == 0) return FALSE;  // Not a console host
+    dwHostPid = dwHostPid & ~1;  // Clear flag bit
+    
+    // Setup message
+    csrMsg.ApiNumber = 0x10010010;  // Category 0x1001, API 0x0010
+    csrMsg.ProcessId = dwHostPid;
+    csrMsg.NotificationType = dwNotificationType;
+    
+    // Call CSRSS
+    NTSTATUS status = ((NTSTATUS (NTAPI*)(void*, void*, DWORD, DWORD))pCsrClientCallServer)(
+        &csrMsg, NULL, 0x10010010, 8);
+    
+    return NT_SUCCESS(status) && NT_SUCCESS(csrMsg.Status);
 }
 
 void DoSHChangeNotify(void)
 {
-    SHChangeNotify();
+    SHChangeNotify(NULL, NULL, NULL, NULL);
 }
 
 void* __cdecl FindFirstStreamWStub(wchar_t* param_1, _STREAM_INFO_LEVELS param_2, void* param_3, unsigned long param_4)
