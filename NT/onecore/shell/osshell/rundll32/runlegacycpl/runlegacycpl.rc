@@ -1,0 +1,39 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2015 Microsoft Corporation. All rights reserved.
+//
+// Resource table for RunDLL32
+// 
+//=================================================================
+
+#include "rc_ids.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Run a legacy CPL elevated"
+#define VER_INTERNALNAME_STR        "RunLegacyCPLElevated"
+#define VER_ORIGINALFILENAME_STR    "RunLegacyCPLElevated.EXE"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NOTENOUGHMEM                   "There is not enough memory to run the file %s.\n\nPlease close other windows and try again."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MISSINGENTRY                   "Error in %s\nMissing entry:%s"
+	IDS_ERRORLOADINGDLL                "Error loading %s\n\n%s"
+	IDS_TITLETEXT                      "Run Legacy CPL Elevated"
+	IDS_ERRORILLEGALVALUE              "Error in %s\nIllegal value: %s"
+END

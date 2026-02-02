@@ -1,0 +1,34 @@
+TARGETNAME=RunLegacyCPLElevated
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_NTDLL=1
+
+INCLUDES=.;$(SHELL_INC_PATH);..\inc
+SOURCES=runlegacycpl.cpp \
+		runlegacycpl.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SHELL_LIB_PATH)\shell32p.lib \
+	$(SHELL_LIB_PATH)\shlwapip.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\ntdll.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(BASEDIR)\onecore\shell\osshell\rundll32\lib\$(O)\rundll32.lib
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=RunLegacyCPL.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.Shell.RunLegacyCPLElevated
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
