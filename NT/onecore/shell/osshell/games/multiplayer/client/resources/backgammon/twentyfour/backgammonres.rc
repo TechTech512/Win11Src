@@ -138,20 +138,6 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// Accelerator
-//
-
-14241 ACCELERATORS
-BEGIN
-	VK_L, 14548, NOINVERT, ALT, VIRTKEY
-	VK_D, 14546, NOINVERT, ALT, VIRTKEY
-	VK_N, 14552, NOINVERT, ALT, VIRTKEY
-	VK_R, 14547, NOINVERT, ALT, VIRTKEY
-	VK_J, 14551, NOINVERT, ALT, VIRTKEY
-END
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // String table
 //
 
@@ -371,3 +357,4 @@ BEGIN
   16512, 	"Unable to create a dialog box.\r\nPlease close some others and try again."
   16513, 	"Internet Backgammon"
 END
+
