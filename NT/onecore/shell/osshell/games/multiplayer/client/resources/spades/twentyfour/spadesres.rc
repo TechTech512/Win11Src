@@ -1,0 +1,430 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Online Gaming Resources
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Internet Spades Resource DLL"
+#define VER_INTERNALNAME_STR        "ShvlRes.dll"
+#define VER_ORIGINALFILENAME_STR    "ShvlRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Resource data
+//
+
+#include "rcdata.rc"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+1009 ICON DISCARDABLE "main.ico"
+10600 ICON DISCARDABLE "spade1.ico"
+10601 ICON DISCARDABLE "spade2.ico"
+10602 ICON DISCARDABLE "spade3.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Configuration
+//
+
+1010 CONFIG DISCARDABLE "object.ini"
+1011 CONFIG DISCARDABLE "uicfg.ini"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+1020 BITMAP DISCARDABLE "spadesbanner.bmp"
+1025 BITMAP DISCARDABLE "spadesstartbackground.bmp"
+12040 BITMAP DISCARDABLE "board1.bmp"
+12041 BITMAP DISCARDABLE "board2.bmp"
+12042 BITMAP DISCARDABLE "board3.bmp"
+12043 BITMAP DISCARDABLE "card1.bmp"
+12044 BITMAP DISCARDABLE "card2.bmp"
+12045 BITMAP DISCARDABLE "card3.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+1906 DIALOGEX 0, 0, 240, 106
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Statistics"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Close", 2, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 73, 85, 75, 14 
+   CONTROL "&Reset", 1907, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 153, 85, 75, 14 
+   CONTROL "Games played: 99999", 1908, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 7, 155, 8 
+   CONTROL "Games won: 99999", 1909, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 19, 155, 8 
+   CONTROL "Win percentage: 100%", 1910, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 31, 155, 8 
+   CONTROL "Longest winning streak: 99999", 1915, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 43, 155, 8 
+   CONTROL "Longest losing streak: 99999", 1917, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 55, 155, 8 
+   CONTROL "Current streak: 99999 losses", 1918, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 67, 155, 8 
+   CONTROL "", 1919, LISTBOX, LBS_STANDARD | LBS_NOINTEGRALHEIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 7, 7, 59, 92 
+   CONTROL "Games drawn: 99999", 1911, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "Draw percentage: 100%", 1912, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "Longest drawing streak: 99999", 1916, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+END
+
+10603 DIALOGEX 0, 0, 217, 186
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Spades - Score History"
+FONT 8, "Tahoma"
+BEGIN
+   CONTROL "&Close", 2, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 137, 165, 73, 14 
+   CONTROL "&Gold", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 121, 8 
+   CONTROL "List1", 10607, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHAREIMAGELISTS | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 17, 203, 55 , WS_EX_CLIENTEDGE
+   CONTROL "&Blue", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 76, 138, 8 
+   CONTROL "List1", 10608, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHAREIMAGELISTS | LVS_NOSORTHEADER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 86, 203, 55 , WS_EX_CLIENTEDGE
+   CONTROL 10602, -1, STATIC, SS_ICON | SS_CENTERIMAGE | SS_REALSIZEIMAGE | WS_CHILD | WS_VISIBLE, 3, 146, 20, 20 
+   CONTROL 10600, -1, STATIC, SS_ICON | SS_CENTERIMAGE | SS_REALSIZEIMAGE | WS_CHILD | WS_VISIBLE, 3, 158, 20, 20 
+   CONTROL "Hand winner", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 21, 147, 107, 8 
+   CONTROL "Bag penalty", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 21, 159, 107, 8 
+   CONTROL "Scores show tricks Taken / Bid.", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 171, 121, 8 
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+10699 ACCELERATORS
+BEGIN
+	VK_L, 10701, NOINVERT, ALT, VIRTKEY
+	VK_R, 10702, NOINVERT, ALT, VIRTKEY
+	VK_N, 10712, NOINVERT, ALT, VIRTKEY
+	VK_P, 10703, NOINVERT, ALT, VIRTKEY
+	VK_A, 10704, NOINVERT, ALT, VIRTKEY
+	VK_T, 10705, NOINVERT, ALT, VIRTKEY
+	VK_D, 10706, NOINVERT, ALT, VIRTKEY
+	VK_J, 10710, NOINVERT, ALT, VIRTKEY
+	VK_C, 10708, NOINVERT, ALT, VIRTKEY
+END
+
+10700 ACCELERATORS
+BEGIN
+	VK_L, 10701, NOINVERT, ALT, VIRTKEY
+	VK_R, 10702, NOINVERT, ALT, VIRTKEY
+	VK_N, 10712, NOINVERT, ALT, VIRTKEY
+	VK_P, 10703, NOINVERT, ALT, VIRTKEY
+	VK_A, 10704, NOINVERT, ALT, VIRTKEY
+	VK_T, 10705, NOINVERT, ALT, VIRTKEY
+	VK_D, 10709, NOINVERT, ALT, VIRTKEY
+	VK_J, 10710, NOINVERT, ALT, VIRTKEY
+	VK_C, 10708, NOINVERT, ALT, VIRTKEY
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1200, 	"Internet Spades"
+  1201, 	"Gold 1"
+  1202, 	"Blue 2"
+  1203, 	"Gold 3"
+  1204, 	"Blue 4"
+  1209, 	"Find New &Opponents"
+  1212, 	"Internet Spades"
+  1213, 	"Play the card game Spades with other people over the Internet."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1938, 	"mshelp://windows/?id=3c3b6cd0-1c69-4be4-b2ab-b9b9a098c9ec"
+  1939, 	"GAMES_HELP_HOW_PLAY_INTERNET_SPADES"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  2002, 	"http://go.microsoft.com/fwlink/?LinkID=130274"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  10203, 	"00"
+  10205, 	"&Play"
+  10206, 	"&Nudge"
+  10207, 	"&Auto-Play"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  10208, 	"S&top"
+  10209, 	"Show Sco&re"
+  10210, 	"&Last Trick"
+  10211, 	"Gold"
+  10212, 	"Blue"
+  10213, 	"You can't lead Spades until Spades are broken. Please choose another card."
+  10214, 	"You must follow suit. Please choose another card."
+  10216, 	"%1 / %2"
+  10217, 	"&Done"
+  10223, 	"Please select a card to play."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  10253, 	"Hand Results"
+  10254, 	"Tricks Taken / Bid"
+  10255, 	"Bags"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  10256, 	"Contract Value"
+  10257, 	"Extra Trick Bonus"
+  10258, 	"Nil Value"
+  10259, 	"Ten Bags Penalty"
+  10260, 	"Game Over"
+  10261, 	"Show &Cards"
+  10262, 	"&Double Nil"
+  10263, 	"Choose 'Show Cards' to view your cards, or choose 'Double Nil' to"
+  10264, 	"Select the number of tricks you expect to take."
+  10265, 	"Nil"
+  10266, 	"Hand"
+  10267, 	"Total"
+  10268, 	"You"
+  10269, 	"bid nil before viewing your cards for extra points."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12100, 	"Change Appearance"
+  12101, 	"Randomly choose deck and background"
+  12102, 	"OK"
+  12103, 	"Cancel"
+  12104, 	"Select Card Deck"
+  12105, 	"Select Background"
+  12106, 	"Seasons Deck"
+  12107, 	"Hearts Deck"
+  12108, 	"Large Print Deck"
+  12109, 	"Green BK"
+  12110, 	"Red BK"
+  12111, 	"Yellow BK"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12112, 	"You've been given a nudge! Make a move or you'll be disconnected in 30 seconds."
+  12113, 	"You've been given a nudge! Make a move or you'll be disconnected in 30 seconds."
+  12114, 	"A nudge disconnects a player who doesn't make a move within 30 seconds. Are you sure you want to continue?"
+  12115, 	"Confirm Nudge"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12200, 	"Current Trick"
+  12201, 	"This list contains the cards which have been played during the current trick."
+  12202, 	"The Left opponent played the %1!s!"
+  12203, 	"The Right opponent played the %1!s!"
+  12204, 	"Your partner played the %1!s!"
+  12205, 	"You played the %1!s!"
+  12206, 	"The left opponent"
+  12207, 	"The right opponent"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12208, 	"Your partner"
+  12209, 	"You"
+  12210, 	"This player sits to your left.  This player isn't on your team."
+  12211, 	"This player sits to your right.  This player isn't on your team."
+  12212, 	"This player sits across from you.  This player is on your team."
+  12213, 	"You are this player."
+  12214, 	"Player's hand"
+  12215, 	"A player's hand contains all the cards the player can possibly play.  Spade's rules restrict which cards a player can play in a particular situation."
+  12217, 	"The player might be able to play this card when his turn occurs.  Spade's rules might prevent the player from playing this card under certain circumstances."
+  12218, 	"Previous Trick"
+  12219, 	"This list contains the cards played during the previous trick."
+  12220, 	"The Left opponent led the %1!s!"
+  12221, 	"The Right opponent led the %1!s!"
+  12222, 	"Your partner led the %1!s!"
+  12223, 	"You led the %1!s!"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12300, 	"Two of Hearts"
+  12301, 	"Three of Hearts"
+  12302, 	"Four of Hearts"
+  12303, 	"Five of Hearts"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12304, 	"Six of Hearts"
+  12305, 	"Seven of Hearts"
+  12306, 	"Eight of Hearts"
+  12307, 	"Nine of Hearts"
+  12308, 	"Ten of Hearts"
+  12309, 	"Jack of Hearts"
+  12310, 	"Queen of Hearts"
+  12311, 	"King of Hearts"
+  12312, 	"Ace of Hearts"
+  12313, 	"Two of Spades"
+  12314, 	"Three of Spades"
+  12315, 	"Four of Spades"
+  12316, 	"Five of Spades"
+  12317, 	"Six of Spades"
+  12318, 	"Seven of Spades"
+  12319, 	"Eight of Spades"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12320, 	"Nine of Spades"
+  12321, 	"Ten of Spades"
+  12322, 	"Jack of Spades"
+  12323, 	"Queen of Spades"
+  12324, 	"King of Spades"
+  12325, 	"Ace of Spades"
+  12326, 	"Two of Diamonds"
+  12327, 	"Three of Diamonds"
+  12328, 	"Four of Diamonds"
+  12329, 	"Five of Diamonds"
+  12330, 	"Six of Diamonds"
+  12331, 	"Seven of Diamonds"
+  12332, 	"Eight of Diamonds"
+  12333, 	"Nine of Diamonds"
+  12334, 	"Ten of Diamonds"
+  12335, 	"Jack of Diamonds"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12336, 	"Queen of Diamonds"
+  12337, 	"King of Diamonds"
+  12338, 	"Ace of Diamonds"
+  12339, 	"Two of Clubs"
+  12340, 	"Three of Clubs"
+  12341, 	"Four of Clubs"
+  12342, 	"Five of Clubs"
+  12343, 	"Six of Clubs"
+  12344, 	"Seven of Clubs"
+  12345, 	"Eight of Clubs"
+  12346, 	"Nine of Clubs"
+  12347, 	"Ten of Clubs"
+  12348, 	"Jack of Clubs"
+  12349, 	"Queen of Clubs"
+  12350, 	"King of Clubs"
+  12351, 	"Ace of Clubs"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12352, 	"Bidding Window"
+  12353, 	"Used to bid on the upcoming hand."
+  12354, 	"Click"
+  12355, 	"Auto-Play"
+  12356, 	"Show Score"
+  12357, 	"Play"
+  12358, 	"Last Trick"
+  12359, 	"Show Cards"
+  12360, 	"Double Nil"
+  12361, 	"Bid %1!d!"
+  12362, 	"Gold: Bag(s) %1!d!, Score %2!d!"
+  12363, 	"Blue: Bag(s) %1!d!, Score %2!d!"
+  12364, 	"Stop"
+  12365, 	"Player info. "
+  12366, 	"Playing as %1!s!. %2!s!"
+  12367, 	"It's your turn."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12368, 	"It's this player's turn."
+  12371, 	"Left opponent info. "
+  12372, 	"Partner info. "
+  12373, 	"Right opponent info. "
+  12374, 	"Current Trick"
+  12375, 	"Current Trick. "
+  12376, 	"Your team "
+  12377, 	"Opponent team "
+  12378, 	"%1!s! bid %2!s! and has taken %3!s!. %4!s!"
+  12379, 	"%1!s! tricks"
+  12380, 	"%1!s! trick"
+  12381, 	"double nil"
+  12382, 	"score is %1!s! with bag count of %2!s!."
+  12383, 	". "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12384, 	"Nudge"
+  12385, 	"End of Hand. "
+  12386, 	"End of Game. "
+  12387, 	"Your team %1, %2 points to %3 points."
+  12388, 	"won"
+  12389, 	"lost"
+  12390, 	"Your team scored %1. The opponent team scored %2."
+  12391, 	"No cards have been played yet."
+  12392, 	"Done"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12400, 	"Segoe UI"
+  12401, 	"28"
+  12402, 	"7"
+  12403, 	"Segoe UI"
+  12404, 	"19"
+  12405, 	"4"
+  12406, 	"Segoe UI"
+  12407, 	"19"
+  12408, 	"4"
+  12409, 	"Segoe UI"
+  12410, 	"28"
+  12411, 	"7"
+  12412, 	"Segoe UI"
+  12413, 	"19"
+  12414, 	"4"
+  12415, 	"Segoe UI"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12416, 	"19"
+  12417, 	"4"
+  12418, 	"Segoe UI"
+  12419, 	"25"
+  12420, 	"7"
+  12421, 	"Segoe UI"
+  12422, 	"25"
+  12423, 	"7"
+  12424, 	"Segoe UI"
+  12425, 	"19"
+  12426, 	"4"
+  12427, 	"Segoe UI"
+  12428, 	"19"
+  12429, 	"4"
+  12430, 	"Segoe UI"
+  12431, 	"19"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12432, 	"4"
+  12433, 	"Segoe UI"
+  12434, 	"19"
+  12435, 	"4"
+  12436, 	"Segoe UI"
+  12437, 	"19"
+  12438, 	"4"
+END
