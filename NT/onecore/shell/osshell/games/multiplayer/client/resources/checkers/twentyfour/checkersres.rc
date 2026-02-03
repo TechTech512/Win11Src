@@ -80,19 +80,6 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// Accelerator
-//
-
-12120 ACCELERATORS
-BEGIN
-	VK_J, 12152, NOINVERT, ALT, VIRTKEY
-	VK_R, 12150, NOINVERT, ALT, VIRTKEY
-	VK_D, 12151, NOINVERT, ALT, VIRTKEY
-	VK_N, 12154, NOINVERT, ALT, VIRTKEY
-END
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // String table
 //
 
@@ -212,3 +199,4 @@ BEGIN
   12613, 	"14"
   12614, 	"4"
 END
+
