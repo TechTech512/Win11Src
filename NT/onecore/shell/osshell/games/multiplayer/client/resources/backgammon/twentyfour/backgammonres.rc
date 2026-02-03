@@ -1,0 +1,373 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Online Gaming Resources
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Internet Backgammon Resource DLL"
+#define VER_INTERNALNAME_STR        "BckgRes.dll"
+#define VER_ORIGINALFILENAME_STR    "BckgRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Resource data
+//
+
+#include "rcdata.rc"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+1009 ICON DISCARDABLE "main.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Configuration
+//
+
+1010 CONFIG DISCARDABLE "object.ini"
+1011 CONFIG DISCARDABLE "uicfg.ini"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Wave
+//
+
+14162 WAVE DISCARDABLE "wave1.wav"
+14163 WAVE DISCARDABLE "wave2.wav"
+14164 WAVE DISCARDABLE "wave3.wav"
+14167 WAVE DISCARDABLE "wave4.wav"
+14168 WAVE DISCARDABLE "wave5.wav"
+14169 WAVE DISCARDABLE "wave6.wav"
+14171 WAVE DISCARDABLE "wave7.wav"
+14172 WAVE DISCARDABLE "wave8.wav"
+14173 WAVE DISCARDABLE "wave9.wav"
+14185 WAVE DISCARDABLE "wave10.wav"
+14198 WAVE DISCARDABLE "wave11.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+14124 CURSOR DISCARDABLE "hlink.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+1020 BITMAP DISCARDABLE "backgammonbanner.bmp"
+1025 BITMAP DISCARDABLE "backgammonstartbackground.bmp"
+15300 BITMAP DISCARDABLE "board1.bmp"
+15301 BITMAP DISCARDABLE "board2.bmp"
+15302 BITMAP DISCARDABLE "board3.bmp"
+15400 BITMAP DISCARDABLE "checkers1.bmp"
+15401 BITMAP DISCARDABLE "checkers2.bmp"
+15402 BITMAP DISCARDABLE "checkers3.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+1906 DIALOGEX 0, 0, 240, 106
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Statistics"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Close", 2, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 73, 85, 75, 14 
+   CONTROL "&Reset", 1907, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 153, 85, 75, 14 
+   CONTROL "Games played: 99999", 1908, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 7, 155, 8 
+   CONTROL "Games won: 99999", 1909, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 19, 155, 8 
+   CONTROL "Win percentage: 100%", 1910, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 31, 155, 8 
+   CONTROL "Longest winning streak: 99999", 1915, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 43, 155, 8 
+   CONTROL "Longest losing streak: 99999", 1917, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 55, 155, 8 
+   CONTROL "Current streak: 99999 losses", 1918, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 67, 155, 8 
+   CONTROL "", 1919, LISTBOX, LBS_STANDARD | LBS_NOINTEGRALHEIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 7, 7, 59, 92 
+   CONTROL "Games drawn: 99999", 1911, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "Draw percentage: 100%", 1912, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "Longest drawing streak: 99999", 1916, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+END
+
+14143 DIALOGEX 0, 0, 203, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Backgammon - Double Challenge"
+FONT 8, "Tahoma"
+BEGIN
+   CONTROL "Dummy", 14538, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD, 97, 39, 10, 8 , WS_EX_TRANSPARENT
+   CONTROL "&Accept", 1, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 27, 37, 67, 14 
+   CONTROL "&Resign", 7, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 110, 37, 66, 14 
+   CONTROL "Your opponent is doubling the stakes of the game.  If you resign, you'll forfeit the game.  Match points at stake: %1!d!", 14522, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 7, 189, 24 
+END
+
+14195 DIALOGEX 0, 0, 209, 103
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Backgammon - Resign Game"
+FONT 8, "Tahoma"
+BEGIN
+   CONTROL "Cancel", 2, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 64, 82, 85, 14 
+   CONTROL "&Cube - %1!d!", 14540, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 108, 13, 85, 14 
+   CONTROL "&Gammon - %1!d!", 14541, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 108, 34, 85, 14 
+   CONTROL "&Backgammon - %1!d!", 14542, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 108, 55, 85, 14 
+   CONTROL "How many points do you want to concede to your opponent?", -1, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 15, 13, 80, 27 
+   CONTROL "", -1, BUTTON, BS_GROUPBOX | WS_CHILD | WS_VISIBLE, 7, 2, 195, 74 
+END
+
+14196 DIALOGEX 0, 0, 171, 58
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Backgammon - Accept Resignation"
+FONT 8, "Tahoma"
+BEGIN
+   CONTROL "&Accept", 1, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 29, 37, 50, 14 
+   CONTROL "&Reject", 2, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 93, 37, 50, 14 
+   CONTROL "Your opponent is offering to resign.  Match points offered: %1!d!", 14545, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 10, 151, 21 
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+14241 ACCELERATORS
+BEGIN
+	VK_L, 14548, NOINVERT, ALT, VIRTKEY
+	VK_D, 14546, NOINVERT, ALT, VIRTKEY
+	VK_N, 14552, NOINVERT, ALT, VIRTKEY
+	VK_R, 14547, NOINVERT, ALT, VIRTKEY
+	VK_J, 14551, NOINVERT, ALT, VIRTKEY
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1200, 	"Internet Backgammon"
+  1201, 	"Brown"
+  1202, 	"White"
+  1212, 	"Internet Backgammon"
+  1213, 	"Play the board game Backgammon with someone over the Internet."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1938, 	"mshelp://windows/?id=dac9592e-b28b-4b71-9eb9-a0bab4e974ac"
+  1939, 	"GAMES_HELP_HOW_PLAY_INTERNET_BACKGAMMON"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  2002, 	"http://go.microsoft.com/fwlink/?LinkID=130271"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  14003, 	"Tie. Roll again."
+  14004, 	"You won the initial roll."
+  14005, 	"You lost the initial roll."
+  14009, 	"You have no legal moves."
+  14010, 	"Points won: %1!d!"
+  14011, 	"Points lost: %1!d!"
+  14012, 	"Waiting for a response to your challenge."
+  14013, 	"Double accepted."
+  14014, 	"Your opponent has resigned.  Points won: %1!d!."
+  14015, 	"Match Points:"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  14016, 	"Your opponent has resigned."
+  14017, 	"Waiting for a response to your resignation offer."
+  14018, 	"Your resignation offer was rejected."
+  14019, 	"%1 has no legal moves."
+  14020, 	"Pips: %1!d!"
+  14021, 	"Score: %1!d!"
+  14022, 	"&Double"
+  14023, 	"&Resign"
+  14024, 	"Rol&l"
+  14025, 	"Game won"
+  14026, 	"Game lost"
+  14027, 	"won"
+  14028, 	"lost"
+  14029, 	"Match"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  14034, 	"&Nudge"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15500, 	"Change Appearance"
+  15501, 	"Randomly choose pieces and background."
+  15502, 	"OK"
+  15503, 	"Cancel"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15504, 	"Select Piece"
+  15505, 	"Select Background"
+  15506, 	"Porcelain"
+  15507, 	"Frosted Glass"
+  15508, 	"Wood"
+  15509, 	"Porcelain"
+  15510, 	"Marble"
+  15511, 	"Wood"
+  15512, 	"You've been given a nudge! Make a move or you'll be disconnected in 30 seconds."
+  15513, 	"A nudge disconnects a player who doesn't make a move within 30 seconds. Are you sure you want to continue?"
+  15514, 	"Confirm Nudge"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15600, 	"Internet Backgammon"
+  15601, 	"The Internet Backgammon game board."
+  15602, 	"Opponent's Color: "
+  15603, 	"Opponent's Pips: "
+  15604, 	"Opponent's Score: "
+  15605, 	"Opponent's Turn"
+  15606, 	"Match Points: "
+  15607, 	"Player's Turn"
+  15608, 	"Player's Color: "
+  15609, 	"Player's Pips: "
+  15610, 	"Player's Score: "
+  15611, 	"Opponent's Dice: "
+  15612, 	"White"
+  15613, 	"Brown"
+  15614, 	"Click"
+  15615, 	"Top %d Point: "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15616, 	"Bottom %d Point: "
+  15617, 	"Player's Home: "
+  15618, 	"Opponent's Home: "
+  15619, 	"Player's Bar: "
+  15620, 	"Opponent's Bar: "
+  15621, 	"Double"
+  15622, 	"Resign"
+  15623, 	"Player's Dice: "
+  15624, 	"%d white piece(s)."
+  15625, 	"%d brown piece(s)."
+  15626, 	"Contains no pieces."
+  15627, 	"Remaining %d, %d"
+  15628, 	"Remaining %d, Used %d"
+  15629, 	"Used %d, %d"
+  15630, 	"The dice have not been rolled."
+  15631, 	"Roll"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15632, 	"Waiting for opponent."
+  15633, 	"Waiting for player."
+  15634, 	"Nudge"
+  15635, 	"This location is a legal target."
+  15636, 	"You have the doubling cube."
+  15637, 	"Your opponent has the doubling cube."
+  15638, 	". The doubling cube is at %s. "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15701, 	"Segoe UI"
+  15702, 	"14"
+  15703, 	"4"
+  15704, 	"Segoe UI"
+  15705, 	"14"
+  15706, 	"4"
+  15707, 	"Segoe UI"
+  15708, 	"14"
+  15709, 	"4"
+  15710, 	"Segoe UI"
+  15711, 	"14"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15712, 	"4"
+  15713, 	"Segoe UI"
+  15714, 	"19"
+  15715, 	"4"
+  15716, 	"Segoe UI"
+  15717, 	"19"
+  15718, 	"4"
+  15719, 	"Segoe UI"
+  15720, 	"20"
+  15721, 	"8"
+  15722, 	"Segoe UI"
+  15723, 	"16"
+  15724, 	"4"
+  15725, 	"Segoe UI"
+  15726, 	"16"
+  15727, 	"4"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15728, 	"Segoe UI"
+  15729, 	"16"
+  15730, 	"4"
+  15731, 	"Segoe UI"
+  15732, 	"16"
+  15733, 	"4"
+  15734, 	"Segoe UI"
+  15735, 	"20"
+  15736, 	"5"
+  15737, 	"Segoe UI"
+  15738, 	"28"
+  15739, 	"4"
+  15740, 	"Segoe UI"
+  15741, 	"28"
+  15742, 	"7"
+  15743, 	"Segoe UI"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15744, 	"20"
+  15745, 	"7"
+  15746, 	"Segoe UI"
+  15747, 	"28"
+  15748, 	"7"
+  15749, 	"Segoe UI"
+  15750, 	"20"
+  15751, 	"4"
+  15752, 	"Segoe UI"
+  15753, 	"20"
+  15754, 	"4"
+  15755, 	"Segoe UI"
+  15756, 	"14"
+  15757, 	"4"
+  15758, 	"Segoe UI"
+  15759, 	"14"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  15760, 	"4"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  16512, 	"Unable to create a dialog box.\r\nPlease close some others and try again."
+  16513, 	"Internet Backgammon"
+END
