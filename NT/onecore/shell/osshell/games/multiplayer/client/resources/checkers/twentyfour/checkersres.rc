@@ -1,0 +1,214 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Online Gaming Resources
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Internet Checkers Resource DLL"
+#define VER_INTERNALNAME_STR        "ChkrRes.dll"
+#define VER_ORIGINALFILENAME_STR    "ChkrRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Resource data
+//
+
+#include "rcdata.rc"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+1009 ICON DISCARDABLE "main.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Configuration
+//
+
+1010 CONFIG DISCARDABLE "object.ini"
+1011 CONFIG DISCARDABLE "uicfg.ini"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+1020 BITMAP DISCARDABLE "checkersbanner.bmp"
+1025 BITMAP DISCARDABLE "checkersstartbackground.bmp"
+12401 BITMAP DISCARDABLE "board1.bmp"
+12402 BITMAP DISCARDABLE "board2.bmp"
+12403 BITMAP DISCARDABLE "board3.bmp"
+12406 BITMAP DISCARDABLE "checkers1.bmp"
+12407 BITMAP DISCARDABLE "checkers2.bmp"
+12408 BITMAP DISCARDABLE "checkers3.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+1906 DIALOGEX 0, 0, 240, 106
+STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Statistics"
+FONT 8, "Segoe UI"
+BEGIN
+   CONTROL "&Close", 2, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 73, 85, 75, 14 
+   CONTROL "&Reset", 1907, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 153, 85, 75, 14 
+   CONTROL "Games played: 99999", 1908, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 7, 155, 8 
+   CONTROL "Games won: 99999", 1909, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 19, 155, 8 
+   CONTROL "Win percentage: 100%", 1910, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 31, 155, 8 
+   CONTROL "Longest winning streak: 99999", 1915, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 43, 155, 8 
+   CONTROL "Longest losing streak: 99999", 1917, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 55, 155, 8 
+   CONTROL "Current streak: 99999 losses", 1918, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 73, 67, 155, 8 
+   CONTROL "", 1919, LISTBOX, LBS_STANDARD | LBS_NOINTEGRALHEIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP | WS_TABSTOP, 7, 7, 59, 92 
+   CONTROL "Games drawn: 99999", 1911, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "Draw percentage: 100%", 1912, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+   CONTROL "Longest drawing streak: 99999", 1916, STATIC, SS_LEFT | WS_CHILD | WS_GROUP, 0, 0, 0, 0 
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+12120 ACCELERATORS
+BEGIN
+	VK_J, 12152, NOINVERT, ALT, VIRTKEY
+	VK_R, 12150, NOINVERT, ALT, VIRTKEY
+	VK_D, 12151, NOINVERT, ALT, VIRTKEY
+	VK_N, 12154, NOINVERT, ALT, VIRTKEY
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1200, 	"Internet Checkers"
+  1201, 	"Red"
+  1202, 	"White"
+  1212, 	"Internet Checkers"
+  1213, 	"Play the board game Checkers someone over the Internet."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1938, 	"mshelp://windows/?id=2479ec90-b62b-40d1-a348-bfd9df757c43"
+  1939, 	"GAMES_HELP_HOW_PLAY_INTERNET_CHECKERS"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  2002, 	"http://go.microsoft.com/fwlink/?LinkID=130272"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12002, 	"Opponent's Turn"
+  12004, 	"A draw will be offered along with your next move."
+  12005, 	"Your opponent is offering a draw.  Do you want to accept?"
+  12006, 	"Your opponent rejects your draw offer."
+  12011, 	"Draw!"
+  12012, 	"%1 Wins!"
+  12013, 	"You must jump your opponent's piece."
+  12014, 	"You must continue jumping with the same piece."
+  12015, 	"Offer Draw"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12016, 	"Accept Draw"
+  12017, 	"&Resign"
+  12018, 	"&Draw"
+  12019, 	"Your Turn"
+  12020, 	"Change Appearance"
+  12021, 	"Randomly choose pieces and background."
+  12022, 	"OK"
+  12023, 	"Cancel"
+  12024, 	"Select Piece"
+  12025, 	"Select Background"
+  12026, 	"&Nudge"
+  12031, 	"Porcelain"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12032, 	"Frosted Glass"
+  12033, 	"Wood"
+  12041, 	"Wood"
+  12042, 	"Porcelain"
+  12043, 	"Marble"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12224, 	"Are you sure you want to resign?"
+  12225, 	"Confirm Resignation"
+  12226, 	"You've been given a nudge! Make a move or you'll be disconnected in 30 seconds."
+  12227, 	"A nudge disconnects a player who doesn't make a move within 30 seconds. Are you sure you want to continue?"
+  12228, 	"Confirm Nudge"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12500, 	"Player Information. "
+  12501, 	"Opponent Information. "
+  12502, 	" It's your turn."
+  12503, 	" It's your opponent's turn."
+  12504, 	"Playing as red."
+  12505, 	"Playing as white."
+  12506, 	"Empty"
+  12507, 	"White Piece"
+  12508, 	"White King"
+  12509, 	"Red Piece"
+  12510, 	"Red King"
+  12511, 	"Click"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12512, 	"Square %1!d!, %2!d!: "
+  12513, 	"Draw Button"
+  12514, 	"ALT+D"
+  12515, 	"Resign Button"
+  12516, 	"ALT+R"
+  12517, 	"Nudge Button"
+  12518, 	"ALT+N"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12600, 	"Segoe UI"
+  12601, 	"24"
+  12602, 	"7"
+  12603, 	"Segoe UI"
+  12604, 	"14"
+  12605, 	"4"
+  12606, 	"Segoe UI"
+  12607, 	"24"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  12608, 	"7"
+  12609, 	"Segoe UI"
+  12610, 	"14"
+  12611, 	"7"
+  12612, 	"Segoe UI"
+  12613, 	"14"
+  12614, 	"4"
+END
