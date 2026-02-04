@@ -1,0 +1,62 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2000 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Event Viewer
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "MIG wini32 resources"
+#define VER_INTERNALNAME_STR        "miguiresource.dll"
+#define VER_ORIGINALFILENAME_STR    "miguiresource.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_EVNTVWRTHUMB BITMAP DISCARDABLE "evntvwrbg.bmp"
+IDB_EVNTVWRICO1  BITMAP DISCARDABLE "evtvrsml1.bmp"
+IDB_EVNTVWRICO2  BITMAP DISCARDABLE "evtvrsml2.bmp"
+IDB_TASKSCHDTHMB BITMAP DISCARDABLE "tsksched.bmp"
+IDB_TASKSCHDICO1 BITMAP DISCARDABLE "tskschdsml.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icons
+//
+
+IDI_EVNTVWR ICON DISCARDABLE "evntvwr.ico"
+IDI_TSKSCHD ICON DISCARDABLE "tasksched.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Strings
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CONSOLENAME                    "Event Viewer"
+	IDS_CONSOLEDESC                    "View monitoring and troubleshooting messages from Windows and other programs."
+	IDS_CONSOLEPROV                    "Microsoft Corporation (c)"
+	IDS_CONSOLEVERP                    "1.0"
+	IDS_EVENTLOG                       "Event Log"
+	IDS_CLASSICEVENTLOG                "Classic Event Log"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_TSKSCHDNAME                    "Task Scheduler"
+	IDS_TSKSCHDDESC                    "Schedule computer tasks to run automatically."
+	IDS_TSKSCHDCOMP                    "Microsoft Corporation (c)"
+END
