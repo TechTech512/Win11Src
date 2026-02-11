@@ -41,7 +41,7 @@ DWORD NETUI_Elimination_Dialog(HWND hWnd, UINT uMessageID, UINT uTitleID)
     LoadStringW(g_hDll, uMessageID, szMessage, sizeof(szMessage)/sizeof(WCHAR));
     LoadStringW(g_hDll, uTitleID, szTitle, sizeof(szTitle)/sizeof(WCHAR));
     
-    MessageBoxW(hWnd, szMessage, szTitle, MB_ICONINFORMATION | MB_OK);
+    MessageBoxW(hWnd, szMessage, szTitle, MB_ICONERROR | MB_OK);
     
     return 0;
 }
