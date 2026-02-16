@@ -1,4 +1,4 @@
-﻿// init.cpp - Control Panel compatibility layer
+// init.cpp - Control Panel compatibility layer
 // Handles mapping of legacy Control Panel applet names to modern implementations
 
 #include <windows.h>
@@ -8,10 +8,8 @@
 #include <shlwapi.h>
 #include <shlwapip.h>
 #include <objbase.h>
-#include <comdef.h>
 #include <strsafe.h>
 #include <stdlib.h>
-#include <cstdlib>
 
 // Forward declarations
 wchar_t* NextToken(wchar_t **ppszTokens);
@@ -66,10 +64,6 @@ COMPATCPL c_aCommandMap[] = {
     { L"SYSTEM",            OS_ANY, FALSE,            TRUE,          L"Microsoft.System",            NULL },
     { L"UPDATE",            OS_ANY, FALSE,            TRUE,          L"Microsoft.WindowsUpdate",     NULL }
 };
-
-// CLSID_OpenControlPanel
-static const GUID CLSID_OpenControlPanel = 
-    { 0x06622D85, 0x6856, 0x4460, { 0x8D, 0xE1, 0xA8, 0x19, 0x21, 0xB4, 0x1C, 0x4B } };
 
 int GetControlPanelViewAndPath(CPVIEW *pView, wchar_t *pszPath, unsigned int cchPath)
 {
