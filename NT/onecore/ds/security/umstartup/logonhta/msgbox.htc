@@ -1,0 +1,35 @@
+<PUBLIC:PROPERTY name="mb_body" />
+<PUBLIC:PROPERTY name="mb_frame" />
+<PUBLIC:PROPERTY name="mb_shadow" />
+<PUBLIC:PROPERTY name="mb_resource" />
+<PUBLIC:METHOD name="Popup" />
+<PUBLIC:METHOD name="Close" />
+<SCRIPT>
+
+function Close()
+{
+    element.style.visibility="hidden";
+}
+
+function Popup(id, content)
+{
+    // Set the contents of the message box based on the specified resource id.
+    var body = element.all(mb_body);
+    body.innerHTML = content; //element.all(mb_body).innerHTML;  
+
+    // Resize the frame/shadow DIV if we have. 
+    if (mb_frame)
+        element.all(mb_frame).style.height = body.offsetHeight;
+    if (mb_shadow)
+        element.all(mb_shadow).style.height = body.offsetHeight;
+
+    // Move the message box right below the specified element
+    var target = window.document.all(id);
+    var rect = target.getBoundingClientRect();
+    element.style.top = rect.bottom + window.document.body.scrollTop + 6;
+    element.style.left = rect.left + ((rect.right-rect.left) / 2 );  //rect.left+window.document.body.scrollLeft;
+    // Make it visible
+    element.style.visibility="";
+}
+
+</SCRIPT>

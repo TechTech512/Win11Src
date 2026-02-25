@@ -1,0 +1,169 @@
+.PwdField 
+{
+    border:none;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    padding-left:6px;
+}
+
+.PwdBorder 
+{
+    border-width:thin;
+    padding-top: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 0px;
+    margin-right: 2px;
+    border-bottom: solid gray 1px;
+    border-top: solid gray 1px;
+    border-left: solid gray 1px;
+    border-right: solid gray 1px;
+}
+
+.PwdReminder 
+{
+    font-family:Verdana;
+    font-size:11px;
+    background-color:"ffffcc";
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    margin-top:12px;
+    border-bottom: solid #999933 1px;
+    border-top: solid #999933 1px;
+    border-left: solid #999933 1px;
+    border-right: solid #999933 1px;
+}
+
+.PwdArea
+{
+    display:none; 
+    position:absolute; 
+    top:160px; 
+    width:180px;
+}
+
+.GoButton
+{
+    position: relative;
+    float:right; 
+    top:-25; 
+    left:20;
+}
+
+.PlainAnchor 
+{
+    cursor:hand;
+    text-decoration: none;
+    font-family:Verdana;
+    font-size:11px;
+}
+
+.Welcome 
+{
+    text-decoration:none;
+    font-family:Trebuchet MS;
+    font-size:78px;
+    position:absolute;
+    width:100%;
+    left: 0px;
+    top:10px;
+}
+
+.MachineName
+{
+    text-transform:lowercase;
+    color:#777777;
+    font-family:Trebuchet MS;
+    font-size:32px;
+    position:absolute;
+    width:100%;
+    left: 0px;
+    top:expression(screen.availHeight-40);
+}
+
+.ErrorBalloon
+{
+    font-family:Verdana;
+    font-size:11px;
+    behavior:url(msgbox.htc); 
+    position:absolute; 
+    cursor:hand; 
+    visility:hidden;
+    left:50;
+    top:48; 
+    z-index:15;
+}
+
+.Unframed
+{
+    cursor:hand;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 0px;
+    margin:0px;
+    padding:0px;
+    margin-bottom:-5px;
+}
+
+.Framed
+{
+    cursor:hand;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 0px;
+    margin:0px;
+    padding:0px;
+    margin-bottom:-5px;
+}
+
+.Current
+{
+    cursor:hand;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 0px;
+    margin:0px;
+    padding:0px;
+    margin-bottom:-5px;
+}
+
+.ListArea
+{
+    width:expression(screen.availWidth - 240 > 520 ? 520 : 510);
+    height:expression(screen.availHeight > 500 ? screen.availHeight-219 : 170);
+    overflow:auto;
+}
+
+.UserCell
+{
+    border-width:thin;
+    border-top: solid gray 1px;
+    border-bottom: solid white 1px;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+    width:210%	
+}
+
+.LeftBar
+{
+    position:absolute;
+    background-color:346799;
+    height:100%;
+    width:100;
+}
+
+.TurnOffButton
+{
+    position:absolute;
+    left:75;
+    top:2000;
+    cursor:hand;
+}
+
+.TurnOffLabel
+{
+    font-family:Verdana;
+    font-size:11px;
+}

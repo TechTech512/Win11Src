@@ -1,0 +1,159 @@
+<HTML xmlns:v="urn:schemas-microsoft-com:vml">
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE ID=LOGIN>Welcome To Neptune</TITLE>
+<!-- Show the window as soon as we can, to improve perf perception -->
+<HTA:APPLICATION 
+ ID=idAppLogon
+ icon=appwiz.ico 
+ applicationName="Neptune Logon" 
+ version=1.0 
+ singleInstance=yes 
+ border=dialog
+ borderStyle=normal
+ innerBorder=off
+ sysMenu=no 
+ windowState=Normal 
+ selection=off
+ contextMenu=off
+ scroll=off
+ scrollFlat=on
+ Caption=no
+/>
+
+<SCRIPT language="JavaScript" fptype="dynamicanimation">
+window.moveTo(0,0);
+window.resizeTo(screen.availWidth , screen.availHeight);
+
+var objLocalMachine = new ActiveXObject("Shell.LocalMachine");
+
+if (objLocalMachine)
+{
+    try 
+    {
+        objLocalMachine.SignalInteractiveReady();
+    }
+    catch (objException)
+    {
+    }
+
+}
+</SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="Logon.css">
+<SCRIPT language="JavaScript1.2" fptype="dynamicanimation" src="Logon.js"></SCRIPT>
+<OBJECT ID="VMLRender" CLASSID="CLSID:10072CEC-8CC1-11D1-986E-00A0C955B42E"></OBJECT>
+
+<STYLE>
+  v\:* { behavior: url(#VMLRender); }
+</STYLE>
+
+</HEAD>
+ 
+<BODY bgcolor="white" onload="OnLoad()" onkeydown="bodyKeyDown()" onkeyup="bodyKeyUp()">
+
+<TABLE height="110%" width="100%" border=0 style="position:relative;top:-20;left:-15">
+	<TR>
+	    <TD width="30%">
+	        <DIV CLASS="LeftBar">&nbsp;</DIV>
+            <DIV ID="idTurnoff" CLASS="TurnOffButton" TITLE="Hold down the shift key to restart the computer" onclick="turnOff()"  onkeydown="clickSelf(this)">
+            <TABLE>
+              <TR>
+                <TD WIDTH=50>
+                    <IMG ID=idPowerImage SRC="power.gif" >
+                </TD>
+                <TD ID="idTurnOffMessage" CLASS="TurnOffLabel" WIDTH=100 >
+                  Turn off the computer
+                </TD>
+              </TR>
+            </TABLE>
+            </DIV>
+		</TD>
+
+		<TD WIDTH=10>&nbsp;</TD>
+		<TD valign="top">
+		 <br><br><br><br><br><br><br><br>
+            <!-- Friendly instructions for what todo on this page -->
+            <DIV ID=idInstructions>
+                <B>
+                    <FONT face="Trebuchet MS" color="#777777" size="3">
+                        Click your name to start
+                    </FONT>
+                </B>
+            </DIV>
+		 
+            <DIV ID="idUserListArea" CLASS="ListArea">
+                <TABLE WIDTH="100%" BORDER=0>
+                  <TR>
+                    <TD>
+                      <DIV ID="idElemInsert"></DIV>
+                    </TD>
+
+                    <TD>
+                      <!-- Moving password area, floats next to the currently selected user -->
+                      <DIV ID="idPasswordArea" STYLE="display:none; POSITION: absolute; TOP: 160px; WIDTH: 180px">
+                        <FONT FACE="Trebuchet MS" COLOR="#777777" SIZE="2">
+                          <b>What's your password?&nbsp;</b>
+                        </FONT>
+                        <DIV CLASS="PwdBorder"> 
+                        
+                            <INPUT ID="idPwd" CLASS="PwdField" TYPE="password" onkeypress="pwdKeyPress()">
+                            <IMG ID=goButton src="logongo.gif" CLASS="GoButton" onclick="logonUser()" onkeydown="clickSelf(this)">
+                        </DIV>
+                        
+                        <!-- Link to forgotten password and placeholder for forgotten password hint content -->                    
+                        <SPAN ID=idForgotPwd CLASS="PlainAnchor" onmouseover="rollIn(this)"  onmouseout="rollOut(this)" LANGUAGE ="Javascript1.2" onclick="clickForgot()"  dynamicanimation ="fpAnimformatRolloverFP1" fprolloverstyle="text-decoration:  underline">Get a hint</SPAN>
+                        <SPAN ID=idBalloonTarget>&nbsp;</SPAN>
+                      </DIV>
+                    </TD>
+                  </TR>
+                </TABLE>
+            </DIV>
+		</TD>
+	</TR>
+</TABLE>
+
+<!-- balloon error/notification message -->
+<DIV ID="idBalloon" CLASS="ErrorBalloon"
+      mb_body="idHintBody" mb_frame="idHintFrame" mb_shadow="idHintShadow"
+      onclick="this.style.display='none'">
+  <DIV STYLE="position:absolute">
+    <v:roundrect ID="idHintShadow" STYLE="position:relative; left:11pt; top:11pt; width:140pt; filter:alpha(opacity=30)"
+     arcsize="0.1" fillcolor="#000000" strokecolor="#999933" strokeweight="1pt">
+    &nbsp;
+    </v:roundrect>
+  </DIV>
+  <DIV STYLE="position:absolute">
+    <v:roundrect ID="idHintFrame" STYLE="position:relative; left:8pt; top:8pt; width:140pt; height:10pt"
+     arcsize="0.1" fillcolor="#ffffcc" strokecolor="#999933" strokeweight="1pt">
+    </v:roundrect>
+  </DIV>
+  <DIV STYLE="position:absolute">
+    <DIV ID="idHintBody" STYLE="position:relative;font-family:Verdana;font-size:11px;left:10pt; top:8pt; width:140pt; padding:4pt">
+		missing error message
+    </DIV>
+  </DIV>
+  <DIV STYLE="position:absolute">
+    <v:polyline points="15pt, 9pt, 8pt, -10pt, 30pt, 9pt" strokecolor="#999933" strokeweight="1pt" fillcolor="#ffffcc"/>
+  </DIV>
+</DIV>
+
+<!-- welcome page title -->
+<DIV class=Welcome> 
+    <P align="center" >
+        <IMG SRC="Flag.gif"><br>
+        Welcome
+    </P>    
+</DIV>
+
+<!-- machine name -->
+<DIV class=MachineName onclick="clickClose();"> 
+    <P id=idMachineName align="right" >
+    </P>    
+</DIV>
+
+<DIV ID="idPasswordErrorString" STYLE="display:none">
+      <FONT COLOR="red">The password you typed is incorrect. Make sure that the Caps Lock key is not turned on and then retype your password.</FONT>
+</DIV>
+</BODY>
+</HTML>
