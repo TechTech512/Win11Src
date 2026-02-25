@@ -1,0 +1,28 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 1999 Microsoft Corporation. All rights reserved.
+//
+// LogonUI Resource Table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Logon UI"
+#define VER_INTERNALNAME_STR        "LOGONHTA"
+#define VER_ORIGINALFILENAME_STR    "LOGONHTA.DLL"
+
+#include "common.ver"
+
+DEFAULTUSER.GIF   HTML DISCARDABLE "defaultuser.gif"
+FLAG.GIF          HTML DISCARDABLE "flag.gif"
+LOGON.CSS         HTML DISCARDABLE "logon.css"
+LOGON.HTA         HTML DISCARDABLE "logon.hta"
+LOGON.JS          HTML DISCARDABLE "logon.js"
+LOGONGO.GIF       HTML DISCARDABLE "logongo.gif"
+MSGBOX.HTC        HTML DISCARDABLE "msgbox.htc"
+POWER.GIF         HTML DISCARDABLE "power.gif"
