@@ -1,0 +1,37 @@
+TARGETNAME=wls0wndh
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=wls0wndh.def
+USE_MSVCRT=1
+USE_NTDLL=1
+
+SOURCES=dllmain.c \
+		wls0wndh.c \
+		wls0wndh.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+DELAYLOAD = API-MS-WIN-SERVICE-MANAGEMENT-L1-1-0.DLL
+DLOAD_ERROR_HANDLER = kernelbase
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\msvcrt.lib \
+	$(SDK_LIB_PATH)\ntdll.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\mincore_downlevel.lib \
+	$(SDK_LIB_PATH)\onecore.lib \
+	$(SDK_LIB_PATH)\onecore_apiset.lib \
+	$(SDK_LIB_PATH)\onecore_downlevel.lib \
+	$(SDK_LIB_PATH)\onecoreuap.lib \
+	$(SDK_LIB_PATH)\onecoreuap_apiset.lib \
+	$(SDK_LIB_PATH)\onecoreuap_downlevel.lib \
+	$(SDK_LIB_PATH)\windowsapp.lib \
+	$(SDK_LIB_PATH)\windowsapp_downlevel.lib \
+	$(SDK_LIB_PATH)\windowscoreheadless.lib \
+	$(SDK_LIB_PATH)\windowscoreheadless_apiset.lib
+	
+NT_SIGNCODE=1

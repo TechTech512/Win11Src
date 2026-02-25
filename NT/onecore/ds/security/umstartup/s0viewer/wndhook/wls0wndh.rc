@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2007 Microsoft Corporation. All rights reserved.
+//
+// Session0 Resource Table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Session0 Viewer Window Hook DLL"
+#define VER_INTERNALNAME_STR        "wls0wndh"
+#define VER_ORIGINALFILENAME_STR    "wls0wndh.DLL"
+
+#include "common.ver"
