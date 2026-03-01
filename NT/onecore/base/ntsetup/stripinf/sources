@@ -1,0 +1,13 @@
+
+TARGETNAME=stripinf
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+
+SOURCES=stripinf.c stripinf.rc
+
+USE_MSVCRT=1
+
+LINKLIBS= \
+        $(SDK_LIB_PATH)\ucrt.lib
+
+UMTYPE=console
