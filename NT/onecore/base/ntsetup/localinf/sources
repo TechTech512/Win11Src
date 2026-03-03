@@ -1,0 +1,11 @@
+TARGETNAME=local
+
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+
+SOURCES=local.c local.rc
+
+UMTYPE=console
+
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\ucrt.lib
