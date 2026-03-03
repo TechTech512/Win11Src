@@ -1,0 +1,30 @@
+TARGETNAME=SystemResetPlatform
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_NTDLL=1
+
+INCLUDES=.;$(BASE_INC_PATH)
+SOURCES=main.cpp \
+		..\registration.cpp \
+		systemresetplatform.rc \
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wmainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=SystemResetPlatform.Manifest
+SXS_ASSEMBLY_NAME=SystemResetPlatform.exe
+SXS_ASSEMBLY_VERSION=6.0
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1

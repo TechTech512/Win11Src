@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// Resource table for System Reset Platform
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows System Reset Platform"
+#define VER_INTERNALNAME_STR        "SYSTEMRESETPLATFORMEXE"
+#define VER_ORIGINALFILENAME_STR    "SystemResetPlatform.exe"
+
+#include "common.ver"
