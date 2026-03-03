@@ -1,0 +1,23 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2010 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Service Pack Messages
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "SP Installer Msg Dll"
+#define VER_INTERNALNAME_STR        "spcmsg.dll"
+#define VER_ORIGINALFILENAME_STR    "spcmsg.dll"
+
+#include "common.ver"
+
+#include "msg.rc"
+
+1 WEVT_TEMPLATE "wevttmpl.bin"
