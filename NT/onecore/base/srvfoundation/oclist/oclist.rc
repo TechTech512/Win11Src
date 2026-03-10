@@ -1,0 +1,49 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Server Core Optional Component Listing
+// and Configuration.
+//
+// Btw this application has been deprecated since Windows
+// Server 2012.
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "oclist - Lists Server Roles, Optional Features, and their installation states."
+#define VER_INTERNALNAME_STR        "oclist.exe"
+#define VER_ORIGINALFILENAME_STR    "oclist.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INSTALLEDUPDATE                   "    Installed:\x00"
+	IDS_NOTINSTALLEDUPDATE                "Not Installed:\x00"
+	IDS_MISSINGNAME                       "(Name Missing)\x00"
+	IDS_MEMALLOCFAILURE                   "Memory allocation failure\x00"
+	IDS_INVALIDPACKNAME                   "Invalid package name failure\x00"
+	IDS_USEOCSETUPNAMES                   "Use the listed update names with Ocsetup.exe to install/uninstall a server role or optional feature.\n\nAdding or removing the Active Directory role with OCSetup.exe is not supported. It can leave your server in an unstable state. Always use DCPromo to install or uninstall Active Directory.\x00"
+	IDS_FAILEDTOINITADMINGRPSID           "Failed to allocate and initalize Administrators group SID.\x00"
+	IDS_FAILEDTOKENMEMBERSHIP             "Failed to check token membership.\x00"
+	IDS_RUNOCLISTASADMIN                  "Must run oclist.exe with Administrator privilages.\x00"
+	IDS_CANNOTOBTAINCBSINFO               "Unable to obtain update information from CBS\x00"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_RESOURCENOTFOUND                  "Resource not found: \x00"
+END

@@ -1,0 +1,27 @@
+TARGETNAME=OcList
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_STL=1
+STL_VER=70
+
+INCLUDES=.;$(BASE_INC_PATH)
+SOURCES=oclist.cpp \
+		oclist.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=wmainCRTStartup
+
+RUN_WPP=$(SOURCES) -dll -gen:{um-w2k.tpl}*.tmh
+
+UMTYPE=console
+UMENTRY=wmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\ntstc_msvcrt.lib \
+	$(SDK_LIB_PATH)\user32.lib \
+	$(SDK_LIB_PATH)\ole32.lib
