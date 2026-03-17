@@ -2,12 +2,13 @@ TARGETNAME=DpiScaling
 TARGETPATH=obj
 TARGETTYPE=PROGRAM
 USE_MSVCRT=1
+EXPECTED_WINVER=10.0
 
 INCLUDES=.;$(BASE_INC_PATH)
 SOURCES=dpicpl.cpp \
 		dpicpl.rc
 
-C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE -DSTRICT -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
 
 CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
 
@@ -19,7 +20,7 @@ TARGETLIBS= \
 	$(SDK_LIB_PATH)\user32.lib \
 	$(SDK_LIB_PATH)\shell32.lib \
 	$(SHELL_LIB_PATH)\shlwapip.lib \
-	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
 	$(SDK_LIB_PATH)\ole32.lib \
 	$(SDK_LIB_PATH)\comctl32.lib \
 	$(SDK_LIB_PATH)\uuid.lib
