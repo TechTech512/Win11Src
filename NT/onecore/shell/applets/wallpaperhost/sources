@@ -2,6 +2,7 @@ TARGETNAME=WallpaperHost
 TARGETPATH=obj
 TARGETTYPE=PROGRAM
 USE_MSVCRT=1
+EXPECTED_WINVER=10.0
 
 INCLUDES=.;$(SHELL_INC_PATH)
 SOURCES=wallpaperhost.cpp \
@@ -13,11 +14,13 @@ CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
 
 LINKENTRY=WinMainCRTStartup
 
+C_DEFINES=-DUNICODE -D_UNICODE -DSTRICT -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+
 UMTYPE=windows
 UMENTRY=winmain
 TARGETLIBS= \
 	$(SDK_LIB_PATH)\kernel32.lib \
-	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
 	$(SDK_LIB_PATH)\shell32.lib 
 
 # Fusionized
