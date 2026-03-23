@@ -1,0 +1,14 @@
+!IF 0
+
+!ENDIF
+
+TARGETNAME=
+TARGETTYPE=NOTARGET
+TARGETPATH=
+
+BINPLACE_PLACEFILE=placefil.txt
+
+SOURCES=
+
+MISCFILES =             \
+    license.rtf
