@@ -1,0 +1,210 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Windows Easy Transfer
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Migration Resources DLL"
+#define VER_INTERNALNAME_STR        "migres.dll"
+#define VER_ORIGINALFILENAME_STR    "MigRes.DLL"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_EASEOFACCESS                      "Accessibility"
+	IDS_NETWORKING                        "Network and Internet"
+	IDS_SYNCCOMMUN                        "Communications and Sync"
+	IDS_THEMEANDMONITORSETTINGS           "Appearance and Display"
+	IDS_AUDIOINPUTANDOUTPUT               "Sound and Speech Recognition"
+	IDS_HARDWARE                          "Hardware"
+	IDS_USERREGIONSPECIFICSETTINGS        "Date, Time, Language and Region"
+	IDS_APPLICATIONS                      "Programs"
+	IDS_SECURITYASSURANCE                 "Security"
+	IDS_SYSTEMMAINTENANCE                 "Performance and Maintenance"
+	IDS_USERSANDFAMILY                    "User Accounts and Parental Controls"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_EASYTRANSFERCABLE                 "Transfer Cable devices"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_OTHERITEMSTOTRNSFER               "Additional Options"
+	IDS_TABLETPCCONFIGURATION             "Tablet PC Settings"
+	IDS_FREESTYLEXPTELEVISION             "EHome"
+	IDS_ACCESSIBILITYPREFERENCES          "Accessibility Settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INTERNETEXPLORERSETTINGS          "Internet Options"
+	IDS_NETWORKINGHARDWARE                "Networking Connections"
+	IDS_INTERNETCONNECTIONFIREWALL        "Windows Firewall"
+	IDS_NETWORKDISCOVERER                 "Network Explorer"
+	IDS_FILESHARING                       "File Sharing"
+	IDS_AVAILABLEOFFLINEFILES             "Offline Files"
+	IDS_REMOTETERMINALSERVERSETTINGS      "Terminal Services Options"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYNC                              "Sync"
+	IDS_OUTLOOKEXPRESS                    "Windows Mail"
+	IDS_FAX                               "Fax"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SCREENSAVERSETTINGS               "Screen Savers"
+	IDS_SHELLSETTINGS                     "Taskbar and Start Menu"
+	IDS_FILEMANAGERSETTINGS               "Folder Options"
+	IDS_FONTCONFIGURATION                 "Fonts"
+	IDS_MONITORCONFIGURATION              "Display Settings"
+	IDS_PERSONALPREFERENCES               "Personalized Settings"
+	IDS_GAMINGCONFIGURATION               "Windows Games Settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SYSTEMSOUNDSANDAUDIOHARDWARE      "Sound and Audio Devices Settings"
+	IDS_SPEECHRECOGNITION                 "Speech Recognition"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PRINTERSANDFAXES                  "Printers and Faxes"
+	IDS_MOUSECONFIG                       "Mouse"
+	IDS_KEYBOARDCONFIG                    "Keyboard"
+	IDS_PHONEANDMODEM                     "Phone and Modem"
+	IDS_GAMECONTROLLERS                   "Game Controllers"
+	IDS_HARDWAREANDDEV                    "Hardware and Devices"
+	IDS_SCANNERSANDCAMERAS                "Scanner and Cameras"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PORTABLEMEDIAPLAYERS              "Portable Media Devices"
+	IDS_RGBMANIPULATION                   "Color Management"
+	IDS_TABLETPC                          "Tablet"
+	IDS_MEDIACENTER                       "Media Center"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_REGIONALLANGSETTINGS              "Regional Language Options"
+	IDS_DATETIMESETTINGS                  "Date and Time Properties"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MOVIEMKSETTINGS                   "Movie Maker Settings"
+	IDS_MPLAYERSETTINGS                   "Media Player Settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SECURITYOPTIONS                   "Security Options"
+	IDS_AUTOMATICUPDATES                  "Automatic Updates"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_POWERCONSERVATIONSETTINGS         "Power Options"
+	IDS_OPERATINGSYSTEMSETTINGS           "System Settings"
+	IDS_WINDOWSMANAGEMENTTOOLS            "Administrative Tools"
+	IDS_NTBACKUP                          "Backup"
+	IDS_SCHEDULEDTASKS                    "Scheduled Tasks"
+	IDS_WINDOWSEVENTREPORTING             "Error Reporting"
+	IDS_MICROSOFTDIAGNOSTICS              "Diagnostics"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_USERACCOUNTS                      "User Accounts"
+	IDS_FAMILYSAFETY                      "Parental Controls"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_HELPANDSUPPORTSETTINGS            "Help Settings"
+	IDS_COREOSSETTINGS                    "Windows Core Settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GENERALOPTIONS1                   "General Options"
+	IDS_HANDWRITINGRECOGNITION            "Handwriting Recognition"
+	IDS_ACCESSORIES                       "Accessories"
+	IDS_INPUTPANEL                        "Input Panel"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GENERALOPTIONS2                   "General Options"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APPDATAFOLDERNAME                 "Application Data"
+	IDS_LOCALAPPDATAFOLDERNAME            "Local Settings\\Application Data"
+	IDS_IECOOKIESFOLDERNAME               "Cookies"
+	IDS_ADDRESSBOOKFOLDERNAME             "Contacts"
+	IDS_DESKTOPFOLDERNAME                 "Desktop"
+	IDS_DOWNLOADSFOLDERNAME               "Downloads"
+	IDS_FAVORITESFOLDERNAME               "Favorites"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_LOCALHISTORYFOLDERNAME            "Local Settings\\History"
+	IDS_LOCALTEMPINTERNETFILESFOLDERNAME  "Local Settings\\Temporary Internet Files"
+	IDS_MYDOCUMENTSFOLDERNAME             "My Documents"
+	IDS_ADMINISTRATIVETOOLSSTRTFOLDER     "Start Menu\\Programs\\Administrative Tools"
+	IDS_MYDOCSMYPICSFOLDERLOCATION        "My Documents\\My Pictures"
+	IDS_MYDOCSMYMUSICFOLDERLOCATION       "My Documents\\My Music"
+	IDS_MYDOCSMYVIDEOSFOLDERLOCATION      "My Documents\\My Videos"
+	IDS_NETHOODFOLDERNAME                 "NetHood"
+	IDS_PRINTHOODFOLDERNAME               "PrintHood"
+	IDS_RECENTITEMSFOLDERNAME             "Recent"
+	IDS_SENDTOFOLDERNAME                  "SendTo"
+	IDS_STARTMENUFOLDERNAME               "Start Menu"
+	IDS_ALLPROGRAMSFOLDERNAME             "Start Menu\\Programs"
+	IDS_STARTUPFOLDERNAME                 "Start Menu\\Programs\\Startup"
+	IDS_TEMPLATESFOLDERNAME               "Templates"
+	IDS_QUICKLAUNCHFOLDERNAME             "Application Data\\Microsoft\\Internet Explorer\\Quick Launch"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DOCUMENTSFOLDERNAME               "Documents"
+	IDS_MYPICSFOLDERNAME                  "Documents\\My Pictures"
+	IDS_MYMUSICFOLDERNAME                 "Documents\\My Music"
+	IDS_MYVIDEOSFOLDERNAME                "Documents\\My Videos"
+	IDS_SAMPLEMUSICFOLDERNAME             "Documents\\My Music\\Sample Music" // there doesn't exist one for sample recorded TV, sample pictures, or sample videos aaaand I dunno why
+	IDS_LOCALSETTINGSFOLDERNAME           "Local Settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_FILESANDSETTINGSTRANSFERWIZARD    "Windows Easy Transfer"
+	IDS_SHORTDESCRIPTION                  "Transfer files and settings"
+	IDS_LONGDESCRIPTION                   "Migrates files and settings from one computer to another"
+END
