@@ -1,0 +1,534 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2011 Microsoft Corporation. All rights reserved.
+//
+// Resource table for XAML
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows.UI.Xaml.Resources.Common.dll"
+#define VER_INTERNALNAME_STR        "Windows.UI.Xaml.Resources.Common.dll"
+#define VER_ORIGINALFILENAME_STR    "Windows.UI.Xaml.Resources.Common.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+LANGUAGE LANG_NEUTRAL, 0x1
+1002 PNG DISCARDABLE "spot.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  1001, 	"E_UNKNOWN_ERROR"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2001, 	"DTDs are not allowed."
+  2002, 	"Entity references to named entities other than lt, gt, amp, apos, and quot are not allowed."
+  2004, 	"Only UTF-8 and UTF-16 encodings are supported."
+  2008, 	"Cannot specify the value multiple times for properties."
+  2010, 	"%0 does not support %1 as content."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2024, 	"Invalid attribute value %0 for property %1."
+  2028, 	"The name already exists in the tree: %0."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2034, 	"Elements in a ResourceDictionary must have x:Key or x:Name attribute."
+  2037, 	"No custom resource loader set."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2100, 	"E_INIT_CALLBACK"
+  2101, 	"Failed to initialize the application's root visual"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2201, 	"E_RUNTIME_INVALID_CALL"
+  2203, 	"E_RUNTIME_SETVALUE"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2210, 	"E_INVALID_ARGUMENT"
+  2211, 	"E_RUNTIME_HTML_ACCESS_RESTRICTED"
+  2212, 	"Animation target not specified."
+  2213, 	"Cannot resolve TargetName %0."
+  2214, 	"Cannot resolve TargetProperty %0 on specified object."
+  2215, 	"%0 cannot be used to animate property %1 due to incompatible type."
+  2216, 	"Multiple animations in the same containing Storyboard cannot target the same property on a single element."
+  2217, 	"KeyTime property on KeyFrame object must be set to a non-negative TimeSpan value."
+  2218, 	"Operation is not valid on an active Animation or Storyboard.  Root Storyboard must be stopped first."
+  2219, 	"Operation is not allowed on a non-root Storyboard."
+  2223, 	"Cannot apply a Style with TargetType '%1' to an object of type '%0'."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2224, 	"Cannot load DefaultStyleResourceUri '%2' for TargetType '%0' in assembly '%1'."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2250, 	"E_RUNTIME_MANAGED_UNKNOWN_ERROR"
+  2251, 	"E_RUNTIME_MANAGED_ACTIVATION"
+  2252, 	"E_RUNTIME_MANAGED_ASSEMBLY_DOWNLOAD"
+  2253, 	"E_RUNTIME_MANAGED_ASSEMBLY_LOAD"
+  2254, 	"E_PARSER_UNKNOWN_TYPE"
+  2255, 	"E_PARSER_BAD_TYPE"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2256, 	"E_PARSER_BAD_NATIVE_TYPE"
+  2257, 	"E_PARSER_CREATE_OBJECT_FAILED"
+  2258, 	"E_PARSER_PROPERTY_NOT_FOUND"
+  2259, 	"E_PARSER_BAD_PROPERTY_TYPE"
+  2260, 	"E_PARSER_BAD_PROPERTY_VALUE"
+  2261, 	"E_PARSER_ROOT_NOT_CUSTOM"
+  2262, 	"E_PARSER_NAMESPACE_NOT_SUPPORTED"
+  2263, 	"E_PARSER_MISSING_DEFAULT_NAMESPACE"
+  2264, 	"E_PARSER_INVALID_XMLNS"
+  2265, 	"E_PARSER_INVALID_CLASS"
+  2269, 	"Elements in a ResourceDictionary must not set both x:Name and x:Key, or x:Key twice"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2272, 	"Cannot find a Resource with the Name/Key %0"
+  2273, 	"Elements in the same ResourceDictionary cannot have the same x:Key"
+  2274, 	"E_RUNTIME_MANAGED_ASSEMBLY_NOT_FOUND"
+  2275, 	"Invalid characters in Source Uri."
+  2276, 	"%0 can only be used as the first child in the template for a %1."
+  2277, 	"Cannot locate resource from '%0'."
+  2278, 	"UIElement.Shown/Hidden and ElementCompositionPreview.SetImplicitShow/HideAnimation cannot be used on the same element."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2500, 	"The property '%0' was not found in type '%1'."
+  2501, 	"The attachable property '%0' was not found in type '%1'."
+  2502, 	"The type '%0' was not found."
+  2503, 	"A property element cannot be the direct content of another property element."
+  2504, 	"Cannot set properties on property elements."
+  2505, 	"The type '%0' was not found because '%1' is an unknown namespace."
+  2506, 	"The prefix '%0' was not declared."
+  2508, 	"Parser internal error: Object writer unknown type '%0'."
+  2510, 	"Parser internal error: Object writer '%0'."
+  2511, 	"The property '%0' is set more than once."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2512, 	"Failed to create a '%1' from the text '%0'."
+  2513, 	"Items added to a dictionary must have a key."
+  2514, 	"Unknown parser error: Scanner %0."
+  2516, 	"Cannot add instance of type '%0' to a collection of type '%1'."
+  2517, 	"Unclosed quote in markup extension."
+  2518, 	"Markup extension could not provide value."
+  2519, 	"Parser internal error: Markup extension scanner '%0'."
+  2520, 	"Unexpected quote in markup extension."
+  2521, 	"Expected '%0' in markup extension."
+  2522, 	"Expected type in markup extension."
+  2523, 	"Expected property in markup extension."
+  2524, 	"Expected value in markup extension."
+  2525, 	"Parser internal error: Markup extension unknown token id '%0'."
+  2526, 	"Only the first parameter on a markup extension may be positional."
+  2527, 	"Unexpected text after completed markup extension."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2528, 	"An argument was expected after the comma in markup extension."
+  2529, 	"Type '%0' is used like a markup extension but is not a markup extension."
+  2530, 	"'%0' is not a valid type name."
+  2531, 	"Failed to assign to property '%0'."
+  2532, 	"The dictionary key '%0' is already used. Key attributes are used as keys when inserting objects into a dictionary and must be unique."
+  2533, 	"The attribute 'Class' from the XAML namespace is only accepted on the root element."
+  2534, 	"XamlReader.Load() does not accept event handlers. Setting event '%0' is not permitted."
+  2535, 	"Cannot create instance of type '%0'"
+  2536, 	"Cannot add text '%0' to collection of type '%1'."
+  2537, 	"A property element cannot be at the root of a document."
+  2538, 	"No default namespace has been declared."
+  2539, 	"Cannot add content to an object of type '%0'."
+  2540, 	"Failed to assign to property '%0' because the type '%2' cannot be assigned to the type '%1'."
+  2541, 	"No matching constructor found on type '%0'."
+  2542, 	"Cannot set read-only property '%0'."
+  2543, 	"Collection property '%0' is null."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2544, 	"ResourceDictionary keys cannot be of type '%0'. Only string or type keys are allowed."
+  2545, 	"Unable to resolve property '%1' while processing properties for Uid '%0'."
+  2546, 	"Cannot deserialize XBF metadata as section '%0' has incorrect offset."
+  2547, 	"Cannot deserialize XBF metadata section '%0'."
+  2548, 	"Cannot deserialize XBF metadata as the header version is incorrect."
+  2549, 	"Cannot deserialize XBF metadata reference list as references cannot be resolved."
+  2550, 	"Cannot deserialize XBF metadata type namespace list as '%0' cannot be resolved."
+  2551, 	"Cannot deserialize XBF metadata type list as '%1' was not found in namespace '%0'."
+  2552, 	"Cannot deserialize XBF metadata property list as '%1' was not found in type '%0'."
+  2553, 	"Cannot deserialize XBF metadata XML namespace list as '%0' was not found."
+  2554, 	"Deferred element must have x:Name set."
+  2555, 	"Deferred element cannot be root."
+  2556, 	"Invalid x:DeferLoadStrategy value."
+  2557, 	"Properties on deferred elements must be set to data types using attribute syntax."
+  2558, 	"Invalid x:Load value."
+  2559, 	"VSM Setters should use Setter.Target, not Setter.Property."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  2560, 	"Directive properties may not be conditionally declared."
+  2561, 	"TemplateBindings are not permitted on the property '%0'"
+  2562, 	"Bindings are not permitted on the property '%0'"
+  2563, 	"Non-shareable objects are not allowed on Style Setters"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  3000, 	"E_UNABLE_TO_PLAY"
+  3001, 	"E_INVALID_FILE_FORMAT"
+  3002, 	"E_NOT_FOUND"
+  3003, 	"E_MEDIA_DISCONNECTED"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  3009, 	"E_ATTRIBUTENOTFOUND"
+  3010, 	"E_END_OF_STREAM"
+  3011, 	"E_INVALIDINDEX"
+  3012, 	"E_INVALIDSTREAMNUMBER"
+  3013, 	"E_NO_SAMPLE_DURATION"
+  3014, 	"E_NO_SAMPLE_TIMESTAMP"
+  3015, 	"E_SHUTDOWN"
+  3016, 	"E_INVALIDMEDIATYPE"
+  3017, 	"E_INVALIDTYPE"
+  3018, 	"E_INVALID_FORMAT"
+  3019, 	"E_UNSUPPORTED_REPRESENTATION"
+  3020, 	"E_INVALIDREQUEST"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4001, 	"E_NETWORK_ERROR"
+  4007, 	"Layout cannot be invalidated at this time."
+  4008, 	"Layout cycle detected.  Layout could not complete."
+  4009, 	"Element is already the child of another element."
+  4010, 	"The ItemsControl.ItemsPanelTemplate must have a derivative of Panel as the root element."
+  4011, 	"Setting the Template property on a UserControl is not supported."
+  4012, 	"Cannot explicitly modify Children collection of Panel used as ItemsPanel for ItemsControl. ItemsControl generates child elements for Panel."
+  4013, 	"Cycle detected in merged resource dictionaries"
+  4014, 	"Local values are not allowed in resource dictionary with Source set"
+  4015, 	"This Style's hierarchy of BasedOn references contains a loop."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4016, 	"Can only base on a Style with target type that is base type of this style's target type."
+  4017, 	"A Style cannot be based on itself."
+  4018, 	"After a Style is in use (sealed), it cannot be modified."
+  4019, 	"Must have non-null value for TargetType."
+  4020, 	"'%0' is not a valid value for property '%1'."
+  4024, 	"The capture device you are attempting to use is already being used"
+  4025, 	"The capture device was removed"
+  4026, 	"Access denied to capture devices"
+  4027, 	"Capture source is not stopped"
+  4028, 	"Capture device is not available"
+  4031, 	"TemplateBinding requires a templated parent."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4036, 	"ThemeDictionaries must have resources as ResourceDictionaries only"
+  4037, 	"RelativePanel error: Value must be of type UIElement."
+  4038, 	"RelativePanel error: Circular dependency detected. Layout could not complete."
+  4039, 	"RelativePanel error: Element does not exist in the current context."
+  4040, 	"RelativePanel error: The name '%0' does not exist in the current context."
+  4041, 	"Setters must not set both Property and Target."
+  4042, 	"Path not specified"
+  4043, 	"Target not specified"
+  4044, 	"The property 'Target' is missing from a Setter."
+  4045, 	"The property 'Value' is missing from a Setter."
+  4047, 	"The property path '%0' could not be resolved for a Setter."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4048, 	"A TargetPropertyPath for a Style Setter cannot specify an explicit Target object."
+  4049, 	"The target object with name '%0' could not be resolved for a Setter."
+  4050, 	"Error: Control must be focused before setting IsFocusEngaged to true."
+  4051, 	"Error: Control must have IsFocusEngagementEnabled set to true before setting IsFocusEngaged to true."
+  4052, 	"Child collection must not be modified during measure or arrange."
+  4053, 	"The Target of a two-way Binding using UpdateSourceTrigger.LostFocus must be derived from UIElement."
+  4054, 	"Windows.UI.Xaml.Controls.Frame.NavigationFailed was unhandled."
+  4055, 	"BindingExpression: Path='%s' DataItem='%s'; target element is '%s' (Name='%s'); target property is '%s' (type '%s')"
+  4056, 	"Error: Converter failed to convert value of type '%s' to type '%s'; %s. "
+  4057, 	"Error: Cannot get index [%u] value (type '%s') from type '%s'. %s."
+  4058, 	"Error: Failed to connect to index '%u' in object '%s'. %s"
+  4059, 	"Error: Cannot get '%s' value (type '%s') from type '%s'. %s."
+  4060, 	"Error: BindingExpression path error: '%s' property not found on '%s'. %s"
+  4061, 	"Error: Failed to connect to index '%s' in object '%s'. %s"
+  4062, 	"Error: Cannot get index [%s] value (type '%s') from type '%s'. %s."
+  4063, 	"Error: Cannot save value from target back to source. %s."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4064, 	"Error: Resource Dictionary Key can only be String-typed or Type-typed values."
+  4065, 	"The value cannot be infinite or Not a Number (NaN)."
+  4066, 	"SelectAll can be called only when the value of SelectionMode is Multiple or Extended."
+  4067, 	"The value of the template's TargetType property does not match its control type."
+  4068, 	"The object is immutable."
+  4069, 	"The MinZoomFactor property cannot be set to a value smaller than 0.1."
+  4070, 	"The MaxZoomFactor property cannot be set to a value smaller than 0.1."
+  4071, 	"GetNavigationState doesn't support serialization of a parameter type which was passed to Frame.Navigate."
+  4072, 	"The Panel you are using for the Control is not allowed as an ItemsPanel for the Control."
+  4073, 	"Use a non-virtualizing panel for GroupStyle.Panel"
+  4074, 	"SwapChainBackgroundPanel element is only allowed as the application's root visual or child of a Page element."
+  4075, 	"Cannot find a resource with the given key: %s."
+  4077, 	"ShowAttached was called on an element without an attached FlyoutBase."
+  4078, 	"Navigation failed; history does not contain any entries for backward navigation."
+  4079, 	"Navigation failed; history does not contain any entries for forward navigation."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4080, 	"The argument is out of the range."
+  4081, 	"Invalid URI scheme, only the file:// URI scheme is supported."
+  4082, 	"AppBar is not supported on the phone. Use CommandBar instead."
+  4083, 	"CommandBars can only be set in Page.BottomAppBar."
+  4084, 	"The BackStack or ForwardStack cannot be changed while navigating."
+  4085, 	"The PageStackEntry being added belongs to another frame."
+  4086, 	"The TopLeftHeader, TopHeader and LeftHeader properties can only be used when the Content's HorizontalAlignment is HorizontalAlignment.Left."
+  4087, 	"The TopLeftHeader, TopHeader and LeftHeader properties can only be used when the Content's VerticalAlignment is VerticalAlignment.Top."
+  4088, 	"The TopLeftHeader, TopHeader and LeftHeader properties cannot be used when the Content is an OrientedVirtualizingPanel,  VirtualizingStackPanel, CarouselPanel or WrapGrid instance."
+  4089, 	"Element is already the child of another element."
+  4090, 	"Hub.DefaultSectionIndex must be less than the size of Hub.Sections"
+  4091, 	"BindingExpression: Path='%s' DataItem='%s'; target element is '%s' (Name='%s', AutomationId='%s', AutomationName='%s', TemplatedParent.AutomationId='%s'); target property is '%s' (type '%s')"
+  4092, 	"ReorderMode cannot be set to Enabled when it grouped and vice versa. Grouped lists cannot be reordered."
+  4093, 	"Only a single ContentDialog can be open at any time."
+  4094, 	"List UI serialization is only supported on ItemsWrapGrid and ItemsStackPanel."
+  4095, 	"ItemsPanelRoot is null."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4096, 	"Deferral already completed."
+  4097, 	"Cannot complete a collection modification while another modification is in progress."
+  4098, 	"NumberOfWeeks cannot be less than 2 or greater than 8."
+  4099, 	"Date cannot be selected because current SelectionMode doesn't support this."
+  4100, 	"Blackout dates cannot be selected. Change the IsBlackout property of the CalendarViewDayItem to false."
+  4101, 	"MinDate should be less than or equal to MaxDate."
+  4103, 	"The selected group header container is already in use."
+  4104, 	"SoftwareBitmapSource::SetBitmapAsync only supports SoftwareBitmap with positive width/height, bgra8 pixel format and pre-multiplied or no alpha."
+  4105, 	"This value of InputScopeNameValue is not supported on PasswordBox."
+  4106, 	"The value cannot be converted to type %s"
+  4107, 	"ElementSoundPlayer volume cannot be less than 0 or greater than 1."
+  4108, 	"FocusVisualPrimaryBrush and FocusVisualSecondaryBrush cannot be set to something other than a SolidColorBrush."
+  4109, 	"AccessKeyScopeOwner cannot be set to an element unless that element has IsAccessKeyScope=true."
+  4110, 	"The object type is not a valid AccessKeyScopeOwner. Only a UIElement or a FlyoutBase can be an AccessKeyScopeOwner."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4112, 	"Focus cannot be moved while getting or losing focus."
+  4113, 	"Focus navigation directions Next and Previous are not supported when using FindNextElementOptions."
+  4114, 	"TextHighlighter only supports a SolidColorBrush for the Foreground and Background properties."
+  4115, 	"Trying to access stale metadata for property '%s'."
+  4116, 	"This property currently only accepts values of type SolidColorBrush."
+  4117, 	"This element is enabled only when the application is running."
+  4118, 	"Access denied.  Calling %s API is not allowed on this object at this time, as this object currently has the %s property in use."
+  4119, 	"Cannot access strict API on non-strict type."
+  4120, 	"A Focus-related Asynchronous operation is in progress. Focus cannot be moved until this operation has completed."
+  4121, 	"HandwritingView cannot be focusable."
+  4122, 	"At least one property in FlyoutShowOptions must be set."
+  4123, 	"ItemTemplateSelector provided does not implement protected virtual SelectTemplateCore method with item parameter. Please provide an implementation for this method."
+  4124, 	"Animation must specify the Target property."
+  4125, 	"The property %s was not found or cannot be referenced."
+  4126, 	"Simultaneously animating multiple, separate sets of sub-channels with multiple animations is currently not supported."
+  4127, 	"The property Kind must be set on StandardUICommand before the command can be used."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  4128, 	"An ancestor element cannot be added to the ThemeShadow.Receivers collection."
+  4130, 	"AttachToWindow method failed because the specified HWND was created on a different thread. See: https://go.microsoft.com/fwlink/?linkid=875496"
+  4131, 	"InvalidateViewport can only be called on elements that have been registered as scroll ports."
+  4132, 	"Opening a popup failed because the XAML runtime is running to support DesktopWindowXamlSource, and in this mode a popup must be a child of a live XAML element."
+  4133, 	"The property %s is read-only."
+  4134, 	"VisualTreeHelper::FindElementsInHostCoordinates failed because the XAML runtime is running to support DesktopWindowXamlSource, and in this mode a UIElement must be provided."
+  4135, 	"The value of ShouldConstrainToRootBounds cannot be changed after the popup has been opened."
+  4136, 	"This element is already associated with a XamlRoot, it cannot be associated with a different one until it is removed from the previous XamlRoot."
+  4137, 	"Cannot change XamlRoot when it is already set"
+  4138, 	"Cannot set CoreWindow's TitleBar with a UI Element from AppWindow or DesktopWindowXamlSource."
+  4139, 	"RasterizationScale must be a positive number."
+  4140, 	"This operation is only valid for XAML islands."
+  4141, 	"This operation is only valid for a DesktopWindowXamlSource that has had AttachToWindow called on it."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  6501, 	"Reentrancy was detected in this XAML application. Use a debugger to locate the reentrant code and, if necessary, move that code to an asynchronous event handler. Press OK to exit the application."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  6901, 	"Cannot perform the operation."
+  6902, 	"A non-UIElement item cannot have a null parent."
+  6903, 	"The element either does not exist or is virtualized. Use VirtualizedItem Pattern if it is supported."
+  6905, 	"maxLength is less than -1 and not supported."
+  6910, 	"%0 property can not be set on Page element when its content is SwapChainBackgroundPanel element."
+  6911, 	"SwapChainBackgroundPanel does not support setting a swap chain with premultiplied alpha mode."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  6912, 	"SwapChainBackgroundPanel only supports setting a swap chain created with CreateSwapChainForComposition()."
+  6913, 	"Setting '%0' property is not supported on SwapChainBackgroundPanel."
+  6914, 	"Page element must be root of visual tree when its content is SwapChainBackgroundPanel element."
+  6915, 	"SwapChainPanel only supports setting a swap chain created with CreateSwapChainForComposition()."
+  6916, 	"Setting '%0' property is not supported on SwapChainPanel."
+  6920, 	"Invalid ManipulationModes combination."
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  7000, 	"unexpected end of input"
+  7001, 	"unrecognized encoding"
+  7002, 	"unable to switch the encoding"
+  7003, 	"unrecognized input signature"
+  7004, 	"whitespace expected"
+  7005, 	"semicolon expected"
+  7006, 	"'>' expected"
+  7007, 	"quote expected"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  7008, 	"equal expected"
+  7009, 	"wfc: no '<' in attribute value"
+  7010, 	"hexadecimal digit expected"
+  7011, 	"decimal digit expected"
+  7012, 	"'[' expected"
+  7013, 	"'(' expected"
+  7014, 	"illegal xml character"
+  7015, 	"illegal name character"
+  7016, 	"incorrect document syntax"
+  7017, 	"incorrect CDATA section syntax"
+  7018, 	"incorrect comment syntax"
+  7019, 	"incorrect conditional section syntax"
+  7020, 	"incorrect ATTLIST declaration syntax"
+  7021, 	"incorrect DOCTYPE declaration syntax"
+  7022, 	"incorrect ELEMENT declaration syntax"
+  7023, 	"incorrect ENTITY declaration syntax"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  7024, 	"incorrect NOTATION declaration syntax"
+  7025, 	"NDATA expected"
+  7026, 	"PUBLIC expected"
+  7027, 	"SYSTEM expected"
+  7028, 	"name expected"
+  7029, 	"one root element "
+  7030, 	"wfc: element type match"
+  7031, 	"wfc: unique attribute spec"
+  7032, 	"text/xmldecl not at the beginning of input"
+  7033, 	"leading \\'xml\\'"
+  7034, 	"incorrect text declaration syntax"
+  7035, 	"incorrect xml declaration syntax"
+  7036, 	"incorrect encoding name syntax"
+  7037, 	"incorrect public identifier syntax"
+  7038, 	"wfc: pes in internal subset"
+  7039, 	"wfc: pes between declarations"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  7040, 	"wfc: no recursion"
+  7041, 	"entity content not well formed"
+  7042, 	"wfc: undeclared entity "
+  7043, 	"wfc: parsed entity"
+  7044, 	"wfc: no external entity references"
+  7045, 	"incorrect processing instruction syntax"
+  7046, 	"incorrect system identifier syntax"
+  7047, 	"'?' expected"
+  7048, 	"no ']]>' in element content"
+  7049, 	"not all chunks of value have been read"
+  7050, 	"DTD was found but is prohibited"
+  7051, 	"illegal qualified name character"
+  7052, 	"multiple colons in qualified name"
+  7053, 	"colon in name"
+  7054, 	"declared prefix"
+  7055, 	"undeclared prefix"
+END
+
+STRINGTABLE DISCARDABLE
+LANGUAGE LANG_NEUTRAL, 0x1
+BEGIN
+  7056, 	"non default namespace with empty uri"
+  7057, 	"'xml' prefix is reserved and must have the http://www.w3.org/XML/1998/namespace URI"
+  7058, 	"'xmlns' prefix is reserved for use by XML"
+  7059, 	"xml namespace URI (http://www.w3.org/XML/1998/namespace) must be assigned only to prefix 'xml'"
+  7060, 	"xmlns namespace URI (http://www.w3.org/2000/xmlns/) is reserved and must not be used"
+  7061, 	"invalid decimal"
+  7062, 	"invalid hexidecimal"
+  7063, 	"invalid unicode"
+  7064, 	"invalid encoding"
+END
