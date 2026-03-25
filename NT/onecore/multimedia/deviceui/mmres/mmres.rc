@@ -1,0 +1,265 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Audio Resources
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "General Audio Resources"
+#define VER_INTERNALNAME_STR        "MM Res"
+#define VER_ORIGINALFILENAME_STR    "MMRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDC_SPEAKER   ICON DISCARDABLE "speaker.ico"
+IDC_LOUDSPEAK ICON DISCARDABLE "loudspeaker.ico"
+IDC_HEADSET   ICON DISCARDABLE "headset.ico"
+IDC_COMPOSITE ICON DISCARDABLE "3point5mmcable.ico"
+IDC_CASSETTE  ICON DISCARDABLE "digitalradiocassetteplayer.ico"
+IDC_MICROPHON ICON DISCARDABLE "microphone.ico"
+IDC_HEADMIC   ICON DISCARDABLE "headsetwithmic.ico"
+IDC_TELEPHON  ICON DISCARDABLE "telephone.ico"
+IDC_TELEVIS   ICON DISCARDABLE "television.ico"
+IDC_HARDWARE  ICON DISCARDABLE "card.ico"
+IDC_SPEAKER2  ICON DISCARDABLE "speaker2.ico"
+IDC_STEREO    ICON DISCARDABLE "stereostandspeaker.ico"
+IDC_MIC2      ICON DISCARDABLE "mic2.ico"
+IDC_SPEAKER3  ICON DISCARDABLE "speaker3.ico"
+IDC_HEADSET2  ICON DISCARDABLE "headset2.ico"
+IDC_SPEAKER4  ICON DISCARDABLE "speaker4.ico"
+IDC_HEADSET3  ICON DISCARDABLE "headset3.ico"
+IDC_CALL      ICON DISCARDABLE "call.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Wave
+//
+
+IDW_LEFT1     WAVE DISCARDABLE "leftspeakertest1.wav"
+IDW_RIGHT1    WAVE DISCARDABLE "rightspeakertest1.wav"
+IDW_DUAL1     WAVE DISCARDABLE "dualspeakertest1.wav"
+IDW_DRUM1     WAVE DISCARDABLE "drum1.wav"
+IDW_LDOOR1    WAVE DISCARDABLE "leftdoorbell1.wav"
+IDW_RDOOR1    WAVE DISCARDABLE "rightdoorbell1.wav"
+IDW_LXYLO1    WAVE DISCARDABLE "leftxylophone1.wav"
+IDW_FREQ1     WAVE DISCARDABLE "frequency1.wav"
+IDW_RXYLO1    WAVE DISCARDABLE "rightxylophone1.wav"
+IDW_LEFT2     WAVE DISCARDABLE "leftspeakertest2.wav"
+IDW_RIGHT2    WAVE DISCARDABLE "rightspeakertest2.wav"
+IDW_DUAL2     WAVE DISCARDABLE "dualspeakertest2.wav"
+IDW_DRUM2     WAVE DISCARDABLE "drum2.wav"
+IDW_LDOOR2    WAVE DISCARDABLE "leftdoorbell2.wav"
+IDW_RDOOR2    WAVE DISCARDABLE "rightdoorbell2.wav"
+IDW_LXYLO2    WAVE DISCARDABLE "leftxylophone2.wav"
+IDW_FREQ2     WAVE DISCARDABLE "frequency2.wav"
+IDW_RXYLO2    WAVE DISCARDABLE "rightxylophone2.wav"
+IDW_EMPTY1    WAVE DISCARDABLE "emptywav1.wav"
+IDW_EMPTY2    WAVE DISCARDABLE "emptywav2.wav"
+IDW_EMPTY3    WAVE DISCARDABLE "emptywav3.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDP_ENABLED    PNG DISCARDABLE "enabled.png"
+IDP_DISABLED   PNG DISCARDABLE "disabled.png"
+IDP_WORKING    PNG DISCARDABLE "working.png"
+IDP_FAULTY     PNG DISCARDABLE "faulty.png"
+IDP_INACALL    PNG DISCARDABLE "callconnected.png"
+IDP_NOTINACALL PNG DISCARDABLE "calldisconnected.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+// System sound names
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHIMESWAV                         "chimes"
+	IDS_CHORDWAV                          "chord"
+	IDS_DINGWAV                           "ding"
+	IDS_IRBEGINWAV                        "ir_begin"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_IRENDWAV                          "ir_end"
+	IDS_IRINTERWAV                        "ir_inter"
+	IDS_NOTIFYWAV                         "notify"
+	IDS_RECYCLEWAV                        "recycle"
+	IDS_RINGOUTWAV                        "ringout"
+	IDS_TADAWAV                           "tada"
+	IDS_XPBALLNWAV                        "Windows Balloon"
+	IDS_XPBATCRTWAV                       "Windows Battery Critical"
+	IDS_XPBATLOWWAV                       "Windows Battery Low"
+	IDS_XPCRTSTPWAV                       "Windows Critical Stop"
+	IDS_XPDEFWAV                          "Windows Default"
+	IDS_XPDINGWAV                         "Windows Ding"
+	IDS_XPERRORWAV                        "Windows Error"
+	IDS_XPEXCLWAV                         "Windows Exclamation"
+	IDS_XPFEEDDISCWAV                     "Windows Feed Discovered"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_XPHDFAILWAV                       "Windows Hardware Fail"
+	IDS_XPHDINSTWAV                       "Windows Hardware Insert"
+	IDS_XPHDREMWAV                        "Windows Hardware Remove"
+	IDS_XPLOGOFFWAV                       "Windows Logoff Sound"
+	IDS_XPLOGONWAV                        "Windows Logon Sound"
+	IDS_XPMENUWAV                         "Windows Menu Command"
+	IDS_XPMINWAV                          "Windows Minimize"
+	IDS_XPNOTIFYWAV                       "Windows Notify"
+	IDS_XPPRINTWAV                        "Windows Print complete"
+	IDS_XPRECYCLWAV                       "Windows Recycle"
+	IDS_XPRESTORWAV                       "Windows Restore"
+	IDS_XPRINGINWAV                       "Windows Ringin"
+	IDS_XPRNGOUTWAV                       "Windows Ringout"
+	IDS_XPSHUTDNWAV                       "Windows Shutdown"
+	IDS_XPSTARTWAV                        "Windows Navigation Start"
+	IDS_XPSTARTUWAV                       "Windows Startup"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_XPINFBARWAV                       "Windows Information Bar"
+	IDS_XPBLKPOPWAV                       "Windows Pop-up Blocked"
+	IDS_XPUACWAV                          "Windows User Account Control"
+END
+
+// System sound schemes
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DEFAULTSOUNDSCHEME                "Windows Default"
+	IDS_NOSOUNDSCHEME                     "No Sounds"
+	IDS_AFTERNOONSOUNDSCHEME              "Afternoon"
+	IDS_CALLIGRAPHYSOUNDSCHEME            "Calligraphy"
+	IDS_CHARACTERSSOUNDSCHEME             "Characters"
+	IDS_CITYSCAPESOUNDSCHEME              "Cityscape"
+	IDS_DELTASOUNDSCHEME                  "Delta"
+	IDS_FESTIVALSOUNDSCHEME               "Festival"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_GARDENSOUNDSCHEME                 "Garden"
+	IDS_HERITAGESOUNDSCHEME               "Heritage"
+	IDS_LANDSCAPESOUNDSCHEME              "Landscape"
+	IDS_QUIRKYSOUNDSCHEME                 "Quirky"
+	IDS_RAGASOUNDSCHEME                   "Raga"
+	IDS_SAVANNASOUNDSCHEME                "Savanna"
+	IDS_SONATASOUNDSCHEME                 "Sonata"
+END
+
+// Error messages
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_AUDIOSTREAMINUSE                  "An audio stream is currently in use."
+END
+
+// Programs and their events
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DEFAULTBEEP                       "Default Beep"
+	IDS_PROGRAMERROR                      "Program Error"
+	IDS_CLOSEPROGRAM                      "Close Program"
+	IDS_CRITICALBATTERYALARM              "Critical Battery Alarm"
+	IDS_DEVICECONNECT                     "Device Connect"
+	IDS_DEVICEDISCONNECT                  "Device Disconnect"
+	IDS_DEVICEFAILEDTOCONNECT             "Device Failed to Connect"
+	IDS_EMPTYWASTEBASKET                  "Empty Recycle Bin"
+	IDS_LOWBATTERYALARM                   "Low Battery Alarm"
+	IDS_MAXIMIZE                          "Maximize"
+	IDS_MENUCOMMAND                       "Menu Command"
+	IDS_MENUPOPUP                         "Menu Pop-up"
+	IDS_MINIMIZE                          "Minimize"
+	IDS_DESKTOPMAILNOTIFICATION           "Desktop Mail Notification"
+	IDS_STARTNAVIGATION                   "Start Navigation"
+	IDS_OPENPROGRAM                       "Open Program"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PRINTCOMPLETE                     "Print Complete"
+	IDS_RESTOREDOWN                       "Restore Down"
+	IDS_RESTOREUP                         "Restore Up"
+	IDS_ASTERISK                          "Asterisk"
+	IDS_DEFAULTSOUND                      "Default Sound"
+	IDS_EXCLAMATION                       "Exclamation"
+	IDS_EXITWINDOWS                       "Exit Windows"
+	IDS_CRITICALSTOP                      "Critical Stop"
+	IDS_SYSTEMNOTIFICATION                "System Notification"
+	IDS_QUESTION                          "Question"
+	IDS_STARTWINDOWS                      "Start Windows"
+	IDS_STARTMENU                         "Start Menu"
+	IDS_WINDOWSLOGOFF                     "Windows Logoff"
+	IDS_WINDOWSLOGON                      "Windows Logon" // used instead of IDS_XPLOGONWAV for xplogon.wav that since Windows 8 gets copied to %SystemRoot%\Media under the file name "Windows Logon.wav"
+	IDS_WINDOWSEXPLORER                   "File Explorer"
+	IDS_HARDWARE                          "Hardware"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WINDOWS                           "Windows"
+	IDS_FEEDDISCOVERED                    "Feed Discovered"
+	IDS_NEWFAXNOTIFICATION                "New Fax Notification"
+	IDS_USERACCOUNTCONTROL                "Windows User Account Control"
+	IDS_CHANGETHEME                       "Windows Change Theme"
+	IDS_NEWMAILNOTIFICATION               "New Mail Notification"
+	IDS_NEWTEXTMESSAGENOTIFICATION        "New Text Message Notification"
+	IDS_INSTANTMESSAGENOTIFICATION        "Instant Message Notification"
+	IDS_CALENDARREMINDER                  "Calendar Reminder"
+	IDS_NOTIFICATION                      "Notification"
+	IDS_MESSAGENUDGE                      "Message Nudge"
+	IDS_NFPCONNECTION                     "NFP Connection"
+	IDS_NFPCOMPLETION                     "NFP Completion"
+	IDS_XPUNLOCKWAV                       "Windows Unlock" // for xpunlock.wav
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CALLNOTIF1                        "Incoming Call Notification 1"
+	IDS_CALLNOTIF2                        "Incoming Call Notification 2"
+	IDS_CALLNOTIF3                        "Incoming Call Notification 3"
+	IDS_CALLNOTIF4                        "Incoming Call Notification 4"
+	IDS_CALLNOTIF5                        "Incoming Call Notification 5"
+	IDS_CALLNOTIF6                        "Incoming Call Notification 6"
+	IDS_CALLNOTIF7                        "Incoming Call Notification 7"
+	IDS_CALLNOTIF8                        "Incoming Call Notification 8"
+	IDS_CALLNOTIF9                        "Incoming Call Notification 9"
+	IDS_CALLNOTIF10                       "Incoming Call Notification 10"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_ALARM1                            "Alarm 1"
+	IDS_ALARM2                            "Alarm 2"
+	IDS_ALARM3                            "Alarm 3"
+	IDS_ALARM4                            "Alarm 4"
+	IDS_ALARM5                            "Alarm 5"
+	IDS_ALARM6                            "Alarm 6"
+	IDS_ALARM7                            "Alarm 7"
+	IDS_ALARM8                            "Alarm 8"
+	IDS_ALARM9                            "Alarm 9"
+	IDS_ALARM10                           "Alarm 10"
+END
