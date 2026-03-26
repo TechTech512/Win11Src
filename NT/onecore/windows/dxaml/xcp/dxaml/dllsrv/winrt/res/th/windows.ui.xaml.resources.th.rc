@@ -1,0 +1,29 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2011 Microsoft Corporation. All rights reserved.
+//
+// Resource table for XAML
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows.UI.Xaml.Resources.TH dll"
+#define VER_INTERNALNAME_STR        "Windows.UI.Xaml.Resources.TH.dll"
+#define VER_ORIGINALFILENAME_STR    "Windows.UI.Xaml.Resources.TH.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 256
+//
+
+LANGUAGE LANG_NEUTRAL, 0x1
+STYLES.TH.XBF         256 DISCARDABLE "styles.th.xbf"
+LANGUAGE LANG_NEUTRAL, 0x1
+THEMERESOURCES.TH.XBF 256 DISCARDABLE "themeresources.th.xbf"
