@@ -1,0 +1,9 @@
+TARGETNAME=Windows.UI.Xaml.Resources.21h1
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+RESOURCE_ONLY_DLL=1
+
+SOURCES= \
+        windows.ui.xaml.resources.21h1.rc
+

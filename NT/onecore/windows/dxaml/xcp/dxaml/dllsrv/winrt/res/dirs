@@ -1,0 +1,11 @@
+DIRS=19h1 \
+     21h1 \
+	 common \
+	 rs1 \
+	 rs2 \
+	 rs3 \
+	 rs4 \
+	 rs5 \
+	 th \
+	 win8rtm \
+	 win81
