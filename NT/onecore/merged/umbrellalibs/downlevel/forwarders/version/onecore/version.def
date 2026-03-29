@@ -1,0 +1,16 @@
+LIBRARY VERSION
+EXPORTS
+	GetFileVersionInfoA = api-ms-win-core-versionansi-l1-1-1.GetFileVersionInfoA
+	GetFileVersionInfoExA = api-ms-win-core-versionansi-l1-1-0.GetFileVersionInfoExA
+	GetFileVersionInfoExW = api-ms-win-core-version-l1-1-0.GetFileVersionInfoExW
+	GetFileVersionInfoSizeA = api-ms-win-core-versionansi-l1-1-1.GetFileVersionInfoSizeA
+	GetFileVersionInfoSizeExA = api-ms-win-core-versionansi-l1-1-0.GetFileVersionInfoSizeExA
+	GetFileVersionInfoSizeExW = api-ms-win-core-version-l1-1-0.GetFileVersionInfoSizeExW
+	GetFileVersionInfoSizeW = api-ms-win-core-version-l1-1-1.GetFileVersionInfoSizeW
+	GetFileVersionInfoW = api-ms-win-core-version-l1-1-1.GetFileVersionInfoW
+	VerFindFileA = api-ms-win-core-versionansi-l1-1-0.VerFindFileA
+	VerFindFileW = api-ms-win-core-version-l1-1-0.VerFindFileW
+	VerLanguageNameA = api-ms-win-core-localization-l1-2-0.VerLanguageNameA
+	VerLanguageNameW = api-ms-win-core-localization-l1-2-0.VerLanguageNameW
+	VerQueryValueA = api-ms-win-core-versionansi-l1-1-0.VerQueryValueA
+	VerQueryValueW = api-ms-win-core-version-l1-1-0.VerQueryValueW
