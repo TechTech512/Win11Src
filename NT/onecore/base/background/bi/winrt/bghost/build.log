@@ -1,0 +1,76 @@
+BUILD: Examining r:\rs_prerelease\onecore\base\background\bi\winrt\bghost directory for files to compile.
+Compiling r:\rs_prerelease\onecore\base\background\bi\winrt\bghost directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 386=1'
+1>BUILDMSG: Processing r:\rs_prerelease\onecore\base\background\bi\winrt\bghost
+Elapsed time [0:00:00.046] ********************
+1>cl -nologo -Ii386\ -I. -I. -IR:\rs_prerelease\public\internal\Base\inc -Iobj\i386 -IR:\rs_prerelease\onecore\base\inc -IR:\rs_prerelease\onecore\base\inc\obj\i386 -IR:\rs_prerelease\public\internal\base\inc -IR:\rs_prerelease\public\oak\inc -IR:\rs_prerelease\public\sdk\inc -IR:\rs_prerelease\public\sdk\inc\crt -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1 -DNT_UP=1  -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0A00 /DWINVER=0x0A00 -D_WIN32_IE=0x0B00    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDDATE__=250325-1224 -D__BUILDMACHINE__=Administrator -DFPO=1  -DNDEBUG -D_DLL=1 -D_MT=1 -DSECURITY_WIN32 -DUNICODE -D_UNICODE -DSTRICT -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00     /c /Zp8 /Gy /Gm-  /W3  /Gz   /EHs-c-  /GR- /GF /GS -Z7 /Oxs  /Oy -Z7   -FIR:\rs_prerelease\onecore\external\shared\inc\warning.h  /Yustdafx.h /Fpobj\i386\stdafx.pch /YlbackgroundTaskHost /Ycstdafx.h /Fpobj\i386\stdafx.pch  /Fo"r:\rs_prerelease\onecore\base\background\bi\winrt\bghost\obj\i386\stdafx.obj"  /Tc
+1>
+1>#include "stdafx.h"
+1>
+1>pch_hdr.src
+1>    rc -l 409 -DSXS_ASSEMBLY_NAME="""Microsoft.Windows.onecoreuapbase.backgroundTaskHost"""  -DSXS_ASSEMBLY_VERSION="""5.1.0.0"""  -DSXS_ASSEMBLY_LANGUAGE="""x-ww"""  -DSXS_PROCESSOR_ARCHITECTURE="""x86"""  -DSXS_TARGET="""backgroundTaskHost.exe"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -z "MS Sans Serif,Helv/MS Shell Dlg" -DSXS_MANIFEST_OBJ1="\"obj/i386/BgHost.man\""  -r -fo obj\i386\bghost.res -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1 -DNT_UP=1  -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0A00 /DWINVER=0x0A00 -D_WIN32_IE=0x0B00    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDDATE__=250325-1224 -D__BUILDMACHINE__=Administrator -DFPO=1  -DNDEBUG -D_DLL=1 -D_MT=1 -DSECURITY_WIN32 -DUNICODE -D_UNICODE -DSTRICT -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00   -I. -IR:\rs_prerelease\public\internal\Base\inc -Iobj\i386 -IR:\rs_prerelease\onecore\base\inc -IR:\rs_prerelease\onecore\base\inc\obj\i386 -IR:\rs_prerelease\public\internal\base\inc -IR:\rs_prerelease\public\oak\inc -IR:\rs_prerelease\public\sdk\inc -IR:\rs_prerelease\public\sdk\inc\crt .\bghost.rc
+1>	preprocessor.exe -o obj\i386\BgHost.man -i .\BgHost.manifest -DSXS_ASSEMBLY_NAME="\"Microsoft.Windows.onecoreuapbase.backgroundTaskHost\""  -DSXS_ASSEMBLY_VERSION="\"5.1.0.0\""  -DSXS_ASSEMBLY_LANGUAGE="\"x-ww\""  -DSXS_PROCESSOR_ARCHITECTURE="\"x86\""  -DSXS_TARGET="\"backgroundTaskHost.exe\""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="\"Microsoft.Windows.SystemCompatible\""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"\"Microsoft.Windows.SystemCompatible\""  
+1>C:\Users\ADMINI~1\AppData\Local\Temp\nm262F.tmp
+1>.\bghost.rc
+1>        1 file(s) copied.
+1>Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>cl -nologo -Ii386\ -I. -I. -IR:\rs_prerelease\public\internal\Base\inc -Iobj\i386 -IR:\rs_prerelease\onecore\base\inc -IR:\rs_prerelease\onecore\base\inc\obj\i386 -IR:\rs_prerelease\public\internal\base\inc -IR:\rs_prerelease\public\oak\inc -IR:\rs_prerelease\public\sdk\inc -IR:\rs_prerelease\public\sdk\inc\crt -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1 -DNT_UP=1  -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0A00 /DWINVER=0x0A00 -D_WIN32_IE=0x0B00    -DWIN32_LEAN_AND_MEAN=1 -DDEVL=1 -D__BUILDDATE__=250325-1224 -D__BUILDMACHINE__=Administrator -DFPO=1  -DNDEBUG -D_DLL=1 -D_MT=1 -DSECURITY_WIN32 -DUNICODE -D_UNICODE -DSTRICT -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00     /c /Zp8 /Gy /Gm-  /W3  /Gz   /EHs-c-  /GR- /GF /GS -Z7 /Oxs  /Oy -Z7   -FIR:\rs_prerelease\onecore\external\shared\inc\warning.h     .\bghost.cpp 
+1>bghost.cpp
+1>
+1>Stop.
+Linking r:\rs_prerelease\onecore\base\background\bi\winrt\bghost directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i LINKONLY=1 NOPASS0=1 NTTEST= UMTEST= 386=1'
+Elapsed time [0:00:05.484] ********************
+1>	link -out:obj\i386\backgroundTaskHost.exe -machine:ix86 @C:\Users\ADMINI~1\AppData\Local\Temp\nm32FF.tmp
+1>Microsoft (R) Incremental Linker Version 14.43.34809.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>
+1>-MERGE:_PAGE=PAGE 
+1>-MERGE:_TEXT=.text 
+1>-SECTION:INIT,d 
+1>-OPT:REF 
+1>-OPT:ICF 
+1>-IGNORE:4010,4037,4039,4065,4070,4078,4087,4089,4221,4198 
+1>-INCREMENTAL:NO 
+1>-FULLBUILD 
+1>/release 
+1>-NODEFAULTLIB 
+1>-debug:FULL 
+1>-debugtype:cv 
+1>-version:10.0 
+1>-osversion:10.0 
+1>-debug:full 
+1>-debugtype:cv,fixup 
+1>-merge:.rdata=.text 
+1>-STACK:0x40000,0x2000 
+1>/tsaware 
+1>-subsystem:windows,10.0 
+1>-base:@R:\rs_prerelease\Tools\coffbase.txt,usermode 
+1>-entry:mainCRTStartup 
+1>obj\i386\stdafx.obj 
+1>obj\i386\bghost.res 
+1>obj\i386\bghost.obj 
+1>R:\rs_prerelease\public\sdk\lib\i386\BufferOverflowU.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\kernel32.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\msvcrt.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\advapi32.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\kernel32.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\gdi32.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\user32.lib 
+1>R:\rs_prerelease\public\sdk\lib\i386\mincore.lib 
+1>	compact /c /q obj\i386\backgroundTaskHost.pdb
+1>
+1> Compressing files in r:\rs_prerelease\onecore\base\background\bi\winrt\bghost\obj\i386\
+1>
+1>
+1>0 files within 1 directories were compressed.
+1>0 total bytes of data are stored in 0 bytes.
+1>The compression ratio is 1.0 to 1.
+1>	echo.
+1>
+1>	( ( echo. ) ) &                                             ( echo                                                              SXS_ASSEMBLY_NAME="Microsoft.Windows.onecoreuapbase.backgroundTaskHost"                            SXS_ASSEMBLY_VERSION="5.1.0.0"                      SXS_ASSEMBLY_LANGUAGE="x-ww"                    SXS_MANIFEST="\backgroundTaskHost.exe"    | appendtool.exe -file R:\binaries.x86fre\build_logs\binplace.log-sxs - )
+1> 
+1>
+1>Stop.
