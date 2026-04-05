@@ -1,0 +1,1 @@
+This is an obsolete devcon from srv03rtm pasted here. The devcon from Win11's WDK samples can be found at onecore\base\pnp\tools\devcon.
