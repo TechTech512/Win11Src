@@ -1,0 +1,33 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+//
+// Resource table for More Games Provider
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Game Definition File for More Games"
+#define VER_INTERNALNAME_STR        "MoreGames.dll"
+#define VER_ORIGINALFILENAME_STR    "MoreGames.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MOREGAMES ICON DISCARDABLE "moregames.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Game Definition
+//
+
+__GDF_XML DATA DISCARDABLE "gdf.xml"
