@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-16"?>
+<GameDefinitionFile xmlns="urn:schemas-microsoft-com:GameDescription.v1" xmlns:baseTypes="urn:schemas-microsoft-com:GamesExplorerBaseTypes.v1">
+  <GameDefinition gameID="{FB96B68C-09EF-4251-A598-19E4BE1B76A9}">
+    <Name>More Games from Microsoft</Name>
+    <Description>More Games from Microsoft</Description>
+    <Genres>
+      <Genre>Family Entertainment</Genre>
+    </Genres>
+    <Developers>
+      <Developer URI="http://go.microsoft.com/fwlink/?LinkID=124572">Microsoft Corporation</Developer>
+    </Developers>
+    <Publishers>
+      <Publisher URI="http://go.microsoft.com/fwlink/?LinkID=124572">Microsoft Corporation</Publisher>
+    </Publishers>
+    <WindowsSystemPerformanceRating minimum="0" recommended="0"/>
+    <Version>
+      <VersionFile path="moregames.dll"/>
+    </Version>
+    <ExtendedProperties>
+      <_locDefinition>
+        <_locTag _locAttrData="name">Task</_locTag>
+      </_locDefinition>
+      <RSS>http://go.microsoft.com/fwlink/?LinkID=124407</RSS>
+      <Type>1</Type>
+      <GameTasks>
+        <Play>
+          <Primary>
+            <URLTask Link="http://go.microsoft.com/fwlink/?LinkID=124572"/>
+          </Primary>
+        </Play>
+        <Support>
+          <Task index="0" name="More Games from Microsoft">
+            <URLTask Link="http://go.microsoft.com/fwlink/?LinkID=124572"/>
+          </Task>
+        </Support>
+      </GameTasks>
+    </ExtendedProperties>    
+  </GameDefinition>
+</GameDefinitionFile>
