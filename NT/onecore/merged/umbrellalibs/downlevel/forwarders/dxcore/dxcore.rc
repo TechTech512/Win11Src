@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Umbrella
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "OneCore forwarder shim"
+#define VER_INTERNALNAME_STR        "dxcore.dll"
+#define VER_ORIGINALFILENAME_STR    "dxcore.dll"
+
+#include "common.ver"
