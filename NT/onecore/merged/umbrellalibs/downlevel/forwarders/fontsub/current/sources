@@ -1,0 +1,23 @@
+TARGETNAME=fontsub
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=fontsub.def
+USE_MSVCRT=1
+EXPECTED_WINVER=10.0
+
+BINPLACE_PLACEFILE=placefil.txt
+
+SOURCES=..\dllmain.cpp \
+		..\stubs.cpp \
+		..\fontsub.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DSTRICT -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib
+	
+NT_SIGNCODE=1
