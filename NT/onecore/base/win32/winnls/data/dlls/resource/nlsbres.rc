@@ -1,0 +1,2059 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for nlsbuild
+//
+// IMPORTANT NOTE: Since this is mostly related to countries
+//                 of the world, select countries here and/or
+//                 their current languages might be renamed,
+//                 replaced, or removed for geographical,
+//                 political, and/or religious reasons,
+//                 taking also current events like the war
+//                 on Iran (the Islamic Republic regime) in
+//                 consideration (as of April 10, 2026).
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "NLSBuild resource DLL"
+#define VER_INTERNALNAME_STR        "nlsbres.dll"
+#define VER_ORIGINALFILENAME_STR    "nlsbres.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCData
+//
+
+1 RCDATA DISCARDABLE "data1.bin"
+2 RCDATA DISCARDABLE "data2.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1, 	"Language Neutral"
+  2, 	"Default"
+  3, 	"Arabic" // marked
+  4, 	"Saudi Arabia" // marked
+  5, 	"Western Europe and United States"
+  6, 	"Bulgarian"
+  7, 	"Bulgaria"
+  8, 	"Central Europe"
+  9, 	"Antigua and Barbuda"
+  10, 	"Catalan"
+  11, 	"Spain"
+  12, 	"Baltic"
+  13, 	"Afghanistan" // marked
+  14, 	"Islamic Republic of Afghanistan" // marked
+  15, 	"Chinese (Simplified)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  16, 	"People's Republic of China"
+  17, 	"Greek"
+  18, 	"Algeria" // marked
+  19, 	"Democratic and Popular Republic of Algeria" // marked
+  20, 	"Pronunciation"
+  21, 	"Stroke Count"
+  22, 	"Czech"
+  23, 	"Czech Republic"
+  24, 	"Cyrillic"
+  25, 	"Azerbaijan"
+  26, 	"Republic of Azerbaijan"
+  27, 	"Danish"
+  28, 	"Denmark"
+  29, 	"Turkic"
+  30, 	"Albania"
+  31, 	"Republic of Albania"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  32, 	"German"
+  33, 	"Germany"
+  34, 	"Japanese"
+  35, 	"Armenia"
+  36, 	"Republic of Armenia"
+  37, 	"Dictionary"
+  38, 	"Phone Book (DIN)"
+  39, 	"Greece"
+  40, 	"Korean"
+  41, 	"Andorra"
+  42, 	"Principality of Andorra"
+  43, 	"English"
+  44, 	"United States"
+  45, 	"Traditional Chinese"
+  46, 	"Angola"
+  47, 	"Republic of Angola"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  48, 	"Spanish"
+  49, 	"Simplified Chinese"
+  50, 	"American Samoa"
+  51, 	"International"
+  52, 	"Finnish"
+  53, 	"Finland"
+  54, 	"Thai"
+  55, 	"Argentina"
+  56, 	"Argentine Republic"
+  57, 	"French"
+  58, 	"France"
+  59, 	"Hebrew"
+  60, 	"Australia"
+  61, 	"Commonwealth of Australia"
+  62, 	"Israel"
+  63, 	"Hungarian"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  64, 	"Hungary"
+  65, 	"Vietnamese"
+  66, 	"Austria"
+  67, 	"Republic of Austria"
+  68, 	"Technical"
+  69, 	"Icelandic"
+  70, 	"Iceland"
+  71, 	"Indic"
+  72, 	"Italian"
+  73, 	"Italy"
+  74, 	"Georgian"
+  75, 	"Japan"
+  76, 	"Armenian"
+  77, 	"Bahrain" // marked
+  78, 	"Kingdom of Bahrain" // marked
+  79, 	"XJIS"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  80, 	"Radical/Stroke"
+  81, 	"Korea"
+  82, 	"Barbados"
+  83, 	"Dutch"
+  84, 	"Netherlands"
+  85, 	"Botswana"
+  86, 	"Republic of Botswana"
+  87, 	"Norwegian"
+  88, 	"Norway"
+  89, 	"Bermuda"
+  90, 	"Polish"
+  91, 	"Poland"
+  92, 	"Belgium"
+  93, 	"Kingdom of Belgium"
+  94, 	"Portuguese"
+  95, 	"Brazil"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  96, 	"Bahamas, The"
+  97, 	"Commonwealth of The Bahamas"
+  98, 	"Romansh"
+  99, 	"Switzerland"
+  100, 	"Bangladesh"
+  101, 	"People's Republic of Bangladesh"
+  102, 	"Romanian"
+  103, 	"Romania"
+  104, 	"Belize"
+  105, 	"Russian"
+  106, 	"Russia"
+  107, 	"Bosnia and Herzegovina"
+  108, 	"Republic of Bosnia and Herzegovina"
+  109, 	"Croatian"
+  110, 	"Croatia"
+  111, 	"Bolivia"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  112, 	"Republic of Bolivia"
+  113, 	"Slovak"
+  114, 	"Slovakia"
+  115, 	"Myanmar"
+  116, 	"Union of Myanmar"
+  117, 	"Albanian"
+  118, 	"Benin"
+  119, 	"Republic of Benin"
+  120, 	"Swedish"
+  121, 	"Sweden"
+  122, 	"Belarus"
+  123, 	"Republic of Belarus"
+  124, 	"Thailand"
+  125, 	"Solomon Islands"
+  126, 	"Turkish"
+  127, 	"Turkey"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  128, 	"Urdu" // marked
+  129, 	"Islamic Republic of Pakistan" // marked
+  130, 	"Federative Republic of Brazil"
+  131, 	"Indonesian"
+  132, 	"Indonesia"
+  133, 	"Ukrainian"
+  134, 	"Ukraine"
+  135, 	"Bhutan"
+  136, 	"Kingdom of Bhutan"
+  137, 	"Belarusian"
+  138, 	"Republic of Bulgaria"
+  139, 	"Slovenian"
+  140, 	"Slovenia"
+  141, 	"Estonian"
+  142, 	"Estonia"
+  143, 	"37    (IBM EBCDIC - U.S./Canada)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  144, 	"Brunei"
+  145, 	"Negara Brunei Darussalam"
+  146, 	"Latvian"
+  147, 	"Latvia"
+  148, 	"Burundi"
+  149, 	"Republic of Burundi"
+  150, 	"Lithuanian"
+  151, 	"Lithuania"
+  152, 	"Canada"
+  153, 	"Tajik"
+  154, 	"Tajikistan"
+  155, 	"Cambodia"
+  156, 	"Persian"
+  157, 	"Iran"
+  158, 	"Chad"
+  159, 	"Republic of Chad"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  160, 	"Vietnam"
+  161, 	"Sri Lanka"
+  162, 	"Democratic Socialist Republic of Sri Lanka"
+  163, 	"Congo"
+  164, 	"Republic of the Congo"
+  165, 	"Azerbaijani"
+  166, 	"Congo (DRC)"
+  167, 	"Democratic Republic of the Congo"
+  168, 	"Basque"
+  169, 	"China"
+  170, 	"Upper Sorbian"
+  171, 	"Chile"
+  172, 	"Republic of Chile"
+  173, 	"Macedonian (North Macedonia)"
+  174, 	"Republic of North Macedonia"
+  175, 	"Cameroon"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  176, 	"Republic of Cameroon"
+  177, 	"Setswana"
+  178, 	"South Africa"
+  179, 	"Comoros"
+  180, 	"Union of Comoros"
+  181, 	"Colombia"
+  182, 	"Republic of Colombia"
+  183, 	"isiXhosa"
+  184, 	"isiZulu"
+  185, 	"Afrikaans"
+  186, 	"Costa Rica"
+  187, 	"Republic of Costa Rica"
+  188, 	"Georgia"
+  189, 	"Central African Republic"
+  190, 	"Traditional"
+  191, 	"Modern"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  192, 	"Faroese"
+  193, 	"Faroe Islands"
+  194, 	"Cuba"
+  195, 	"Republic of Cuba"
+  196, 	"Hindi"
+  197, 	"India"
+  198, 	"Sesotho"
+  199, 	"Republic of Cabo Verde"
+  200, 	"Maltese"
+  201, 	"Malta"
+  202, 	"Sami (Northern)"
+  203, 	"Cyprus"
+  204, 	"Republic of Cyprus"
+  205, 	"Irish"
+  206, 	"Ireland"
+  207, 	"Kingdom of Denmark"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  208, 	"Northern Sami"
+  209, 	"Malaysia"
+  210, 	"Djibouti"
+  211, 	"Republic of Djibouti"
+  212, 	"Kazakh"
+  213, 	"Kazakhstan"
+  214, 	"Dominica"
+  215, 	"Commonwealth of Dominica"
+  216, 	"Kyrgyz"
+  217, 	"Kyrgyzstan"
+  218, 	"Kiswahili"
+  219, 	"Kenya"
+  220, 	"Dominican Republic"
+  221, 	"Turkmen"
+  222, 	"Turkmenistan"
+  223, 	"Ecuador"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  224, 	"Republic of Ecuador"
+  225, 	"Uzbek"
+  226, 	"Uzbekistan"
+  227, 	"Egypt" // marked
+  228, 	"Arab Republic of Egypt" // marked
+  229, 	"Tatar"
+  230, 	"Bangla"
+  231, 	"Equatorial Guinea"
+  232, 	"Republic of Equatorial Guinea"
+  233, 	"Punjabi"
+  234, 	"Republic of Estonia"
+  235, 	"Gujarati"
+  236, 	"Eritrea"
+  237, 	"State of Eritrea"
+  238, 	"Odia"
+  239, 	"El Salvador"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  240, 	"Republic of El Salvador"
+  241, 	"Tamil"
+  242, 	"Ethiopia"
+  243, 	"Federal Democratic Republic of Ethiopia"
+  244, 	"Telugu"
+  245, 	"Kannada"
+  246, 	"Malayalam"
+  247, 	"Assamese"
+  248, 	"Republic of Finland"
+  249, 	"Marathi"
+  250, 	"Bolivarian Republic of Venezuela"
+  251, 	"Republic of Fiji Islands"
+  252, 	"Sanskrit"
+  253, 	"Mongolian"
+  254, 	"Mongolia"
+  255, 	"Micronesia"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  256, 	"Federated States of Micronesia"
+  257, 	"Tibetan"
+  258, 	"Welsh"
+  259, 	"United Kingdom"
+  260, 	"Khmer"
+  261, 	"Lao"
+  262, 	"Macedonian"
+  263, 	"French Republic"
+  264, 	"Galician"
+  265, 	"Falkland Islands (Islas Malvinas)"
+  266, 	"Republic of The Gambia"
+  267, 	"Konkani"
+  268, 	"Gabon"
+  269, 	"Gabonese Republic"
+  270, 	"Sindhi"
+  271, 	"Ghana"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  272, 	"Republic of Ghana"
+  273, 	"Syriac" // marked
+  274, 	"Syria" // marked
+  275, 	"Gibraltar"
+  276, 	"Sinhala"
+  277, 	"Grenada"
+  278, 	"Cherokee"
+  279, 	"Inuktitut"
+  280, 	"Greenland"
+  281, 	"Amharic"
+  282, 	"Federal Republic of Germany"
+  283, 	"Persian (Iran)"
+  284, 	"Nepali"
+  285, 	"Nepal"
+  286, 	"Western Frisian"
+  287, 	"Hellenic Republic"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  288, 	"Pashto"
+  289, 	"Guatemala"
+  290, 	"Republic of Guatemala"
+  291, 	"Filipino"
+  292, 	"Philippines"
+  293, 	"Guinea"
+  294, 	"Republic of Guinea"
+  295, 	"Divehi"
+  296, 	"Maldives"
+  297, 	"Guyana"
+  298, 	"Cooperative Republic of Guyana"
+  299, 	"Bosnia & Herzegovina"
+  300, 	"Senegal"
+  301, 	"Haiti"
+  302, 	"Republic of Haiti"
+  303, 	"Hausa"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  304, 	"Nigeria"
+  305, 	"Pseudo (Pseudo)"
+  306, 	"Hong Kong Special Administrative Region"
+  307, 	"Yoruba"
+  308, 	"Honduras"
+  309, 	"Republic of Honduras"
+  310, 	"Quechua"
+  311, 	"Sesotho sa Leboa"
+  312, 	"Republic of Croatia"
+  313, 	"Bashkir"
+  314, 	"Republic of Hungary"
+  315, 	"Luxembourgish"
+  316, 	"Luxembourg"
+  317, 	"Republic of Iceland"
+  318, 	"Kalaallisut"
+  319, 	"Republic of Indonesia"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  320, 	"Igbo"
+  321, 	"Republic of India"
+  322, 	"British Indian Ocean Territory"
+  323, 	"Tigrinya"
+  324, 	"Islamic Republic of Iran" // marked
+  325, 	"Hawaiian"
+  326, 	"State of Israel"
+  327, 	"Italian Republic"
+  328, 	"C\xF4te d'Ivoire"
+  329, 	"Republic of C\xF4te d'Ivoire"
+  330, 	"Yi"
+  331, 	"Iraq" // marked
+  332, 	"Republic of Iraq" // marked
+  333, 	"Mapuche"
+  334, 	"Mohawk"
+  335, 	"Jamaica"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  336, 	"Jan Mayen"
+  337, 	"Breton"
+  338, 	"Jordan" // marked
+  339, 	"Hashemite Kingdom of Jordan" // marked
+  340, 	"Invariant Language (Invariant Country)"
+  341, 	"Invariant Language"
+  342, 	"Invariant Country"
+  343, 	"Johnston Atoll"
+  344, 	"Math Alphanumerics"
+  345, 	"Uyghur"
+  346, 	"Māori"
+  347, 	"New Zealand"
+  348, 	"Republic of Kenya"
+  349, 	"Occitan"
+  350, 	"Kyrgyz Republic"
+  351, 	"Corsican"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  352, 	"North Korea"
+  353, 	"Democratic People's Republic of Korea"
+  354, 	"Alsatian"
+  355, 	"Sakha"
+  356, 	"Kiribati"
+  357, 	"Republic of Kiribati"
+  358, 	"Kʼicheʼ"
+  359, 	"Republic of Korea"
+  360, 	"Kinyarwanda"
+  361, 	"Rwanda"
+  362, 	"Wolof"
+  363, 	"Kuwait" // marked
+  364, 	"State of Kuwait" // marked
+  365, 	"Republic of Kazakhstan"
+  366, 	"Laos"
+  367, 	"Lao People's Democratic Republic"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  368, 	"Lebanon" // marked
+  369, 	"Republic of Lebanon" // marked
+  370, 	"world"
+  371, 	"Republic of Latvia"
+  372, 	"Republic of Lithuania"
+  373, 	"Liberia"
+  374, 	"Republic of Liberia"
+  375, 	"Slovak Republic"
+  376, 	"Scottish Gaelic"
+  377, 	"Liechtenstein"
+  378, 	"Principality of Liechtenstein"
+  379, 	"Central Kurdish (Iraq)"
+  380, 	"Lesotho"
+  381, 	"Kingdom of Lesotho"
+  382, 	"Grand Duchy of Luxembourg"
+  383, 	"Libya" // marked
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  384, 	"Pseudo (Pseudo Asia)"
+  385, 	"Madagascar"
+  386, 	"Republic of Madagascar"
+  387, 	"Pseudo (Pseudo Selfhost)"
+  388, 	"Macao Special Administrative Region"
+  389, 	"Moldova"
+  390, 	"Republic of Moldova"
+  391, 	"Malawi"
+  392, 	"Republic of Malawi"
+  393, 	"Mali"
+  394, 	"Republic of Mali"
+  395, 	"Monaco"
+  396, 	"Principality of Monaco"
+  397, 	"Morocco" // marked
+  398, 	"Kingdom of Morocco" // marked
+  399, 	"Mauritius"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  400, 	"Republic of Mauritius"
+  401, 	"Mauritania" // marked
+  402, 	"Islamic Republic of Mauritania" // marked
+  403, 	"Republic of Malta"
+  404, 	"Oman" // marked
+  405, 	"Sultanate of Oman" // marked
+  406, 	"Republic of Maldives"
+  407, 	"Mexico"
+  408, 	"United Mexican States"
+  409, 	"Federation of Malaysia"
+  410, 	"Mozambique"
+  411, 	"Republic of Mozambique"
+  412, 	"Niger"
+  413, 	"Republic of Niger"
+  414, 	"Vanuatu"
+  415, 	"Republic of Vanuatu"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  416, 	"Federal Republic of Nigeria"
+  417, 	"Kingdom of the Netherlands"
+  418, 	"Kingdom of Norway"
+  419, 	"Federal Democratic Republic of Nepal"
+  420, 	"Nauru"
+  421, 	"Republic of Nauru"
+  422, 	"Suriname"
+  423, 	"Republic of Suriname"
+  424, 	"Nicaragua"
+  425, 	"Republic of Nicaragua"
+  426, 	"Palestinian Authority" // marked
+  427, 	"Palestinian National Authority" // marked
+  428, 	"Paraguay"
+  429, 	"Republic of Paraguay"
+  430, 	"Peru"
+  431, 	"Republic of Peru"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  432, 	"Pakistan" // marked
+  433, 	"Republic of Poland"
+  434, 	"Panama"
+  435, 	"Republic of Panama"
+  436, 	"Portugal"
+  437, 	"Portuguese Republic"
+  438, 	"Papua New Guinea"
+  439, 	"Independent State of Papua New Guinea"
+  440, 	"Palau"
+  441, 	"Republic of Palau"
+  442, 	"Guinea-Bissau"
+  443, 	"Republic of Guinea-Bissau"
+  444, 	"Qatar" // marked
+  445, 	"State of Qatar" // marked
+  446, 	"Reunion"
+  447, 	"Marshall Islands"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  448, 	"Republic of the Marshall Islands"
+  449, 	"Republic of the Philippines"
+  450, 	"Puerto Rico"
+  451, 	"Commonwealth of Puerto Rico"
+  452, 	"Russian Federation"
+  453, 	"Republic of Rwanda"
+  454, 	"Kingdom of Saudi Arabia" // marked
+  455, 	"Chechen"
+  456, 	"Territorial Collectivity of Saint Pierre and Miquelon"
+  457, 	"Chechen (Russia)"
+  458, 	"Federation of Saint Kitts and Nevis"
+  459, 	"Seychelles"
+  460, 	"Republic of Seychelles"
+  461, 	"Republic of South Africa"
+  462, 	"Republic of Senegal"
+  463, 	"Republic of Slovenia"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  464, 	"Sierra Leone"
+  465, 	"Republic of Sierra Leone"
+  466, 	"San Marino"
+  467, 	"Republic of San Marino"
+  468, 	"Singapore"
+  469, 	"Republic of Singapore"
+  470, 	"Somalia" // marked
+  471, 	"Kingdom of Spain"
+  472, 	"Church Slavic"
+  473, 	"Saint Lucia"
+  474, 	"Sudan" // marked
+  475, 	"Republic of the Sudan" // marked
+  476, 	"Svalbard"
+  477, 	"Kingdom of Sweden"
+  478, 	"Syrian Arab Republic" // marked
+  479, 	"Swiss Confederation"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  480, 	"United Arab Emirates" // marked
+  481, 	"Trinidad and Tobago"
+  482, 	"Republic of Trinidad and Tobago"
+  483, 	"Kingdom of Thailand"
+  484, 	"Republic of Tajikistan"
+  485, 	"Tonga"
+  486, 	"Kingdom of Tonga"
+  487, 	"Togo"
+  488, 	"Togolese Republic"
+  489, 	"S\xE3o Tom\xE9 and Pr\xEDncipe"
+  490, 	"Democratic Republic of S\xE3o Tom\xE9 and Pr\xEDncipe"
+  491, 	"Tunisia" // marked
+  492, 	"Tunisian Republic" // marked
+  493, 	"Republic of Turkey" // marked
+  494, 	"Tuvalu"
+  495, 	"Taiwan"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  496, 	"Republic of Turkmenistan"
+  497, 	"Tanzania"
+  498, 	"United Republic of Tanzania"
+  499, 	"Uganda"
+  500, 	"Republic of Uganda"
+  501, 	"United Kingdom of Great Britain and Northern Ireland"
+  502, 	"United States of America"
+  503, 	"Burkina Faso"
+  504, 	"Uruguay"
+  505, 	"Oriental Republic of Uruguay"
+  506, 	"Republic of Uzbekistan"
+  507, 	"Church Slavic (Russia)"
+  508, 	"Saint Vincent and the Grenadines"
+  509, 	"English (Austria)"
+  510, 	"Socialist Republic of Vietnam"
+  511, 	"English (Burundi)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  512, 	"Vatican City"
+  513, 	"State of Vatican City"
+  514, 	"Namibia"
+  515, 	"Republic of Namibia"
+  516, 	"English (Switzerland)"
+  517, 	"Wake Island"
+  518, 	"Samoa"
+  519, 	"Independent State of Samoa"
+  520, 	"Eswatini"
+  521, 	"Kingdom of Eswatini"
+  522, 	"Yemen" // marked
+  523, 	"Republic of Yemen" // marked
+  524, 	"Zambia"
+  525, 	"Republic of Zambia"
+  526, 	"Zimbabwe"
+  527, 	"Republic of Zimbabwe"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  528, 	"Serbia and Montenegro (Former)"
+  529, 	"Montenegro"
+  530, 	"Serbia"
+  531, 	"Cura\xE7ao"
+  532, 	"Anguilla"
+  533, 	"Antarctica"
+  534, 	"Aruba"
+  535, 	"Ascension Island"
+  536, 	"Ashmore and Cartier Islands"
+  537, 	"Territory of Ashmore and Cartier Islands"
+  538, 	"Baker Island"
+  539, 	"Bouvet Island"
+  540, 	"Cayman Islands"
+  541, 	"Channel Islands"
+  542, 	"Christmas Island"
+  543, 	"Territory of Christmas Island"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  544, 	"Clipperton Island"
+  545, 	"Cocos (Keeling) Islands"
+  546, 	"Territory of Cocos (Keeling) Islands"
+  547, 	"Cook Islands"
+  548, 	"Coral Sea Islands"
+  549, 	"Coral Sea Islands Territory"
+  550, 	"Diego Garcia"
+  551, 	"English (Cyprus)"
+  552, 	"French Guiana"
+  553, 	"Department of Guiana"
+  554, 	"French Polynesia"
+  555, 	"Territory of French Polynesia"
+  556, 	"French Southern Territories"
+  557, 	"Territory of the French Southern and Antarctic Lands"
+  558, 	"Guadeloupe"
+  559, 	"Department of Guadeloupe"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  560, 	"Guam"
+  561, 	"Territory of Guam"
+  562, 	"Guantanamo Bay"
+  563, 	"Guernsey"
+  564, 	"Bailiwick of Guernsey"
+  565, 	"Heard Island and McDonald Islands"
+  566, 	"Territory of Heard Island and McDonald Islands"
+  567, 	"Howland Island"
+  568, 	"Jarvis Island"
+  569, 	"Jersey"
+  570, 	"Bailiwick of Jersey"
+  571, 	"Kingman Reef"
+  572, 	"Martinique"
+  573, 	"Department of Martinique"
+  574, 	"Mayotte"
+  575, 	"Territorial Collectivity of Mayotte"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  576, 	"Montserrat"
+  577, 	"Netherlands Antilles (Former)"
+  578, 	"New Caledonia"
+  579, 	"Territory of New Caledonia and Dependencies"
+  580, 	"Niue"
+  581, 	"Norfolk Island"
+  582, 	"Territory of Norfolk Island"
+  583, 	"Northern Mariana Islands"
+  584, 	"Commonwealth of the Northern Mariana Islands"
+  585, 	"Palmyra Atoll"
+  586, 	"Pitcairn Islands"
+  587, 	"Pitcairn, Henderson, Ducie, and Oeno Islands"
+  588, 	"Rota Island"
+  589, 	"Saipan"
+  590, 	"South Georgia and the South Sandwich Islands"
+  591, 	"St Helena, Ascension and Tristan da Cunha"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  592, 	"Mongolian (Traditional Mongolian, Mongolia)"
+  593, 	"Tinian Island"
+  594, 	"Tokelau"
+  595, 	"Tristan da Cunha"
+  596, 	"Turks and Caicos Islands"
+  597, 	"English (Germany)"
+  598, 	"Wallis and Futuna"
+  599, 	"Territory of the Wallis and Futuna Islands"
+  600, 	"437   (OEM - United States)"
+  601, 	"500   (IBM EBCDIC - International)"
+  602, 	"708   (Arabic - ASMO)" // marked
+  603, 	"720   (Arabic - Transparent ASMO)" // marked
+  604, 	"737   (OEM - Greek 437G)"
+  605, 	"Africa"
+  606, 	"775   (OEM - Baltic)"
+  607, 	"850   (OEM - Multilingual Latin I)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  608, 	"852   (OEM - Latin II)"
+  609, 	"855   (OEM - Cyrillic)"
+  610, 	"857   (OEM - Turkish)"
+  611, 	"858   (OEM - Multilingual Latin I + Euro)"
+  612, 	"860   (OEM - Portuguese)"
+  613, 	"861   (OEM - Icelandic)"
+  614, 	"862   (OEM - Hebrew)"
+  615, 	"863   (OEM - Canadian French)"
+  616, 	"864   (OEM - Arabic)" // marked
+  617, 	"865   (OEM - Nordic)"
+  618, 	"866   (OEM - Russian)"
+  619, 	"869   (OEM - Modern Greek)"
+  620, 	"870   (IBM EBCDIC - Multilingual/ROECE (Latin-2))"
+  621, 	"874   (ANSI/OEM - Thai)"
+  622, 	"875   (IBM EBCDIC - Modern Greek)"
+  623, 	"932   (ANSI/OEM - Japanese Shift-JIS)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  624, 	"936   (ANSI/OEM - Simplified Chinese GBK)"
+  625, 	"949   (ANSI/OEM - Korean)"
+  626, 	"950   (ANSI/OEM - Traditional Chinese Big5)"
+  627, 	"Process Default Language"
+  628, 	"Arabic (Saudi Arabia)" // marked
+  629, 	"Bulgarian (Bulgaria)"
+  630, 	"1026  (IBM EBCDIC - Turkish (Latin-5))"
+  631, 	"Catalan (Catalan)"
+  632, 	"Chinese (Traditional, Taiwan)"
+  633, 	"Chinese (Traditional)"
+  634, 	"Bopomofo"
+  635, 	"Czech (Czechia)"
+  636, 	"Danish (Denmark)"
+  637, 	"German (Germany)"
+  638, 	"Greek (Greece)"
+  639, 	"English (United States)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  640, 	"Spanish (Spain, Traditional Sort)"
+  641, 	"Finnish (Finland)"
+  642, 	"French (France)"
+  643, 	"Hebrew (Israel)"
+  644, 	"Hungarian (Hungary)"
+  645, 	"Icelandic (Iceland)"
+  646, 	"Italian (Italy)"
+  647, 	"Japanese (Japan)"
+  648, 	"Korean (Korea)"
+  649, 	"Dutch (Netherlands)"
+  650, 	"Norwegian Bokm\xE5l (Norway)"
+  651, 	"Norwegian Bokm\xE5l"
+  652, 	"Polish (Poland)"
+  653, 	"Portuguese (Brazil)"
+  654, 	"Romansh (Switzerland)"
+  655, 	"1047  (IBM EBCDIC - Latin-1/Open System)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  656, 	"Romanian (Romania)"
+  657, 	"Russian (Russia)"
+  658, 	"Croatian (Croatia)"
+  659, 	"Slovak (Slovakia)"
+  660, 	"Albanian (Albania)"
+  661, 	"Swedish (Sweden)"
+  662, 	"Thai (Thailand)"
+  663, 	"Yakut"
+  664, 	"Urdu (Pakistan)"
+  665, 	"Indonesian (Indonesia)"
+  666, 	"Ukrainian (Ukraine)"
+  667, 	"Belarusian (Belarus)"
+  668, 	"Slovenian (Slovenia)"
+  669, 	"Estonian (Estonia)"
+  670, 	"Latvian (Latvia)"
+  671, 	"Lithuanian (Lithuania)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  672, 	"Tajik (Cyrillic, Tajikistan)"
+  673, 	"Tajik (Cyrillic)"
+  674, 	"Vietnamese (Vietnam)"
+  675, 	"Armenian (Armenia)"
+  676, 	"Azerbaijani (Latin, Azerbaijan)"
+  677, 	"Azerbaijani (Latin)"
+  678, 	"Basque (Basque)"
+  679, 	"Upper Sorbian (Germany)"
+  680, 	"Setswana (South Africa)"
+  681, 	"isiXhosa (South Africa)"
+  682, 	"isiZulu (South Africa)"
+  683, 	"Afrikaans (South Africa)"
+  684, 	"Georgian (Georgia)"
+  685, 	"Faroese (Faroe Islands)"
+  686, 	"Hindi (India)"
+  687, 	"Maltese (Malta)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  688, 	"Sami, Northern (Norway)"
+  689, 	"Malay (Malaysia)"
+  690, 	"Kazakh (Kazakhstan)"
+  691, 	"Kyrgyz (Kyrgyzstan)"
+  692, 	"Kiswahili (Kenya)"
+  693, 	"Turkmen (Turkmenistan)"
+  694, 	"Uzbek (Latin, Uzbekistan)"
+  695, 	"Uzbek (Latin)"
+  696, 	"Tatar (Russia)"
+  697, 	"Bengali (India)"
+  698, 	"Punjabi (India)"
+  699, 	"Gujarati (India)"
+  700, 	"Odia (India)"
+  701, 	"Tamil (India)"
+  702, 	"Telugu (India)"
+  703, 	"Kannada (India)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  704, 	"Malayalam (India)"
+  705, 	"Assamese (India)"
+  706, 	"Marathi (India)"
+  707, 	"Sanskrit (India)"
+  708, 	"Mongolian (Mongolia)"
+  709, 	"Yiddish"
+  710, 	"Tibetan (China)"
+  711, 	"Welsh (United Kingdom)"
+  712, 	"Khmer (Cambodia)"
+  713, 	"Lao (Laos)"
+  714, 	"Galician (Galician)"
+  715, 	"Konkani (India)"
+  716, 	"Syriac (Syria)"
+  717, 	"Sinhala (Sri Lanka)"
+  718, 	"Cherokee (Cherokee, United States)"
+  719, 	"Inuktitut (Syllabics, Canada)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  720, 	"Inuktitut (Syllabics)"
+  721, 	"Amharic (Ethiopia)"
+  722, 	"Nepali (Nepal)"
+  723, 	"Western Frisian (Netherlands)"
+  724, 	"Pashto (Afghanistan)"
+  725, 	"Filipino (Philippines)"
+  726, 	"Divehi (Maldives)"
+  727, 	"Hausa (Latin, Nigeria)"
+  728, 	"Hausa (Latin)"
+  729, 	"Yoruba (Nigeria)"
+  730, 	"Quechua (Bolivia)"
+  731, 	"Sesotho sa Leboa (South Africa)"
+  732, 	"Bashkir (Russia)"
+  733, 	"Luxembourgish (Luxembourg)"
+  734, 	"Kalaallisut (Greenland)"
+  735, 	"Igbo (Nigeria)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  736, 	"Tigrinya (Ethiopia)"
+  737, 	"1140  (IBM EBCDIC - U.S./Canada (37 + Euro))"
+  738, 	"Hawaiian (United States)"
+  739, 	"1141  (IBM EBCDIC - Germany (20273 + Euro))"
+  740, 	"1142  (IBM EBCDIC - Denmark/Norway (20277 + Euro))"
+  741, 	"1143  (IBM EBCDIC - Finland/Sweden (20278 + Euro))"
+  742, 	"Yi (China)"
+  743, 	"1144  (IBM EBCDIC - Italy (20280 + Euro))"
+  744, 	"1145  (IBM EBCDIC - Latin America/Spain (20284 + Euro))"
+  745, 	"Mapuche (Chile)"
+  746, 	"1146  (IBM EBCDIC - United Kingdom (20285 + Euro))"
+  747, 	"Mohawk (Canada)"
+  748, 	"1148  (IBM EBCDIC - International (500 + Euro))"
+  749, 	"1149  (IBM EBCDIC - Icelandic (20871 + Euro))"
+  750, 	"Breton (France)"
+  751, 	"Uyghur (China)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  752, 	"Māori (New Zealand)"
+  753, 	"Occitan (France)"
+  754, 	"Corsican (France)"
+  755, 	"Alsatian (France)"
+  756, 	"Sakha (Russia)"
+  757, 	"Kʼicheʼ (Latin, Guatemala)"
+  758, 	"Kinyarwanda (Rwanda)"
+  759, 	"Wolof (Senegal)"
+  760, 	"Persian (Afghanistan)"
+  761, 	"Scottish Gaelic (United Kingdom)"
+  762, 	"Kurdish (Arabic)" // marked
+  763, 	"1250  (ANSI - Central Europe)"
+  764, 	"1251  (ANSI - Cyrillic)"
+  765, 	"1252  (ANSI - Latin I)"
+  766, 	"1253  (ANSI - Greek)"
+  767, 	"1254  (ANSI - Turkish)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  768, 	"1255  (ANSI - Hebrew)"
+  769, 	"1256  (ANSI - Arabic)"
+  770, 	"1257  (ANSI - Baltic)"
+  771, 	"1258  (ANSI/OEM - Viet Nam)"
+  772, 	"Pseudo Selfhost"
+  773, 	"Pseudo (Pseudo Mirrored)"
+  774, 	"Pseudo"
+  775, 	"1361  (Korean - Johab)"
+  776, 	"Burmese (Myanmar)"
+  777, 	"Pseudo Asia"
+  778, 	"Arabic (Iraq)" // marked
+  779, 	"Valencian (Spain)"
+  780, 	"Valencian"
+  781, 	"Chinese (Simplified, Mainland China)"
+  782, 	"German (Switzerland)"
+  783, 	"English (United Kingdom)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  784, 	"Spanish (Mexico)"
+  785, 	"French (Belgium)"
+  786, 	"Italian (Switzerland)"
+  787, 	"Dutch (Belgium)"
+  788, 	"Norwegian Nynorsk (Norway)"
+  789, 	"Norwegian Nynorsk"
+  790, 	"Portuguese (Portugal)"
+  791, 	"Serbian (Latin, Serbia and Montenegro (Former))"
+  792, 	"Serbian (Latin)"
+  793, 	"Swedish (Finland)"
+  794, 	"Azerbaijani (Cyrillic, Azerbaijan)"
+  795, 	"Azerbaijani (Cyrillic)"
+  796, 	"Lower Sorbian (Germany)"
+  797, 	"Lower Sorbian"
+  798, 	"Setswana (Botswana)"
+  799, 	"Sami, Northern (Sweden)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  800, 	"Irish (Ireland)"
+  801, 	"Malay (Brunei)"
+  802, 	"Bamanankan (Latin)"
+  803, 	"Uzbek (Cyrillic, Uzbekistan)"
+  804, 	"Uzbek (Cyrillic)"
+  805, 	"Bangla (Bangladesh)"
+  806, 	"Punjabi (Pakistan)"
+  807, 	"Tamil (Sri Lanka)"
+  808, 	"Mongolian (Traditional Mongolian, China)"
+  809, 	"Mongolian (Traditional Mongolian)"
+  810, 	"Asia"
+  811, 	"Sindhi (Pakistan)"
+  812, 	"Inuktitut (Latin, Canada)"
+  813, 	"Inuktitut (Latin)"
+  814, 	"1147  (IBM EBCDIC - France (20297 + Euro))"
+  815, 	"Central Atlas Tamazight (Latin, Algeria)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  816, 	"Central Atlas Tamazight (Latin)"
+  817, 	"Fula (Latin, Senegal)"
+  818, 	"Quechua (Ecuador)"
+  819, 	"Tigrinya (Eritrea)"
+  820, 	"Guarani (Paraguay)"
+  821, 	"Pseudo Mirrored"
+  822, 	"Arabic (Egypt)" // marked
+  823, 	"Chinese (Traditional, Hong Kong SAR)"
+  824, 	"German (Austria)"
+  825, 	"English (Australia)"
+  826, 	"Spanish (Spain, International Sort)"
+  827, 	"French (Canada)"
+  828, 	"Serbian (Cyrillic, Serbia and Montenegro (Former))"
+  829, 	"Serbian (Cyrillic)"
+  830, 	"Sami, Northern (Finland)"
+  831, 	"Quechua (Peru)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  832, 	"Arabic (Libya)" // marked
+  833, 	"Chinese (Simplified, Singapore)"
+  834, 	"German (Luxembourg)"
+  835, 	"English (Canada)"
+  836, 	"Spanish (Guatemala)"
+  837, 	"French (Switzerland)"
+  838, 	"Croatian (Bosnia & Herzegovina)"
+  839, 	"Venezuela"
+  840, 	"Sami, Lule (Norway)"
+  841, 	"Sami (Lule)"
+  842, 	"Arabic (Algeria)"
+  843, 	"Bamanankan (Latin, Mali)"
+  844, 	"German (Liechtenstein)"
+  845, 	"English (New Zealand)"
+  846, 	"Spanish (Costa Rica)"
+  847, 	"French (Luxembourg)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  848, 	"Central Atlas Tamazight"
+  849, 	"Bosnian (Latin)"
+  850, 	"Sami, Lule (Sweden)"
+  851, 	"Arabic (Morocco)" // marked
+  852, 	"English (Ireland)"
+  853, 	"Spanish (Panama)"
+  854, 	"French (Monaco)"
+  855, 	"Serbian (Latin, Bosnia & Herzegovina)"
+  856, 	"Sami, Southern (Norway)"
+  857, 	"Sami (Southern)"
+  858, 	"Arabic (Tunisia)" // narjed
+  859, 	"English (South Africa)"
+  860, 	"Spanish (Dominican Republic)"
+  861, 	"Serbian (Cyrillic, Bosnia and Herzegovina)"
+  862, 	"Sami, Southern (Sweden)"
+  863, 	"Arabic (Oman)" // marked
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  864, 	"English (Jamaica)"
+  865, 	"Spanish (Venezuela)"
+  866, 	"Bosnian (Cyrillic, Bosnia and Herzegovina)"
+  867, 	"Bosnian (Cyrillic)"
+  868, 	"Sami, Skolt (Finland)"
+  869, 	"Sami (Skolt)"
+  870, 	"Arabic (Yemen)" // marked
+  871, 	"English (Caribbean)"
+  872, 	"Caribbean"
+  873, 	"Spanish (Colombia)"
+  874, 	"Serbian (Latin, Serbia)"
+  875, 	"Sami, Inari (Finland)"
+  876, 	"Sami (Inari)"
+  877, 	"10000 (MAC - Roman)"
+  878, 	"10001 (MAC - Japanese)"
+  879, 	"10002 (MAC - Traditional Chinese Big5)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  880, 	"10003 (MAC - Korean)"
+  881, 	"10004 (MAC - Arabic)" // marked
+  882, 	"10005 (MAC - Hebrew)"
+  883, 	"10006 (MAC - Greek I)"
+  884, 	"10007 (MAC - Cyrillic)"
+  885, 	"10008 (MAC - Simplified Chinese GB 2312)"
+  886, 	"10010 (MAC - Romania)"
+  887, 	"10017 (MAC - Ukraine)"
+  888, 	"10021 (MAC - Thai)"
+  889, 	"10029 (MAC - Latin II)"
+  890, 	"10079 (MAC - Icelandic)"
+  891, 	"10081 (MAC - Turkish)"
+  892, 	"10082 (MAC - Croatia)"
+  893, 	"Arabic (Syria)" // marked
+  894, 	"English (Belize)"
+  895, 	"Spanish (Peru)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  896, 	"Serbian (Cyrillic, Serbia)"
+  897, 	"Europe"
+  898, 	"Arabic (Jordan)" // marked
+  899, 	"English (Trinidad & Tobago)"
+  900, 	"Spanish (Argentina)"
+  901, 	"Serbian (Latin, Montenegro)"
+  902, 	"Arabic (Lebanon)" // marked
+  903, 	"English (Zimbabwe)"
+  904, 	"Spanish (Ecuador)"
+  905, 	"Serbian (Cyrillic, Montenegro)"
+  906, 	"Arabic (Kuwait)" // marked
+  907, 	"Central Atlas Tamazight (Tifinagh, Morocco)"
+  908, 	"Spanish (Chile)"
+  909, 	"Arabic (United Arab Emirates)" // marked
+  910, 	"Surname"
+  911, 	"Spanish (Uruguay)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  912, 	"English (Denmark)"
+  913, 	"Arabic (Bahrain)" // marked
+  914, 	"Spanish (Paraguay)"
+  915, 	"Arabic (Qatar)" // marked
+  916, 	"English (India)"
+  917, 	"Spanish (Bolivia)"
+  918, 	"English (Malaysia)"
+  919, 	"Spanish (El Salvador)"
+  920, 	"English (Singapore)"
+  921, 	"Spanish (Honduras)"
+  922, 	"Spanish (Nicaragua)"
+  923, 	"English (Finland)"
+  924, 	"North Macedonia"
+  925, 	"20000 (CNS - Taiwan)"
+  926, 	"20001 (TCA - Taiwan)"
+  927, 	"20002 (Eten - Taiwan)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  928, 	"20003 (IBM5550 - Taiwan)"
+  929, 	"20004 (TeleText - Taiwan)"
+  930, 	"20005 (Wang - Taiwan)"
+  931, 	"20105 (IA5 IRV International Alphabet No.5)"
+  932, 	"20106 (IA5 German)"
+  933, 	"20107 (IA5 Swedish)"
+  934, 	"20108 (IA5 Norwegian)"
+  935, 	"20127 (US-ASCII)"
+  936, 	"20261 (T.61)"
+  937, 	"20269 (ISO 6937 Non-Spacing Accent)"
+  938, 	"20273 (IBM EBCDIC - Germany)"
+  939, 	"20277 (IBM EBCDIC - Denmark/Norway)"
+  940, 	"20278 (IBM EBCDIC - Finland/Sweden)"
+  941, 	"20280 (IBM EBCDIC - Italy)"
+  942, 	"20284 (IBM EBCDIC - Latin America/Spain)"
+  943, 	"20285 (IBM EBCDIC - United Kingdom)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  944, 	"20290 (IBM EBCDIC - Japanese Katakana Extended)"
+  945, 	"20297 (IBM EBCDIC - France)"
+  946, 	"20420 (IBM EBCDIC - Arabic)" // marked
+  947, 	"20423 (IBM EBCDIC - Greek)"
+  948, 	"20424 (IBM EBCDIC - Hebrew)"
+  949, 	"Spanish (Puerto Rico)"
+  950, 	"20833 (IBM EBCDIC - Korean Extended)"
+  951, 	"20838 (IBM EBCDIC - Thai)"
+  952, 	"20866 (Russian - KOI8)"
+  953, 	"20871 (IBM EBCDIC - Icelandic)"
+  954, 	"20880 (IBM EBCDIC - Cyrillic (Russian))"
+  955, 	"Melanesia"
+  956, 	"20905 (IBM EBCDIC - Turkish)"
+  957, 	"20924 (IBM EBCDIC - Latin-1/Open System (1047 + Euro))"
+  958, 	"20932 (JIS X 0208-1990 & 0212-1990)"
+  959, 	"20936 (Simplified Chinese GB2312)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  960, 	"21025 (IBM EBCDIC - Cyrillic (Serbian, Bulgarian))"
+  961, 	"21027 (Ext Alpha Lowercase)"
+  962, 	"Midway Islands"
+  963, 	"Spanish (United States)"
+  964, 	"21866 (Ukrainian - KOI8-U)"
+  965, 	"Northern America"
+  966, 	"Polynesia"
+  967, 	"Central America"
+  968, 	"Oceania"
+  969, 	"English (Israel)"
+  970, 	"28591 (ISO 8859-1 Latin I)"
+  971, 	"28592 (ISO 8859-2 Central Europe)"
+  972, 	"28593 (ISO 8859-3 Latin 3)"
+  973, 	"28594 (ISO 8859-4 Baltic)"
+  974, 	"28595 (ISO 8859-5 Cyrillic)"
+  975, 	"28596 (ISO 8859-6 Arabic)" // marked
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  976, 	"28597 (ISO 8859-7 Greek)"
+  977, 	"28598 (ISO 8859-8 Hebrew: Visual Ordering)"
+  978, 	"28599 (ISO 8859-9 Latin 5)"
+  979, 	"28603 (ISO 8859-13 Latin 7)"
+  980, 	"28605 (ISO 8859-15 Latin 9)"
+  981, 	"Chinese"
+  982, 	"Bosnian"
+  983, 	"English (Netherlands)"
+  984, 	"South America"
+  985, 	"English (Sweden)"
+  986, 	"Serbian"
+  987, 	"38598 (ISO 8859-8 Hebrew: Logical Ordering)"
+  988, 	"World"
+  989, 	"Americas"
+  990, 	"\xC5land Islands"
+  991, 	"Northern Europe"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  992, 	"Southern Africa"
+  993, 	"Saint Barth\xE9lemy"
+  994, 	"U.S. Minor Outlying Islands"
+  995, 	"United States Minor Outlying Islands"
+  996, 	"Latin America and the Caribbean"
+  997, 	"Bonaire, Sint Eustatius and Saba"
+  998, 	"Western Europe"
+  999, 	"Australia and New Zealand"
+  1000, 	"Western Africa"
+  1001, 	"Middle Africa"
+  1002, 	"Northern Africa"
+  1003, 	"Central Asia"
+  1004, 	"South-Eastern Asia"
+  1005, 	"Eastern Asia"
+  1006, 	"Eastern Africa"
+  1007, 	"Eastern Europe"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1008, 	"Southern Europe"
+  1009, 	"Middle East"
+  1010, 	"Western Asia"
+  1011, 	"Southern Asia"
+  1012, 	"50220 (ISO-2022 Japanese with no halfwidth Katakana)"
+  1013, 	"50221 (ISO-2022 Japanese with halfwidth Katakana)"
+  1014, 	"50222 (ISO-2022 Japanese JIS X 0201-1989)"
+  1015, 	"50225 (ISO-2022 Korean)"
+  1016, 	"50227 (ISO-2022 Simplified Chinese)"
+  1017, 	"50229 (ISO-2022 Traditional Chinese)"
+  1018, 	"50930 (IBM EBCDIC - Japanese (Katakana) Extended and Japanese)"
+  1019, 	"50931 (IBM EBCDIC - US/Canada and Japanese)"
+  1020, 	"50933 (IBM EBCDIC - Korean Extended and Korean)"
+  1021, 	"50935 (IBM EBCDIC - Simplified Chinese)"
+  1022, 	"50937 (IBM EBCDIC - US/Canada and Traditional Chinese)"
+  1023, 	"50939 (IBM EBCDIC - Japanese (Latin) Extended and Japanese)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1024, 	"51932 (EUC-Japanese)"
+  1025, 	"51936 (EUC-Simplified Chinese)"
+  1026, 	"51949 (EUC-Korean)"
+  1027, 	"51950 (EUC-Traditional Chinese)"
+  1028, 	"52936 (HZ-GB2312 Simplified Chinese)"
+  1029, 	"54936 (GB18030 Simplified Chinese)"
+  1030, 	"57002 (ISCII - Devanagari)"
+  1031, 	"57003 (ISCII - Bengali)"
+  1032, 	"57004 (ISCII - Tamil)"
+  1033, 	"57005 (ISCII - Telugu)"
+  1034, 	"57006 (ISCII - Assamese)"
+  1035, 	"57007 (ISCII - Odia (Oriya))"
+  1036, 	"57008 (ISCII - Kannada)"
+  1037, 	"57009 (ISCII - Malayalam)"
+  1038, 	"57010 (ISCII - Gujarati)"
+  1039, 	"57011 (ISCII - Punjabi (Gurmukhi))"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1040, 	"65000 (UTF-7)"
+  1041, 	"65001 (UTF-8)"
+  1042, 	"South Sudan" // marked
+  1043, 	"The Republic of South Sudan" // marked
+  1044, 	"English (Philippines)"
+  1045, 	"Central Atlas Tamazight (Tifinagh)"
+  1046, 	"Trinidad & Tobago"
+  1047, 	"Chinese (Traditional, Macao SAR)"
+  1048, 	"Macao SAR"
+  1049, 	"English (United Arab Emirates)" // marked
+  1050, 	"Shona (Latin)"
+  1051, 	"Burmese"
+  1052, 	"Guarani"
+  1053, 	"Oromo"
+  1054, 	"Somali" // marked
+  1055, 	"Sesotho (South Africa)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1056, 	"Xitsonga (South Africa)"
+  1057, 	"Shona (Latin, Zimbabwe)"
+  1058, 	"Javanese (Indonesia)"
+  1059, 	"Oromo (Ethiopia)"
+  1060, 	"Somali (Somalia)" // marked
+  1061, 	"Urdu (India)"
+  1062, 	"Nepali (India)"
+  1063, 	"Malagasy"
+  1064, 	"French (R\xE9union)"
+  1065, 	"Yiddish (world)"
+  1066, 	"French Congo (DRC)"
+  1067, 	"English (Slovenia)"
+  1068, 	"French (Senegal)"
+  1069, 	"French (Cameroon)"
+  1070, 	"French (C\xF4te d’Ivoire)"
+  1071, 	"C\xF4te d’Ivoire"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1072, 	"French (Mali)"
+  1073, 	"French (Morocco)" // marked
+  1074, 	"English (Hong Kong SAR)"
+  1075, 	"Hong Kong SAR"
+  1076, 	"French (Haiti)"
+  1077, 	"Spanish (Latin America)"
+  1078, 	"Latin America"
+  1079, 	"Javanese"
+  1080, 	"Standard Moroccan Tamazight"
+  1081, 	"N'ko"
+  1082, 	"N'ko (Guinea)"
+  1083, 	"Romanian (Moldova)"
+  1084, 	"Malagasy (Madagascar)"
+  1085, 	"Shona"
+  1086, 	"Standard Moroccan Tamazight (Tifinagh)" // marked
+  1087, 	"Standard Moroccan Tamazight (Tifinagh, Morocco)" // marked
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1088, 	"Unknown Locale"
+  1089, 	"Unknown Language"
+  1090, 	"Unknown Region"
+  1091, 	"Portuguese (Angola)"
+  1092, 	"Arabic (Palestinian Authority)" // marked
+  1093, 	"R\xE9union"
+  1094, 	"English (Falkland Islands)"
+  1095, 	"Venda"
+  1096, 	"Falkland Islands"
+  1097, 	"English (Macao SAR)"
+  1098, 	"English (St Helena, Ascension, Tristan da Cunha)"
+  1099, 	"St Helena, Ascension, Tristan da Cunha"
+  1100, 	"English (U.S. Outlying Islands)"
+  1101, 	"U.S. Outlying Islands"
+  1102, 	"Cornish (United Kingdom)"
+  1103, 	"Kashmiri" // marked
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1104, 	"Lakota (United States)"
+  1105, 	"English (U.S. Virgin Islands)"
+  1106, 	"U.S. Virgin Islands"
+  1107, 	"French (Congo)"
+  1108, 	"Swiss German (Switzerland)"
+  1109, 	"Portuguese (Timor-Leste)"
+  1110, 	"Swiss German (Liechtenstein)"
+  1111, 	"Venda (South Africa)"
+  1112, 	"Kashmiri (Arabic)" // marked
+  1113, 	"Russian (Moldova)"
+  1114, 	"Timor-Leste"
+  1115, 	"Cabo Verde"
+  1116, 	"Kabuverdianu (Cabo Verde)"
+  1117, 	"Kiswahili (Congo DRC)"
+  1118, 	"Lingala (Congo DRC)"
+  1119, 	"Afar"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1120, 	"Afar (Djibouti)"
+  1121, 	"Afar (Eritrea)"
+  1122, 	"Afar (Ethiopia)"
+  1123, 	"Afrikaans (Namibia)"
+  1124, 	"Aghem"
+  1125, 	"Aghem (Cameroon)"
+  1126, 	"Akan"
+  1127, 	"Akan (Ghana)"
+  1128, 	"Arabic (world)" // marked
+  1129, 	"Arabic (Djibouti)" // marked
+  1130, 	"Arabic (Eritrea)" // marked
+  1131, 	"Arabic (Israel)" // marked
+  1132, 	"Arabic (Comoros)" // marked
+  1133, 	"Arabic (Mauritania)" // marked
+  1134, 	"Lingala (Congo)"
+  1135, 	"Luba-Katanga (Congo DRC)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1136, 	"Arabic (Sudan)" // marked
+  1137, 	"Arabic (Somalia)" // marked
+  1138, 	"Arabic (South Sudan)" // marked
+  1139, 	"Arabic (Chad)" // marked
+  1140, 	"Asu"
+  1141, 	"Asu (Tanzania)"
+  1142, 	"Asturian"
+  1143, 	"Asturian (Spain)"
+  1144, 	"Basaa"
+  1145, 	"Basaa (Cameroon)"
+  1146, 	"Bemba"
+  1147, 	"Bemba (Zambia)"
+  1148, 	"Bena"
+  1149, 	"Bena (Tanzania)"
+  1150, 	"Bamanankan"
+  1151, 	"Faroese (Denmark)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1152, 	"Kurdish (Arabic, Iran)" // marked
+  1153, 	"Tibetan (India)"
+  1154, 	"Bodo"
+  1155, 	"Bodo (India)"
+  1156, 	"Blin"
+  1157, 	"Blin (Eritrea)"
+  1158, 	"Catalan (Andorra)"
+  1159, 	"Catalan (France)"
+  1160, 	"Catalan (Italy)"
+  1161, 	"Chiga"
+  1162, 	"Chiga (Uganda)"
+  1163, 	"Chakma"
+  1164, 	"Portuguese (Cabo Verde)"
+  1165, 	"Danish (Greenland)"
+  1166, 	"Taita"
+  1167, 	"Taita (Kenya)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1168, 	"German (Belgium)"
+  1169, 	"Zarma"
+  1170, 	"Zarma (Niger)"
+  1171, 	"Duala"
+  1172, 	"Duala (Cameroon)"
+  1173, 	"Jola-Fonyi"
+  1174, 	"Jola-Fonyi (Senegal)"
+  1175, 	"Dzongkha"
+  1176, 	"Dzongkha (Bhutan)"
+  1177, 	"Embu"
+  1178, 	"Embu (Kenya)"
+  1179, 	"Ewe"
+  1180, 	"Ewe (Ghana)"
+  1181, 	"Ewe (Togo)"
+  1182, 	"Greek (Cyprus)"
+  1183, 	"Haryanvi"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1184, 	"English (Europe)"
+  1185, 	"English (Antigua & Barbuda)"
+  1186, 	"English (Anguilla)"
+  1187, 	"English (American Samoa)"
+  1188, 	"English (Barbados)"
+  1189, 	"English (Belgium)"
+  1190, 	"English (Bermuda)"
+  1191, 	"English (Bahamas)"
+  1192, 	"Bahamas"
+  1193, 	"English (Botswana)"
+  1194, 	"English (Cocos (Keeling) Islands)"
+  1195, 	"Northern Luri"
+  1196, 	"English (Cook Islands)"
+  1197, 	"English (Cameroon)"
+  1198, 	"English (Christmas Island)"
+  1199, 	"English (Dominica)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1200, 	"English (Eritrea)"
+  1201, 	"English (Fiji)"
+  1202, 	"Fiji"
+  1203, 	"Portuguese (Macao SAR)"
+  1204, 	"Albanian (North Macedonia)"
+  1205, 	"English (Micronesia)"
+  1206, 	"English (Grenada)"
+  1207, 	"English (Guernsey)"
+  1208, 	"English (Ghana)"
+  1209, 	"English (Gibraltar)"
+  1210, 	"English (Gambia)"
+  1211, 	"Gambia"
+  1212, 	"English (Guam)"
+  1213, 	"English (Guyana)"
+  1214, 	"English (Isle of Man)"
+  1215, 	"Isle of Man"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1216, 	"English (British Indian Ocean Territory)"
+  1217, 	"English (Jersey)"
+  1218, 	"English (Kenya)"
+  1219, 	"English (Kiribati)"
+  1220, 	"Chakma (Chakma, Bangladesh)"
+  1221, 	"Saint Kitts and Nevis"
+  1222, 	"English (Cayman Islands)"
+  1223, 	"Chakma (Chakma, India)"
+  1224, 	"English (Liberia)"
+  1225, 	"English (Lesotho)"
+  1226, 	"English (Madagascar)"
+  1227, 	"English (Marshall Islands)"
+  1228, 	"Northern Luri (Iraq)"
+  1229, 	"Kiswahili (Tanzania)"
+  1230, 	"English (Northern Mariana Islands)"
+  1231, 	"English (Montserrat)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1232, 	"English (Malta)"
+  1233, 	"English (Mauritius)"
+  1234, 	"English (Malawi)"
+  1235, 	"English (Namibia)"
+  1236, 	"English (Norfolk Island)"
+  1237, 	"English (Nigeria)"
+  1238, 	"English (Nauru)"
+  1239, 	"English (Niue)"
+  1240, 	"English (Papua New Guinea)"
+  1241, 	"English (Pakistan)"
+  1242, 	"English (Pitcairn Islands)"
+  1243, 	"English (Puerto Rico)"
+  1244, 	"English (Palau)"
+  1245, 	"English (Rwanda)"
+  1246, 	"English (Solomon Islands)"
+  1247, 	"English (Seychelles)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1248, 	"English (Sudan)"
+  1249, 	"Kiswahili (Uganda)"
+  1250, 	"German (Italy)"
+  1251, 	"English (Sierra Leone)"
+  1252, 	"English (South Sudan)"
+  1253, 	"English (Sint Maarten)"
+  1254, 	"Sint Maarten"
+  1255, 	"English (Eswatini)"
+  1256, 	"English (Turks & Caicos Islands)"
+  1257, 	"English (Tokelau)"
+  1258, 	"English (Tonga)"
+  1259, 	"English (Tuvalu)"
+  1260, 	"English (Tanzania)"
+  1261, 	"English (Uganda)"
+  1262, 	"Malay"
+  1263, 	"Northern Luri (Iran)" // marked
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1264, 	"English (St. Vincent & Grenadines)"
+  1265, 	"English (British Virgin Islands)"
+  1266, 	"British Virgin Islands"
+  1267, 	"Albanian (Kosovo)"
+  1268, 	"Kosovo"
+  1269, 	"English (Vanuatu)"
+  1270, 	"English (Samoa)"
+  1271, 	"English (Zambia)"
+  1272, 	"Esperanto"
+  1273, 	"Esperanto (world)"
+  1274, 	"Spanish (Cuba)"
+  1275, 	"Spanish (Equatorial Guinea)"
+  1276, 	"Spanish (Philippines)"
+  1277, 	"Ewondo"
+  1278, 	"Ewondo (Cameroon)"
+  1279, 	"Manipuri (Bangla)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1280, 	"Haryanvi (Devanagari, India)"
+  1281, 	"Fulah (Latin)"
+  1282, 	"Fula (Latin, Cameroon)"
+  1283, 	"Serbian (Cyrillic, Kosovo)"
+  1284, 	"French (Burkina Faso)"
+  1285, 	"French (Burundi)"
+  1286, 	"French (Benin)"
+  1287, 	"French (St. Barth\xE9lemy)"
+  1288, 	"French (Central African Republic)"
+  1289, 	"Serbian (Latin, Kosovo)"
+  1290, 	"Mazanderani"
+  1291, 	"French (Djibouti)"
+  1292, 	"French (Algeria)"
+  1293, 	"French (Gabon)"
+  1294, 	"French (French Guiana)"
+  1295, 	"French (Guinea)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1296, 	"French (Guadeloupe)"
+  1297, 	"French (Equatorial Guinea)"
+  1298, 	"French (Comoros)"
+  1299, 	"Antigua & Barbuda"
+  1300, 	"Saint Martin"
+  1301, 	"French (Madagascar)"
+  1302, 	"French (Martinique)"
+  1303, 	"French (Mauritania)"
+  1304, 	"French (Mauritius)"
+  1305, 	"French (New Caledonia)"
+  1306, 	"French (Niger)"
+  1307, 	"French (French Polynesia)"
+  1308, 	"French (St. Pierre & Miquelon)"
+  1309, 	"Saint Pierre and Miquelon"
+  1310, 	"French (Rwanda)"
+  1311, 	"French (Seychelles)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1312, 	"French (Syria)"
+  1313, 	"French (Chad)"
+  1314, 	"French (Togo)"
+  1315, 	"French (Tunisia)"
+  1316, 	"French (Vanuatu)"
+  1317, 	"French (Wallis & Futuna)"
+  1318, 	"French (Mayotte)"
+  1319, 	"Friulian"
+  1320, 	"Friulian (Italy)"
+  1321, 	"Bhojpuri (Devanagari)"
+  1322, 	"Mazanderani (Iran)"
+  1323, 	"Gusii"
+  1324, 	"Gusii (Kenya)"
+  1325, 	"Manx"
+  1326, 	"Manx (Isle of Man)"
+  1327, 	"Hausa (Latin, Ghana)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1328, 	"Hausa (Latin, Niger)"
+  1329, 	"Interlingua"
+  1330, 	"Interlingua (world)"
+  1331, 	"Turks & Caicos Islands"
+  1332, 	"Italian (San Marino)"
+  1333, 	"Ngomba"
+  1334, 	"Ngomba (Cameroon)"
+  1335, 	"Machame"
+  1336, 	"Machame (Tanzania)"
+  1337, 	"Kabyle"
+  1338, 	"Kabyle (Algeria)"
+  1339, 	"Kamba"
+  1340, 	"Kamba (Kenya)"
+  1341, 	"Makonde"
+  1342, 	"Makonde (Tanzania)"
+  1343, 	"Kabuverdianu"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1344, 	"Chinese (Simplified, Macao SAR)"
+  1345, 	"Koyra Chiini"
+  1346, 	"Koyra Chiini (Mali)"
+  1347, 	"Kikuyu"
+  1348, 	"Kikuyu (Kenya)"
+  1349, 	"Xitsonga"
+  1350, 	"Bosnian (Latin, Bosnia & Herzegovina)"
+  1351, 	"Kako"
+  1352, 	"Kako (Cameroon)"
+  1353, 	"Kalenjin"
+  1354, 	"Kalenjin (Kenya)"
+  1355, 	"Ossetic (Georgia)"
+  1356, 	"Shambala"
+  1357, 	"Shambala (Tanzania)"
+  1358, 	"Bafia"
+  1359, 	"Bafia (Cameroon)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1360, 	"Prussian"
+  1361, 	"Colognian (Germany)"
+  1362, 	"Colognian"
+  1363, 	"Cornish"
+  1364, 	"Chuvash"
+  1365, 	"Chinese (Simplified, Hong Kong SAR)"
+  1366, 	"siSwati (South Africa)"
+  1367, 	"Edo"
+  1368, 	"Langi"
+  1369, 	"Langi (Tanzania)"
+  1370, 	"Ganda"
+  1371, 	"Ganda (Uganda)"
+  1372, 	"Lakota"
+  1373, 	"Ibibio"
+  1374, 	"Lingala"
+  1375, 	"Lingala (Angola)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1376, 	"Kanuri (Latin)"
+  1377, 	"Lingala (Central African Republic)"
+  1378, 	"Latin"
+  1379, 	"Luba-Katanga"
+  1380, 	"Papiamento"
+  1381, 	"Luo"
+  1382, 	"Luo (Kenya)"
+  1383, 	"Luyia"
+  1384, 	"Luyia (Kenya)"
+  1385, 	"Masai"
+  1386, 	"Masai (Kenya)"
+  1387, 	"Masai (Tanzania)"
+  1388, 	"Meru"
+  1389, 	"Meru (Kenya)"
+  1390, 	"Morisyen"
+  1391, 	"Morisyen (Mauritius)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1392, 	"Makhuwa-Meetto"
+  1393, 	"Makhuwa-Meetto (Mozambique)"
+  1394, 	"Metaʼ"
+  1395, 	"Metaʼ (Cameroon)"
+  1396, 	"Manipuri (Bangla, India)"
+  1397, 	"Sindhi (Devanagari, India)"
+  1398, 	"Sindhi (Devanagari)"
+  1399, 	"Central Atlas Tamazight (Arabic, Morocco)"
+  1400, 	"Mundang"
+  1401, 	"Mundang (Cameroon)"
+  1402, 	"Nama"
+  1403, 	"Nama (Namibia)"
+  1404, 	"Norwegian Bokm\xE5l (Svalbard & Jan Mayen)"
+  1405, 	"St. Barth\xE9lemy"
+  1406, 	"North Ndebele"
+  1407, 	"North Ndebele (Zimbabwe)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1408, 	"Dutch (Aruba)"
+  1409, 	"Dutch (Bonaire, Sint Eustatius and Saba)"
+  1410, 	"Dutch (Cura\xE7ao)"
+  1411, 	"Dutch (Suriname)"
+  1412, 	"Dutch (Sint Maarten)"
+  1413, 	"Kwasio"
+  1414, 	"Kwasio (Cameroon)"
+  1415, 	"Ngiemboon"
+  1416, 	"Ngiemboon (Cameroon)"
+  1417, 	"South Ndebele"
+  1418, 	"South Ndebele (South Africa)"
+  1419, 	"Nuer"
+  1420, 	"Nuer (South Sudan)"
+  1421, 	"Nyankole"
+  1422, 	"Nyankole (Uganda)"
+  1423, 	"Oromo (Kenya)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1424, 	"Malay (Singapore)"
+  1425, 	"Central Atlas Tamazight (Arabic)"
+  1426, 	"Ossetic (Russia)"
+  1427, 	"Ossetic"
+  1428, 	"Edo (Nigeria)"
+  1429, 	"Fula (Latin, Nigeria)"
+  1430, 	"Ibibio (Nigeria)"
+  1431, 	"Portuguese (Guinea-Bissau)"
+  1432, 	"Kanuri (Latin, Nigeria)"
+  1433, 	"Portuguese (Mozambique)"
+  1434, 	"St. Martin"
+  1435, 	"Latin (Vatican City)"
+  1436, 	"Papiamento (Caribbean)"
+  1437, 	"Rundi"
+  1438, 	"Rundi (Burundi)"
+  1439, 	"Rombo"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1440, 	"Rombo (Tanzania)"
+  1441, 	"Russian (Belarus)"
+  1442, 	"Russian (Kyrgyzstan)"
+  1443, 	"Russian (Kazakhstan)"
+  1444, 	"Russian (Ukraine)"
+  1445, 	"Rwa"
+  1446, 	"Rwa (Tanzania)"
+  1447, 	"Samburu"
+  1448, 	"Samburu (Kenya)"
+  1449, 	"Sangu"
+  1450, 	"Sangu (Tanzania)"
+  1451, 	"Sena"
+  1452, 	"Sena (Mozambique)"
+  1453, 	"Koyraboro Senni"
+  1454, 	"Koyraboro Senni (Mali)"
+  1455, 	"Sango"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1456, 	"Sango (Central African Republic)"
+  1457, 	"Tachelhit"
+  1458, 	"Tachelhit (Latin)"
+  1459, 	"Tachelhit (Latin, Morocco)"
+  1460, 	"Tachelhit (Tifinagh)"
+  1461, 	"Tachelhit (Tifinagh, Morocco)"
+  1462, 	"Somali (Djibouti)"
+  1463, 	"Somali (Ethiopia)"
+  1464, 	"Somali (Kenya)"
+  1465, 	"Spanish (Belize)"
+  1466, 	"Kashmiri (Devanagari)"
+  1467, 	"siSwati"
+  1468, 	"St. Pierre & Miquelon"
+  1469, 	"French (Caribbean)"
+  1470, 	"Saho"
+  1471, 	"Saho (Eritrea)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1472, 	"Sesotho (Lesotho)"
+  1473, 	"Swedish (\xC5land Islands)"
+  1474, 	"English (Indonesia)"
+  1475, 	"Javanese (Javanese, Indonesia)"
+  1476, 	"Spanish (Brazil)"
+  1477, 	"Javanese (Javanese)"
+  1478, 	"Tamil (Malaysia)"
+  1479, 	"Tamil (Singapore)"
+  1480, 	"Teso"
+  1481, 	"Teso (Kenya)"
+  1482, 	"Teso (Uganda)"
+  1483, 	"Tigre"
+  1484, 	"Tigre (Eritrea)"
+  1485, 	"Tongan"
+  1486, 	"Tongan (Tonga)"
+  1487, 	"Turkish (Cyprus)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1488, 	"Tasawaq"
+  1489, 	"Tasawaq (Niger)"
+  1490, 	"Central Atlas Tamazight (Latin, Morocco)"
+  1491, 	"Korean (North Korea)"
+  1492, 	"Low German"
+  1493, 	"Uzbek (Arabic)"
+  1494, 	"Uzbek (Arabic, Afghanistan)"
+  1495, 	"Vai"
+  1496, 	"Vai (Latin)"
+  1497, 	"Vai (Latin, Liberia)"
+  1498, 	"Vai (Vai)"
+  1499, 	"Vai (Vai, Liberia)"
+  1500, 	"Volap\xFCk"
+  1501, 	"Chuvash (Cyrillic)"
+  1502, 	"Vunjo"
+  1503, 	"Vunjo (Tanzania)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1504, 	"Walser"
+  1505, 	"Walser (Switzerland)"
+  1506, 	"Wolaytta"
+  1507, 	"Wolaytta (Ethiopia)"
+  1508, 	"Soga"
+  1509, 	"Soga (Uganda)"
+  1510, 	"Yangben"
+  1511, 	"Yangben (Cameroon)"
+  1512, 	"Yoruba (Benin)"
+  1513, 	"Low German (Germany)"
+  1514, 	"Low German (Netherlands)"
+  1515, 	"Portuguese (Switzerland)"
+  1516, 	"Portuguese (Equatorial Guinea)"
+  1517, 	"Portuguese (Luxembourg)"
+  1518, 	"Italian (Vatican City)"
+  1519, 	"Swiss German"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1520, 	"Unknown Codepage"
+  1521, 	"55000 (SMS GSM 7bit)"
+  1522, 	"55001 (SMS GSM 7bit Spanish)"
+  1523, 	"55002 (SMS GSM 7bit Portuguese)"
+  1524, 	"55003 (SMS GSM 7bit Turkish)"
+  1525, 	"55004 (SMS GSM 7bit Greek)"
+  1526, 	"Czechia"
+  1527, 	"siSwati (Eswatini)"
+  1528, 	"Bengali"
+  1529, 	"Fula (Latin, Ghana)"
+  1530, 	"English (Maldives)"
+  1531, 	"Fula (Latin, Guinea)"
+  1532, 	"Fula (Latin, Guinea-Bissau)"
+  1533, 	"Fula (Latin, Liberia)"
+  1534, 	"Fula (Latin, Mauritania)"
+  1535, 	"Fula (Latin, Niger)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1536, 	"Wallis & Futuna"
+  1537, 	"Fula (Latin, Sierra Leone)"
+  1538, 	"Pashto (Pakistan)"
+  1539, 	"Central Kurdish"
+  1540, 	"S\xE3o Tom\xE9 & Pr\xEDncipe"
+  1541, 	"Chakma (Chakma)"
+  1542, 	"Cebuano"
+  1543, 	"Cebuano (Latin)"
+  1544, 	"Cebuano (Latin, Philippines)"
+  1545, 	"English (St. Kitts & Nevis)"
+  1546, 	"St. Kitts & Nevis"
+  1547, 	"English (St. Lucia)"
+  1548, 	"St. Lucia"
+  1549, 	"St. Vincent & Grenadines"
+  1550, 	"French (St. Martin)"
+  1551, 	"Svalbard & Jan Mayen"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1552, 	"Portuguese (S\xE3o Tom\xE9 & Pr\xEDncipe)"
+  1553, 	"Dogri"
+  1554, 	"Dogri (Devanagari)"
+  1555, 	"Dogri (Devanagari, India)"
+  1556, 	"Fula (Adlam)"
+  1557, 	"Fula (Adlam, Burkina Faso)"
+  1558, 	"Fula (Adlam, Cameroon)"
+  1559, 	"Fula (Adlam, Ghana)"
+  1560, 	"Fula (Adlam, Gambia)"
+  1561, 	"Fula (Adlam, Guinea)"
+  1562, 	"Fula (Adlam, Guinea-Bissau)"
+  1563, 	"Fula (Adlam, Liberia)"
+  1564, 	"Fula (Adlam, Mauritania)"
+  1565, 	"Fula (Adlam, Niger)"
+  1566, 	"Fula (Adlam, Nigeria)"
+  1567, 	"Fula (Adlam, Sierra Leone)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1568, 	"Fula (Adlam, Senegal)"
+  1569, 	"Irish (United Kingdom)"
+  1570, 	"Maithili"
+  1571, 	"Maithili (India)"
+  1572, 	"Malay (Indonesia)"
+  1573, 	"Nigerian Pidgin"
+  1574, 	"Nigerian Pidgin (Latin)"
+  1575, 	"Nigerian Pidgin (Latin, Nigeria)"
+  1576, 	"Santali"
+  1577, 	"Santali (Ol Chiki)"
+  1578, 	"Santali (Ol Chiki, India)"
+  1579, 	"Sundanese"
+  1580, 	"Sundanese (Latin)"
+  1581, 	"Sundanese (Latin, Indonesia)"
+  1582, 	"Kanuri"
+  1583, 	"Manipuri"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1584, 	"Kʼicheʼ (Latin)"
+  1585, 	"Hindi (Latin, India)"
+  1586, 	"Hindi (Latin)"
+  1587, 	"Kaingang"
+  1588, 	"Kaingang (Latin)"
+  1589, 	"Kaingang (Latin, Brazil)"
+  1590, 	"Occitan (Spain)"
+  1591, 	"Rajasthani"
+  1592, 	"Rajasthani (Devanagari)"
+  1593, 	"Rajasthani (Devanagari, India)"
+  1594, 	"Sardinian"
+  1595, 	"Sardinian (Latin)"
+  1596, 	"Sardinian (Latin, Italy)"
+  1597, 	"Nheengatu"
+  1598, 	"Nheengatu (Latin)"
+  1599, 	"Nheengatu (Latin, Brazil)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  1600, 	"Nheengatu (Latin, Colombia)"
+  1601, 	"Nheengatu (Latin, Venezuela)"
+  1602, 	"T\xFCrkiye"
+  1603, 	"Fula"
+  1604, 	"Turkish (T\xFCrkiye)"
+  1605, 	"Fula (Latin)"
+  1606, 	"Haryanvi (Devanagari)"
+  1607, 	"Bhojpuri"
+  1608, 	"Bhojpuri (Devanagari, India)"
+  1609, 	"Chuvash (Cyrillic, Russia)"
+  1610, 	"English (world)"
+  1611, 	"Fula (Latin, Burkina Faso)"
+  1612, 	"Fula (Latin, Gambia)"
+  1613, 	"Prussian (world)"
+  1614, 	"Volap\xFCk (world)"
+END

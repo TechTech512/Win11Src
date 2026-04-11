@@ -1,0 +1,8 @@
+TARGETNAME=nlsbres
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+RESOURCE_ONLY_DLL=1
+
+SOURCES= \
+        nlsbres.rc
