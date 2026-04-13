@@ -1,0 +1,31 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table for DDACLSYS NTMARTA
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "SysPrep module for Resetting Data Drive ACL "
+#define VER_INTERNALNAME_STR        "DDACLSys"
+#define VER_ORIGINALFILENAME_STR    "DDACLSys.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_PROJ                              "DDACLSys"
+END

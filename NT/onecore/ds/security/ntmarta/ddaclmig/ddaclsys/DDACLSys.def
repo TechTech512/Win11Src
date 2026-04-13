@@ -1,0 +1,5 @@
+LIBRARY DDACLSYS
+EXPORTS
+    DDACLSys_Offline_Specialize 
+    DDACLSys_Specialize 
+
