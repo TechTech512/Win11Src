@@ -1,0 +1,22 @@
+TARGETNAME=hid
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=hid.def
+USE_MSVCRT=1
+EXPECTED_WINVER=10.0
+
+SOURCES=hiddll.c \
+		query.c \
+		trnslate.c \
+		nthid.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib
+	
+NT_SIGNCODE=1
