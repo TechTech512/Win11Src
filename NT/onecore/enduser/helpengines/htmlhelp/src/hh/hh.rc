@@ -1,0 +1,32 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2000 Microsoft Corporation. All rights reserved.
+//
+// Resource table for HTML Help
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Microsoft\xAE HTML Help Executable"
+#define VER_INTERNALNAME_STR        "HH 1.41"
+#define VER_ORIGINALFILENAME_STR    "HH.exe"
+#ifdef VER_PRODUCTNAME_STR
+#undef VER_PRODUCTNAME_STR
+#define VER_PRODUCTNAME_STR         "HTML Help"
+#endif
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDICON_HH ICON DISCARDABLE "hh.ico"
