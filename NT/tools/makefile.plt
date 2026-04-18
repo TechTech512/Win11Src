@@ -13,7 +13,7 @@ BASEDIR=$(_NTDRIVE)$(_NTROOT)
 # A couple of overrides
 
 !ifndef _NT_TARGET_VERSION # Default to current OS version
-_NT_TARGET_VERSION = 0x502
+_NT_TARGET_VERSION = 0xA00
 !endif
 
 !ifndef _NT_TOOLS_VERSION # Default to current VC version
@@ -58,6 +58,60 @@ DDK_PATH = $(BASEDIR)\public\ddk
 
 !ifndef DDK_INC_PATH
 DDK_INC_PATH = $(DDK_PATH)\inc
+!endif
+
+!ifndef KMDF_INC_PATH
+KMDF_INC_PATH = $(DDK_PATH)\inc\wdf\kmdf
+!endif
+
+!ifndef KMDF_VER_PATH_1_5
+KMDF_VER_PATH_1_5 = 1.5
+!endif
+
+!ifndef KMDF_VER_PATH_1_7
+KMDF_VER_PATH_1_7 = 1.7
+!endif
+
+!ifndef KMDF_VERSION_MINOR_LATEST
+KMDF_VERSION_MINOR_LATEST=9
+!endif
+
+!ifndef KMDF_VER_PATH_LATEST
+KMDF_VER_PATH_LATEST = 1.$(KMDF_VERSION_MINOR_LATEST)
+!endif
+
+# default to current KMDF version
+!ifndef KMDF_VER_PATH
+KMDF_VER_PATH = $(KMDF_VER_PATH_LATEST)
+!endif
+
+!ifndef KMDF_LIB_PATH
+KMDF_LIB_PATH = $(DDK_LIB_PATH)\wdf\kmdf
+!endif
+
+!ifndef UMDF_INC_PATH
+UMDF_INC_PATH = $(DDK_PATH)\inc\wdf\umdf
+!endif
+
+!ifndef UMDF_VER_PATH_1_5
+UMDF_VER_PATH_1_5 = 1.5
+!endif
+
+!ifndef UMDF_VER_PATH_1_7
+UMDF_VER_PATH_1_7 = 1.7
+!endif
+
+!ifndef UMDF_VERSION_MINOR_LATEST
+UMDF_VERSION_MINOR_LATEST=9
+!endif
+
+!ifndef UMDF_VER_PATH_LATEST
+UMDF_VER_PATH_LATEST = 1.$(UMDF_VERSION_MINOR_LATEST)
+!endif
+
+# default to current UMDF version
+!ifndef UMDF_VER_PATH
+UMDF_VER_PATH = $(UMDF_VER_PATH_LATEST)
 !endif
 
 !ifndef DDK_LIB_DEST
@@ -133,7 +187,7 @@ IOSTREAMS_INC_PATH = $(SDK_INC_PATH)\crt\iostreams
 !endif
 
 !ifndef STL6_INC_PATH
-STL6_INC_PATH = $(SDK_INC_PATH)\crt\stl110
+STL6_INC_PATH = $(SDK_INC_PATH)\crt\stl60
 !endif
 
 !ifndef CRT_LIB_PATH

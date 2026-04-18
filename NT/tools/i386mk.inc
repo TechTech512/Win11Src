@@ -176,68 +176,85 @@ RTTI_FLAGS=/GR
 RTTI_FLAGS=/GR-
 !endif
 
-!if "$(BUFFER_OVERFLOW_CHECKS)" == "1" || \
-    ("$(BUFFER_OVERFLOW_CHECKS)" == "CHK" && !$(FREEBUILD))
-! if "$(TARGETTYPE)" == "DRIVER" || \
-    "$(TARGETTYPE)" == "EXPORT_DRIVER" || \
-    "$(TARGETTYPE)" == "DRIVER_LIBRARY"
-!  if "$(DRIVERTYPE)" == "WDM" || "$(DRIVERTYPE)" == "wdm"
-BO_FLAGS=/GS
-BO_LIB=$(SDK_LIB_PATH)\BufferOverflowK.lib $(DDK_LIB_PATH)\wdm.lib
-DRIVER_ENTRY=GsDriverEntry
-!  else
-!   if "$(DRIVERTYPE)" != "VXD"
-BO_FLAGS=/GS
-BO_LIB=$(SDK_LIB_PATH)\BufferOverflowK.lib $(DDK_LIB_PATH)\ntoskrnl.lib
-DRIVER_ENTRY=GsDriverEntry
-!   endif
-!  endif
+# On by default
+!if "$(BUFFER_OVERFLOW_CHECKS)" == ""
+BUFFER_OVERFLOW_CHECKS=1
+!endif
+
+# Turn off for the select few
+!if ("$(DRIVERTYPE)" == "VXD") || \
+    (("$(TARGETTYPE)" == "MINIPORT") && ($(_NT_TARGET_VERSION) < 0x502)) || \
+    (("$(TARGETTYPE)" == "DYNLINK") && defined(RESOURCE_ONLY_DLL)) || \
+    "$(BUFFER_OVERFLOW_CHECKS)" == "0"
+!undef BUFFER_OVERFLOW_CHECKS
+!endif
+
+!if defined(BUFFER_OVERFLOW_CHECKS)
+# verify it's one of the chosen few - 1, NTDLL or compile only - all others are wrong.
+! if "$(BUFFER_OVERFLOW_CHECKS)" != "1" && \
+     "$(BUFFER_OVERFLOW_CHECKS)" != "NTDLL" && \
+     "$(BUFFER_OVERFLOW_CHECKS)" != "COMPILE_ONLY" && \
+     "$(BUFFER_OVERFLOW_CHECKS)" != "2" && \
+     "$(BUFFER_OVERFLOW_CHECKS)" != "LINK_ONLY"
+!  error INVALID BUFFER_OVERFLOW_CHECKS value "$(BUFFER_OVERFLOW_CHECKS)" in $(MAKEDIR)
+! endif
+! if "$(BUFFER_OVERFLOW_CHECKS)" == "LINK_ONLY"
+BO_FLAGS=/GS-
+BUFFER_OVERFLOW_CHECKS=1
 ! else
-!  if "$(TARGETTYPE)" == "GDI_DRIVER"
 BO_FLAGS=/GS
+! endif
+! if "$(BUFFER_OVERFLOW_CHECKS)" == "1"
+!  if "$(TARGETTYPE)" == "DRIVER" || \
+      "$(TARGETTYPE)" == "EXPORT_DRIVER" || \
+      "$(TARGETTYPE)" == "DRIVER_LIBRARY" || \
+      "$(TARGETTYPE)" == "MINIPORT" 
+BO_LIB=$(DDK_LIB_PATH)\BufferOverflowFastFailK.lib
+DRIVER_ENTRY=GsDriverEntry
+!  elseif "$(BUFFER_OVERFLOW_CHECKS)" == "2"
+!  elseif "$(TARGETTYPE)" == "DRIVER" || \
+          "$(TARGETTYPE)" == "EXPORT_DRIVER" || \
+          "$(TARGETTYPE)" == "DRIVER_LIBRARY" || \
+          "$(TARGETTYPE)" == "MINIPORT" 
+BO_LIB=$(DDK_LIB_PATH)\WdfDriverEntry.lib $(DDK_LIB_PATH)\BufferOverflowFastFailK.lib
+DRIVER_ENTRY=FxDriverEntry
+!  elseif "$(TARGETTYPE)" == "GDI_DRIVER"
 BO_LIB=$(SDK_LIB_PATH)\BufferOverflowGDI.lib
 GDI_DRIVER_ENTRY=GsDrvEnableDriver
-!  else
-!   if  "$(TARGETTYPE)" == "MINIPORT"
-# Nothing for now
-!   else
-!    if "$(TARGETTYPE)" == "DYNLINK"
-!     if !(("$(UMTYPE)"== "nt") || ("$(UMTYPE)"=="ntss"))
-BO_FLAGS=/GS
-BO_LIB=$(SDK_LIB_PATH)\BufferOverflowU.lib $(SDK_LIB_PATH)\kernel32.lib
-!      if !defined(RESOURCE_ONLY_DLL) && "$(DLLENTRY)" == "-noentry"
-DLLENTRY=-entry:_DllMainCRTStartupForGS@12
-!      endif
-!     endif
-!    else
-!     if ("$(UMTYPE)"== "nt") || ("$(UMTYPE)"=="ntss")
-BO_FLAGS=/GS
-BO_LIB=$(SDK_LIB_PATH)\BufferOverflow.lib
+!  elseif "$(TARGETTYPE)" == "DYNLINK"
+!   if !(("$(UMTYPE)"== "nt") || ("$(UMTYPE)"=="ntss"))
+!    if ("$(DLLENTRY)" == "/noentry" || "$(DLLENTRY)" == "-noentry")
+!     if defined(USE_MSVCRT) || defined(USE_LIBCMT)
+DLLENTRY=-entry:_DllMainCRTStartup@12
 !     else
-BO_FLAGS=/GS
-BO_LIB=$(SDK_LIB_PATH)\BufferOverflowU.lib $(SDK_LIB_PATH)\kernel32.lib
+DLLENTRY=-entry:_DllMainCRTStartupForGS@12
 !     endif
+!    endif
+!    if !defined(USE_MSVCRT) && !defined(USE_LIBCMT)
+BO_LIB=$(SDK_LIB_PATH)\BufferOverflowU.lib
+!    endif
+!   endif
+!  else	# TARGETTYPE == PROGRAM/LIBRARY/NOTARGET with special build rules
+!   if ("$(UMTYPE)"== "nt") || ("$(UMTYPE)"=="ntss")
+!    if defined(NTKERNEL)
+BO_LIB=$(SDK_LIB_PATH)\BufferOverflowK.lib
+!    else
+BO_LIB=$(SDK_LIB_PATH)\BufferOverflow.lib
+!    endif
+!   else
+!    if !defined(USE_MSVCRT) && !defined(USE_LIBCMT)
+BO_LIB=$(SDK_LIB_PATH)\BufferOverflowU.lib
 !    endif
 !   endif
 !  endif
-! endif
-!else
-!if "$(BUFFER_OVERFLOW_CHECKS)" == "NTDLL"
-# Needed for EXEs that can't link to kernel32.dll (smss.exe, sprestrt.exe, etc)
-BO_FLAGS=/GS
+! elseif "$(BUFFER_OVERFLOW_CHECKS)" == "NTDLL"
 BO_LIB=$(SDK_LIB_PATH)\BufferOverflow.lib
-!else
-!if "$(BUFFER_OVERFLOW_CHECKS)" == "GDI"
-# Needed for LIBs linked into drivers of type GDI_DRIVER
-BO_FLAGS=/GS
-BO_LIB=$(SDK_LIB_PATH)\BufferOverflowGDI.lib
-!else
-!if "$(BUFFER_OVERFLOW_CHECKS)" == "NO_NTDLL"
-BO_FLAGS=/GS
-BO_LIB=$(SDK_LIB_PATH)\BufferOverflowU.lib
-!endif
-!endif
-!endif
+!  if ("$(TARGETTYPE)" == "DYNLINK") && \
+      ("$(DLLENTRY)" == "/noentry" || "$(DLLENTRY)" == "-noentry") && \
+      ("$(TARGETNAME)" != "ntdll")
+DLLENTRY=-entry:_DllMainCRTStartupForGS@12
+!  endif
+! endif
 !endif  # Overflow checks
 
 !ifndef X86_CPU_OPTIMIZATION
@@ -250,21 +267,13 @@ X86_CPU_OPTIMIZATION=/G6
 
 !if defined(VC7_SYMBOLS) || ("$(TARGETTYPE)" == "GDI_DRIVER") || ("$(TARGETTYPE)" == "DRIVER") || ("$(TARGETTYPE)" == "EXPORT_DRIVER")
 
-ERATTA_FLAGS=/QIfdiv-
-!if [set _CL_=]
-!endif
-!if [set _LINK_=]
-!endif
-!if [set _ML_=]
-!endif
-
 !else
 
 
 !endif
 
 STDFLAGS= /c /Zp8 /Gy /Gm- $(CBSTRING) $(MSC_WARNING_LEVEL) $(MSC_CALL_TYPE) \
-          $(ERATTA_FLAGS) $(EH_FLAGS) \
+          $(EH_FLAGS) \
           $(RTTI_FLAGS) $(STRING_POOLING) $(BO_FLAGS)
 
 !IF "$(386_STDCALL)" == "0"

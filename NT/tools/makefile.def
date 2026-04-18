@@ -1707,7 +1707,7 @@ UMLIBS=$(UMLIBS) $(OS2_LIBS)
 # If you edit this line you need to modify $(BASEDIR)\sdktools\build\build.c
 #
 
-NTINCLUDES=$(OAK_INC_PATH);$(SDK_INC_PATH)
+NTINCLUDES=$(OAK_INC_PATH);$(SDK_INC_PATH);$(MINWIN_SDK_INC_PATH)
 
 #
 # Let drivers include files such as ntddk.h.
@@ -1723,6 +1723,110 @@ NTINCLUDES=$(NTINCLUDES);$(DDK_INC_PATH);$(IFSKIT_INC_PATH)
         "$(TARGETTYPE)" == "MINIPORT"      || \
         "$(TARGETTYPE)" == "DRIVER_LIBRARY"
 NTINCLUDES=$(NTINCLUDES);$(DDK_INC_PATH);$(WDM_INC_PATH)
+!ENDIF
+
+!IF "$(BUILD_MINWIN)" == "1" && "$(MINWIN_INC_PATH)" != ""
+NTINCLUDES=$(NTINCLUDES);$(MINWIN_INC_PATH);$(MINWIN_PRIV_SDK_INC_PATH)
+C_DEFINES=$(C_DEFINES) -DBUILD_MINWIN
+!ENDIF
+
+#
+# User mode scheduling (UMS) build options.
+#
+
+!if "$(ENABLE_UMS)" == "1"
+!    if $(386)
+BUILD_UMS_ENABLED=0
+!    elseif $(AMD64)
+BUILD_UMS_ENABLED=1
+!    elseif $(IA64)
+BUILD_UMS_ENABLED=1
+!    elseif $(ARM)
+BUILD_UMS_ENABLED=0
+!    else
+!error Unsupported architecture.
+!endif
+C_DEFINES=$(C_DEFINES) /DBUILD_UMS_ENABLED=$(BUILD_UMS_ENABLED)
+!endif
+
+
+#
+# Temporarily enable the deprecated macros KMDF_VERSION and UMDF_VERSION for the WDK
+#
+
+!   if DEFINED(KMDF_VERSION)
+!      message warning : The directive KMDF_VERSION has been replaced by KMDF_VERSION_MAJOR and will be removed in the next version of the WDK. Please update your scripts accordingly.
+KMDF_VERSION_MAJOR = $(KMDF_VERSION)
+!   endif
+
+!   if DEFINED(UMDF_VERSION)
+!      message warning : The directive UMDF_VERSION has been replaced by UMDF_VERSION_MAJOR and will be removed in the next version of the WDK. Please update your scripts accordingly.
+UMDF_VERSION_MAJOR = $(UMDF_VERSION)
+!   endif
+
+
+!IF DEFINED(KMDF_VERSION_MAJOR)
+!   if ("$(KMDF_VERSION_MAJOR)" == "1" || "$(KMDF_VERSION_MAJOR)" == "01")
+KMDF_VERSION_MAJOR = 1
+!       IF !DEFINED(KMDF_VERSION_MINOR)
+KMDF_VERSION_MINOR = $(KMDF_VERSION_MINOR_LATEST)
+!       ENDIF
+KMDF_VER_PATH = $(KMDF_VERSION_MAJOR).$(KMDF_VERSION_MINOR)
+!   else
+!       error using incorrect KMDF major version number $(KMDF_VERSION_MAJOR).
+!   endif
+NTINCLUDES=$(NTINCLUDES);$(KMDF_INC_PATH)\$(KMDF_VER_PATH)
+
+#
+# Add Windows Driver Framework inc if it is a WDF driver.
+#
+
+#
+# KMDF_MAJOR_VERSION and KMDF_MINOR_VERSION are C flags and can be used by
+# the C preprocessor, in order to find the version of KMDF
+#
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MAJOR_VERSION=$(KMDF_VERSION_MAJOR)
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MINOR_VERSION=$(KMDF_VERSION_MINOR)
+
+#
+# KMDF_MAJOR_VERSION_STRING and KMDF_MINOR_VERSION_STRING are C flags and
+# can be used by scripts and applications to build KMDF filenames
+# dynamically (e.g. the nonpnpapp uses it to build the name of the
+# coinstaller)
+#
+!   if $(KMDF_VERSION_MAJOR) < 10
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MAJOR_VERSION_STRING=0$(KMDF_VERSION_MAJOR)
+!   else if $(KMDF_VERSION_MAJOR) < 100
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MAJOR_VERSION_STRING=$(KMDF_VERSION_MAJOR)
+!   else
+!       error using incorrect KMDF major version number $(KMDF_VERSION_MAJOR).
+!   endif
+
+!   if $(KMDF_VERSION_MINOR) < 10
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MINOR_VERSION_STRING=00$(KMDF_VERSION_MINOR)
+!   else if $(KMDF_VERSION_MINOR) < 100
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MINOR_VERSION_STRING=0$(KMDF_VERSION_MINOR)
+!   else if $(KMDF_VERSION_MINOR) < 1000
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MINOR_VERSION_STRING=$(KMDF_VERSION_MINOR)
+!   else
+!       error using incorrect KMDF minor version number $(KMDF_VERSION_MINOR).
+!   endif
+!ELSE
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MAJOR_VERSION_STRING=01
+USER_C_FLAGS=$(USER_C_FLAGS) /DKMDF_MINOR_VERSION_STRING=00$(KMDF_VERSION_MINOR_LATEST)
+!ENDIF
+
+!IF DEFINED(UMDF_VERSION_MAJOR)
+!   if ("$(UMDF_VERSION_MAJOR)" == "1" || "$(UMDF_VERSION_MAJOR)" == "01")
+UMDF_VERSION_MAJOR = 1
+!       IF !DEFINED(UMDF_VERSION_MINOR)
+UMDF_VERSION_MINOR = $(UMDF_VERSION_MINOR_LATEST)
+!       ENDIF
+UMDF_VER_PATH = $(UMDF_VERSION_MAJOR).$(UMDF_VERSION_MINOR)
+!   else
+!       error using incorrect UMDF major version number $(UMDF_VERSION_MAJOR).
+!   endif
+NTINCLUDES=$(NTINCLUDES);$(UMDF_INC_PATH)\$(UMDF_VER_PATH)
 !ENDIF
 
 !IFNDEF CBSTRING
@@ -2115,7 +2219,7 @@ NTTEST=$(nttest)
 !ENDIF
 
 !IFDEF makedll
-MAKEDLL=$(makedll)
+!error use MAKEDLL instead of makedll.
 !ENDIF
 
 !IFDEF umtest
@@ -2171,11 +2275,11 @@ OBJECTS=$(OBJECTS) $(MAC_RESOURCE_OBJECT)
 
 !IF "$(BUILDMSG)" != "Stop."
 ! IFDEF NOLINK
-!  UNDEF NTTEST
+!  UNDEF NTKERNEL
 !  UNDEF MAKEDLL
 ! ELSE
 !  IFDEF nolink
-!   UNDEF NTTEST
+!   UNDEF NTKERNEL
 !   UNDEF MAKEDLL
 !  ENDIF
 ! ENDIF # DEF NOLINK
@@ -2256,6 +2360,15 @@ TARGETEXT=vxd
 TARGETLIB=$(DDK_LIB_PATH)\ntoskrnl.lib $(DDK_LIB_PATH)\hal.lib $(DDK_LIB_PATH)\wmilib.lib
 !ENDIF
 
+#
+# Add Windows Driver Framework lib if it is a WDF driver
+#
+!IF DEFINED(KMDF_VERSION_MAJOR)
+TARGETLIB=$(TARGETLIB) \
+          $(KMDF_LIB_PATH)\$(KMDF_VER_PATH)\WdfLdr.lib \
+          $(KMDF_LIB_PATH)\$(KMDF_VER_PATH)\WdfDriverEntry.lib
+!ENDIF
+
 !ELSEIF "$(TARGETTYPE)" == "EXPORT_DRIVER"
 ! IF "$(MAKEDLL)" != ""
 TARGETEXT=sys
@@ -2263,6 +2376,16 @@ TARGETEXT=sys
 TARGETLIB=$(DDK_LIB_PATH)\wdm.lib
 !ELSE
 TARGETLIB=$(DDK_LIB_PATH)\ntoskrnl.lib $(DDK_LIB_PATH)\hal.lib $(DDK_LIB_PATH)\wmilib.lib
+!ENDIF
+
+#
+# Add Windows Driver Framework lib if it is a WDF export driver
+#
+!IF DEFINED(KMDF_VERSION_MAJOR)
+TARGETLIB=$(TARGETLIB) \
+          $(KMDF_LIB_PATH)\$(KMDF_VER_PATH)\WdfLdr.lib \
+          $(KMDF_LIB_PATH)\$(KMDF_VER_PATH)\WdfDriverEntry.lib
+
 !ENDIF
 
 ! ELSE
@@ -3017,6 +3140,10 @@ LINKER_STACKSIZE = -STACK:$(DEFAULT_STACKRESERVE),$(DEFAULT_STACKCOMMIT)
 !endif
 !endif
 
+! if defined(KMDF_VERSION_MAJOR)
+DRIVER_ENTRY=FxDriverEntry
+! endif
+
 LINKER_STACKSIZE_DLL=-STACK:0x40000,0x1000
 
 !if defined(USE_MAPSYM) && !defined(NO_MAPSYM)
@@ -3068,6 +3195,8 @@ BINPLACE_FLAGS = -dl $(TARGETNAME).$(TARGETEXT),$(DLOAD_ERROR_HANDLER) $(BINPLAC
 CRTLIBS=$(CRTLIBS) $(BASE_LIB_PATH)\kernel32dloadhandler.lib
 TARGETLIBS = $(TARGETLIBS) $(SDK_LIB_PATH)\kernl32p.lib
 !  else if "$(DLOAD_ERROR_HANDLER)" == "dloadhelper"
+CRTLIBS=$(CRTLIBS) $(SDK_LIB_PATH)\dloadhelper.lib
+!  else if "$(DLOAD_ERROR_HANDLER)" == "kernelbase"
 CRTLIBS=$(CRTLIBS) $(SDK_LIB_PATH)\dloadhelper.lib
 !  else
 CRTLIBS=$(CRTLIBS) $(SDK_LIB_PATH)\delayimp.lib
