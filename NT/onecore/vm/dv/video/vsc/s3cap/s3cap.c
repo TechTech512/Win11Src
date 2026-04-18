@@ -1,5 +1,3 @@
-#pragma warning (disable:4133)
-
 #include <stdlib.h>
 #include <wdm.h>
 #include <wdf.h>
@@ -12,8 +10,8 @@ long __cdecl S3CapEvtDeviceAdd(
 
 // Driver entry point
 long DriverEntry(
-    struct PDRIVER_OBJECT *DriverObject,
-    struct UNICODE_STRING *RegistryPath
+    struct _DRIVER_OBJECT *DriverObject,
+    struct _UNICODE_STRING *RegistryPath
 )
 {
     long status = 0;
@@ -25,22 +23,13 @@ long DriverEntry(
         ULONG Unknown3;
     } driverConfig;
     
-    driverConfig.Size = 0x14;
-    driverConfig.EvtDeviceAdd = S3CapEvtDeviceAdd;
     driverConfig.Unknown1 = 0;
     driverConfig.Unknown2 = 0;
+	driverConfig.Size = 0x14;
+	driverConfig.EvtDeviceAdd = S3CapEvtDeviceAdd;
     driverConfig.Unknown3 = 0x57335376;
-    
-    ((long (__cdecl *)(void *, void *, UNICODE_STRING*, void *, void *, void *))WdfFunctions[0x74])(
-        WdfDriverGlobals,
-        DriverObject,
-        RegistryPath,
-        0,
-        &driverConfig,
-        0
-    );
-    
-    return status;
+
+    return ((long (__cdecl *)(void *, void *, UNICODE_STRING*, void *, void *, void *))WdfFunctions[0x74])(WdfDriverGlobals,DriverObject,RegistryPath,0,&driverConfig,0);
 }
 
 // Device add callback
@@ -52,13 +41,6 @@ long __cdecl S3CapEvtDeviceAdd(
     long status = 0;
     unsigned char attributes[4];
     
-    ((long (__cdecl *)(void *, void *, int, void *))WdfFunctions[0x4b])(
-        WdfDriverGlobals,
-        &DeviceInit,
-        0,
-        attributes
-    );
-    
-    return status;
+    return ((long (__cdecl *)(void *, void *, int, void *))WdfFunctions[0x4b])(WdfDriverGlobals,&DeviceInit,0,attributes);
 }
 
