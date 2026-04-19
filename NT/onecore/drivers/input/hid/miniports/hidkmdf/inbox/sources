@@ -1,0 +1,26 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 2010
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=mshidkmdf
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+BUFFER_OVERFLOW_CHECKS=2
+
+TARGETLIBS=\
+        $(SDK_LIB_PATH)\BufferOverflowK.lib \
+        $(DDK_LIB_PATH)\ntoskrnl.lib \
+        $(DDK_LIB_PATH)\hidclass.lib
+
+NT_SIGNCODE=1
+
+SOURCES=\
+        ..\hidkmdf.c         \
+        ..\hidkmdf.rc
