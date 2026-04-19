@@ -1,0 +1,32 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2010 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Human Interface Library
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "Pass-through Driver for HID-UMDF Interface"
+#define VER_INTERNALNAME_STR        "MSHIDUMDF.SYS"
+#define VER_ORIGINALFILENAME_STR    "MSHIDUMDF.SYS"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_HIDUMDF_SERVICE_NAME              "Pass-through HID to UMDF Driver"
+	IDS_HIDUMDF_SERVICE_DESC              "Device Driver to provide pass-through interface between HIDCLASS and UMDF"
+END
