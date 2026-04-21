@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 1998 Microsoft Corporation. All rights reserved.
+//
+// Resource table for ACPI alarm
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "ACPI Wake Alarm"
+#define VER_INTERNALNAME_STR        "acpitime.sys"
+#define VER_ORIGINALFILENAME_STR    "acpitime.sys"
+
+#include "common.ver"
