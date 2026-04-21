@@ -3,10 +3,7 @@
 #include <ntddk.h>
 #include <wdm.h>
 #include <wdf.h>
-
-// External global variables
-extern void (*TrFunctions[])(void);
-extern void *TrBindContext;
+#include <trustedruntimeclx.h>
 
 // Forward declarations
 NTSTATUS TreeProxyEvtAddDevice(WDFDRIVER *Driver, PWDFDEVICE_INIT DeviceInit);
@@ -89,9 +86,9 @@ NTSTATUS TreeProxyEvtAddDevice(
     status = (*(long (__cdecl *)(void *, PWDFDEVICE_INIT, int, int, int, ULONG *))WdfFunctions[0x7f])(
         WdfDriverGlobals,
         DeviceInit,
-        1,
+        TR_SERVICE_REQUEST_FROM_USERMODE,
         0x200,
-        0,
+        TR_DEVICE_NO_SERIALIZATION,
         &someValue
     );
     
@@ -101,8 +98,8 @@ NTSTATUS TreeProxyEvtAddDevice(
     
     deviceId = (PWCHAR)(*(void *(__cdecl *)(void *, ULONG))WdfFunctions[0xc2])(WdfDriverGlobals, someValue);
     
-    if (deviceId[((someValue & 0xfffffffe) - 2) / 2] == 0) {
-        for (p = deviceId; *p != 0; p++) {
+    if (deviceId[((someValue & 0xfffffffe) - TR_DEVICE_SERIALIZE_PER_SERVICE) / TR_DEVICE_SERIALIZE_PER_SERVICE] == TR_DEVICE_NO_SERIALIZATION) {
+        for (p = deviceId; *p != TR_DEVICE_NO_SERIALIZATION; p++) {
             if (*p == L'\\') {
                 break;
             }
@@ -110,7 +107,7 @@ NTSTATUS TreeProxyEvtAddDevice(
         
         if (*p == L'\\') {
             backslashPos = p + 1;
-            for (p = backslashPos; *p != 0; p++) {
+            for (p = backslashPos; *p != TR_DEVICE_NO_SERIALIZATION; p++) {
             }
             guidStringLength = (USHORT)((ULONG_PTR)p - (ULONG_PTR)backslashPos);
             guidString.Buffer = backslashPos;
