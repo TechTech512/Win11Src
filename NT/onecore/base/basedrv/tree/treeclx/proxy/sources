@@ -1,0 +1,33 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 2011
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=WindowsTrustedRTProxy
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+BUFFER_OVERFLOW_CHECKS=0
+
+KMDF_VERSION_MAJOR=1
+KMDF_VERSION_MINOR=15
+
+TARGETLIBS=\
+        $(DDK_LIB_PATH)\ntoskrnl.lib \
+		$(DDK_LIB_PATH)\wdf\kmdf\1.15\WdfDriverEntry.lib \
+        $(DDK_LIB_PATH)\wdf\kmdf\1.15\WdfLdr.lib \
+        $(DDK_LIB_PATH)\BufferOverflowFastFailK.lib \
+        $(DDK_LIB_PATH)\treeclxstub.lib
+
+INCLUDES=$(DDK_INC_PATH)\wdf\kmdf\1.15
+
+NT_SIGNCODE=1
+
+SOURCES=\
+        proxy.c         \
+        proxy.rc
