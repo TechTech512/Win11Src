@@ -1,0 +1,7 @@
+LIBRARY ntosext
+EXPORTS
+    DllUnload PRIVATE
+    ExpMicrocodeInformationLoad 
+    ExpMicrocodeInformationUnload 
+    ExpMicrocodeInitialization 
+

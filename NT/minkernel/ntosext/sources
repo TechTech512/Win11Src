@@ -1,0 +1,27 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 1989
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=ntosext
+TARGETPATH=obj
+TARGETTYPE=EXPORT_DRIVER
+DLLDEF=ntosext.def
+
+TARGETLIBS=\
+        $(DDK_LIB_PATH)\ntoskrnl.lib \
+		$(DDK_LIB_PATH)\BufferOverflowFastFailK.lib
+
+NT_SIGNCODE=1
+
+INCLUDES=$(DDK_INC_PATH)
+
+SOURCES=\
+        host.c         \
+        ucode.c         \
+        host.rc

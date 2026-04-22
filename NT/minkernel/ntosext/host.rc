@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2000 Microsoft Corporation. All rights reserved.
+//
+// Resource table for NTOSEXT
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "NTOS extension host driver"
+#define VER_INTERNALNAME_STR        "ntosext.sys"
+#define VER_ORIGINALFILENAME_STR    "ntosext.sys"
+
+#include "common.ver"
