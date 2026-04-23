@@ -11,4 +11,6 @@ No copyright infringement intended as well and the Windows 11 operating system i
 
 (c) 2021 Microsoft Corporation.  All rights reserved.
 
+Some code might also be derived from other non-Microsoft open-source projects, such as ReactOS. All other non-Microsoft trademarks are property of their respective owners.
+
 Source code compiled by TechTech512 on GitHub.
