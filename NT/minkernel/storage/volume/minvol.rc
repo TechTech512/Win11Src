@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2003 Microsoft Corporation. All rights reserved.
+//
+// Resource table for volume driver for minwin
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "Volume driver"
+#define VER_INTERNALNAME_STR        "volume.sys"
+#define VER_ORIGINALFILENAME_STR    "volume.sys"
+
+#include "common.ver"
