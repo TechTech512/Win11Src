@@ -1,0 +1,11 @@
+TARGETNAME=kdhv
+TARGETPATH=obj
+TARGETTYPE=DRIVER_LIBRARY
+
+INCLUDES=$(SDKTOOLS_INC_PATH);$(MINWIN_PRIV_SDK_INC_PATH)\ntos;$(HALKIT_INC_PATH);$(MINWIN_PRIV_SDK_INC_PATH)\boot;$(MINWIN_PRIV_SDK_INC_PATH)
+
+SOURCES=kdframework.c \
+        kdhvhc.c \
+		kdhvintel.c \
+		kdutils.c
+
