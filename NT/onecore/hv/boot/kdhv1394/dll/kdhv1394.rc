@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2008 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Microsoft Hyper-V
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Enlightened Kernel Debugger 1394 Extension DLL"
+#define VER_INTERNALNAME_STR        "kdhv1394.dll"
+#define VER_ORIGINALFILENAME_STR    "kdhv1394.dll"
+
+#include "common.ver"
