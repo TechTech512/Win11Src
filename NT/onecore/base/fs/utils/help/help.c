@@ -182,7 +182,7 @@ Return Value:
         
 --*/
 {
-    WCHAR Buffer[40];
+    WCHAR Buffer[40]; // This is from #define LONG_SIZE_LENGTH  40 in minkernel\crts\crtw32\convert\xtow.c
     PWCHAR MessageString;
 
     _ultow( MsgNum, Buffer, 16 );
