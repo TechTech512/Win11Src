@@ -1,0 +1,8 @@
+LIBRARY KD
+EXPORTS
+    KdInitialize 
+    KdPower 
+    KdReceivePacket 
+    KdSendPacket 
+    KdSetHiberRange 
+
