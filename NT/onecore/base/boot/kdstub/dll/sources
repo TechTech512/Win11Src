@@ -1,0 +1,43 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 2000
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=kd
+TARGETPATH=obj
+TARGETTYPE=HAL
+DLLDEF=kd.def
+
+C_DEFINES=$(C_DEFINES) -DACPI_HAL
+
+!if $(AXP64)
+HALBASE=0xFFFFFFFF80010000
+!endif
+
+# Turn off speculation in this module so debugger
+# does not wipe out all the itterupt history with
+# speculation faults.
+IA64_DEBUGGABLE_OPTIMIZATION=1
+
+# No overflow checks in the kernel debugger
+BUFFER_OVERFLOW_CHECKS=0
+
+NO_BROWSER_FILE=1
+
+TARGETLIBS=\
+        $(DDK_LIB_PATH)\hal.lib \
+        $(DDK_LIB_PATH)\ntoskrnl.lib \
+        $(DDK_LIB_PATH)\BufferOverflowFastFailK.lib
+
+NT_SIGNCODE=1
+
+INCLUDES=$(DDK_INC_PATH);$(HALKIT_INC_PATH);$(MINWIN_PRIV_SDK_INC_PATH)\ntos;$(MINWIN_PRIV_SDK_INC_PATH)\boot;$(MINWIN_PRIV_SDK_INC_PATH)
+
+SOURCES=\
+        ..\kd.c         \
+        ..\kd.rc
