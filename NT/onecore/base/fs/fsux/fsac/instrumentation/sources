@@ -1,0 +1,19 @@
+TARGETNAME=FssmInst
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=fssminst.def
+EXPECTED_WINVER=10.0
+
+SOURCES=instrumentation.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\kernel32.lib
+	
+NT_SIGNCODE=1
