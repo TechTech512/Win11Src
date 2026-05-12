@@ -19,6 +19,10 @@
 #ifndef _INC_STRING
 #define _INC_STRING
 
+#ifndef _CONST_RETURN
+#define _CONST_RETURN const
+#endif
+
 #include <crtdefs.h>
 
 #if _MSC_VER >= 1200
