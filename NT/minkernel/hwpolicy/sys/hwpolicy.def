@@ -1,0 +1,5 @@
+LIBRARY HWPOLICY
+EXPORTS
+    DllInitialize PRIVATE
+    DllUnload PRIVATE
+

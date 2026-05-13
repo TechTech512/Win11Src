@@ -1,0 +1,25 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 2010
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=hwpolicy
+TARGETPATH=obj
+TARGETTYPE=EXPORT_DRIVER
+DLLDEF=..\hwpolicy.def
+
+TARGETLIBS=\
+		$(DDK_LIB_PATH)\BufferOverflowFastFailK.lib
+
+NT_SIGNCODE=1
+
+INCLUDES=$(DDK_INC_PATH)
+
+SOURCES=\
+        ..\hwinit.c         \
+        ..\hwpolicy.rc

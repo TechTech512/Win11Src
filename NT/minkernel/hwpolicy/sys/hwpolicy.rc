@@ -1,0 +1,40 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2010 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Hardware Policies
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "Hardware Policy Driver"
+#define VER_INTERNALNAME_STR        "hwpolicy.sys"
+#define VER_ORIGINALFILENAME_STR    "hwpolicy.sys"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// Miscellaneous policy files
+//
+
+1 101 DISCARDABLE "intelamd.pol"
+1 102 DISCARDABLE "empty.pol"
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_HWPOLICY_SERVICE_NAME             "Hardware Policy Driver"
+	IDS_HWPOLICY_SERVICE_DESC             "Contains Processor and other policies"
+END
