@@ -1,0 +1,30 @@
+TARGETNAME=dialer
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+EXPECTED_WINVER=10.00
+USE_MSVCRT=1
+
+UMTYPE=windows
+UMENTRY=winmain
+
+C_DEFINES=$(C_DEFINES) -DUNICODE -D_UNICODE 
+
+TARGETLIBS=$(SDK_LIB_PATH)\kernel32.lib \
+           $(SDK_LIB_PATH)\advapi32.lib \
+           $(SDK_LIB_PATH)\gdi32.lib \
+           $(SDK_LIB_PATH)\user32.lib \
+           $(SDK_LIB_PATH)\shell32.lib \
+           $(SDK_LIB_PATH)\tapi32.lib
+
+SOURCES=dialer.c \
+        version.rc
+
+# 
+# Fusionized
+# 
+SXS_ASSEMBLY_NAME=Microsoft.Windows.Networking.Dialer
+SXS_ASSEMBLY_VERSION=1.0
+SXS_ASSEMBLY_LANGUAGE=en-us
+SXS_MANIFEST=Dialer.Manifest
+SXS_MANIFEST_IN_RESOURCES=1
+SXS_NO_BINPLACE=1
