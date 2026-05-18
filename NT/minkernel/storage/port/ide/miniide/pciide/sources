@@ -1,0 +1,17 @@
+TARGETNAME=pciide
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+
+TARGETLIBS=$(DDK_LIB_PATH)\pciidex.lib
+
+INCLUDES=..\..\..\..\inc;$(OBJ_PATH)\..\..\inc\$(O);
+
+
+TARGET_DESTINATION=retail
+
+SOURCES=init.c \
+        pciide.rc 
+
+# Macro to create marker for Boot Driver embedded signing.
+BOOT_LOADER_CRITICAL=1
