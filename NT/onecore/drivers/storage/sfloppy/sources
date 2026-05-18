@@ -1,0 +1,13 @@
+TARGETNAME=sfloppy
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+TARGETLIBS=$(DDK_LIB_PATH)\classpnp.lib
+
+INCLUDES=..\..\..\inc;..\inc
+
+SOURCES=sfloppy.rc  \
+        floppy.c
+
+TARGET_DESTINATION=retail
+
