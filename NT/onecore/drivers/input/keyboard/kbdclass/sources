@@ -1,0 +1,32 @@
+TARGETNAME=kbdclass
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+#Disable deprecated function uage warnings
+C_DEFINES=$(C_DEFINES) /wd4996
+
+MSC_WARNING_LEVEL=/W4 /WX
+
+INCLUDES=..\inc
+
+TARGETLIBS= $(DDK_LIB_PATH)\ntstrsafe.lib
+
+
+SOURCES=kbdlog.mc   \
+        kbdclass.rc \
+        kbdclass.c
+
+LOC_DRIVER_INFS=\
+ keyboard.inf
+
+TARGET_DESTINATION=retail
+
+NT_SIGNCODE=1
+
+# Macro to create marker for Boot Driver embedded signing.
+BOOT_LOADER_CRITICAL=1
+
+RUN_WPP= $(SOURCES)                             \
+         -km                                    \
+         -func:KbdPrint((LEVEL,MSG,...))   \
+
