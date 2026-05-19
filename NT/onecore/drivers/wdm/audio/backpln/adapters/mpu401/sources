@@ -1,0 +1,19 @@
+TARGETNAME=msmpu401
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+TARGETLIBS= \
+        $(DDK_LIB_PATH)\portcls.lib\
+        $(DDK_LIB_PATH)\stdunk.lib\
+        $(SDK_LIB_PATH)\libcntpr.lib
+
+INCLUDES=
+
+MSC_WARNING_LEVEL=-W4 -WX
+
+C_DEFINES=-D_WIN32 -DUNICODE -D_UNICODE -DUNDER_NT -DDEBUG_LEVEL=DEBUGLVL_TERSE
+
+SOURCES=\
+        adapter.cpp     \
+        mpu401.rc
+
