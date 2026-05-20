@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;*</Extensions>
+      <UniqueIdentifier>{F6DCEA03-7E73-4728-9A36-6F2660A2FDC5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <UniqueIdentifier>{FC94F874-585D-4FB1-BBF3-056316743FFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms;man;xml</Extensions>
+      <UniqueIdentifier>{FF14E418-C0F9-4318-9066-63DC787AAA35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver Files">
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+      <UniqueIdentifier>{714222A6-ED57-494F-B49C-F0D52484310E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include=".\pscr.inx">
+      <Filter>Driver Files</Filter>
+    </Inf>
+    <MessageCompile Include="PscrLog.mc">
+      <Filter>Driver Files</Filter>
+    </MessageCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PscrCB.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PscrCmd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PscrNT.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PscrRdWr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pscr.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
