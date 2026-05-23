@@ -1,0 +1,31 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 2010
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=storahci
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+TARGETLIBS=\
+        $(DDK_LIB_PATH)\ntoskrnl.lib \
+        $(SDK_LIB_PATH)\int64.lib \
+        $(DDK_LIB_PATH)\storport.lib
+
+NT_SIGNCODE=1
+
+SOURCES=\
+        ..\common.c         \
+        ..\entrypts.c         \
+        ..\hbastat.c         \
+        ..\io.c         \
+        ..\pnppower.c         \
+        ..\util.c         \
+        ..\storahci.rc
+
+RUN_WPP=$(SOURCES) -km -func:TracePrint((LEVEL,FLAGS,MSG,...)) 
