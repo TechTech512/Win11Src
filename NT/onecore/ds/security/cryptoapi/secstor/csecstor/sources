@@ -1,0 +1,21 @@
+TARGETNAME=pstorec
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=pstorec.def
+EXPECTED_WINVER=10.0
+
+SOURCES=csecstor.cpp \
+		csecstor.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=DllMain
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(SDK_LIB_PATH)\mincore.lib
+	
+NT_SIGNCODE=1
