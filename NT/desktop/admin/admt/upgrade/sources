@@ -1,0 +1,20 @@
+TARGETNAME=admtv3check
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=admtv3check.def
+USE_LIBCMT=1
+
+SOURCES=admtv3check.cpp \
+		ver.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\advapi32.lib \
+	$(SDK_LIB_PATH)\kernel32.lib 
+	
+NT_SIGNCODE=1
