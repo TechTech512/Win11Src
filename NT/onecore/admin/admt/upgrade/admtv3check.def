@@ -1,4 +1,0 @@
-LIBRARY ADMTV3CHECK
-EXPORTS
-    OSUpgradeADMTv3ComplianceCheck 
-
