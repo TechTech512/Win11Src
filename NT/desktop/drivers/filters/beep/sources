@@ -1,0 +1,25 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 1989
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=beep
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+TARGETLIBS=\
+        $(DDK_LIB_PATH)\ntoskrnl.lib \
+		$(DDK_LIB_PATH)\hal.lib \
+		$(DDK_LIB_PATH)\BufferOverflowFastFailK.lib
+
+NT_SIGNCODE=1
+
+SOURCES=\
+        beep.c         \
+        redirect.c         \
+        beep.rc
