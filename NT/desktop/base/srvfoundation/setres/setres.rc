@@ -1,0 +1,92 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2018 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Server Core Resolution Setting Tool
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Configures display settings."
+#define VER_INTERNALNAME_STR        "setres.exe"
+#define VER_ORIGINALFILENAME_STR    "setres.exe"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_INVALIDSYNTAX                     "Invalid syntax.\nType ""setres -?"" for usage.\n\x00"
+	IDS_TYPEFORHELP                       "Type ""setres /?"" for usage.\n\x00"
+	IDS_INVALIDARG                        "Error: ""%s"" is not a valid argument.\n\x00"
+	IDS_EXAMPLEPARAMS                     "\nsetres [-w # -h #] [-f] [-i]\n\n\x00"
+	IDS_DESCHEADER                        "Description:\n\x00"
+	IDS_TOOLDESCRIPTION                   "    This tool configures the display settings.\n\x00"
+	IDS_SEPARATOR                         "\n\x00"
+	IDS_WIDTHARG                          "-w <width>       Specify the screen width in pixels. \r\n\x00"
+	IDS_HEIGHTARG                         "-h <height>      Specify the screen height in pixels. \r\n\x00"
+	IDS_NOCONFIRMARG                      "-f               Do not ask for confirmation upon resolution change.\r\n\x00"
+	IDS_DISPLAYCURRENTRESARG              "-i               Display the current screen resolution.\r\n\x00"
+	IDS_CHANGEREFRESHRATEARG              "-r <rate>        Specify the refresh rate. \r\n\x00"
+	IDS_SELECTMONITORARG                  "-d <display>     Specify the display to set. \r\n\x00"
+	IDS_DEFAULTMONITORFORDASHDARG         "                  (Defaults to primary display) \r\n\x00"
+	IDS_CONNECTEDMONITORS                 "Current displays: \r\n\x00"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CHANGEALLMONITORRESOLUTIONS       "   ALL (use this to change all displays) \r\n\x00"
+	IDS_UNSUPPORTEDSETTINGSBYHARDWARE     "The settings you specified are not supported by your video device(s).\r\n\x00"
+	IDS_COULDNOTAPPLYTOHARDWARE           "The settings passed in could not be applied to the graphics device.\r\n\x00"
+	IDS_NEWSETTINGSAVEDSUCCESSFULLY       "The new display settings have been saved.\r\n\x00"
+	IDS_WANNASAVENEWSETTINGS              "Do you want to save the display settings?\r\n\x00"
+	IDS_NEWSETTINGSREVERTED               "The display settings have been reverted.\r\n\x00"
+	IDS_SUMMARYHEADER                     "setres will now attempt to apply the following display settings: \r\n\x00"
+	IDS_NEWWIDTHSETTINGTOBEAPPLIED        "  Width:          %i\r\n\x00"
+	IDS_NEWHEIGHTSETTINGTOBEAPPLIED       "  Height:         %i\r\n\x00"
+	IDS_NEWREFRESHRATESETTINGTOBEAPPLIED  "  Refresh Rate:   %i\r\n\x00"
+	IDS_MONITORFORNEWSETTINGSTOBEAPPLIED  "  Display:        %s\r\n\x00"
+	IDS_SETTINGSWILLAPPLYTOPRIMARYMONITOR "  Display:        Primary\r\n\x00"
+	IDS_SEPARATOR2                        "\r\n\x00"
+	IDS_SCREENCANFLICKERPRESSN            "Your screen may go blank for a moment. If your screen remains blank, press N\r\n\x00"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SCREENCANFLICKERRESTARTPC         "or restart your computer to revert the display settings.\r\n\x00"
+	IDS_HEIGHTANDWIDTHAREREQUIRED         "Error: If specifying a new screen size, both height and width must be supplied. \n\x00"
+	IDS_DISPLAYNAMEMAX30CHARSANDASCIIMUST "Error: Display name must be no more than 30 ASCII characters long. \n\x00"
+	// I don't know why the following strings exist, but I found them in the resource table
+	// of the official setres.exe by Microsoft Corporation for Windows 10 build
+	// 26100 (NT 10.0.26100) and they HAVE to be used in the code. Must be argument definitions?
+	IDS_RANDOMPARAMS                      "/C YN /T 15 /D N\x00"
+	IDS_H                                 "h\x00"
+	IDS_HEIGHT                            "height\x00"
+	IDS_W                                 "w\x00"
+	IDS_WIDTH                             "width\x00"
+	IDS_R                                 "r\x00"
+	IDS_REFRESHRATE                       "refreshrate\x00"
+	IDS_D                                 "d\x00"
+	IDS_DISPLAY                           "display\x00"
+	IDS_I                                 "i\x00"
+	IDS_INFO                              "info\x00"
+	IDS_F                                 "f\x00"
+	IDS_FORCE                             "force\x00"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Q                                 "?\x00"
+	IDS_HELP                              "help\x00"
+END
