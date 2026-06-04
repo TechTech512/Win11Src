@@ -1,0 +1,63 @@
+!IF 0
+
+Copyright (c) 1989  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-1990
+
+NOTE:   Commented description of this file is in \nt\bak\bin\sources.tpl
+
+!ENDIF
+
+TARGETNAME=scrnsave
+TARGETPATH=obj
+TARGETTYPE=UMAPPL_NOLIB
+EXPECTED_WINVER=10.00
+
+USE_MSVCRT=1
+
+INCLUDES=.;..\common
+
+LINKENTRY=mainCRTStartup
+
+!IFNDEF MSC_WARNING_LEVEL
+MSC_WARNING_LEVEL=/W3
+!ENDIF
+MSC_WARNING_LEVEL=$(MSC_WARNING_LEVEL) /WX
+
+SOURCES=scrnsave.c \
+        scrnsave.rc
+
+
+UMTYPE=windows
+UMENTRY=main
+UMAPPL=scrnsave
+UMAPPLEXT=.scr
+UMLIBS=$(SDK_LIB_PATH)\advapi32.lib    \
+       $(SDK_LIB_PATH)\kernel32.lib     \
+       $(SDK_LIB_PATH)\gdi32.lib  \
+       $(SDK_LIB_PATH)\user32.lib  \
+       $(SDK_LIB_PATH)\ntstc_msvcrt.lib  \
+       $(SDK_LIB_PATH)\mincore.lib  \
+       $(SDK_LIB_PATH)\comctl32.lib  \
+       $(O)\scrnsave.res
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=ScrnSave.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.Shell.scrnsave
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
