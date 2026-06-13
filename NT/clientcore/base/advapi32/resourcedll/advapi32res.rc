@@ -1,0 +1,706 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2021 Microsoft Corporation. All rights reserved.
+//
+// Resource table for advapi
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Advanced Windows 32 Base API"
+#define VER_INTERNALNAME_STR        "advapi32res.dll"
+#define VER_ORIGINALFILENAME_STR    "advapi32res.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE
+BEGIN
+  1, 	"Processor Information"
+  2, 	"Processor Information"
+  3, 	"The Processor Information performance counter set consists of counters that measure aspects of processor activity. The processor is the part of the computer that performs arithmetic and logical computations, initiates operations on peripherals, and runs the threads of processes. A computer can have multiple processors. On some computers, processors are organized in NUMA nodes that share hardware resources such as physical memory. The Processor Information counter set represents each processor as a pair of numbers, where the first number is the NUMA node number and the second number is the zero-based index of the processor within that NUMA node. If the computer does not use NUMA nodes, the first number is zero."
+  5, 	"% Processor Time"
+  6, 	"% Processor Time"
+  7, 	"% Processor Time is the percentage of elapsed time that the processor spends to execute a non-Idle thread. It is calculated by measuring the percentage of time that the processor spends executing the idle thread and then subtracting that value from 100%. (Each processor has an idle thread to which time is accumulated when no other threads are ready to run). This counter is the primary indicator of processor activity, and displays the average percentage of busy time observed during the sample interval. It should be noted that the accounting calculation of whether the processor is idle is performed at an internal sampling interval of the system clock tick. On todays fast processors, % Processor Time can therefore underestimate the processor utilization as the processor may be spending a lot of time servicing threads between the system clock sampling interval. Workload based timer applications are one example  of applications  which are more likely to be measured inaccurately as timers are signaled just after the sample is taken."
+  9, 	"% User Time"
+  10, 	"% User Time"
+  11, 	"% User Time is the percentage of elapsed time the processor spends in the user mode. User mode is a restricted processing mode designed for applications, environment subsystems, and integral subsystems.  The alternative, privileged mode, is designed for operating system components and allows direct access to hardware and all memory.  The operating system switches application threads to privileged mode to access operating system services. This counter displays the average busy time as a percentage of the sample time."
+  13, 	"% Privileged Time"
+  14, 	"% Privileged Time"
+  15, 	"% Privileged Time is the percentage of elapsed time that the process threads spent executing code in privileged mode.  When a Windows system service in called, the service will often run in privileged mode to gain access to system-private data. Such data is protected from access by threads executing in user mode. Calls to the system can be explicit or implicit, such as page faults or interrupts. Unlike some early operating systems, Windows uses process boundaries for subsystem protection in addition to the traditional protection of user and privileged modes. Some work done by Windows on behalf of the application might appear in other subsystem processes in addition to the privileged time in the process."
+END
+
+STRINGTABLE
+BEGIN
+  17, 	"Interrupts/sec"
+  18, 	"Interrupts/sec"
+  19, 	"Interrupts/sec is the average rate, in incidents per second, at which the processor received and serviced hardware interrupts. It does not include deferred procedure calls (DPCs), which are counted separately. This value is an indirect indicator of the activity of devices that generate interrupts, such as the system clock, the mouse, disk drivers, data communication lines, network interface cards, and other peripheral devices. These devices normally interrupt the processor when they have completed a task or require attention. Normal thread execution is suspended. The system clock typically interrupts the processor every 10 milliseconds, creating a background of interrupt activity. This counter displays the difference between the values observed in the last two samples, divided by the duration of the sample interval."
+  21, 	"% DPC Time"
+  22, 	"% DPC Time"
+  23, 	"% DPC Time is the percentage of time that the processor spent receiving and servicing deferred procedure calls (DPCs) during the sample interval. DPCs are interrupts that run at a lower priority than standard interrupts. % DPC Time is a component of % Privileged Time because DPCs are executed in privileged mode. They are counted separately and are not a component of the interrupt counters. This counter displays the average busy time as a percentage of the sample time."
+  25, 	"% Interrupt Time"
+  26, 	"% Interrupt Time"
+  27, 	"% Interrupt Time is the time the processor spends receiving and servicing hardware interrupts during sample intervals. This value is an indirect indicator of the activity of devices that generate interrupts, such as the system clock, the mouse, disk drivers, data communication lines, network interface cards and other peripheral devices. These devices normally interrupt the processor when they have completed a task or require attention. Normal thread execution is suspended during interrupts. Most system clocks interrupt the processor every 10 milliseconds, creating a background of interrupt activity. suspends normal thread execution during interrupts. This counter displays the average busy time as a percentage of the sample time."
+  29, 	"DPCs Queued/sec"
+  30, 	"DPCs Queued/sec"
+  31, 	"DPCs Queued/sec is the average rate, in incidents per second, at which deferred procedure calls (DPCs) were added to the processor's DPC queue. DPCs are interrupts that run at a lower priority than standard interrupts.  Each processor has its own DPC queue. This counter measures the rate that DPCs are added to the queue, not the number of DPCs in the queue.  This counter displays the difference between the values observed in the last two samples, divided by the duration of the sample interval."
+END
+
+STRINGTABLE
+BEGIN
+  33, 	"DPC Rate"
+  34, 	"DPC Rate"
+  35, 	"DPC Rate is the rate at which deferred procedure calls (DPCs) were added to the processors DPC queues between the timer ticks of the processor clock. DPCs are interrupts that run at alower priority than standard interrupts.  Each processor has its own DPC queue. This counter measures the rate that DPCs were added to the queue, not the number of DPCs in the queue. This counter displays the last observed value only; it is not an average."
+  37, 	"% Idle Time"
+  38, 	"% Idle Time"
+  39, 	"% Idle Time is the percentage of time the processor is idle during the sample interval"
+  41, 	"% C1 Time"
+  42, 	"% C1 Time"
+  43, 	"% C1 Time is the percentage of time the processor spends in the C1 low-power idle state. % C1 Time is a subset of the total processor idle time. C1 low-power idle state enables the processor to maintain its entire context and quickly return to the running state. Not all systems support the % C1 state."
+  45, 	"% C2 Time"
+  46, 	"% C2 Time"
+  47, 	"% C2 Time is the percentage of time the processor spends in the C2 low-power idle state. % C2 Time is a subset of the total processor idle time. C2 low-power idle state enables the processor to maintain the context of the system caches. The C2 power state is a lower power and higher exit latency state than C1. Not all systems support the C2 state."
+END
+
+STRINGTABLE
+BEGIN
+  49, 	"% C3 Time"
+  50, 	"% C3 Time"
+  51, 	"% C3 Time is the percentage of time the processor spends in the C3 low-power idle state. % C3 Time is a subset of the total processor idle time. When the processor is in the C3 low-power idle state it is unable to maintain the coherency of its caches. The C3 power state is a lower power and higher exit latency state than C2. Not all systems support the C3 state."
+  53, 	"C1 Transitions/sec"
+  54, 	"C1 Transitions/sec"
+  55, 	"C1 Transitions/sec is the rate that the CPU enters the C1 low-power idle state. The CPU enters the C1 state when it is sufficiently idle and exits this state on any interrupt. This counter displays the difference between the values observed in the last two samples, divided by the duration of the sample interval."
+  57, 	"C2 Transitions/sec"
+  58, 	"C2 Transitions/sec"
+  59, 	"C2 Transitions/sec is the rate that the CPU enters the C2 low-power idle state. The CPU enters the C2 state when it is sufficiently idle and exits this state on any interrupt. This counter displays the difference between the values observed in the last two samples, divided by the duration of the sample interval."
+  61, 	"C3 Transitions/sec"
+  62, 	"C3 Transitions/sec"
+  63, 	"C3 Transitions/sec is the rate that the CPU enters the C3 low-power idle state. The CPU enters the C3 state when it is sufficiently idle and exits this state on any interrupt. This counter displays the difference between the values observed in the last two samples, divided by the duration of the sample interval."
+END
+
+STRINGTABLE
+BEGIN
+  65, 	"% Priority Time"
+  66, 	"% Priority Time"
+  67, 	"% Priority Time is the percentage of elapsed time that the processor spends executing threads that are not low priority. It is calculated by measuring the percentage of time that the processor spends executing low priority threads or the idle thread and then subtracting that value from 100%. (Each processor has an idle thread to which time is accumulated when no other threads are ready to run). This counter displays the average percentage of busy time observed during the sample interval excluding low priority background work. It should be noted that the accounting calculation of whether the processor is idle is performed at an internal sampling interval of the system clock tick. % Priority Time can therefore underestimate the processor utilization as the processor may be spending a lot of time servicing threads between the system clock sampling interval. Workload based timer applications are one example  of applications  which are more likely to be measured inaccurately as timers are signaled just after the sample is taken."
+  69, 	"Parking Status"
+  70, 	"Parking Status"
+  71, 	"Parking Status represents whether a processor is parked or not."
+  73, 	"Processor Frequency"
+  74, 	"Processor Frequency"
+  75, 	"Processor Frequency is the frequency of the current processor in megahertz. Some processors are capable of regulating their frequency outside of the control of Windows. Processor Frequency will not accurately reflect actual processor frequency on these systems. Use % Processor Performance or Actual Frequency instead."
+  77, 	"% of Maximum Frequency"
+  78, 	"% of Maximum Frequency"
+  79, 	"% of Maximum Frequency is the percentage of the current processor's maximum frequency. Some processors are capable of regulating their frequency outside of the control of Windows. % of Maximum Frequency will not accurately reflect actual processor frequency on these systems. Use % Processor Performance instead."
+END
+
+STRINGTABLE
+BEGIN
+  81, 	"Processor State Flags"
+  82, 	"Processor State Flags"
+  83, 	"Processor State Flags"
+  85, 	"Synchronization"
+  86, 	"Synchronization"
+  87, 	"The Synchronization performance object consists of counters for kernel synchronization. The synchronization object represents each processor as an instance of the object."
+  89, 	"Spinlock Acquires/sec"
+  90, 	"Spinlock Acquires/sec"
+  91, 	"Spinlock acquires/sec is the rate of spinlock acquisitions. It includes the basic spinlocks, queued spinlocks, in-stack queued spinlocks, and shared spinlocks acquisitions."
+  93, 	"Spinlock Contentions/sec"
+  94, 	"Spinlock Contentions/sec"
+  95, 	"Spinlock contentions/sec is the rate of spinlock contentions. It includes the basic spinlocks, queued spinlocks, in-stack queued spinlocks, and shared spinlocks contentions."
+END
+
+STRINGTABLE
+BEGIN
+  97, 	"Spinlock Spins/sec"
+  98, 	"Spinlock Spins/sec"
+  99, 	"Spinlock spins/sec is the rate of spinlock spins. It includes the spins to acquire basic spinlocks, queued spinlocks, in-stack queued spinlocks, and shared spinlocks."
+  101, 	"IPI Send Broadcast Requests/sec"
+  102, 	"IPI Send Broadcast Requests/sec"
+  103, 	"IPI Send Broadcast Requests/sec is the rate of IPI broadcast requests. "
+  105, 	"IPI Send Routine Requests/sec"
+  106, 	"IPI Send Routine Requests/sec"
+  107, 	"IPI Send Routine Requests/sec is the rate of IPI routine requests."
+  109, 	"IPI Send Software Interrupts/sec"
+  110, 	"IPI Send Software Interrupts/sec"
+  111, 	"IPI Send Software Interrrupts/sec is the rate of software interrupts."
+END
+
+STRINGTABLE
+BEGIN
+  113, 	"Exec. Resource Total Initialize/sec"
+  114, 	"Exec. Resource Total Initialize/sec"
+  115, 	"Frequency of initialization operations on Executive Resources."
+  117, 	"Exec. Resource Total Re-Initialize/sec"
+  118, 	"Exec. Resource Total Re-Initialize/sec"
+  119, 	"Frequency of re-initialization operations on Executive Resources."
+  121, 	"Exec. Resource Total Delete/sec"
+  122, 	"Exec. Resource Total Delete/sec"
+  123, 	"Frequency of delete operations on Executive Resources."
+  125, 	"Exec. Resource Total Acquires/sec"
+  126, 	"Exec. Resource Total Acquires/sec"
+  127, 	"Frequency of acquire operations on Executive Resources."
+END
+
+STRINGTABLE
+BEGIN
+  129, 	"Exec. Resource Total Contentions/sec"
+  130, 	"Exec. Resource Total Contentions/sec"
+  131, 	"Contention rate on Executive Resources."
+  133, 	"Exec. Resource Total Exclusive Releases/sec"
+  134, 	"Exec. Resource Total Exclusive Releases/sec"
+  135, 	"Frequency of Exclusive releases on Executive Resources."
+  137, 	"Exec. Resource Total Shared Releases/sec"
+  138, 	"Exec. Resource Total Shared Releases/sec"
+  139, 	"Frequency of Shared releases on Executive Resources."
+  141, 	"Exec. Resource Total Conv. Exclusive To Shared/sec"
+  142, 	"Exec. Resource Total Conv. Exclusive To Shared/sec"
+  143, 	"Frequency of convert to shared operations on Executive Resources."
+END
+
+STRINGTABLE
+BEGIN
+  145, 	"Exec. Resource Attempts AcqExclLite/sec"
+  146, 	"Exec. Resource Attempts AcqExclLite/sec"
+  147, 	"Frequency of acquire exclusive attempts on Executive Resources from ExAcquireResourceExclusiveLite."
+  149, 	"Exec. Resource Acquires AcqExclLite/sec"
+  150, 	"Exec. Resource Acquires AcqExclLite/sec"
+  151, 	"Frequency of first exclusive acquires from ExAcquireResourceExclusiveLite."
+  153, 	"Exec. Resource Recursive Excl. Acquires AcqExclLite/sec"
+  154, 	"Exec. Resource Recursive Excl. Acquires AcqExclLite/sec"
+  155, 	"Frequency of recursive exclusive acquires from ExAcquireResourceExclusiveLite."
+  157, 	"Exec. Resource Contention AcqExclLite/sec"
+  158, 	"Exec. Resource Contention AcqExclLite/sec"
+  159, 	"Frequency of waits during exclusive acquire attempts from ExAcquireResourceExclusiveLite."
+END
+
+STRINGTABLE
+BEGIN
+  161, 	"Exec. Resource no-Waits AcqExclLite/sec"
+  162, 	"Exec. Resource no-Waits AcqExclLite/sec"
+  163, 	"Frequency of no-waits during exclusive acquire attempts from ExAcquireResourceExclusiveLite."
+  165, 	"Exec. Resource Attempts AcqShrdLite/sec"
+  166, 	"Exec. Resource Attempts AcqShrdLite/sec"
+  167, 	"Frequency of acquire shared attempts on Executive Resources from ExAcquireResourceSharedLite."
+  169, 	"Exec. Resource Recursive Excl. Acquires AcqShrdLite/sec"
+  170, 	"Exec. Resource Recursive Excl. Acquires AcqShrdLite/sec"
+  171, 	"Frequency of recursive exclusive acquires from ExAcquireResourceSharedLite."
+  173, 	"Exec. Resource Acquires AcqShrdLite/sec"
+  174, 	"Exec. Resource Acquires AcqShrdLite/sec"
+  175, 	"Frequency of first shared acquires from ExAcquireResourceSharedLite."
+END
+
+STRINGTABLE
+BEGIN
+  177, 	"Exec. Resource Recursive Sh. Acquires AcqShrdLite/sec"
+  178, 	"Exec. Resource Recursive Sh. Acquires AcqShrdLite/sec"
+  179, 	"Frequency of recursive shared acquires from ExAcquireResourceSharedLite."
+  181, 	"Exec. Resource Contention AcqShrdLite/sec"
+  182, 	"Exec. Resource Contention AcqShrdLite/sec"
+  183, 	"Frequency of waits during acquire attempts from ExAcquireResourceSharedLite."
+  185, 	"Exec. Resource no-Waits AcqShrdLite/sec"
+  186, 	"Exec. Resource no-Waits AcqShrdLite/sec"
+  187, 	"Frequency of no-waits during acquire attempts from ExAcquireResourceSharedLite."
+  189, 	"Exec. Resource Attempts AcqShrdStarveExcl/sec"
+  190, 	"Exec. Resource Attempts AcqShrdStarveExcl/sec"
+  191, 	"Frequency of acquire shared attempts on Executive Resources from ExAcquireSharedStarveExclusive."
+END
+
+STRINGTABLE
+BEGIN
+  193, 	"Exec. Resource Recursive Excl. Acquires AcqShrdStarveExcl/sec"
+  194, 	"Exec. Resource Recursive Excl. Acquires AcqShrdStarveExcl/sec"
+  195, 	"Frequency of recursive exclusive acquires from ExAcquireSharedStarveExclusive."
+  197, 	"Exec. Resource Acquires AcqShrdStarveExcl/sec"
+  198, 	"Exec. Resource Acquires AcqShrdStarveExcl/sec"
+  199, 	"Frequency of first shared acquires from ExAcquireSharedStarveExclusive."
+  201, 	"Exec. Resource Recursive Sh. Acquires AcqShrdStarveExcl/sec"
+  202, 	"Exec. Resource Recursive Sh. Acquires AcqShrdStarveExcl/sec"
+  203, 	"Frequency of recursive shared acquires from ExAcquireSharedStarveExclusive."
+  205, 	"Exec. Resource Contention AcqShrdStarveExcl/sec"
+  206, 	"Exec. Resource Contention AcqShrdStarveExcl/sec"
+  207, 	"Frequency of waits during shared acquire attempts from ExAcquireSharedStarveExclusive."
+END
+
+STRINGTABLE
+BEGIN
+  209, 	"Exec. Resource no-Waits AcqShrdStarveExcl/sec"
+  210, 	"Exec. Resource no-Waits AcqShrdStarveExcl/sec"
+  211, 	"Frequency of no-waits during shared acquire attempts from ExAcquireSharedStarveExclusive."
+  213, 	"Exec. Resource Attempts AcqShrdWaitForExcl/sec"
+  214, 	"Exec. Resource Attempts AcqShrdWaitForExcl/sec"
+  215, 	"Frequency of acquire shared attempts on Executive Resources from ExAcquireSharedWaitForExclusive."
+  217, 	"Exec. Resource Recursive Excl. Acquires AcqShrdWaitForExcl/sec"
+  218, 	"Exec. Resource Recursive Excl. Acquires AcqShrdWaitForExcl/sec"
+  219, 	"Frequency of recursive exclusive acquires from ExAcquireSharedWaitForExclusive."
+  221, 	"Exec. Resource Acquires AcqShrdWaitForExcl/sec"
+  222, 	"Exec. Resource Acquires AcqShrdWaitForExcl/sec"
+  223, 	"Frequency of first shared acquires from ExAcquireSharedWaitForExclusive."
+END
+
+STRINGTABLE
+BEGIN
+  225, 	"Exec. Resource Recursive Sh. Acquires AcqShrdWaitForExcl/sec"
+  226, 	"Exec. Resource Recursive Sh. Acquires AcqShrdWaitForExcl/sec"
+  227, 	"Frequency of recursive shared acquires from ExAcquireSharedWaitForExclusive."
+  229, 	"Exec. Resource Contention AcqShrdWaitForExcl/sec"
+  230, 	"Exec. Resource Contention AcqShrdWaitForExcl/sec"
+  231, 	"Frequency of waits during shared acquire attempts from ExAcquireSharedWaitForExclusive."
+  233, 	"Exec. Resource no-Waits AcqShrdWaitForExcl/sec"
+  234, 	"Exec. Resource no-Waits AcqShrdWaitForExcl/sec"
+  235, 	"Frequency of no-waits during exclusive acquire attempts from ExAcquireSharedWaitForExclusive."
+  237, 	"Exec. Resource Set Owner Pointer Exclusive/sec"
+  238, 	"Exec. Resource Set Owner Pointer Exclusive/sec"
+  239, 	"Frequency of ExSetResourceOwnerPointer to an exclusive owner."
+END
+
+STRINGTABLE
+BEGIN
+  241, 	"Exec. Resource Set Owner Pointer Shared (New Owner)/sec"
+  242, 	"Exec. Resource Set Owner Pointer Shared (New Owner)/sec"
+  243, 	"Frequency of ExSetResourceOwnerPointer to a new shared owner."
+  245, 	"Exec. Resource Set Owner Pointer Shared (Existing Owner)/sec"
+  246, 	"Exec. Resource Set Owner Pointer Shared (Existing Owner)/sec"
+  247, 	"Frequency of ExSetResourceOwnerPointer to an existing shared owner."
+  249, 	"Exec. Resource Boost Excl. Owner/sec"
+  250, 	"Exec. Resource Boost Excl. Owner/sec"
+  251, 	"Frequency of boosting exclusive ownwer when waiting for this Executive Resource."
+  253, 	"Exec. Resource Boost Shared Owners/sec"
+  254, 	"Exec. Resource Boost Shared Owners/sec"
+  255, 	"Frequency of boosting shared ownwer(s) when waiting for this Executive Resource."
+END
+
+STRINGTABLE
+BEGIN
+  257, 	"Event Tracing for Windows"
+  258, 	"Event Tracing for Windows"
+  259, 	"The counters in this collection refer to system-wide metrics about the performance of the Event Tracing for Windows subsystem."
+  261, 	"Total Number of Distinct Enabled Providers"
+  262, 	"Total Number of Distinct Enabled Providers"
+  263, 	"Number of distinct event providers that are enabled to ETW sessions; multiple instances of a provider are counted only once."
+  265, 	"Total Number of Distinct Pre-Enabled Providers"
+  266, 	"Total Number of Distinct Pre-Enabled Providers"
+  267, 	"Number of unique tracing providers that have been enabled to a trace session but have not yet registered with ETW."
+  269, 	"Total Number of Distinct Disabled Providers"
+  270, 	"Total Number of Distinct Disabled Providers"
+  271, 	"Number of unique tracing providers that are registered with the tracing subsystem but are not actively enabled to any trace session; multiple registered instances of a provider are counted only once."
+END
+
+STRINGTABLE
+BEGIN
+  273, 	"Total Number of Active Sessions"
+  274, 	"Total Number of Active Sessions"
+  275, 	"Number of ETW tracing sessions currently active."
+  277, 	"Total Memory Usage --- Paged Pool"
+  278, 	"Total Memory Usage --- Paged Pool"
+  279, 	"Current size of paged memory allocated for the buffers associated with all active sessions (in bytes)."
+  281, 	"Total Memory Usage --- Non-Paged Pool"
+  282, 	"Total Memory Usage --- Non-Paged Pool"
+  283, 	"Current size of non-paged memory allocated for the buffers associated with all active sessions (in bytes)."
+  285, 	"Event Tracing for Windows Session"
+  286, 	"Event Tracing for Windows Session"
+  287, 	"The counters in this collection are related to individual Event Tracing for Windows sessions."
+END
+
+STRINGTABLE
+BEGIN
+  289, 	"Buffer Memory Usage -- Paged Pool"
+  290, 	"Buffer Memory Usage -- Paged Pool"
+  291, 	"Current size of paged memory allocated for the buffers associated with this session (in bytes)."
+  293, 	"Buffer Memory Usage -- Non-Paged Pool"
+  294, 	"Buffer Memory Usage -- Non-Paged Pool"
+  295, 	"Current size of non-paged memory allocated for the buffers associated with this session (in bytes)."
+  297, 	"Events Logged per sec"
+  298, 	"Events Logged per sec"
+  299, 	"Rate at which events are logged to this session by providers that are enabled to this session (events/sec)."
+  301, 	"Events Lost"
+  302, 	"Events Lost"
+  303, 	"Total number of events that were not successfully logged since the start of the tracing session.  Events are lost due to limited space in the session's buffers.  To avoid lost events, consider increasing the buffer size or the number of buffers."
+END
+
+STRINGTABLE
+BEGIN
+  305, 	"Number of Real-Time Consumers"
+  306, 	"Number of Real-Time Consumers"
+  307, 	"Number of consumers currently reading events from this session in real-time mode."
+  309, 	"SynchronizationNuma"
+  310, 	"SynchronizationNuma"
+  311, 	"The Synchronization performance object consists of counters for kernel synchronization. The synchronization object represents each processor as an instance of the object. The counters are aggregated based on the system NUMA topology."
+  313, 	"Spinlock Acquires/sec"
+  314, 	"Spinlock Acquires/sec"
+  315, 	"Spinlock acquires/sec is the rate of spinlock acquisitions. It includes the basic spinlocks, queued spinlocks, in-stack queued spinlocks, and shared spinlocks acquisitions."
+  317, 	"Spinlock Contentions/sec"
+  318, 	"Spinlock Contentions/sec"
+  319, 	"Spinlock contentions/sec is the rate of spinlock contentions. It includes the basic spinlocks, queued spinlocks, in-stack queued spinlocks, and shared spinlocks contentions."
+END
+
+STRINGTABLE
+BEGIN
+  321, 	"Spinlock Spins/sec"
+  322, 	"Spinlock Spins/sec"
+  323, 	"Spinlock spins/sec is the rate of spinlock spins. It includes the spins to acquire basic spinlocks, queued spinlocks, in-stack queued spinlocks, and shared spinlocks."
+  325, 	"IPI Send Broadcast Requests/sec"
+  326, 	"IPI Send Broadcast Requests/sec"
+  327, 	"IPI Send Broadcast Requests/sec is the rate of IPI broadcast requests. "
+  329, 	"IPI Send Routine Requests/sec"
+  330, 	"IPI Send Routine Requests/sec"
+  331, 	"IPI Send Routine Requests/sec is the rate of IPI routine requests."
+  333, 	"IPI Send Software Interrupts/sec"
+  334, 	"IPI Send Software Interrupts/sec"
+  335, 	"IPI Send Software Interrrupts/sec is the rate of software interrupts."
+END
+
+STRINGTABLE
+BEGIN
+  337, 	"Exec. Resource Total Initialize/sec"
+  338, 	"Exec. Resource Total Initialize/sec"
+  339, 	"Frequency of initialization operations on Executive Resources."
+  341, 	"Exec. Resource Total Re-Initialize/sec"
+  342, 	"Exec. Resource Total Re-Initialize/sec"
+  343, 	"Frequency of re-initialization operations on Executive Resources."
+  345, 	"Exec. Resource Total Delete/sec"
+  346, 	"Exec. Resource Total Delete/sec"
+  347, 	"Frequency of delete operations on Executive Resources."
+  349, 	"Exec. Resource Total Acquires/sec"
+  350, 	"Exec. Resource Total Acquires/sec"
+  351, 	"Frequency of acquire operations on Executive Resources."
+END
+
+STRINGTABLE
+BEGIN
+  353, 	"Exec. Resource Total Contentions/sec"
+  354, 	"Exec. Resource Total Contentions/sec"
+  355, 	"Contention rate on Executive Resources."
+  357, 	"Exec. Resource Total Exclusive Releases/sec"
+  358, 	"Exec. Resource Total Exclusive Releases/sec"
+  359, 	"Frequency of Exclusive releases on Executive Resources."
+  361, 	"Exec. Resource Total Shared Releases/sec"
+  362, 	"Exec. Resource Total Shared Releases/sec"
+  363, 	"Frequency of Shared releases on Executive Resources."
+  365, 	"Exec. Resource Total Conv. Exclusive To Shared/sec"
+  366, 	"Exec. Resource Total Conv. Exclusive To Shared/sec"
+  367, 	"Frequency of convert to shared operations on Executive Resources."
+END
+
+STRINGTABLE
+BEGIN
+  369, 	"Exec. Resource Attempts AcqExclLite/sec"
+  370, 	"Exec. Resource Attempts AcqExclLite/sec"
+  371, 	"Frequency of acquire exclusive attempts on Executive Resources from ExAcquireResourceExclusiveLite."
+  373, 	"Exec. Resource Acquires AcqExclLite/sec"
+  374, 	"Exec. Resource Acquires AcqExclLite/sec"
+  375, 	"Frequency of first exclusive acquires from ExAcquireResourceExclusiveLite."
+  377, 	"Exec. Resource Recursive Excl. Acquires AcqExclLite/sec"
+  378, 	"Exec. Resource Recursive Excl. Acquires AcqExclLite/sec"
+  379, 	"Frequency of recursive exclusive acquires from ExAcquireResourceExclusiveLite."
+  381, 	"Exec. Resource Contention AcqExclLite/sec"
+  382, 	"Exec. Resource Contention AcqExclLite/sec"
+  383, 	"Frequency of waits during exclusive acquire attempts from ExAcquireResourceExclusiveLite."
+END
+
+STRINGTABLE
+BEGIN
+  385, 	"Exec. Resource no-Waits AcqExclLite/sec"
+  386, 	"Exec. Resource no-Waits AcqExclLite/sec"
+  387, 	"Frequency of no-waits during exclusive acquire attempts from ExAcquireResourceExclusiveLite."
+  389, 	"Exec. Resource Attempts AcqShrdLite/sec"
+  390, 	"Exec. Resource Attempts AcqShrdLite/sec"
+  391, 	"Frequency of acquire shared attempts on Executive Resources from ExAcquireResourceSharedLite."
+  393, 	"Exec. Resource Recursive Excl. Acquires AcqShrdLite/sec"
+  394, 	"Exec. Resource Recursive Excl. Acquires AcqShrdLite/sec"
+  395, 	"Frequency of recursive exclusive acquires from ExAcquireResourceSharedLite."
+  397, 	"Exec. Resource Acquires AcqShrdLite/sec"
+  398, 	"Exec. Resource Acquires AcqShrdLite/sec"
+  399, 	"Frequency of first shared acquires from ExAcquireResourceSharedLite."
+END
+
+STRINGTABLE
+BEGIN
+  401, 	"Exec. Resource Recursive Sh. Acquires AcqShrdLite/sec"
+  402, 	"Exec. Resource Recursive Sh. Acquires AcqShrdLite/sec"
+  403, 	"Frequency of recursive shared acquires from ExAcquireResourceSharedLite."
+  405, 	"Exec. Resource Contention AcqShrdLite/sec"
+  406, 	"Exec. Resource Contention AcqShrdLite/sec"
+  407, 	"Frequency of waits during acquire attempts from ExAcquireResourceSharedLite."
+  409, 	"Exec. Resource no-Waits AcqShrdLite/sec"
+  410, 	"Exec. Resource no-Waits AcqShrdLite/sec"
+  411, 	"Frequency of no-waits during acquire attempts from ExAcquireResourceSharedLite."
+  413, 	"Exec. Resource Attempts AcqShrdStarveExcl/sec"
+  414, 	"Exec. Resource Attempts AcqShrdStarveExcl/sec"
+  415, 	"Frequency of acquire shared attempts on Executive Resources from ExAcquireSharedStarveExclusive."
+END
+
+STRINGTABLE
+BEGIN
+  417, 	"Exec. Resource Recursive Excl. Acquires AcqShrdStarveExcl/sec"
+  418, 	"Exec. Resource Recursive Excl. Acquires AcqShrdStarveExcl/sec"
+  419, 	"Frequency of recursive exclusive acquires from ExAcquireSharedStarveExclusive."
+  421, 	"Exec. Resource Acquires AcqShrdStarveExcl/sec"
+  422, 	"Exec. Resource Acquires AcqShrdStarveExcl/sec"
+  423, 	"Frequency of first shared acquires from ExAcquireSharedStarveExclusive."
+  425, 	"Exec. Resource Recursive Sh. Acquires AcqShrdStarveExcl/sec"
+  426, 	"Exec. Resource Recursive Sh. Acquires AcqShrdStarveExcl/sec"
+  427, 	"Frequency of recursive shared acquires from ExAcquireSharedStarveExclusive."
+  429, 	"Exec. Resource Contention AcqShrdStarveExcl/sec"
+  430, 	"Exec. Resource Contention AcqShrdStarveExcl/sec"
+  431, 	"Frequency of waits during shared acquire attempts from ExAcquireSharedStarveExclusive."
+END
+
+STRINGTABLE
+BEGIN
+  433, 	"Exec. Resource no-Waits AcqShrdStarveExcl/sec"
+  434, 	"Exec. Resource no-Waits AcqShrdStarveExcl/sec"
+  435, 	"Frequency of no-waits during shared acquire attempts from ExAcquireSharedStarveExclusive."
+  437, 	"Exec. Resource Attempts AcqShrdWaitForExcl/sec"
+  438, 	"Exec. Resource Attempts AcqShrdWaitForExcl/sec"
+  439, 	"Frequency of acquire shared attempts on Executive Resources from ExAcquireSharedWaitForExclusive."
+  441, 	"Exec. Resource Recursive Excl. Acquires AcqShrdWaitForExcl/sec"
+  442, 	"Exec. Resource Recursive Excl. Acquires AcqShrdWaitForExcl/sec"
+  443, 	"Frequency of recursive exclusive acquires from ExAcquireSharedWaitForExclusive."
+  445, 	"Exec. Resource Acquires AcqShrdWaitForExcl/sec"
+  446, 	"Exec. Resource Acquires AcqShrdWaitForExcl/sec"
+  447, 	"Frequency of first shared acquires from ExAcquireSharedWaitForExclusive."
+END
+
+STRINGTABLE
+BEGIN
+  449, 	"Exec. Resource Recursive Sh. Acquires AcqShrdWaitForExcl/sec"
+  450, 	"Exec. Resource Recursive Sh. Acquires AcqShrdWaitForExcl/sec"
+  451, 	"Frequency of recursive shared acquires from ExAcquireSharedWaitForExclusive."
+  453, 	"Exec. Resource Contention AcqShrdWaitForExcl/sec"
+  454, 	"Exec. Resource Contention AcqShrdWaitForExcl/sec"
+  455, 	"Frequency of waits during shared acquire attempts from ExAcquireSharedWaitForExclusive."
+  457, 	"Exec. Resource no-Waits AcqShrdWaitForExcl/sec"
+  458, 	"Exec. Resource no-Waits AcqShrdWaitForExcl/sec"
+  459, 	"Frequency of no-waits during exclusive acquire attempts from ExAcquireSharedWaitForExclusive."
+  461, 	"Exec. Resource Set Owner Pointer Exclusive/sec"
+  462, 	"Exec. Resource Set Owner Pointer Exclusive/sec"
+  463, 	"Frequency of ExSetResourceOwnerPointer to an exclusive owner."
+END
+
+STRINGTABLE
+BEGIN
+  465, 	"Exec. Resource Set Owner Pointer Shared (New Owner)/sec"
+  466, 	"Exec. Resource Set Owner Pointer Shared (New Owner)/sec"
+  467, 	"Frequency of ExSetResourceOwnerPointer to a new shared owner."
+  469, 	"Exec. Resource Set Owner Pointer Shared (Existing Owner)/sec"
+  470, 	"Exec. Resource Set Owner Pointer Shared (Existing Owner)/sec"
+  471, 	"Frequency of ExSetResourceOwnerPointer to an existing shared owner."
+  473, 	"Exec. Resource Boost Excl. Owner/sec"
+  474, 	"Exec. Resource Boost Excl. Owner/sec"
+  475, 	"Frequency of boosting exclusive ownwer when waiting for this Executive Resource."
+  477, 	"Exec. Resource Boost Shared Owners/sec"
+  478, 	"Exec. Resource Boost Shared Owners/sec"
+  479, 	"Frequency of boosting shared ownwer(s) when waiting for this Executive Resource."
+END
+
+STRINGTABLE
+BEGIN
+  481, 	"The FileSystem Disk Activity performance counter set consists of counters that measure the aspect of filesystem's IO Activity.  This counter set measures the number of bytes filesystem read from and wrote to the disk drive."
+  483, 	"FileSystem Disk Activity"
+  484, 	"FileSystem Disk Activity"
+  485, 	"Total Bytes Read by the FileSystem from disk drive"
+  487, 	"FileSystem Bytes Read"
+  488, 	"FileSystem Bytes Read"
+  489, 	"Total Bytes Written by the FileSystem from disk drive"
+  491, 	"FileSystem Bytes Written"
+  492, 	"FileSystem Bytes Written"
+END
+
+STRINGTABLE
+BEGIN
+  501, 	"The Thermal Zone Information performance counter set consists of counters that measure aspects of each thermal zone in the system."
+  503, 	"Thermal Zone Information"
+  504, 	"Thermal Zone Information"
+  505, 	"Temperature of the thermal zone, in degrees Kelvin."
+  507, 	"Temperature"
+  508, 	"Temperature"
+  509, 	"% Passive Limit is the current limit this thermal zone is placing on the devices it controls. A limit of 100% indicates the devices are unconstrained. A limit of 0% indicates the devices are fully constrained."
+  511, 	"% Passive Limit"
+END
+
+STRINGTABLE
+BEGIN
+  512, 	"% Passive Limit"
+  513, 	"Throttle Reasons indicate reasons why the thermal zone is limiting performance of the devices it controls."
+  515, 	"Throttle Reasons"
+  516, 	"Throttle Reasons"
+  517, 	"Temperature of the thermal zone, in tenths of degrees Kelvin."
+  519, 	"High Precision Temperature"
+  520, 	"High Precision Temperature"
+END
+
+STRINGTABLE
+BEGIN
+  601, 	"The Process V2 performance counter set consists of counters that monitor running application program and system processes. The Process V2 counter set improves upon the legacy Process counter set."
+  603, 	"Process V2"
+  604, 	"Process V2"
+  605, 	"% Processor Time is the percentage of elapsed time that the process spent executing code. This value may exceed 100% on a multiprocessor system. Some code executed to handle hardware interrupts and trap conditions may be included in this count."
+  607, 	"% Processor Time"
+END
+
+STRINGTABLE
+BEGIN
+  608, 	"% Processor Time"
+  609, 	"% User Time is the percentage of elapsed time that the process spent executing code in user mode. This value may exceed 100% on a multiprocessor system."
+  611, 	"% User Time"
+  612, 	"% User Time"
+  613, 	"% Privileged Time is the percentage of elapsed time that the process spent executing code in kernel mode. This value may exceed 100% on a multiprocessor system."
+  615, 	"% Privileged Time"
+  616, 	"% Privileged Time"
+  617, 	"Virtual Bytes Peak is the maximum size, in bytes, of the virtual address ranges reserved within the process. Reserved address ranges consume no physical memory or disk space unless they are committed. The operating system may reserve virtual address ranges within a process for system use."
+  619, 	"Virtual Bytes Peak"
+  620, 	"Virtual Bytes Peak"
+  621, 	"Virtual Bytes is the current size, in bytes, of the virtual address ranges reserved within the process. Reserved address ranges consume no physical memory or disk space unless they are committed. The operating system may reserve virtual address ranges within a process for system use."
+  623, 	"Virtual Bytes"
+END
+
+STRINGTABLE
+BEGIN
+  624, 	"Virtual Bytes"
+  625, 	"Page Faults/sec is the rate at which page faults occur in this process. A page fault occurs when a CPU attempts to access a virtual memory page that is not in the process working set. Page faults can occur for a variety of reasons such as memory allocation, access to a memory-mapped file, trimming of the working set, or an attempt to access an invalid address."
+  627, 	"Page Faults/sec"
+  628, 	"Page Faults/sec"
+  629, 	"Working Set Peak is the maximum size, in bytes, of the working set of this process. The working set is the set of memory pages touched recently by the threads in the process. If free memory in the computer is above a threshold, pages are left in the working set of a process even if they are not in use."
+  631, 	"Working Set Peak"
+  632, 	"Working Set Peak"
+  633, 	"Working Set is the current size, in bytes, of the working set of this process. The working set is the set of memory pages touched recently by the threads in the process. If free memory in the computer is above a threshold, pages are left in the working set of a process even if they are not in use."
+  635, 	"Working Set"
+  636, 	"Working Set"
+END
+
+STRINGTABLE
+BEGIN
+  641, 	"Page File Bytes Peak is the maximum amount of virtual memory, in bytes, that this process has reserved for use in physical memory or paging file(s)."
+  643, 	"Page File Bytes Peak"
+  644, 	"Page File Bytes Peak"
+  645, 	"Page File Bytes is the current amount of virtual memory, in bytes, that this process has reserved for use in physical memory or paging file(s)."
+  647, 	"Page File Bytes"
+  648, 	"Page File Bytes"
+  649, 	"Private Bytes is the current size, in bytes, of memory that this process has allocated that cannot be shared with other processes."
+  651, 	"Private Bytes"
+  652, 	"Private Bytes"
+  653, 	"Thread Count is the number of threads currently active in this process."
+  655, 	"Thread Count"
+END
+
+STRINGTABLE
+BEGIN
+  656, 	"Thread Count"
+  657, 	"Priority Base is the current base priority of this process. Threads within a process can raise and lower their own base priority relative to the process' base priority."
+  659, 	"Priority Base"
+  660, 	"Priority Base"
+  661, 	"Elapsed Time is the amount of time that has passed since the process was created."
+  663, 	"Elapsed Time"
+  664, 	"Elapsed Time"
+  665, 	"Process ID is the unique identifier of this process. Process ID numbers are reused, so they only identify a process for the lifetime of that process."
+  667, 	"Process ID"
+  668, 	"Process ID"
+  669, 	"Creating Process ID is the Process ID of the process that created this process. The creating process may have terminated, so this value may no longer identify a running process."
+  671, 	"Creating Process ID"
+END
+
+STRINGTABLE
+BEGIN
+  672, 	"Creating Process ID"
+  673, 	"Pool Paged Bytes is the size, in bytes, of the paged kernel memory allocated by the kernel on behalf of this process."
+  675, 	"Pool Paged Bytes"
+  676, 	"Pool Paged Bytes"
+  677, 	"Pool Nonpaged Bytes is the size, in bytes, of the nonpaged kernel memory allocated by the kernel on behalf of this process."
+  679, 	"Pool Nonpaged Bytes"
+  680, 	"Pool Nonpaged Bytes"
+  681, 	"Handle Count is the total number of handles currently open by this process."
+  683, 	"Handle Count"
+  684, 	"Handle Count"
+  685, 	"IO Read Operations/sec is the rate at which the process is issuing read operations to file, network, or other device handles."
+  687, 	"IO Read Operations/sec"
+END
+
+STRINGTABLE
+BEGIN
+  688, 	"IO Read Operations/sec"
+  689, 	"IO Write Operations/sec is the rate at which the process is issuing write operations to file, network, or other device handles."
+  691, 	"IO Write Operations/sec"
+  692, 	"IO Write Operations/sec"
+  693, 	"IO Data Operations/sec is the rate at which the process is issuing read and write operations to file, network, or other device handles."
+  695, 	"IO Data Operations/sec"
+  696, 	"IO Data Operations/sec"
+  697, 	"IO Other Operations/sec is the rate at which the process is issuing operations that are neither read nor write operations (such as device control operations)."
+  699, 	"IO Other Operations/sec"
+  700, 	"IO Other Operations/sec"
+  701, 	"IO Read Bytes/sec is the rate at which the process is reading data from file, network, or other device handles."
+  703, 	"IO Read Bytes/sec"
+END
+
+STRINGTABLE
+BEGIN
+  704, 	"IO Read Bytes/sec"
+  705, 	"IO Write Bytes/sec is the rate at which the process is writing data to file, network, or other device handles."
+  707, 	"IO Write Bytes/sec"
+  708, 	"IO Write Bytes/sec"
+  709, 	"IO Data Bytes/sec is the rate at which the process is reading and writing to file, network, or other device handles."
+  711, 	"IO Data Bytes/sec"
+  712, 	"IO Data Bytes/sec"
+  713, 	"IO Other Bytes/sec is the rate at which the process is transferring data for operations that are neither read nor write operations (such as device control operations)."
+  715, 	"IO Other Bytes/sec"
+  716, 	"IO Other Bytes/sec"
+  717, 	"Working Set - Private is the size of the working set, in bytes, that is use for this process only and not shared nor sharable by other processes."
+  719, 	"Working Set - Private"
+END
+
+STRINGTABLE
+BEGIN
+  720, 	"Working Set - Private"
+END
+
+STRINGTABLE
+BEGIN
+  777, 	"Clock Interrupts/sec is the average rate, in incidents per second, at which the processor received and serviced clock tick interrupts. This counter displays the difference between the values observed in the last two samples, divided by the duration of the sample interval."
+  779, 	"Average Idle Time is the average idle duration in 100ns units observed between the last two samples."
+  781, 	"Idle Break Events/sec is the average rate, in incidents per second, at which the processor wakes from idle.  This counter displays the difference between the values observed in the last two samples, divided by the duration of the sample interval."
+  783, 	"Processor Performance is the average performance of the processor while it is executing instructions, as a percentage of the nominal performance of the processor. On some processors, Processor Performance may exceed 100%. Some processors are capable of regulating their frequency outside of the control of Windows. Processor Performance will accurately reflect the performance of these processors."
+END
+
+STRINGTABLE
+BEGIN
+  785, 	"Processor Utility is the amount of work a processor is completing, as a percentage of the amount of work the processor could complete if it were running at its nominal performance and never idle. On some processors, Processor Utility may exceed 100%."
+  787, 	"Privileged Utility is the amount of work a processor is completing while executing in privileged mode, as a percentage of the amount of work the processor could complete if it were running at its nominal performance and never idle. On some processors, Privileged Utility may exceed 100%."
+  789, 	"% Performance Limit is the performance the processor guarantees it can provide, as a percentage of the nominal performance of the processor. Performance can be limited by Windows power policy, or by the platform as a result of a power budget, overheating, or other hardware issues."
+  791, 	"Performance Limit Flags indicate reasons why the processor performance was limited."
+  793, 	"Actual Frequency is the current frequency of the processor in megahertz, as measured by the OS. This counter is more accurate than Processor Frequency, which only reflects the frequency the OS requested the processor run at."
+END
+
+STRINGTABLE
+BEGIN
+  999, 	    "Clock Interrupts/sec"
+  1000, 	"Clock Interrupts/sec"
+  1001, 	"Average Idle Time"
+  1002, 	"Average Idle Time"
+  1003, 	"Idle Break Events/sec"
+  1004, 	"Idle Break Events/sec"
+  1005, 	"% Processor Performance"
+  1006, 	"% Processor Performance"
+  1007, 	"% Processor Utility"
+END
+
+STRINGTABLE
+BEGIN
+  1008, 	"% Processor Utility"
+  1009, 	"% Privileged Utility"
+  1010, 	"% Privileged Utility"
+  1011, 	"% Performance Limit"
+  1012, 	"% Performance Limit"
+  1013, 	"Performance Limit Flags"
+  1014, 	"Performance Limit Flags"
+  1015, 	"Actual Frequency"
+  1016, 	"Actual Frequency"
+END
