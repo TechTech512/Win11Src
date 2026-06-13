@@ -1,0 +1,5 @@
+LIBRARY         MSAFD
+
+EXPORTS
+
+        WSPStartup = MSWSOCK.WSPStartup
