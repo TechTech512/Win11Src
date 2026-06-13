@@ -1,0 +1,19 @@
+LIBRARY LZ32
+
+EXPORTS
+    CopyLZFile          = kernel32.CopyLZFile
+    GetExpandedNameA    = kernel32.GetExpandedNameA
+    GetExpandedNameW    = kernel32.GetExpandedNameW
+    LZClose             = kernel32.LZClose
+    LZCloseFile         = kernel32.LZCloseFile
+    LZCopy              = kernel32.LZCopy
+    LZCreateFileW       = kernel32.LZCreateFileW
+    LZDone              = kernel32.LZDone
+    LZInit              = kernel32.LZInit
+    LZOpenFileA         = kernel32.LZOpenFileA
+    LZOpenFileW         = kernel32.LZOpenFileW
+    LZRead              = kernel32.LZRead
+    LZSeek              = kernel32.LZSeek
+    LZStart             = kernel32.LZStart
+	
+	
