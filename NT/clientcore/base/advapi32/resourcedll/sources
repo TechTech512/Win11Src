@@ -1,0 +1,8 @@
+TARGETNAME=advapi32res
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+
+RESOURCE_ONLY_DLL=1
+
+SOURCES= \
+        advapi32res.rc
