@@ -208,16 +208,18 @@ void CleanupNotificationThread(void* param1, unsigned char param2)
                 }
                 *listPtr = entry;
                 entry->Blink = (LIST_ENTRY*)listPtr;
-                if (((LIST_ENTRY*)((BYTE*)listHead + 8))->Flink != NULL) {
-                    HeapFree(HeapHandle, 0, ((LIST_ENTRY*)((BYTE*)listHead + 8))->Flink);
+                LIST_ENTRY* pInner1 = (LIST_ENTRY*)((BYTE*)listHead + 8);
+                LIST_ENTRY* pInner2 = (LIST_ENTRY*)((BYTE*)listHead + 0x10);
+                if (pInner1->Flink != NULL && HeapValidate(HeapHandle, 0, pInner1->Flink)) {
+                    HeapFree(HeapHandle, 0, pInner1->Flink);
                 }
-                if (((LIST_ENTRY*)((BYTE*)listHead + 0x10))->Blink != NULL) {
-                    HeapFree(HeapHandle, 0, ((LIST_ENTRY*)((BYTE*)listHead + 0x10))->Blink);
+                if (pInner2->Blink != NULL && HeapValidate(HeapHandle, 0, pInner2->Blink)) {
+                    HeapFree(HeapHandle, 0, pInner2->Blink);
                 }
                 HeapFree(HeapHandle, 0, listHead);
             }
             
-            if (currentEntry[3].Flink != NULL) {
+            if (currentEntry[3].Flink != NULL && HeapValidate(HeapHandle, 0, currentEntry[3].Flink)) {
                 HeapFree(HeapHandle, 0, currentEntry[3].Flink);
             }
             HeapFree(HeapHandle, 0, currentEntry);
