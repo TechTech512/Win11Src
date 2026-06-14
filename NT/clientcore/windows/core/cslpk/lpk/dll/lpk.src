@@ -1,0 +1,12 @@
+NAME LPK.dll
+EXPORTS
+	LpkDrawTextEx = GDI32.LpkDrawTextEx
+	LpkEditControl = GDI32.LpkEditControl
+	LpkExtTextOut = GDI32.LpkExtTextOut
+	LpkGetCharacterPlacement = GDI32.LpkGetCharacterPlacement
+	LpkGetTextExtentExPoint = GDI32.LpkGetTextExtentExPoint
+	LpkInitialize = GDI32.LpkInitialize
+	LpkPSMTextOut = GDI32.LpkPSMTextOut
+	LpkTabbedTextOut = GDI32.LpkTabbedTextOut
+	LpkUseGDIWidthCache = GDI32.LpkUseGDIWidthCache
+	ftsWordBreak = GDI32.ftsWordBreak
