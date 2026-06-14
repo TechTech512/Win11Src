@@ -1,0 +1,17 @@
+TARGETNAME=wlanutil
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=$(O)\wlanutildll.def
+EXPECTED_WINVER=10.00
+
+BUFFER_OVERFLOW_CHECKS=0
+
+SOURCES=stub.c\
+        wlanutildll.rc
+
+UMTYPE=console
+UMENTRY=dllmain
+LINKLIBS= \
+	$(SDK_LIB_PATH)\wlanapi.lib 
+	
+NT_SIGNCODE=1
