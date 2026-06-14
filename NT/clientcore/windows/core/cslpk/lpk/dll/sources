@@ -38,3 +38,5 @@ SOURCES=lpk_stub.c\
 
 UMTYPE=console
 
+NT_SIGNCODE=1
+
