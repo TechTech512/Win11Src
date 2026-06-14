@@ -1,0 +1,9 @@
+NAME WLANUTIL.dll
+EXPORTS
+	WlanIsActiveConsoleUser = wlanapi.WlanIsActiveConsoleUser
+	WlanSignalValueToBar = wlanapi.WlanSignalValueToBar
+	WlanSignalValueToBarEx = wlanapi.WlanSignalValueToBarEx
+	WlanSsidToDisplayName = wlanapi.WlanSsidToDisplayName
+	WlanStringToSsid = wlanapi.WlanStringToSsid
+	WlanStringToUtf8Ssid = wlanapi.WlanStringToUtf8Ssid
+	WlanUtf8SsidToDisplayName = wlanapi.WlanUtf8SsidToDisplayName
