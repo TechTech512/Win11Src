@@ -38,3 +38,5 @@ SOURCES=stub.c\
 
 UMTYPE=console
 
+NT_SIGNCODE=1
+
