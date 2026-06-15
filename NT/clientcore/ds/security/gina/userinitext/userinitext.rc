@@ -1,0 +1,31 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// UserInit Utility Extension DLL
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "UserInit Utility Extension DLL"
+#define VER_INTERNALNAME_STR        "UserInitExt"
+#define VER_ORIGINALFILENAME_STR    "UserInitExt.DLL"
+
+#include "common.ver"
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VMAPPLET                           "systemPropertiesPerformance.exe /pagefile"
+	IDS_DISPLAYAPPLET                      "Rundll32 shell32,Control_RunDLL desk.cpl,,3"
+	IDS_FAILING_WORKINGDIR                 "%s\nThis working directory is invalid: %s"
+	IDS_FAILING_SHELLCOMMAND               "%s\nThis initial program cannot be started: %s"
+	IDS_ERROR_WORKINGDIR                   "An error (%u) occurred while creating user logon.\nThis working directory is invalid: %s"
+	IDS_ERROR_SHELLCOMMAND                 "An error (%u) occurred while creating user logon.\nThis initial program cannot be started: %s"
+END

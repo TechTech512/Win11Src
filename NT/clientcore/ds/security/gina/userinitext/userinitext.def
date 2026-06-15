@@ -1,0 +1,15 @@
+LIBRARY USERINITEXT
+EXPORTS
+    CreateExplorerSessionKey @1
+    DisplayMessageAndExitWindows @2
+    ImmWorker @3
+    IsSubDesktopSession @4
+    IsTSAppCompatOn @5
+    LoadRemoteFontsAndInitMiscWorker @6
+    PerformXForestLogonCheck @7
+    ProcesRemoteSessionInitialCommand @8
+    ProcessTermSrvIniFiles @9
+    SetShellDesktopSwitchEvent @10
+    SetupHotKeyForKeyboardLayout @11
+    UserinitExt @12
+
