@@ -1,0 +1,20 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+//
+// Resource table for Command Line Computer Name Changer
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     """SetComputerName.PROGRAM"""
+#define VER_INTERNALNAME_STR        """SetComputerName.PROGRAM"""
+#define VER_ORIGINALFILENAME_STR    """SetComputerName.PROGRAM"""
+
+#include "common.ver"
+
