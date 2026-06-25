@@ -1,0 +1,18 @@
+TARGETNAME=MobilecoreBoot
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=MobilecoreBoot.def
+USE_MSVCRT=1
+EXPECTED_WINVER=10.00
+
+SOURCES=mobilecoreboot.cpp \
+		defaultresource.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib
