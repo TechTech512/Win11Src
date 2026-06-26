@@ -125,27 +125,27 @@ int NEAR PASCAL MemErr(int err, LPSTR lszFilename, UINT line)
     switch (err)
     {
         case E_NOHANDLE:
-            wsprintf (Buffer, "No memory handle left. File: %s, line:%d\n", 
+            _snprintf (Buffer, sizeof(Buffer) - 1, "No memory handle left. File: %s, line:%d\n", 
             		lszFilename, line);
             break;
         case E_OUTOFMEMORY:
-            wsprintf (Buffer, "Out of memory. File: %s, line:%d\n",
+            _snprintf (Buffer, sizeof(Buffer) - 1, "Out of memory. File: %s, line:%d\n",
                 lszFilename, line);
             break;
         case E_HANDLE:
-            wsprintf (Buffer, "Invalid handle. File: %s, line:%d\n",
+            _snprintf (Buffer, sizeof(Buffer) - 1, "Invalid handle. File: %s, line:%d\n",
                 lszFilename, line);
             break;
         case E_INVALIDARG:
-            wsprintf (Buffer, "Free locked handle. File: %s, line:%d\n",
+            _snprintf (Buffer, sizeof(Buffer) - 1, "Free locked handle. File: %s, line:%d\n",
                 lszFilename, line);
             break;
         case E_ASSERT:
-            wsprintf (Buffer, "Releasing invalid handle. File: %s, line:%d\n",
+            _snprintf (Buffer, sizeof(Buffer) - 1, "Releasing invalid handle. File: %s, line:%d\n",
                 lszFilename, line);
             break;
 		case E_FAIL:
-            wsprintf (Buffer, "Buffer overwritten. File: %s, line:%d\n",
+            _snprintf (Buffer, sizeof(Buffer) - 1, "Buffer overwritten. File: %s, line:%d\n",
                 lszFilename, line);
 			break;
 		case S_OK:
