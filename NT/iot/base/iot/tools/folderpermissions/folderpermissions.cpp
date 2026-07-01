@@ -29,13 +29,12 @@ static BOOL SetFolderPermissions(const wchar_t* folder, BOOL enable);
 // ------------------------------------------------------------------
 static void Usage(void)
 {
-    wprintf(
-        L"Usage: FolderPermissions <Folder> [-e | -r]\n"
-        L"Where [-e] will enable APPX access to a folder\n"
-        L"and [-r] will remove APPX access to a folder\n"
-        L"FolderPermissions <Folder> will display current APPX access permissions\n"
-        L"\n"
-    );
+    
+    wprintf(L"Usage: FolderPermissions <Folder> [-e | -r]\n");
+    wprintf(L"Where [-e] will enable APPX access to a folder\n");
+    wprintf(L"and [-r] will remove APPX access to a folder\n");
+    wprintf(L"FolderPermissions <Folder> will display current APPX access permissions\n");
+    wprintf(L"\n");
 }
 
 // ------------------------------------------------------------------
