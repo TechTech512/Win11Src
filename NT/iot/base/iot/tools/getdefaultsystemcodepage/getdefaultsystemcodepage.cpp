@@ -19,7 +19,7 @@ int __cdecl wmain(void)
 
     // Query the default ANSI code page for the system locale
     cch = GetLocaleInfoW(lcid, LOCALE_IDEFAULTANSICODEPAGE, szCodePage, sizeof(szCodePage)/sizeof(wchar_t));
-    if (cch == 0) {
+    if (cch < 1) {
         // Fallback: use GetACP()
         codePage = GetACP();
     } else {
