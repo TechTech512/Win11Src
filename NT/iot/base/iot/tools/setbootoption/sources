@@ -20,3 +20,4 @@ TARGETLIBS= \
 	$(SDK_LIB_PATH)\msvcrt.lib \
 	$(SDK_LIB_PATH)\mincore.lib
 
+NT_SIGNCODE=1
