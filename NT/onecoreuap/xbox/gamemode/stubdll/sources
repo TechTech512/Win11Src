@@ -1,0 +1,23 @@
+TARGETNAME=gamemodestub
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=gamemodestub.def
+USE_MSVCRT=1
+EXPECTED_WINVER=10.00
+
+PRECOMPILED_INCLUDE=pch.h
+PRECOMPILED_PCH=pch.pch
+PRECOMPILED_OBJ=pch.obj
+
+SOURCES=dllmain.cpp \
+		resource.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\msvcrt.lib \
+	$(SDK_LIB_PATH)\mincore.lib

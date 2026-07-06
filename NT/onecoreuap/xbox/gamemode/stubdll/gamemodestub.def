@@ -1,0 +1,6 @@
+LIBRARY GameModeStub
+EXPORTS
+    GetExpandedResourceExclusiveCpuCount 
+    HasExpandedResources 
+    ReleaseExclusiveCpuSets 
+
