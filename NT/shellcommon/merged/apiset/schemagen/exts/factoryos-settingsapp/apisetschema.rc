@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "7b275252-da1f-4190-a841-95c26ef3ace1_FactoryOS-SettingsApp.dll"
+#define VER_ORIGINALFILENAME_STR    "7b275252-da1f-4190-a841-95c26ef3ace1_FactoryOS-SettingsApp.dll"
+
+#include "common.ver"
