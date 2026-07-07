@@ -1,0 +1,9 @@
+LIBRARY WwaExtwp
+EXPORTS
+    CheckAllowDiagnosticsMode 
+    DetermineCurrentDisplayRotationAngle 
+    DllMain 
+    ProcessDisplayRotation 
+    SetPhoneWerParameters 
+    WWABehaviorEnabled 
+
