@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "e887da28-0c1e-415c-8d69-b4cdaaa8181c_Wcos-Cellular-Data.dll"
+#define VER_ORIGINALFILENAME_STR    "e887da28-0c1e-415c-8d69-b4cdaaa8181c_Wcos-Cellular-Data.dll"
+
+#include "common.ver"

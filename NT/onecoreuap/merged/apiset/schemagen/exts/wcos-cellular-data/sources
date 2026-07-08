@@ -1,0 +1,15 @@
+TARGETNAME=e887da28-0c1e-415c-8d69-b4cdaaa8181c_Wcos-Cellular-Data
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=apisetschema.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=apisetschema.c \
+		apisetschema.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+UMTYPE=console
+UMENTRY=dllmain
+NT_SIGNCODE=1
