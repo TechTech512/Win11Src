@@ -1,0 +1,25 @@
+TARGETNAME=FirstBootTasks
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+EXPECTED_WINVER=10.00
+
+INCLUDES=.;$(MINWIN_PRIV_SDK_INC_PATH);$(DDK_INC_PATH)
+SOURCES=capabilities.c \
+        firstboottasks.c \
+        generatecomputername.c \
+        reghelper.c \
+		firstboottasks.rc
+
+C_DEFINES=-DSECURITY_WIN32 -DUNICODE -D_UNICODE -DSTRICT -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00
+
+CXXFLAGS=$(CXXFLAGS) /Zc:sizedDealloc
+
+LINKENTRY=NtProcessStartupW
+
+UMTYPE=ntss
+UMENTRY=-entry:NtProcessStartupW
+TARGETLIBS= \
+	$(DDK_LIB_PATH)\ntoskrnl.lib \
+	$(SDK_LIB_PATH)\nt.lib \
+	$(SDK_LIB_PATH)\ntdll.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib
