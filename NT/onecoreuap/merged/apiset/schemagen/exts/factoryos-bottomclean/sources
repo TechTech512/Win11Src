@@ -1,0 +1,15 @@
+TARGETNAME=a93efde6-7ab9-4d42-b941-b34f1bb32b4e_FactoryOS-BottomClean
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=apisetschema.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=apisetschema.c \
+		apisetschema.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+UMTYPE=console
+UMENTRY=dllmain
+NT_SIGNCODE=1

@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "a93efde6-7ab9-4d42-b941-b34f1bb32b4e_FactoryOS-BottomClean.dll"
+#define VER_ORIGINALFILENAME_STR    "a93efde6-7ab9-4d42-b941-b34f1bb32b4e_FactoryOS-BottomClean.dll"
+
+#include "common.ver"
