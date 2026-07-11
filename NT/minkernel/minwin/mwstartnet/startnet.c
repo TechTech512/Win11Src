@@ -111,7 +111,6 @@ void DoWINSRegistration(void)
 
     PrintMessage(L"ComputerName = \"%ws\"\n", computerName);
 
-    // Convert to uppercase (NetBIOS names are usually uppercase)
     p = computerName;
     while (*p) {
         *p = towupper(*p);
@@ -120,11 +119,11 @@ void DoWINSRegistration(void)
 
     wprintf(L"Registering %s\n", computerName);
 
-    // Register with WINS
     int result = RegisterWinsName((PBYTE)computerName);
-    if (result == 0) {
-        InterlockedIncrement(&g_WinsRegistrationDone);
-    } else {
+    // Increment regardless of result to avoid retries
+    InterlockedIncrement(&g_WinsRegistrationDone);
+
+    if (result != 0) {
         wprintf(L"Error: %u\n", result);
     }
 }
@@ -400,7 +399,7 @@ int RegisterWinsName(PBYTE pName)
 // ------------------------------------------------------------------
 DWORD WINAPI InterfaceAddressChangeCallback(PVOID pContext, PMIB_UNICASTIPADDRESS_ROW pRow, MIB_NOTIFICATION_TYPE type)
 {
-    if (type == MibParameterNotification) {
+    if (type == MibParameterNotification && g_WinsRegistrationDone == 0) {
         PrintInterfaceDetails();
     }
     return 0;
@@ -426,7 +425,7 @@ int __cdecl wmain(int argc, wchar_t* argv[])
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
         dwError = WSAGetLastError();
         PrintMessage(L"Failed to start winsock: %u\n", dwError);
-        return;
+        return 1;
     }
 
     // Create stop event (DAT_1400035a0)
@@ -435,7 +434,7 @@ int __cdecl wmain(int argc, wchar_t* argv[])
     if (!hStopEvent) {
         PrintMessage(L"Failed to create stop event\n");
         WSACleanup();
-        return;
+        return 1;
     }
 
     // Create net ready event (g_hNetReadyEvent)
@@ -445,7 +444,7 @@ int __cdecl wmain(int argc, wchar_t* argv[])
         PrintMessage(L"Failed to create net ready event\n");
         CloseHandle(hStopEvent);
         WSACleanup();
-        return;
+        return 1;
     }
 
     // Initial interface details
@@ -458,8 +457,12 @@ int __cdecl wmain(int argc, wchar_t* argv[])
         g_hAddressChangeHandle = hAddressChangeHandle;
     }
 
-    // Wait for stop event (or indefinitely)
-    WaitForSingleObject(hStopEvent, INFINITE);
+    // ==================== MODIFIED: Wait with timeout ====================
+    DWORD dwWait = WaitForSingleObject(hStopEvent, 60000);  // 60 seconds
+    if (dwWait == WAIT_TIMEOUT) {
+        PrintMessage(L"Timeout waiting for stop event, exiting.\n");
+    }
+    // ====================================================================
 
     // Cleanup
     if (hAddressChangeHandle) {
@@ -476,5 +479,6 @@ int __cdecl wmain(int argc, wchar_t* argv[])
 
     WSACleanup();
     PrintMessage(L"--Exiting startnet.exe--\n");
+    return 0;
 }
 
