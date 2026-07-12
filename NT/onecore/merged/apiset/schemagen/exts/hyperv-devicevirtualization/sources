@@ -1,0 +1,15 @@
+TARGETNAME=f989b52d-f928-44a3-9bf1-bf0c1da6a0d6_HyperV-DeviceVirtualization
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=apisetschema.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=apisetschema.c \
+		apisetschema.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+UMTYPE=console
+UMENTRY=dllmain
+NT_SIGNCODE=1
