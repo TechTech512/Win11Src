@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "f1db7d81-95be-4911-935a-8ab71629112a_HyperV-IsolatedVM.dll"
+#define VER_ORIGINALFILENAME_STR    "f1db7d81-95be-4911-935a-8ab71629112a_HyperV-IsolatedVM.dll"
+
+#include "common.ver"
