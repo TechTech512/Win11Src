@@ -1,0 +1,25 @@
+NAME errorhandlingext.dll
+EXPORTS
+    BasepReportFault 
+    CheckForReadOnlyResourceFilter 
+    WerReportAddDump 
+    WerReportAddFile 
+    WerReportCloseHandle 
+    WerReportCreate 
+    WerReportSetParameter 
+    WerReportSubmit 
+    WerStoreClose 
+    WerStoreGetFirstReportKey 
+    WerStoreGetNextReportKey 
+    WerStoreGetReportCount 
+    WerStoreGetSizeOnDisk 
+    WerStoreOpen 
+    WerStoreQueryReportMetadataV1 
+    WerStoreUploadReport 
+    WerpAddFileBuffer 
+    WerpCreateIntegratorReportId 
+    WerpFreeString 
+    WerpGetDebugger 
+    WerpLaunchAeDebug 
+    WerpSetIntegratorReportId 
+
