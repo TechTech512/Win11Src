@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "c28c7a4e-a619-4463-82b7-0fc9cc7187f5_HyperV-ComputeStorage.dll"
+#define VER_ORIGINALFILENAME_STR    "c28c7a4e-a619-4463-82b7-0fc9cc7187f5_HyperV-ComputeStorage.dll"
+
+#include "common.ver"
