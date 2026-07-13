@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "064a6d66-92d1-4cd9-8090-cfb173788550_Microsoft-OneCore-ConnectionSharing.dll"
+#define VER_ORIGINALFILENAME_STR    "064a6d66-92d1-4cd9-8090-cfb173788550_Microsoft-OneCore-ConnectionSharing.dll"
+
+#include "common.ver"
