@@ -1,0 +1,19 @@
+TARGETNAME=ModernApiExtHost
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=$(O)\ModernApiExtHost.def
+USE_MSVCRT=1
+EXPECTED_WINVER=10.00
+
+INCLUDES=.;$(WINDOWS_INC_PATH)
+SOURCES=modernapiexthost.cxx \
+		modernapiexthost.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\mincore.lib 

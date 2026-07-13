@@ -1,0 +1,20 @@
+NAME modernapiexthost.dll
+EXPORTS
+	GetProcessUIContextInformation @2521
+	DoesLinkTrackingExist @2522
+	DriveIsMounted @2523
+	FileTypeHasPackageManagerHandler @2524
+	IsCurrentNetworkNotTracked @2525
+	IsCurrentNetworkOffTrack @2526
+	IsCurrentNetworkOverLimit @2527
+	ItemIsUnderPhoneRestrictedFolder @2528
+	GetCurrentPackageId = kernelbase.GetCurrentPackageId @2529
+	GetCurrentPackageInfo = kernelbase.GetCurrentPackageInfo @2530
+	IsImmersiveProcess @2531
+	PsmBlockAppStateChangeCompletion @2532
+	PsmQueryCurrentAppState @2533
+	PsmRegisterAppStateChangeNotification @2534
+	PsmShutdownApplication @2535
+	PsmUnblockAppStateChangeCompletion @2536
+	PsmUnregisterAppStateChangeNotification @2537
+	PsmWaitForAppResume @2538
