@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "cce76da9-e057-45c1-8856-92b158b4b9d2_ModernPCTop.dll"
+#define VER_ORIGINALFILENAME_STR    "cce76da9-e057-45c1-8856-92b158b4b9d2_ModernPCTop.dll"
+
+#include "common.ver"
