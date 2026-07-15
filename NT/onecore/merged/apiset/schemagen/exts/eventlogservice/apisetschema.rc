@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2014 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ApiSet Schema Extension DLL"
+#define VER_INTERNALNAME_STR        "69fe178f-26e7-43a9-aa7d-2b616b672dde_EventLogService.dll"
+#define VER_ORIGINALFILENAME_STR    "69fe178f-26e7-43a9-aa7d-2b616b672dde_EventLogService.dll"
+
+#include "common.ver"
