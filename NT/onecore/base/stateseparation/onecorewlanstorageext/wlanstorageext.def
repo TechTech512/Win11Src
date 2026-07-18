@@ -1,0 +1,6 @@
+LIBRARY ONECOREWLANSTORAGEEXT.DLL
+EXPORTS
+    GetCustomRegRootPath 
+    GetCustomStorageRootPath 
+    GetCustomWfdSettingsRegPath 
+

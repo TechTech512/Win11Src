@@ -1,0 +1,18 @@
+TARGETNAME=OneCoreWlanStorageExt
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=wlanstorageext.def
+USE_MSVCRT=1
+EXPECTED_WINVER=10.00
+
+SOURCES=wlanstorageext.cpp \
+		wlanstorageext.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\onecore.lib \
