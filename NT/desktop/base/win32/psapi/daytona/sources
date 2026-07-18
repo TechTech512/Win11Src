@@ -1,0 +1,32 @@
+TARGETNAME=psapi
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=$(O)\psapi.def
+EXPECTED_WINVER=10.00
+
+SOURCES=stub.c \
+		psapi.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflowU.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(SDK_LIB_PATH)\mincore.lib \
+	$(SDK_LIB_PATH)\mincore_downlevel.lib \
+	$(SDK_LIB_PATH)\onecore.lib \
+	$(SDK_LIB_PATH)\onecore_apiset.lib \
+	$(SDK_LIB_PATH)\onecore_downlevel.lib \
+	$(SDK_LIB_PATH)\onecoreuap.lib \
+	$(SDK_LIB_PATH)\onecoreuap_apiset.lib \
+	$(SDK_LIB_PATH)\onecoreuap_downlevel.lib \
+	$(SDK_LIB_PATH)\windowsapp.lib \
+	$(SDK_LIB_PATH)\windowsapp_downlevel.lib \
+	$(SDK_LIB_PATH)\windowscoreheadless.lib \
+	$(SDK_LIB_PATH)\windowscoreheadless_apiset.lib
+	
+NT_SIGNCODE=1
