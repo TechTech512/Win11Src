@@ -99,14 +99,14 @@
     #define B2(x,y) " (" #x "." #y ")"
     #define B1(x,y) B2(x, y)
     #if (defined(_NEED_FULLVERSION_INFO) && defined(OFFICIAL_BUILD) && defined(_BUILDBRANCH))
-      #define BUILD_MACHINE_TAG " (WinBuild.160101.0800)"
+      #define BUILD_MACHINE_TAG B1(_BUILDBRANCH, __BUILDDATE__)
     #else
-      #define BUILD_MACHINE_TAG " (WinBuild.160101.0800)"
+      #define BUILD_MACHINE_TAG B1(__BUILDMACHINE__, __BUILDDATE__)
     #endif
   #else
     #define B2(x) " (" #x ".160101.0800)"
     #define B1(x) B2(x)
-    #define BUILD_MACHINE_TAG " (WinBuild.160101.0800)"
+    #define BUILD_MACHINE_TAG B1(__BUILDMACHINE__)
   #endif
 #else
   #define BUILD_MACHINE_TAG " (WinBuild.160101.0800)"
