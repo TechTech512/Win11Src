@@ -1,0 +1,22 @@
+TARGETNAME=iumdll
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=iumdll.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=usrstubs.c \
+		iumdll.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflow.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(SDK_LIB_PATH)\ntdll.lib
+	
+NT_SIGNCODE=1
