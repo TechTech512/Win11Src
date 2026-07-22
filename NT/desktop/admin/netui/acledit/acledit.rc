@@ -1,0 +1,34 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for acledit deprecation stub DLL
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Access Control List Editor"
+#define VER_INTERNALNAME_STR        "acledit.dll"
+#define VER_ORIGINALFILENAME_STR    "acledit.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WINDOWS                                "Windows"
+	IDS_CANNOTEDITPERMS                        "Windows cannot edit permissions as requested because a component of the software you are using that is required to perform that function is not compatible with any version of Windows released after Windows Server 2003. Contact your software vendor to find out if this software has been updated for current versions of Windows."
+	IDS_CANNOTMODIFYAUDIT                      "Windows cannot modify auditing settings as requested because a component of the software you are using that is required to perform that function is not compatible with any version of Windows released after Windows Server 2003. Contact your software vendor to find out if this software has been updated for current versions of Windows."
+	IDS_CANNOTTAKEOWNERSHIP                    "Windows cannot take ownership as requested because a component of the software you are using that is required to perform that function is not compatible with any version of Windows released after Windows Server 2003. Contact your software vendor to find out if this software has been updated for current versions of Windows."
+END
