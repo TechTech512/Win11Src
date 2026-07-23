@@ -1,0 +1,7 @@
+LIBRARY ImCmpDll
+EXPORTS
+	AnalyzeImage
+	CreateImage
+	DeleteImage
+	DownscaleImage
+	LoadImage1

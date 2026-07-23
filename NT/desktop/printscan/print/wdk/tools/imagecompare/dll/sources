@@ -1,0 +1,21 @@
+TARGETNAME=ImCmpDLL
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=imcmpdll.def
+USE_MSVCRT=1
+EXPECTED_WINVER=6.00
+
+INCLUDES=..\inc;$(SDK_INC_PATH)\gdiplus;
+SOURCES=imagecomparedll.cpp \
+        imagecompare.cpp \
+		res.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\gdiplus.lib

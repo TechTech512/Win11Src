@@ -1,0 +1,1 @@
+#define IDI_IMPCMPICO 1001
