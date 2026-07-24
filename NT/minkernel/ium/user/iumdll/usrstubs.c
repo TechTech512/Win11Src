@@ -8,6 +8,15 @@
  * These are placeholders – the actual syscall numbers should be defined
  * according to the IUM service table.
  */
+#pragma warning (disable:4083)
+#pragma warning (disable:4005)
+
+#include <windows.h>
+#include <winternl.h>
+#include <ntstatus.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
 
 #ifdef _WIN64
 // x64 inline assembly not supported in MSVC; use a helper function.
@@ -29,25 +38,56 @@
     }
 
 // Ordinal 1: IumAssignMemoryToSocDomain
-IUM_STUB(0x01, IumAssignMemoryToSocDomain, 0x8000000)
+int32_t IumAssignMemoryToSocDomain(uint64_t *outHandle,
+                                          uint64_t arg1, uint64_t arg2,
+                                          uint32_t arg3, uint32_t arg4,
+                                          uint32_t arg5, uint32_t arg6,
+                                          uint32_t arg7){
+											  DO_SYSCALL(0x01) \
+                                              return 0x8000000; \
+										  }
 
 // Ordinal 2: IumAwaitSmc
 IUM_STUB(0x02, IumAwaitSmc, 0x8000001)
 
 // Ordinal 3: IumCreateSecureDevice
-IUM_STUB(0x03, IumCreateSecureDevice, 0x8000002)
+int32_t IumCreateSecureDevice(uint64_t arg1, uint64_t *outHandle){
+	DO_SYSCALL(0x03) \
+	return 0x8000002; \
+}
 
 // Ordinal 4: IumCreateSecureSection
-IUM_STUB(0x04, IumCreateSecureSection, 0x8000003)
+int32_t IumCreateSecureSection(uint64_t *outHandle,
+                                      uint64_t arg1, uint64_t arg2,
+                                      uint32_t arg3, uint32_t arg4,
+                                      uint32_t arg5){
+										  DO_SYSCALL(0x04) \
+										  return 0x8000003; \
+									  }
 
 // Ordinal 5: IumCreateSecureSectionSpecifyPages
-IUM_STUB(0x05, IumCreateSecureSectionSpecifyPages, 0x8000004)
+int32_t IumCreateSecureSectionSpecifyPages(uint64_t *outHandle,
+                                                  uint64_t arg1, uint64_t arg2,
+                                                  uint32_t arg3, uint32_t arg4,
+                                                  uint32_t arg5, uint32_t arg6){
+													  DO_SYSCALL(0x05) \
+													  return 0x8000004; \
+												  }
 
 // Ordinal 6: IumCrypto
-IUM_STUB(0x06, IumCrypto, 0x8000005)
+uint32_t IumCrypto(void *context){
+	DO_SYSCALL(0x06) \
+	return 0x8000005; \
+}
 
 // Ordinal 7: IumDmaMapMemory
-IUM_STUB(0x07, IumDmaMapMemory, 0x8000006)
+int32_t IumDmaMapMemory(uint64_t arg1, uint64_t arg2,
+                               uint64_t arg3, uint64_t arg4,
+                               uint32_t arg5, uint64_t *outHandle,
+                               uint64_t arg6, uint64_t arg7){
+								   DO_SYSCALL(0x07) \
+								   return 0x8000006; \
+							   }
 
 // Ordinal 8: IumEmitSmc
 IUM_STUB(0x08, IumEmitSmc, 0x8000007)
@@ -56,28 +96,52 @@ IUM_STUB(0x08, IumEmitSmc, 0x8000007)
 IUM_STUB(0x09, IumFlushSecureSectionBuffers, 0x8000008)
 
 // Ordinal 10: IumGetDmaEnabler
-IUM_STUB(0x0A, IumGetDmaEnabler, 0x8000009)
+int32_t IumGetDmaEnabler(uint64_t arg1, uint64_t arg2,
+                                uint64_t *outHandle){
+									DO_SYSCALL(0x0A) \
+									return 0x8000009; \
+								}
 
 // Ordinal 11: IumGetExposedSecureSection
-IUM_STUB(0x0B, IumGetExposedSecureSection, 0x800000A)
+int32_t IumGetExposedSecureSection(uint64_t *outHandle, uint64_t arg1){
+	DO_SYSCALL(0x0B) \
+	return 0x800000A; \
+}
 
 // Ordinal 12: IumGetIdk
-IUM_STUB(0x0C, IumGetIdk, 0x800000B)
+int32_t IumGetIdk(uint32_t type, uint64_t arg2, uint64_t *outHandle){
+	DO_SYSCALL(0x0C) \
+	return 0x800000B; \
+}
 
 // Ordinal 13: IumMapSecureIo
-IUM_STUB(0x0D, IumMapSecureIo, 0x800000C)
+int32_t IumMapSecureIo(uint64_t arg1, uint64_t arg2,
+                              uint64_t arg3, uint32_t arg4,
+                              uint64_t arg5, uint64_t *outHandle){
+								  DO_SYSCALL(0x0D) \
+								  return 0x800000C; \
+							  }
 
 // Ordinal 14: IumOpenCurrentExtension
-IUM_STUB(0x0E, IumOpenCurrentExtension, 0x800000D)
+int32_t IumOpenCurrentExtension(uint64_t *outHandle){
+	DO_SYSCALL(0x0E) \
+	return 0x800000D; \
+}
 
 // Ordinal 15: IumOpenSecureSection
-IUM_STUB(0x0F, IumOpenSecureSection, 0x800000E)
+int32_t IumOpenSecureSection(uint64_t *outHandle, uint64_t arg1){
+	DO_SYSCALL(0x0F) \
+	return 0x800000E; \
+}
 
 // Ordinal 16: IumPostMailbox
 IUM_STUB(0x10, IumPostMailbox, 0x800000F)
 
 // Ordinal 17: IumProtectSecureIo
-IUM_STUB(0x11, IumProtectSecureIo, 0x8000010)
+int32_t IumProtectSecureIo(uint64_t *arg1, uint64_t *arg2){
+	DO_SYSCALL(0x11) \
+	return 0x8000010; \
+}
 
 // Ordinal 18: IumQuerySecureDeviceInformation
 IUM_STUB(0x12, IumQuerySecureDeviceInformation, 0x8000011)
