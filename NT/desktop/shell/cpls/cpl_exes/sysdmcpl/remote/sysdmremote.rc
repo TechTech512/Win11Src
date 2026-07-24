@@ -1,0 +1,36 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2005 Microsoft Corporation. All rights reserved.
+//
+// Resource table for sysdm stubs
+//
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "System Remote Settings"
+#define VER_INTERNALNAME_STR        "SystemPropertiesRemote"
+#define VER_ORIGINALFILENAME_STR    "SystemPropertiesRemote.EXE"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	0 "System Remote Settings"
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+8001 ICON DISCARDABLE "sysdmremote.ico"

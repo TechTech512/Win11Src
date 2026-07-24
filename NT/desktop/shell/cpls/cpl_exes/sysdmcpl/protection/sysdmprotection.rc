@@ -1,0 +1,36 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2005 Microsoft Corporation. All rights reserved.
+//
+// Resource table for sysdm stubs
+//
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "System Protection Settings"
+#define VER_INTERNALNAME_STR        "SystemPropertiesProtection"
+#define VER_ORIGINALFILENAME_STR    "SSystemPropertiesProtection.EXE"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	0 "System Protection Settings"
+END
+
+/////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+8001 ICON DISCARDABLE "sysdmprotection.ico"
