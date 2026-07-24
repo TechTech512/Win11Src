@@ -1,0 +1,33 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2021 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "IUM Layer Secure Win32 DLL"
+#define VER_INTERNALNAME_STR        "iumbase.dll"
+#define VER_ORIGINALFILENAME_STR    "iumbase.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Message Table
+//
+
+1 11 DISCARDABLE "msgprecompiled.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WEVT
+//
+
+1 WEVT_TEMPLATE DISCARDABLE "wevttmpl.bin"

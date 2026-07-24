@@ -1,0 +1,24 @@
+TARGETNAME=iumbase
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=iumbase.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=iumbase.c \
+        msg.mc \
+		iumbase.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+DLLENTRY=_DllMainCRTStartupForGS
+
+UMTYPE=console
+UMENTRY=dllmain
+TARGETLIBS= \
+	$(SDK_LIB_PATH)\BufferOverflow.lib \
+	$(SDK_LIB_PATH)\ntdllp.lib \
+	$(MINWIN_PRIV_SDK_LIB_PATH)\iumdll.lib \
+	$(SDK_LIB_PATH)\ntdll.lib
+	
+NT_SIGNCODE=1
