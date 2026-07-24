@@ -1,0 +1,9 @@
+DIRS=advanced \
+     computer \
+	 dataexecutionprevention \
+	 hardware \
+	 performance \
+	 placeholder \
+	 protection \
+	 remote
+
