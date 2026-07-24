@@ -1,0 +1,28 @@
+TARGETNAME=SystemPropertiesAdvanced
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+EXPECTED_WINVER=10.00
+
+SOURCES=sysdmadvanced.cpp \
+		sysdmadvanced.rc
+
+C_DEFINES=-DSECURITY_WIN32
+
+LINKENTRY=wWinMainCRTStartup
+
+UMTYPE=windows
+UMENTRY=wwinmain
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\msvcrt_enforcement.lib \
+    $(SHELL_LIB_PATH)\sysdmp.lib \
+	$(BASEDIR)\public\sdk\lib\mincore\*\mincore.lib \
+    $(SDK_LIB_PATH)\kernel32.lib \
+	$(SDK_LIB_PATH)\shell32.lib
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=SysdmAdvanced.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.SystemPropertiesAdvanced
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
