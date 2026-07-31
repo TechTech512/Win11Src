@@ -1,0 +1,19 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2021 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "CoreCLR WinRT Activation Helper"
+#define VER_INTERNALNAME_STR        "ClrHost.dll"
+#define VER_ORIGINALFILENAME_STR    "ClrHost.dll"
+
+#include "common.ver"
