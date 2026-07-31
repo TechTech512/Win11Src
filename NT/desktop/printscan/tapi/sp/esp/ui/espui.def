@@ -1,0 +1,14 @@
+LIBRARY     ESPUI
+
+EXPORTS
+        GenericDlgProc
+		TUISPI_lineConfigDialog
+        TUISPI_lineConfigDialogEdit
+        TUISPI_phoneConfigDialog
+        TUISPI_providerConfig
+        TUISPI_providerGenericDialog
+        TUISPI_providerGenericDialogData
+        TUISPI_providerRemove
+        TUISPI_providerInstall
+
+        

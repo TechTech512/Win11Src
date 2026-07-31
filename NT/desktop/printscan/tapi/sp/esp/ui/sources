@@ -1,0 +1,23 @@
+TARGETNAME=espui
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+EXPECTED_WINVER=6.00
+
+C_DEFINES=-DTAPI_NT=1
+
+DLLENTRY=_DllMainCRTStartup
+UMTYPE=windows
+USE_MSVCRT=1
+NT_SIGNCODE=1
+
+TARGETLIBS=\
+            $(SDK_LIB_PATH)\advapi32.lib \
+            $(SDK_LIB_PATH)\gdi32.lib \
+            $(SDK_LIB_PATH)\kernel32.lib \
+            $(SDK_LIB_PATH)\user32.lib
+
+SOURCES=espui.c  \
+        espui.rc
+
+BINPLACE_PLACEFILE=..\..\..\placefil.txt
+
