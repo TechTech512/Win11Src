@@ -1,0 +1,64 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2021 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Open Location and Other Sensors"
+#define VER_INTERNALNAME_STR        "Location and Other Sensors Control Panel"
+#define VER_ORIGINALFILENAME_STR    "SensorsCpl.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WSSCPL_NAME                       "Location Settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_SENSORS_CLASS_NAME                "Sensors"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN ICON DISCARDABLE "sensor.ico"
+IDI_USERS ICON DISCARDABLE "users.ico"
+IDI_LOCALUSER ICON DISCARDABLE "localuser.ico"
+IDI_COMPUTER ICON DISCARDABLE "computer.ico"
+IDI_VELOCITY ICON DISCARDABLE "velocity.ico"
+IDI_HEALTH ICON DISCARDABLE "health.ico"
+IDI_CHECKLIST ICON DISCARDABLE "checklist.ico"
+IDI_CHARGE ICON DISCARDABLE "charge.ico"
+IDI_CLOUDY ICON DISCARDABLE "cloudy.ico"
+IDI_SENSORUSER ICON DISCARDABLE "sensoruser.ico"
+IDI_BIOMETRICS ICON DISCARDABLE "biometrics.ico"
+IDI_GLOBEMAP ICON DISCARDABLE "globemap.ico"
+IDI_SUNNY ICON DISCARDABLE "sunny.ico"
+IDI_SENSEDEVICE ICON DISCARDABLE "sensedevice.ico"
+IDI_SETTINGS ICON DISCARDABLE "settings.ico"
+IDI_CONTRAST ICON DISCARDABLE "contrast.ico"
+IDI_SIGNAL ICON DISCARDABLE "signal.ico"
+IDI_DIRECTIONS ICON DISCARDABLE "directions.ico"
+IDI_LIGHTDARK ICON DISCARDABLE "lightdark.ico"
+IDI_FOCUS ICON DISCARDABLE "focus.ico"
+IDI_BARCODE ICON DISCARDABLE "barcode.ico"
+IDI_TEMPERATURE ICON DISCARDABLE "temperature.ico"
