@@ -1,0 +1,32 @@
+TARGETNAME=KeywordDetectorContosoAdapter
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=KeywordDetectorContosoAdapter.def
+USE_LIBCMT=1
+USE_STL=1
+DLLENTRY=_DllMainCRTStartup
+UMTYPE=console
+EXPECTED_WINVER=10.00
+C_DEFINES = $(C_DEFINES) -D_WINDLL -D_USRDLL -DUNICODE -D_UNICODE
+INCLUDES = ..\inc;..;$(DDK_INC_PATH)
+MSC_WARNING_LEVEL=/W4 /WX /wd4083
+PRECOMPILED_CXX=stdafx.cpp
+PRECOMPILED_INCLUDE=stdafx.h
+PRECOMPILED_PCH=stdafx.pch
+PRECOMPILED_OBJ=stdafx.obj
+SOURCES=dllmain.cpp \
+        keyworddetectorcontosoadapter.cpp \
+        keyworddetectorcontosoadapter.idl \
+		keyworddetectorcontosoadapter.rc
+TARGETLIBS=$(SDK_LIB_PATH)\Kernel32.lib \
+           $(SDK_LIB_PATH)\ole32.lib \
+           $(SDK_LIB_PATH)\oleaut32.lib \
+           $(SDK_LIB_PATH)\advapi32.lib \
+           $(SDK_LIB_PATH)\user32.lib \
+           $(SDK_LIB_PATH)\uuid.lib \
+           $(SDK_LIB_PATH)\mfplat.lib \
+           $(SDK_LIB_PATH)\runtimeobject.lib
+# Debug vs. Release: define _DEBUG when DBG=1
+!ifdef DBG
+C_DEFINES = $(C_DEFINES) -D_DEBUG
+!endif
