@@ -1,18 +1,28 @@
+/*
+ * mountvol.c
+ *
+ * MountVol utility – create, delete, or list volume mount points.
+ * Reconstructed from decompiled binary with strsafe.h usage.
+ */
+#pragma warning (disable:4005)
 #pragma warning (disable:4645)
+#pragma warning (disable:4995)
+
 #include <windows.h>
 #include <winioctl.h>
-#include <stdio.h>
-#include <msg.h>
-#include <winnlsp.h>
+#include <winternl.h>
+#include <ntstatus.h>
 #include <mountmgr.h>
 #include <ntddvol.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <wchar.h>
+#include <stdarg.h>
+#include <strsafe.h>
+#include <sysinfoapi.h>
+#include "msg.h"
 
-#define SIZEOF_ARRAY(_Array)     (sizeof(_Array)/sizeof(_Array[0]))
-
-
-HANDLE  OutputFile;
-BOOL    IsConsoleOutput;
-
+// Provide a stub implementation
 void __cdecl __report_rangecheckfailure(void)
 {
     // Just return - the check failed but we'll ignore it
@@ -20,151 +30,232 @@ void __cdecl __report_rangecheckfailure(void)
     return;
 }
 
-void
-DisplayIt(
-    IN  PWSTR   Message
-    )
+#pragma comment(lib, "ntdll.lib")
 
+// ------------------------------------------------------------------
+// Constants and macros
+// ------------------------------------------------------------------
+#define SIZEOF_ARRAY(_Array)     (sizeof(_Array)/sizeof(_Array[0]))
+#define MAX_PATH 260
+
+// Missing IOCTL definitions
+#ifndef IOCTL_VOLUME_IS_OFFLINE
+#define IOCTL_VOLUME_IS_OFFLINE CTL_CODE(IOCTL_VOLUME_BASE, 0x0004, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif
+
+#ifndef IOCTL_VOLUME_SUPPORTS_ONLINE_OFFLINE
+#define IOCTL_VOLUME_SUPPORTS_ONLINE_OFFLINE CTL_CODE(IOCTL_VOLUME_BASE, 0x0005, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif
+
+#ifndef IOCTL_VOLUME_OFFLINE
+#define IOCTL_VOLUME_OFFLINE CTL_CODE(IOCTL_VOLUME_BASE, 0x0006, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif
+
+#ifndef IOCTL_MOUNTMGR_SCRUB_REGISTRY
+#define IOCTL_MOUNTMGR_SCRUB_REGISTRY CTL_CODE(IOCTL_MOUNTMGR_BASE, 0x000E, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif
+
+#ifndef SystemBootEnvironmentInformation
+#define SystemBootEnvironmentInformation 0x5A
+#endif
+
+#ifndef SystemPartitionInformation
+#define SystemPartitionInformation 0x62
+#endif
+
+// ------------------------------------------------------------------
+// Global variables
+// ------------------------------------------------------------------
+HANDLE OutputFile;
+BOOL IsConsoleOutput;
+
+// ------------------------------------------------------------------
+// DisplayIt – output a message to console or file
+// ------------------------------------------------------------------
+void DisplayIt(PCWSTR Message)
 {
-    DWORD   bytes, len;
-    PSTR    message;
+    DWORD bytes;
+    PSTR message;
+    int len;
 
     if (IsConsoleOutput) {
-        WriteConsole(OutputFile, Message, wcslen(Message),
-                     &bytes, NULL);
+        WriteConsoleW(OutputFile, Message, (DWORD)wcslen(Message), &bytes, NULL);
     } else {
-        len = wcslen(Message);
-        message = LocalAlloc(0, (len + 1)*sizeof(WCHAR));
-        if (!message) {
-            return;
+        len = WideCharToMultiByte(CP_ACP, 0, Message, -1, NULL, 0, NULL, NULL);
+        message = (PSTR)LocalAlloc(0, len);
+        if (message) {
+            WideCharToMultiByte(CP_ACP, 0, Message, -1, message, len, NULL, NULL);
+            WriteFile(OutputFile, message, (DWORD)strlen(message), &bytes, NULL);
+            LocalFree(message);
         }
-        CharToOem(Message, message);
-        WriteFile(OutputFile, message, strlen(message), &bytes, NULL);
-        LocalFree(message);
     }
 }
 
-void  
-PrintMessage(
-    DWORD messageID, 
-    ...
-    )
+// ------------------------------------------------------------------
+// PrintMessage – format and display a message with variable arguments
+// ------------------------------------------------------------------
+void PrintMessage(DWORD messageID, ...)
 {
-    unsigned short messagebuffer[4096];
+    WCHAR messageBuffer[4096];
     va_list ap;
 
     va_start(ap, messageID);
-
     FormatMessageW(FORMAT_MESSAGE_FROM_HMODULE, NULL, messageID, 0,
-                   messagebuffer, SIZEOF_ARRAY (messagebuffer), &ap);
-
-    DisplayIt(messagebuffer);
-
+                   messageBuffer, SIZEOF_ARRAY(messageBuffer), &ap);
+    DisplayIt(messageBuffer);
     va_end(ap);
+}
 
-}  // PrintMessage
-
-
-static 
-void
-PrintSystemMessageFromStatus (
-    DWORD Status
-    )
+// ------------------------------------------------------------------
+// PrintSystemMessageFromStatus – display a system error message
+// ------------------------------------------------------------------
+void PrintSystemMessageFromStatus(DWORD Status)
 {
-    unsigned short messageBuffer[1024];
+    WCHAR messageBuffer[1024];
 
-    FormatMessageW (FORMAT_MESSAGE_FROM_SYSTEM, 
-                    NULL, 
-                    Status, 
-                    0,
-                    messageBuffer, 
-                    SIZEOF_ARRAY (messageBuffer), 
-                    NULL);
-
+    FormatMessageW(FORMAT_MESSAGE_FROM_SYSTEM, NULL, Status, 0,
+                   messageBuffer, SIZEOF_ARRAY(messageBuffer), NULL);
     DisplayIt(messageBuffer);
 }
 
-
-static 
-BOOL
-VolumeNameIsDriveLetter(
-    IN  PWSTR  VolumeName
-    )
+// ------------------------------------------------------------------
+// VolumeNameIsDriveLetter – check if a name is a drive letter
+// ------------------------------------------------------------------
+BOOL VolumeNameIsDriveLetter(PCWSTR VolumeName)
 {
-    return ((3 == wcslen (VolumeName)) && 
-            (':'  == VolumeName [1]) && 
-            ('\\' == VolumeName [2]) &&
-            (((VolumeName [0] >= 'a') && (VolumeName [0] <= 'z')) || 
-             ((VolumeName [0] >= 'A') && (VolumeName [0] <= 'Z'))));
+    return ((3 == wcslen(VolumeName)) &&
+            (L':' == VolumeName[1]) &&
+            (L'\\' == VolumeName[2]) &&
+            (((VolumeName[0] >= L'a') && (VolumeName[0] <= L'z')) ||
+             ((VolumeName[0] >= L'A') && (VolumeName[0] <= L'Z'))));
 }
 
-
-BOOL
-IsVolumeOffline(
-    IN  PWSTR   VolumeName
-    )
-
+// ------------------------------------------------------------------
+// IsEfi – check if system is EFI boot
+// ------------------------------------------------------------------
+int IsEfi(void)
 {
-    DWORD   len;
-    HANDLE  h;
-    BOOL    b;
-    DWORD   bytes;
+    // First try the modern API (Windows 8+)
+    FIRMWARE_TYPE ft;
+    if (GetFirmwareType(&ft)) {
+        return (ft == FirmwareTypeUefi);
+    }
 
+    // Fallback: use NT API with the exact layout expected by the original binary
+    NTSTATUS status;
+    UCHAR buffer[0x20]; // 32 bytes as used in original
+    status = NtQuerySystemInformation(SystemBootEnvironmentInformation, buffer, sizeof(buffer), NULL);
+    if (NT_SUCCESS(status)) {
+        // Original decompiled code checks DWORD at offset 12 (index 3)
+        DWORD* pDword = (DWORD*)buffer;
+        return (pDword[3] == 2);
+    }
+    return 0;
+}
 
-    len = wcslen(VolumeName);
+// ------------------------------------------------------------------
+// GetSystemPartition – retrieve system partition path via NT API
+// ------------------------------------------------------------------
+BOOL GetSystemPartition(PWSTR SystemPartition)
+{
+    NTSTATUS status;
+    ULONG bufferSize = 0x208;
+    PBYTE buffer = NULL;
+    BOOL result = FALSE;
 
-    if ((0 == len) || (L'\\' != VolumeName[len - 1])) {
+    do {
+        if (buffer) {
+            LocalFree(buffer);
+            buffer = NULL;
+        }
+        buffer = (PBYTE)LocalAlloc(0, bufferSize);
+        if (!buffer) break;
+
+        status = NtQuerySystemInformation(SystemPartitionInformation, buffer, bufferSize, &bufferSize);
+        if (NT_SUCCESS(status)) {
+            // buffer[0] and buffer[1] are the length in bytes (USHORT)
+            USHORT lenBytes = *(USHORT*)buffer;
+            USHORT lenChars = lenBytes / sizeof(WCHAR); // characters count
+            if (lenChars > 0 && lenChars < MAX_PATH) {
+                // Source string starts at offset 2 (after the length WORD)
+                PWSTR pSrc = (PWSTR)(buffer + 2);
+                // Use StringCopyWorkerW as in original
+                StringCopyWorkerW(SystemPartition, (size_t)pSrc, (size_t*)lenChars, NULL, (size_t)NULL);
+                result = TRUE;
+            }
+            break;
+        } else if (status == STATUS_BUFFER_TOO_SMALL || status == STATUS_INFO_LENGTH_MISMATCH) {
+            bufferSize += 0x100;
+            continue;
+        } else {
+            break;
+        }
+    } while (TRUE);
+
+    if (buffer) LocalFree(buffer);
+    return result;
+}
+
+// ------------------------------------------------------------------
+// IsVolumeOffline – check if a volume is offline
+// ------------------------------------------------------------------
+BOOL IsVolumeOffline(PWSTR VolumeName)
+{
+    DWORD len = wcslen(VolumeName);
+    HANDLE h;
+    BOOL b;
+    DWORD bytes;
+
+    if (len == 0 || VolumeName[len - 1] != L'\\') {
         return FALSE;
     }
 
-    VolumeName[len - 1] = 0;
-    h = CreateFile(VolumeName, 0, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,
-                   OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, INVALID_HANDLE_VALUE);
-    VolumeName[len - 1] = '\\';
+    VolumeName[len - 1] = L'\0';
+    h = CreateFileW(VolumeName, 0, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,
+                    OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, INVALID_HANDLE_VALUE);
+    VolumeName[len - 1] = L'\\';
+
     if (h == INVALID_HANDLE_VALUE) {
         return FALSE;
     }
 
-    b = DeviceIoControl(h, IOCTL_VOLUME_IS_OFFLINE, NULL, 0, NULL, 0, &bytes,
-                        NULL);
+    b = DeviceIoControl(h, IOCTL_VOLUME_IS_OFFLINE, NULL, 0, NULL, 0, &bytes, NULL);
     CloseHandle(h);
-
     return b;
 }
 
-void
-PrintTargetForName(
-    IN  PWSTR   VolumeName
-    )
-
+// ------------------------------------------------------------------
+// PrintTargetForName – print mount points for a volume
+// ------------------------------------------------------------------
+void PrintTargetForName(PCWSTR VolumeName)
 {
-    BOOL    b;
-    DWORD   len;
-    PWSTR   volumePaths, p;
+    BOOL b;
+    DWORD len;
+    PWSTR volumePaths, p;
 
     PrintMessage(MOUNTVOL_VOLUME_NAME, VolumeName);
 
-    b = GetVolumePathNamesForVolumeName(VolumeName, NULL, 0, &len);
+    b = GetVolumePathNamesForVolumeNameW(VolumeName, NULL, 0, &len);
     if (!b && GetLastError() != ERROR_MORE_DATA) {
-        PrintSystemMessageFromStatus (GetLastError());
+        PrintSystemMessageFromStatus(GetLastError());
         return;
     }
 
-    volumePaths = LocalAlloc(0, len*sizeof(WCHAR));
+    volumePaths = (PWSTR)LocalAlloc(0, len * sizeof(WCHAR));
     if (!volumePaths) {
-        PrintSystemMessageFromStatus (ERROR_NOT_ENOUGH_MEMORY);
+        PrintSystemMessageFromStatus(ERROR_NOT_ENOUGH_MEMORY);
         return;
     }
 
-    b = GetVolumePathNamesForVolumeName(VolumeName, volumePaths, len, NULL);
+    b = GetVolumePathNamesForVolumeNameW(VolumeName, volumePaths, len, NULL);
     if (!b) {
         LocalFree(volumePaths);
-        PrintSystemMessageFromStatus (GetLastError());
+        PrintSystemMessageFromStatus(GetLastError());
         return;
     }
 
     if (!volumePaths[0]) {
-        if (IsVolumeOffline(VolumeName)) {
+        if (IsVolumeOffline((PWSTR)VolumeName)) {
             PrintMessage(MOUNTVOL_NOT_MOUNTED);
         } else {
             PrintMessage(MOUNTVOL_NO_MOUNT_POINTS);
@@ -174,176 +265,43 @@ PrintTargetForName(
     }
 
     p = volumePaths;
-    for (;;) {
+    do {
         PrintMessage(MOUNTVOL_MOUNT_POINT, p);
-
-        while (*p++);
-
-        if (!*p) {
-            break;
-        }
-    }
+        p += wcslen(p) + 1;
+    } while (*p);
 
     LocalFree(volumePaths);
-
     PrintMessage(MOUNTVOL_NEWLINE);
 }
 
-BOOL
-GetSystemPartitionFromRegistry(
-    IN OUT  PWCHAR  SystemPartition
-    )
-
+// ------------------------------------------------------------------
+// PrintMappedESP – print EFI system partition mapping
+// ------------------------------------------------------------------
+void PrintMappedESP(PBOOL IsMapped)
 {
-    LONG    r;
-    HKEY    key;
-    DWORD   bytes;
+    WCHAR systemPartition[MAX_PATH];
+    WCHAR dosDevice[4], dosTarget[MAX_PATH];
+    WCHAR c;
 
-    r = RegOpenKeyEx(HKEY_LOCAL_MACHINE, L"SYSTEM\\Setup", 0, KEY_QUERY_VALUE,
-                     &key);
-    if (r) {
-        SetLastError(r);
-        return FALSE;
-    }
+    if (IsMapped) *IsMapped = FALSE;
 
-    bytes = MAX_PATH*sizeof(WCHAR);
-    r = RegQueryValueEx(key, L"SystemPartition", NULL, NULL,
-                        (LPBYTE) SystemPartition, &bytes);
-    RegCloseKey(key);
-    if (r) {
-        SetLastError(r);
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-BOOL
-QueryAutoMountState(
-    PBOOL       ReturnedAutoMountEnabled
-    )
-
-{
-    HANDLE                      h;
-    BOOL                        bSucceeded;
-    DWORD                       bytes;
-    MOUNTMGR_QUERY_AUTO_MOUNT   QueryAutoMount;
-
-    h = CreateFile (MOUNTMGR_DOS_DEVICE_NAME,
-                    0,
-                    FILE_SHARE_READ | FILE_SHARE_WRITE,
-                    NULL,
-                    OPEN_EXISTING,
-                    FILE_ATTRIBUTE_NORMAL,
-                    INVALID_HANDLE_VALUE);
-
-    bSucceeded = (INVALID_HANDLE_VALUE != h);
-
-
-    if (bSucceeded) {
-        bSucceeded = DeviceIoControl (h, 
-                                      IOCTL_MOUNTMGR_QUERY_AUTO_MOUNT, 
-                                      NULL, 
-                                      0, 
-                                      &QueryAutoMount, 
-                                      sizeof (QueryAutoMount),
-                                      &bytes,
-                                      NULL);
-    }
-
-
-    if (bSucceeded) {
-        *ReturnedAutoMountEnabled = (Enabled == QueryAutoMount.CurrentState);
-    }
-
-
-    if (INVALID_HANDLE_VALUE != h) {
-        CloseHandle(h);
-    }
-
-
-    return (bSucceeded);
-}
-
-
-BOOL
-SetAutoMountState(
-    BOOL       AutoMountEnabled
-    )
-
-{
-    HANDLE                  h;
-    BOOL                    bSucceeded;
-    DWORD                   bytes;
-    MOUNTMGR_SET_AUTO_MOUNT SetAutoMount;
-
-    h = CreateFile (MOUNTMGR_DOS_DEVICE_NAME, 
-                    GENERIC_READ | GENERIC_WRITE, 
-                    FILE_SHARE_READ | FILE_SHARE_WRITE,
-                    NULL,
-                    OPEN_EXISTING,
-                    FILE_ATTRIBUTE_NORMAL,
-                    INVALID_HANDLE_VALUE);
-
-    bSucceeded = (INVALID_HANDLE_VALUE != h);
-
-
-    if (bSucceeded) {
-        memset (&SetAutoMount, 0x00, sizeof (SetAutoMount));
-
-        SetAutoMount.NewState = (AutoMountEnabled) ? Enabled : Disabled;
-
-        bSucceeded = DeviceIoControl (h, 
-                                      IOCTL_MOUNTMGR_SET_AUTO_MOUNT, 
-                                      &SetAutoMount, 
-                                      sizeof (SetAutoMount),
-                                      NULL, 
-                                      0, 
-                                      &bytes,
-                                      NULL);
-    }
-
-
-    if (INVALID_HANDLE_VALUE != h) {
-        CloseHandle(h);
-    }
-
-
-    return (bSucceeded);
-}
-
-
-void
-PrintMappedESP(
-    IN  BOOL*   IsMapped
-    )
-
-{
-    WCHAR   systemPartition[MAX_PATH];
-    UCHAR   c;
-    WCHAR   dosDevice[4], dosTarget[MAX_PATH];
-
-    if (IsMapped) {
-        *IsMapped = FALSE;
-    }
-
-    if (!GetSystemPartitionFromRegistry(systemPartition)) {
+    if (!GetSystemPartition(systemPartition)) {
         return;
     }
 
-    dosDevice[1] = ':';
-    dosDevice[2] = 0;
+    dosDevice[1] = L':';
+    dosDevice[2] = L'\0';
 
-    for (c = 'A'; c <= 'Z'; c++) {
+    for (c = L'A'; c <= L'Z'; c++) {
         dosDevice[0] = c;
-        if (!QueryDosDevice(dosDevice, dosTarget, SIZEOF_ARRAY (dosTarget))) {
+        if (!QueryDosDeviceW(dosDevice, dosTarget, SIZEOF_ARRAY(dosTarget))) {
             continue;
         }
-        if (lstrcmp(dosTarget, systemPartition)) {
+        if (wcscmp(dosTarget, systemPartition) != 0) {
             continue;
         }
-        dosDevice[2] = '\\';
-        dosDevice[3] = 0;
+        dosDevice[2] = L'\\';
+        dosDevice[3] = L'\0';
         if (IsMapped) {
             *IsMapped = TRUE;
         } else {
@@ -353,250 +311,199 @@ PrintMappedESP(
     }
 }
 
-
-void
-PrintVolumeList(
-    void
-    )
-
+// ------------------------------------------------------------------
+// PrintVolumeList – list all volumes and mount points
+// ------------------------------------------------------------------
+void PrintVolumeList(void)
 {
-    HANDLE  h;
-    WCHAR   volumeName[MAX_PATH];
-    BOOL    b;
-    BOOL    AutoMountEnabled;
+    HANDLE h;
+    WCHAR volumeName[MAX_PATH];
+    BOOL b;
 
-
-    b = QueryAutoMountState (&AutoMountEnabled);
-
-    if (!b) {
-        PrintSystemMessageFromStatus (GetLastError ());
-        return;
-    }
-
-
-    h = FindFirstVolume(volumeName, SIZEOF_ARRAY (volumeName));
+    h = FindFirstVolumeW(volumeName, SIZEOF_ARRAY(volumeName));
     if (h == INVALID_HANDLE_VALUE) {
-        PrintSystemMessageFromStatus (GetLastError());
+        PrintSystemMessageFromStatus(GetLastError());
         return;
     }
 
-    for (;;) {
-
+    do {
         PrintTargetForName(volumeName);
+        b = FindNextVolumeW(h, volumeName, SIZEOF_ARRAY(volumeName));
+    } while (b);
 
-        b = FindNextVolume(h, volumeName, SIZEOF_ARRAY (volumeName));
+    if (GetLastError() != ERROR_NO_MORE_FILES) {
+        PrintSystemMessageFromStatus(GetLastError());
+    }
 
-        if (!b) {
-            if (ERROR_NO_MORE_FILES != GetLastError()) {
-                PrintSystemMessageFromStatus (GetLastError());
-                FindVolumeClose(h);
-                return;
-            }
+    FindVolumeClose(h);
 
+    if (IsEfi()) {
+        PrintMappedESP(NULL);
+    }
+}
+
+// ------------------------------------------------------------------
+// SetAutoMountState – enable or disable auto-mount
+// ------------------------------------------------------------------
+BOOL SetAutoMountState(BOOL AutoMountEnabled)
+{
+    HANDLE h;
+    BOOL b;
+    DWORD bytes;
+    MOUNTMGR_SET_AUTO_MOUNT SetAutoMount;
+
+    h = CreateFileW(MOUNTMGR_DOS_DEVICE_NAME,
+                    GENERIC_READ | GENERIC_WRITE,
+                    FILE_SHARE_READ | FILE_SHARE_WRITE,
+                    NULL, OPEN_EXISTING,
+                    FILE_ATTRIBUTE_NORMAL, INVALID_HANDLE_VALUE);
+    if (h == INVALID_HANDLE_VALUE) {
+        return FALSE;
+    }
+
+    ZeroMemory(&SetAutoMount, sizeof(SetAutoMount));
+    SetAutoMount.NewState = AutoMountEnabled ? Enabled : Disabled;
+
+    b = DeviceIoControl(h, IOCTL_MOUNTMGR_SET_AUTO_MOUNT,
+                        &SetAutoMount, sizeof(SetAutoMount),
+                        NULL, 0, &bytes, NULL);
+    CloseHandle(h);
+    return b;
+}
+
+// ------------------------------------------------------------------
+// ScrubRegistry – remove orphaned mount points from registry
+// ------------------------------------------------------------------
+BOOL ScrubRegistry(void)
+{
+    HANDLE h, hh;
+    DWORD bytes;
+    BOOL b;
+    WCHAR volumeName[MAX_PATH];
+    WCHAR volumeNameTarget[MAX_PATH];
+    WCHAR volumeNameTarget2[MAX_PATH];
+    WCHAR subPath[2 * MAX_PATH];
+    WCHAR fullPath[3 * MAX_PATH];
+    DWORD lenVolume, lenSub;
+
+    h = CreateFileW(MOUNTMGR_DOS_DEVICE_NAME,
+                    GENERIC_READ | GENERIC_WRITE,
+                    FILE_SHARE_READ | FILE_SHARE_WRITE,
+                    NULL, OPEN_EXISTING,
+                    FILE_ATTRIBUTE_NORMAL, INVALID_HANDLE_VALUE);
+    if (h == INVALID_HANDLE_VALUE) {
+        return FALSE;
+    }
+
+    b = DeviceIoControl(h, IOCTL_MOUNTMGR_SCRUB_REGISTRY, NULL, 0, NULL, 0, &bytes, NULL);
+    CloseHandle(h);
+    if (!b) {
+        return FALSE;
+    }
+
+    h = FindFirstVolumeW(volumeName, SIZEOF_ARRAY(volumeName));
+    if (h == INVALID_HANDLE_VALUE) {
+        return FALSE;
+    }
+
+    while (TRUE) {
+        lenVolume = (DWORD)wcslen(volumeName);
+        wcscpy_s(fullPath, SIZEOF_ARRAY(fullPath), volumeName);
+
+        hh = FindFirstVolumeMountPointW(volumeName, subPath, SIZEOF_ARRAY(subPath));
+        if (hh != INVALID_HANDLE_VALUE) {
+            do {
+                lenSub = (DWORD)wcslen(subPath);
+                wcscpy_s(fullPath + lenVolume, SIZEOF_ARRAY(fullPath) - lenVolume, subPath);
+                fullPath[lenVolume + lenSub] = L'\0';
+
+                b = GetVolumeNameForVolumeMountPointW(fullPath, volumeNameTarget,
+                                                      SIZEOF_ARRAY(volumeNameTarget));
+                if (b) {
+                    b = GetVolumeNameForVolumeMountPointW(volumeNameTarget, volumeNameTarget2,
+                                                          SIZEOF_ARRAY(volumeNameTarget2));
+                    if (!b && GetLastError() == ERROR_PATH_NOT_FOUND) {
+                        RemoveDirectoryW(fullPath);
+                    }
+                }
+                if (!b && GetLastError() != ERROR_NO_MORE_FILES) {
+                    FindVolumeMountPointClose(hh);
+                    FindVolumeClose(h);
+                    return FALSE;
+                }
+            } while (FindNextVolumeMountPointW(hh, subPath, SIZEOF_ARRAY(subPath)));
+            FindVolumeMountPointClose(hh);
+        }
+
+        if (!FindNextVolumeW(h, volumeName, SIZEOF_ARRAY(volumeName))) {
             break;
         }
     }
 
     FindVolumeClose(h);
-
-    if (!AutoMountEnabled) {
-        PrintMessage(MOUNTVOL_NO_AUTO_MOUNT);
-    }
-
-    // Now called on all architectures – shows which drive letter (if any) is mapped to the ESP
-    PrintMappedESP(NULL);
-}
-
-BOOL
-SetSystemPartitionDriveLetter(
-    IN  PWCHAR  DirName
-    )
-
-/*++
-
-Routine Description:
-
-    This routine will set the given drive letter to the system partition.
-
-Arguments:
-
-    DirName - Supplies the drive letter directory name.
-
-Return Value:
-
-    BOOL
-
---*/
-
-{
-    WCHAR   systemPartition[MAX_PATH];
-
-    if (!GetSystemPartitionFromRegistry(systemPartition)) {
-        return FALSE;
-    }
-
-    DirName[wcslen(DirName) - 1] = 0;
-    if (!DefineDosDevice(DDD_RAW_TARGET_PATH, DirName, systemPartition)) {
-        return FALSE;
-    }
-
     return TRUE;
 }
 
-BOOL
-ScrubRegistry(
-    )
-
+// ------------------------------------------------------------------
+// SetSystemPartitionDriveLetter – assign a drive letter to the system partition
+// ------------------------------------------------------------------
+BOOL SetSystemPartitionDriveLetter(PWSTR DirName)
 {
-    HANDLE  h, hh;
-    DWORD   bytes;
-    DWORD   lengthVolumeName;
-    DWORD   lengthSubPath;
-    BOOL    bSuccess;
-    WCHAR   volumeName       [MAX_PATH];
-    WCHAR   volumeNameTarget [MAX_PATH];
-    WCHAR   volumeNameTarget2[MAX_PATH];
-    WCHAR   subPath[2*MAX_PATH];
-    WCHAR   fullPath[3*MAX_PATH];
+    WCHAR systemPartition[MAX_PATH];
 
-    h = CreateFile(MOUNTMGR_DOS_DEVICE_NAME, GENERIC_READ | GENERIC_WRITE,
-                   FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING,
-                   FILE_ATTRIBUTE_NORMAL, INVALID_HANDLE_VALUE);
-    if (h == INVALID_HANDLE_VALUE) {
+    if (!GetSystemPartition(systemPartition)) {
         return FALSE;
     }
 
-    bSuccess = DeviceIoControl(h, IOCTL_MOUNTMGR_SCRUB_REGISTRY, NULL, 0, NULL, 0,
-                               &bytes, NULL);
-
-    CloseHandle(h);
-
-    if (!bSuccess) {
+    DirName[wcslen(DirName) - 1] = L'\0';
+    if (!DefineDosDeviceW(DDD_RAW_TARGET_PATH, DirName, systemPartition)) {
         return FALSE;
     }
-
-
-    /*
-    ** Scan over each volume we can find on this system
-    */
-    h = FindFirstVolume(volumeName, SIZEOF_ARRAY (volumeName));
-    if (h == INVALID_HANDLE_VALUE) {
-        return FALSE;
-    }
-
-
-    while (bSuccess) {
-
-        lengthVolumeName = wcslen(volumeName);
-
-        CopyMemory(fullPath, volumeName, lengthVolumeName * sizeof(WCHAR));
-
-
-        /*
-        ** Scan over each mountpoint we can find on this volume
-        */
-        hh = FindFirstVolumeMountPoint(volumeName, subPath, SIZEOF_ARRAY (subPath));
-
-        if (hh != INVALID_HANDLE_VALUE) {
-
-            while (bSuccess) {
-
-                lengthSubPath = wcslen(subPath);
-
-                CopyMemory(fullPath + lengthVolumeName, 
-                           subPath, 
-                           lengthSubPath * sizeof(WCHAR));
-
-                fullPath [lengthVolumeName + lengthSubPath] = UNICODE_NULL;
-
-                bSuccess = GetVolumeNameForVolumeMountPoint(fullPath, 
-                                                            volumeNameTarget, 
-                                                            SIZEOF_ARRAY (volumeNameTarget));
-
-                if (bSuccess) {
-                    /*
-                    ** Does the volume pointed to by the mount point actually exist?
-                    */
-                    bSuccess = GetVolumeNameForVolumeMountPoint(volumeNameTarget, 
-                                                                volumeNameTarget2,
-                                                                SIZEOF_ARRAY (volumeNameTarget2));
-
-                    if ((!bSuccess) && (ERROR_PATH_NOT_FOUND == GetLastError())) {
-                        bSuccess = RemoveDirectory(fullPath);
-                    }
-                }
-
-                if (!bSuccess) {
-                    /*
-                    ** If we have seen any kind of failure other than that we 
-                    ** anticipated it's time to leave.
-                    */
-                    FindVolumeMountPointClose(hh);
-                    FindVolumeClose(h);
-                    return FALSE;
-                }
-
-                bSuccess = FindNextVolumeMountPoint(hh, subPath, SIZEOF_ARRAY (subPath));
-            }
-
-            FindVolumeMountPointClose(hh);
-        }
-
-        bSuccess = FindNextVolume(h, volumeName, SIZEOF_ARRAY (volumeName));
-    }
-
-    FindVolumeClose(h);
-
     return TRUE;
 }
 
-BOOL
-DoPermanentDismount(
-    IN  PWCHAR  DirName,
-    OUT PBOOL   ErrorHandled
-    )
-
+// ------------------------------------------------------------------
+// DoPermanentDismount – permanently dismount a volume
+// ------------------------------------------------------------------
+BOOL DoPermanentDismount(PWSTR DirName, PBOOL ErrorHandled)
 {
-    BOOL    b;
-    WCHAR   volumeName[MAX_PATH];
-    DWORD   len, bytes, dirLen;
-    PWSTR   volumePaths, p;
-    HANDLE  h;
+    WCHAR volumeName[MAX_PATH];
+    DWORD len, bytes;
+    PWSTR volumePaths, p;
+    HANDLE h;
+    BOOL b;
 
     *ErrorHandled = FALSE;
 
-    //
-    // Make sure that this is the last volume mount point.  Otherwise, fail.
-    //
-
-    b = GetVolumeNameForVolumeMountPoint(DirName, volumeName, SIZEOF_ARRAY (volumeName));
-    if (!b) {
+    if (!GetVolumeNameForVolumeMountPointW(DirName, volumeName, SIZEOF_ARRAY(volumeName))) {
         return FALSE;
     }
 
-    b = GetVolumePathNamesForVolumeName(volumeName, NULL, 0, &len);
+    b = GetVolumePathNamesForVolumeNameW(volumeName, NULL, 0, &len);
     if (!b && GetLastError() != ERROR_MORE_DATA) {
         return FALSE;
     }
 
-    volumePaths = LocalAlloc(0, len*sizeof(WCHAR));
+    volumePaths = (PWSTR)LocalAlloc(0, len * sizeof(WCHAR));
     if (!volumePaths) {
         return FALSE;
     }
 
-    b = GetVolumePathNamesForVolumeName(volumeName, volumePaths, len, NULL);
+    b = GetVolumePathNamesForVolumeNameW(volumeName, volumePaths, len, NULL);
     if (!b) {
         LocalFree(volumePaths);
         return FALSE;
     }
 
     if (!volumePaths[0]) {
+        LocalFree(volumePaths);
         SetLastError(ERROR_INVALID_PARAMETER);
         return FALSE;
     }
 
     p = volumePaths;
-    while (*p++);
+    while (*p) p++;
+    p++;
     if (*p) {
         LocalFree(volumePaths);
         *ErrorHandled = TRUE;
@@ -604,30 +511,18 @@ DoPermanentDismount(
         PrintMessage(MOUNTVOL_OTHER_VOLUME_MOUNT_POINTS);
         return FALSE;
     }
-
     LocalFree(volumePaths);
 
-    //
-    // Open the volume DASD for read and write access.
-    //
-
-    len = wcslen(volumeName);
-    volumeName[len - 1] = 0;
-    len--;
-
-    h = CreateFile(volumeName, GENERIC_READ | GENERIC_WRITE,
-                   FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING,
-                   FILE_ATTRIBUTE_NORMAL, INVALID_HANDLE_VALUE);
+    len = (DWORD)wcslen(volumeName);
+    volumeName[len - 1] = L'\0';
+    h = CreateFileW(volumeName, GENERIC_READ | GENERIC_WRITE,
+                    FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,
+                    OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, INVALID_HANDLE_VALUE);
     if (h == INVALID_HANDLE_VALUE) {
         return FALSE;
     }
 
-    //
-    // Make sure that this volume support VOLUME_OFFLINE.
-    //
-
-    b = DeviceIoControl(h, IOCTL_VOLUME_SUPPORTS_ONLINE_OFFLINE, NULL, 0, NULL,
-                        0, &bytes, NULL);
+    b = DeviceIoControl(h, IOCTL_VOLUME_SUPPORTS_ONLINE_OFFLINE, NULL, 0, NULL, 0, &bytes, NULL);
     if (!b) {
         CloseHandle(h);
         *ErrorHandled = TRUE;
@@ -636,160 +531,129 @@ DoPermanentDismount(
         return FALSE;
     }
 
-    //
-    // Dismount the volume.  Issue the LOCK first so that apps may have
-    // a chance to dismount gracefully.  If the LOCK fails, warn the user
-    // that continuing will result in handles being invalidated.
-    //
-
     b = DeviceIoControl(h, FSCTL_LOCK_VOLUME, NULL, 0, NULL, 0, &bytes, NULL);
     if (!b) {
         PrintMessage(MOUNTVOL_VOLUME_IN_USE);
     }
 
-    b = DeviceIoControl(h, FSCTL_DISMOUNT_VOLUME, NULL, 0, NULL, 0, &bytes,
-                        NULL);
+    b = DeviceIoControl(h, FSCTL_DISMOUNT_VOLUME, NULL, 0, NULL, 0, &bytes, NULL);
     if (!b) {
         CloseHandle(h);
         return FALSE;
     }
 
-    //
-    // Issue an IOCTL_VOLUME_OFFLINE.
-    //
-
-    b = DeviceIoControl(h, IOCTL_VOLUME_OFFLINE, NULL, 0, NULL, 0, &bytes,
-                        NULL);
+    b = DeviceIoControl(h, IOCTL_VOLUME_OFFLINE, NULL, 0, NULL, 0, &bytes, NULL);
     if (!b) {
         CloseHandle(h);
         return FALSE;
     }
 
     CloseHandle(h);
-
     return TRUE;
 }
 
-int __cdecl
-main(
-    int argc,
-    char** argv
-    )
-
+// ------------------------------------------------------------------
+// main – entry point
+// ------------------------------------------------------------------
+int __cdecl main(int argc, char* argv[])
 {
-    DWORD   mode;
-    WCHAR   dirName[MAX_PATH];
-    WCHAR   volumeName[MAX_PATH];
-    DWORD   dirLen, volumeLen;
-    BOOL    deletePoint     = FALSE;
-    BOOL    listPoint       = FALSE;
-    BOOL    systemPartition = FALSE;
-    BOOL    dismount        = FALSE;
-    BOOL    b, errorHandled;
-    WCHAR   targetPathBuffer[MAX_PATH];
+    DWORD mode;
+    WCHAR dirName[MAX_PATH];
+    WCHAR volumeName[MAX_PATH];
+    DWORD dirLen, volumeLen;
+    BOOL deletePoint = FALSE;
+    BOOL listPoint = FALSE;
+    BOOL systemPartition = FALSE;
+    BOOL dismount = FALSE;
+    BOOL b, errorHandled;
+    WCHAR targetPathBuffer[MAX_PATH];
+    HRESULT hr;
 
     SetThreadUILanguage(0);
-
     SetErrorMode(SEM_FAILCRITICALERRORS);
 
     OutputFile = GetStdHandle(STD_OUTPUT_HANDLE);
     IsConsoleOutput = GetConsoleMode(OutputFile, &mode);
 
-
     if (argc > 2) {
-        volumeLen = _snwprintf (volumeName, 
-                                SIZEOF_ARRAY (volumeName), 
-                                L"%hs",
-                                argv[2]);
-
-        if ((volumeLen <= 0) || (volumeLen >= SIZEOF_ARRAY (volumeName))) {
-
-            PrintSystemMessageFromStatus (ERROR_INVALID_PARAMETER);
+        hr = StringCchPrintfW(volumeName, SIZEOF_ARRAY(volumeName), L"%hs", argv[2]);
+        if (FAILED(hr)) {
+            PrintSystemMessageFromStatus(ERROR_INVALID_PARAMETER);
             return 1;
         }
+        volumeLen = (DWORD)wcslen(volumeName);
     }
-
 
     if (argc > 1) {
-        dirLen = _snwprintf (dirName,
-                             SIZEOF_ARRAY (dirName),
-                             L"%hs",
-                             argv[1]);
-
-        if ((dirLen <= 0) || (dirLen >= SIZEOF_ARRAY (dirName))) {
-
-            PrintSystemMessageFromStatus (ERROR_INVALID_PARAMETER);
+        hr = StringCchPrintfW(dirName, SIZEOF_ARRAY(dirName), L"%hs", argv[1]);
+        if (FAILED(hr)) {
+            PrintSystemMessageFromStatus(ERROR_INVALID_PARAMETER);
             return 1;
         }
+        dirLen = (DWORD)wcslen(dirName);
     }
 
-
-
     if (argc != 3) {
-
-        if (argc == 2 && argv[1][0] == '/' && argv[1][1] != 0 &&
-            argv[1][2] == 0) {
-
+        if (argc == 2 && argv[1][0] == '/' && argv[1][1] != '\0' && argv[1][2] == '\0') {
             if (argv[1][1] == 'r' || argv[1][1] == 'R') {
                 b = ScrubRegistry();
-
             } else if (argv[1][1] == 'n' || argv[1][1] == 'N') {
-                //
-                // Disable automatic mounting of volumes
-                //
-                b = SetAutoMountState (FALSE);
-
+                b = SetAutoMountState(FALSE);
             } else if (argv[1][1] == 'e' || argv[1][1] == 'E') {
-                //
-                // Enable automatic mounting of volumes
-                //
-                b = SetAutoMountState (TRUE);
-
+                b = SetAutoMountState(TRUE);
             } else {
                 goto Usage;
             }
-
             if (!b) {
-                PrintSystemMessageFromStatus (GetLastError());
+                PrintSystemMessageFromStatus(GetLastError());
                 return 1;
             }
-
             return 0;
         }
 
-
 Usage:
-
         PrintMessage(MOUNTVOL_USAGE1);
-        PrintMessage(MOUNTVOL_USAGE1_IA64);
+        if (IsEfi()) {
+            PrintMessage(MOUNTVOL_USAGE1_IA64);
+        }
         PrintMessage(MOUNTVOL_USAGE2);
-        PrintMessage(MOUNTVOL_USAGE2_IA64);
+        if (IsEfi()) {
+            PrintMessage(MOUNTVOL_USAGE2_IA64);
+        }
         PrintMessage(MOUNTVOL_START_OF_LIST);
         PrintVolumeList();
         return 0;
     }
 
-
-    if (argv[2][0] == '/' && argv[2][1] != 0 && argv[2][2] == 0) {
+    // Three arguments
+    if (argv[2][0] == '/' && argv[2][1] != '\0' && argv[2][2] == '\0') {
         if (argv[2][1] == 'd' || argv[2][1] == 'D') {
             deletePoint = TRUE;
         } else if (argv[2][1] == 'l' || argv[2][1] == 'L') {
             listPoint = TRUE;
         } else if (argv[2][1] == 'p' || argv[2][1] == 'P') {
             deletePoint = TRUE;
-            dismount    = TRUE;
+            dismount = TRUE;
         } else if (argv[2][1] == 's' || argv[2][1] == 'S') {
             systemPartition = TRUE;
         }
     }
 
-    if (dirName[dirLen - 1] != '\\') {
-        wcscat(dirName, L"\\");
+    if (dirName[dirLen - 1] != L'\\') {
+        hr = StringCchCatW(dirName, SIZEOF_ARRAY(dirName), L"\\");
+        if (FAILED(hr)) {
+            PrintSystemMessageFromStatus(ERROR_INVALID_PARAMETER);
+            return 1;
+        }
         dirLen++;
     }
 
-    if (volumeName[volumeLen - 1] != '\\') {
-        wcscat(volumeName, L"\\");
+    if (volumeName[volumeLen - 1] != L'\\') {
+        hr = StringCchCatW(volumeName, SIZEOF_ARRAY(volumeName), L"\\");
+        if (FAILED(hr)) {
+            PrintSystemMessageFromStatus(ERROR_INVALID_PARAMETER);
+            return 1;
+        }
         volumeLen++;
     }
 
@@ -803,60 +667,59 @@ Usage:
             b = TRUE;
         }
         if (b) {
-            b = DeleteVolumeMountPoint(dirName);
+            b = DeleteVolumeMountPointW(dirName);
             if (!b && GetLastError() == ERROR_INVALID_PARAMETER) {
-                dirName[dirLen - 1] = 0;
-                b = DefineDosDevice(DDD_REMOVE_DEFINITION, dirName, NULL);
+                dirName[dirLen - 1] = L'\0';
+                b = DefineDosDeviceW(DDD_REMOVE_DEFINITION, dirName, NULL);
             }
         }
     } else if (listPoint) {
-        b = GetVolumeNameForVolumeMountPoint(dirName, volumeName, SIZEOF_ARRAY (volumeName));
+        b = GetVolumeNameForVolumeMountPointW(dirName, volumeName, SIZEOF_ARRAY(volumeName));
         if (b) {
             PrintMessage(MOUNTVOL_VOLUME_NAME, volumeName);
         }
     } else if (systemPartition) {
-        // /S now works on all architectures (UEFI x86, x64, ARM, ARM64, IA64)
-        if (!VolumeNameIsDriveLetter (dirName)) {
-            PrintSystemMessageFromStatus (ERROR_INVALID_PARAMETER);
+#if defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM64) || defined(_M_IX86)
+        if (!VolumeNameIsDriveLetter(dirName)) {
+            PrintSystemMessageFromStatus(ERROR_INVALID_PARAMETER);
             return 1;
         } else {
-            // Temporarily strip trailing backslash to check if the drive letter is already used
-            dirName[2] = 0;
-            b = QueryDosDevice(dirName, targetPathBuffer, SIZEOF_ARRAY (targetPathBuffer));
+            dirName[2] = L'\0';
+            b = QueryDosDeviceW(dirName, targetPathBuffer, SIZEOF_ARRAY(targetPathBuffer));
             if (b) {
-                PrintSystemMessageFromStatus (ERROR_DIR_NOT_EMPTY);
+                PrintSystemMessageFromStatus(ERROR_DIR_NOT_EMPTY);
                 return 1;
             }
-            dirName[2] = '\\';
-
-            // Check if the ESP is already mapped to another drive letter
+            dirName[2] = L'\\';
             PrintMappedESP(&b);
             if (b) {
-                PrintSystemMessageFromStatus (ERROR_INVALID_PARAMETER);
+                PrintSystemMessageFromStatus(ERROR_INVALID_PARAMETER);
                 return 1;
             }
         }
-
         b = SetSystemPartitionDriveLetter(dirName);
+#else
+        PrintSystemMessageFromStatus(ERROR_INVALID_PARAMETER);
+        return 1;
+#endif
     } else {
-        if (VolumeNameIsDriveLetter (dirName)) {
-
-            dirName[2] = 0;
-            b = QueryDosDevice(dirName, targetPathBuffer, SIZEOF_ARRAY (targetPathBuffer));
+        if (VolumeNameIsDriveLetter(dirName)) {
+            dirName[2] = L'\0';
+            b = QueryDosDeviceW(dirName, targetPathBuffer, SIZEOF_ARRAY(targetPathBuffer));
             if (b) {
-                PrintSystemMessageFromStatus (ERROR_DIR_NOT_EMPTY);
+                PrintSystemMessageFromStatus(ERROR_DIR_NOT_EMPTY);
                 return 1;
             }
-            dirName[2] = '\\';
+            dirName[2] = L'\\';
         }
-
-        b = SetVolumeMountPoint(dirName, volumeName);
+        b = SetVolumeMountPointW(dirName, volumeName);
     }
 
     if (!b) {
-        PrintSystemMessageFromStatus (GetLastError());
+        PrintSystemMessageFromStatus(GetLastError());
         return 1;
     }
 
     return 0;
 }
+
