@@ -1,0 +1,12 @@
+TARGETNAME=EXT-MS-Win-umpoext-umpo-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=umpoext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=umpoext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
