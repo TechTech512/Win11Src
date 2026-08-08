@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-uiacore-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=uiacoreext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=uiacoreext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
