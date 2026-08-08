@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-xaml-pal-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=xamlpalext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=xamlpalext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
