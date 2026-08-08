@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-winrt-storage-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=winrtstorageext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=winrtstorageext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
