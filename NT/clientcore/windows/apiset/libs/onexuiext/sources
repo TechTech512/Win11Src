@@ -1,0 +1,12 @@
+TARGETNAME=EXT-MS-Win-wlan-onexui-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=onexuiapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=onexuiapiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
