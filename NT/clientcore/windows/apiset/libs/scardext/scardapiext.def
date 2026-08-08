@@ -1,0 +1,11 @@
+EXPORTS
+	SCardCancel
+	SCardConnectW
+	SCardDisconnect
+	SCardEstablishContext
+	SCardFreeMemory
+	SCardGetCardTypeProviderNameW
+	SCardGetStatusChangeW
+	SCardListCardsW
+	SCardListReadersW
+	SCardReleaseContext
