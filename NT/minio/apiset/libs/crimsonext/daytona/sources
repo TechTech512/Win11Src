@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-wevtapi-eventlog-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=crimsonapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=..\crimsonapiext.c \
+		..\apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
