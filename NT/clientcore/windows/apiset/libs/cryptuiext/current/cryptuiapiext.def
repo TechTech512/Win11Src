@@ -1,0 +1,6 @@
+EXPORTS
+	CertSelectionGetSerializedBlob
+	CryptUIDlgCertMgr
+	CryptUIDlgSelectCertificateA
+	CryptUIDlgSelectCertificateFromStore
+	CryptUIDlgViewCertificateW
