@@ -1,0 +1,4 @@
+EXPORTS
+	QueryActiveSession
+	QueryUserToken
+	RegisterUsertokenForNoWinlogon
