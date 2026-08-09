@@ -1,0 +1,6 @@
+EXPORTS
+	SetupCloseLog
+	SetupGetThreadLogToken
+	SetupLogErrorW
+	SetupOpenLog
+	SetupWriteTextLog

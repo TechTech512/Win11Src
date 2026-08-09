@@ -1,0 +1,12 @@
+TARGETNAME=EXT-MS-Win-Setupapi-Logging-L1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=setupapiloggingapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=setupapiloggingapiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
