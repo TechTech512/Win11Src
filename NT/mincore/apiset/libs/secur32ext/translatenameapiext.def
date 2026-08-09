@@ -1,0 +1,5 @@
+EXPORTS
+	GetComputerObjectNameW
+	SecpFreeMemory
+	SecpTranslateName
+	SecpTranslateNameEx
