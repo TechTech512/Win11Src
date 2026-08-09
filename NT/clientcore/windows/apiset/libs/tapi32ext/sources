@@ -1,0 +1,12 @@
+TARGETNAME=EXT-MS-Win-ras-tapi32-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=tapi32apiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=tapi32apiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
