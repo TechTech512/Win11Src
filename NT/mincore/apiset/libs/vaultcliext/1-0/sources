@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-security-vaultcli-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=vaultcliext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=..\vaultcliext.c \
+		..\apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
