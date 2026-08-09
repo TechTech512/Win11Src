@@ -1,0 +1,6 @@
+EXPORTS
+	SetupCloseInfFile
+	SetupFindFirstLineW
+	SetupFindNextLine
+	SetupGetLineTextW
+	SetupOpenInfFileW
