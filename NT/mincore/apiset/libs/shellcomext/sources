@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-shell32-shellcom-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=shellcomapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=shellcomapiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
