@@ -1,0 +1,8 @@
+EXPORTS
+	GetLoggedOnUserCount
+	PrimaryTerminalAndHookWorker
+	StartLoadingFontsWorker
+	UIStartupWorker
+	UnregisterSession0ViewerWindowHookDll
+	WaitForWinstationShutdown
+	WinStationSystemShutdownStartedWorker
