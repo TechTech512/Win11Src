@@ -1,0 +1,3 @@
+EXPORTS
+	ScesrvInitializeServer
+	ScesrvTerminateServer
