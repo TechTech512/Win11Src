@@ -1,0 +1,7 @@
+EXPORTS
+	GetDisplayAutoRotationPreferencesByProcessId @2512
+	SetActiveProcess @2513
+	GetAutoRotationState @2514
+	GetDisplayAutoRotationPreferences @2515
+	SetDisplayAutoRotationPreferences @2516
+	DeferredDesktopRotation @2535
