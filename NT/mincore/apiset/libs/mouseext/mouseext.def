@@ -1,0 +1,6 @@
+EXPORTS
+	GetCapture
+	GetDoubleClickTime
+	ReleaseCapture
+	SetCapture
+	TrackMouseEvent
