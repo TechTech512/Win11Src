@@ -1,0 +1,12 @@
+TARGETNAME=EXT-MS-Win-ntuser-CharTranslation-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=chartranslationapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=chartranslationapiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
