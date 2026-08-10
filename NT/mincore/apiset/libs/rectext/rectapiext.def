@@ -1,0 +1,12 @@
+EXPORTS
+	CopyRect
+	EqualRect
+	InflateRect
+	IntersectRect
+	IsRectEmpty
+	OffsetRect
+	PtInRect
+	SetRect
+	SetRectEmpty
+	SubtractRect
+	UnionRect
