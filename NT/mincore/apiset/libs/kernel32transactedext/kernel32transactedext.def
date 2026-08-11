@@ -1,0 +1,6 @@
+EXPORTS
+	CreateDirectoryTransactedW
+	DeleteFileTransactedW
+	FindFirstFileTransactedW
+	MoveFileTransactedW
+	RemoveDirectoryTransactedW
