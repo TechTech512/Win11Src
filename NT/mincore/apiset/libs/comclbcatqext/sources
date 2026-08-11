@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-com-clbcatq-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=clbcatqapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=clbcatqapiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
