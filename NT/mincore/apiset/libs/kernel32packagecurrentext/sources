@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-kernel32-package-current-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=kernel32packagecurrentext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=kernel32packagecurrentext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
