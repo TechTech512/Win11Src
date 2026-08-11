@@ -1,0 +1,8 @@
+EXPORTS
+	ThemesOnCreateSession
+	ThemesOnDisconnect
+	ThemesOnEarlyCreateSession
+	ThemesOnLogoff
+	ThemesOnLogon
+	ThemesOnReconnect
+	ThemesOnTerminateSession
