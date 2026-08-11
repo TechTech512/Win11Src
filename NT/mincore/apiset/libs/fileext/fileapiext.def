@@ -1,0 +1,8 @@
+EXPORTS
+	BasepCopyEncryption
+	BasepGetComputerNameFromNtPath
+	BasepSetFileEncryptionCompression
+	DuplicateEncryptionInfoFileExt
+	GetEncryptedFileVersionExt
+	OpenConsoleWStub
+	SetVolumeMountPointWStub
