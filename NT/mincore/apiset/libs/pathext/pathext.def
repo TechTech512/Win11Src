@@ -1,0 +1,6 @@
+EXPORTS
+	BeginPath
+	CloseFigure
+	EndPath
+	FillPath
+	PathToRegion

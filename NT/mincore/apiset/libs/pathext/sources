@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-gdi-Path-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=pathext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=pathext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
