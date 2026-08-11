@@ -1,0 +1,4 @@
+EXPORTS
+	CreateCompatibleDC
+	CreateDCW
+	DeleteDC
