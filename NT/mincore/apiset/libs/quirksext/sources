@@ -1,0 +1,12 @@
+TARGETNAME=EXT-MS-Win-Kernel32-Quirks-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=quirksapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=quirksapiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain

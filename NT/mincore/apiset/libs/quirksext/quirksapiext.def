@@ -1,0 +1,9 @@
+EXPORTS
+	QuirkGetData2Worker
+	QuirkGetDataWorker
+	QuirkIsEnabled2Worker
+	QuirkIsEnabled3Worker
+	QuirkIsEnabledForPackage2Worker
+	QuirkIsEnabledForPackageWorker
+	QuirkIsEnabledForProcessWorker
+	QuirkIsEnabledWorker
