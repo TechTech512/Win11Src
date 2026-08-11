@@ -1,0 +1,4 @@
+EXPORTS
+	WGCGetCharacterGroupDisplayName
+	WGCGetDefaultGroupingLetters
+	WGCGetGroupingLetter
