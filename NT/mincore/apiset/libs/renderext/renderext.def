@@ -1,0 +1,4 @@
+EXPORTS
+	BeginGdiRendering
+	CreateBitmapFromDxSurface2
+	EndGdiRendering
