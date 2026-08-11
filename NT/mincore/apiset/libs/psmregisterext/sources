@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-com-psmregister-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=psmregisterapi.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=psmregisterapi.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain

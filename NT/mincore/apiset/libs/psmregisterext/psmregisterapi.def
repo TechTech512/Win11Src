@@ -1,0 +1,6 @@
+EXPORTS
+	PsmActivateApplicationByToken
+	PsmAdjustActivationToken
+	PsmCreateMatchToken
+	PsmQueryBackgroundActivationType
+	PsmRegisterApplicationProcess
