@@ -1,0 +1,4 @@
+EXPORTS
+	MFWMDRMOutputTrustAuthority_CreateInstance
+	WMDRMCreateProvider
+	_WMDRMCreateProvider
