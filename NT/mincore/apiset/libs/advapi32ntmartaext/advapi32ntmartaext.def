@@ -1,0 +1,4 @@
+EXPORTS
+	GetSecurityInfo
+	SetSecurityInfo
+	TreeResetNamedSecurityInfoW
