@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-advapi32-shutdown-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=advapi32shutdownext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=advapi32shutdownext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
