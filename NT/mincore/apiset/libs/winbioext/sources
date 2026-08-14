@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-biometrics-winbio-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=winbioapiext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=winbioapiext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
