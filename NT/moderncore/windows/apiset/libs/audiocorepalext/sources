@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-audiocore-pal-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=audiocorepalext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=audiocorepalext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
