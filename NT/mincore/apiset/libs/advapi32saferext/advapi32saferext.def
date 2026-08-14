@@ -1,0 +1,8 @@
+EXPORTS
+	SaferCloseLevel
+	SaferComputeTokenFromLevel
+	SaferCreateLevel
+	SaferIdentifyLevel
+	SaferiCompareTokenLevels
+	SaferiIsExecutableFileType
+	SaferiSearchMatchingHashRules
