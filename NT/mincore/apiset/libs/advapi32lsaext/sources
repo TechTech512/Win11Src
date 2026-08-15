@@ -1,0 +1,12 @@
+TARGETNAME=ext-ms-win-advapi32-lsa-l1-1-0
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=advapi32lsaext.def
+BUFFER_OVERFLOW_CHECKS=0
+EXPECTED_WINVER=10.00
+
+SOURCES=advapi32lsaext.c \
+		apistub.rc
+
+UMTYPE=console
+UMENTRY=dllmain
