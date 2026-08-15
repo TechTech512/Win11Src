@@ -1,0 +1,6 @@
+EXPORTS
+	CloseEventLog
+	DeregisterEventSource
+	OpenEventLogW
+	RegisterEventSourceW
+	ReportEventW
