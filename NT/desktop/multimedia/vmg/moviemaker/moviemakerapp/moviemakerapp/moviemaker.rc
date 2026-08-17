@@ -1,0 +1,36 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2005 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_APP
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Movie Maker"
+#define VER_INTERNALNAME_STR        "MOVIEMK"
+#define VER_ORIGINALFILENAME_STR    "MOVIEMK"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+128 ICON DISCARDABLE "moviemaker.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+  130, 	"DO NOT LOCALIZED"
+END
