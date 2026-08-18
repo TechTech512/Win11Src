@@ -1,0 +1,55 @@
+
+LIBRARY         Security
+
+EXPORTS
+
+        InitSecurityInterfaceW = SECUR32.InitSecurityInterfaceW @22
+        InitSecurityInterfaceA = SECUR32.InitSecurityInterfaceA @21
+
+        QuerySecurityPackageInfoW = SECUR32.QuerySecurityPackageInfoW @32
+        QuerySecurityPackageInfoA = SECUR32.QuerySecurityPackageInfoA @31
+
+        EnumerateSecurityPackagesW = SECUR32.EnumerateSecurityPackagesW @14
+        EnumerateSecurityPackagesA = SECUR32.EnumerateSecurityPackagesA @13
+
+        AcquireCredentialsHandleW = SECUR32.AcquireCredentialsHandleW @3
+        AcquireCredentialsHandleA = SECUR32.AcquireCredentialsHandleA @2
+
+        InitializeSecurityContextW = SECUR32.InitializeSecurityContextW @24
+        InitializeSecurityContextA = SECUR32.InitializeSecurityContextA @23
+
+        QueryContextAttributesW = SECUR32.QueryContextAttributesW @27
+        QueryContextAttributesA = SECUR32.QueryContextAttributesA @26
+
+        QueryCredentialsAttributesW = SECUR32.QueryCredentialsAttributesW @29
+        QueryCredentialsAttributesA = SECUR32.QueryCredentialsAttributesA @28
+
+        FreeCredentialsHandle = SECUR32.FreeCredentialsHandle @17
+        AcceptSecurityContext = SECUR32.AcceptSecurityContext @1
+        DeleteSecurityContext = SECUR32.DeleteSecurityContext @9
+        ApplyControlToken = SECUR32.ApplyControlToken @6
+        CompleteAuthToken = SECUR32.CompleteAuthToken @7
+
+        MakeSignature = SECUR32.MakeSignature @25
+        VerifySignature = SECUR32.VerifySignature @36
+        SealMessage = SECUR32.EncryptMessage @34
+        UnsealMessage = SECUR32.DecryptMessage @35
+        EncryptMessage = SECUR32.EncryptMessage @12
+        DecryptMessage = SECUR32.DecryptMessage @8
+
+        ImpersonateSecurityContext = SECUR32.ImpersonateSecurityContext @18
+        RevertSecurityContext = SECUR32.RevertSecurityContext @33
+        FreeContextBuffer = SECUR32.FreeContextBuffer @16
+        QuerySecurityContextToken = SECUR32.QuerySecurityContextToken @30
+
+
+        AddSecurityPackageW = SECUR32.AddSecurityPackageW @5
+        AddSecurityPackageA = SECUR32.AddSecurityPackageA @4
+
+        DeleteSecurityPackageW = SECUR32.DeleteSecurityPackageW @11
+        DeleteSecurityPackageA = SECUR32.DeleteSecurityPackageA @10
+        
+        ImportSecurityContextA = SECUR32.ImportSecurityContextA @19
+        ImportSecurityContextW = SECUR32.ImportSecurityContextW @20
+        ExportSecurityContext = SECUR32.ExportSecurityContext @15
+
