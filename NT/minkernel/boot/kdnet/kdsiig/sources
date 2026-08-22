@@ -1,0 +1,25 @@
+TARGETNAME=kd_07_1415
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=kdnetsiig.def
+EXPECTED_WINVER=10.00
+
+UMTYPE=ntss
+
+BUFFER_OVERFLOW_CHECKS=0
+
+NT_SIGNCODE=1
+
+PRECOMPILED_INCLUDE=pch.h
+PRECOMPILED_OBJ=pch.obj
+PRECOMPILED_PCH=pch.pch
+
+INCLUDES=..;..\inc;$(DDK_INC_PATH)
+
+SOURCES=kdextension.c \
+        kdox16pci95x.c \
+		kdnetsiig.rc
+
+TARGETLIBS=$(DDK_LIB_PATH)\ntoskrnl.lib \
+           $(DDK_LIB_PATH)\hal.lib \
+		   $(DDK_LIB_PATH)\bufferoverflowfastfailk.lib

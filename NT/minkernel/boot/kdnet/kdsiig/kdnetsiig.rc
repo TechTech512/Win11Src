@@ -1,0 +1,28 @@
+/*++
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Module Name:
+
+    kdnetserial.rc
+
+Abstract:
+
+    Serial Kernel Debug Extensibility resource module.
+
+Author:
+
+    Bill Messmer (wmessmer)
+
+--*/
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_COMM
+#define VER_FILEDESCRIPTION_STR     "Network Kernel Debug Serial Extensibility Module"
+#define VER_INTERNALNAME_STR        "kd_07_1415.dll"
+#define VER_ORIGINALFILENAME_STR    "kd_07_1415.dll"
+
+#include "common.ver"
