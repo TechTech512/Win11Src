@@ -1,0 +1,28 @@
+/*++
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Module Name:
+
+    kdrealtek.rc
+
+Abstract:
+
+    Realtek Network Kernel Debug Extensibility resource module.
+
+Author:
+
+    Joe Ballantyne (joeball)
+
+--*/
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_COMM
+#define VER_FILEDESCRIPTION_STR     "Realtek Network Kernel Debug Extensibility Module"
+#define VER_INTERNALNAME_STR        "kd_02_10ec.dll"
+#define VER_ORIGINALFILENAME_STR    "kd_02_10ec.dll"
+
+#include "common.ver"

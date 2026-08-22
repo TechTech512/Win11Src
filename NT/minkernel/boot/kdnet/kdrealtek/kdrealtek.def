@@ -1,0 +1,4 @@
+LIBRARY kd_02_10ec
+
+EXPORTS
+        KdInitializeLibrary
