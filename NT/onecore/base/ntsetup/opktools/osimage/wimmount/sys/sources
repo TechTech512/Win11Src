@@ -1,0 +1,31 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 2004
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=wimmount
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+SUBSYSTEM_VERSION=6.00
+
+BUFFER_OVERFLOW_CHECKS=2
+
+TARGETLIBS=\
+        $(IFSKIT_LIB_PATH)\fltMgr.lib \
+        $(SDK_LIB_PATH)\BufferOverflowK.lib
+
+INCLUDES=..\inc;
+
+NT_SIGNCODE=1
+
+SOURCES=\
+        commlist.c         \
+        messages.c         \
+        parseflt.c         \
+        parseflt.rc

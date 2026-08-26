@@ -1,0 +1,32 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2006 Microsoft Corporation. All rights reserved.
+//
+// Resource table for WIM mounting driver for NTSetup.
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "Wim file system Driver"
+#define VER_INTERNALNAME_STR        "wimfltr.sys"
+#define VER_ORIGINALFILENAME_STR    "wimfltr.sys"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////
+//
+// String table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_WIMMOUNT_SERVICE_NAME             "WIMMount"
+	IDS_WIMMOUNT_SERVICE_DESC             "WIM Image mount service driver"
+END
