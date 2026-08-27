@@ -1,0 +1,36 @@
+TARGETNAME=kdcom
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=..\kdserial.def
+EXPECTED_WINVER=10.00
+
+UMTYPE=ntss
+
+BUFFER_OVERFLOW_CHECKS=0
+
+NT_SIGNCODE=1
+
+INCLUDES=..;..\inc;$(DDK_INC_PATH);$(BASEDIR)\minkernel\uart\hardware
+
+SOURCES=apm88xxxx.c \
+        bcm2835.c \
+        ioaccess.c \
+        msm8x60.c \
+        msm8974.c \
+        mx6uart.c \
+        nvidia.c \
+        omap.c \
+        pl011.c \
+        sam5250.c \
+        sdm845.c \
+        sdm845v2.c \
+		kdserial.rc
+
+LINKLIBS=$(BASEDIR)\minkernel\boot\kdserial\transportlayer-wdk\$(O)\kdserialtransport.lib
+
+TARGETLIBS=$(DDK_LIB_PATH)\ntoskrnl.lib \
+           $(DDK_LIB_PATH)\hal.lib \
+           $(MINWIN_INTERNAL_PRIV_SDK_LIB_VPATH_L)\kdtelemetry.lib \
+           $(BASEDIR)\minkernel\uart\hardware\$(O)\uart.lib \
+           $(BASEDIR)\minkernel\boot\kdhv\$(O)\kdhv.lib \
+		   $(DDK_LIB_PATH)\bufferoverflowfastfailk.lib
