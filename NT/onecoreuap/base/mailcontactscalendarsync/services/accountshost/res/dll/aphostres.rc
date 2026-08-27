@@ -1,0 +1,44 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2020 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Accounts Host Resources"
+#define VER_INTERNALNAME_STR        "APHostRes"
+#define VER_ORIGINALFILENAME_STR    "APHostRes.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Windows Event Reporting Prebuilt Resources
+//
+
+1 WEVT_TEMPLATE DISCARDABLE "wevttmpl.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Prebuilt Messages (English United States)
+//
+
+1 11 DISCARDABLE "msg_en.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+  10001, 	"This service synchronizes mail, contacts, calendar and various other user data. Mail and other applications dependent on this functionality will not work properly when this service is not running."
+  10002, 	"Sync Host"
+END
