@@ -1,0 +1,14 @@
+TARGETNAME=uart
+TARGETPATH=obj
+TARGETTYPE=DRIVER_LIBRARY
+
+PRECOMPILED_INCLUDE=common.h
+PRECOMPILED_OBJ=common.obj
+PRECOMPILED_PCH=common.pch
+
+SOURCES=hardware.c \
+        ialpss.c \
+        spimax311.c \
+        uart16550.c \
+        usif.c \
+        uartio.c
