@@ -1,0 +1,45 @@
+!IF 0
+
+Copyright (c) 1993-94  Microsoft Corporation
+
+!ENDIF
+
+TARGETNAME=cryptdlg
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+EXPECTED_WINVER=10.00
+DLLDEF=$(O)\cryptdlg.def
+UMTYPE=windows
+USE_MSVCRT=1
+USE_STL=1
+
+DLLENTRY=_DllMainCRTStartup
+
+INCLUDES=.;..\inc;$(DS_INC_PATH)
+
+PRECOMPILED_CXX=1
+PRECOMPILED_INCLUDE=pch.hxx
+PRECOMPILED_OBJ=pch.obj
+PRECOMPILED_PCH=pch.pch
+
+C_DEFINES=-wd4996 -wd4645
+
+SOURCES=certfram.cpp \
+        demand.cpp \
+        select.cpp \
+        trust.cpp \
+        util.cpp \
+        view.cpp \
+        wxptrust.cpp \
+        cryptdlg.rc
+
+TARGETLIBS=$(SDK_LIB_PATH)\kernel32.lib \
+           $(SDK_LIB_PATH)\user32.lib \
+           $(SDK_LIB_PATH)\gdi32.lib \
+           $(SDK_LIB_PATH)\advapi32.lib \
+           $(SDK_LIB_PATH)\wintrust.lib \
+           $(SDK_LIB_PATH)\crypt32.lib \
+           $(SDK_LIB_PATH)\shell32.lib \
+           $(SDK_LIB_PATH)\comctl32.lib \
+           $(SDK_LIB_PATH)\shlwapi.lib \
+           $(SDK_LIB_PATH)\cryptui.lib
