@@ -1,0 +1,78 @@
+#include "windows.h"
+#include "resource.h"
+#include "richedit.h"
+#ifndef WIN16
+#include <commctrl.h>
+#else // WIN16
+#include <win16x.h>
+#include <comctlie.h>
+#include <athena16.h>
+#endif // WIN16
+
+#ifndef MAC
+#if defined(WINNT) || defined(WINNT_ENV)
+#include "winver.h"
+#endif
+#include "cryptdlg.rcv"
+#endif  // !MAC
+
+#ifdef MAC
+#undef TVS_HASLINES
+#define TVS_HASLINES    0
+#endif  // MAC
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CRYPTUI_CERTPROP_TRUST DIALOGEX DISCARDABLE  0, 0, 256, 235
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_CAPTION
+CAPTION "Trust"
+FONT 9, "Segoe UI"
+BEGIN
+#if !defined( MAC ) && !defined( WIN16 )
+    CONTROL	"",-1,"NativeFontCtl",NFS_EDIT | NFS_STATIC,0,0,0,0
+#endif
+    GROUPBOX        "Edit Trust",IDC_TRUST_EDIT_GROUP,8,153,241,51
+    CONTROL         "Inherit Trust from Issuer",IDC_TRUST_INHERIT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,25,165,124,10
+    CONTROL         "Explicitly Trust this Certificate",IDC_TRUST_YES,"Button",
+                    BS_AUTORADIOBUTTON,25,177,124,10
+    CONTROL         "Explicitly Don't Trust this Certificate",IDC_TRUST_NO,
+                    "Button",BS_AUTORADIOBUTTON,25,189,124,10
+    LTEXT           "Trust Description",IDC_TRUST_DESC,7,7,242,49
+    LTEXT           "",IDC_TRUST_EDIT,15,72,227,27,NOT WS_TABSTOP
+    LISTBOX         IDC_TRUST_LIST,14,72,227,27,LBS_SORT |
+                    LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL |
+                    NOT WS_TABSTOP
+    GROUPBOX        "Certificate trusted for",IDC_STATIC,8,60,242,45
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+//  Strings
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+    IDS_WHY_NOT_YET         "Start date has not been reached"
+    IDS_WHY_EXPIRED         "Expiration date has passed"
+    IDS_WHY_CERT_SIG        "Certificate has been tampered with"
+    IDS_WHY_NO_PARENT       "Unable to get a full chain"
+    IDS_WHY_REVOKED         "Certificate is revoked"
+    IDS_WHY_KEY_USAGE       "Certificate used for wrong purpose"
+    IDS_WHY_EXTEND_USE      "Certificate not valid for this purpose"
+    IDS_WHY_NAME_CONST      "Excluded or not permitted name"
+    IDS_WHY_NO_CRL          "Expired or offline revocation list"
+
+    IDS_TRUST_DESC          "Trust Status indicates whether you trust the individual, group or corporation to whom this certificate is issued.  "
+    IDS_TRUST_DESC2         "The certificate can then be used for the specified purposes such as sending/receiving e-mail, trusting a web site having the certificate, etc."
+    IDS_TRUST_DESC3         " "
+    IDS_TRUST_DESC4         " "
+
+    IDS_ROOT_ADD_STRING     "To save these changes, click Yes when prompted to add a certificate to the Root Store."
+    IDS_ROOT_ADD_TITLE      "Edit Trust"
+    IDS_EMAIL_DESC          "E-Mail Encryption and Authentication"
+END
