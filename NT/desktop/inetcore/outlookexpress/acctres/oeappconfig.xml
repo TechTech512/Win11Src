@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<OENNTP>
+<meta name="robots" content="noindex" /> 
+<OECommunities NewsServer="apcmtynntp01">
+<CmtyAPI Scheme="http" HostName="apcperfnet01.dns.microsoft.com" RequestPath="/CMTYAPI/cmtyapi.asmx" Version="3.5" PassportPolicy="?id=41791&amp;sec=10" ServiceTarget="www.microsoft-ppe.com" /> 
+<TokenServer Scheme="https" HostName="apcvmfunweb01.dns.microsoft.com" RequestPath="/MsComGwTokensService/GatewayTokens.asmx" WSEVersion="2.0" Beta1Only="True" /> 
+</OECommunities>
+</OENNTP>
