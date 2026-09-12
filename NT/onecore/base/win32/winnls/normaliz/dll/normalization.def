@@ -1,0 +1,7 @@
+LIBRARY Normaliz
+EXPORTS
+	IdnToAscii = kernelbase.IdnToAscii
+	IdnToNameprepUnicode = kernelbase.IdnToNameprepUnicode
+	IdnToUnicode = kernelbase.IdnToUnicode
+	IsNormalizedString = kernelbase.IsNormalizedString
+	NormalizeString = kernelbase.NormalizeString

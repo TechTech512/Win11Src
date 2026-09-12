@@ -1,0 +1,9 @@
+TARGETNAME=normaliz
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=normalization.def
+UMTYPE=windows
+EXPECTED_WINVER=10.00
+BUFFER_OVERFLOW_CHECKS=0
+SOURCES=stub.c \
+        native.rc
