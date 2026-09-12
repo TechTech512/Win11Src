@@ -1,0 +1,22 @@
+﻿.message-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+    background-color: rgba(200,200,200,0.50); /*[{plugin-background-color}]*/
+}
+
+.message-overlay-hide {
+    display: none;
+}
+
+.message-overlay-message {
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 30%;
+}

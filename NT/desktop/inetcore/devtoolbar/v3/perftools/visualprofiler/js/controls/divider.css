@@ -1,0 +1,19 @@
+.dividerBackdrop {
+    background-color: transparent;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.divider {
+    background-color: #d3d3d3; /*[{plugin-perftools-splitter}]*/
+    cursor: col-resize !important;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 3px;
+    z-index: 1001;
+}

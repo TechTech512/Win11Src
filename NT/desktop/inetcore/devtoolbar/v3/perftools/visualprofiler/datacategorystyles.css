@@ -1,0 +1,97 @@
+﻿.dataImageDecoding {
+    background: #79d7f2;
+    stroke: #79d7f2;
+    fill: none;
+    opacity: 1;
+}
+
+.dataLoading {
+    background: #117ad1;
+    stroke: #117ad1;
+    fill: none;
+    opacity: 1;
+}
+
+.dataOther {
+    background: #b5b5b5;
+    stroke: #b5b5b5;
+    fill: none;
+    opacity: 1;
+}
+
+.dataRendering {
+    background: #903f8b;
+    stroke: #903f8b;
+    fill: none;
+    opacity: 1;
+}
+
+.dataScripting {
+    background: #bf3f00;
+    stroke: #bf3f00;
+    fill: none;
+    opacity: 1;
+}
+
+.dataScriptingGc {
+    background: #fcb714;
+    stroke: #fcb714;
+    fill: none;
+    opacity: 1;
+}
+
+.dataStyling {
+    background: #71b252;
+    stroke: #71b252;
+    fill: none;
+    opacity: 1;
+}
+
+.barGraph .dataImageDecoding {
+    stroke: none;
+    fill: #79d7f2;
+}
+
+.barGraph .dataLoading {
+    stroke: none;
+    fill: #117ad1;
+}
+
+.barGraph .dataOther {
+    stroke: none;
+    fill: #b5b5b5;
+}
+
+.barGraph .dataRendering {
+    stroke: none;
+    fill: #903f8b;
+}
+
+.barGraph .dataScripting {
+    stroke: none;
+    fill: #bf3f00;
+}
+
+.barGraph .dataScriptingGc {
+    stroke: none;
+    fill: #fcb714;
+}
+
+.barGraph .dataStyling {
+    stroke: none;
+    fill: #71b252;
+}
+
+.dataMeasure {
+    background: #555555;
+    stroke: #555555;
+    fill: none;
+    opacity: 1;
+}
+
+.dataFrame {
+    background: #555555;
+    stroke: #555555;
+    fill: none;
+    opacity: 1;
+}

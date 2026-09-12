@@ -1,0 +1,248 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    -ms-high-contrast-adjust: none;
+    cursor: default;
+}
+
+.cpu-usage-body {
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
+.cpu-usage-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* This will set the toolbar as the top row and the grid using the remaining space */
+    display: -ms-grid;
+    -ms-grid-rows: auto 1fr;
+    -ms-grid-columns: 1fr;
+}
+
+.cpu-usage-toolbar {
+    height: 100%;
+    width: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr auto auto auto;
+    -ms-grid-column-align: end;
+    background-color: transparent;
+    padding: 5px;
+}
+
+    .cpu-usage-toolbar .create-report {
+        -ms-grid-column: 2;
+        padding-right: 5px;
+        background-color: transparent;
+    }
+
+    .cpu-usage-toolbar .analyze-now-button-placeholder {
+        -ms-grid-column: 2;
+        padding-right: 5px;
+        background-color: transparent;
+    }
+
+    .cpu-usage-toolbar .thread-filter {
+        -ms-grid-column: 3;
+        width: auto;
+        min-width: 70px;
+        padding-right: 5px;
+        background-color: transparent;
+    }
+
+.cpu-usage-container-overlay {
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(200,200,200,0.50); /*[{plugin-background-color}]*/
+    opacity: 0.75;
+    z-index: 10000;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr auto 1fr;
+    -ms-grid-rows: 1fr auto 1fr 1fr;
+}
+
+.cpu-usage-container-disable {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.main-gridcontainer {
+    height: 100%;
+    width: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+}
+
+.progress {
+    background-color: transparent;
+    text-align: center;
+}
+
+.progress-container {
+    height: 100%;
+    width: 100%;
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+}
+
+.progress-hidden {
+    display: none;
+}
+
+.inlineBlock {
+    display: inline-block;
+    float: right;
+}
+
+.create-report-button {
+    background: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: none;
+    padding-top: 1px;
+}
+
+.create-report-button-enabled {
+    color: blue; /*[{vs-command-control-link-text}]*/
+    cursor: pointer;
+}
+
+    .create-report-button-enabled:hover {
+        color: blue; /*[{vs-command-control-link-text-hover}]*/
+        text-decoration: underline;
+    }
+
+    .create-report-button-enabled:focus {
+        color: blue; /*[{vs-command-control-link-text-hover}]*/
+    }
+
+.create-report-button-disabled {
+    color: grey; /*[{diagnostics-host-toolbar-text-disabled}]*/
+}
+
+/* Default styles for a button in Tree Grid */
+.tree-grid-button {
+    background: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: block;
+    padding-top: 1px;
+}
+
+.tree-grid-button-enabled {
+    color: blue; /*[{vs-command-control-link-text}]*/
+    cursor: pointer;
+}
+
+    .tree-grid-button-enabled:hover {
+        color: blue; /*[{vs-command-control-link-text-hover}]*/
+        text-decoration: underline;
+    }
+
+    .tree-grid-button-enabled:focus {
+        color: blue; /*[{vs-command-control-link-text-hover}]*/
+    }
+
+.tree-grid-button-disabled {
+    color: grey; /*[{diagnostics-host-toolbar-text-disabled}]*/
+}
+
+.grid-row {
+    height: 1.75em;
+}
+
+.grid-row-normal {
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+    border-left-width: 1px;
+    border-right-width: 0px;
+    border-style: solid;
+    border-color: #FAFAFA; /*[{vs-command-bar-options-background-color}]*/
+}
+
+.grid-cell-numeric {
+    text-align: right;
+}
+
+.grid-header {
+    background-color: #DCE0EC; /*[{vs-command-bar-gradient-begin-color}]*/
+}
+
+.grid-header-cell-numeric {
+    text-align: right !important;
+    width: 100%;
+    padding-right: 0px !important;
+}
+
+.grid-header-canvas {
+    border-bottom-color: #cccedb; /*[{diagnostics-host-grid-border}]*/
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin-left: 1px;
+    background-color: #DCE0EC; /*[{vs-command-bar-gradient-begin-color}]*/
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #cccedb; /*[{diagnostics-host-grid-border}]*/
+}
+
+.grid-cell {
+    padding-top: 1px;
+    height: 100%;
+    border-style: solid;
+    border-right-width: 1px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-color: #FAFAFA; /*[{vs-command-bar-options-background-color}]*/
+    float: left;
+}
+
+.grid-header-column {
+    border-color: #FAFAFA; /*[{diagnostics-host-grid-border}]*/
+    border-left-width: 0px;
+    border-left-style: solid;
+    background-color: #FAFAFA; /*[{vs-command-bar-gradient-begin-color}]*/
+}
+
+.grid {
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+.grid-row-selected, .grid-row-selected:hover {
+    background-color: transparent !important;
+}
+
+    .grid-row-selected .grid-cell, .grid-row-selected:hover .grid-cell {
+        background-color: rgb(220, 235, 252) !important; /*[{plugin-treeview-content-selected-background-color} !important]*/
+    }
+
+.grid-row-selected-blur {
+    background-color: transparent !important;
+}
+
+    .grid-row-selected-blur .grid-cell {
+        background-color: rgb(230, 230, 230); /*[{plugin-treeview-content-inactive-selected-background-color}]*/
+    }
+
+.grid-row:hover {
+    background-color: transparent !important;
+}
+
+    .grid-row:hover .grid-cell {
+        background-color: rgb(242, 247, 253); /*[{plugin-treeview-content-inactive-selected-background-color}]*/
+    }
+
+.grid-header-column > .sort-handle {
+    color: black; /*[{plugin-color}]*/
+}
+
+.grid-header-column:hover > .sort-handle {
+    color: rgb(0, 0, 0); /*[{plugin-treeview-content-inactive-selected-color}]*/
+}

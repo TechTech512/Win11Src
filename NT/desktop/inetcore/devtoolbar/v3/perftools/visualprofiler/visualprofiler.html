@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="format-detection" content="telephone=no">
+    <title>UI Responsiveness</title>
+    <link id="controls" rel="stylesheet" href="../../common/controls/controls.css" type="text/css" data-plugin-theme="true" data-necessary-for-tooltip="true" />
+    <link id="Grid" rel="stylesheet" href="js/CpuUsage/Grid.css" type="text/css" data-plugin-theme="true" />
+    <link id="CpuUsageTreeGrid" rel="stylesheet" href="js/CpuUsage/CpuUsageTreeGrid.css" type="text/css" data-plugin-theme="true" />
+    <link id="MessageOverlayControl" rel="stylesheet" href="js/CpuUsage/MessageOverlayControl.css" type="text/css" data-plugin-theme="true" />
+    <link id="listControl" rel="stylesheet" href="../../common/controls/listControl/listControl.css" type="text/css" data-plugin-theme="true" />
+    <link id="menuControl" rel="stylesheet" href="../Common/controls/menuControl.css" type="text/css" data-plugin-theme="true" />
+    <link id="MultiLineGraph" rel="stylesheet" href="../Common/controls/MultiLineGraph.css" type="text/css" data-plugin-theme="true" />
+    <link id="ruler" rel="stylesheet" href="../Common/controls/ruler.css" type="text/css" data-plugin-theme="true" />
+    <link id="Swimlane" rel="stylesheet" href="../Common/controls/Swimlane.css" type="text/css" data-plugin-theme="true" />
+    <link id="StackedBarChart" rel="stylesheet" href="js/hubGraphs/StackedBarChart.css" type="text/css" data-plugin-theme="true" />
+    <link id="common.f12" rel="stylesheet" href="../Common/common.f12.css" type="text/css" data-plugin-theme="true" />
+    <link id="TokenExtractor" rel="stylesheet" href="../Common/TokenExtractor.css" type="text/css" data-plugin-theme="true" />
+    <link id="VisualProfiler" rel="stylesheet" href="VisualProfiler.css" type="text/css" data-plugin-theme="true" />
+    <link id="VisualProfiler.f12" rel="stylesheet" href="VisualProfiler.f12.css" type="text/css" data-plugin-theme="true" />
+    <link id="VisualProfiler.vs" rel="stylesheet" href="VisualProfiler.vs.css" type="text/css" data-plugin-theme="true" />
+    <link id="DataCategoryStyles" rel="stylesheet" href="DataCategoryStyles.css" type="text/css" />
+    <link id="Divider" rel="stylesheet" href="js/controls/Divider.css" type="text/css" data-plugin-theme="true" />
+
+    <script type="text/javascript" src="../../Common/isDebugBuild.js"></script>
+    <script type="text/javascript" src="../common/plugin.js"></script>
+    <script type="text/javascript" src="../common/DiagnosticsHub.js"></script>
+    <script type="text/javascript" src="../common/controls/hubControls.js"></script>
+    <script type="text/javascript" src="../../Common/CommonMerged.js"></script>
+    <script type="text/javascript" src="../Common/CommonMerged.js"></script>
+    <script type="text/javascript" src="js/CpuUsage/JSTreeGridControl.js"></script>
+    <script type="text/javascript" src="CpuUsageMerged.js"></script>
+    <script type="text/javascript" src="VisualProfilerMerged.js"></script>
+    <script type="text/javascript" src="res://f12test.dll/23/selftest/SelfTestVisualProfiler.js"></script>
+
+    <script id="errorViewTemplate" type="text/html">
+        <div class="errorGrid">
+            <div class="errorFrown">:(</div>
+            <div id="errorMessage" class="errorMessage"></div>
+        </div>
+    </script>
+    <script id="timelineViewTemplate" type="text/html">
+        <div id="timelineViewGroup" class="timelineViewGroup">
+            <div id="timelineLabel" class="timelineLabel"></div>
+            <div id="sortFilterSection" class="sortFilterSection"></div>
+            <div id="timelineViewAndDetails" class="timelineViewAndDetails">
+                <div id="timelineEventHeaderLabel" class="timelineEventHeaderLabel"></div>
+                <div id="timelineEventHeaderDivider" class="timelineEventHeaderDivider"></div>
+                <div id="timelineRuler" class="timelineRuler"></div>
+                <div id="timelineView" class="timelineView"></div>
+                <div id="timelineDetailsHeader" class="timelineDetailsHeader">
+                    <span id="eventDetailsTitle"></span>
+                </div>
+                <div id="timelineDetailsPaneContainer" class="timelineDetailsPaneContainer"></div>
+            </div>
+        </div>
+    </script>
+    <script id="eventDetailsTemplate" type="text/html">
+        <div class="eventDetails">
+            <div class="eventDetailsTable">
+                <div id="durationIncRow" class="eventRow BPT-hidden">
+                    <div id="durationLabelInc" class="eventCell name"></div>
+                    <div id="durationValueInc" class="eventCell value"></div>
+                </div>
+                <div class="eventRow">
+                    <div id="durationLabelExc" class="eventCell name"></div>
+                    <div id="durationValueExc" class="eventCell value"></div>
+                </div>
+                <div class="eventRow">
+                    <div id="startTimeLabel" class="eventCell name"></div>
+                    <div id="startTimeValue" class="eventCell value"></div>
+                </div>
+                <div id="threadContextRow" class="eventRow BPT-hidden">
+                    <div id="threadContextLabel" class="eventCell name"></div>
+                    <div id="threadContextValue" class="eventCell value"></div>
+                </div>
+            </div>
+            <div id="detailSeparator" class="detailSeparator"></div>
+            <div id="additionalDetails" class="eventDetailsTable"></div>
+            <div id="eventDetailsDescription" class="eventDetailsDescription BPT-hidden"></div>
+            <div id="eventAsyncCausalitySeparator" class="detailSeparator BPT-hidden"></div>
+            <div id="eventAsyncCausalityDetails" class="eventDetailsDescription BPT-hidden"></div>
+            <div id="inclusiveTimeDetailSeparator" class="detailSeparator BPT-hidden"></div>
+            <div id="inclusiveTimeBreakDownDetails" class="BPT-hidden"></div>
+            <div id="imagePreviewSeparator" class="detailSeparator BPT-hidden"></div>
+            <div id="imagePreviewContainer" class="imagePreviewContainer BPT-hidden">
+                <div id="imagePreviewHeader"></div>
+                <img id="imagePreview" class="imagePreview"></img>
+            </div>
+        </div>
+    </script>
+    <script id="dividerTemplate" type="text/html">
+        <div id="dividerBackdrop" class="dividerBackdrop"></div>
+        <div id="divider" class="divider"></div>
+    </script>
+    <script id="swimLanesView" type="text/html">
+        <div class="swimLanesView">
+            <div id="graphRulerViewContainer" class="graphRulerViewContainer">
+                <div id="graphRulerView"></div>
+            </div>
+            <div id="swimlanesContainer" class="swimlanesContainer"></div>
+        </div>
+    </script>
+    <script id="mainViewTemplateF12" type="text/html">
+        <div id="mainView" class="mainView">
+            <div id="toolbarViewContainer" class="toolbarContainer"></div>
+
+            <div id="profilingPrompt" class="profilingPrompt">
+                <div class="profilingMessage">
+                    <div id="profilingLink" class="BPT-FileLink" tabindex="0" role="link"></div>
+                </div>
+                <progress id="profilingProgress"></progress>
+            </div>
+
+            <div id="dataViewContainer" class="dataViewContainer">
+                <div class="warningViewContainer" tabindex="-1">
+                    <div id="warningView" class="warningView">
+                        <div id="warningMessage" class="warningMessage"></div>
+                    </div>
+                </div>
+                <div id="detailedViewsContainer" class="detailedViewsContainer">
+                    <div id="swimLanesViewContainer" class="swimLanesViewContainer"></div>
+                    <div id="timelineViewContainer" class="timelineViewContainer"></div>
+                </div>
+                <div id="progressContainer" class="progressContainer" tabindex="0">
+                    <div class="progressContent">
+                        <p id="progressText"></p>
+                        <progress id="progress" class="progress" max="100" value="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="mainViewTemplateVS" type="text/html">
+        <div id="mainView" class="mainView">
+            <div id="dataViewContainer" class="dataViewContainer">
+                <div class="warningViewContainer" tabindex="-1">
+                    <div id="warningView" class="warningView">
+                        <div id="warningMessage" class="warningMessage"></div>
+                    </div>
+                </div>
+
+                <div id="detailedViewsContainer" class="detailedViewsContainer">
+                    <div id="timelineViewContainer" class="timelineViewContainer"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+</head>
+
+<body tabindex="-1">
+    <div id="mainContainer"></div>
+</body>
+
+</html>

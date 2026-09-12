@@ -1,0 +1,259 @@
+﻿/* F12 specific CSS */
+body {
+    background-color: #ffffff; /*[{plugin-background-color}]*/
+}
+
+.mainView {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto 1fr;
+    display: -ms-grid;
+}
+
+    .mainView .toolbarContainer {
+        -ms-grid-row: 1;
+    }
+
+    .mainView .dataViewContainer {
+        -ms-grid-row: 2;
+        -ms-grid-rows: auto minmax(calc(21em + 100px), 1fr);
+    }
+
+        .mainView .dataViewContainer .detailedViewsContainer {
+            -ms-grid-columns: 1fr;
+            -ms-grid-rows: auto 1fr;
+            display: -ms-grid;
+        }
+
+            .mainView .dataViewContainer .detailedViewsContainer .swimLanesViewContainer {
+                -ms-grid-row: 1;
+            }
+
+            .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer {
+                -ms-grid-row: 2;
+                margin-bottom: 10px;
+                margin-top: 5px;
+            }
+
+                .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .BPT-tabControl .tabHeader {
+                    background-color: transparent;
+                }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .BPT-tabControl .tabHeader .tabBarContainer ul.tabBar li {
+                        padding-bottom: 4px;
+                        padding-top: 2px;
+                    }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .BPT-tabControl .tabHeader .BPT-SearchBox-Border {
+                        margin-top: 0px;
+                        margin-right: 0px;
+                        padding-bottom: 0px;
+                    }
+
+                .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup {
+                    -ms-grid-rows: auto 1fr;
+                }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineLabel {
+                        display: none;
+                    }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails {
+                        -ms-grid-row: 2;
+                        border-top: none;
+                    }
+
+                .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .cpu-usage-main .cpu-usage-toolbar {
+                    display: none;
+                }
+
+                .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .grid {
+                    border-top-width: 0px;
+                }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .grid .grid-header .grid-header-canvas {
+                        border-top-style: none;
+                    }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .grid .grid-header-column:hover {
+                        background-color: TRANSPARENT; /*[{plugin-perftools-grid-header-hover}]*/
+                    }
+
+        .mainView .dataViewContainer .progressContainer {
+            -ms-grid-row: 2;
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+
+            .mainView .dataViewContainer .progressContainer:focus {
+                outline: 0;
+            }
+
+            .mainView .dataViewContainer .progressContainer .progressContent {
+                display: table-cell;
+                max-width: 300px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+                .mainView .dataViewContainer .progressContainer .progressContent .progress {
+                    margin-top: 10px;
+                }
+
+    .mainView .profilingPrompt {
+        -ms-grid-column-align: center;
+        -ms-grid-columns: 1fr;
+        -ms-grid-row: 2;
+        -ms-grid-row-align: center;
+        -ms-grid-rows: auto 20px auto;
+        display: -ms-grid;
+    }
+
+        .mainView .profilingPrompt .profilingMessage {
+            -ms-grid-column: 1;
+            -ms-grid-column-align: center;
+            -ms-grid-row: 1;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mainView .profilingPrompt progress {
+            -ms-grid-column: 1;
+            -ms-grid-row: 3;
+        }
+
+.swimLanesView {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto auto;
+    display: -ms-grid;
+}
+
+    .swimLanesView .graphRulerViewContainer {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+    }
+
+    .swimLanesView .swimlanesContainer {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+    }
+
+.BPT-listItemContainerHover {
+    background-color: rgba(191, 205, 219, 0.25); /*[{plugin-font-editor-inactive-selected-background-color rgba(0.05)}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+.BPT-listItemSelected {
+    background-color: rgba(191, 205, 219, 0.25); /*[{plugin-font-editor-inactive-selected-background-color rgba(0.05)}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+.BPT-listItemSelectedActive {
+    background-color: rgba(51, 153, 255, 0.18); /*[{plugin-perftools-list-item-selected-active-background-color rgba(0.18)}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+.BPT-Toolbar .BPT-ToolbarContents {
+    overflow: visible;
+}
+
+.BPT-Toolbar .BPT-button.startToolbarButton .buttonIcon {
+    background-image: url('../Common/images/i_start.png'); /*[url({f12-image-toolbar-start})]*/
+}
+
+.BPT-Toolbar .BPT-button.stopToolbarButton .buttonIcon {
+    background-image: url('../Common/images/i_stop.png'); /*[url({f12-image-toolbar-stop})]*/
+}
+
+.BPT-Toolbar .BPT-button.openSessionButton .buttonIcon {
+    background-image: url('../Common/images/i_open.png'); /*[url({f12-image-toolbar-open})]*/
+}
+
+.BPT-Toolbar .BPT-button.saveSessionButton .buttonIcon {
+    background-image: url('../Common/images/i_save.png'); /*[url({f12-image-toolbar-save})]*/
+}
+
+.BPT-Toolbar .BPT-button.zoomInButton .buttonIcon {
+    background-image: url('images/i_f12_chartzoom_in.png'); /*[url({f12-image-toolbar-chartzoom-in})]*/
+}
+
+.BPT-Toolbar .BPT-button.resetZoomButton .buttonIcon {
+    background-image: url('images/i_f12_chartzoom_reset.png'); /*[url({f12-image-toolbar-chartzoom-reset})]*/
+}
+
+.BPT-Toolbar .BPT-button.clearSelectionButton .buttonIcon {
+    background-image: url('images/i_f12_chartselection_clear.png'); /*[url({f12-image-toolbar-chartselection-clear})]*/
+}
+
+/* We only show a blue hover state for icons in f12 */
+.mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .sortFilterSection .filteringMenuButton:hover .filteringIcon {
+    background-position-y: -18px !important;
+}
+
+/* 
+ * Overriden from the hub, reduce the margin on title text 
+ */
+
+.title-container {
+    -ms-grid-columns: 15px 1fr;
+    margin-left: 0px;
+}
+
+.legend-color-div {
+    margin-left: 10px;
+}
+
+.legend-text-div {
+    margin-right: 0px;
+}
+
+.ruler-label-mark-image {
+    margin-left: 10px;
+}
+
+.ruler-legend-container {
+    margin-right: 0px;
+}
+
+.ruler-legend-text-div {
+    margin-right: 0px;
+}
+
+.ruler-legend-color-div {
+    margin-left: 10px;
+}
+
+.swimlaneBase > .contentRegion {
+    -ms-grid-columns: 34px 1fr 34px;
+}
+
+/* 
+ * Overriden from the jstreegrid, to point to our tree-icons.png in common
+ */
+.icon-tree-collapse-all {
+    background: url("../../Common/images/tree_icons.png") no-repeat -16px -16px !important; /*[ url({vs-image-tree-icons}) no-repeat -16px -16px !important]*/
+}
+
+.icon-tree-collapsed {
+    background: url("../../Common/images/tree_icons.png") no-repeat -64px -16px !important; /*[ url({vs-image-tree-icons}) no-repeat -64px -16px !important]*/
+}
+
+.icon-tree-collapsed-2 {
+    background: url("../../Common/images/tree_icons.png") no-repeat -108px -16px !important; /*[ url({vs-image-tree-icons}) no-repeat -108px -16px !important]*/
+}
+
+.icon-tree-empty {
+    background: url("../../Common/images/tree_icons.png") no-repeat -156px -16px !important; /*[ url({vs-image-tree-icons}) no-repeat -156px -16px !important]*/
+}
+
+.icon-tree-expand-all {
+    background: url("../../Common/images/tree_icons.png") no-repeat -204px -16px !important; /*[ url({vs-image-tree-icons}) no-repeat -204px -16px !important]*/
+}
+
+.icon-tree-expanded {
+    background: url("../../Common/images/tree_icons.png") no-repeat -252px -16px !important; /*[ url({vs-image-tree-icons}) no-repeat -252px -16px !important]*/
+}
+
+.icon-tree-expanded-2 {
+    background: url("../../Common/images/tree_icons.png") no-repeat -296px -16px !important; /*[ url({vs-image-tree-icons}) no-repeat -296px -16px !important]*/
+}

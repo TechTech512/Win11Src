@@ -1,0 +1,563 @@
+{
+    "start_url": "PerfTools\\VisualProfiler\\VisualProfiler.html",
+    "domain": "http://microsoft.com",
+    "name": "JavaScript Visual Profiler",
+    "version": "1.1",
+    "f12": {
+        "start_url": "VisualProfiler.html",
+        "file_aliases": {
+            "DiagnosticsHub.DataWarehouseHost": {
+                "path": "DiagnosticsHub.ScriptedSandboxPlugin.dll"
+            },
+            "PerformanceTraceExtension": {
+                "path": "PerformanceTrace.dll",
+                "optional": true
+            }
+        },
+        "localized_tab_resource": "F12ToolTitle",
+        "localized_tooltip_id": 3318,
+        "resource_aliases": {
+            "VisualProfiler": {
+                "is_default": true
+            },
+            "Common": { },
+            "DiagnosticsHubControlsResources": { }
+        },
+        "themed_images": {
+            "f12-image-host-error-alert": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\i_alerterror.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-info-alert": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\i_alertinfo.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-error-close": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\closeErrorBox.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-error-help": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\helpErrorBox.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-contextmenu-chartzoom-in": {
+                "bitmap_source": "images\\i_f12_context_chartzoom_in.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-contextmenu-chartzoom-in-disabled": {
+                "bitmap_source": "images\\i_f12_context_chartzoom_in_disabled.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-contextmenu-chartzoom-reset": {
+                "bitmap_source": "images\\i_f12_context_chartzoom_reset.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-contextmenu-chartzoom-reset-disabled": {
+                "bitmap_source": "images\\i_f12_context_chartzoom_reset_disabled.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-contextmenu-chartselection-clear": {
+                "bitmap_source": "images\\i_f12_context_chartselection_clear.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-contextmenu-chartselection-clear-disabled": {
+                "bitmap_source": "images\\i_f12_context_chartselection_clear_disabled.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-chartzoom-in": {
+                "bitmap_source": "images\\i_f12_chartzoom_in.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-chartzoom-reset": {
+                "bitmap_source": "images\\i_f12_chartzoom_reset.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-chartselection-clear": {
+                "bitmap_source": "images\\i_f12_chartselection_clear.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-open": {
+                "bitmap_source": "..\\Common\\images\\i_open.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-save": {
+                "bitmap_source": "..\\Common\\images\\i_save.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-start": {
+                "bitmap_source": "..\\Common\\images\\i_start.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-stop": {
+                "bitmap_source": "..\\Common\\images\\i_stop.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-expanded": {
+                "bitmap_source": "..\\Common\\images\\itemExpandedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-collapsed": {
+                "bitmap_source": "..\\Common\\images\\itemCollapsedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-user-mark": {
+                "bitmap_source": "..\\Common\\images\\i_usermark.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-app-event": {
+                "bitmap_source": "..\\Common\\images\\i_appevent.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-aggregated-event": {
+                "bitmap_source": "..\\Common\\Images\\CustomMark5_18x.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-checkered-background": {
+                "bitmap_source": "images\\i_checkered_background.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-checkmark": {
+                "bitmap_source": "..\\Common\\images\\checkmark.png",
+                "background_color": "plugin-memory-drop-down-button"
+            },
+            "image-filtering": {
+                "bitmap_source": "images\\i_filtering_options.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-frame-grouping": {
+                "bitmap_source": "images\\i_frame_grouping.png",
+                "background_color": "plugin-background-color"
+            },
+            "plugin-common-image-find-next": {
+                "bitmap_source": "..\\..\\Common\\images\\i_next.png",
+                "background_color": "plugin-searchcontrol-mouseover-background-background-color"
+            },
+            "plugin-common-image-find-previous": {
+                "bitmap_source": "..\\..\\Common\\images\\i_previous.png",
+                "background_color": "plugin-searchcontrol-mouseover-background-background-color"
+            }
+        }
+    },
+    "file_aliases": {
+        "PerformanceTraceExtension": {
+            "path": "HtmlTools\\PerformanceTrace.dll",
+            "optional": true
+        },
+        "DiagnosticsHub.DataWarehouseHost": { }
+    },
+    "vs": {
+        "resource_aliases": {
+            "VisualProfiler": {
+                "type": "Embedded",
+                "name": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+                "path": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.VisualProfiler.Resources",
+                "is_default": true
+            },
+            "Common": {
+                "type": "Embedded",
+                "name": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+                "path": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.Common.Resources"
+            },
+            "DiagnosticsHubControlsResources": {
+                "path": "..\\..\\..\\..\\Platform\\DiagnosticsHub\\WebViews\\DiagnosticsHub.Javascript.Controls.ScriptResources"
+            }
+        },
+        "guid_symbols": {
+            "GuidPerfToolHostCmdSet": "5D4B80C3-23AB-4391-9F90-794C201831CE",
+            "GuidPerfToolGridContextMenu": "DB731D4D-421B-4944-9695-28538DD8A563"
+        },
+        "theme_token_aliases": {
+            "diagnostics-host-border": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "Border"
+            },
+            "diagnostics-host-graph-cursor": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "GraphCursor"
+            },
+            "diagnostics-host-graph-line": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "GraphLine"
+            },
+            "diagnostics-host-graph-scale": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "GraphScale"
+            },
+            "diagnostics-host-ruler-slider": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "RulerSlider"
+            },
+            "diagnostics-host-ruler-slider-active": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "RulerSliderActive"
+            },
+            "diagnostics-host-ruler-tickmark": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "RulerTickmark"
+            },
+            "diagnostics-host-swimlane-border": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "SwimlaneBorder"
+            },
+            "f12-toolbar-button-hover-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseOverBackgroundBegin"
+            },
+            "f12-toolbar-button-hover-text-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextHover"
+            },
+            "f12-toolbar-button-selected-border-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarSelectedBorder"
+            },
+            "f12-toolbar-button-selected-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarSelected"
+            },
+            "f12-toolbar-button-selected-text-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextSelected"
+            },
+            "f12-toolbar-button-pressed-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBackgroundBegin"
+            },
+            "plugin-menucontrol-background-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "Menu"
+            },
+            "plugin-perftools-detail-pane": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "DetailPane"
+            },
+            "plugin-perftools-drop-down-button-focus": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBackgroundMiddle"
+            },
+            "plugin-perftools-drop-down-button-focus-border": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBorder"
+            },
+            "plugin-perftools-focusdots": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "FocusDots"
+            },
+            "plugin-perftools-grid-column-sizer": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "GridColumnSizer"
+            },
+            "plugin-perftools-grid-header-hover": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "GridHeaderHover"
+            },
+            "plugin-perftools-grid-header-hover-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "GridHeaderHover"
+            },
+            "plugin-perftools-grid-header-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "GridHeaderText"
+            },
+            "plugin-perftools-menu": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "Menu"
+            },
+            "plugin-perftools-menu-border": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MenuBorder"
+            },
+            "plugin-perftools-menu-drop-shadow": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ThreeDLightShadow"
+            },
+            "plugin-perftools-menu-focus": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MenuFocus"
+            },
+            "plugin-perftools-menu-focus-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "MenuFocus"
+            },
+            "plugin-perftools-menu-hover": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MenuHover"
+            },
+            "plugin-perftools-menu-hover-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "MenuHover"
+            },
+            "plugin-perftools-progress": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "Progress"
+            },
+            "plugin-perftools-splitter": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "Splitter"
+            },
+            "plugin-perftools-watermark-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "WatermarkText"
+            },
+            "plugin-responsiveness-drop-down-button-hover": {
+                "category": "6ADCF200-0249-47F3-B14F-AB041A443E9B",
+                "key_type": "BackgroundColor",
+                "name": "DropDownButtonHover"
+            },
+            "plugin-responsiveness-graph-border": {
+                "category": "6ADCF200-0249-47F3-B14F-AB041A443E9B",
+                "key_type": "BackgroundColor",
+                "name": "GraphBorder"
+            },
+            "plugin-searchcontrol-mouseover-background-background-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverBackground"
+            },
+            "plugin-searchcontrol-mouseover-watermark-text-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverWatermarkText"
+            },
+            "plugin-searchcontrol-unfocused-background-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "Unfocused"
+            },
+            "plugin-searchcontrol-unfocused-watermark-text-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "UnfocusedWatermarkText"
+            },
+            "vs-command-bar-gradient-begin-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarGradientBegin"
+            },
+            "vs-command-bar-menu-separator-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMenuSeparator"
+            },
+            "vs-command-bar-mouse-down-background-end-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBackgroundEnd"
+            },
+            "vs-command-bar-mouse-down-border-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBorder"
+            },
+            "vs-command-bar-mouse-over-background-middle1-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseOverBackgroundMiddle1"
+            },
+            "vs-command-bar-selected-border-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarSelectedBorder"
+            },
+            "vs-command-bar-text-inactive-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextInactive"
+            },
+            "vs-command-bar-text-selected-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextSelected"
+            },
+            "vs-tool-window-text-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ToolWindowText"
+            },
+            "plugin-font-editor-string-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "String"
+            },
+            "plugin-font-editor-number-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "Number"
+            },
+            "plugin-font-editor-html-element-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Element Name"
+            },
+            "plugin-font-editor-html-tag-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Tag Delimiter"
+            },
+            "plugin-font-editor-html-attribute-name-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Attribute"
+            },
+            "plugin-font-editor-html-attribute-value-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Attribute Value"
+            },
+            "plugin-font-editor-html-operator-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Operator"
+            },
+            "plugin-perftools-treeview-content-inactive-selected-background-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "InactiveSelectedBackgroundColor"
+            },
+            "plugin-perftools-treeview-content-inactive-selected-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "InactiveSelectedText"
+            },
+            "plugin-perftools-treeview-content-mouseover-background-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverBackgroundColor"
+            },
+            "plugin-perftools-treeview-content-mouseover-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverText"
+            },
+            "plugin-perftools-treeview-content-selected-background-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "SelectedBackgroundColor"
+            },
+            "plugin-perftools-treeview-content-selected-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "SelectedText"
+            }
+        },
+        "themed_images": {
+            "vs-image-contextmenu-chartzoom-in": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_in.png",
+                "background_color": "plugin-contextmenu-background-color"
+            },
+            "vs-image-contextmenu-chartzoom-in-disabled": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_in_disabled.png",
+                "background_color": "plugin-contextmenu-background-color"
+            },
+            "vs-image-contextmenu-chartzoom-reset": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_reset.png",
+                "background_color": "plugin-contextmenu-background-color"
+            },
+            "vs-image-contextmenu-chartzoom-reset-disabled": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_reset_disabled.png",
+                "background_color": "plugin-contextmenu-background-color"
+            },
+            "vs-image-contextmenu-chartselection-clear": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartselection_clear.png",
+                "background_color": "plugin-contextmenu-background-color"
+            },
+            "vs-image-contextmenu-chartselection-clear-disabled": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartselection_clear_disabled.png",
+                "background_color": "plugin-contextmenu-background-color"
+            },
+            "vs-image-icon-tree-expanded": {
+                "bitmap_source": "PerfTools\\Common\\images\\itemExpandedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-collapsed": {
+                "bitmap_source": "PerfTools\\Common\\images\\itemCollapsedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-toolbar-chartzoom-in": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_in.png",
+                "background_color": "vs-command-bar-gradient-begin-color"
+            },
+            "vs-image-toolbar-chartzoom-in-disabled": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_in_disabled.png",
+                "background_color": "vs-command-bar-gradient-begin-color"
+            },
+            "vs-image-toolbar-chartzoom-reset": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_reset.png",
+                "background_color": "vs-command-bar-gradient-begin-color"
+            },
+            "vs-image-toolbar-chartzoom-reset-disabled": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartzoom_reset_disabled.png",
+                "background_color": "vs-command-bar-gradient-begin-color"
+            },
+            "vs-image-toolbar-chartselection-clear": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartselection_clear.png",
+                "background_color": "vs-command-bar-gradient-begin-color"
+            },
+            "vs-image-toolbar-chartselection-clear-disabled": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_chartselection_clear_disabled.png",
+                "background_color": "vs-command-bar-gradient-begin-color"
+            },
+            "vs-image-graph-user-mark": {
+                "bitmap_source": "PerfTools\\Common\\images\\i_usermark.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-app-event": {
+                "bitmap_source": "PerfTools\\Common\\images\\i_appevent.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-aggregated-event": {
+                "bitmap_source": "PerfTools\\Common\\Images\\CustomMark5_18x.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-checkered-background": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_checkered_background.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-checkmark": {
+                "bitmap_source": "PerfTools\\Common\\images\\checkmark.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-filtering": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_filtering_options.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-frame-grouping": {
+                "bitmap_source": "PerfTools\\VisualProfiler\\images\\i_frame_grouping.png",
+                "background_color": "plugin-background-color"
+            }
+        }
+    }
+}

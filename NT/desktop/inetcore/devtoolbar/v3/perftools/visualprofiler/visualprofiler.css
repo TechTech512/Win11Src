@@ -1,0 +1,448 @@
+﻿html, body {
+    -ms-high-contrast-adjust: none;
+    cursor: default;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mainView {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    height: 100vh;
+    width: 100vw;
+}
+
+    .mainView .BPT-ToolbarContents * {
+        overflow: visible;
+    }
+
+    .mainView .dataViewContainer {
+        -ms-grid-columns: minmax(670px, 1fr);
+        -ms-grid-row: 1;
+        -ms-grid-rows: auto minmax(calc(21em), 1fr);
+        display: -ms-grid;
+        padding-left: 14px;
+        padding-right: 14px;
+        position: relative;
+        overflow: auto;
+    }
+
+        .mainView .dataViewContainer .warningViewContainer {
+            -ms-grid-columns: 1fr auto;
+            -ms-grid-row: 1;
+            display: -ms-grid;
+        }
+
+            .mainView .dataViewContainer .warningViewContainer .warningView {
+                -ms-grid-column: 1;
+                display: none;
+                padding: 4px 0px 7px 0px;
+            }
+
+                .mainView .dataViewContainer .warningViewContainer .warningView .warningMessage {
+                    background-repeat: no-repeat;
+                    background-position-y: -18px;
+                    background-image: url('../common/images/i_warning.png'); /*[url({image-warning})]*/
+                    background-size: 18px 54px;
+                    color: TRANSPARENT; /*[{plugin-color}]*/
+                    display: inline;
+                    height: 18px;
+                    padding-left: 21px;
+                    width: 18px;
+                }
+
+            .mainView .dataViewContainer .warningViewContainer .loadFileView {
+                -ms-grid-column: 2;
+            }
+
+        .mainView .dataViewContainer .detailedViewsContainer {
+            -ms-grid-columns: 1fr;
+            -ms-grid-row: 2;
+            -ms-grid-rows: 1fr;
+            display: -ms-grid;
+            overflow: visible;
+        }
+
+            .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer {
+                -ms-grid-row: 1;
+                margin-bottom: 10px;
+                margin-top: 15px;
+                overflow: visible;
+            }
+
+                .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup {
+                    -ms-grid-column: 1;
+                    -ms-grid-columns: 1fr max-content;
+                    -ms-grid-row: 1;
+                    -ms-grid-rows: auto 4px 1fr;
+                    display: -ms-grid;
+                    height: 100%;
+                    overflow: visible;
+                    width: 100%;
+                }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineLabel {
+                        -ms-grid-column: 1;
+                        -ms-grid-row: 1;
+                        -ms-grid-row-align: end;
+                        font-weight: 600;
+                        width: 100%;
+                    }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .sortFilterSection {
+                        -ms-grid-column: 2;
+                        -ms-grid-row: 1;
+                        overflow: visible;
+                    }
+
+                        .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .sortFilterSection > * {
+                            overflow: visible;
+                        }
+
+                    .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails {
+                        -ms-grid-column-span: 2;
+                        -ms-grid-columns: 1fr 3px 250px;
+                        -ms-grid-row: 3;
+                        -ms-grid-rows: auto 1fr;
+                        border-top: 1px solid grey; /*[1px solid {plugin-responsiveness-graph-border}]*/
+                        display: -ms-grid;
+                        height: 100%;
+                        position: relative;
+                        width: 100%;
+                    }
+
+                        .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineEventHeaderLabel {
+                            -ms-grid-row-align: center;
+                            font-weight: 600;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineEventHeaderDivider {
+                            background-color: TRANSPARENT; /*[{plugin-perftools-splitter}]*/
+                            height: 100%;
+                            position: relative;
+                            width: 3px;
+                        }
+
+
+                        .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineRuler {
+                            -ms-grid-column: 1;
+                            -ms-grid-row: 1;
+                            border-bottom: 1px solid TRANSPARENT; /*[1px solid {diagnostics-host-border}]*/
+                        }
+
+                        .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineView {
+                            -ms-grid-column: 1;
+                            -ms-grid-row: 2;
+                            height: 100%;
+                            position: relative;
+                            width: 100%;
+                        }
+
+                            .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineView .verticalRulerLine {
+                                background-color: lightgrey; /*[{diagnostics-host-graph-line}]*/
+                                margin-top: 1px;
+                                position: absolute;
+                                width: 1px;
+                            }
+
+                        .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineDetailsHeader {
+                            -ms-grid-column: 3;
+                            -ms-grid-row: 1;
+                            color: white;
+                            font-weight: 600;
+                            overflow: hidden;
+                            padding: 0px 10px 0px 10px;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                            .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineDetailsHeader span {
+                                vertical-align: middle;
+                            }
+
+                        .mainView .dataViewContainer .detailedViewsContainer .timelineViewContainer .timelineViewGroup .timelineViewAndDetails .timelineDetailsPaneContainer {
+                            -ms-grid-column: 3;
+                            -ms-grid-row: 2;
+                        }
+
+.eventDetails {
+    background-color: TRANSPARENT; /*[{plugin-perftools-detail-pane}]*/
+    border-left: 1px solid TRANSPARENT; /*[1px solid {plugin-responsiveness-graph-border}]*/
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 2px;
+}
+
+    .eventDetails .eventDetailsTable {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .eventDetails .eventRow {
+        display: table-row;
+    }
+
+    .eventDetails .eventCell {
+        display: table-cell;
+        overflow: hidden;
+        padding: 2px 10px 2px 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .eventDetails .name {
+        width: 130px;
+    }
+
+    .eventDetails .value {
+        -ms-user-select: text;
+        width: calc(100% - 130px);
+    }
+
+    .eventDetails .detailSeparator {
+        border-bottom: 1px solid TRANSPARENT; /*[1px solid {plugin-perftools-splitter}]*/
+        height: 0px;
+        left: 0px;
+        margin: 5px 10px 5px 10px;
+    }
+
+    .eventDetails .eventDetailsDescription {
+        margin: 5px 10px 10px 10px;
+    }
+
+    .eventDetails .imagePreviewContainer {
+        display: block;
+        margin: 5px 10px 10px 10px;
+    }
+
+    .eventDetails .imagePreview {
+        background-image: url('images/i_checkered_background.png'); /*[url({image-checkered-background})]*/
+        box-shadow: 2px 2px 2px transparent; /*[2px 2px 2px {plugin-textbox-border-color rgba(0.5)}]*/
+        margin-top: 7px;
+        max-width: calc(100% - 2px);
+    }
+
+    .eventDetails .asyncStackLabel {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .eventDetails .asyncFrameLink {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+.timelineView > .timelineFocus {
+    height: 0px;
+    width: 100%;
+}
+
+.BPT-listItemContainerHover {
+    background-color: TRANSPARENT; /*[{plugin-perftools-treeview-content-mouseover-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-perftools-treeview-content-mouseover-color}]*/
+}
+
+    .BPT-listItemContainerHover .BPT-FileLink, .BPT-listItemContainerHover .BPT-FileLink:hover {
+        color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+    }
+
+.BPT-listItemSelected {
+    background-color: TRANSPARENT; /*[{plugin-perftools-treeview-content-inactive-selected-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-perftools-treeview-content-inactive-selected-color}]*/
+}
+
+    .BPT-listItemSelected .BPT-FileLink, .BPT-listItemSelected .BPT-FileLink:hover {
+        color: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-color}]*/
+    }
+
+    .BPT-listItemSelected .eventDataTemplate > .eventDataTemplateDataCell > .bracket, .BPT-listItemSelected .eventDataTemplate > .eventDataTemplateDataCell > .bracket:hover {
+        border-left-color: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-color}]*/
+        border-right-color: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-color}]*/
+        border-top-color: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-color}]*/
+    }
+
+.BPT-listItemSelectedActive {
+    background-color: TRANSPARENT; /*[{plugin-perftools-treeview-content-selected-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-perftools-treeview-content-selected-color}]*/
+}
+
+    .BPT-listItemSelectedActive .BPT-FileLink, .BPT-itemSelectedActive .BPT-FileLink:hover {
+        color: TRANSPARENT; /*[{plugin-treeview-content-selected-color}]*/
+    }
+
+    .BPT-listItemSelectedActive .eventDataTemplate > .eventDataTemplateDataCell > .bracket, .BPT-listItemSelectedActive .eventDataTemplate > .eventDataTemplateDataCell > .bracket:hover {
+        border-left-color: TRANSPARENT; /*[{plugin-treeview-content-selected-color}]*/
+        border-right-color: TRANSPARENT; /*[{plugin-treeview-content-selected-color}]*/
+        border-top-color: TRANSPARENT; /*[{plugin-treeview-content-selected-color}]*/
+    }
+
+.eventDataTemplate {
+    -ms-grid-columns: 185px 3px 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+}
+
+    .eventDataTemplate .eventDataTemplateNameCell {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        align-items: center;
+        display: -ms-flexbox;
+        position: relative;
+    }
+
+        .eventDataTemplate .eventDataTemplateNameCell .eventDataTemplateName {
+            margin-left: 5px;
+            margin-right: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+            .eventDataTemplate .eventDataTemplateNameCell .eventDataTemplateName .measureName {
+                font-weight: bold;
+            }
+
+    .eventDataTemplate > .eventDataTemplateDataCell {
+        -ms-flex-align: center;
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+        align-items: center;
+        display: -ms-flexbox;
+        height: 100%;
+        overflow: hidden;
+    }
+
+        .eventDataTemplate > .eventDataTemplateDataCell > .eventBar {
+            flex-shrink: 0;
+            height: 1em;
+            min-width: 3px;
+        }
+
+        .eventDataTemplate > .eventDataTemplateDataCell > .bracket {
+            background: none;
+            border-left: 3px solid black; /*[3px solid {plugin-color}]*/
+            border-right: 3px solid black; /*[3px solid {plugin-color}]*/
+            border-top: 2px solid black; /*[2px solid {plugin-color}]*/
+            height: 50%;
+        }
+
+        .eventDataTemplate > .eventDataTemplateDataCell > .durationText {
+            flex-shrink: 0;
+            margin-left: 5px;
+        }
+
+.emptyHeader {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-background-color}]*/
+}
+
+.errorGrid {
+    -ms-grid-rows: auto 1fr;
+    display: -ms-grid;
+}
+
+    .errorGrid .errorFrown {
+        -ms-grid-row: 1;
+        font-size: 100px;
+    }
+
+    .errorGrid .errorMessage {
+        -ms-grid-row: 2;
+        font-size: 20px;
+        word-wrap: break-word;
+    }
+
+/*From the DOM/Console common "toolwindow.css"*/
+.BPT-FileLink, .BPT-HelpLink, .BPT-IELink {
+    color: TRANSPARENT; /*[{plugin-link-color}]*/ /*EnvironmentColors.CommandBarMenuLinkTextColorKey*/
+    cursor: pointer;
+}
+
+    .BPT-FileLink:hover, .BPT-HelpLink:hover, .BPT-IELink:hover {
+        color: TRANSPARENT; /*[{plugin-link-hover-color}]*/ /*EnvironmentColors.CommandBarMenuLinkTextHoverColorKey*/
+        text-decoration: underline;
+    }
+
+.filteringBar {
+    display: -ms-flexbox;
+    margin-bottom: 1px;
+}
+
+    .filteringBar .timelineSort {
+        margin-right: 8px;
+    }
+
+        .filteringBar .timelineSort .timelineSortLabel {
+            padding-right: 5px;
+        }
+
+        .filteringBar .timelineSort .timelineSortSelector option {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+    .filteringBar .frameGroupingButton {
+        height: 20px;
+        margin-right: 8px;
+    }
+
+        .filteringBar .frameGroupingButton .buttonIcon {
+            background-image: url('images/i_frame_grouping.png'); /*[url({image-frame-grouping})]*/
+            margin-top: -2px;
+        }
+
+    .filteringBar .filteringMenuButton {
+        height: 20px;
+        padding: 0px;
+    }
+
+        .filteringBar .filteringMenuButton .buttonIcon {
+            background-image: url('images/i_filtering_options.png'); /*[url({image-filtering})]*/
+            width: 18px;
+        }
+
+.BPT-menuContent .eventNameFilter .BPT-TextBox {
+    width: 140px;
+}
+
+.BPT-donutChartText {
+    fill: transparent; /*[{plugin-color}]*/
+}
+
+.dataIdle {
+    background: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-background-color}]*/
+    fill: none;
+    opacity: 1;
+    stroke: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-background-color}]*/
+}
+
+@supports (display: flex) {
+    .eventDataTemplate .eventDataTemplateNameCell {
+        display: flex;
+    }
+
+    .eventDataTemplate > .eventDataTemplateDataCell {
+        display: flex;
+    }
+
+    .filteringBar {
+        display: flex;
+    }
+
+    /* override ruler-legend-container from the hub's ruler.css */
+    .ruler-legend-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
