@@ -1,0 +1,119 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: Segoe UI Light;
+    font-size: small;
+    color: #000000;
+    line-height: 1.1em;
+    overflow: hidden;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#grid {
+    width: 100%;
+    height: 90%;
+    border: 1px solid #000000;
+    border-top: 4px solid #000000;
+    box-sizing: border-box;
+    display: -ms-grid;
+    -ms-grid-columns: 52px 1fr 28px 28px;
+    -ms-grid-rows: 32px auto auto 1fr;
+}
+
+#microsoftEdgeChooserLink {
+    width: 100%;
+    bottom: 20px;
+    font-size: 14px;
+    margin: 10px 10px;
+}
+
+.headerImg {
+    font-family: 'Segoe UI Symbol';
+    font-size: 18px;
+    cursor: pointer;
+    height: 26px;
+    padding-top: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+    .headerImg:hover {
+        background-position: -28px 0;
+    }
+
+
+#f12Logo {
+    background-image: url("../common/images/f12Logo.png");
+    background-position: center -3px;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    display: inline-block;
+    background-color: #000000;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+}
+
+#headerTitle {
+    font-size: large;
+    margin-left: 8px;
+    margin-top: 6px;
+    cursor: default;
+    user-select: none;
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+}
+
+
+#refreshCmd {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+}
+
+#closeCmd {
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+    font-size: 22px;
+}
+
+#targets {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    -ms-grid-row: 4;
+    overflow-y: auto;
+    margin: 5px 3px 0 6px;
+}
+
+.target {
+    margin: 4px;
+    display: inline-block;
+    width: 192px;
+    cursor: pointer;
+    position: relative;
+}
+
+.preview {
+    height: 108px;
+    width: 192px;
+    background-color: #606060;
+}
+
+.title {
+    background-color: #1E1E1E;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FFFFFF;
+    padding-left: 2px;
+    height: 20px;
+    width: 190px;
+    transition: height 0.3s ease;
+}

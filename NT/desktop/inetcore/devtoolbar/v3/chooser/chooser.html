@@ -1,0 +1,39 @@
+﻿<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta http-equiv="format-detection" content="telephone=no">
+    <title>F12 Chooser</title>
+    <script>
+        // Create an empty Microsoft object so that promise.js will work correctly
+        var Microsoft = { Plugin: { Utilities: {} } };
+    </script>
+    <script type="text/javascript" src="promise.js"></script>
+    <script type="text/javascript" src="../Common/isDebugBuild.js"></script>
+    <script type="text/javascript" src="../Common/CommonMinimal.js"></script>
+    <script type="text/javascript" src="chooser.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="chooser.css" />
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            F12.Tools.Chooser.app.main();
+        });
+    </script>
+</head>
+
+<body>
+    <div id="grid">
+        <div id="f12Logo"></div>
+        <div id="headerTitle"></div>
+        <div id="refreshCmd" role="button" tabindex="1" class="headerImg"></div>
+        <div id="closeCmd" role="button" tabindex="1" class="headerImg"></div>
+        <div id="targets"></div>
+    </div>
+    <div id="microsoftEdgeChooserLink"></div>
+</body>
+
+</html>
