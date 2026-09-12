@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>[fZFMF][Ѕĕļƒ τėşť рăĝэ !!!]</title>
+    <script>
+        function functionAtLine7() {
+            var msg = "Function body must begin at line 8";
+            var msg2 = "and column 13";
+            var msg3 = "for breakpoint testing."
+        }
+
+        function throwException() {
+            throw new Error("Really bad exception");
+        }
+    </script>
+    <script>
+        function onSelfTestEvent(event) {
+            if (event.eventType == "status") {
+                handleStatusEvent(event);
+            } else if (event.eventType == "log") {
+                handleLogEvent(event);
+            }
+        }
+
+        function getTimeStamp() {
+            var now = new Date();
+            return now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + "." + now.getMilliseconds();
+        }
+
+        function handleStatusEvent(event) {
+            var statusEl = document.getElementById("status");
+            statusEl.setAttribute("data-status", event.message);
+            statusEl.innerText = {
+                "failed": "Test failed, aborting",
+                "timedout": "Timed out",
+                "running": "Running",
+                "allcomplete": "Success!"
+            }[event.message];
+
+            statusEl.classList.remove(document.body.classList[0]);
+            statusEl.classList.add(event.message);
+
+            var currentToolEl = document.getElementById("currentTool");
+            if (event.pluginName) {
+                currentToolEl.innerText = event.pluginName;
+            } else if (event.message == "allcomplete") {
+                currentToolEl.innerText = "";
+            }
+        }
+
+        function handleLogEvent(event) {
+            var logRow = "[" + getTimeStamp() + "]";
+            if (event.pluginName) {
+                logRow += " [" + event.pluginName + "]";
+            }
+
+            logRow += " ⚡ " + event.message;
+
+            var logDiv = document.createElement("div");
+            logDiv.innerText = logRow;
+
+            var logContainer = document.getElementById("log");
+            logContainer.insertBefore(logDiv, logContainer.firstChild);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Segoe Pseudo, sans-serif;
+        }
+
+        #currentTool {
+            margin-left: 10px;
+        }
+
+        #status {
+            margin: auto;
+            font-size: 2em;
+            color: blue;
+            border: 2px solid blue;
+        }
+
+        #status.running {
+            color: black;
+            border-color: black;
+        }
+
+        #status.timedout {
+            color: red;
+            border-color: red;
+        }
+
+        #status.allcomplete {
+            color: green;
+            border-color: green;
+        }
+
+        #log {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>F12 Self-Test</h1>
+    <span id="status">Ready</span><span id="currentTool"></span>
+    
+    <!-- IE's WebDriver needs a text box to send input to -->
+    <input type="text" id="webDriverTarget" placeholder="[2sczH][ШêъĎřίνéґ ðŭmмγ ĩирũт !!! !]" />
+
+    <div id="log"></div>
+</body>
+</html>
