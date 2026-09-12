@@ -1,0 +1,32 @@
+/**
+ * Token color values
+ * From the Console common "console.css"
+ */
+
+.valueStringToken-String {
+    color: TRANSPARENT; /*[{plugin-font-editor-string-color}]*/
+}
+
+.valueStringToken-Number {
+    color: TRANSPARENT; /*[{plugin-font-editor-number-color}]*/
+}
+
+.perftools-Html-Element-Tag {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+}
+
+.perftools-Html-Tag {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-tag-color}]*/
+}
+
+.perftools-Html-Attribute {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-name-color}]*/
+}
+
+.perftools-Html-Value {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-value-color}]*/
+}
+
+.perftools-Html-Operator {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-operator-color}]*/
+}

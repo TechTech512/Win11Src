@@ -1,0 +1,415 @@
+﻿/* CSS file for the plugin's base styles and themes (light / dark / high contrast)
+   Light theme values are used as defaults but token replacement occurs to provide the correct property for the active theme.
+   Tokens must appear as comments on the same line as the property to replace and are in the following format:
+    [] - indicates token replacement will occur for this css declaration
+    {} - indicates the token value to replace. 
+    Anything inside the square brackets ([]) that is not a token will remain as is 
+    Example:
+    border-right: 1px solid #8591A2; /*[1px solid {plugin-background-color}]
+    
+   Base plugin tokens available to all hosts:
+    plugin-background-color
+    plugin-color
+    plugin-contextmenu-active-color
+    plugin-contextmenu-background-color
+    plugin-contextmenu-border-color
+    plugin-contextmenu-color
+    plugin-contextmenu-hover-color
+    plugin-contextmenu-hover-text-color
+    plugin-contextmenu-icon-checkbox
+    plugin-contextmenu-inactive-text-color
+    plugin-contextmenu-separator-color
+    plugin-font-family
+    plugin-font-size
+    plugin-font-weight
+    plugin-highlight-background-color
+    plugin-highlight-color
+    plugin-inactive-color
+    plugin-link-color
+    plugin-link-active-color
+    plugin-link-hover-color
+    plugin-scrollbar-arrow-color
+    plugin-scrollbar-background-color
+    plugin-scrollbar-face-color
+    plugin-select-option-background-color
+    plugin-select-option-color
+    plugin-select-option-checked-background-color
+    plugin-select-option-checked-border-color
+    plugin-select-option-checked-foreground-color
+    plugin-select-option-hover-background-color
+    plugin-select-option-hover-border-color
+    plugin-select-option-hover-foreground-color
+    plugin-select-border-color
+    plugin-select-background-color
+    plugin-select-foreground-color
+    plugin-select-hover-background-color
+    plugin-select-hover-border-color
+    plugin-select-hover-foreground-color
+    plugin-table-border-color
+    plugin-table-header-background-color
+    plugin-table-header-color
+    plugin-textbox-border-color
+    plugin-textbox-background-color
+    plugin-textbox-color
+    plugin-textbox-disabled-background-color
+    plugin-textbox-disabled-border-color
+    plugin-textbox-disabled-color
+    plugin-treeview-content-background-color
+    plugin-treeview-content-color
+    plugin-treeview-content-inactive-selected-color
+    plugin-treeview-content-mouseover-background-color
+    plugin-treeview-content-mouseover-color
+    plugin-treeview-content-inactive-selected-color
+    plugin-treeview-content-selected-background-color
+    plugin-treeview-content-selected-border-color
+    plugin-treeview-content-selected-color
+
+    
+    VS host also has access to all VS themed color key tokens (EnvironmentColors) and category specific tokens.
+    http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.platformui.environmentcolors_properties
+    Please see product documentation for instructions on how to add these tokens to the plugin manifest.
+ */
+
+/* HTML and body styles */
+html, body {
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family, Arial, sans-serif}]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    font-weight: normal; /*[{plugin-font-weight}]*/
+    color: #1E1E1E; /*[{plugin-color}]*/
+    background-color: #F6F6F6; /*[{plugin-background-color}]*/
+    scrollbar-3dlight-color: #E8E8EC; /*[{plugin-scrollbar-background-color}]*/
+    scrollbar-darkshadow-color: #E8E8EC; /*[{plugin-scrollbar-background-color}]*/
+    scrollbar-highlight-color: #E8E8EC; /*[{plugin-scrollbar-background-color}]*/
+    scrollbar-shadow-color: #E8E8EC; /*[{plugin-scrollbar-background-color}]*/
+    scrollbar-track-color: #E8E8EC; /*[{plugin-scrollbar-background-color}]*/
+    scrollbar-arrow-color: #868999; /*[{plugin-scrollbar-arrow-color}]*/
+    scrollbar-face-color: #D0D1D7; /*[{plugin-scrollbar-face-color}]*/
+}
+
+/* Select styles */
+select {
+    color: #1E1E1E; /*[{plugin-select-foreground-color}]*/
+    background-color: #FFFFFF; /*[{plugin-select-background-color}]*/
+    font: normal 9pt "Segoe UI", Arial, sans-serif; /*[{plugin-font-weight} {plugin-font-size} {plugin-font-family}, Arial, sans-serif]*/
+    border: 1px solid #CCCEDB; /*[1px solid {plugin-select-border-color}]*/
+}
+
+select:hover {
+    color: #1E1E1E; /*[{plugin-select-hover-foreground-color}]*/
+    background-color: #FFFFFF; /*[{plugin-select-hover-background-color}]*/
+    border: 1px solid #007ACC; /*[1px solid {plugin-select-hover-border-color}]*/
+}
+
+select[multiple],
+select option {
+    color: #1E1E1E; /*[{plugin-select-option-color}]*/
+    background-color: #F6F6F6; /*[{plugin-select-option-background-color}]*/
+}
+
+select option:hover {
+    color: #1E1E1E; /*[{plugin-select-option-hover-foreground-color}]*/
+    background-color: #C9DEF5; /*[{plugin-select-option-hover-background-color}]*/
+    border: 1px solid #C9DEF5; /*[1px solid {plugin-select-option-hover-border-color}]*/
+}
+
+select option:checked {
+    color: #1E1E1E; /*[{plugin-select-option-checked-foreground-color}]*/
+    background-color: #C9DEF5; /*[{plugin-select-option-checked-background-color}]*/
+    border: 1px solid #C9DEF5; /*[1px solid {plugin-select-option-checked-border-color}]*/
+}
+
+/* Input styles */
+input {
+    font: normal 9pt "Segoe UI", Arial, sans-serif; /*[{plugin-font-weight} {plugin-font-size} {plugin-font-family}, Arial, sans-serif]*/
+    color: #1E1E1E; /*[{plugin-textbox-color}]*/
+    background-color: #FFFFFF; /*[{plugin-textbox-background-color}]*/
+    border: 1px solid #DBDDE6; /*[1px solid {plugin-textbox-border-color}]*/
+    padding: 0 3px; 
+}
+
+input:disabled {
+    color: #A2A4A5; /*[{plugin-textbox-disabled-color}]*/
+    background-color: #FFFFFF; /*[{plugin-textbox-disabled-background-color}]*/
+    border: 1px solid #DBDDE6; /*[1px solid {plugin-textbox-disabled-border-color}]*/
+}
+
+input[type="checkbox"],
+input[type="radio"]
+ { 
+    border: none;
+    background-color: inherit;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+input[type="file"],
+input[type="image"]
+ { 
+    border: none;
+    background-color: inherit;
+    padding: 0;
+}
+
+/* TextArea styles */
+textarea {
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family}, Arial, sans-serif]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    font-weight: normal; /*[{plugin-font-weight}]*/
+    color: #1E1E1E; /*[{plugin-color}]*/
+    background-color: #F6F6F6; /*[{plugin-textbox-background-color}]*/
+    border: 1px solid #DBDDE6; /*[1px solid {plugin-textbox-border-color}]*/
+    padding: 0 3px; 
+}
+
+/* Button styles */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+ {
+    color: #000000;
+    background-image: -ms-linear-gradient(top, #F0F0F0 0%, #E5E5E5 100%); 
+    border: 1px solid #ACACAC; 
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family}, Arial, sans-serif]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    font-weight: normal; /*[{plugin-font-weight}]*/
+    min-width: 73px;
+    padding: 1px 19px 2px 19px;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    background-image: -ms-linear-gradient(top, #ECF4FC 0%, #DCECFC 100%); 
+    border: 1px solid #7EB4EA; 
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+    border: 1px solid #569DE5; 
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+    background-image: -ms-linear-gradient(top, #DAECFC 0%, #C4E0FC 100%);
+    border: 1px solid #569DE5; 
+}
+
+button[disabled], 
+input[type="button"][disabled],
+input[type="reset"][disabled],
+input[type="submit"][disabled] {
+    color: #838383; 
+    background: #F4F4F4 none; 
+    border: 1px solid #B1B1B2;
+}
+
+/* Other form styles */
+fieldset {
+      border: 1px solid #DBDDE6; /*[1px solid {plugin-textbox-border-color}]*/
+}
+
+/* Link styles */
+a, a:link, a:visited, a:focus {
+    color: #0E70C0; /*[{plugin-link-color}]*/
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0E70C0; /*[{plugin-link-hover-color}]*/
+    text-decoration: underline;
+}
+
+a:active {
+    color: #0E70C0; /*[{plugin-link-active-color}]*/
+}
+
+/* Table styles */
+th {
+    color: #1E1E1E; /*[{plugin-table-header-color}]*/
+    background-color: #EFEFE2; /*[{plugin-table-header-background-color}]*/
+}
+
+td, th {
+    border-color: #F0F0F0; /*[{plugin-table-border-color}]*/
+}
+
+/* Disabled styles */
+:disabled {
+    color: #A2A4A5; /*[{plugin-inactive-color}]*/
+}
+
+/* Highlight styles
+   Use this class when you have a highlighted item, for example a highlighted row in a grid */
+.plugin-highlight {
+    color: #FFFFFF; /*[{plugin-highlight-color}]*/
+    background-color: #3399FF; /*[{plugin-highlight-background-color}]*/
+}
+
+/* Tooltip styles
+   This class will be included automatically on all tooltips 
+   In VS tooltips aren't, by default, themed, so we just copy
+   the WPF tooltip defaults, which is what VS uses for its tooltips.
+   The one exception is that under system high-contrast themes tooltips
+   are in fact themed, so we use the !HCOnly to indicate we only want
+   our color tokens substituted under high-contrast themes.
+   
+   We set its initial display style to none and its initial position
+   to (-500,-500) just to ensure that when we insert it into the document
+   (for measuring) it isn't visible until we have done the layout and 
+   calculated its final position. 
+*/
+#plugin-vs-tooltip {
+    display: none;
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    -ms-high-contrast-adjust: none;
+    color: #575757; /*[{plugin-tooltip-text-color !HCOnly}]*/
+    background-color: #F1F2F7; /*[{plugin-tooltip-background-color !HCOnly}]*/
+    border: thin solid #767676; /*[1px solid {plugin-tooltip-border-color !HCOnly}]*/
+    padding: 1px 5px 4px 5px;
+    line-height: normal;
+}
+
+#plugin-vs-tooltip > #plugin-vs-tooltip-nested-cell {
+    display: table-cell;
+    vertical-align: middle;
+    -ms-high-contrast-adjust: none;
+    color: #575757; /*[{plugin-tooltip-text-color !HCOnly}]*/
+    background-color: #F1F2F7; /*[{plugin-tooltip-background-color !HCOnly}]*/
+}
+
+#plugin-vs-tooltip > #plugin-vs-tooltip-nested-cell > #plugin-vs-tooltip-content {
+    -ms-high-contrast-adjust: none;
+    color: #575757; /*[{plugin-tooltip-text-color !HCOnly}]*/
+    background-color: #F1F2F7; /*[{plugin-tooltip-background-color !HCOnly}]*/
+}
+
+/* Selection styles */
+.selectNone {
+    -ms-user-select: none;
+}
+
+.selectElement {
+    -ms-user-select: element;
+}
+
+/* Context Menu styles */
+ul.plugin-contextmenu {
+    background-color: #e9e8ea; /*[{plugin-contextmenu-background-color}]*/
+    border: thin solid #cdd0d6; /*[thin solid {plugin-contextmenu-border-color}]*/
+    color: #1E1E1E; /*[{plugin-contextmenu-color}]*/
+    padding: 1px 2px 2px 2px;
+    margin: 0;
+    position: absolute;
+    display: none;
+    outline: none;
+    z-index: 100;
+    white-space: nowrap;
+    -ms-high-contrast-adjust: none;
+    line-height: normal;
+}
+
+.plugin-contextmenu .menuitem {
+    position: relative;
+    cursor: default;
+    outline: none;
+    list-style: none;
+    margin-top: 1px;
+}
+
+.plugin-contextmenu .menuitem:focus {
+    background-color: #f9f9fa; /*[{plugin-contextmenu-hover-color}]*/
+    color: #1E1E1E; /*[{plugin-contextmenu-hover-text-color}]*/
+}
+
+.plugin-contextmenu .menuitem:active,
+.plugin-contextmenu .active {
+    background-color: #f9f9fa; /*[{plugin-contextmenu-active-color}]*/
+    color: #1E1E1E; /*[{plugin-contextmenu-hover-text-color}]*/
+}
+
+.plugin-contextmenu .disabled:hover,
+.plugin-contextmenu .disabled:active,
+.plugin-contextmenu .disabled:focus,
+.plugin-contextmenu .disabled {
+    background-color: #e9e8ea; /*[{plugin-contextmenu-background-color}]*/
+    color: #a2a4a5; /*[{plugin-contextmenu-inactive-text-color}]*/
+}
+
+.plugin-contextmenu .menuitem .icon {
+    margin: 0 10px 0 6px;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.plugin-contextmenu .menuitem .checkbox {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/PbtGwMpgAWIfXx8iFS9ZcsWJgYSAQuctW7tejzqgoIDIQx8Nrx69QqobvKUyciC+DSsXLUSSIaHhROlAWj8/v37HB2dxMTEiNKA1Xh0DR2dHUBHvwIDrMajhBIQJCUmnTp1EmI2VuPRNQDNA5oKNBvIxmo8Fj/ATcVqPLoNEEvwxyALZlziBySnJUZSkzdAgAEAfm84vuieuk0AAAAASUVORK5CYII=); /*[url({plugin-contextmenu-icon-checkbox})]*/
+}
+
+.plugin-contextmenu .hidden {
+    display: none;
+}
+
+.plugin-contextmenu .disabled {
+    color: #a2a4a5; /*[{plugin-contextmenu-inactive-text-color}]*/
+}
+
+.plugin-contextmenu .menuitem .main {
+    margin-left: 32px;
+    padding: 4px 0 5px 0;
+}
+
+.plugin-contextmenu .menuitem .shortcut {
+    min-width: 25px;
+    position: absolute;
+    padding-right: 25px;
+    top: 4px;
+    right: 0;
+}
+
+.plugin-contextmenu .menuitem .arrow {
+    width: 5px;
+    height: 7px;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    overflow: visible;
+}
+
+.plugin-contextmenu .menuitem .arrow:before,
+.plugin-contextmenu .menuitem.disabled:hover .arrow:before,
+.plugin-contextmenu .menuitem.disabled:active .arrow:before,
+.plugin-contextmenu .menuitem.disabled:focus .arrow:before,
+.plugin-contextmenu .menuitem.disabled .arrow:before {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAYAAADAp4fuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpiWL5i5X8gYEDGTKdOnmCYOXP2fwYkwAQibt68ztDXP+E/iiAIPHn8iGHChIn/UQSFhIQZCgryGUFsFhAhIyvHUFRYwAg3dMaMWRi2AwQYAAcRMJwq3CX+AAAAAElFTkSuQmCC); 
+}
+
+.plugin-contextmenu .menuitem:hover .arrow:before,
+.plugin-contextmenu .menuitem:active .arrow:before,
+.plugin-contextmenu .menuitem:focus .arrow:before,
+.plugin-contextmenu .active .arrow:before {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAYAAADAp4fuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFRJREFUeNpiKNzy6D8QMCBjBoaqM/+DltxGkWACCjOsu/aRwXrmDZASMGCCMY49+spgP/vmfxRBdRF2hoOp6oxwQSs5boYbhTqMMAUM6JaAMECAAQDqqjmrw1gHVwAAAABJRU5ErkJggg==); 
+}
+
+.plugin-contextmenu .menuitem .hr,
+.plugin-contextmenu .menuitem:hover .hr,
+.plugin-contextmenu .menuitem:active .hr,
+.plugin-contextmenu .menuitem:focus .hr,
+.plugin-contextmenu .active .hr {
+    height: 1px;
+    background-color: #cdd0d6; /*[{plugin-contextmenu-separator-color}]*/
+    padding: 0;
+}
+
+

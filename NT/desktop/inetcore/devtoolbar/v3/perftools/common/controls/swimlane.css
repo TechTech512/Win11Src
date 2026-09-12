@@ -1,0 +1,276 @@
+﻿.graphDiv {
+    width: 100%;
+    height: 100%;
+}
+
+.line-separator {
+    height: 1px;
+    background: black;
+}
+
+.legend-div {
+    -ms-grid-columns: auto 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    -ms-grid-row-align: center;
+    float: left;
+    margin-right: 10px;
+}
+
+    .legend-div:last-child {
+        margin-right: 0px;
+    }
+
+.legend-marker {
+    background-size: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-align: center;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+}
+
+.legend-text-div {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-align: center;
+    margin-left: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.legend-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-row-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -ms-grid-column-align: end;
+    display: -ms-flexbox;
+    margin-left: 20px;
+}
+
+.title-container {
+    margin-left: 5px;
+    -ms-grid-columns: auto 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+}
+
+.title-expand {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+}
+
+.title-text {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-row-align: center;
+    font-weight: 600;
+    margin-left: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-expanded-button {
+    background: url("../images/itemExpandedIcon.png") no-repeat; /*[url({vs-image-icon-tree-expanded}) no-repeat]*/
+    background-size: 10px 10px;
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: left;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+}
+
+.title-collapsed-button {
+    background: url("../images/itemCollapsedIcon.png") no-repeat; /*[url({vs-image-icon-tree-collapsed}) no-repeat]*/
+    background-size: 10px 10px;
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: left;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+}
+
+.graph-scale-left {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.graph-scale-right {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.graph-axis-left {
+    position: absolute;
+    text-align: right;
+    right: 5px;
+}
+
+.graph-axis-right {
+    position: absolute;
+    text-align: left;
+    left: 5px;
+}
+
+.graph-div {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    position: relative;
+}
+
+    .graph-div .unselected {
+        background-color: rgba(200, 200, 200, 0.50);
+        position: absolute;
+        z-index: 110;
+        height: 100%;
+    }
+
+    .graph-div .focused {
+        outline: 1px dotted gray !important; /*[1px dotted {plugin-treeview-content-selected-border-color} !important]*/
+        stroke: #C0C0C0 !important; /*[{plugin-treeview-content-selected-border-color} !important]*/
+        stroke-dasharray: 2, 1 !important;
+        stroke-width: 1px !important;
+    }
+
+.graph-canvas {
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.graph-axis-line {
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    left: 0px;
+    z-index: 99;
+    border-bottom-color: #c0c0c0; /*[{diagnostics-host-graph-line}]*/
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+}
+
+.swimlane-vertical-line {
+    position: absolute;
+    height: 100%;
+    width: 0px;
+    border-right-color: #c0c0c0; /*[{diagnostics-host-graph-line}]*/
+    border-right-width: 1px;
+    border-right-style: solid;
+    top: 0px;
+}
+
+.threshold-selector {
+    -ms-grid-column: 3;
+    margin-right: 10px;
+}
+
+.threshold-axis {
+    border-bottom-color: #ff0000; /* Threshold axis line color */
+}
+
+.swimlaneBase {
+    display: -ms-grid;
+    -ms-grid-rows: auto auto;
+    -ms-grid-columns: auto 1fr;
+}
+
+    .swimlaneBase > * {
+        position: relative;
+    }
+
+    .swimlaneBase > .title-container {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        padding: 2px 0px 2px 0px;
+        background-color: magenta; /*[{plugin-background-color}]*/
+        z-index: 1;
+    }
+
+    .swimlaneBase > .titleRegion {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-align: end;
+        padding: 2px 0px 2px 0px;
+        display: block;
+    }
+
+    .swimlaneBase > .titleRegion.limitedSpace {
+        display: none;
+    }
+
+    .swimlaneBase > .contentRegion {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+
+.contentRegion {
+    box-sizing: content-box;
+    display: -ms-grid;
+    -ms-grid-rows: 1fr;
+    -ms-grid-columns: 3em 1fr 3em;
+}
+
+    .contentRegion > * {
+        position: relative;
+    }
+
+    .contentRegion > .leftRegion {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .contentRegion > .mainRegion {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        border: 1px solid red; /*[1px solid {diagnostics-host-swimlane-border}]*/
+    }
+
+    .contentRegion > .rightRegion {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .mainRegion > div > .unselected {
+        background-color: rgba(200, 200, 200, 0.50);
+        position: absolute;
+        z-index: 110;
+        height: 100%;
+    }
+
+.gridLines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+}
+
+.selectionOverlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: transparent;
+}

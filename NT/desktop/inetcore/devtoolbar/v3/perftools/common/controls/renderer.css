@@ -1,0 +1,125 @@
+﻿.base-container {
+    width: 100%;
+    height: 100%;
+}
+
+.header-float {
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    background-color: transparent; /*[{plugin-background-color}]*/
+}
+
+.main-usermessage-container {
+    height: 150px;
+}
+
+.main-usermessage-container .usermessage-message {
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+}
+
+.main-information-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-columns: auto auto auto 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    background-color: lightyellow; /*[{diagnostics-information-background}]*/
+    border-top: 1px black solid; /*[1px {diagnostics-information-border solid} solid]*/
+    border-bottom: 1px black solid; /*[1px {diagnostics-information-border solid} solid]*/
+    padding: 5px;
+}
+
+.main-information-container-hidden {
+    display: none;
+}
+
+    .main-information-container .information-icon {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        background: url("../images/Information_blue.png") no-repeat; /*[url({vs-image-information-icon}) no-repeat]*/
+        background-size: 1.333em 1.333em;
+        width: 1.333em;
+        height: 1.333em;
+        background-position-x: left;
+        background-position-y: left;
+        background-color: transparent;
+    }
+
+    .main-information-container .information-message {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        color: black; /*[{diagnostics-information-foreground}]*/
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: transparent;
+    }
+
+    .main-information-container .information-link {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: transparent;
+    }
+
+    .main-information-container .information-close-div {
+        -ms-grid-row: 1;
+        -ms-grid-column: 4;
+        background-color: transparent;
+        vertical-align: middle;
+        padding-top: 2px;
+        overflow: visible;
+    }
+
+    .main-information-container .information-close-div .information-close {
+        background-color: transparent;
+        font-family: Marlett !important;
+        color: black; /*[{diagnostics-information-foreground}]*/
+        float: right;
+    }
+
+.main-swimlane-container {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.footer-container {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    /* Above everything*/
+    z-index: 1001;
+}
+
+a:link {
+    text-decoration: none;
+    color: lightblue; /*[{diagnostics-information-link-foreground}]*/
+    background-color: transparent;
+}
+
+a:visited {
+    text-decoration: none;
+    color: lightblue; /*[{diagnostics-information-link-foreground}]*/
+    background-color: transparent;
+}
+
+a:hover {
+    text-decoration: none;
+    color: lightblue; /*[{diagnostics-information-link-foreground-hover}]*/
+    background-color: transparent;
+}
+
+a:active {
+    text-decoration: none;
+    color: lightblue; /*[{diagnostics-information-link-foreground-pressed}]*/
+    background-color: transparent;
+}

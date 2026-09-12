@@ -1,0 +1,48 @@
+﻿.menuControl {
+    background-color: TRANSPARENT; /*[{plugin-perftools-menu}]*/
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-perftools-menu-border}]*/
+    box-shadow: 2px 2px 2px TRANSPARENT; /*[2px 2px 2px {plugin-perftools-menu-drop-shadow rgba(0.5)}]*/
+    display: none;
+    list-style-type: none;
+    padding: 2px;
+    position: absolute;
+    white-space: nowrap;
+    width: auto;
+    z-index: 99999;
+}
+
+    .menuControl > li {
+        padding: 2px 5px 2px 5px;
+        width: 100%;
+    }
+
+        .menuControl > li:hover {
+            background-color: TRANSPARENT; /*[{plugin-perftools-menu-hover}]*/
+            color: TRANSPARENT; /*[{plugin-perftools-menu-hover-text}]*/
+            cursor: pointer;
+        }
+
+        .menuControl > li:focus {
+            background-color: TRANSPARENT; /*[{plugin-perftools-menu-focus}]*/
+            color: TRANSPARENT; /*[{plugin-perftools-menu-focus-text}]*/
+        }
+
+        .menuControl > li > .menuToggleIcon {
+            height: 12px;
+            margin-top: -2px;
+            margin-right: 5px;
+            vertical-align: middle;
+            width: 12px;
+        }
+
+            .menuControl > li > .menuToggleIcon.hiddenCheckMark {
+                visibility: hidden;
+            }
+
+.menuControlActive {
+    background-color: TRANSPARENT !important; /*[{plugin-perftools-drop-down-button-focus} !important]*/
+    border-bottom: 1px solid TRANSPARENT !important;
+    border-left: 1px solid TRANSPARENT !important; /*[1px solid {plugin-perftools-drop-down-button-focus-border} !important]*/
+    border-right: 1px solid TRANSPARENT !important; /*[1px solid {plugin-perftools-drop-down-button-focus-border} !important]*/
+    border-top: 1px solid TRANSPARENT !important; /*[1px solid {plugin-perftools-drop-down-button-focus-border} !important]*/
+}

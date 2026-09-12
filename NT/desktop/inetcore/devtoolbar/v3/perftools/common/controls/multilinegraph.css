@@ -1,0 +1,85 @@
+﻿.graph-canvas-div {
+    height: 100%;
+    width: 100%;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    position: relative;
+    background-color: transparent;
+}
+
+.graph-canvas {
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+}
+
+.countersDataSeries-marker {
+    border-radius: 50%; /* This causes the div to look like a circle */
+    width: 5px;
+    height: 5px;
+}
+
+.dataCursor {
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    border-right: 1px solid black; /*[1px solid {plugin-treeview-content-selected-border-color}]*/
+    overflow: visible;
+}
+
+.dataCursor.interpolating {
+    border-right-style: dashed;
+}
+
+.dataCursorPoint {
+    position: absolute;
+    visibility: hidden;
+}
+
+.dataCursor.interpolating .dataCursorPoint {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.line-separator {
+    height: 1px;
+    background: black;
+    padding: 0px 0px 0px 0px;
+}
+
+.graphContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+    color: black; /*[{plugin-color}]*/
+    background-color: transparent;
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+}
+
+.graph-focus {
+    position: absolute;
+}
+
+    .graph-focus:focus {
+        outline: 2px solid grey; /*[2px solid {plugin-treeview-content-selected-border-color}]*/
+    }
+
+.graph-unfocused {
+    outline: none !important;
+}

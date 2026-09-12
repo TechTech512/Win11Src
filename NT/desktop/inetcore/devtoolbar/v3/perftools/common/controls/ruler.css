@@ -1,0 +1,153 @@
+﻿.ruler-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto 1fr;
+    color: black; /*[{plugin-color}]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    border-bottom: 1px solid #c0c0c0; /*[1px solid {diagnostics-host-border}]*/
+}
+
+.ruler-body {
+    position: relative;
+    overflow: visible;
+    margin: 0px 3em;
+    padding: 0;
+    left: 0px;
+    right: 0px;
+    height: 1.8em;
+    z-index: 97;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+    border-right: 1px solid black; /*[1px solid {diagnostics-host-border}]*/
+    border-left: 1px solid black; /*[1px solid {diagnostics-host-border}]*/
+}
+
+    .ruler-body:focus {
+        outline: 1px dotted grey; /*[1px dotted {plugin-treeview-content-selected-border-color}]*/
+    }
+
+.ruler-doubleSlider {
+    background-color: transparent;
+    overflow: visible;
+    z-index: 106;
+}
+
+.ruler-scale-main {
+    margin: 0;
+    padding: 0;
+    height: 1.8em;
+}
+
+.ruler-slider {
+    cursor: col-resize !important;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: black; /*[{diagnostics-host-ruler-slider}]*/
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 100;
+}
+
+    .ruler-slider:hover {
+        outline: 1px dotted grey; /*[1px dotted {plugin-treeview-content-selected-border-color}]*/
+        background-color: blue; /*[{diagnostics-host-ruler-slider-active}]*/
+    }
+
+    .ruler-slider:focus {
+        outline: 1px dotted grey; /*[1px dotted {plugin-treeview-content-selected-border-color}]*/
+        background-color: blue; /*[{diagnostics-host-ruler-slider-active}]*/
+    }
+
+.ruler-unselected {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(200,200,200,0.50);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.ruler-scale-mark-image-event {
+    width: 0.750em;
+    height: 0.750em;
+    background-position-x: left;
+    background-position-y: bottom;
+    background-size: 100%;
+    z-index: 75;
+    background-color: transparent;
+}
+
+.ruler-scale-mark-image-position {
+    position: absolute;
+    top: 1.0em;
+}
+
+.ruler-legend-div {
+    -ms-grid-columns: auto 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    -ms-grid-row-align: center;
+}
+
+.ruler-legend-text-div {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-align: center;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.ruler-legend-container {
+    margin-right: 5px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-row-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -ms-grid-column: 3;
+    -ms-grid-column-align: end;
+    display: -ms-flexbox;
+}
+
+.ruler-label-mark-image {
+    width: 1.0em;
+    height: 1.0em;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-align: center;
+    background-size: 100%;
+}
+
+.ruler-title-text {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+    font-weight: 600;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ruler-header {
+    border-bottom: 1px solid grey; /*[1px solid {diagnostics-host-border}]*/
+    padding-top: 2px;
+    padding-bottom: 3px;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+}

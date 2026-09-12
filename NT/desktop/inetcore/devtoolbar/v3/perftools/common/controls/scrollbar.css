@@ -1,0 +1,19 @@
+﻿.scrollbar {
+    width: 100%;
+    overflow-x: scroll !important;
+    border-bottom: 1px solid grey; /*[1px solid {diagnostics-host-swimlane-border}]*/
+    z-index: 115;
+    transition: opacity .5s ease-in-out;
+    opacity: 0;
+}
+
+body:hover .scrollbar {
+    transition: opacity .5s ease-in-out;
+    opacity: 1;
+}
+
+.scrollbar .scrollbar-width-calculator {
+    position: relative;
+    height: 1px;
+    width: 1px;
+}

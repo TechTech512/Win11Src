@@ -1,0 +1,2 @@
+(function(){var u,f=window.external.pluginUrl||(u=document.cookie.match(/(?:^|;)\s?pluginUrl=(.*?)(?:;|$)/))&&unescape(u[1])||"plugin.b.js",i=document.getElementsByTagName("script"),n,t,e,r;if(i&&f)for(n=0;n<i.length;n++)if(t=i[n],e=t.src,/(^|\\|\/)plugin.js$/.test(e)){r=document.createElement("script");r.src=f;t.parentElement.insertBefore(r,t.nextSibling);break}})()
+//# sourceMappingURL=plugin.min.js.map
