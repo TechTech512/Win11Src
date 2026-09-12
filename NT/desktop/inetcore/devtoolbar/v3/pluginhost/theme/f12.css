@@ -1,0 +1,224 @@
+html {
+    overflow: hidden;
+    -ms-content-zooming:none;
+}
+
+html, body {
+    -ms-high-contrast-adjust: none;
+    scrollbar-3dlight-color: inherit !important;
+    scrollbar-darkshadow-color: inherit !important;
+    scrollbar-highlight-color: inherit !important;
+    scrollbar-shadow-color: inherit !important;
+    scrollbar-track-color: inherit !important;
+    scrollbar-arrow-color: inherit !important;
+    scrollbar-face-color: inherit !important;
+    -ms-overflow-style: scrollbar;
+}
+
+/* Don't add anything to this id if you can scope it more specifically. Changes to this
+   CSS will affect the layout of every tooltip, so make changes cautiously if necessary. */
+#plugin-vs-tooltip {
+    z-index: 9999999;
+    -ms-high-contrast-adjust: none;
+    background-color: #FFFFFF; /*[{plugin-tooltip-background-color}]*/
+    color: TRANSPARENT ; /*[{plugin-tooltip-text-color}]*/
+    border: thin solid TRANSPARENT; /*[thin solid {plugin-tooltip-border-color}]*/
+    padding: 0 5px 1px 5px;
+    box-sizing: content-box;
+}
+
+#plugin-vs-tooltip > #plugin-vs-tooltip-nested-cell,
+#plugin-vs-tooltip > #plugin-vs-tooltip-nested-cell > #plugin-vs-tooltip-content {
+    background-color: #FFFFFF; /*[{plugin-tooltip-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-tooltip-text-color}]*/
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+#plugin-vs-tooltip-measure-container {
+    box-sizing: content-box;
+}
+
+.f12HostMessageContainer {
+    display: none;
+    background: TRANSPARENT; /*[{plugin-contextmenu-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    min-width: 40em;
+    max-width: 60%;
+    min-height: 54px;
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-active-border-color}]*/
+    border-top: 6px solid TRANSPARENT; /*[6px solid {plugin-highlight-background-color}]*/
+    padding-top: 12px;
+    padding-left: 1em;
+    padding-right: 6px;
+    position: absolute;
+    box-shadow: 2px 2px 2px TRANSPARENT; /*[2px 2px 2px {plugin-textbox-border-color rgba(0.5)}]*/
+    z-index: 1010;
+}
+
+.f12HostMessageInnerContainer {
+    display: -ms-grid;
+    -ms-grid-columns: auto 1fr auto auto;
+    -ms-grid-rows: auto;
+}
+
+.f12HostZoomContainer {
+    display: none;
+    background: TRANSPARENT; /*[{plugin-contextmenu-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    width: 180px;
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-active-border-color}]*/
+    position: absolute;
+    z-index: 1011;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    text-align: center
+}
+
+.f12HostZoomMessageBold {
+    font-size: 14px;
+    font-family: 'Segoe UI Semibold';
+}
+
+.f12HostZoomMessageNotBold {
+    padding-top: 10px;
+}
+
+.f12HostCmdIcon {
+    width: 29px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    float: right;
+    background-size: 116px 22px;
+}
+
+    .f12HostCmdIcon:hover {
+        background-position: -58px 0;
+    }
+
+    .f12HostCmdIcon > disabled {
+        background-position: -87px 0;
+    }
+
+    .f12HostCmdIcon > selected {
+        background-position: -29px 0;
+    }
+
+#f12HostMessageIcon {
+    -ms-grid-column: 1;
+    background-image: url("../pluginhost/theme/i_alerterror.png"); /*[url({f12-image-host-error-alert})]*/
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: 0px 4px;
+    margin-top: 3px;
+    width: 32px;
+}
+
+    #f12HostMessageIcon.info {
+        background-image: url("../pluginhost/theme/i_alertinfo.png"); /*[url({f12-image-host-info-alert})]*/
+    }
+
+#f12HostMessageText {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    cursor: default;
+    min-height: 3.75em;
+    overflow: auto;
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    line-height: 1.3em;
+    margin-top: 3px;
+    -ms-user-select: element;
+}
+
+#f12HostMessageHelp {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    background-image: url("../pluginhost/theme/helpErrorBox.png"); /*[url({f12-image-host-error-help})]*/
+}
+
+#f12HostMessageClose {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    background-image: url("../pluginhost/theme/closeErrorBox.png"); /*[url({f12-image-host-error-close})]*/
+}
+
+.plugin-contextmenu .menuitem,
+.plugin-contextmenu li[data-plugin-contextmenu-item-type=separator]:focus,
+.plugin-contextmenu li[data-plugin-contextmenu-item-type=separator]:active {
+    margin: 0;
+    padding: 1px;
+    border: none;
+    background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9JREFUeNpivn79OkCAAQAFGgKJahd4MAAAAABJRU5ErkJggg==) 27px repeat-y; /*[transparent url(plugin-contextmenu-menuitem-background-image) 27px repeat-y]*/
+}
+
+.plugin-contextmenu .menuitem:focus,
+.plugin-contextmenu .menuitem:active,
+.plugin-contextmenu .active {
+    border: solid 1px #78AEE4; /*[solid 1px {plugin-contextmenu-active-border-color}]*/
+    background-color: #f9f9fa; /*[{plugin-contextmenu-active-color}]*/
+    padding: 0;
+    background-position-x: 26px;
+}
+
+.plugin-contextmenu .disabled:active,
+.plugin-contextmenu .disabled:focus {
+    background-color: #E1E1E1; /*[{plugin-contextmenu-inactive-background-color}]*/
+    border: solid 1px #AEAEAE; /*[solid 1px {plugin-contextmenu-inactive-border-color}]*/
+    color: #6D6D6D; /*[{plugin-contextmenu-inactive-text-color}]*/
+}
+
+.plugin-contextmenu .menuitem .icon {
+    width: 20px;
+    height: 20px;
+    top: 0;
+    margin: 0 16px 0 0;
+}
+
+.plugin-contextmenu .menuitem .main {
+    margin-left: 27px;
+    padding: 2px 0 2px 5px;
+}
+
+.plugin-contextmenu .menuitem .checkbox {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOJJREFUeNpi/P//PwM1ARMDlcEINJAFm+DBe69xxtTTm3fBtLS6MoO9kigjRS788+ELw+SmIoaa7CiG49u2Ue7l2X1NDC9fviAvDLcumAN2EQwcWL2c4dSxg2C2o6sXg6WXF3aNoISNjpPSsv8rKir+d3Fx/b/n7L3/S7cdB/NhYgfuvgJjbHqxRoqqrinD/t3bGO7evcPQUZ7O8OIFxJvc3DwMFZ0zSfcyyDsgb4EAyNCvXyFer+yaxcAiwENeGMaV18MNBYG0onpwUiErHSIbysEjAHc1MYBxtLQZAQYCBBgALn5ztQPAh0IAAAAASUVORK5CYII=);  /*[url({plugin-contextmenu-checkbox-icon})]*/
+    border: solid 1px #25A1DB; /*[solid 1px {plugin-contextmenu-checkbox-border-color}]*/
+    background-color: #C0DDEA; /*[{plugin-contextmenu-checkbox-background-color}]*/
+}
+
+.plugin-contextmenu .menuitem:active .checkbox,
+.plugin-contextmenu .menuitem:focus .checkbox {
+    border: none;
+    border-right: solid 1px #78AEE4; /*[solid 1px {plugin-contextmenu-active-border-color}]*/
+    background-color: #f9f9fa; /*[{plugin-contextmenu-active-color}]*/
+}
+
+.plugin-contextmenu .menuitem .hr,
+.plugin-contextmenu .menuitem:active .hr,
+.plugin-contextmenu .menuitem:focus .hr {
+    height: 1px;
+    background-color: #cdd0d6; /*[{plugin-contextmenu-separator-color}]*/
+    padding: 0;
+    border: none;
+}
+
+.plugin-contextmenu .menuitem:active .shortcut,
+.plugin-contextmenu .menuitem:focus .shortcut {
+    top: 3px;
+    right: -1px;
+}
+
+.plugin-contextmenu .menuitem .arrow {
+    top: 2px;
+}
+
+.plugin-contextmenu .menuitem:active .arrow,
+.plugin-contextmenu .menuitem:focus .arrow,
+.plugin-contextmenu .active .arrow
+ {
+    top: 1px;
+    right: 7px;
+}
+
+

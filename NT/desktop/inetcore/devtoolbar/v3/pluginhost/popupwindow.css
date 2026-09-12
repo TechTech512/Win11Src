@@ -1,0 +1,119 @@
+﻿html, body, div, span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    overflow: hidden;
+}
+
+.headerMenuVisible {
+    background-color: transparent !important; /* no token */
+}
+
+.headerMenu li.menuitem {
+    background-image: none !important;
+}
+
+.headerMenu {
+    background-color: transparent !important; /* no token */
+    border-bottom: thin solid TRANSPARENT !important; /*[thin solid {f12-header-popup-border-color} !important]*/
+    border-left: thin solid TRANSPARENT !important; /*[thin solid {f12-header-popup-border-color} !important]*/
+    border-right: thin solid TRANSPARENT !important; /*[thin solid {f12-header-popup-border-color} !important]*/
+    border-top: none !important; /* the top border is handled by the partialTopBorder css class*/
+    width: calc(100% - 6px);
+    padding-top: 2px !important; 
+}
+
+.partialTopBorder {
+    border-top: thin solid TRANSPARENT !important; /*[thin solid {f12-header-popup-border-color} !important]*/
+    float: right; 
+    height: 0px;
+    /* we use negative margins here to line up the border of this div with the border of it's parent, without modifying the padding of parent div */
+    margin-top: -2px;
+    margin-right: -2px; 
+}
+
+.partialTopBorder.docModeButtonTopBorder {
+    width: calc(100% - 67px);
+}
+
+
+.badgeType0::after {
+    background-image: url("../header/images/NavOverFlow_Start.png");
+}
+
+.badgeType1::after {
+    background-image: url("../header/images/NavOverFlow_Warning.png");
+}
+
+.badgeType2::after {
+    background-image: url("../header/images/badgeError.png");
+}
+
+.badgeType3::after {
+    background-image: url("../header/images/NavOverFlow_Info.png");
+}
+
+.badgeType4::after {
+    background-image: url("../header/images/NavOverFlow_Break.png");
+}
+
+.badgeType0::after,
+.badgeType1::after,
+.badgeType2::after,
+.badgeType3::after,
+.badgeType4::after {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+}
+
+.headerMenu.plugin-contextmenu .menuitem .checkbox {
+    display: none !important;
+}
+
+.headerMenu.plugin-contextmenu .menuitem[aria-checked=true]::before {
+    background-image: url("../header/images/checkmark.png");
+    content: "";
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 6px;
+    top: 4px;
+}
+
+/* The :focus style is applied on hover, for some reason */
+.headerMenu.plugin-contextmenu .menuitem:focus,
+.plugin-contextmenu .menuitem:active {
+    border: none;
+    padding: 1px; /* typically this is set to 0 to offset the border */
+}
+
+.headerMenu.plugin-contextmenu .menuitem:hover {
+    background-color: TRANSPARENT !important; /*[{f12-header-popup-hover} !important]*/
+}
+
+.headerMenu.plugin-contextmenu .menuitem .main {
+    margin-left: 24px !important;
+}
+
+.headerMenu.plugin-contextmenu .menuitem:hover > .shortcut,
+.headerMenu.plugin-contextmenu .menuitem:focus > .shortcut  {
+    top: 3px;
+    padding-right: 23px !important;
+    text-align: right !important;
+} 
+
+.headerMenu.plugin-contextmenu .menuitem > .shortcut {
+    top: 3px;
+    padding-right: 22px !important;
+    text-align: right !important;
+}
+

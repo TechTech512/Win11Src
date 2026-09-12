@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11">
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta http-equiv="format-detection" content="telephone=no">
+        <title>Popup</title>
+        <script type="text/javascript">
+
+            var pluginId = -1;
+            var scriptLibs = ["f12script.dll", "f12script2.dll"];
+
+            function showPopup(popupInfo) {
+                pluginId = popupInfo.pluginId;
+
+                // Replace popup document styles if we were given a new set otherwise we just keep the current ones
+                if (popupInfo.style != "") {
+                    var popupStyleNodes = document.head.querySelectorAll("style, link[type='text/css']");
+                    for (var i = 0; i < popupStyleNodes.length; i++) {
+                        // Keep the default popup window styles
+                        if (popupStyleNodes[i].id !== "pluginPopupWindowDefault") {
+                            document.head.removeChild(popupStyleNodes[i]);
+                        }
+                    }
+
+                    document.head.innerHTML += popupInfo.style;
+                }
+
+                // Hide the other element
+                var otherElement = document.getElementById((popupInfo.isTooltip ? "contextmenu" : "plugin-vs-tooltip"));
+                if (otherElement) {
+                    otherElement.style.display = "none";
+                }
+
+                // Show the popup element
+                var popupElement = document.getElementById((popupInfo.isTooltip ? "plugin-vs-tooltip": "contextmenu"));
+                if (popupElement) {
+                    if (popupInfo.isTooltip) {
+                        // Set the tooltip content
+                        popupElement.outerHTML = popupInfo.content;
+                    } else {
+                        // Set the context menu content
+                        var info = JSON.parse(popupInfo.content);
+
+                        if (info.ariaLabel && info.ariaLabel.length > 0) {
+                            popupElement.setAttribute("aria-label", ariaLabel);
+                        }
+
+                        F12.Host.App.pluginHost.triggerContextMenuEvent("contextmenuinitialized", info);
+
+                        if (info.id === "headerOverflowMenu") {
+                            Microsoft.Plugin.F12.Communications.callMethod(Microsoft.Plugin.F12.PluginId.Header, "OverflowPopupShown");
+
+                            popupElement.classList.add("headerMenu");
+                            document.body.classList.add("headerMenuVisible");
+                            drawBadges(popupElement);
+
+                            var div = document.createElement("div");
+                            div.classList.add("partialTopBorder")
+                            popupElement.insertBefore(div, popupElement.firstChild);
+                        } else if (info.id === "emulationContextMenu") {
+                            Microsoft.Plugin.F12.Communications.callMethod(Microsoft.Plugin.F12.PluginId.Header, "EmulationPopupShown");
+
+                            popupElement.classList.add("headerMenu");
+                            document.body.classList.add("headerMenuVisible");
+
+                            var div = document.createElement("div");
+                            div.classList.add("partialTopBorder")
+                            div.classList.add("docModeButtonTopBorder")
+                            popupElement.insertBefore(div, popupElement.firstChild);
+                        } else {
+                            // because class list persists between menus, we need to make sure that we don't apply header css if the popup did not come from the header
+                            popupElement.classList.remove("headerMenu");
+                            document.body.classList.remove("headerMenuVisible");
+                        }
+                    }
+
+                    popupElement.style.display = "block";
+                }
+
+                // Call showPopup immediately after HTML layout to avoid a flash of the previous popup's content
+                window.setTimeout(function() { 
+                    F12.Host.ExternalApis.popup.showPopup(popupInfo.x, popupInfo.y, popupInfo.width, popupInfo.height, popupInfo.activate);
+                }, 0);
+
+                return true;
+            }
+
+            function hidePopup() {
+                F12.Host.ExternalApis.popup.hidePopup();
+                // we only really need to call this when a header menu is dismissed, but this also works fine
+                Microsoft.Plugin.F12.Communications.callMethod(Microsoft.Plugin.F12.PluginId.Header, "PopupHidden");
+                return true;
+            }
+
+            // all the API let's us pass in is a single class, because we need to show how many errors are in the console, we encode both the 
+            // badge that should be shown and the number of errors in the class, are parse the info out in this function
+            function drawBadges(popupElement) {
+                var rowElements = popupElement.querySelectorAll(".menuitem");
+                for (var i = 0; i < rowElements.length; i++) {
+                    for (var j = 0; j < rowElements[i].classList.length; j++) {
+                        var match = rowElements[i].classList[j].match(/badgeCount_(\d+)$/);
+                        if (match && match[1]) {
+                            rowElements[i].classList.add("badgeType2");
+                            if (parseInt(match[1]) === 99) {
+                                rowElements[i].querySelector(".shortcut").textContent = "99+";
+                            } else {
+                                rowElements[i].querySelector(".shortcut").textContent = match[1];
+                            }
+                        }
+                    }
+                }
+            }
+
+            window.addEventListener("message", function (event) {
+                // Ensure the message was received from a trusted origin (Script dll)
+                var popupUrl = document.location.href.toLowerCase();
+                for (var i = 0; i < scriptLibs.length; i++) {
+                    var scriptLib = scriptLibs[i];
+                    var endIndex = popupUrl.indexOf(scriptLib);
+                    if (endIndex > -1 && event.origin.toLowerCase() === popupUrl.substring(0, endIndex + scriptLib.length)) {
+                        Microsoft.Plugin.F12.Communications.fireEvent("popupMessage", pluginId, { name: event.data.name, id: event.data.id });
+                        break;
+                    }
+                }
+            });
+
+            window.addEventListener("DOMContentLoaded", function () {
+                Microsoft.Plugin.addEventListener("pluginready", function() {
+                    Microsoft.Plugin.F12.Communications.registerMethodHandler("showPopup", showPopup);
+                    Microsoft.Plugin.F12.Communications.registerMethodHandler("hidePopup", hidePopup);
+
+                    try {
+                        window.external.popup.addEventListener("close", hidePopup);
+                    } catch (e) {
+                        // Sometimes fails with "Invalid procedure call or argument" presumably during shutdown.
+                    }
+
+                    window.setImmediate(function () {
+                        Microsoft.Plugin.F12.notifyOnToolActivated();
+
+                        // Inform the F12 host that our tool is ready so that we can measure tool launch performance via PerfTrack
+                        Microsoft.Plugin.F12.TraceWriter.markToolReady();
+                    });
+                });
+            });
+        </script>
+
+        <!-- Daytona Includes -->
+        <script type="text/javascript" src="../common/isDebugBuild.js"></script>
+        <script type="text/javascript" src="../common/plugin.js"></script>
+        <link rel="stylesheet" href="popupWindow.css" type="text/css"  id="pluginPopupWindowDefault" data-plugin-theme="true" />
+
+    </head>
+    <body>
+        <ul id="contextmenu" class="plugin-contextmenu allowDisabledItemNavigation" role="menu"></ul>
+        <div id="plugin-vs-tooltip"></div>
+    </body>
+</html>
