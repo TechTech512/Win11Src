@@ -1,0 +1,466 @@
+﻿{
+    "collectionsTitle": "Typical Events",
+    "collectionsTitleLocId": "EventListTypicalEvents",
+    "collections": [
+        {
+            "title": "Mouse Events",
+            "titleLocId": "EventListMouseEvents",
+            "tooltipLocId": "EventListMouseEvents",
+            "eventKeys": [
+                "click",
+                "dblclick",
+                "mousedown",
+                "mouseup",
+                "contextmenu"
+            ]
+        },
+        {
+            "title": "Keyboard Events",
+            "titleLocId": "EventListKeyboardEvents",
+            "tooltipLocId": "EventListKeyboardEvents",
+            "eventKeys": [
+                "keydown",
+                "keyup",
+                "keypress"
+            ]
+        },
+        {
+            "title": "Pointer Events",
+            "titleLocId": "EventListPointerEvents",
+            "tooltipLocId": "EventListPointerEvents",
+            "eventKeys": [
+                "pointerup",
+                "pointerdown",
+                "contextmenu",
+                "click",
+                "dblclick"
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "title": "Timer",
+            "titleLocId": "EventListTimer",
+            "tooltipLocId": "EventListTimer",
+            "events": [
+                {
+                    "eventKey": "requestanimationframe"
+                },
+                {
+                    "eventKey": "setimmediate"
+                },
+                {
+                    "eventKey": "setinterval"
+                },
+                {
+                    "eventKey": "settimeout"
+                }
+            ]
+        },
+        {
+            "title": "Mouse",
+            "titleLocId": "EventListMouse",
+            "events": [
+                {
+                    "eventKey": "click"
+                },
+                {
+                    "eventKey": "dblclick"
+                },
+                {
+                    "eventKey": "mousedown"
+                },
+                {
+                    "eventKey": "mouseup"
+                },
+                {
+                    "eventKey": "mouseover"
+                },
+                {
+                    "eventKey": "mousemove"
+                },
+                {
+                    "eventKey": "mouseout"
+                },
+                {
+                    "eventKey": "mousewheel"
+                },
+                {
+                    "eventKey": "mouseenter"
+                },
+                {
+                    "eventKey": "mouseleave"
+                },
+                {
+                    "eventKey": "contextmenu"
+                }
+            ]
+        },
+        {
+            "title": "Keyboard",
+            "titleLocId": "EventListKeyboard",
+            "events": [
+                {
+                    "eventKey": "keydown"
+                },
+                {
+                    "eventKey": "keyup"
+                },
+                {
+                    "eventKey": "keypress"
+                },
+                {
+                    "eventKey": "input"
+                }
+            ]
+        },
+        {
+            "title": "Pointer",
+            "titleLocId": "EventListPointer",
+            "events": [
+                {
+                    "eventKey": "click"
+                },
+                {
+                    "eventKey": "dblclick"
+                },
+                {
+                    "eventKey": "contextmenu"
+                },
+                {
+                    "eventKey": "pointercancel"
+                },
+                {
+                    "eventKey": "pointerdown"
+                },
+                {
+                    "eventKey": "pointerenter"
+                },
+                {
+                    "eventKey": "pointerleave"
+                },
+                {
+                    "eventKey": "pointermove"
+                },
+                {
+                    "eventKey": "pointerout"
+                },
+                {
+                    "eventKey": "pointerover"
+                },
+                {
+                    "eventKey": "pointerup"
+                },
+                {
+                    "eventKey": "gotpointercapture"
+                },
+                {
+                    "eventKey": "lostpointercapture"
+                },
+                {
+                    "eventKey": "MSPointerCancel"
+                },
+                {
+                    "eventKey": "MSPointerDown"
+                },
+                {
+                    "eventKey": "MSPointerUp"
+                },
+                {
+                    "eventKey": "MSPointerEnter"
+                },
+                {
+                    "eventKey": "MSPointerLeave"
+                },
+                {
+                    "eventKey": "MSPointerMove"
+                },
+                {
+                    "eventKey": "MSPointerOut"
+                },
+                {
+                    "eventKey": "MSPointerOver"
+                },
+                {
+                    "eventKey": "MSPointerOut"
+                },
+                {
+                    "eventKey": "MSGotPointerCapture"
+                },
+                {
+                    "eventKey": "MSLostPointerCapture"
+                }
+            ]
+        },
+        {
+            "title": "Focus",
+            "titleLocId": "EventListFocus",
+            "events": [
+                {
+                    "eventKey": "focus"
+                },
+                {
+                    "eventKey": "focusin"
+                },
+                {
+                    "eventKey": "focusout"
+                },
+                {
+                    "eventKey": "blur"
+                }
+            ]
+        },
+        {
+            "title": "Gamepad",
+            "titleLocId": "EventListGamePad",
+            "events": [
+                {
+                    "eventKey": "gamepadconnected"
+                },
+                {
+                    "eventKey": "gamepaddisconnected"
+                }
+            ]
+        },
+        {
+            "title": "Misc",
+            "titleLocId": "EventListMisc",
+            "events": [
+                {
+                    "eventKey": "help"
+                },
+                {
+                    "eventKey": "abort"
+                },
+                {
+                    "eventKey": "afterprint"
+                },
+                {
+                    "eventKey": "beforeprint"
+                },
+                {
+                    "eventKey": "emptied"
+                },
+                {
+                    "eventKey": "ended"
+                },
+                {
+                    "eventKey": "canplaythrough"
+                },
+                {
+                    "eventKey": "durationchange"
+                },
+                {
+                    "eventKey": "loadeddata"
+                },
+                {
+                    "eventKey": "loadedmetadata"
+                },
+                {
+                    "eventKey": "loadstart"
+                },
+                {
+                    "eventKey": "readystatechange"
+                },
+                {
+                    "eventKey": "transitionstart"
+                },
+                {
+                    "eventKey": "transitionend"
+                },
+                {
+                    "eventKey": "animationstart"
+                },
+                {
+                    "eventKey": "animationiteration"
+                },
+                {
+                    "eventKey": "animationend"
+                }
+            ]
+        },
+        {
+            "title": "Window",
+            "titleLocId": "EventListWindow",
+            "events": [
+                { 
+                    "eventKey":  "DOMContentLoaded"
+                },
+                {
+                    "eventKey": "beforeunload"
+                },
+                {
+                    "eventKey": "error"
+                },
+                {
+                    "eventKey": "hashchange"
+                },
+                {
+                    "eventKey": "load"
+                },
+                {
+                    "eventKey": "message"
+                },
+                {
+                    "eventKey": "pagehide"
+                },
+                {
+                    "eventKey": "pageshow"
+                },
+                {
+                    "eventKey": "popstate"
+                },
+                {
+                    "eventKey": "unload"
+                }
+            ]
+        },
+        {
+            "title": "Control",
+            "titleLocId": "EventListControl",
+            "events": [
+                {
+                    "eventKey": "change"
+                },
+                {
+                    "eventKey": "contextmenu"
+                },
+                {
+                    "eventKey": "drag"
+                },
+                {
+                    "eventKey": "dragend"
+                },
+                {
+                    "eventKey": "dragenter"
+                },
+                {
+                    "eventKey": "dragleave"
+                },
+                {
+                    "eventKey": "dragover"
+                },
+                {
+                    "eventKey": "dragstart"
+                },
+                {
+                    "eventKey": "drop"
+                },
+                {
+                    "eventKey": "input"
+                },
+                {
+                    "eventKey": "reset"
+                },
+                {
+                    "eventKey": "resize"
+                },
+                {
+                    "eventKey": "scroll"
+                },
+                {
+                    "eventKey": "select"
+                },
+                {
+                    "eventKey": "submit"
+                }
+            ]
+        },
+        {
+            "title": "Device",
+            "titleLocId": "EventListDevice",
+            "events": [
+                {
+                    "eventKey": "devicemotion"
+                },
+                {
+                    "eventKey": "deviceorientation"
+                },
+                {
+                    "eventKey": "msorientationChange"
+                },
+                {
+                    "eventKey": "MSGestureChange"
+                },
+                {
+                    "eventKey": "MSGestureTap"
+                },
+                {
+                    "eventKey": "MSGestureEnd"
+                },
+                {
+                    "eventKey": "MSGestureHold"
+                },
+                {
+                    "eventKey": "MSGestureStart"
+                },
+                {
+                    "eventKey": "MSGestureDoubleTap"
+                },
+                {
+                    "eventKey": "MSInertiaStart"
+                }
+            ]
+        },
+        {
+            "title": "Media",
+            "titleLocId": "EventListMedia",
+            "events": [
+                {
+                    "eventKey": "canplay"
+                },
+                {
+                    "eventKey": "canplaythrough"
+                },
+                {
+                    "eventKey": "durationchange"
+                },
+                {
+                    "eventKey": "offline"
+                },
+                {
+                    "eventKey": "online"
+                },
+                {
+                    "eventKey": "pause"
+                },
+                {
+                    "eventKey": "play"
+                },
+                {
+                    "eventKey": "playing"
+                },
+                {
+                    "eventKey": "progress"
+                },
+                {
+                    "eventKey": "ratechange"
+                },
+                {
+                    "eventKey": "seeked"
+                },
+                {
+                    "eventKey": "seeking"
+                },
+                {
+                    "eventKey": "stalled"
+                },
+                {
+                    "eventKey": "storage"
+                },
+                {
+                    "eventKey": "suspend"
+                },
+                {
+                    "eventKey": "timeupdate"
+                },
+                {
+                    "eventKey": "volumechange"
+                },
+                {
+                    "eventKey": "waiting"
+                }
+            ]
+        }
+    ]
+}

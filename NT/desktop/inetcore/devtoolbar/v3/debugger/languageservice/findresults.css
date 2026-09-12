@@ -1,0 +1,108 @@
+﻿#console {
+    display: -ms-grid;
+    -ms-grid-rows: auto auto 1fr;
+    -ms-grid-columns: 100%;
+    overflow: hidden;
+}
+
+    #console > #findResultsToolbar {
+        -ms-grid-row: 1;
+    }
+            #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents {
+                margin-right: 0;
+                display: -ms-grid;
+                -ms-grid-columns: auto 1fr;
+            }
+
+                #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .BPT-ToolTitle {
+                    -ms-grid-column: 1;
+                }
+
+                #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons {
+                    -ms-grid-column: 2;
+                    margin-right: 0;
+                    display: -ms-grid;
+                    -ms-grid-columns: auto auto auto auto 1fr auto auto;
+                }
+
+                    #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.previousResultButton {
+                        -ms-grid-column: 2;
+                    }
+
+                        #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.previousResultButton > .buttonIcon {
+                            background-image: url(''); /*[url({f12-debugger-image-find-results-previous-result})]*/
+                        }
+
+                    #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.nextResultButton {
+                        -ms-grid-column: 3;
+                    }
+
+                        #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.nextResultButton > .buttonIcon {
+                            background-image: url(''); /*[url({f12-debugger-image-find-results-next-result})]*/
+                        }
+
+                    #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.clearResultsButton {
+                        -ms-grid-column: 4;
+                    }
+
+                        #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.clearResultsButton > .buttonIcon {
+                            background-image: url(''); /*[url({f12-debugger-image-find-results-clear-results})]*/
+                        }
+
+                    #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .spacer {
+                        -ms-grid-column: 5;
+                    }
+
+                    #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.pinFindResultsWindowButton {
+                        -ms-grid-column: 6;
+                    }
+
+                        #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.pinFindResultsWindowButton > .buttonIcon {
+                            background-image: url(''); /*[url({f12-debugger-image-find-results-unpin})]*/
+                        }
+
+                        #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.pinFindResultsWindowButton.checked > .buttonIcon {
+                            background-image: url(''); /*[url({f12-debugger-image-find-results-pin})]*/
+                        }
+
+                    #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.closeFindResultsWindowButton {
+                        -ms-grid-column: 7;
+                    }
+
+                        #console > #findResultsToolbar > .BPT-Toolbar > .BPT-ToolbarContents > .buttons > .BPT-button.closeFindResultsWindowButton > .buttonIcon {
+                            background-image: url(''); /*[url({f12-debugger-image-find-results-close})]*/
+                        }
+
+    #console > #findResultsTotals {
+        display: -ms-grid;
+        -ms-grid-columns: auto 1fr;
+        -ms-grid-row: 2;
+        padding: 5px 5px 5px 14px;
+    }
+
+        #console > #findResultsTotals #findResultsProgress
+        {
+            -ms-grid-column: 2;
+            -ms-grid-row-align: center;
+            width: auto;
+            padding: 0 10px;
+            height: 5px;
+        }
+
+    #console > #findResults {
+        -ms-grid-row: 3;
+    }
+
+        #console > #findResults > div {
+            height: 100%;
+        }
+
+            #console > #findResults .grid-canvas {
+                /*
+                 * Prevent the x-scrollbar from obscuring the bottom result row.
+                 * The grid control will truncate cell contents, so it doesn't need to scroll horizontally.
+                 */
+                overflow-x: hidden;
+            }
+
+

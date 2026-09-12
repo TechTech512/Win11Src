@@ -1,0 +1,139 @@
+.watchWindow {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+    .watchWindow > .windowtoolbar {
+        -ms-grid-columns: 1fr auto auto auto;
+        display: -ms-grid;
+    }
+
+        .watchWindow > .windowtoolbar > #addWatchButton {
+            -ms-grid-column: 2;
+        }
+
+            .watchWindow > .windowtoolbar > #addWatchButton > .buttonIcon {
+                background-image: url('Watches/images/addWatch.png'); /*[url({f12-debugger-image-watches-add-watch})]*/
+            }
+
+        .watchWindow > .windowtoolbar > #deleteAllWatchesButton {
+            -ms-grid-column: 4;
+        }
+
+            .watchWindow > .windowtoolbar > #deleteAllWatchesButton > .buttonIcon {
+                background-image: url('Watches/images/deleteAll.png'); /*[url({f12-debugger-image-watches-delete-all})]*/
+            }
+
+    .watchWindow .gridWatchContainer {
+        height: calc(100% - 20px);
+        width: 100%;
+        border: none;
+        position: relative;
+    }
+
+        .watchWindow .gridWatchContainer .grid .grid-canvas {
+            overflow-x: hidden;
+        }
+
+        .watchWindow .gridWatchContainer.busy .grid .grid-canvas .grid-row > .grid-cell {
+            cursor: wait !important;
+        }
+
+.grid-row:hover .deleteWatch {
+    background: url("../common/images/i_delete.png") no-repeat; /*[url({f12-debugger-image-watches-delete-watch}) no-repeat]*/
+    background-size: 16px;
+}
+
+    .grid-row:hover .deleteWatch:hover {
+        background: url("../common/images/i_delete.png") no-repeat 0px -16px; /*[url({f12-debugger-image-watches-delete-watch}) no-repeat 0px -16px]*/
+        background-size: 16px;
+        background-color: TRANSPARENT; /*[{f12-toolbar-button-hover-color}]*/
+    }
+
+.watchWindow .gridWatchContainer.busy .grid .grid-canvas .grid-row:hover .deleteWatch {
+    background: url("../common/images/i_delete.png") no-repeat 0px -32px; /*[url({f12-debugger-image-watches-delete-watch}) no-repeat 0px -32px]*/
+    background-size: 16px;
+}
+
+.watchWindow .gridWatchContainer.busy .grid .grid-canvas .grid-row .deleteWatch:hover {
+    background: url("../common/images/i_delete.png") no-repeat 0px -32px; /*[url({f12-debugger-image-watches-delete-watch}) no-repeat 0px -32px]*/
+    background-size: 16px;
+    background-color: TRANSPARENT; /*[{f12-toolbar-button-hover-color}]*/
+}
+
+.deleteWatch {
+    width: 16px;
+    height: 16px;
+}
+
+.addWatch {
+    color: TRANSPARENT; /*[{plugin-link-active-color}]*/
+    border: none;
+}
+
+.grid-row:hover {
+    color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+}
+
+.watch-Error {
+    color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+}
+
+.watch-ValueChanged {
+    color: TRANSPARENT; /*[{plugin-debugger-watch-font-color}]*/
+}
+
+.watch-watchName {
+    color: TRANSPARENT; /*[{plugin-link-active-color}]*/
+}
+
+.grid-row-selected .watch-watchName, .grid-row-selected-blur .watch-watchName, .grid-row:hover .watch-watchName {
+    color: TRANSPARENT; /*[{plugin-link-active-selected-color}]*/
+}
+
+.grid-row-selected .watch-ValueChanged, .grid-row-selected-blur .watch-ValueChanged, .grid-row:hover .watch-ValueChanged {
+    color: TRANSPARENT; /*[{plugin-treeview-content-selected-color}]*/
+}
+
+.gridWatchContainer .overlayWindow {
+    opacity: 0.5;
+    position: absolute;
+    display: block;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: TRANSPARENT; /*[{plugin-debugger-watch-overlay-color}]*/
+}
+
+.grid-row .showAll {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.grid-row .functionItem {
+    background: url("./images/functionIcon.png") no-repeat; /*[url({f12-debugger-image-watches-function}) no-repeat]*/
+    background-size: 10px 10px;
+}
+
+.grid-row .notAFunctionItem {
+    background: url("./images/notAFunctionIcon.png") no-repeat; /*[url({f12-debugger-image-watches-not-a-function}) no-repeat]*/
+    background-size: 10px 10px;
+}
+
+.grid-row .returnValue {
+    background: url("./images/returnValue.png") no-repeat; /*[url({f12-debugger-image-watches-return-value}) no-repeat]*/
+    background-size: 10px 10px;
+}
+
+.grid-row .functionItemMapped {
+    background: url("./images/functionIconMapped.png") no-repeat; /*[url({f12-debugger-image-watches-function-mapped}) no-repeat]*/
+    background-size: 10px 10px;
+}
+
+.grid-row .notAFunctionItemMapped {
+    background: url("./images/notAFunctionIconMapped.png") no-repeat; /*[url({f12-debugger-image-watches-not-a-function-mapped}) no-repeat]*/
+    background-size: 10px 10px;
+}

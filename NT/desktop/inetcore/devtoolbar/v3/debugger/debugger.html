@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="format-detection" content="telephone=no">
+    <meta charset="utf-8" />
+    <title>Debugger</title>
+
+    <link id="objectTreeView.css" rel="stylesheet" href="../Common/ObjectView/objectTreeView.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../common/editor/vs/editor/css/vs-theme.css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="../common/controls/controls.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="../common/Intellisense/intellisenseListBox.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="../common/Grid/gridControl.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="../common/ResourcesView/resourcesView.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="TabControl/tabControl.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="Callstack/callstack.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="Breakpoints/breakpoints.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="LanguageService/findResults.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" href="Watches/watches.css" type="text/css" data-plugin-theme="true" />
+    <link rel="stylesheet" type="text/css" href="Debugger.css" data-plugin-theme="true" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../common/editor/vs/editor/css/vs-theme.css" />
+
+    <link rel="stylesheet" type="text/css" href="../common/SlickGrid/slick.grid.css" />
+    <link rel="stylesheet" type="text/css" href="../common/SlickGrid/slick-theme.css" data-plugin-theme="true" />
+
+    <!-- Below CSS file defines important overrides and should be the last one in the list of includes -->
+    <link rel="stylesheet" href="../common/editor/editor.css" type="text/css" data-plugin-theme="true" />
+
+    <!-- Daytona Includes -->
+    <script type="text/javascript" src="../Common/isDebugBuild.js"></script>
+    <script type="text/javascript" src="../common/plugin.js"></script>
+
+    <!-- Monaco Includes -->
+    <script src="editor/editorDefinitions.js"></script>
+
+    <script type="text/javascript">
+        // Add AMD paths for the monaco editor and debugger project resolver
+        window.require = {
+            baseUrl: "res://" + window.location.host + "/23/common/editor",
+            catchError: false
+        };
+        //console.profile('code loading');
+    </script>
+
+    <script type="text/javascript" src="../Common/jQuery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../Common/jQuery/jquery.event.drag-2.2.js"></script>
+
+    <script type="text/javascript" src="../Common/SlickGrid/slick.core.js"></script>
+    <script type="text/javascript" src="../Common/SlickGrid/slick.formatters.js"></script>
+    <script type="text/javascript" src="../Common/SlickGrid/slick.editors.js"></script>
+    <script type="text/javascript" src="../Common/SlickGrid/slick.dataview.js"></script>
+    <script type="text/javascript" src="../Common/SlickGrid/slick.grid.js"></script>
+    <script type="text/javascript" src="../Common/SlickGrid/plugins/slick.rowselectionmodel.js"></script>
+
+    <script type="text/javascript" src="../common/editor/vs/loader.js"></script>
+    <script type="text/javascript" src="../common/editor/vs/editor/editor.main.js"></script>
+    <script type="text/javascript" src="../common/CommonMerged.js"></script>
+    <script type="text/javascript" src="res://f12test.dll/23/selftest/SelfTestDebugger.js"></script>
+
+    <script src="DebuggerMerged.js"></script>
+
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            F12.Tools.Debugger.App.main();
+        });
+    </script>
+
+    <script id="intellisenseListBox" type="text/html">
+        <ul class="intellisenseListBox"></ul>
+    </script>
+</head>
+<body>
+    <div id="resizePane"></div>
+    <div id="root" role="main" tabindex="-1">
+        <div id="toolbar"></div>
+        <div id="dataTipElement"></div>
+        <div id="debuggerContent">
+            <div id="leftBlock">
+                <div id="tabStripContainer">
+                    <div id="filePickerButton" role="button" tabindex="1"></div>
+                    <div id="tabControl" class="tabControl" role="tabpanel"></div>
+                    <div id="documentToolbarSplitter"></div>
+                    <div id="documentToolbar"></div>
+                </div>
+                <div class="filePickerMenu" id="filePickerMenu" role="menu"></div>
+                <div id="editorConsoleContainer" class="editorConsoleContainer">
+                    <div id="resourcesView"></div>
+                    <div id="hEditorConsoleSplitter"></div>
+                    <div id="console" class="console" role="region">
+                        <div id="findResultsToolbar"></div>
+                        <div id="findResultsTotals">
+                            <span id="findResultsTotalsText"></span>
+                            <progress id="findResultsProgress"></progress>
+                        </div>
+                        <div id="findResults"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="vEditorDataWindowsSplitter"></div>
+            <div id="controlsSplitPane" class="controlsSplitPane">
+                <div id="topDataWindowsParent" role="tabpanel"></div>
+                <div id="hDataWindowsSplitter"></div>
+                <div id="bottomDataWindowsParent" role="tabpanel"></div>
+            </div>
+
+            <div id="Callstack" role="tab">
+                <div class="callstackwindow">
+                    <div class="windowtoolbar" role="toolbar">
+                        <div id="toggleJMCFramesButton" class="iconShell_18x18" role="button" tabindex="1">
+                            <div class="buttonIcon icon_14x14"></div>
+                        </div>
+                        <div id="toggleAsyncFramesButton" class="iconShell_18x18" role="button" tabindex="1">
+                            <div class="buttonIcon icon_14x14"></div>
+                        </div>
+                    </div>
+                    <div class="gridcontainer" role="treegrid">
+                    </div>
+                </div>
+            </div>
+
+            <div id="BreakpointWindow" role="tab">
+                <div class="windowtoolbar" role="toolbar">
+                    <div id="addXHRBreakpointButton" class="iconShell_18x18" role="button" tabindex="1">
+                        <div class="buttonIcon icon_14x14"></div>
+                    </div>
+                    <div id="addEventTracepointButton" class="iconShell_18x18" role="button" tabindex="1">
+                        <div class="buttonIcon icon_14x14"></div>
+                    </div>
+                    <div id="addEventBreakpointButton" class="iconShell_18x18" role="button" tabindex="1">
+                        <div class="buttonIcon icon_14x14"></div>
+                    </div>
+                    <div id="toggleAllBreakpointsButton" class="iconShell_18x18" role="button" tabindex="1">
+                        <div class="buttonIcon icon_14x14"></div>
+                    </div>
+                    <div id="deleteAllBreakpointsButton" class="iconShell_18x18" role="button" tabindex="1">
+                        <div class="buttonIcon icon_14x14"></div>
+                    </div>
+                </div>
+                <div class="breakpointgrid" role="grid">
+                </div>
+            </div>
+
+            <div id="Watches" role="tab">
+                <div class="watchWindow">
+                    <div class="windowtoolbar" role="toolbar">
+                        <div id="addWatchButton" class="iconShell_18x18" role="button" tabindex="1">
+                            <div class="buttonIcon icon_14x14"></div>
+                        </div>
+                        <div id="deleteAllWatchesButton" class="iconShell_18x18" role="button" tabindex="1">
+                            <div class="buttonIcon icon_14x14"></div>
+                        </div>
+                    </div>
+                    <div class="gridWatchContainer" role="treegrid">
+                    </div>
+                </div>
+            </div>
+            <div id="debuggerAriaAlertZone" role="alert" aria-live="assertive" aria-atomic="true"></div>
+        </div>
+    </div>
+</body>
+</html>

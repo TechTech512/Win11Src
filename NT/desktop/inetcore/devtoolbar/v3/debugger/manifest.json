@@ -1,0 +1,425 @@
+﻿{
+    "start_url": "debugger.html",
+    "domain": "http://microsoft.com",
+    "name": "Debugger",
+    "version": "1.0",
+    "f12": {
+        "localized_tab_resource": "DebuggerTitle",
+        "localized_tooltip_id": 201,
+        "resource_aliases": {
+            "Debugger": {
+                "is_default": true
+            },
+            "Common": {
+            }
+        },
+        "themed_images": {
+            "f12-debugger-image-cursor": {
+                "bitmap_source": "Cursor\\images\\currentLocationArrow.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-search": {
+                "bitmap_source": "images\\search.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-error-alert": {
+                "bitmap_source": "..\\pluginhost\\theme\\i_alerterror.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-info-alert": {
+                "bitmap_source": "..\\pluginhost\\theme\\i_alertinfo.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-error-close": {
+                "bitmap_source": "..\\pluginhost\\theme\\closeErrorBox.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-error-help": {
+                "bitmap_source": "..\\pluginhost\\theme\\helpErrorBox.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-continue": {
+                "bitmap_source": "images\\continue.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-break-all": {
+                "bitmap_source": "images\\breakAll.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-disconnect-debugging": {
+                "bitmap_source": "images\\disconnectIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-step-into": {
+                "bitmap_source": "images\\stepInto.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-step-over": {
+                "bitmap_source": "images\\stepOver.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-step-out": {
+                "bitmap_source": "images\\stepOut.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-break-worker": {
+                "bitmap_source": "images\\breakWorker.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-save": {
+                "bitmap_source": "images\\saveicon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-toggle-pretty-print": {
+                "bitmap_source": "..\\Common\\images\\togglePrettyPrint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-resource-grid-refresh": {
+                "bitmap_source": "..\\Common\\images\\refreshState.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-resource-grid-simulateCap": {
+                "bitmap_source": "..\\Common\\images\\forceStorageCapState.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-toggle-word-wrap": {
+                "bitmap_source": "..\\Common\\images\\toggleWordWrap.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-toggle-source-map": {
+                "bitmap_source": "images\\toggleSourceMap.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-break-on-exceptions": {
+                "bitmap_source": "images\\breakOnExceptions.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-clear-cookies": {
+                "bitmap_source": "images\\clearCookies.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-clear-session-cookies": {
+                "bitmap_source": "images\\clearSessionCookies.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-copy-to-clipboard": {
+                "bitmap_source": "images\\copyToClipboard.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-script-file": {
+                "bitmap_source": "images\\scriptfileicon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-html-file": {
+                "bitmap_source": "images\\htmlfileicon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-ts-file": {
+                "bitmap_source": "images\\tsfileicon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint": {
+                "bitmap_source": "Breakpoints\\images\\breakpointGlyph.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-conditional": {
+                "bitmap_source": "Breakpoints\\images\\conditionalBreakpoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-delete-all": {
+                "bitmap_source": "Breakpoints\\images\\deleteAllBreakpoints.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-disabled": {
+                "bitmap_source": "Breakpoints\\images\\breakpointDisabled.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-edit-current": {
+                "bitmap_source": "Breakpoints\\images\\editCurrentBreakpoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-select-all": {
+                "bitmap_source": "Breakpoints\\images\\selectAllBreakpoints.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-tracepoint": {
+                "bitmap_source": "Breakpoints\\images\\tracepointBreakpoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-unbound": {
+                "bitmap_source": "Breakpoints\\images\\breakpointUnbound.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-add-event-tracepoint": {
+                "bitmap_source": "Breakpoints\\images\\addEventTracepoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-add-event-breakpoint": {
+                "bitmap_source": "Breakpoints\\images\\addEventBreakpoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-breakpoint-add-XHR-breakpoint": {
+                "bitmap_source": "Breakpoints\\images\\addXHRBreakpoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-event-breakpoint": {
+                "bitmap_source": "Breakpoints\\images\\eventBreakpoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-event-breakpoint-conditional": {
+                "bitmap_source": "Breakpoints\\images\\eventBreakpointConditional.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-event-breakpoint-disabled": {
+                "bitmap_source": "Breakpoints\\images\\eventBreakpointDisabled.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-event-breakpoint-unbound": {
+                "bitmap_source": "Breakpoints\\images\\eventBreakpointUnbound.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-event-tracepoint": {
+                "bitmap_source": "Breakpoints\\images\\eventTracepoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-event-tracepoint-disabled": {
+                "bitmap_source": "Breakpoints\\images\\eventTracepointDisabled.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-event-tracepoint-unbound": {
+                "bitmap_source": "Breakpoints\\images\\eventTracepointUnbound.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-xhr-breakpoint": {
+                "bitmap_source": "Breakpoints\\images\\xhrBreakpoint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-xhr-breakpoint-disabled": {
+                "bitmap_source": "Breakpoints\\images\\xhrBreakpointDisabled.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-xhr-breakpoint-unbound": {
+                "bitmap_source": "Breakpoints\\images\\xhrBreakpointUnbound.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-callstack-active-frame": {
+                "bitmap_source": "Callstack\\images\\activeFrameGlyph.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-callstack-instruction-pointer": {
+                "bitmap_source": "Callstack\\images\\instructionPointerGlyph.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-callstack-pause-worker": {
+                "bitmap_source": "Callstack\\images\\pauseWorker.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-callstack-toggle-async-frames": {
+                "bitmap_source": "Callstack\\images\\toggleAsyncFrames.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-callstack-toggle-jmc-frames": {
+                "bitmap_source": "Callstack\\images\\toggleJMCFrames.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-css-file": {
+                "bitmap_source": "images\\cssfileicon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-previewtab-icon": {
+                "bitmap_source": "images\\previewTabIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-previewtab-close": {
+                "bitmap_source": "images\\previewTabClose.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-diff-icon": {
+                "bitmap_source": "images\\diffIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-diff-tab-icon": {
+                "bitmap_source": "images\\diffTabIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-redirect-icon": {
+                "bitmap_source": "images\\redirectIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-common-icons": {
+                "bitmap_source": "..\\Common\\images\\common_icons.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-file-picker": {
+                "bitmap_source": "images\\filepicker.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-files-node": {
+                "bitmap_source": "images\\filesnodeicon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-next": {
+                "bitmap_source": "..\\Common\\images\\i_next.png",
+                "background_color": "plugin-searchcontrol-mouseover-background-background-color"
+            },
+            "f12-debugger-image-find-previous": {
+                "bitmap_source": "..\\Common\\images\\i_previous.png",
+                "background_color": "plugin-searchcontrol-mouseover-background-background-color"
+            },
+            "f12-debugger-image-grid-control-add-row": {
+                "bitmap_source": "..\\Common\\images\\add_row.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-grid-control-column-move": {
+                "bitmap_source": "..\\Common\\images\\columnmove.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-images-item-collapsed": {
+                "bitmap_source": "..\\Common\\images\\itemCollapsedIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-images-item-expanded": {
+                "bitmap_source": "..\\Common\\images\\itemExpandedIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-images-library-code-icon": {
+                "bitmap_source": "images\\libraryCodeIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-images-my-code-icon": {
+                "bitmap_source": "images\\myCodeIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-toolbar-button-image-my-code-icon": {
+                "bitmap_source": "images\\toolbarMyCodeIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-misc-icons": {
+                "bitmap_source": "..\\Common\\images\\misc_icons.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-results": {
+                "bitmap_source": "LanguageService\\images\\findResults.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-results-clear-results": {
+                "bitmap_source": "LanguageService\\images\\clearResults.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-results-close": {
+                "bitmap_source": "LanguageService\\images\\close.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-results-next-result": {
+                "bitmap_source": "LanguageService\\images\\nextResult.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-results-pin": {
+                "bitmap_source": "LanguageService\\images\\pin.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-results-previous-result": {
+                "bitmap_source": "LanguageService\\images\\previousResult.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-find-results-unpin": {
+                "bitmap_source": "LanguageService\\images\\unpin.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-tab-control-close": {
+                "bitmap_source": "..\\Common\\images\\tabclose.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-tab-control-next": {
+                "bitmap_source": "images\\nextTab.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-tab-control-previous": {
+                "bitmap_source": "images\\prevTab.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-tree-icons": {
+                "bitmap_source": "..\\Common\\images\\tree_icons.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-add-watch": {
+                "bitmap_source": "Watches\\images\\addWatch.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-delete-watch": {
+                "bitmap_source": "..\\Common\\images\\i_delete.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-delete-all": {
+                "bitmap_source": "Watches\\images\\deleteAll.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-function": {
+                "bitmap_source": "images\\functionIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-not-a-function": {
+                "bitmap_source": "images\\notAFunctionIcon.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-function-mapped": {
+                "bitmap_source": "images\\functionIconMapped.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-not-a-function-mapped": {
+                "bitmap_source": "images\\notAFunctionIconMapped.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-watches-return-value": {
+                "bitmap_source": "images\\returnValue.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-editor-scroll-arrow-up": {
+                "bitmap_source": "..\\Common\\editor\\vs\\base\\ui\\scrollbar\\impl\\arrow-up.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-editor-scroll-arrow-down": {
+                "bitmap_source": "..\\Common\\editor\\vs\\base\\ui\\scrollbar\\impl\\arrow-down.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-editor-scroll-arrow-left": {
+                "bitmap_source": "..\\Common\\editor\\vs\\base\\ui\\scrollbar\\impl\\arrow-left.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-editor-scroll-arrow-right": {
+                "bitmap_source": "..\\Common\\editor\\vs\\base\\ui\\scrollbar\\impl\\arrow-right.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-local-storage-node": {
+                "bitmap_source": "images\\localStorage.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-session-storage-node": {
+                "bitmap_source": "images\\sessionStorage.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-cookies-node": {
+                "bitmap_source": "images\\cookies.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-grid-header-httpOnly": {
+                "bitmap_source": "images\\gridHeaderHttpOnly.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-debugger-image-grid-header-secure": {
+                "bitmap_source": "images\\gridHeaderSecure.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "plugin-menu-item-checkmark": {
+                "bitmap_source": "..\\Common\\images\\checkmark.png",
+                "background_color": "plugin-font-editor-background-color"
+            }
+        }
+    },
+    "file_aliases": {
+        "PerformanceTraceExtension": {
+            "path": "PerformanceTrace.dll",
+            "optional": true
+        }
+    }
+}

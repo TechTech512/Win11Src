@@ -1,0 +1,326 @@
+#BreakpointWindow {
+    width: 100%;
+    height: 100%;
+}
+
+    #BreakpointWindow > .windowtoolbar {
+        -ms-grid-columns: 1fr auto auto auto auto;
+        display: -ms-grid;
+    }
+
+        #BreakpointWindow > .windowtoolbar > #addXHRBreakpointButton {
+            -ms-grid-column: 2 ;
+        }
+
+            #BreakpointWindow > .windowtoolbar > #addXHRBreakpointButton > .buttonIcon {
+                background-image: url('Breakpoints/images/addXHRBreakpoint.png'); /*[url({f12-debugger-image-breakpoint-add-XHR-breakpoint})]*/
+            }
+
+        #BreakpointWindow > .windowtoolbar > #addEventTracepointButton {
+            -ms-grid-column: 3;
+        }
+
+            #BreakpointWindow > .windowtoolbar > #addEventTracepointButton > .buttonIcon {
+                background-image: url('Breakpoints/images/addEventTracepoint.png'); /*[url({f12-debugger-image-breakpoint-add-event-tracepoint})]*/
+            }
+
+        #BreakpointWindow > .windowtoolbar > #addEventBreakpointButton {
+            -ms-grid-column: 4;
+        }
+
+            #BreakpointWindow > .windowtoolbar > #addEventBreakpointButton > .buttonIcon {
+                background-image: url('Breakpoints/images/addEventBreakpoint.png'); /*[url({f12-debugger-image-breakpoint-add-event-breakpoint})]*/
+            }
+
+        #BreakpointWindow > .windowtoolbar > #toggleAllBreakpointsButton {
+            -ms-grid-column: 5;
+        }
+
+            #BreakpointWindow > .windowtoolbar > #toggleAllBreakpointsButton > .buttonIcon {
+                background-image: url('Breakpoints/images/selectAllBreakpoints.png'); /*[url({f12-debugger-image-breakpoint-select-all})]*/
+            }
+
+        #BreakpointWindow > .windowtoolbar > #deleteAllBreakpointsButton {
+            -ms-grid-column: 6;
+        }
+
+            #BreakpointWindow > .windowtoolbar > #deleteAllBreakpointsButton > .buttonIcon {
+                background-image: url('Breakpoints/images/deleteAllBreakpoints.png'); /*[url({f12-debugger-image-breakpoint-delete-all})]*/
+            }
+
+    #BreakpointWindow > .breakpointgrid {
+        overflow: auto;
+        height: calc(100% - 20px);
+        width: 100%;
+    }
+
+    #BreakpointWindow .bpRow {
+        display: -ms-grid;
+        -ms-grid-columns: 13px 8px 20px 8px 1fr 42px;
+        -ms-grid-rows: auto;
+        padding: 0px 5px 2px 7px;
+    }
+
+        #BreakpointWindow .bpRow.selected {
+            background-color: TRANSPARENT; /*[{plugin-debugger-grid-row-selected-background-color rgba(0.2)}]*/
+        }
+
+        #BreakpointWindow .bpRow:hover {
+            background-color: TRANSPARENT; /*[{plugin-debugger-grid-row-hover-background-color}]*/
+        }
+
+        #BreakpointWindow .bpRow.selected:hover {
+            background-color: TRANSPARENT; /*[{plugin-debugger-grid-row-selected-background-color rgba(0.2)}]*/
+        }
+
+        #BreakpointWindow .bpRow.contextTarget {
+            background-color: TRANSPARENT; /*[{plugin-debugger-grid-row-hover-background-color}]*/
+        }
+
+        #BreakpointWindow .bpRow .bpCheckbox {
+            display: inline-block;
+            padding: 0;
+            margin: 0px;
+            -ms-grid-column: 1;
+            padding: 1px 0px 0px 2px;
+            background-color: transparent;
+        }
+
+        #BreakpointWindow .bpRow .bpIcon {
+            display: inline-block;
+            -ms-grid-column: 3;
+            width: 16px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-position-y: 4px;
+        }
+
+        #BreakpointWindow .bpRow .bpText {
+            display: inline-block;
+            -ms-grid-column: 5;
+            padding-top: 4px;
+            overflow: hidden;
+        }
+
+            #BreakpointWindow .bpRow .bpText .bpLink:hover {
+                cursor: pointer;
+            }
+
+        #BreakpointWindow .bpRow > .bpItemControls {
+            -ms-grid-column: 6;
+            -ms-grid-columns: 2;
+            text-align: right;
+            overflow: hidden;
+            display: -ms-grid;
+            white-space: nowrap;
+        }
+
+            #BreakpointWindow .bpRow > .bpItemControls > .bpEditButton {
+                -ms-grid-column: 1;
+                visibility: hidden;
+                margin: 2px;
+            }
+
+                #BreakpointWindow .bpRow > .bpItemControls > .bpEditButton > .buttonIcon {
+                    background-image: url('Breakpoints/images/editCurrentBreakpoint.png'); /*[url({f12-debugger-image-breakpoint-edit-current})]*/
+                }
+
+            #BreakpointWindow .bpRow > .bpItemControls > .bpDeleteButton {
+                -ms-grid-column: 2;
+                visibility: hidden;
+                margin: 2px;
+            }
+
+                #BreakpointWindow .bpRow > .bpItemControls > .bpDeleteButton > .buttonIcon {
+                    background-image: url('../common/images/i_delete.png'); /*[url({f12-debugger-image-breakpoint-delete-current})]*/
+                }
+
+        #BreakpointWindow .bpRow:hover > .bpItemControls > .bpEditButton, #BreakpointWindow .bpRow:hover > .bpItemControls > .bpDeleteButton {
+            visibility: visible;
+        }
+
+        #BreakpointWindow .bpRow > .bpItemControls > button {
+            margin: 1px;
+            margin-left: 7px;
+            margin-top: 2px;
+            height: 16px;
+            width: 16px;
+            padding: 0;
+            border: 1px solid transparent;
+            background-color: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+            position: relative;
+            vertical-align: top;
+        }
+
+            #BreakpointWindow .bpRow > .bpItemControls > button:hover {
+                background-color: TRANSPARENT; /*[{vs-command-bar-mouse-over-background-middle1-color}]*/
+                border: 1px solid TRANSPARENT; /*[1px solid {vs-command-bar-selected-border-color}]*/
+                color: TRANSPARENT; /*[{vs-command-bar-text-selected-color}]*/
+                background-position-y: -16px;
+                cursor: pointer;
+            }
+
+    #BreakpointWindow .breakpointGlyph {
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+        background-size: 14px 14px;
+    }
+
+    #BreakpointWindow .breakpointimg {
+        background-image: url('Breakpoints/images/breakpointGlyph.png'); /*[url({f12-debugger-image-breakpoint})]*/
+    }
+
+    #BreakpointWindow .tracepointimg {
+        background-image: url('Breakpoints/images/tracepointBreakpoint.png'); /*[url({f12-debugger-image-breakpoint-tracepoint})]*/
+    }
+
+    #BreakpointWindow .conditionalimg {
+        background-image: url('Breakpoints/images/conditionalBreakpoint.png'); /*[url({f12-debugger-image-breakpoint-conditional})]*/
+    }
+
+    #BreakpointWindow .bpUnbound {
+        background-image: url('Breakpoints/images/breakpointUnbound.png'); /*[url({f12-debugger-image-breakpoint-unbound})]*/
+    }
+
+    #BreakpointWindow .bpDisabled {
+        background-image: url('Breakpoints/images/breakpointDisabled.png'); /*[url({f12-debugger-image-breakpoint-disabled})]*/
+    }
+
+    #BreakpointWindow .eventBreakpointImg {
+        background-image: url('Breakpoints/images/eventBreakpoint.png'); /*[url({f12-debugger-image-event-breakpoint})]*/
+    }
+
+    #BreakpointWindow .eventBreakpointConditionalImg {
+        background-image: url('Breakpoints/images/eventBreakpointConditional.png'); /*[url({f12-debugger-image-event-breakpoint-conditional})]*/
+    }
+
+        #BreakpointWindow .eventBreakpointImg.bpUnbound, #BreakpointWindow .eventBreakpointConditionalImg.bpUnbound {
+            background-image: url('Breakpoints/images/eventBreakpointUnbound.png'); /*[url({f12-debugger-image-event-breakpoint-unbound})]*/
+        }
+
+        #BreakpointWindow .eventBreakpointImg.bpDisabled, #BreakpointWindow .eventBreakpointConditionalImg.bpDisabled {
+            background-image: url('Breakpoints/images/eventBreakpointDisabled.png'); /*[url({f12-debugger-image-event-breakpoint-disabled})]*/
+        }
+
+    #BreakpointWindow .eventTracepointImg {
+        background-image: url('Breakpoints/images/eventTracepoint.png'); /*[url({f12-debugger-image-event-tracepoint})]*/
+    }
+
+        #BreakpointWindow .eventTracepointImg.bpUnbound {
+            background-image: url('Breakpoints/images/eventTracepointUnbound.png'); /*[url({f12-debugger-image-event-tracepoint-unbound})]*/
+        }
+
+        #BreakpointWindow .eventTracepointImg.bpDisabled {
+            background-image: url('Breakpoints/images/eventTracepointDisabled.png'); /*[url({f12-debugger-image-event-tracepoint-disabled})]*/
+        }
+
+    #BreakpointWindow .eventXHRBreakpointImg {
+        background-image: url('Breakpoints/images/eventBreakpointXHR.png'); /*[url({f12-debugger-image-xhr-breakpoint})]*/
+    }   
+
+        #BreakpointWindow .eventXHRBreakpointImg.bpUnbound {
+            background-image: url('Breakpoints/images/eventBreakpointXHRUnbound.png'); /*[url({f12-debugger-image-xhr-breakpoint-unbound})]*/
+        }
+
+        #BreakpointWindow .eventXHRBreakpointImg.bpDisabled {
+            background-image: url('Breakpoints/images/eventBreakpointXHRDisabled.png'); /*[url({f12-debugger-image-xhr-breakpoint-disabled})]*/
+        }
+
+.lightDismissPromptContainer {
+    display: block;
+    padding: 12px;
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-active-border-color}]*/
+    background: TRANSPARENT; /*[{plugin-contextmenu-background-color}]*/
+    box-shadow: 2px 2px 2px TRANSPARENT; /*[2px 2px 2px {plugin-textbox-border-color rgba(0.5)}]*/
+    color: TRANSPARENT; /*[{plugin-color}]*/
+    font-size: 12px;
+    position: absolute;
+    z-index: 1010;
+}
+
+    .lightDismissPromptContainer .popupInnerContainer div {
+        color: TRANSPARENT; /*[{plugin-textbox-color}]*/
+    }
+    
+    .lightDismissPromptContainer .popupInnerContainer > div:first-child {
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    .lightDismissPromptContainer .popupInnerContainer {
+        height: auto;
+        width: 100%;
+    }
+
+    .lightDismissPromptContainer .popupInputContainer {
+        display: -ms-grid;
+        -ms-grid-columns: auto 6px 1fr;
+        margin-top: 18px;
+    }
+
+    .lightDismissPromptContainer .popupInputContainer.withHelp {
+        -ms-grid-columns: auto 6px 1fr 6px 20px;
+    }
+
+        .lightDismissPromptContainer .popupInputContainer .promptInputLabel {
+            width: auto;
+            display: inline;
+        }
+
+        .lightDismissPromptContainer .popupInputContainer .promptInputBox {
+            -ms-grid-column: 3;
+            width: 100%;
+        }
+
+        /* The group labels in the event breakpoint prompt need an explicit color assigned to render properly in High Contrast mode */
+        .lightDismissPromptContainer .popupInputContainer .promptInputBox > optgroup {
+            color: TRANSPARENT; /*[{plugin-color}]*/
+        }
+
+        .lightDismissPromptContainer .popupInputContainer .promptHelpButton {
+            -ms-grid-column: 5;
+            width: 100%;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            background-image: none;
+            border: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-border-color}]*/
+            color: TRANSPARENT; /*[{plugin-color}]*/
+        }
+
+    .lightDismissPromptContainer .popupButtonContainer {
+        float: right;
+    }
+
+        .lightDismissPromptContainer .popupButtonContainer button {
+            margin-top: 18px;
+            margin-bottom: 0;
+            padding: 2px 6px;
+            min-width: 65px;
+            background-image: none;
+            border: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-border-color}]*/
+            color: TRANSPARENT; /*[{plugin-color}]*/
+        }
+
+        .lightDismissPromptContainer .popupButtonContainer button:first-child {
+            margin-right: 9px;
+        }
+
+    .lightDismissPromptContainer .popupButtonContainer .okButton:hover, .lightDismissPromptContainer .popupButtonContainer .cancelButton:hover {
+        border: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-active-border-color}]*/
+    }
+
+.setTracepointContainer, .setConditionContainer {
+    min-height: 100px;
+    width: 350px;
+    top: calc(50% - 80px);
+    left: calc(50% - 175px);
+}
+
+.addEventBreakpointContainer, .addEventTracepointContainer {
+    min-height: 100px;
+    width: 350px;
+    top: calc(50% - 80px);
+    left: calc(50% - 175px);
+}

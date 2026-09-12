@@ -1,0 +1,225 @@
+/*
+ *   TabControl styles
+ */
+
+.rfloat {
+    float: right;
+}
+
+.tabControl {
+    height: 100%;
+    width: 100%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto minmax(min-content, 1fr);
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+    .tabControl > .tabBarContainer {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        -ms-grid-column-align: end;
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .tabControl ul.tabBar {
+        width: calc(100% - 32px);
+        float: left;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+        font-size: 0;
+    }
+
+        .tabControl ul.tabBar li {
+            position: relative;
+            display: inline-block;
+            min-width: 9em;
+            color: TRANSPARENT; /*[{vs-file-tab-text-color}]*/
+            font-size: 9pt; /*[{plugin-font-size}]*/
+            font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+            height: 2em;
+            padding-top: 2px;
+        }
+
+            .tabControl ul.tabBar li:hover {
+                color: TRANSPARENT; /*[{vs-file-tab-hot-text-color}]*/
+                background-color: TRANSPARENT; /*[{vs-file-tab-hot-gradient-bottom-color}]*/
+            }
+
+                .tabControl ul.tabBar li:hover .closeButton {
+                    background: url("../Common/images/tabclose.png") no-repeat 0 2px; /*[url({f12-debugger-image-tab-control-close}) no-repeat 0 2px]*/
+                    background-size: 32px 16px;
+                }
+
+                    .tabControl ul.tabBar li:hover .closeButton:hover {
+                        background: url("../Common/images/tabclose.png") no-repeat -16px 2px; /*[url({f12-debugger-image-tab-control-close}) no-repeat -16px 2px]*/
+                        background-size: 32px 16px;
+                    }
+
+            .tabControl ul.tabBar li:focus {
+                outline: 1px dotted TRANSPARENT; /*[1px dotted {vs-designer-selection-dots-color}]*/
+            }
+
+            .tabControl ul.tabBar li.active {
+                color: TRANSPARENT; /*[{vs-file-tab-selected-text-color}]*/
+                background-color: TRANSPARENT; /*[{vs-file-tab-selected-gradient-bottom-color}]*/
+            }
+
+                .tabControl ul.tabBar li.active .closeButton {
+                    background: url("../Common/images/tabclose.png") no-repeat 0 2px; /*[url({f12-debugger-image-tab-control-close}) no-repeat 0 2px]*/
+                    background-size: 32px 16px;
+                }
+
+                    .tabControl ul.tabBar li.active .closeButton:hover {
+                        background: url("../Common/images/tabclose.png") no-repeat -16px 2px; /*[url({f12-debugger-image-tab-control-close}) no-repeat -16px 2px]*/
+                        background-size: 32px 16px;
+                    }
+
+        .tabControl ul.tabBar li.previewTab {
+            color: TRANSPARENT; /*[{vs-file-preview-tab-text-color}]*/
+            background-color: TRANSPARENT; /*[{vs-file-preview-tab-background-color}]*/
+        }
+
+            .tabControl ul.tabBar li.previewTab:hover {
+                color: TRANSPARENT; /*[{vs-file-preview-tab-hover-text-color}]*/
+                background-color: TRANSPARENT; /*[{vs-file-preview-tab-hover-background-color}]*/
+            }
+
+            .tabControl ul.tabBar li.previewTab.active {
+                color: TRANSPARENT; /*[{vs-file-preview-tab-selected-text-color}]*/
+                background-color: TRANSPARENT; /*[{vs-file-preview-tab-selected-background-color}]*/
+            }
+
+                .tabControl ul.tabBar li.previewTab .closeButton {
+                    background: url("images/previewTabClose.png") no-repeat 0 2px; /*[url({f12-debugger-image-previewtab-close}) no-repeat 0 2px]*/
+                    background-size: 32px 16px;
+                }
+
+                    .tabControl ul.tabBar li.previewTab .closeButton:hover {
+                        background: url("images/previewTabClose.png") no-repeat -16px 2px; /*[url({f12-debugger-image-previewtab-close}) no-repeat -16px 2px]*/
+                        background-size: 32px 16px;
+                    }
+
+#tabStripContainer {
+    display: inline-block;
+    border-bottom: 0.2em solid TRANSPARENT; /*[0.2em solid {vs-file-tab-selected-gradient-bottom-color}]*/
+}
+
+    #tabStripContainer.previewTab {
+        border-bottom: 0.2em solid TRANSPARENT; /*[0.2em solid {vs-file-preview-tab-selected-background-color}]*/
+    }
+
+.buttonControl {
+    position: absolute;
+    float: left;
+    overflow: hidden;
+    height: 2em;
+}
+
+    .buttonControl > button {
+        width: 19px;
+        height: 100%;
+        padding: 1px 5px 4px 5px;
+        border: none;
+        border-bottom: 0.2em solid TRANSPARENT; /*[0.2em solid {vs-file-tab-selected-gradient-bottom-color}]*/
+    }
+
+.tabControl .closeButton {
+    margin-left: 1em;
+    margin-right: 0.5em;
+    float: right;
+    height: 16px;
+    width: 16px;
+}
+
+.tabTitle {
+    margin-left: 3px;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    height: 100%;
+    padding-top: 1px;
+    white-space: pre;
+}
+
+.tabContent {
+    display: inline;
+    height: 2em;
+}
+
+    .tabContent .previewTabIcon {
+        background-image: url(""); /*[url({f12-debugger-image-previewtab-icon})]*/
+        float: left;
+        width: 14px;
+        height: 14px;
+        margin-top: 2px;
+        margin-left: 4px;
+        background-repeat: no-repeat;
+        background-size: 14px 14px;
+        background-color: transparent;
+    }
+
+    .tabContent .diffTabIcon {
+        background-image: url(""); /*[url({f12-debugger-image-diff-tab-icon})]*/
+        float: left;
+        width: 14px;
+        height: 14px;
+        margin-top: 2px;
+        margin-left: 4px;
+        background-repeat: no-repeat;
+        background-size: 14px 28px;
+        background-color: transparent;
+        background-position-y: 0px;
+    }
+
+        li.active .tabContent .diffTabIcon {
+            background-position-y: -14px;
+        }
+
+#tabNavigation {
+    width: 32px;
+    float: right;
+    margin-top: 4px;
+    position: relative;
+    z-index: 100;
+}
+
+.prevTabDisabled {
+    background: url("images/prevTab.png"); /*[url({f12-debugger-image-tab-control-previous})]*/
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 32px 16px;
+    float: left;
+    width: 16px;
+    height: 16px;
+}
+
+    .prevTabDisabled:hover {
+        background-position-x: -16px;
+    }
+
+.nextTabDisabled {
+    background: url("images/nextTab.png"); /*[url({f12-debugger-image-tab-control-next})]*/
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 32px 16px;
+    float: right;
+    width: 16px;
+    height: 16px;
+}
+
+    .nextTabDisabled:hover {
+        background-position-x: -16px;
+    }
+
+.hiddenButton {
+    display: none;
+}
