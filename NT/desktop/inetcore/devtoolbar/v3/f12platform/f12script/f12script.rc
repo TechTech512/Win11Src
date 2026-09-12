@@ -1,0 +1,2326 @@
+//=================================================================
+//
+// Microsoft Windows Internet Explorer
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include "resource.h"
+
+#include <windows.h>
+#include <ieverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "F12 Developer Tools"
+#define VER_INTERNALNAME_STR        "F12Script.dll"
+#define VER_ORIGINALFILENAME_STR    "F12Script.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML (the real source code of this DLL)
+//
+
+CHOOSER/APP.JS HTML DISCARDABLE "..//..//chooser//app.js"
+CHOOSER/CHOOSER.CSS HTML DISCARDABLE "..//..//chooser//chooser.css"
+CHOOSER/CHOOSER.HTML HTML DISCARDABLE "..//..//chooser//chooser.html"
+CHOOSER/CHOOSER.JS HTML DISCARDABLE "..//..//chooser//chooser.js"
+COMMON/ASSERT.JS HTML DISCARDABLE "..//..//common//assert.js"
+COMMON/BUTTON.CSS HTML DISCARDABLE "..//..//common//button.css"
+COMMON/COMMON.CSS HTML DISCARDABLE "..//..//common//common.css"
+COMMON/COMMONMERGED.JS HTML DISCARDABLE "..//..//common//commonmerged.js"
+COMMON/COMMONMINIMAL.JS HTML DISCARDABLE "..//..//common//commonminimal.js"
+COMMON/CONTROLS/CONTROLS.CSS HTML DISCARDABLE "..//..//common//controls//controls.css"
+COMMON/CONTROLS/LISTCONTROL/LISTCONTROL.CSS HTML DISCARDABLE "..//..//common//controls//listcontrol//listcontrol.css"
+COMMON/CSSUTILITIES.JS HTML DISCARDABLE "..//..//common//cssutilities.js"
+COMMON/CUTCOPYPASTECONTEXTMENU.JS HTML DISCARDABLE "..//..//common//cutcopypastecontextmenu.js"
+COMMON/DATATREEVIEW.CSS HTML DISCARDABLE "..//..//common//datatreeview.css"
+COMMON/EDITOR/EDITOR.CSS HTML DISCARDABLE "..//..//common//editor//editor.css"
+COMMON/EDITOR/EDITORDEFINITIONS.JS HTML DISCARDABLE "..//..//common//editor//editordefinitions.js"
+COMMON/EDITOR/VS/BASE/UI/SCROLLBAR/IMPL/ARROW-DOWN.PNG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//scrollbar//impl//arrow-down.png"
+COMMON/EDITOR/VS/BASE/UI/SCROLLBAR/IMPL/ARROW-LEFT.PNG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//scrollbar//impl//arrow-left.png"
+COMMON/EDITOR/VS/BASE/UI/SCROLLBAR/IMPL/ARROW-RIGHT.PNG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//scrollbar//impl//arrow-right.png"
+COMMON/EDITOR/VS/BASE/UI/SCROLLBAR/IMPL/ARROW-UP.PNG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//scrollbar//impl//arrow-up.png"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/CASE-SENSITIVE.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//case-sensitive.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/REGEX.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//regex.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/SHELL/MEDIA/HELP.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//shell//media//help.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/SHELL/MEDIA/LOGO.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//shell//media//logo.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/SHELL/MEDIA/SETTINGS.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//shell//media//settings.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/TOOLBAR/ELLIPSIS-INVERSE.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//toolbar//ellipsis-inverse.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/TOOLBAR/ELLIPSIS.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//toolbar//ellipsis.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/WARNING.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//warning.svg"
+COMMON/EDITOR/VS/BASE/UI/WIDGETS/WHOLE-WORD.SVG HTML DISCARDABLE "..//..//common//editor//vs//base//ui//widgets//whole-word.svg"
+COMMON/EDITOR/VS/BASE/WORKER/WORKERMAIN.JS HTML DISCARDABLE "..//..//common//editor//vs//base//worker//workermain.js"
+COMMON/EDITOR/VS/BASE/WORKER/WORKERMAINCOMPATIBILITY.HTML HTML DISCARDABLE "..//..//common//editor//vs//base//worker//workermaincompatibility.html"
+COMMON/EDITOR/VS/BASE/WORKER/WORKERMAINPROCESS.HTML HTML DISCARDABLE "..//..//common//editor//vs//base//worker//workermainprocess.html"
+COMMON/EDITOR/VS/BASE/WORKER/WORKERSERVER.JS HTML DISCARDABLE "..//..//common//editor//vs//base//worker//workerserver.js"
+COMMON/EDITOR/VS/BASE/WORKER/WORKERSERVER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//base//worker//workerserver.nls.keys.js"
+COMMON/EDITOR/VS/CSS.JS HTML DISCARDABLE "..//..//common//editor//vs//css.js"
+COMMON/EDITOR/VS/EDITOR/CONTRIB/QUICKOPEN/SYMBOL-SPRITE.SVG HTML DISCARDABLE "..//..//common//editor//vs//editor//contrib//quickopen//symbol-sprite.svg"
+COMMON/EDITOR/VS/EDITOR/CSS/ARROW-LEFT.PNG HTML DISCARDABLE "..//..//common//editor//vs//editor//css//arrow-left.png"
+COMMON/EDITOR/VS/EDITOR/CSS/ARROW-RIGHT.PNG HTML DISCARDABLE "..//..//common//editor//vs//editor//css//arrow-right.png"
+COMMON/EDITOR/VS/EDITOR/CSS/DEFAULT-THEME.CSS HTML DISCARDABLE "..//..//common//editor//vs//editor//css//default-theme.css"
+COMMON/EDITOR/VS/EDITOR/CSS/GREEN-SQUIGGLY.SVG HTML DISCARDABLE "..//..//common//editor//vs//editor//css//green-squiggly.svg"
+COMMON/EDITOR/VS/EDITOR/CSS/RED-SQUIGGLY.SVG HTML DISCARDABLE "..//..//common//editor//vs//editor//css//red-squiggly.svg"
+COMMON/EDITOR/VS/EDITOR/CSS/VS-THEME.CSS HTML DISCARDABLE "..//..//common//editor//vs//editor//css//vs-theme.css"
+COMMON/EDITOR/VS/EDITOR/EDITOR.MAIN.CSS HTML DISCARDABLE "..//..//common//editor//vs//editor//editor.main.css"
+COMMON/EDITOR/VS/EDITOR/EDITOR.MAIN.JS HTML DISCARDABLE "..//..//common//editor//vs//editor//editor.main.js"
+COMMON/EDITOR/VS/EDITOR/EDITOR.MAIN.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//editor//editor.main.nls.keys.js"
+COMMON/EDITOR/VS/EDITOR/MODES/MONARCH/MONARCHWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//editor//modes//monarch//monarchworker.js"
+COMMON/EDITOR/VS/EDITOR/MODES/MONARCH/MONARCHWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//editor//modes//monarch//monarchworker.nls.keys.js"
+COMMON/EDITOR/VS/EDITOR/WORKER/EDITORWORKERSERVER.JS HTML DISCARDABLE "..//..//common//editor//vs//editor//worker//editorworkerserver.js"
+COMMON/EDITOR/VS/EDITOR/WORKER/EDITORWORKERSERVER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//editor//worker//editorworkerserver.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/COFFEESCRIPT/COFFEESCRIPT.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//coffeescript//coffeescript.js"
+COMMON/EDITOR/VS/LANGUAGES/COFFEESCRIPT/COFFEESCRIPT.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//coffeescript//coffeescript.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/CSHARP/CSHARP.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//csharp//csharp.js"
+COMMON/EDITOR/VS/LANGUAGES/CSHARP/CSHARP.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//csharp//csharp.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/CSS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//css.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/CSS.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//css.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/CSSWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//cssworker.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/CSSWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//cssworker.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/MONACOPARTICIPANT.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//monacoparticipant.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/MONACOPARTICIPANT.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//monacoparticipant.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/SERVICES/BROWSERS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//services//browsers.js"
+COMMON/EDITOR/VS/LANGUAGES/CSS/SERVICES/BROWSERS.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//css//services//browsers.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/HTML/HTML.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//html//html.js"
+COMMON/EDITOR/VS/LANGUAGES/HTML/HTML.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//html//html.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/HTML/HTMLWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//html//htmlworker.js"
+COMMON/EDITOR/VS/LANGUAGES/HTML/HTMLWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//html//htmlworker.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/JAVASCRIPT/JAVASCRIPT.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//javascript//javascript.js"
+COMMON/EDITOR/VS/LANGUAGES/JAVASCRIPT/JAVASCRIPT.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//javascript//javascript.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/JAVASCRIPT/JAVASCRIPTWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//javascript//javascriptworker.js"
+COMMON/EDITOR/VS/LANGUAGES/JAVASCRIPT/JAVASCRIPTWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//javascript//javascriptworker.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/JSON/JSON.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//json//json.js"
+COMMON/EDITOR/VS/LANGUAGES/JSON/JSON.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//json//json.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/JSON/JSONWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//json//jsonworker.js"
+COMMON/EDITOR/VS/LANGUAGES/JSON/JSONWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//json//jsonworker.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/LESS/LESS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//less//less.js"
+COMMON/EDITOR/VS/LANGUAGES/LESS/LESS.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//less//less.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/LESS/LESSWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//less//lessworker.js"
+COMMON/EDITOR/VS/LANGUAGES/LESS/LESSWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//less//lessworker.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/LESS/PARSER/LESS.GRAMMAR.TXT HTML DISCARDABLE "..//..//common//editor//vs//languages//less//parser//less.grammar.txt"
+COMMON/EDITOR/VS/LANGUAGES/NULLWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//nullworker.js"
+COMMON/EDITOR/VS/LANGUAGES/NULLWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//nullworker.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/PLAINTEXT/PLAINTEXT.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//plaintext//plaintext.js"
+COMMON/EDITOR/VS/LANGUAGES/PLAINTEXT/PLAINTEXT.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//plaintext//plaintext.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/SASS/SASS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//sass//sass.js"
+COMMON/EDITOR/VS/LANGUAGES/SASS/SASS.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//sass//sass.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/SASS/SASSWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//sass//sassworker.js"
+COMMON/EDITOR/VS/LANGUAGES/SASS/SASSWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//sass//sassworker.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/JS/GLOBALVARIABLEREWRITER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//js//globalvariablerewriter.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/JS/GLOBALVARIABLEREWRITER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//js//globalvariablerewriter.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/JS/IMPORTANDEXPORTREWRITER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//js//importandexportrewriter.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/JS/IMPORTANDEXPORTREWRITER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//js//importandexportrewriter.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/LIB/TYPESCRIPTSERVICES.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//lib//typescriptservices.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/LIB/TYPESCRIPTSERVICES.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//lib//typescriptservices.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/PARTICIPANTS/FILENAMESUGGESTIONS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//participants//filenamesuggestions.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/PARTICIPANTS/FILENAMESUGGESTIONS.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//participants//filenamesuggestions.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/PARTICIPANTS/NLSPARTICIPANT.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//participants//nlsparticipant.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/PARTICIPANTS/NLSPARTICIPANT.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//participants//nlsparticipant.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/PROJECT/PROJECTRESOLVER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//project//projectresolver.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/PROJECT/PROJECTRESOLVER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//project//projectresolver.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/TYPESCRIPTMODE.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//typescriptmode.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/TYPESCRIPTMODE.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//typescriptmode.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/TYPESCRIPTWORKER2.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//typescriptworker2.js"
+COMMON/EDITOR/VS/LANGUAGES/TYPESCRIPT/TYPESCRIPTWORKER2.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//typescript//typescriptworker2.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/VSXML/VSXML.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//vsxml//vsxml.js"
+COMMON/EDITOR/VS/LANGUAGES/VSXML/VSXML.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//vsxml//vsxml.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/XML/XML.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//xml//xml.js"
+COMMON/EDITOR/VS/LANGUAGES/XML/XML.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//xml//xml.nls.keys.js"
+COMMON/EDITOR/VS/LANGUAGES/XML/XMLWORKER.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//xml//xmlworker.js"
+COMMON/EDITOR/VS/LANGUAGES/XML/XMLWORKER.NLS.KEYS.JS HTML DISCARDABLE "..//..//common//editor//vs//languages//xml//xmlworker.nls.keys.js"
+COMMON/EDITOR/VS/LOADER.JS HTML DISCARDABLE "..//..//common//editor//vs//loader.js"
+COMMON/EDITOR/VS/NATIVE.JS HTML DISCARDABLE "..//..//common//editor//vs//native.js"
+COMMON/EDITOR/VS/NLS.JS HTML DISCARDABLE "..//..//common//editor//vs//nls.js"
+COMMON/EDITOR/VS/TEXT.JS HTML DISCARDABLE "..//..//common//editor//vs//text.js"
+COMMON/ENCODINGUTILITIES.JS HTML DISCARDABLE "..//..//common//encodingutilities.js"
+COMMON/ETWDATACOLLECTOR.JS HTML DISCARDABLE "..//..//common//etwdatacollector.js"
+COMMON/FEATUREAVAILABILITY.JS HTML DISCARDABLE "..//..//common//featureavailability.js"
+COMMON/FORMATTER/BASE64.JS HTML DISCARDABLE "..//..//common//formatter//base64.js"
+COMMON/FORMATTER/CSS/CSSEMITTER.JS HTML DISCARDABLE "..//..//common//formatter//css//cssemitter.js"
+COMMON/FORMATTER/CSS/CSSFORMATTER.JS HTML DISCARDABLE "..//..//common//formatter//css//cssformatter.js"
+COMMON/FORMATTER/CSS/CSSFORMATWORKER.JS HTML DISCARDABLE "..//..//common//formatter//css//cssformatworker.js"
+COMMON/FORMATTER/CSS/CSSPARSER.JS HTML DISCARDABLE "..//..//common//formatter//css//cssparser.js"
+COMMON/FORMATTER/FORMATTEDTEXTMAPPING.JS HTML DISCARDABLE "..//..//common//formatter//formattedtextmapping.js"
+COMMON/FORMATTER/FORMATTER.JS HTML DISCARDABLE "..//..//common//formatter//formatter.js"
+COMMON/FORMATTER/FORMATTEROPTIONS.JS HTML DISCARDABLE "..//..//common//formatter//formatteroptions.js"
+COMMON/FORMATTER/FORMATWORKER.JS HTML DISCARDABLE "..//..//common//formatter//formatworker.js"
+COMMON/FORMATTER/HTML/HTMLEMITTER.JS HTML DISCARDABLE "..//..//common//formatter//html//htmlemitter.js"
+COMMON/FORMATTER/HTML/HTMLFORMATTER.JS HTML DISCARDABLE "..//..//common//formatter//html//htmlformatter.js"
+COMMON/FORMATTER/HTML/HTMLFORMATWORKER.JS HTML DISCARDABLE "..//..//common//formatter//html//htmlformatworker.js"
+COMMON/FORMATTER/HTML/HTMLPARSER.JS HTML DISCARDABLE "..//..//common//formatter//html//htmlparser.js"
+COMMON/FORMATTER/HTML/HTMLTOKENIZER.JS HTML DISCARDABLE "..//..//common//formatter//html//htmltokenizer.js"
+COMMON/FORMATTER/HTMLSCRIPTFINDER.JS HTML DISCARDABLE "..//..//common//formatter//htmlscriptfinder.js"
+COMMON/FORMATTER/IFORMATSERVICE.JS HTML DISCARDABLE "..//..//common//formatter//iformatservice.js"
+COMMON/FORMATTER/POSITION.JS HTML DISCARDABLE "..//..//common//formatter//position.js"
+COMMON/FORMATTER/SOURCEMAPMAPPINGS.JS HTML DISCARDABLE "..//..//common//formatter//sourcemapmappings.js"
+COMMON/FORMATTER/SOURCEMAPPARSER.JS HTML DISCARDABLE "..//..//common//formatter//sourcemapparser.js"
+COMMON/FORMATTER/SOURCEMAPPARSERWORKER.JS HTML DISCARDABLE "..//..//common//formatter//sourcemapparserworker.js"
+COMMON/FORMATTER/SOURCESPAN.JS HTML DISCARDABLE "..//..//common//formatter//sourcespan.js"
+COMMON/FORMATTER/SOURCESPANBUILDER.JS HTML DISCARDABLE "..//..//common//formatter//sourcespanbuilder.js"
+COMMON/FORMATTER/STATEMACHINE.JS HTML DISCARDABLE "..//..//common//formatter//statemachine.js"
+COMMON/FORMATTER/UNMAPPEDTEXTMAPPING.JS HTML DISCARDABLE "..//..//common//formatter//unmappedtextmapping.js"
+COMMON/FORMATTER/WORKERMESSAGING.JS HTML DISCARDABLE "..//..//common//formatter//workermessaging.js"
+COMMON/GRID/GRIDCELLEDITCONTROL.JS HTML DISCARDABLE "..//..//common//grid//gridcelleditcontrol.js"
+COMMON/GRID/GRIDCONTROL.CSS HTML DISCARDABLE "..//..//common//grid//gridcontrol.css"
+COMMON/GRID/GRIDCONTROL.JS HTML DISCARDABLE "..//..//common//grid//gridcontrol.js"
+COMMON/HTMLTREEVIEW.CSS HTML DISCARDABLE "..//..//common//htmltreeview.css"
+COMMON/IMAGES/ADD_ROW.PNG HTML DISCARDABLE "..//..//common//images//add_row.png"
+COMMON/IMAGES/CHECKMARK.PNG HTML DISCARDABLE "..//..//common//images//checkmark.png"
+COMMON/IMAGES/CLOSE.PNG HTML DISCARDABLE "..//..//common//images//close.png"
+COMMON/IMAGES/COLORPICKER/ALPHACOLORBAR.PNG HTML DISCARDABLE "..//..//common//images//colorpicker//alphacolorbar.png"
+COMMON/IMAGES/COLORPICKER/CHECKEREDBACKGROUND.PNG HTML DISCARDABLE "..//..//common//images//colorpicker//checkeredbackground.png"
+COMMON/IMAGES/COLORPICKER/EYEDROPPERBUTTON.PNG HTML DISCARDABLE "..//..//common//images//colorpicker//eyedropperbutton.png"
+COMMON/IMAGES/COLORPICKER/HUECOLORBAR.PNG HTML DISCARDABLE "..//..//common//images//colorpicker//huecolorbar.png"
+COMMON/IMAGES/COLORPICKER/LIGHTNESSCOLORBAR.PNG HTML DISCARDABLE "..//..//common//images//colorpicker//lightnesscolorbar.png"
+COMMON/IMAGES/COLORPICKER/SATURATIONCOLORBAR.PNG HTML DISCARDABLE "..//..//common//images//colorpicker//saturationcolorbar.png"
+COMMON/IMAGES/COLORPICKER/SLIDERBUTTON.PNG HTML DISCARDABLE "..//..//common//images//colorpicker//sliderbutton.png"
+COMMON/IMAGES/COLUMNMOVE.PNG HTML DISCARDABLE "..//..//common//images//columnmove.png"
+COMMON/IMAGES/COMMON_ICONS.PNG HTML DISCARDABLE "..//..//common//images//common_icons.png"
+COMMON/IMAGES/CRITICAL.PNG HTML DISCARDABLE "..//..//common//images//critical.png"
+COMMON/IMAGES/F12LOGO.PNG HTML DISCARDABLE "..//..//common//images//f12logo.png"
+COMMON/IMAGES/FORCESTORAGECAPSTATE.PNG HTML DISCARDABLE "..//..//common//images//forcestoragecapstate.png"
+COMMON/IMAGES/HELP.PNG HTML DISCARDABLE "..//..//common//images//help.png"
+COMMON/IMAGES/ITEMCOLLAPSEDICON.PNG HTML DISCARDABLE "..//..//common//images//itemcollapsedicon.png"
+COMMON/IMAGES/ITEMEXPANDEDICON.PNG HTML DISCARDABLE "..//..//common//images//itemexpandedicon.png"
+COMMON/IMAGES/I_DELETE.PNG HTML DISCARDABLE "..//..//common//images//i_delete.png"
+COMMON/IMAGES/I_NEXT.PNG HTML DISCARDABLE "..//..//common//images//i_next.png"
+COMMON/IMAGES/I_PREVIOUS.PNG HTML DISCARDABLE "..//..//common//images//i_previous.png"
+COMMON/IMAGES/I_WARNING.PNG HTML DISCARDABLE "..//..//common//images//i_warning.png"
+COMMON/IMAGES/MAXIMIZE.PNG HTML DISCARDABLE "..//..//common//images//maximize.png"
+COMMON/IMAGES/MINIMIZE.PNG HTML DISCARDABLE "..//..//common//images//minimize.png"
+COMMON/IMAGES/MISC_ICONS.PNG HTML DISCARDABLE "..//..//common//images//misc_icons.png"
+COMMON/IMAGES/OPTIONS.PNG HTML DISCARDABLE "..//..//common//images//options.png"
+COMMON/IMAGES/REFRESH.PNG HTML DISCARDABLE "..//..//common//images//refresh.png"
+COMMON/IMAGES/REFRESHSTATE.PNG HTML DISCARDABLE "..//..//common//images//refreshstate.png"
+COMMON/IMAGES/RESTORE.PNG HTML DISCARDABLE "..//..//common//images//restore.png"
+COMMON/IMAGES/TABCLOSE.PNG HTML DISCARDABLE "..//..//common//images//tabclose.png"
+COMMON/IMAGES/TOGGLEPRETTYPRINT.PNG HTML DISCARDABLE "..//..//common//images//toggleprettyprint.png"
+COMMON/IMAGES/TOGGLEWORDWRAP.PNG HTML DISCARDABLE "..//..//common//images//togglewordwrap.png"
+COMMON/IMAGES/TREE_ICONS.PNG HTML DISCARDABLE "..//..//common//images//tree_icons.png"
+COMMON/INTELLISENSE/INTELLISENSELISTBOX.CSS HTML DISCARDABLE "..//..//common//intellisense//intellisenselistbox.css"
+COMMON/INTELLISENSE/INTELLISENSEREMOTEHELPERS.JS HTML DISCARDABLE "..//..//common//intellisense//intellisenseremotehelpers.js"
+COMMON/ISDEBUGBUILD.JS HTML DISCARDABLE "..//..//common//isdebugbuild.js"
+COMMON/JQUERY/JQUERY-2.1.1.MIN.JS HTML DISCARDABLE "..//..//common//jquery/jquery-2.1.1.min.js"
+COMMON/JQUERY/JQUERY.EVENT.DRAG-2.2.JS HTML DISCARDABLE "..//..//common//jquery/jquery.event.drag-2.2.js"
+COMMON/LISTBOX.CSS HTML DISCARDABLE "..//..//common//listbox.css"
+COMMON/MEDIATYPEMANAGER.JS HTML DISCARDABLE "..//..//common//mediatypemanager.js"
+COMMON/MESSAGETHROTTLE.JS HTML DISCARDABLE "..//..//common//messagethrottle.js"
+COMMON/OBJECTVIEW/OBJECTTREEVIEW.CSS HTML DISCARDABLE "..//..//common//objectview//objecttreeview.css"
+COMMON/OBJECTVIEW/TREEVIEWREMOTEHELPERS.JS HTML DISCARDABLE "..//..//common//objectview//treeviewremotehelpers.js"
+COMMON/OBJECTVIEW/TREEVIEWUTILITIES.JS HTML DISCARDABLE "..//..//common//objectview//treeviewutilities.js"
+COMMON/PLUGIN.JS HTML DISCARDABLE "..//..//common//plugin.js"
+COMMON/REMOTE/RPC.JS HTML DISCARDABLE "..//..//common//remote//rpc.js"
+COMMON/REMOTEEDITSTACK.JS HTML DISCARDABLE "..//..//common//remoteeditstack.js"
+COMMON/REMOTEHELPERS.JS HTML DISCARDABLE "..//..//common//remotehelpers.js"
+COMMON/RESOURCESVIEW/RESOURCESVIEW.CSS HTML DISCARDABLE "..//..//common//resourcesview//resourcesview.css"
+COMMON/SLICKGRID/PLUGINS/SLICK.ROWSELECTIONMODEL.JS HTML DISCARDABLE "..//..//common//slickgrid//plugins//slick.rowselectionmodel.js"
+COMMON/SLICKGRID/SLICK.CORE.JS HTML DISCARDABLE "..//..//common//slickgrid//slick.core.js"
+COMMON/SLICKGRID/SLICK.DATAVIEW.JS HTML DISCARDABLE "..//..//common//slickgrid//slick.dataview.js"
+COMMON/SLICKGRID/SLICK.EDITORS.JS HTML DISCARDABLE "..//..//common//slickgrid//slick.editors.js"
+COMMON/SLICKGRID/SLICK.FORMATTERS.JS HTML DISCARDABLE "..//..//common//slickgrid//slick.formatters.js"
+COMMON/SLICKGRID/SLICK.GRID.CSS HTML DISCARDABLE "..//..//common//slickgrid//slick.grid.css"
+COMMON/SLICKGRID/SLICK.GRID.JS HTML DISCARDABLE "..//..//common//slickgrid//slick.grid.js"
+COMMON/TARGETENGINEKIND.JS HTML DISCARDABLE "..//..//common//targetenginekind.js"
+COMMON/TOOLWINDOW.CSS HTML DISCARDABLE "..//..//common//toolwindow.css"
+COMMON/TOOLWINDOW.F12.CSS HTML DISCARDABLE "..//..//common//toolwindow.f12.css"
+COMMON/TRACE.JS HTML DISCARDABLE "..//..//common//trace.js"
+COMMON/URI.JS HTML DISCARDABLE "..//..//common//uri.js"
+CONSOLE/CONSOLE.CSS HTML DISCARDABLE "..//..//console//console.css"
+CONSOLE/CONSOLE.F12.CSS HTML DISCARDABLE "..//..//console//console.f12.css"
+CONSOLE/CONSOLE.HTML HTML DISCARDABLE "..//..//console//console.html"
+CONSOLE/CONSOLEMERGED.JS HTML DISCARDABLE "..//..//console//consolemerged.js"
+CONSOLE/IMAGES/I_CLEAR-INPUT.PNG HTML DISCARDABLE "..//..//console//images//i_clear-input.png"
+CONSOLE/IMAGES/I_CLEAR-ON-NAVIGATE.PNG HTML DISCARDABLE "..//..//console//images//i_clear-on-navigate.png"
+CONSOLE/IMAGES/I_CONSOLE-INPUT.PNG HTML DISCARDABLE "..//..//console//images//i_console-input.png"
+CONSOLE/IMAGES/I_ERROR.PNG HTML DISCARDABLE "..//..//console//images//i_error.png"
+CONSOLE/IMAGES/I_EXECUTE.PNG HTML DISCARDABLE "..//..//console//images//i_execute.png"
+CONSOLE/IMAGES/I_INFO.PNG HTML DISCARDABLE "..//..//console//images//i_info.png"
+CONSOLE/IMAGES/I_TOGGLE-MULTI.PNG HTML DISCARDABLE "..//..//console//images//i_toggle-multi.png"
+CONSOLE/IMAGES/I_TOGGLE-SINGLE.PNG HTML DISCARDABLE "..//..//console//images//i_toggle-single.png"
+CONSOLE/MANIFEST.JSON HTML DISCARDABLE "..//..//console//manifest.json"
+CONSOLE/REMOTE.JS HTML DISCARDABLE "..//..//console//remote.js"
+CONSOLE/REMOTECONSOLEHELPERS.JS HTML DISCARDABLE "..//..//console//remoteconsolehelpers.js"
+CONSOLE/REMOTEMAIN.JS HTML DISCARDABLE "..//..//console//remotemain.js"
+DEBUGGER/BREAKPOINTS/BREAKPOINTS.CSS HTML DISCARDABLE "..//..//debugger//breakpoints//breakpoints.css"
+DEBUGGER/BREAKPOINTS/EVENTBREAKPOINTDESCRIPTIONS.JSON HTML DISCARDABLE "..//..//debugger//breakpoints//eventbreakpointdescriptions.json"
+DEBUGGER/BREAKPOINTS/IMAGES/ADDEVENTBREAKPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//addeventbreakpoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/ADDEVENTTRACEPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//addeventtracepoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/ADDXHRBREAKPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//addxhrbreakpoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/BREAKPOINTDISABLED.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//breakpointdisabled.png"
+DEBUGGER/BREAKPOINTS/IMAGES/BREAKPOINTGLYPH.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//breakpointglyph.png"
+DEBUGGER/BREAKPOINTS/IMAGES/BREAKPOINTUNBOUND.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//breakpointunbound.png"
+DEBUGGER/BREAKPOINTS/IMAGES/CONDITIONALBREAKPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//conditionalbreakpoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/DELETEALLBREAKPOINTS.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//deleteallbreakpoints.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EDITCURRENTBREAKPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//editcurrentbreakpoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EVENTBREAKPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//eventbreakpoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EVENTBREAKPOINTCONDITIONAL.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//eventbreakpointconditional.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EVENTBREAKPOINTDISABLED.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//eventbreakpointdisabled.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EVENTBREAKPOINTUNBOUND.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//eventbreakpointunbound.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EVENTTRACEPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//eventtracepoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EVENTTRACEPOINTDISABLED.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//eventtracepointdisabled.png"
+DEBUGGER/BREAKPOINTS/IMAGES/EVENTTRACEPOINTUNBOUND.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//eventtracepointunbound.png"
+DEBUGGER/BREAKPOINTS/IMAGES/SELECTALLBREAKPOINTS.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//selectallbreakpoints.png"
+DEBUGGER/BREAKPOINTS/IMAGES/TRACEPOINTBREAKPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//tracepointbreakpoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/XHRBREAKPOINT.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//xhrbreakpoint.png"
+DEBUGGER/BREAKPOINTS/IMAGES/XHRBREAKPOINTDISABLED.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//xhrbreakpointdisabled.png"
+DEBUGGER/BREAKPOINTS/IMAGES/XHRBREAKPOINTUNBOUND.PNG HTML DISCARDABLE "..//..//debugger//breakpoints//images//xhrbreakpointunbound.png"
+DEBUGGER/CALLSTACK/CALLSTACK.CSS HTML DISCARDABLE "..//..//debugger//callstack//callstack.css"
+DEBUGGER/CALLSTACK/IMAGES/ACTIVEFRAMEGLYPH.PNG HTML DISCARDABLE "..//..//debugger//callstack//images//activeframeglyph.png"
+DEBUGGER/CALLSTACK/IMAGES/INSTRUCTIONPOINTERGLYPH.PNG HTML DISCARDABLE "..//..//debugger//callstack//images//instructionpointerglyph.png"
+DEBUGGER/CALLSTACK/IMAGES/PAUSEWORKER.PNG HTML DISCARDABLE "..//..//debugger//callstack//images//pauseworker.png"
+DEBUGGER/CALLSTACK/IMAGES/TOGGLEASYNCFRAMES.PNG HTML DISCARDABLE "..//..//debugger//callstack//images//toggleasyncframes.png"
+DEBUGGER/CALLSTACK/IMAGES/TOGGLEJMCFRAMES.PNG HTML DISCARDABLE "..//..//debugger//callstack//images//togglejmcframes.png"
+DEBUGGER/CURSOR/IMAGES/CURRENTLOCATIONARROW.PNG HTML DISCARDABLE "..//..//debugger//cursor//images//currentlocationarrow.png"
+DEBUGGER/DEBUGGER.CSS HTML DISCARDABLE "..//..//debugger//debugger.css"
+DEBUGGER/DEBUGGER.HTML HTML DISCARDABLE "..//..//debugger//debugger.html"
+DEBUGGER/DEBUGGERMERGED.JS HTML DISCARDABLE "..//..//debugger//debuggermerged.js"
+DEBUGGER/IMAGES/BREAKALL.PNG HTML DISCARDABLE "..//..//debugger//images//breakall.png"
+DEBUGGER/IMAGES/BREAKONEXCEPTIONS.PNG HTML DISCARDABLE "..//..//debugger//images//breakonexceptions.png"
+DEBUGGER/IMAGES/BREAKWORKER.PNG HTML DISCARDABLE "..//..//debugger//images//breakworker.png"
+DEBUGGER/IMAGES/CLEARCOOKIES.PNG HTML DISCARDABLE "..//..//debugger//images//clearcookies.png"
+DEBUGGER/IMAGES/CLEARSESSIONCOOKIES.PNG HTML DISCARDABLE "..//..//debugger//images//clearsessioncookies.png"
+DEBUGGER/IMAGES/CONTINUE.PNG HTML DISCARDABLE "..//..//debugger//images//continue.png"
+DEBUGGER/IMAGES/COOKIES.PNG HTML DISCARDABLE "..//..//debugger//images//cookies.png"
+DEBUGGER/IMAGES/COPYTOCLIPBOARD.PNG HTML DISCARDABLE "..//..//debugger//images//copytoclipboard.png"
+DEBUGGER/IMAGES/CSSFILEICON.PNG HTML DISCARDABLE "..//..//debugger//images//cssfileicon.png"
+DEBUGGER/IMAGES/DIFFICON.PNG HTML DISCARDABLE "..//..//debugger//images//difficon.png"
+DEBUGGER/IMAGES/DIFFTABICON.PNG HTML DISCARDABLE "..//..//debugger//images//difftabicon.png"
+DEBUGGER/IMAGES/DISCONNECTICON.PNG HTML DISCARDABLE "..//..//debugger//images//disconnecticon.png"
+DEBUGGER/IMAGES/FILEPICKER.PNG HTML DISCARDABLE "..//..//debugger//images//filepicker.png"
+DEBUGGER/IMAGES/FILESNODEICON.PNG HTML DISCARDABLE "..//..//debugger//images//filesnodeicon.png"
+DEBUGGER/IMAGES/FUNCTIONICON.PNG HTML DISCARDABLE "..//..//debugger//images//functionicon.png"
+DEBUGGER/IMAGES/FUNCTIONICONMAPPED.PNG HTML DISCARDABLE "..//..//debugger//images//functioniconmapped.png"
+DEBUGGER/IMAGES/GRIDHEADERHTTPONLY.PNG HTML DISCARDABLE "..//..//debugger//images//gridheaderhttponly.png"
+DEBUGGER/IMAGES/GRIDHEADERSECURE.PNG HTML DISCARDABLE "..//..//debugger//images//gridheadersecure.png"
+DEBUGGER/IMAGES/HTMLFILEICON.PNG HTML DISCARDABLE "..//..//debugger//images//htmlfileicon.png"
+DEBUGGER/IMAGES/LIBRARYCODEICON.PNG HTML DISCARDABLE "..//..//debugger//images//librarycodeicon.png"
+DEBUGGER/IMAGES/LOCALSTORAGE.PNG HTML DISCARDABLE "..//..//debugger//images//localstorage.png"
+DEBUGGER/IMAGES/MYCODEICON.PNG HTML DISCARDABLE "..//..//debugger//images//mycodeicon.png"
+DEBUGGER/IMAGES/NEXTTAB.PNG HTML DISCARDABLE "..//..//debugger//images//nexttab.png"
+DEBUGGER/IMAGES/NOTAFUNCTIONICON.PNG HTML DISCARDABLE "..//..//debugger//images//notafunctionicon.png"
+DEBUGGER/IMAGES/NOTAFUNCTIONICONMAPPED.PNG HTML DISCARDABLE "..//..//debugger//images//notafunctioniconmapped.png"
+DEBUGGER/IMAGES/PREVIEWTABCLOSE.PNG HTML DISCARDABLE "..//..//debugger//images//previewtabclose.png"
+DEBUGGER/IMAGES/PREVIEWTABICON.PNG HTML DISCARDABLE "..//..//debugger//images//previewtabicon.png"
+DEBUGGER/IMAGES/PREVTAB.PNG HTML DISCARDABLE "..//..//debugger//images//prevtab.png"
+DEBUGGER/IMAGES/REDIRECTICON.PNG HTML DISCARDABLE "..//..//debugger//images//redirecticon.png"
+DEBUGGER/IMAGES/RETURNVALUE.PNG HTML DISCARDABLE "..//..//debugger//images//returnvalue.png"
+DEBUGGER/IMAGES/SAVEICON.PNG HTML DISCARDABLE "..//..//debugger//images//saveicon.png"
+DEBUGGER/IMAGES/SCRIPTFILEICON.PNG HTML DISCARDABLE "..//..//debugger//images//scriptfileicon.png"
+DEBUGGER/IMAGES/SEARCH.PNG HTML DISCARDABLE "..//..//debugger//images//search.png"
+DEBUGGER/IMAGES/SESSIONSTORAGE.PNG HTML DISCARDABLE "..//..//debugger//images//sessionstorage.png"
+DEBUGGER/IMAGES/STEPINTO.PNG HTML DISCARDABLE "..//..//debugger//images//stepinto.png"
+DEBUGGER/IMAGES/STEPOUT.PNG HTML DISCARDABLE "..//..//debugger//images//stepout.png"
+DEBUGGER/IMAGES/STEPOVER.PNG HTML DISCARDABLE "..//..//debugger//images//stepover.png"
+DEBUGGER/IMAGES/TOGGLESOURCEMAP.PNG HTML DISCARDABLE "..//..//debugger//images//togglesourcemap.png"
+DEBUGGER/IMAGES/TOOLBARMYCODEICON.PNG HTML DISCARDABLE "..//..//debugger//images//toolbarmycodeicon.png"
+DEBUGGER/IMAGES/TSFILEICON.PNG HTML DISCARDABLE "..//..//debugger//images//tsfileicon.png"
+DEBUGGER/LANGUAGESERVICE/FINDRESULTS.CSS HTML DISCARDABLE "..//..//debugger//languageservice//findresults.css"
+DEBUGGER/LANGUAGESERVICE/IMAGES/CLEARRESULTS.PNG HTML DISCARDABLE "..//..//debugger//languageservice//images//clearresults.png"
+DEBUGGER/LANGUAGESERVICE/IMAGES/CLOSE.PNG HTML DISCARDABLE "..//..//debugger//languageservice//images//close.png"
+DEBUGGER/LANGUAGESERVICE/IMAGES/FINDRESULTS.PNG HTML DISCARDABLE "..//..//debugger//languageservice//images//findresults.png"
+DEBUGGER/LANGUAGESERVICE/IMAGES/NEXTRESULT.PNG HTML DISCARDABLE "..//..//debugger//languageservice//images//nextresult.png"
+DEBUGGER/LANGUAGESERVICE/IMAGES/PIN.PNG HTML DISCARDABLE "..//..//debugger//languageservice//images//pin.png"
+DEBUGGER/LANGUAGESERVICE/IMAGES/PREVIOUSRESULT.PNG HTML DISCARDABLE "..//..//debugger//languageservice//images//previousresult.png"
+DEBUGGER/LANGUAGESERVICE/IMAGES/UNPIN.PNG HTML DISCARDABLE "..//..//debugger//languageservice//images//unpin.png"
+DEBUGGER/MANAGER/COMMONSTRUCTS.JS HTML DISCARDABLE "..//..//debugger//manager//commonstructs.js"
+DEBUGGER/MANIFEST.JSON HTML DISCARDABLE "..//..//debugger//manifest.json"
+DEBUGGER/REMOTE/DEBUGPROVIDER.JS HTML DISCARDABLE "..//..//debugger//remote//debugprovider.js"
+DEBUGGER/REMOTE/DIAGNOSTICSOMPROVIDER.JS HTML DISCARDABLE "..//..//debugger//remote//diagnosticsomprovider.js"
+DEBUGGER/REMOTE/JITREMOTE.JS HTML DISCARDABLE "..//..//debugger//remote//jitremote.js"
+DEBUGGER/REMOTE/REMOTE.JS HTML DISCARDABLE "..//..//debugger//remote//remote.js"
+DEBUGGER/TABCONTROL/TABCONTROL.CSS HTML DISCARDABLE "..//..//debugger//tabcontrol//tabcontrol.css"
+DEBUGGER/WATCHES/IMAGES/ADDWATCH.PNG HTML DISCARDABLE "..//..//debugger//watches//images//addwatch.png"
+DEBUGGER/WATCHES/IMAGES/DELETEALL.PNG HTML DISCARDABLE "..//..//debugger//watches//images//deleteall.png"
+DEBUGGER/WATCHES/WATCHES.CSS HTML DISCARDABLE "..//..//debugger//watches//watches.css"
+DOM/DOM.HTML HTML DISCARDABLE "..//..//dom//dom.html"
+DOM/DOMEXPLORER.CSS HTML DISCARDABLE "..//..//dom//domexplorer.css"
+DOM/DOMEXPLORER.F12.CSS HTML DISCARDABLE "..//..//dom//domexplorer.f12.css"
+DOM/DOMEXPLORERMERGED.JS HTML DISCARDABLE "..//..//dom//domexplorermerged.js"
+DOM/DOMEXPLORERREMOTE.JS HTML DISCARDABLE "..//..//dom//domexplorerremote.js"
+DOM/DOMTREE/DOMTREE.CSS HTML DISCARDABLE "..//..//dom//domtree//domtree.css"
+DOM/EVENTS.CSS HTML DISCARDABLE "..//..//dom//events.css"
+DOM/EXPANDINGLISTVIEW.CSS HTML DISCARDABLE "..//..//dom//expandinglistview.css"
+DOM/IMAGES/BREADCRUMBSCROLLLEFT.PNG HTML DISCARDABLE "..//..//dom//images//breadcrumbscrollleft.png"
+DOM/IMAGES/BREADCRUMBSCROLLLEFTHOVER.PNG HTML DISCARDABLE "..//..//dom//images//breadcrumbscrolllefthover.png"
+DOM/IMAGES/BREADCRUMBSCROLLRIGHT.PNG HTML DISCARDABLE "..//..//dom//images//breadcrumbscrollright.png"
+DOM/IMAGES/BREADCRUMBSCROLLRIGHTHOVER.PNG HTML DISCARDABLE "..//..//dom//images//breadcrumbscrollrighthover.png"
+DOM/IMAGES/I_ERROR.PNG HTML DISCARDABLE "..//..//dom//images//i_error.png"
+DOM/IMAGES/I_INSPECT.PNG HTML DISCARDABLE "..//..//dom//images//i_inspect.png"
+DOM/IMAGES/I_JUST_MY_CODE.PNG HTML DISCARDABLE "..//..//dom//images//i_just_my_code.png"
+DOM/IMAGES/I_REFRESH.PNG HTML DISCARDABLE "..//..//dom//images//i_refresh.png"
+DOM/IMAGES/I_SHOW_LAYOUT.PNG HTML DISCARDABLE "..//..//dom//images//i_show_layout.png"
+DOM/IMAGES/I_SHOW_PSEUDO_CLASSES.PNG HTML DISCARDABLE "..//..//dom//images//i_show_pseudo_classes.png"
+DOM/IMAGES/RED_SQUIGGLY.PNG HTML DISCARDABLE "..//..//dom//images//red_squiggly.png"
+DOM/INSPECT.HTML HTML DISCARDABLE "..//..//dom//inspect.html"
+DOM/LAYOUT.CSS HTML DISCARDABLE "..//..//dom//layout.css"
+DOM/MANIFEST.JSON HTML DISCARDABLE "..//..//dom//manifest.json"
+DOM/STYLES/CHANGESVIEW/CHANGESVIEW.CSS HTML DISCARDABLE "..//..//dom//styles//changesview//changesview.css"
+DOM/STYLES/STYLEVIEW/STYLEVIEW.CSS HTML DISCARDABLE "..//..//dom//styles//styleview//styleview.css"
+DOM/STYLES/WINNINGVIEW/WINNINGSTYLES.CSS HTML DISCARDABLE "..//..//dom//styles//winningview//winningstyles.css"
+EMULATION/EMULATION.CSS HTML DISCARDABLE "..//..//emulation//emulation.css"
+EMULATION/EMULATION.HTML HTML DISCARDABLE "..//..//emulation//emulation.html"
+EMULATION/EMULATION.JSON HTML DISCARDABLE "..//..//emulation//emulation.json"
+EMULATION/EMULATIONMERGED.JS HTML DISCARDABLE "..//..//emulation//emulationmerged.js"
+EMULATION/INFOBUTTON.PNG HTML DISCARDABLE "..//..//emulation//infobutton.png"
+EMULATION/I_PERSISTSETTINGS.PNG HTML DISCARDABLE "..//..//emulation//i_persistsettings.png"
+EMULATION/I_RESETSETTINGS.PNG HTML DISCARDABLE "..//..//emulation//i_resetsettings.png"
+EMULATION/MANIFEST.JSON HTML DISCARDABLE "..//..//emulation//manifest.json"
+EMULATION/REMOTE.JS HTML DISCARDABLE "..//..//emulation//remote.js"
+EMULATION/REMOTEMAIN.JS HTML DISCARDABLE "..//..//emulation//remotemain.js"
+EXPERIMENTS/EXPERIMENTS.CSS HTML DISCARDABLE "..//..//experiments//experiments.css"
+EXPERIMENTS/EXPERIMENTS.HTML HTML DISCARDABLE "..//..//experiments//experiments.html"
+EXPERIMENTS/EXPERIMENTSMERGED.JS HTML DISCARDABLE "..//..//experiments//experimentsmerged.js"
+EXPERIMENTS/MANIFEST.JSON HTML DISCARDABLE "..//..//experiments//manifest.json"
+HEADER/HEADER.CSS HTML DISCARDABLE "..//..//header//header.css"
+HEADER/HEADER.HTML HTML DISCARDABLE "..//..//header//header.html"
+HEADER/HEADERMERGED.JS HTML DISCARDABLE "..//..//header//headermerged.js"
+HEADER/IMAGES/BADGEALERT.PNG HTML DISCARDABLE "..//..//header//images//badgealert.png"
+HEADER/IMAGES/BADGEBREAK.PNG HTML DISCARDABLE "..//..//header//images//badgebreak.png"
+HEADER/IMAGES/BADGEERROR.PNG HTML DISCARDABLE "..//..//header//images//badgeerror.png"
+HEADER/IMAGES/BADGEINFO.PNG HTML DISCARDABLE "..//..//header//images//badgeinfo.png"
+HEADER/IMAGES/BADGERUNNING.PNG HTML DISCARDABLE "..//..//header//images//badgerunning.png"
+HEADER/IMAGES/CHECKMARK.PNG HTML DISCARDABLE "..//..//header//images//checkmark.png"
+HEADER/IMAGES/CLOSE.PNG HTML DISCARDABLE "..//..//header//images//close.png"
+HEADER/IMAGES/CONSOLE.PNG HTML DISCARDABLE "..//..//header//images//console.png"
+HEADER/IMAGES/DOCK.PNG HTML DISCARDABLE "..//..//header//images//dock.png"
+HEADER/IMAGES/EMULATION.PNG HTML DISCARDABLE "..//..//header//images//emulation.png"
+HEADER/IMAGES/EMULATIONCOMBO.PNG HTML DISCARDABLE "..//..//header//images//emulationcombo.png"
+HEADER/IMAGES/FOREGROUND.PNG HTML DISCARDABLE "..//..//header//images//foreground.png"
+HEADER/IMAGES/HELP.PNG HTML DISCARDABLE "..//..//header//images//help.png"
+HEADER/IMAGES/MAXIMIZE.PNG HTML DISCARDABLE "..//..//header//images//maximize.png"
+HEADER/IMAGES/MINIMIZE.PNG HTML DISCARDABLE "..//..//header//images//minimize.png"
+HEADER/IMAGES/NAVOVERFLOW_BREAK.PNG HTML DISCARDABLE "..//..//header//images//navoverflow_break.png"
+HEADER/IMAGES/NAVOVERFLOW_INFO.PNG HTML DISCARDABLE "..//..//header//images//navoverflow_info.png"
+HEADER/IMAGES/NAVOVERFLOW_START.PNG HTML DISCARDABLE "..//..//header//images//navoverflow_start.png"
+HEADER/IMAGES/NAVOVERFLOW_WARNING.PNG HTML DISCARDABLE "..//..//header//images//navoverflow_warning.png"
+HEADER/IMAGES/NEXTTAB.PNG HTML DISCARDABLE "..//..//header//images//nexttab.png"
+HEADER/IMAGES/OVERFLOW.PNG HTML DISCARDABLE "..//..//header//images//overflow.png"
+HEADER/IMAGES/PREVTAB.PNG HTML DISCARDABLE "..//..//header//images//prevtab.png"
+HEADER/IMAGES/RESTORE.PNG HTML DISCARDABLE "..//..//header//images//restore.png"
+HEADER/IMAGES/UNDOCK.PNG HTML DISCARDABLE "..//..//header//images//undock.png"
+HEADER/MANIFEST.JSON HTML DISCARDABLE "..//..//header//manifest.json"
+HEADER/REMOTE/REMOTE.JS HTML DISCARDABLE "..//..//header//remote//remote.js"
+NETWORK/COMMON/EXTERNAL/CONTROLS.JS HTML DISCARDABLE "..//..//network//common//external//controls.js"
+NETWORK/COMMON/EXTERNAL/DIAGNOSTICSHUB.JS HTML DISCARDABLE "..//..//network//common//external//diagnosticshub.js"
+NETWORK/COMMON/EXTERNAL/GRID.CSS HTML DISCARDABLE "..//..//network//common//external//grid.css"
+NETWORK/COMMON/EXTERNAL/JSTREEGRIDCONTROL.JS HTML DISCARDABLE "..//..//network//common//external//jstreegridcontrol.js"
+NETWORK/COMMON/EXTERNAL/RULER.CSS HTML DISCARDABLE "..//..//network//common//external//ruler.css"
+NETWORK/IMAGES/BADGEERROR.PNG HTML DISCARDABLE "..//..//network//images//badgeerror.png"
+NETWORK/IMAGES/CUSTOMMARK5_18X.PNG HTML DISCARDABLE "..//..//network//images//custommark5_18x.png"
+NETWORK/IMAGES/I_APPEVENT.PNG HTML DISCARDABLE "..//..//network//images//i_appevent.png"
+NETWORK/IMAGES/I_CHECKERED_BACKGROUND.PNG HTML DISCARDABLE "..//..//network//images//i_checkered_background.png"
+NETWORK/IMAGES/I_CLEARCACHE.PNG HTML DISCARDABLE "..//..//network//images//i_clearcache.png"
+NETWORK/IMAGES/I_CLEARCOOKIES.PNG HTML DISCARDABLE "..//..//network//images//i_clearcookies.png"
+NETWORK/IMAGES/I_CLEARONNAVIGATE.PNG HTML DISCARDABLE "..//..//network//images//i_clearonnavigate.png"
+NETWORK/IMAGES/I_CLEARSESSION.PNG HTML DISCARDABLE "..//..//network//images//i_clearsession.png"
+NETWORK/IMAGES/I_FILTERING_OPTIONS.PNG HTML DISCARDABLE "..//..//network//images//i_filtering_options.png"
+NETWORK/IMAGES/I_OPEN.PNG HTML DISCARDABLE "..//..//network//images//i_open.png"
+NETWORK/IMAGES/I_REFRESHSERVER.PNG HTML DISCARDABLE "..//..//network//images//i_refreshserver.png"
+NETWORK/IMAGES/I_SAVE.PNG HTML DISCARDABLE "..//..//network//images//i_save.png"
+NETWORK/IMAGES/I_START.PNG HTML DISCARDABLE "..//..//network//images//i_start.png"
+NETWORK/IMAGES/I_STOP.PNG HTML DISCARDABLE "..//..//network//images//i_stop.png"
+NETWORK/IMAGES/I_USERMARK.PNG HTML DISCARDABLE "..//..//network//images//i_usermark.png"
+NETWORK/IMAGES/NETWORKSTATUS-ERROR.PNG HTML DISCARDABLE "..//..//network//images//networkstatus-error.png"
+NETWORK/IMAGES/NETWORKSTATUS-OK.PNG HTML DISCARDABLE "..//..//network//images//networkstatus-ok.png"
+NETWORK/IMAGES/NETWORKSTATUS-WARNING.PNG HTML DISCARDABLE "..//..//network//images//networkstatus-warning.png"
+NETWORK/MANIFEST.JSON HTML DISCARDABLE "..//..//network//manifest.json"
+NETWORK/NETWORK.CSS HTML DISCARDABLE "..//..//network//network.css"
+NETWORK/NETWORK.HTML HTML DISCARDABLE "..//..//network//network.html"
+NETWORK/NETWORKMERGED.JS HTML DISCARDABLE "..//..//network//networkmerged.js"
+NETWORK/REMOTE.JS HTML DISCARDABLE "..//..//network//remote.js"
+NETWORK/REMOTEHELPERS.JS HTML DISCARDABLE "..//..//network//remotehelpers.js"
+PERFTOOLS/COMMON/COMMON.F12.CSS HTML DISCARDABLE "..//..//perftools//common//common.f12.css"
+PERFTOOLS/COMMON/COMMONMERGED.JS HTML DISCARDABLE "..//..//perftools//common//commonmerged.js"
+PERFTOOLS/COMMON/CONTROLS/GRIDCONTROL.CSS HTML DISCARDABLE "..//..//perftools//common//controls//gridcontrol.css"
+PERFTOOLS/COMMON/CONTROLS/HUBCONTROLS.JS HTML DISCARDABLE "..//..//perftools//common//controls//hubcontrols.js"
+PERFTOOLS/COMMON/CONTROLS/MENUCONTROL.CSS HTML DISCARDABLE "..//..//perftools//common//controls//menucontrol.css"
+PERFTOOLS/COMMON/CONTROLS/MULTILINEGRAPH.CSS HTML DISCARDABLE "..//..//perftools//common//controls//multilinegraph.css"
+PERFTOOLS/COMMON/CONTROLS/RENDERER.CSS HTML DISCARDABLE "..//..//perftools//common//controls//renderer.css"
+PERFTOOLS/COMMON/CONTROLS/RULER.CSS HTML DISCARDABLE "..//..//perftools//common//controls//ruler.css"
+PERFTOOLS/COMMON/CONTROLS/SCROLLBAR.CSS HTML DISCARDABLE "..//..//perftools//common//controls//scrollbar.css"
+PERFTOOLS/COMMON/CONTROLS/SWIMLANE.CSS HTML DISCARDABLE "..//..//perftools//common//controls//swimlane.css"
+PERFTOOLS/COMMON/DIAGNOSTICSHUB.JS HTML DISCARDABLE "..//..//perftools//common//diagnosticshub.js"
+PERFTOOLS/COMMON/IMAGES/CHECKMARK.PNG HTML DISCARDABLE "..//..//perftools//common//images//checkmark.png"
+PERFTOOLS/COMMON/IMAGES/CUSTOMMARK5_18X.PNG HTML DISCARDABLE "..//..//perftools//common//images//custommark5_18x.png"
+PERFTOOLS/COMMON/IMAGES/ITEMCOLLAPSEDICON.PNG HTML DISCARDABLE "..//..//perftools//common//images//itemcollapsedicon.png"
+PERFTOOLS/COMMON/IMAGES/ITEMEXPANDEDICON.PNG HTML DISCARDABLE "..//..//perftools//common//images//itemexpandedicon.png"
+PERFTOOLS/COMMON/IMAGES/I_APPEVENT.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_appevent.png"
+PERFTOOLS/COMMON/IMAGES/I_OPEN.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_open.png"
+PERFTOOLS/COMMON/IMAGES/I_SAVE.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_save.png"
+PERFTOOLS/COMMON/IMAGES/I_SORT_DOWN.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_sort_down.png"
+PERFTOOLS/COMMON/IMAGES/I_SORT_UP.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_sort_up.png"
+PERFTOOLS/COMMON/IMAGES/I_START.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_start.png"
+PERFTOOLS/COMMON/IMAGES/I_STOP.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_stop.png"
+PERFTOOLS/COMMON/IMAGES/I_USERMARK.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_usermark.png"
+PERFTOOLS/COMMON/IMAGES/I_WARNING.PNG HTML DISCARDABLE "..//..//perftools//common//images//i_warning.png"
+PERFTOOLS/COMMON/PERFREMOTEHELPERS.JS HTML DISCARDABLE "..//..//perftools//common//perfremotehelpers.js"
+PERFTOOLS/COMMON/PLUGIN.CSS HTML DISCARDABLE "..//..//perftools//common//plugin.css"
+PERFTOOLS/COMMON/PLUGIN.JS HTML DISCARDABLE "..//..//perftools//common//plugin.js"
+PERFTOOLS/COMMON/TOKENEXTRACTOR.CSS HTML DISCARDABLE "..//..//perftools//common//tokenextractor.css"
+PERFTOOLS/MEMORY/IMAGES/I_FOLDIN.PNG HTML DISCARDABLE "..//..//perftools//memory//images//i_foldin.png"
+PERFTOOLS/MEMORY/IMAGES/I_INFO.PNG HTML DISCARDABLE "..//..//perftools//memory//images//i_info.png"
+PERFTOOLS/MEMORY/IMAGES/I_SNAPSHOT.PNG HTML DISCARDABLE "..//..//perftools//memory//images//i_snapshot.png"
+PERFTOOLS/MEMORY/IMAGES/I_TABLE_OPTIONS.PNG HTML DISCARDABLE "..//..//perftools//memory//images//i_table_options.png"
+PERFTOOLS/MEMORY/IMAGES/STATUS_HEAP_DECREASE.PNG HTML DISCARDABLE "..//..//perftools//memory//images//status_heap_decrease.png"
+PERFTOOLS/MEMORY/IMAGES/STATUS_HEAP_INCREASE.PNG HTML DISCARDABLE "..//..//perftools//memory//images//status_heap_increase.png"
+PERFTOOLS/MEMORY/IMAGES/TAKESNAPSHOT.PNG HTML DISCARDABLE "..//..//perftools//memory//images//takesnapshot.png"
+PERFTOOLS/MEMORY/JS/CONTROLS/TABCONTROL.CSS HTML DISCARDABLE "..//..//perftools//memory//js//controls//tabcontrol.css"
+PERFTOOLS/MEMORY/MANIFEST.JSON HTML DISCARDABLE "..//..//perftools//memory//manifest.json"
+PERFTOOLS/MEMORY/MEMORYANALYZER.CSS HTML DISCARDABLE "..//..//perftools//memory//memoryanalyzer.css"
+PERFTOOLS/MEMORY/MEMORYANALYZER.F12.CSS HTML DISCARDABLE "..//..//perftools//memory//memoryanalyzer.f12.css"
+PERFTOOLS/MEMORY/MEMORYANALYZER.HTML HTML DISCARDABLE "..//..//perftools//memory//memoryanalyzer.html"
+PERFTOOLS/MEMORY/MEMORYANALYZERMERGED.JS HTML DISCARDABLE "..//..//perftools//memory//memoryanalyzermerged.js"
+PERFTOOLS/MEMORY/REMOTE.JS HTML DISCARDABLE "..//..//perftools//memory//remote.js"
+PERFTOOLS/MEMORY/SNAPSHOTTILEVIEW.CSS HTML DISCARDABLE "..//..//perftools//memory//snapshottileview.css"
+PERFTOOLS/VISUALPROFILER/CPUUSAGEMERGED.JS HTML DISCARDABLE "..//..//perftools//visualprofiler//cpuusagemerged.js"
+PERFTOOLS/VISUALPROFILER/DATACATEGORYSTYLES.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//datacategorystyles.css"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_CHARTSELECTION_CLEAR.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_chartselection_clear.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_CHARTSELECTION_CLEAR_DISABLED.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_chartselection_clear_disabled.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_CHARTZOOM_IN.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_chartzoom_in.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_CHARTZOOM_IN_DISABLED.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_chartzoom_in_disabled.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_CHARTZOOM_RESET.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_chartzoom_reset.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_CHARTZOOM_RESET_DISABLED.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_chartzoom_reset_disabled.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_CHECKERED_BACKGROUND.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_checkered_background.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CHARTSELECTION_CLEAR.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_chartselection_clear.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CHARTZOOM_IN.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_chartzoom_in.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CHARTZOOM_RESET.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_chartzoom_reset.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CONTEXT_CHARTSELECTION_CLEAR.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_context_chartselection_clear.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CONTEXT_CHARTSELECTION_CLEAR_DISABLED.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_context_chartselection_clear_disabled.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CONTEXT_CHARTZOOM_IN.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_context_chartzoom_in.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CONTEXT_CHARTZOOM_IN_DISABLED.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_context_chartzoom_in_disabled.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CONTEXT_CHARTZOOM_RESET.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_context_chartzoom_reset.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_F12_CONTEXT_CHARTZOOM_RESET_DISABLED.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_f12_context_chartzoom_reset_disabled.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_FILTERING_OPTIONS.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_filtering_options.png"
+PERFTOOLS/VISUALPROFILER/IMAGES/I_FRAME_GROUPING.PNG HTML DISCARDABLE "..//..//perftools//visualprofiler//images//i_frame_grouping.png"
+PERFTOOLS/VISUALPROFILER/JS/CONTROLS/DIVIDER.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//js//controls//divider.css"
+PERFTOOLS/VISUALPROFILER/JS/CPUUSAGE/CPUUSAGETREEGRID.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//js//cpuusage//cpuusagetreegrid.css"
+PERFTOOLS/VISUALPROFILER/JS/CPUUSAGE/GRID.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//js//cpuusage//grid.css"
+PERFTOOLS/VISUALPROFILER/JS/CPUUSAGE/JSTREEGRIDCONTROL.JS HTML DISCARDABLE "..//..//perftools//visualprofiler//js//cpuusage//jstreegridcontrol.js"
+PERFTOOLS/VISUALPROFILER/JS/CPUUSAGE/MESSAGEOVERLAYCONTROL.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//js//cpuusage//messageoverlaycontrol.css"
+PERFTOOLS/VISUALPROFILER/JS/HUBGRAPHS/STACKEDBARCHART.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//js//hubgraphs//stackedbarchart.css"
+PERFTOOLS/VISUALPROFILER/MANIFEST.JSON HTML DISCARDABLE "..//..//perftools//visualprofiler//manifest.json"
+PERFTOOLS/VISUALPROFILER/VISUALPROFILER.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//visualprofiler.css"
+PERFTOOLS/VISUALPROFILER/VISUALPROFILER.F12.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//visualprofiler.f12.css"
+PERFTOOLS/VISUALPROFILER/VISUALPROFILER.HTML HTML DISCARDABLE "..//..//perftools//visualprofiler//visualprofiler.html"
+PERFTOOLS/VISUALPROFILER/VISUALPROFILER.VS.CSS HTML DISCARDABLE "..//..//perftools//visualprofiler//visualprofiler.vs.css"
+PERFTOOLS/VISUALPROFILER/VISUALPROFILERMERGED.JS HTML DISCARDABLE "..//..//perftools//visualprofiler//visualprofilermerged.js"
+PLUGINHOST/PLUGIN.F12.JS HTML DISCARDABLE "..//..//pluginhost//plugin.f12.js"
+PLUGINHOST/POPUPWINDOW.CSS HTML DISCARDABLE "..//..//pluginhost//popupwindow.css"
+PLUGINHOST/POPUPWINDOW.HTML HTML DISCARDABLE "..//..//pluginhost//popupwindow.html"
+PLUGINHOST/THEME/CLOSEERRORBOX.PNG HTML DISCARDABLE "..//..//pluginhost//theme//closeerrorbox.png"
+PLUGINHOST/THEME/F12.CSS HTML DISCARDABLE "..//..//pluginhost//theme//f12.css"
+PLUGINHOST/THEME/HELPERRORBOX.PNG HTML DISCARDABLE "..//..//pluginhost//theme//helperrorbox.png"
+PLUGINHOST/THEME/HIGHCONTRAST.JSON HTML DISCARDABLE "..//..//pluginhost//theme//highcontrast.json"
+PLUGINHOST/THEME/I_ALERTERROR.PNG HTML DISCARDABLE "..//..//pluginhost//theme//i_alerterror.png"
+PLUGINHOST/THEME/I_ALERTINFO.PNG HTML DISCARDABLE "..//..//pluginhost//theme//i_alertinfo.png"
+PLUGINHOST/THEME/LIGHT.JSON HTML DISCARDABLE "..//..//pluginhost//theme//light.json"
+PLUGINHOST/THEME/PLUGIN.CSS HTML DISCARDABLE "..//..//pluginhost//theme//plugin.css"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_HeaderBadgeTooltipFormat                   "{0} - {1}" // The format of the tool tip in the badge for example: {Console (ctrl + 2)} - {2 Console Errors}
+	IDS_HeaderBadgeConsoleErrorCount               "{0} Console errors" // Console badge infomation about how may errors are displayed in the console
+	IDS_HeaderBadgeProfilerActive                  "Profiling session active" // Profiler badge aria-label when the profiler is running
+	IDS_HeaderBadgeEmulationActive                 "Emulation active" // Emulator badge aria-label when the emulator is running
+	IDS_HeaderBadgeConsoleSingleError              "1 Console error" // Console badge infomation indicating there is one error in the console
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_HeaderBadgeDebuggerPaused                  "Script execution paused" // Debugger badge information indicating that execution has been paused
+	IDS_HeaderOverflownToolsButtonTooltip          "More tools" // Tooltip for the button to show the list of tools that don't fit in the header
+	IDS_HeaderCloseButtonTooltip                   "Close"
+	IDS_HeaderMaximizeButtonTooltip                "Maximize"
+	IDS_HeaderRestoreButtonTooltip                 "Restore Down"
+	IDS_HeaderMinimizeButtonTooltip                "Minimize"
+#if BETA
+	IDS_HeaderFeedbackButtonTooltip                "Send feedback"
+#endif
+	IDS_HeaderDockButtonTooltip                    "Pin (Ctrl+P)" // ShortcutKey combination should not be localized
+	IDS_HeaderUndockButtonTooltip                  "Unpin (Ctrl+P)" // ShortcutKey combination should not be localized
+	IDS_HeaderBringIEToForegroundButtonTooltip     "Bring application to foreground (F12)" // ShortcutKey combination should not be localized
+	IDS_HeaderHelpButtonTooltip                    "Help (F1)" // ShortcutKey combination should not be localized
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_HeaderShowConsoleButtonTooltip             "Show Console (Ctrl+`)" // ShortcutKey combination should not be localized
+	IDS_HeaderHideConsoleButtonTooltip             "Hide Console (Ctrl+`)" // ShortcutKey combination should not be localized
+	IDS_HeaderEmulationDisabledButtonTooltip       "Document mode - {0}"
+	IDS_HeaderEmulationEnabledButtonTooltip        "Document mode emulated - {0}"
+	IDS_HeaderWindowTitle                          "{0} - F12 Developer Tools"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerDebuggerTooltip                    "Debugger {0}" // The id must link up with the manifest file for the debugger tool. placeholder 0 is a keyboard shortcut, like (Ctrl+1)
+	IDS_DebuggerBreakpointsWindowTitle             "Breakpoints"
+	IDS_DebuggerCallstackWindowTitle               "Call stack"
+	IDS_DebuggerWatchesWindowTitle                 "Watches"
+	IDS_DebuggerBreakButtonTooltip                 "Break (Ctrl+Shift+B)"
+	IDS_DebuggerBreakWorkerButtonTooltip           "Break on new worker (Ctrl+Shift+W)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerStepOverButtonTooltip              "Step over (F10)"
+	IDS_DebuggerStepOutButtonTooltip               "Step out (Shift+F11)"
+	IDS_DebuggerStepIntoButtonTooltip              "Step into (F11)"
+	IDS_DebuggerBreakOnExceptionButtonAll          "Break on all exceptions"
+	IDS_DebuggerBreakOnExceptionButtonNone         "Never break on exceptions"
+	IDS_DebuggerBreakOnExceptionButtonUnhandled    "Break on unhandled exceptions"
+	IDS_DebuggerBreakOnExceptionButtonTooltip      "Change exception behavior (Ctrl+Shift+E)"
+	IDS_DebuggerPrettyPrintButtonTooltip           "Pretty print (Ctrl+Shift+P)"
+	IDS_DebuggerRefreshAllButtonTooltip            "Refresh all"
+	IDS_DebuggerWatchWindowNameColumn              "Name"
+	IDS_DebuggerWatchWindowValueColumn             "Value"
+	IDS_DebuggerWatchWindowIconColumn              "Icon"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerRefreshAllWatchesButton            "Refresh all"
+	IDS_DebuggerRefreshWatchTooltip                "Refresh"
+	IDS_DebuggerDeleteWatchTooltip                 "Delete"
+	IDS_DebuggerCloseTabTooltip                    "Close tab"
+	IDS_DebuggerFilePickerTooltip                  "Open document (Ctrl+O)"
+	IDS_DebuggerBreakpointsDeleteAllButton         "Delete all"
+	IDS_DebuggerBreakpointsContextMenuGoTo         "Go to source"
+	IDS_DebuggerBreakpointsContextMenuEnable       "Enable"
+	IDS_DebuggerBreakpointsContextMenuDisable      "Disable"
+	IDS_DebuggerBreakpointsContextMenuDelete       "Delete"
+	IDS_DebuggerTabContextMenuCloseTab             "Close tab"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerTabContextMenuCloseAllTabs         "Close all tabs"
+	IDS_DebuggerTabContextMenuCloseOtherTabs       "Close other tabs"
+	IDS_DebuggerEditorContextMenuDisableBreakpoint "Disable breakpoint"
+	IDS_DebuggerEditorContextMenuEnableBreakpoint  "Enable breakpoint"
+	IDS_DebuggerEditorContextMenuInsertBreakpoint  "Insert breakpoint"
+	IDS_DebuggerEditorContextMenuRemoveBreakpoint  "Remove breakpoint"
+	IDS_DebuggerEditorContextMenuSetNextStatement  "Set next statement"
+	IDS_DebuggerEditorContextMenuRunToCursor       "Run to cursor"
+	IDS_DebuggerStackFramesColumn                  "Stack frames"
+	IDS_DebuggerStackFramesColumnTooltip           "Stack frames"
+	IDS_DebuggerLocationColumn                     "Location"
+	IDS_DebuggerLocationColumnTooltip              "Location"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerActiveFrameLabel                   "Active frame"
+	IDS_DebuggerBreakpointLabel                    "Breakpoint"
+	IDS_DebuggerSearchBoxTooltip                   "Find... (Ctrl+F)"
+	IDS_DebuggerSearchBoxPlaceholder               "Find in files (Ctrl+F)"
+	IDS_DebuggerSetNextStatementFailed             "Unable to set next statement to this location"
+	IDS_DebuggerCallstackContextMenuGoToSource     "Go to source"
+	IDS_DebuggerCallStackContextMenuCopyFrame      "Copy"
+	IDS_DebuggerCallStackContextMenuCopyStack      "Copy all"
+	IDS_DebuggerStackFramesLineColumn              "Line, column"
+	IDS_DebuggerStackFramesLineColumnTooltip       "Line, column"
+#if BETA
+	IDS_DebuggerDebuggerMainFrame                  "Main frame"
+#endif
+	IDS_DebuggerCallStackLineColumn                "Line: {0}, Col: {1}"
+	IDS_DebuggerEditorContextMenuDisableAllBreakpoints     "Disable all breakpoints"
+	IDS_DebuggerEditorContextMenuEnableAllBreakpoints      "Enable all breakpoints"
+	IDS_DebuggerEditorContextMenuRemoveAllBreakpoints      "Remove all breakpoints"
+	IDS_DebuggerFilePickerDynamicNode              "Dynamic scripts"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerDebuggerTitle                      "Debugger"
+	IDS_DebuggerLocalsWatchExpando                 "[locals]"
+	IDS_DebuggerBreakpointsContextMenuCopy         "Copy"
+	IDS_DebuggerBreakpointsConextMenuDeleteAll     "Delete all"
+	IDS_DebuggerBreakpointsContextMenuEnableAll    "Enable all"
+	IDS_DebuggerBreakpointsContextMenuDisableAll   "Disable all"
+	IDS_DebuggerBreakpointsContextMenuAddCondition "Condition..."
+	IDS_DebuggerConditionalBreakpointTitle         "Conditional breakpoint"
+	IDS_DebuggerConditionalBreakpointLabel         "Condition"
+	IDS_DebuggerConditionalBreakpointInstructions  "In the input box, enter the expression to evaluate every time the breakpoint is encountered. If the expression evaluates to 'true' then the debugger will break. The expression is evaluated in the context of the breakpoint location and has access to local variables."
+	IDS_DebuggerTracepointMessageTitle             "Message to trace"
+	IDS_DebuggerTracepointLabel                    "Trace"
+	IDS_DebuggerTracepointInstructions             "In the input box, enter the expression or quoted strings that should be traced every time the tracepoint is encountered. E.g., 'The date is ' + new Date()"
+	IDS_DebuggerAddMessageOkButtonlabel            "OK"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerAddMessageCancelButtonlabel        "Cancel"
+	IDS_DebuggerAddMessageMoreInfoButtonlabel      "More info"
+	IDS_DebuggerEditButtonTooltip                  "Add a condition to this breakpoint (Alt+F9)"
+	IDS_DebuggerDeleteButtonTooltip                "Delete this breakpoint (F9)"
+	IDS_DebuggerOkButtonLabel                      "OK"
+	IDS_DebuggerCancelButtonLabel                  "Cancel"
+	IDS_DebuggerEditorContextMenuInsertTracepoint  "Insert tracepoint"
+	IDS_DebuggerAddToWatchesWindowLink             "Add watch"
+	IDS_DebuggerBreakpointsContextMenuAddTraceMessage  "Trace message..."
+	IDS_DebuggerActionsColumnTooltip               "Pause this web worker"
+	IDS_DebuggerActionsColumn                      "Pause this web worker"
+	IDS_DebuggerLocalsWindowTitle                  "Locals"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Debuggervs_base_strings_format_date        "{0}-{1}-{2} {3}:{4}:{5}"
+	IDS_Debuggervs_base_strings_format_time        "{0}:{1}:{2}"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Debuggervs_base_strings_ago_days           "more than {0} days ago"
+	IDS_Debuggervs_base_strings_ago_moreThanADay   "more than one day ago"
+	IDS_Debuggervs_base_strings_ago_hours          "{0} hours ago"
+	IDS_Debuggervs_base_strings_ago_oneHour        "one hour ago"
+	IDS_Debuggervs_base_strings_ago_minutes        "{0} minutes ago"
+	IDS_Debuggervs_base_strings_ago_minute         "one minute ago"
+	IDS_Debuggervs_base_strings_ago_seconds        "a couple of seconds ago"
+	IDS_Debuggervs_base_strings_diff_seconds       "{0}s"
+	IDS_Debuggervs_base_strings_diff_minutes       "{0}m"
+	IDS_Debuggervs_base_strings_diff_hours         "{0}h"
+	IDS_Debuggervs_base_strings_diff_days          "{0}d"
+	IDS_Debuggervs_base_errors_message             "{0}: {1}"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Debuggervs_base_errors_stackTrace_format   "{0}: {1}"
+	IDS_Debuggervs_base_errors_error_defaultMessage1 "An unknown error occurred. Please consult the log for more details."
+	IDS_Debuggervs_base_errors_error_defaultMessage2 "An unknown error occurred. Please consult the log for more details."
+	IDS_Debuggervs_base_errors_error_defaultMessage3 "An unknown error occurred. Please consult the log for more details."
+	IDS_Debuggervs_base_performance_timer_startAfterStopError "Cannot start a new timer from a stopped one."
+	IDS_Debuggervs_editor_core_view_view_editorViewAccessibleLabel "Editor content"
+	IDS_Debuggervs_editor_core_model_model_mode_tokenizationSupportFailed "The mode has failed while tokenizing the input."
+	IDS_Debuggervs_languages_typescript_service_languageServiceAdapter_typeInfo " \n      {0} \n      {1} \n    "
+	IDS_Debuggervs_languages_typescript_participants_monacoStyleParticipant_mixedIndentation_message "Mixed tabs and spaces"
+	IDS_Debuggervs_languages_typescript_participants_monacoStyleParticipant_assignment_message_before "You must leave a space before '='"
+	IDS_Debuggervs_languages_typescript_participants_monacoStyleParticipant_assignment_message_after "You must leave a space after '='"
+	IDS_Debuggervs_languages_typescript_participants_nlsParticipant_needsLocaliztion_message "String needs localization"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Debuggervs_languages_typescript_participants_symbolUsageParticipant_import_unused "Unused import '{0}'"
+	IDS_DebuggerProfilingRunningMessage            "Debugging is disabled when profiling. You must stop all active profiling sessions to resume debugging."
+	IDS_DebuggerWatchesShowAllItems                "Show all..."
+	IDS_DebuggerWatchesRefreshAllTooltip           "Refresh all"
+	IDS_DebuggerWatchesDeleteAllTooltip            "Delete all"
+	IDS_DebuggerWatchesAddWatchTooltip             "Add watch (Ctrl+W)"
+	IDS_DebuggerEditorContextMenuAddToWatch        "Add watch"
+	IDS_DebuggerWatchesContextMenuCopy             "Copy"
+	IDS_DebuggerWatchesContextMenuEditValue        "Edit value"
+	IDS_DebuggerWatchesContextMenuDelete           "Delete"
+	IDS_DebuggerWatchesContextMenuDeleteAll        "Delete all"
+	IDS_DebuggerWatchesContextMenuRefresh          "Refresh"
+	IDS_DebuggerWatchesContextMenuRefreshAll       "Refresh all"
+	IDS_DebuggerOpenFileFailed                     "Failed to open {0}" // Attempted to download an arbitrary file with URI placeholder 0 to show in a tab, and it failed
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerOpenFileFailedDetail               "Failed to open {0} : {1}" // Attempted to download an arbitrary file with URI placeholder 0 to show in a tab, and it failed, and we have some error detail to show in placeholder 1. Space before colon to facilitate copy/paste.
+	IDS_DebuggerOpenFileProgress                   "Opening {0}" // placeholder 0 is a URI
+	IDS_DebuggerNotAllowedBroken                   "Command is not available until script execution resumes."
+	IDS_DebuggerNotAllowedRunning                  "Command is not available until script execution stops."
+	IDS_DebuggerWaitingForScriptBroken             "Waiting for script execution to stop."
+	IDS_DebuggerWaitingForScriptRunning            "Waiting for the next script to run."
+	IDS_DebuggerChooserTargetTitle                 "Select target to debug"
+	IDS_DebuggerChooserRefreshButtonTooltip        "Refresh"
+	IDS_DebuggerWordWrapOnButtonTooltip            "Turn word wrap on (Alt+W)"
+	IDS_DebuggerWordWrapOffButtonTooltip           "Turn word wrap off (Alt+W)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerShowNextStatement                  "Show next statement" // Jumps to the currently executing statement
+	IDS_DebuggerContextMenuCopyURL                 "Copy URL" // Used in the context menu for the document tab to copy the URL for the document to the clipboard.
+	IDS_DebuggerContextMenuOpenInBrowser           "Open in browser" // Used in the context menu for the document tab.
+	IDS_DebuggerContextMenuCopySourceLocation      "Copy source location" // Used in the context menu for the editor to copy the source location in the format: [URL]: [Line], [Column]
+	IDS_DebuggerNotAvailableMessage                "<not available>" // Used in watches to indicate when a value cannot be evaluated.
+	IDS_DebuggerTypeToFilterWatermark              "Type to filter" // Used in the file picker as the placeholder text in the input box for the file filter.
+	IDS_DebuggerNotLoadedMessage                   "[Not loaded]" // Used in the tab title in the debugger to indicate when a document is not loaded by the debugger but has been opened as part of a file a navigation.
+	IDS_DebuggerDebuggerFailedToConnect            "The script debugger failed to connect to the target process. {0}" // Appears if the debugger fails to attach for any reason. The replacement marker may contain a reason, or not.
+	IDS_DebuggerDebuggerFailedToConnectAnotherAttached "A debugger is already attached." // Appears if we fail to attach because another debugger is already attached.
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerCallstackWindowLibraryFramesHiddenTooltip "Library frames hidden. Click to show frames from library code. (Ctrl+Shift+J)"
+	IDS_DebuggerCallstackWindowLibraryFramesVisibleTooltip "Library frames visible. Click to hide frames from library code. (Ctrl+Shift+J)"
+	IDS_DebuggerCallstackLibraryCode               "[Library code]"
+	IDS_DebuggerJMCLoadError                       "There was a problem loading Just My Code settings from disk. Settings will revert to default. {0}"
+	IDS_DebuggerJMCSaveError                       "There was a problem saving the current Just My Code settings to disk. {0}"
+	IDS_DebuggerJMCJsonParseError                  "There was a problem parsing the Just My Code settings from the MyCode.json file. Settings will revert to default and any changes made will not be saved."
+	IDS_DebuggerSourceMapButtonOffTooltip          "Cannot toggle source maps because this file does not have a map available"
+	IDS_DebuggerSourceMapOutdatedWarning           "The source map for the current document is out of date. The mapped file may not match the file loaded in IE."
+	IDS_DebuggerSourceMapNoAuthoredFile            "Could not locate {0} specified in source map {1}." // {0} is the url of an authored file that could not be downloaded. {1} is the url of the sourcemap file that was already downloaded and parsed.
+	IDS_DebuggerSourceMapNoMapFile                 "Source map for {0} was not found at {1}." // {0} is the url of a file that has been loaded in the debugger. {1} is the url of the sourcemap file that could not be downloaded.
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerSourceMapInvalidJSON               "Source map at {0} does not conform to the Source Map v3 specification." // {0} is the url of a souremap file that is not valid JSON or is missing required Source Map v3 properties.
+	IDS_DebuggerSourceMapInvalidVersion            "Unsupported source map version. {0} uses version {1} and only version 3 is supported." // {0} is the url of a source map file that was correctly parsed but reports the wrong version. {1} is a number representing the reported version.
+	IDS_DebuggerTracepoint                         "Tracepoint"
+	IDS_DebuggerUnboundBreakpoint                  "Unbound" // Used when a breakpoint is not resolved to a currently loaded document.
+	IDS_DebuggerJustMyCodeDebugMyCodeTooltip       "Debug just my code (Ctrl+J)"
+	IDS_DebuggerBreakpointsDisableAllToggleButtonTooltip "Disable all breakpoints (Ctrl+Shift+F11)"
+	IDS_DebuggerBreakpointsEnableAllToggleButtonTooltip "Enable all breakpoints (Ctrl+Shift+F11)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerEventBreakpoint                    "Event breakpoint" // Label used for aria in breakpoint window
+	IDS_DebuggerConditionalEventBreakpoint         "Conditional event breakpoint" // Label used for aria in breakpoint window
+	IDS_DebuggerEventTracepoint                    "Event tracepoint" // Label used for aria in breakpoint window
+	IDS_DebuggerEventBreakpointSingleGroup         "'{0}' event" // Label used for aria and tooltip in breakpoint window. {0} will be the event name.
+	IDS_DebuggerEventBreakpointMultiGroup          "'{0}' events" // Label used for aria and tooltip in breakpoint window. {0} will be a list of events names.
+	IDS_DebuggerBreakpointsAddEventBreakpointButtonTooltip "Add event breakpoint" // Tooltip shown on the add new event breakpoint button
+	IDS_DebuggerBreakpointsAddEventTracepointButtonTooltip "Add event tracepoint" // Tooltip shown on the add new event tracepoint button
+	IDS_DebuggerAddEventBreakpointDialogTitle      "Add event breakpoint" // Title shown on the add event breakpoint dialog
+	IDS_DebuggerAddEventTracepointDialogTitle      "Add event tracepoint" // Title shown on the add event tracepoint dialog
+	IDS_DebuggerEventBreakpointsDialogAddButton    "Add"
+	IDS_DebuggerAddEventBreakpointDialogEventLabel "Event" // Label for the events select box shown on the add event tracepoint dialog
+	IDS_DebuggerEventBreakpointInstructions        "In the condition box, you can enter an optional expression to evaluate every time the event is triggered. If the expression evaluates to 'true' then the debugger will break. The expression is evaluated in the context of the break location and has access to local variables."
+	IDS_DebuggerEventTracepointInstructions        "In the trace box, enter the expression or quoted strings that should be traced every time the event is triggered. E.g., 'The date is ' + new Date()"
+	IDS_DebuggerEventBreakpointsHelpButtonTooltip  "Online help for event breakpoints and conditional event breakpoints"
+	IDS_DebuggerEventTracepointsHelpButtonTooltip  "Online help for event tracepoints"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerFilePickerMyCodeTooltip            "Mark as my code (Ctrl+L)"
+	IDS_DebuggerTabContextMenuMarkAsLibraryCode    "Library code (Ctrl+L)"
+	IDS_DebuggerWatchesContextMenuAddWatch         "Add watch"
+	IDS_DebuggerPausedInDebuggerAlert              "Paused in debugger"
+	IDS_DebuggerTabContextMenuAddSourceMap         "Choose source map"
+	IDS_DebuggerEventBreakpointUnboundDocMode      "Only supported on Document Mode 9 or higher"
+	IDS_DebuggerCallstackWindowAsyncFramesHiddenTooltip "Async frames hidden. Click to show asynchronous stack information."
+	IDS_DebuggerCallstackWindowAsyncFramesVisibleTooltip "Async frames visible. Click to hide asynchronous stack information."
+	IDS_DebuggerCallstackAsyncHidden               "(Async frames)"
+	IDS_DebuggerCallstackAsyncTransitionLabel      "[Async Call]"
+	IDS_DebuggerContinueButtonTooltip              "Continue (F5 or F8)<br/>Fast continue (Hold F5 or F8)<br/>Continue and refresh (Ctrl+Shift+F5)" // Three-line tooltip. The substring "<br/>" should not be localized because it is valid html
+	IDS_DebuggerCallstackUnknownSourceLocation     "(unknown location)"
+	IDS_DebuggerCallstackEventBreakpoint           "['{0}' triggered an event breakpoint]" // {0} will be replaced with the JavaScript event name from the engine
+	IDS_DebuggerEventListTypicalEvents             "Typical Events" // Category name for groups of commonly used events
+	IDS_DebuggerEventListMouseEvents               "Mouse Events" // Selection name for a group of common mouse events
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerEventListKeyboardEvents            "Keyboard Events" // Selection name for a group of common keyboard events
+	IDS_DebuggerEventListPointerEvents             "Pointer Events" // Selection name for a group of common pointer events
+	IDS_DebuggerEventListTimer                     "Timer" // Category name for timer events
+	IDS_DebuggerEventListMouse                     "Mouse" // Category name for mouse events
+	IDS_DebuggerEventListKeyboard                  "Keyboard" // Category name for keyboard events
+	IDS_DebuggerEventListPointer                   "Pointer" // Category name for pointer-related events
+	IDS_DebuggerEventListFocus                     "Focus" // Category name for focus-related events
+	IDS_DebuggerEventListMisc                      "Misc" // Category name for miscellaneous events
+	IDS_DebuggerEventListWindow                    "Window" // Category name for window events
+	IDS_DebuggerEventListControl                   "Control" // Category name for control events
+	IDS_DebuggerEventListDevice                    "Device" // Category name for device events
+	IDS_DebuggerEventListMedia                     "Media" // Category name for media events
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerEventListGamePad                   "Gamepad" // Category name for events related to the gamepad API
+	IDS_DebuggerJustMyCodeDisabledTooltip          "Just my code is disabled" // Tooltip for when just my code is disabled
+	IDS_DebuggerGoToDefinition                     "Go to definition" // Navigation item for editor context menu
+	IDS_DebuggerFindAllReferences                  "Find references" // Navigation item for editor context menu
+#if BETA
+	IDS_DebuggerFindResultsButtonOnTooltip         "Hide find results" // Tooltip for find results visibility toolbar button
+	IDS_DebuggerFindResultsButtonOffTooltip        "Show find results" // Tooltip for find results visibility toolbar button
+	IDS_DebuggerFindResultsTitle                   "Find Results" // Title used for the find results window
+#endif
+	IDS_DebuggerPreviousResultButtonTooltip        "Go to previous location" // Tooltip for previous location button in find results toolbar
+	IDS_DebuggerNextResultButtonTooltip            "Go to next location" // Tooltip for next location button in find results toolbar
+	IDS_DebuggerClearResultsButtonTooltip          "Clear all" // Tooltip for clear results button in find results toolbar
+	IDS_DebuggerFindResultsTotals                  "Matches: {0} Matching documents: {1}" // Result summary in find results window
+	IDS_DebuggerCloseFindResultsWindowButtonTooltip "Close" // Tooltip for find results window's close button
+	IDS_DebuggerPinFindResultsWindowButtonTooltip  "Pin" // Tooltip for find results window's pin button in unchecked state
+	IDS_DebuggerUnpinFindResultsWindowButtonTooltip "Unpin" // Tooltip for find results window's pin button in checked state
+#if BETA
+	IDS_DebuggerDocumentPositionFormat             "{0} ({1}, {2})" // Format for document name and location links
+#endif
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerGoToLineCommand                    "Go to line..." // Command on context menu
+	IDS_DebuggerBreakpointsContextMenuCopyLocation "Copy location" // Command on context menu
+	IDS_DebuggerCallstackInternalFrame             "[Native code]"
+	IDS_DebuggerFullstopSeparatedStrings           "{0}. {1}" // Two strings separated by a localized full stop.
+	IDS_DebuggerWebStorageGridKeyLabel             "Key" // The label of the Key column in the Web Storage grid.
+	IDS_DebuggerWebStorageGridValueLabel           "Value" // The label of the Value column in the Web Storage grid.
+	IDS_DebuggerWatchesSourceMappedWatchTooltip    "Authored name: {0}. Generated name: {1}" // Authored identifier name and generated identifier name for tooltip
+	IDS_DebuggerLocalStorageLabel                  "Local Storage" // The label of the localStorage grid for tabs and resource picker.
+	IDS_DebuggerSessionStorageLabel                "Session Storage" // The label of the sessionStorage grid for tabs and resource picker.
+	IDS_DebuggerCookiesGridNameLabel               "Name" // The label of the Name column in the Cookies grid.
+	IDS_DebuggerCookiesGridValueLabel              "Value" // The label of the Value column in the Cookies grid.
+	IDS_DebuggerCookiesGridDomainLabel             "Domain" // The label of the Domain column in the Cookies grid.
+	IDS_DebuggerCookiesGridPathLabel               "Path" // The label of the Path column in the Cookies grid.
+	IDS_DebuggerCookiesGridExpiresLabel            "Expires" // The label of the Expires column in the Cookies grid.
+#if BETA
+	IDS_DebuggerCookiesGridHTTPLabel               "HTTP" // The label of the HTTP column in the Cookies grid.
+#endif
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerCookiesGridSecureLabel             "Secure" // The label of the Secure column in the Cookies grid.
+	IDS_DebuggerCookiesLabel                       "Cookies" // The context menu label for deleting all cookies.
+#if BETA
+	IDS_DebuggerCookiesGridDeleteAll               "Delete all" // The context menu label for deleting all cookies.
+	IDS_DebuggerCookiesGridDeleteAllSession        "Delete all session" // The context menu label for deleting all session cookies.
+	IDS_DebuggerCookiesGridCopyToClipboard         "Copy to clipboard" // The context menu label for copying cookie data to the clipboard.
+#endif
+	IDS_DebuggerWatchesContextMenuBreakOnObject    "Break when properties change"
+	IDS_DebuggerWatchesContextMenuBreakOnProperty  "Break when the value changes"
+	IDS_DebuggerSourceEditError                    "An error occurred while saving changes."
+	IDS_DebuggerFailedToApplyEditsPrefix           "Failed to apply edits."
+	IDS_DebuggerEditorTooltipOpenLink              "Ctrl + click to open link" // Tooltip when hovering over a link in the editor
+	IDS_DebuggerEditorContextMenuOpenLink          "Open link" // The context menu label for opening a link on the editor
+	IDS_DebuggerSourceMapButtonTooltip             "Load the sources mapped to this generated file (Ctrl+Shift+M)"
+	IDS_DebuggerWordWrapButtonTooltip              "Word wrap (Alt+W)"
+	IDS_DebuggerXHRBreakpointDescription           "XMLHttpRequest response event" // Description for XHR breakpoints. "XMLHttpRequest" is a keyword and should not be localized
+	IDS_DebuggerXHRCallstackEventDiscription       "XMLHttpRequest response" // Gets used with string 493 to create a dummy stack frame that says "XMLHttpRequest response triggered an event breakpoint". "XMLHttpRequest" is a keyword and should not be localized
+	IDS_DebuggerBreakpointsAddXHRButtonTooltip     "Add XMLHttpRequest breakpoint" // Tooltip shown on the add new XHR breakpoint button
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerWatchesWindowTooltip               "Watches (Alt+Shift+W)"
+	IDS_DebuggerCallstackWindowTooltip             "Call stack (Alt+Shift+C)"
+	IDS_DebuggerBreakpointsWindowTooltip           "Breakpoints (Alt+Shift+B)"
+	IDS_DebuggerEventXHRBreakpointLabel            "Add XMLHttpRequest breakpoint" // Label used for aria in breakpoint window
+#if BETA
+	IDS_DebuggerReadOnlyTooltip                    "Read-only." // Tooltip for read-only "lock" icon in read-only tab.
+	IDS_DebuggerSaveTooltip                        "Save and apply changes to this file (Ctrl+S)." // Tooltip for Save icon for editable Docs.
+	IDS_DebuggerSaveAndRedirectTooltip             "Save changes and redirect future requests to this URL (Ctrl+S)." // Tooltip for Save icon for editable Docs that support redirection.
+	IDS_DebuggerRedirectOffTooltip                 "Redirect future requests to this URL." // Tooltip for Redirect icon for editable Docs when redirection is off.
+	IDS_DebuggerRedirectOnTooltip                  "Turn off URL redirection for this URL." // Tooltip for Redirect icon for editable docs when redirection is on.
+	IDS_DebuggerDiffOffTooltip                     "Compare document to original." // Tooltip for Diff icon for editable docs when diff mode is off.
+	IDS_DebuggerDiffOnToolip                       "View current document only." // Tooltip for Diff icon for editable docs when diff mode is on.
+#endif
+	IDS_DebuggerInconsistentChangesApplied         "The changes were applied but may not be available immediately. You may need to refresh the page for the changes to reliably take affect." // Message for when we were able to detect a change that is valid but may not be applied consistently without refreshing the page.
+	IDS_DebuggerInconsistentChangesApplied_0       "The changes were applied but may not be available immediately: {0}. You may need to refresh the page for the changes to reliably take affect." // Message for when we were able to detect a change that is valid but may not be applied consistently without refreshing the page.
+	IDS_DebuggerSaveSucceeded                      "The changes were applied successfully." // Message for when changes were applied successfully.
+	IDS_DebuggerSaveAndRedirectSucceeded           "The changes were applied successfully, and URL redirection has been enabled for this URL." // Message for when changes were applied successfully with save and redirect.
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerMainThreadLabel                    "[Main Thread]"
+	IDS_DebuggerSaveButton                         "Save (Ctrl+S)"
+	IDS_DebuggerErrorOccurred                      "An error has occurred: {0}"
+	IDS_DebuggerDeleteAllCookies                   "Delete all cookies"
+	IDS_DebuggerDeleteAllSessionCookies            "Delete all session cookies"
+	IDS_DebuggerDeleteCookie                       "Delete cookie"
+	IDS_DebuggerDisconnected                       "Debugger disconnected. Click to connect"
+	IDS_DebuggerConnected                          "Debugger connected. Click to disconnect"
+	IDS_DebuggerHTTPOnly                           "HTTP Only"
+	IDS_DebuggerSession                            "Session"
+	IDS_DebuggerReadOnly                           "Read-only"
+	IDS_DebuggerDocHasPendingEditsNoBreakpoint     "Cannot change breakpoints while the document has pending edits."
+	IDS_DebuggerNoBreakpointFotPreviewDocs         "Cannot change breakpoints of preview documents."
+	IDS_DebuggerCannotSaveWhileExecPaused          "Cannot save document while execution is paused."
+	IDS_DebuggerCannotSaveWhilePrettyPrintOn       "Cannot save document while pretty print is toggled on."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DebuggerCannotSavePreviewDocument          "Cannot save a preview document."
+	IDS_DebuggerSimulateReachingStorageLimit       "Simulate reaching the storage limit"
+	IDS_DebuggerHideResults                        "Hide results"
+	IDS_DebuggerShowResults                        "Show results"
+	IDS_DebuggerReferences                         "References"
+	IDS_DebuggerSourceMappingDisabled              "Source mapping for this document has been disabled."
+	IDS_DebuggerMarkAsLibraryCode                  "Mark as library code (Ctrl+L)"
+	IDS_DebuggerAsmJsDisabled                      "asm.js has been disabled as the script debugger is connected. Disconnect the debugger to enable asm.js."
+	IDS_DebuggerAsmJsCompileFailed                 "asm.js compilation failed. {0}"
+	IDS_CommonAttributesTabButtonText              "Attributes"
+	IDS_CommonBorderLabel                          "Border"
+	IDS_CommonCopyAllMenuText                      "Copy all"
+	IDS_CommonCopyItemMenuText                     "Copy item"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonCopyMenuText                         "Copy"
+	IDS_CommonEmptyTextNode                        "Text - Empty text node"
+	IDS_CommonFilterDisplayAllMenuText             "Display all"
+	IDS_CommonFilterErrorsMenuText                 "Errors"
+	IDS_CommonFilterMenuText                       "Filter"
+	IDS_CommonFilterMessagesMenuText               "Messages"
+	IDS_CommonFilterWarningsMenuText               "Warnings"
+	IDS_CommonLayoutTabButtonText                  "Layout"
+	IDS_CommonMarginLabel                          "Margin"
+	IDS_CommonMultiError                           "{0} Errors" // The text displayed on the filter error button when the number of errors is not 1 (e.g., '99 errors')
+	IDS_CommonMultiMessage                         "{0} Messages" // The text displayed on the filter message button when the number of messages is not 1 (e.g., '99 messages')
+	IDS_CommonMultiWarning                         "{0} Warnings" // The text displayed on the filter warnings button when the number of warnings is not 1 (e.g., '99 warnings')
+	IDS_CommonNotAttached                          "You are not currently attached to a supported page or app."
+	IDS_CommonOffsetLabel                          "Offset"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonPaddingLabel                         "Padding"
+	IDS_CommonRunScriptButtonText                  "Run script (Enter)" // The tooltip displayed on the run script button in single line mode. Enter is the keyboard access key
+	IDS_CommonSingleError                          "{0} Error" // The text displayed on the filter error button when the number of errors is 1 (e.g., '1 error')
+	IDS_CommonSingleMessage                        "{0} Message" // The text displayed on the filter message button when the number of messages is 1 (e.g., '1 message')
+	IDS_CommonSingleWarning                        "{0} Warning" // The text displayed on the filter warnings button when the number of warnings is 1 (e.g., '1 warning')
+	IDS_CommonStylesTabButtonText                  "Styles"
+	IDS_CommonTraceStylesTabButtonText             "Trace" // To keep the tab label short, should be "Trace" not "Trace Styles".
+	IDS_CommonOnAttach                             "JavaScript Console is attached and accepting commands."
+	IDS_CommonOnDetach                             "JavaScript Console is detached."
+	IDS_CommonAttributesTabButtonTooltip           "DOM attributes of the current element"
+	IDS_CommonLayoutTabButtonTooltip               "Dimensions of the current element's box model"
+	IDS_CommonSelectElementButtonTooltip           "Select element (Ctrl+B)" // The tooltip displayed on the select element by click button. Ctrl+B is the keyboard shortcut.
+	IDS_CommonStylesTabButtonTooltip               "Currently applied styles organized by stylesheet"
+	IDS_CommonTraceStylesTabButtonTooltip          "Currently applied styles organized by CSS properties"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonWrongDocumentMode                    "The attached page is not running in a compatible Internet Explorer document mode."
+	IDS_CommonSelectElementButton                  "Select element"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonColorPickerButton                    "Color picker"
+	IDS_CommonColorPickerHueLabel                  "Hue"
+	IDS_CommonColorPickerSaturationLabel           "Saturation"
+	IDS_CommonColorPickerLightnessLabel            "Lightness"
+	IDS_CommonColorPickerOpacityLabel              "Opacity"
+	IDS_CommonAddAttributeButton                   "Add attribute"
+	IDS_CommonAddAttributeButtonTooltip            "Add a new attribute to the current element"
+	IDS_CommonAttributeNodeLabel                   "Current element"
+	IDS_CommonAttributeNodeLabelTooltip            "Currently selected element"
+	IDS_CommonRemoveAttributeButton                "Remove attribute"
+	IDS_CommonRemoveAttributeButtonTooltip         "Remove the currently selected attribute"
+	IDS_CommonAddAttributeMenuText                 "Add attribute"
+	IDS_CommonDeleteElement                        "Delete element"
+	IDS_CommonTextElement                          "(Text)"
+	IDS_CommonShowAll                              "(Show all)"
+	IDS_CommonDocTypeElement                       "(DOCTYPE)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonCommentElement                       "(Comment)"
+	IDS_CommonRefreshDomExplorerButton             "Refresh DOM Explorer" // Not used
+	IDS_CommonRefreshDomExplorerButtonTooltip      "Refresh DOM tree" // Refresh DOM tree button tooltip.
+	IDS_CommonCDContextChanged                     "Current window: {0}"
+	IDS_CommonLoadingText                          "Loading..."
+	IDS_CommonClearAttributeButton                 "Clear attribute"
+	IDS_CommonClearAttributeButtonTooltip          "Clear the value of the currently selected attribute"
+	IDS_CommonUnsupportedBrowser                   "The script diagnostics windows do not support the installed version of Internet Explorer."
+	IDS_CommonCutMenuText                          "Cut"
+	IDS_CommonPasteMenuText                        "Paste"
+	IDS_CommonPasteAsChildMenuText                 "Paste as child"
+	IDS_CommonPasteBeforeMenuText                  "Paste before"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonDiagnosticsDisabled                  "Application is not currently attached to a script debug target that supports script diagnostics."
+	IDS_CommonWrongDocumentModeMetaTag             "To use the latest document mode, add the following meta tag to the HTML page: <meta http-equiv=""X-UA-Compatible"" content=""IE=Edge"" >"
+	IDS_CommonConsoleScriptError                   "An error has occurred in the JavaScript Console. Functionality might be affected."
+	IDS_CommonDomExplorerScriptError               "An error has occurred in the DOM Explorer. Functionality might be affected."
+	IDS_CommonDebuggerScriptError                  "An error has occurred in the JavaScript Debugger. Functionality might be affected."
+	IDS_CommonScriptErrorColumn                    "Column: {0}"
+	IDS_CommonScriptErrorFile                      "File: {0}"
+	IDS_CommonScriptErrorLine                      "Line: {0}"
+	IDS_CommonScriptErrorMessage                   "Message: {0}"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonFilterLogMenuText                    "Log"
+	IDS_CommonMatchCaseText                        "Match case"
+	IDS_CommonSearchContentText                    "Content"
+	IDS_CommonSearchDirectionOptionsText           "Search direction"
+	IDS_CommonSearchFindText                       "Find..."
+	IDS_CommonSearchNextText                       "Find next (F3)"
+	IDS_CommonSearchOptionsText                    "Search options"
+	IDS_CommonSearchPrevText                       "Find previous (Shift+F3)"
+	IDS_CommonSearchSelectorText                   "CSS selector"
+	IDS_CommonSearchTypeOptionsText                "Search type"
+	IDS_CommonSearchTypeTooltip                    "Toggle to select the type of text to search for"
+#if BETA
+	IDS_CommonEventFullScriptPositionText          "File: {0}, Line: {1}, Column: {2}"
+#endif
+	IDS_CommonEventFunctionNameText                "Function name: {0}"
+	IDS_CommonEventScriptPositionText              "Line: {0}, Column {1}"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonEventsTabButtonText                  "Events"
+	IDS_CommonEventsTabButtonTooltip               "Event handlers registered on the current element"
+	IDS_CommonGoToSourceMenuText                   "Open source file"
+	IDS_CommonPagingShowAllText                    "Click to show all {0}"
+	IDS_CommonPagingText                           "Showing {0} of {1}"
+	IDS_CommonSetBreakpointMenuText                "Set breakpoint"
+	IDS_CommonViewAsHtmlMenuText                   "Evaluate as HTML"
+	IDS_CommonViewAsObjectMenuText                 "Evaluate as Object"
+	IDS_CommonConsoleNotLoaded                     "The JavaScript Console window is not loaded"
+	IDS_CommonDomExplorerNotLoaded                 "The DOM Explorer window is not loaded"
+	IDS_CommonInvalidElementArgument               "Argument is not an HTMLElement"
+	IDS_CommonConsoleOccurrences                   "({0} occurrences)"
+	IDS_CommonRemoveStyleMenuText                  "Delete item"
+	IDS_CommonEventHandlerTooltip                  "Event:\t\t{0}\nUseCapture:\t{1}\nFile:\t\t{2}\nLine:\t\t{3}\nColumn:\t\t{4}" // The text that becomes the tool tip of an event handler in the events tab. UseCapture is code.
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonExternalEventHandlerTooltip          "Event:\t\t{0}\nUseCapture:\t{1}\nNo source information available. (Might be an external listener)" // The text that becomes the tooltip of an event handler in the events tab. UseCapture is code.
+	IDS_CommonDynamicScriptBlockEventHandlerToolTip "This event handler was created by a dynamically created script element being added to the page" // Displayed in lieu of a file name in the event handler tooltip
+	IDS_CommonEvalCodeEventHandlerToolTip          "This event handler was declared in code executed by the eval function" // Displayed in lieu of a file name in the event handler tooltip
+	IDS_CommonFunctionCodeEventHandlerToolTip      "This event handler was created using the function constructor" // Displayed in lieu of a file name in the event handler tooltip
+	IDS_CommonConsoleObjectNotFoundError           "Object not found and needs to be reevaluated." // An error message to display if the console cannot find an object for the "Evaluate as..." function
+	IDS_CommonModifiedEvalFunction                 "The attached page has a modified eval function. The script diagnostics windows might not work correctly." // The error displayed to the user when the tool windows detect that the JavaScript of the page has changed the eval function
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonModifiedExecScriptFunction           "The attached page has a modified execScript function. The script diagnostics windows might not work correctly." // The error displayed to the user when the tool windows detect that the JavaScript of the page has changed the execScript function
+	IDS_CommonDOMExplorerFindBoxHinting            "Find (Ctrl+F)" // Hint in the find box. Ctrl+F is the keyboard shortcut.
+	IDS_CommonDOMSearchBoxToolTip                  "Search in DOM using query selector or simple text"
+	IDS_CommonDOMSearchNextButtonToolTip           "Next (F3)" // Next search result. F3 is the keyboard shortcut.
+	IDS_CommonDOMSearchPreviousButtonToolTip       "Previous (Shift+F3)" // Previous search result. Shift+F3 is the keyboard shortcut.
+	IDS_CommonConsoleTimerWarning                  "Timer ""{0}"" already exists."
+	IDS_CommonConsoleTimerDisplay                  "{0}: {1}ms"
+	IDS_CommonNonExistentConsoleTimerWarning       "Timer ""{0}"" does not exist."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonCSSTraceStyles                       "[CSS Trace Styles]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonDeleteWatchTooltip                   "Delete"
+	IDS_CommonDOMExplorerComputedStylesNoResultsMessage "No results found."
+	IDS_CommonDOMExplorerComputedStylesAllStyles   "All styles"
+	IDS_CommonInlineStyleSelector                  "Inline style"
+	IDS_CommonEmulationCommandsSingleTouchMode     "Touch mode"
+	IDS_CommonEmulationCommandsPinchMode           "Pinch mode"
+	IDS_CommonEmulationCommandsRotateLeft          "Rotate left"
+	IDS_CommonEmulationCommandsRotateRight         "Rotate right"
+	IDS_CommonEmulationCommandsGeolocation         "Geolocation"
+	IDS_CommonEmulationCommandsWindowSize          "Window size"
+	IDS_CommonEmulationModesDefaultMode            "Default mode"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonEmulationModesCompatMode             "Compat mode"
+	IDS_CommonEmulationModesPhoneMode              "Windows Phone" // Proper name / trademark
+	IDS_CommonEmulationModesCustomMode             "Custom mode"
+	IDS_CommonConsoleClearInputButtonTooltip       "Clear input (Esc)" // Tooltip on the Console Clear Input button
+	IDS_CommonConsoleCssError                      "Argument of HTMLElement type expected by console.css()."
+	IDS_CommonConsoleSelectError                   "Argument of HTMLElement type expected by console.select()."
+	IDS_CommonComputedStylesTabButtonText          "Computed" // To keep the tab label short, should be "Computed" not "Computed Styles".
+	IDS_CommonComputedStylesTabButtonTooltip       "Currently applied styles organized by CSS attributes"
+	IDS_CommonConsoleSelectNotInitializedError     "Start DOM Explorer to enable console.select()."
+	IDS_CommonConsoleUnsupportedDocumentModeError  "The attached page targets document mode {0}. Some console APIs and features may not be available."
+	IDS_CommonConsoleUnsupportedDocumentModeAPIError "The attached page targets document mode {0} which does not support {1}." // placeholder 0 is the document mode. placeholder 1 is the API.
+	IDS_CommonConsoleTooltip                       "Console {0}" // The id must link up with the manifest file for the console tool. placeholder 0 is a keyboard shortcut, like (Ctrl+1)
+	IDS_CommonDomTooltip                           "DOM Explorer {0}" // The id must link up with the manifest file for the dom explorer tool. placeholder 0 is a keyboard shortcut, like (Ctrl+1)
+	IDS_CommonDOMExplorerInheritedFromText         "Inherited from"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonConsoleToolLabelText                 "Console" // Name of the console tool displayed at the top of F12
+	IDS_CommonDomToolLabelText                     "DOM Explorer" // Name of the DOM tool displayed at the top of F12
+	IDS_CommonEmulationTitle                       "Emulation {0}" // The id must link up with the manifest file for the emulation tool. placeholder 0 is a keyboard shortcut, like (Ctrl+1)
+	IDS_CommonEmulationModeSection                 "Mode"
+	IDS_CommonEmulationDocMode                     "Document mode"
+	IDS_CommonEmulationBrowserMode                 "Browser profile"
+	IDS_CommonEmulationUAString                    "User agent string"
+	IDS_CommonEmulationDisplaySection              "Display"
+	IDS_CommonEmulationOrientation                 "Orientation"
+	IDS_CommonEmulationFontScale                   "Font scale factor"
+	IDS_CommonEmulationResolution                  "Resolution"
+	IDS_CommonEmulationGeoLocationSection          "Geolocation"
+	IDS_CommonEmulationSimulateGPS                 "Simulate GPS"
+	IDS_CommonEmulationGPSOff                      "Off"
+	IDS_CommonEmulationGPSOn                       "On"
+	IDS_CommonEmulationGPSOnNoSignal               "On but no signal"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonEmulationLatitude                    "Latitude"
+	IDS_CommonEmulationLongitude                   "Longitude"
+	IDS_CommonRefreshStyleMenuText                 "Refresh styles"
+	IDS_CommonEmulationModesEdgeMode               "Edge"
+	IDS_CommonEmulationModesDesktopMode            "Desktop"
+	IDS_CommonFormatterInternalError               "An error has occurred. Pretty printing for this document has been disabled."
+	IDS_CommonFormatterEmbededJSInternalError      "An error has occurred. Pretty printing for some embedded JavaScript has been disabled."
+	IDS_CommonEditAsHtmlMenuText                   "Edit as HTML"
+	IDS_CommonEmulationCustomUAStringInfo          "Enter a custom user agent string"
+	IDS_CommonEmulationCustomUAStringLabel         "Custom string"
+	IDS_CommonEmulationCustom                      "Custom"
+	IDS_CommonEmulationDefault                     "Default"
+	IDS_CommonStyleRuleFileTooltip                 "File:\t{0}\nLine:\t{1}\nColumn:\t{2}" // The text that becomes the tooltip of a style rule file link Styles tab.
+	IDS_CommonEllipsis                             "..."
+	IDS_CommonAddToWatch                           "Add to watches"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonEmulationOrientationLandscape        "Landscape"
+	IDS_CommonEmulationOrientationPortrait         "Portrait"
+	IDS_CommonEmulationNoResolutionError           "Please enter a custom width or height."
+	IDS_CommonEmulationNonNumericValueError        "Please enter a number (for example, '4' or '4.3')."
+	IDS_CommonEmulationLatitudeError               "Latitude must be between -90 and 90."
+	IDS_CommonEmulationLongitudeError              "Longitude must be between -180 and 180."
+	IDS_CommonEmulationInches                      "inches"
+	IDS_CommonEmulationPixels                      "pixels"
+	IDS_CommonEmulationCustomResolution            "Enter a custom resolution"
+	IDS_CommonEmulationDisplaySize                 "Display size"
+	IDS_CommonEmulationWidth                       "Width"
+	IDS_CommonEmulationHeight                      "Height"
+	IDS_CommonEmulationResolutionLessThanZeroError "Please enter a resolution or screen size that is greater than zero."
+	IDS_CommonShowLayoutBoxesButtonTooltip         "Display web page highlight boxes for the selected element in the DOM tree" // No longer used.
+	IDS_CommonViewSourceMenuText                   "View source"
+	IDS_CommonCopyElementWithStylesMenuText        "Copy element with styles"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonShowLayoutBoxesButtonTooltipWithShortcut "Display web page highlight boxes for the selected element in the DOM tree (Ctrl+Shift+I)" // No longer used.
+	IDS_CommonRefreshDomExplorerButtonTooltipWithShortcut "Refresh DOM tree (F5)" // Refresh DOM tree button tooltip. F5 is the keyboard shortcut.
+	IDS_CommonAllStylesDomExplorerButtonTooltipOn  "ON: Display all styles" // Show all styles DOM tree button tooltip when on.
+	IDS_CommonAllStylesDomExplorerButtonTooltipOff "OFF: Display only user styles" // Show all styles DOM tree button tooltip when off.
+	IDS_CommonAccessKeyCtrlX                       "Ctrl+X" // Access key combination Ctrl+X.
+	IDS_CommonAccessKeyCtrlC                       "Ctrl+C" // Access key combination Ctrl+C.
+	IDS_CommonAccessKeyCtrlV                       "Ctrl+V" // Access key combination Ctrl+V.
+	IDS_CommonAccessKeyDel                         "Del" // Access key Del
+	IDS_CommonAriaOverridden                       "Overridden" // Used in accessibility string to indicate the property or value is overridden (shown as strikethrough)
+	IDS_CommonRunScriptButtonTextMultiLine         "Run script (Ctrl+Enter)" // The tooltip displayed on the run script button in multi line mode. Ctrl+Enter is the keyboard access key
+	IDS_CommonAccessKeyCtrlEnter                   "Ctrl+Enter" // Access key combination Ctrl+Enter
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonAccessKeyCtrlF9                      "Ctrl+F9" // Access key combination Ctrl+F9
+	IDS_CommonAccessKeyCtrlShiftF10                "Ctrl+Shift+F10" // Access key combination Ctrl+Shift+F10
+	IDS_CommonAccessKeyCtrlF10                     "Ctrl+F10" // Access key combination Ctrl+F10
+	IDS_CommonAccessKeyCtrlW                       "Ctrl+W" // Access key combination Ctrl+W
+	IDS_CommonAccessKeyCtrlF4                      "Ctrl+F4" // Access key combination Ctrl+F4
+	IDS_CommonAccessKeyAltNumStar                  "Alt+Num *" // Access key combination Alt+Num * (asterisk on numeric keypad)
+	IDS_CommonPseudoClassHoverTooltip              "Hover pseudo class state" // Displayed as tooltip for pseudo class :hover state checkbox.
+	IDS_CommonPseudoClassHover                     "Hover"
+	IDS_CommonPseudoClassVisitedTooltip            "Visited pseudo class state" // Displayed as tooltip for pseudo class :visited state checkbox.
+	IDS_CommonPseudoClassVisited                   "Visited"
+	IDS_CommonPseudoClassesButtonTooltipOn         "Click to display pseudo states panel" // Pseudo states button tooltip when on.
+	IDS_CommonPseudoClassesButtonTooltipOff        "Click to hide pseudo states panel" // Pseudo states button tooltip when off.
+	IDS_CommonPausedAtABreakpoint                  "Paused at a breakpoint" // Used to tell user the current execution context for console while at a beakpoint.
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonRevertStyleMenuText                  "Revert item" // Styles pane context menu item for reverting the current rule or property
+	IDS_CommonChangesTabButtonText                 "Changes"
+	IDS_CommonChangesTabButtonTooltip              "CSS changes made during diagnostic session"
+	IDS_CommonChangesViewUnknownCSSSource          "Unknown source"
+	IDS_CommonChangesViewNewInSessionCSSSource     "New rules"
+	IDS_CommonChangesViewCSSFileLinkLineAndColumn  "Line: {0}, Column {1}"
+	IDS_CommonChangesViewCSSFileLinkLine           "Line: {0}"
+	IDS_CommonEmulationModesEnterpriseMode         "Enterprise"
+	IDS_CommonChangesViewEmptyMessage              "CSS changes you make will appear here."
+	IDS_CommonHelpButtonTooltip                    "Help"
+	IDS_CommonCloseButtonTooltip                   "Close"
+	IDS_CommonEditAttributeNameAriaLabel           "attribute name"
+	IDS_CommonEditAttributeValueAriaLabel          "attribute value"
+	IDS_CommonalwaysBufferConsoleText              "Would you like to enable console message recording before the console is opened? This may have a small negative impact on the browsing performance of IE and Windows Store Apps with HTML/JS when the tools are not open." // Message shown if some console output was generated before console was opened
+	IDS_CommonalwaysBufferConsoleEnable            "Yes, always record before opening the console" // Set browser.alwaysBufferConsole property to true
+	IDS_CommonalwaysBufferConsoleDoNotShowAgain    "No, never record before opening the console" // Prevent alwaysBufferConsole message from showing again
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonAriaChangeStateRemove                "Deleted: " // Used in accessibility string to indicate the style rule or property is deleted (shown with a red change bar)
+	IDS_CommonAriaChangeStateAdd                   "Added: " // Used in accessibility string to indicate the style rule or property is added (shown with a green change bar)
+	IDS_CommonAriaChangeStateUpdate                "Modified: " // Used in accessibility string to indicate the style rule or property is updated (shown with an orange change bar)
+	IDS_CommonDisabled                             "Disabled" // Used eg as ARIA attribute to indicate a breakpoint is disabled
+	IDS_CommonAccessKeyAltF9                       "Alt+F9" // Access key combination Alt+F9
+	IDS_CommonAccessKeyF9                          "F9" // Access key F9
+	IDS_CommonDOMExplorerComputedStylesFilterTextBoxPlaceholder "Filter properties"
+	IDS_CommonAddPropertyMenuText                  "Add property"
+	IDS_CommonAddRuleMenuText                      "Add rule"
+	IDS_CommonCopyPropertyMenuText                 "Copy property"
+	IDS_CommonCopyRuleMenuText                     "Copy rule"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonEmulationLargeDisplaySizeError       "Display size cannot be larger than {0}." // The error text that is displayed when the display size is too large; e.g. Display size cannot be larger than 60.
+	IDS_CommonEmulationLargeResolutionWidthError   "Width cannot be larger than {0}." // The error text that is displayed when the resolution width is too large; e.g. Width cannot be larger than 3820.
+	IDS_CommonEmulationLargeResolutionHeightError  "Height cannot be larger than {0}." // The error text that is displayed when the resolution height is too large; e.g. Height cannot be larger than 2160.
+	IDS_CommonEmulationDeleteButtonTooltip         "Delete"
+	IDS_CommonEmulationToolLabelText               "Emulation" // Name of the Emulation tool displayed at the top of F12
+	IDS_CommonEmulationResetButtonTooltip          "Reset Emulation settings (Ctrl+Shift+L)" // The tooltip displayed on the Emulation toolbar button to reset all settings. Ctrl+Shift+L is the keyboard access key
+	IDS_CommonConsoleStaleMessage                  "Stale:" // Indicate that console message originator (remote engine or frame) is not available anymore
+	IDS_CommonConsoleNavigationSeparatorLabel      "Navigation Event Separator" // Console Navigation Event aria-label and copy value.
+	IDS_CommonEmulationInvalidValueResolutionError "Please enter a number (for example, '1080')."
+	IDS_CommonClearButtonText                      "Clear (Ctrl+L)" // The text displayed on the button that removes all items from the console
+	IDS_CommonClearMenuText                        "Clear Console (Ctrl+L)" // The text displayed in the context menu for console output
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonColorPickerButtonTooltip             "Show/hide color picker" // The tooltip that is displayed for the button which shows or hides the color picker
+	IDS_CommonEyedropperButtonTooltip              "Enable ink dropper mode" // The tooltip that is displayed for the button which enables or disables the eyedropper
+	IDS_CommonRibbonControlNextButtonTooltip       "Next" // The tooltip that is displayed for the button which scrolls forward in the ribbon control
+	IDS_CommonRibbonControlPreviousButtonTooltip   "Previous" // The tooltip that is displayed for the button which scrolls backward in the ribbon control
+	IDS_CommonColorPickerPaletteTooltip            "Palette of commonly used colors" // The tooltip that is displayed for the color picker palette
+	IDS_CommonHue                                  "Hue"
+	IDS_CommonSaturation                           "Saturation"
+	IDS_CommonLightness                            "Lightness"
+	IDS_CommonAlpha                                "Alpha"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonTargetSelectorLabel                  "Target" // Label for selecting target console commands will execute against
+	IDS_CommonAccessKeyCtrlD                       "Ctrl+D" // Access key combination Ctrl+D
+	IDS_CommonAccessKeyCtrlShiftD                  "Ctrl+Shift+D" // Access key combination Ctrl+Shift+D
+	IDS_CommonAccessKeyCtrlG                       "Ctrl+G" // Access key combination Ctrl+G
+	IDS_CommonSelectInDom                          "Show in DOM Explorer"
+	IDS_CommonToggleToSingleLineTooltip            "Switch to single-line mode (Ctrl+Shift+M)" // The tooltip displayed on the toggle button when in multiline mode. Ctrl+Shift+M is the keyboard access key combination.
+	IDS_CommonToggleToMultiLineTooltip             "Switch to multiline mode (Ctrl+Shift+M)" // The tooltip displayed on the toggle button when in single line mode. Ctrl+Shift+M is the keyboard access key combination.
+#if BETA
+	IDS_CommonResourceGridEditItem                 "Edit item" // The context menu label for editing an item in the resource grid.
+	IDS_CommonResourceGridRemoveItem               "Remove item" // The context menu label for removing an item in the resource grid.
+#endif
+	IDS_CommonResourceGridRefresh                  "Refresh" // The context menu label for refreshing the resource grid.
+	IDS_CommonDomColorPickerButtonTooltip          "Color picker (Ctrl+K)" // The tooltip that is displayed for the button which shows or hides the color picker in the DOM Explorer
+	IDS_CommonSlidersButtonTooltip                 "Color picker" // The tooltip that is displayed for the button which shows or hides the HSL sliders pane
+	IDS_CommonShowLayoutButtonTooltipWithShortcut  "DOM element highlighting (Ctrl+Shift+I)" // Tooltip for the Show Layout button in DOM Explorer toolbar. Ctrl+Shift+I is the keyboard shortcut.
+	IDS_CommonUserStylesDomExplorerButtonTooltip   "Display user styles only" // User styles DOM tree button tooltip.
+	IDS_CommonClearOnNavigate                      "Clear on navigate" // Used to tell user console clear is disabled when navigation occur
+	IDS_CommonEmulationPersistSettingsButtonTooltip "Persist Emulation settings"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonZoomDialogCurrentLevel               "Zoom {0}%" // {0} will be replaced by a number representing the current zoom level in percentage
+	IDS_CommonZoomDialogShortcutInfo               "Ctrl+0 to reset"
+	IDS_CommonConsoleInputTooltipSingleLine        "Console input single-line mode (Enter)" // The input box for the JavaScript Console
+	IDS_CommonConsoleInputTooltipMultiLine         "Console input multiline mode (Ctrl+Enter)" // The input box for the JavaScript Console
+	IDS_CommonConsoleTooManyMessagesError          "More messages are being logged than the console can display. Only the first 1000 messages per second are shown."
+	IDS_CommonSearchBoxTooltip                     "Find... (Ctrl+F)"
+	IDS_CommonSearchBoxPlaceholder                 "Find (Ctrl+F)"
+	IDS_CommonByteUnits                            "B" // Displayed in the UI as an abbreviation for 'bytes'
+	IDS_CommonGigabyteUnits                        "GB" // Displayed in the UI as an abbreviation for 'gigabytes'
+	IDS_CommonKilobyteUnits                        "KB" // Displayed in the UI as an abbreviation for 'kilobytes'
+	IDS_CommonMegabyteUnits                        "MB" // Displayed in the UI as an abbreviation for 'megabytes'
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonEnabled                              "Enabled"
+	IDS_CommonGotDisabled                          "Disabled"
+	IDS_CommonDeleteItem                           "Delete item"
+	IDS_CommonAccessKeyCtrlShiftDel                "Ctrl+Shift+Del" // Access key combination Ctrl+Shift+Del
+	IDS_CommonAccessKeyCtrlDel                     "Ctrl+Del" // Access key combination Ctrl+Del
+	IDS_CommonAccessKeyCtrlF5                      "Ctrl+F5" // Access key combination Ctrl+F5
+	IDS_CommonNoLongerAttachedToDOM                "The requested element is no longer attached to the DOM"
+	IDS_CommonCopySelectedItems                    "Copy selected items"
+	IDS_CommonSelectAll                            "Select all"
+	IDS_CommonAccessKeyCtrlA                       "Ctrl+A" // Access key combination Ctrl+A
+	IDS_CommonWindows10MobileMode                  "Windows 10 Mobile"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerErrorWhileProcessing         "An error occurred while processing the snapshot:"
+	IDS_MemoryAnalyzerTakeSnapshot                 "Take heap snapshot"
+	IDS_MemoryAnalyzerProcessingSnapshot           "Processing snapshot..."
+	IDS_MemoryAnalyzerReferenceGraph               "Object references"
+	IDS_MemoryAnalyzerSummary                      "Summary"
+	IDS_MemoryAnalyzerPrivateBytes                 "process private bytes: "
+	IDS_MemoryAnalyzerJavaScriptHeapSize           "JavaScript heap size: "
+	IDS_MemoryAnalyzerTotalObjectSize              "total object size:"
+	IDS_MemoryAnalyzerNumberOfObjects              "number of objects: "
+	IDS_MemoryAnalyzerNumberOfTypes                "number of types: "
+	IDS_MemoryAnalyzerJavaScriptObjects            "JavaScript objects: "
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerExternalObjects              "external objects: "
+	IDS_MemoryAnalyzerHeapSizeLinkTooltip          "View details of the heap size"
+	IDS_MemoryAnalyzerObjectsCountLinkTooltip      "View details of the object count"
+	IDS_MemoryAnalyzerHeapSizeDiffLinkTooltip      "View details of the heap size compared to the previous snapshot"
+	IDS_MemoryAnalyzerObjectsCountDiffLinkTooltip  "View details of objects compared to the previous snapshot"
+	IDS_MemoryAnalyzerCompareTo                    "Compare to" // This string is no longer used, it has been replaced by CompareToEllipsis.
+	IDS_MemoryAnalyzerHeapSnapshot                 "Heap snapshot"
+	IDS_MemoryAnalyzerGeneratingComparisonView     "Generating comparison view..."
+	IDS_MemoryAnalyzerIdentifiers                  "Identifier(s)"
+	IDS_MemoryAnalyzerRetainedSize                 "Retained size"
+	IDS_MemoryAnalyzerCount                        "Count"
+	IDS_MemoryAnalyzerSizeDiff                     "Size diff." // Difference/delta in size between snapshots being compared.
+	IDS_MemoryAnalyzerRetainedSizeDiff             "Retained size diff." // Difference/delta in retained size between snapshots being compared.
+	IDS_MemoryAnalyzerType                         "Type"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerSize                         "Size"
+	IDS_MemoryAnalyzerSnapshotNumber               "Snapshot #{0}" // placeholder 0 is replaced with a number
+	IDS_MemoryAnalyzerSnapshotNumberDiff           "Snapshot #{0} - Snapshot #{1}" // placeholder 0 and placeholder 1 are each replaced with numbers
+	IDS_MemoryAnalyzerdominators                   "Dominators"
+	IDS_MemoryAnalyzerDOM                          "DOM"
+	IDS_MemoryAnalyzerroots                        "Roots"
+	IDS_MemoryAnalyzertypes                        "Types"
+	IDS_MemoryAnalyzerwinrt                        "WinRT"
+	IDS_MemoryAnalyzerCompareToTooltip             "Compare this snapshot to another"
+	IDS_MemoryAnalyzerCountTooltip                 "The total number of objects of this type"
+	IDS_MemoryAnalyzerDOMTooltip                   "View the Document Object Model (DOM) elements"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerIdentifiersTooltip           "The identifier(s) of the object"
+	IDS_MemoryAnalyzerRetainedSizeDiffTooltip      "The change in retained size between the two snapshots"
+	IDS_MemoryAnalyzerRetainedSizeTooltip          "The amount of memory reclaimed by deleting the object"
+	IDS_MemoryAnalyzerSizeDiffTooltip              "The change in size between the two snapshots"
+	IDS_MemoryAnalyzerSizeTooltip                  "The memory size of the object"
+	IDS_MemoryAnalyzerSnapshotTabTooltip           "View the details for {0}" // placeholder 0 is replaced with the snapshot name
+	IDS_MemoryAnalyzerTakeSnapshotTooltip          "Take a heap snapshot of the current application"
+	IDS_MemoryAnalyzerwinrtTooltip                 "View the WinRT objects"
+	IDS_MemoryAnalyzerApproximateSizeTooltip       "{0} (size is approximate)" // placeholder 0 is replaced with the size
+	IDS_MemoryAnalyzerCouldNotGetHeapSizeTooltip   "The heap size could not be retrieved as the ETW sink was not loaded"
+	IDS_MemoryAnalyzerExternalObjectsTooltip       "The total number of external objects in this snapshot"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerHeapSizeTooltip              "The size of the JavaScript heap when this snapshot was created"
+	IDS_MemoryAnalyzerJavaScriptObjectsTooltip     "The total number of JavaScript objects in this snapshot"
+	IDS_MemoryAnalyzerMarkupElementsTooltip        "The total number of markup elements in this snapshot"
+	IDS_MemoryAnalyzerNumberOfObjectsTooltip       "The total number of objects in the snapshot"
+	IDS_MemoryAnalyzerNumberOfTypesTooltip         "The total number of types in the snapshot"
+	IDS_MemoryAnalyzerPrivateBytesTooltip          "The size of the private bytes for the process when this snapshot was created"
+	IDS_MemoryAnalyzerTotalObjectSizeTooltip       "The combined size of all the objects in the heap for this snapshot"
+	IDS_MemoryAnalyzerWinRTObjectsTooltip          "The total number of WinRT objects in this snapshot"
+	IDS_MemoryAnalyzerWarningIncompatibleStandardsModeVS "This tool only supports (1) Windows Store 8.1 apps running on Windows 8.1, (2) Windows Store 8.0 apps running on Windows 8.1, and (3) Internet Explorer 11 or higher running in document modes 10 or higher."
+	IDS_MemoryAnalyzerWarningNotAttached           "Not currently attached to a script debug target that supports browser diagnostics."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerObjectsCount                 "{0} objects" // placeholder 0 is replaced with an integer number of objects
+	IDS_MemoryAnalyzerBaseline                     "Baseline"
+	IDS_MemoryAnalyzerNoDiff                       "No increase"
+	IDS_MemoryAnalyzerHubGraphHeapLegend           "Process memory usage (private bytes)"
+	IDS_MemoryAnalyzerHubGraphHeapUnits            "MB"
+	IDS_MemoryAnalyzerHubGraphSnapshotLegend       "Snapshot"
+	IDS_MemoryAnalyzerHubGraphUserMarkLegend       "User mark"
+	IDS_MemoryAnalyzerHubTimelineDescription       "Shows JavaScript and DOM element memory"
+	IDS_MemoryAnalyzerHubTimelineTitle             "Total memory"
+	IDS_MemoryAnalyzerHubToolDescription           "Investigate the JavaScript heap to help find issues such as memory leaks"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerHubToolName                  "JavaScript Memory"
+	IDS_MemoryAnalyzerCompareButtonTooltipText     "Compare this snapshot with another from the current session"
+	IDS_MemoryAnalyzerSnapshotCreationFailed       "Snapshot creation failed. {0}" // placeholder 0 is replaced with the original error message
+	IDS_MemoryAnalyzerHeapSize                     "{0} heap" // placeholder 0 is replaced with a number of bytes/KB/MB like "123.45 MB"
+	IDS_MemoryAnalyzerDisplayObjectIDs             "Display object IDs"
+	IDS_MemoryAnalyzerShowBuiltIns                 "Show built-ins"
+	IDS_MemoryAnalyzerScreenshot                   "Screenshot"
+	IDS_MemoryAnalyzerByteUnits                    "B" // Displayed in the UI as an abbreviation for 'bytes'
+	IDS_MemoryAnalyzerGigabyteUnits                "GB" // Displayed in the UI as an abbreviation for 'gigabytes'
+	IDS_MemoryAnalyzerKilobyteUnits                "KB" // Displayed in the UI as an abbreviation for 'kilobytes'
+	IDS_MemoryAnalyzerMegabyteUnits                "MB" // Displayed in the UI as an abbreviation for 'megabytes'
+	IDS_MemoryAnalyzerF12ToolTitle                 "Memory"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerRulerMarkTooltipLabel        " at {0}" // placeholder 0 is replaced with the formatted time the mark fired.
+	IDS_MemoryAnalyzerRulerAriaLabel               "Ruler has minimum value of {0} and maximum value of {1}" // placeholder 0 and placeholder 1 are time with units
+	IDS_MemoryAnalyzerRulerLeftSliderAriaLabel     "Left slider"
+	IDS_MemoryAnalyzerRulerRightSliderAriaLabel    "Right slider"
+	IDS_MemoryAnalyzerRulerSliderAriaValueText     "Current value is {0}. Minimum value is {1}. Maximum value is {2}." // placeholder 0, placeholder 1 and placeholder 2 are time with units
+	IDS_MemoryAnalyzerRulerLifecycleMarkLabel      "App lifecycle mark"
+	IDS_MemoryAnalyzerRulerUserMarkLabel           "User mark"
+	IDS_MemoryAnalyzerRulerMarkLabel               "A ruler mark indicating the occurrence of the following events: {0}" // placeholder 0 is replaced with the tooltip content of the ruler mark(s)
+	IDS_MemoryAnalyzerRulerTitle                   "Diagnostic session"
+	IDS_MemoryAnalyzerMillisecondsLabel            "milliseconds"
+	IDS_MemoryAnalyzerMinutesLabel                 "minutes"
+	IDS_MemoryAnalyzerSecondsLabel                 "seconds"
+	IDS_MemoryAnalyzerMinutesAbbreviation          "min"
+	IDS_MemoryAnalyzerMillisecondsAbbreviation     "ms"
+	IDS_MemoryAnalyzerSecondsAbbreviation          "s"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerSwimlaneCollapseAriaLabel    "Press enter to collapse graph."
+	IDS_MemoryAnalyzerSwimlaneExpandAriaLabel      "Press enter to expand graph."
+	IDS_MemoryAnalyzerToolbarZoomInButton          "Zoom in"
+	IDS_MemoryAnalyzerGraphTitle                   "Total memory"
+	IDS_MemoryAnalyzerShowInRootsViewLabel         "Show in roots view"
+	IDS_MemoryAnalyzerDetachedDomNodeWarning       "The selected node is not attached to the DOM and is consuming memory."
+	IDS_MemoryAnalyzerDetachedDomNodeDisposableWarning "The selected node is not attached to the DOM and is consuming memory. Did you forget to dispose this object?"
+	IDS_MemoryAnalyzerDetachedDomNodeTooltip       "This node is not attached to the DOM"
+	IDS_MemoryAnalyzerDetachedDomNodeDisposableTooltip "This node is not attached to the DOM. Did you forget to dispose this object?"
+	IDS_MemoryAnalyzerReachedItemsCapMessage       "{0} out of {1} objects are displayed above. Change the filter to update the result set." // placeholder 0 is the number of items loaded, placeholder 1 is the total count of all items
+	IDS_MemoryAnalyzerChildrenLoadNext             "Load {0} more objects" // placeholder 0 is the number of items to load next
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerERRoutOfMemory               "Out of memory"
+	IDS_MemoryAnalyzerERRbadHexDigit               "Expected hexadecimal digit"
+	IDS_MemoryAnalyzerERRbadNumber                 "Invalid number"
+	IDS_MemoryAnalyzerERRillegalChar               "Invalid character"
+	IDS_MemoryAnalyzerERRnoColon                   "Expected ':'"
+	IDS_MemoryAnalyzerERRnoRbrack                  "Expected ']'"
+	IDS_MemoryAnalyzerERRnoRcurly                  "Expected '}'"
+	IDS_MemoryAnalyzerERRnoStrEnd                  "Unterminated string constant"
+	IDS_MemoryAnalyzerERRsyntax                    "Syntax error"
+	IDS_MemoryAnalyzerERRmissingObjectId           "Missing object ID"
+	IDS_MemoryAnalyzerERRinvalidObjectID           "Invalid object ID"
+	IDS_MemoryAnalyzerERRunknownError              "Error: {0}" // placeholder 0 is the error number
+	IDS_MemoryAnalyzerMemoryTooltip                "Memory {0}" // The id must link up with the manifest file for the debugger tool. placeholder 0 is a keyboard shortcut, like (Ctrl+1)
+	IDS_MemoryAnalyzerMemoryDisabledAtBreakpoint   "Profiling is disabled when paused at a breakpoint. You must stop debugging to enable profiling."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerDiffColumnOperationAdded     "Added"
+	IDS_MemoryAnalyzerDiffColumnOperationModified  "Modified"
+	IDS_MemoryAnalyzerDiffColumnOperationUnchanged "Unchanged"
+	IDS_MemoryAnalyzerDiffColumnOperationHeader    "Operation"
+	IDS_MemoryAnalyzerDisplayCircularReferences    "Display circular references"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerTriggerGC                    "Trigger GC"
+	IDS_MemoryAnalyzerTooltipTimeLabel             "Time"
+	IDS_MemoryAnalyzerTooltipValueLabel            "Value"
+	IDS_MemoryAnalyzerScopeFilterTooltip           "Change the group of objects that are displayed based on their involvement with the two snapshots"
+	IDS_MemoryAnalyzerScopeFilterLabel             "Scope:"
+	IDS_MemoryAnalyzerScopeObjectsAddedBetweenSnapshots "Objects added between Snapshot #{0} and #{1} ({2})" // Placeholder 0 is the first snapshot id, 1 is the second snapshot id and 2 is the number of objects that were added between snapshots
+	IDS_MemoryAnalyzerScopeObjectsLeftFromPreviousSnapshot "Objects left over from Snapshot #{0} ({1})" // Placeholder 0 is the snapshot id and 1 is the number of objects left over from the previous snapshot
+	IDS_MemoryAnalyzerScopeAllObjects              "All objects in Snapshot #{0} ({1})" // Placeholder 0 is the snapshot id and 1 is the total number of objects in the snapshot
+	IDS_MemoryAnalyzerTakeSnapshotShortcut         "(Ctrl+Shift+T)"
+	IDS_MemoryAnalyzerRulerAggregatedMarks         "Merged mark"
+	IDS_MemoryAnalyzerDetachedDomNodeTypeObjectTooltip "An object of this type is not attached to the DOM"
+	IDS_MemoryAnalyzerShowInDominatorsViewLabel    "Show in dominators view"
+	IDS_MemoryAnalyzerDiffColumnOperationHeaderTooltip "The object's involvement between the two snapshots"
+	IDS_MemoryAnalyzerF12StartButtonTooltip        "Start profiling session (Ctrl+E)"
+	IDS_MemoryAnalyzerF12StopButtonTooltip         "Stop profiling session (Ctrl+E)"
+	IDS_MemoryAnalyzerF12SnapshotButtonTooltip     "Take heap snapshot (Ctrl+Shift+T)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerF12StartProfilingMessage     "Start profiling to begin a performance session (Ctrl+E)"
+	IDS_MemoryAnalyzerSettingsMenuButtonTooltipText "Change the display settings for the object detail views"
+	IDS_MemoryAnalyzerSourceInfoIdentifierLabel    "Identifier:"
+	IDS_MemoryAnalyzerSourceInfoFileLabel          "File:"
+	IDS_MemoryAnalyzerSourceInfoLineLabel          "Line:"
+	IDS_MemoryAnalyzerSourceInfoColumnLabel        "Column:"
+	IDS_MemoryAnalyzerSummaryTabTooltip            "View the memory trend and summary of all snapshots"
+	IDS_MemoryAnalyzertypesTooltip                 "View all objects grouped by their constructor"
+	IDS_MemoryAnalyzerTypeTooltip                  "The name of the object's constructor"
+	IDS_MemoryAnalyzerrootsTooltip                 "View the top-down hierarchy of the entire object reference graph"
+	IDS_MemoryAnalyzerIdentifierFilterTooltip      "Filter the top-level items by identifier or type"
+	IDS_MemoryAnalyzerdominatorsTooltip            "View all objects along with the objects they are retaining"
+	IDS_MemoryAnalyzerObjectIdNotFound             "Couldn't find object ID ""%d"" in snapshot"
+	IDS_MemoryAnalyzerEnterKey                     "Enter"
+	IDS_MemoryAnalyzerUnableToViewSource           "Source navigation failed because the requested file, line and/or column number could not be found."
+	IDS_MemoryAnalyzerViewSourceLabel              "View source"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerShowNonMatchingReferences    "Show non-matching references"
+	IDS_MemoryAnalyzerFoldObjectsByDominator       "Fold objects by dominator"
+	IDS_MemoryAnalyzerHasDetachedDomNodeChildrenTooltip "This object is retaining a detached DOM node"
+	IDS_MemoryAnalyzerDetachedDomNodeRetainingTypeObjectTooltip "An object of this type retains an object which is not attached to the DOM"
+	IDS_MemoryAnalyzerCircularReferenceMarker      "*"
+	IDS_MemoryAnalyzerCircularReferenceMessage     "(reference is circular)"
+	IDS_MemoryAnalyzerFoldInObjectsByDominatorTooltip "Fold in objects by dominator"
+	IDS_MemoryAnalyzerPotentialIssuesTooltip       "View details of {0} potential issues" // placeholder 0 is replaced with a number
+	IDS_MemoryAnalyzerF12OpenSessionButtonTooltip  "Import profiling session (Ctrl+O)"
+	IDS_MemoryAnalyzerF12SaveSessionButtonTooltip  "Export profiling session (Ctrl+S)"
+	IDS_MemoryAnalyzerOpenSessionFailedMessage     "The imported session doesn't contain any valid JavaScript memory snapshots. Please try another file."
+	IDS_MemoryAnalyzerSaveSessionFailedMessage     "An error occurred while exporting the profiling session. Please try again."
+	IDS_MemoryAnalyzerIdentifierFilter             "Identifier filter"
+	IDS_MemoryAnalyzerProcessingSnapshotCompleted  "Snapshot processing completed"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_MemoryAnalyzerShowInDomExplorerLabel       "Show in DOM Explorer"
+	IDS_MemoryAnalyzerViewSnapshotDetails          "View snapshot details"
+	IDS_MemoryAnalyzerCompareToEllipsis            "Compare to..."
+	IDS_MemoryAnalyzerUserMarkTooltip              "Indicates calls to the performance.mark() or console.timeStamp() methods"
+	IDS_MemoryAnalyzerLoading                      "Heap snapshot in progress..."
+	IDS_MemoryAnalyzerWarningIncompatibleStandardsModeF12 "This tool only supports document modes 10 or higher. Change your document mode to Edge mode to enable this tool."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerAFG_Legend                   "Frames per second"
+	IDS_VisualProfilerAFG_Title                    "Visual throughput"
+	IDS_VisualProfilerAFG_Unit                     "FPS"
+	IDS_VisualProfilerAnalyzeDataStatus            "Analyzing the collected data:"
+	IDS_VisualProfilerCPUChartTitle                "CPU utilization (%)"
+	IDS_VisualProfilerCPUTooltipCategoryLabel      "Category"
+	IDS_VisualProfilerCPUTooltipUtilizationLabel   "Utilization"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerDurationLabelInclusive       "Duration (inclusive): {0}" // placeholder 0 is replaced with a string containing the number of ms
+	IDS_VisualProfilerGC_Category                  "GC" // Used in the legend & in the tooltips for the CPU graph
+	IDS_VisualProfilerGCLegendTooltip              "Indicates time spent collecting memory for objects that are no longer in use"
+	IDS_VisualProfilerGenericDataProcessingError   "An error occurred while processing the collected data. The error code is: {0}." // placeholder 0 is replaced with a number that the product team or CSS can use to help diagnose the issue
+	IDS_VisualProfilerHubGraphHeapLegend           "Process memory usage (private bytes)"
+	IDS_VisualProfilerHubTimelineCPUDescription    "Shows HTML/JavaScript CPU breakdown"
+	IDS_VisualProfilerHubTimelineCPUTitle          "HTML/JavaScript CPU graph"
+	IDS_VisualProfilerHubToolDescription           "Examine where time is spent in your website or application"
+	IDS_VisualProfilerHubToolName                  "HTML UI Responsiveness"
+	IDS_VisualProfilerImageDecoding_Category       "Image decoding" // Used in the legend & in the tooltips for the CPU graph
+	IDS_VisualProfilerImageDecodingLegendTooltip   "Indicates time spent decompressing and decoding images"
+	IDS_VisualProfilerRulerLifecycleMarkLabel      "App lifecycle mark"
+	IDS_VisualProfilerRulerUserMarkLabel           "User mark"
+	IDS_VisualProfilerLoading_Category             "Loading" // Used in the legend & in the tooltips for the CPU graph
+	IDS_VisualProfilerLoadingLegendTooltip         "Indicates time spent retrieving app resources and parsing HTML and CSS. This can include network requests"
+	IDS_VisualProfilerMillisecondsAbbreviation     "ms"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerRendering_Category           "Rendering" // Used in the legend & in the tooltips for the CPU graph
+	IDS_VisualProfilerRenderingLegendTooltip       "Indicates time spent in painting the screen"
+	IDS_VisualProfilerRuler_LifeCycleEvents        "App lifecycle event"
+	IDS_VisualProfilerRuler_UserMarks              "User mark"
+	IDS_VisualProfilerRulerMarkLabel               "A ruler mark indicating the occurrence of the following events: {0}" // placeholder 0 is replaced with the tooltip content of the ruler mark(s)
+	IDS_VisualProfilerScripting_Category           "Scripting" // Used in the legend & in the tooltips for the CPU graph
+	IDS_VisualProfilerScriptingLegendTooltip       "Indicates time spent parsing and executing JavaScript. This includes DOM events, timers, script evaluation, and animation frame callbacks"
+	IDS_VisualProfilerSecondsAbbreviation          "s"
+	IDS_VisualProfilerStartTimeLabel               "Start time: {0}" // placeholder 0 is replaced with a string containing the number of ms
+	IDS_VisualProfilerStyling_Category             "Styling" // Used in the legend & in the tooltips for the CPU graph
+	IDS_VisualProfilerStylingLegendTooltip         "Indicates time spent calculating element presentation and layout"
+	IDS_VisualProfilerTimelineLabel                "Timeline details"
+	IDS_VisualProfilerTimelineSortDuration         "Duration (inclusive)"
+	IDS_VisualProfilerTimelineSortLabel            "Sort by:"
+	IDS_VisualProfilerTimelineSortStartTime        "Start time"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerUnknown_Category             "Other" // Used in the legend & in the tooltips for the CPU graph
+	IDS_VisualProfilerUnknownLegendTooltip         "Indicates uncategorized work on known threads"
+	IDS_VisualProfilerRulerTitle                   "Diagnostic session"
+	IDS_VisualProfilerToolbarButtonClearSelection  "Clear selection"
+	IDS_VisualProfilerToolbarButtonResetZoom       "Reset zoom"
+	IDS_VisualProfilerToolbarButtonZoomIn          "Zoom in"
+	IDS_VisualProfilerAddressNameLabel             "Address name"
+	IDS_VisualProfilerAtTargetEventPhaseLabel      "At target"
+	IDS_VisualProfilerBubblingEventPhaseLabel      "Bubbling"
+	IDS_VisualProfilerCapturingEventPhaseLabel     "Capturing"
+	IDS_VisualProfilerDefaultPreventedLabel        "Default prevented"
+	IDS_VisualProfilerEventNameLabel               "Event name"
+	IDS_VisualProfilerEventPhaseLabel              "Event phase"
+	IDS_VisualProfilerImageDecodedLabel            "Image decoded"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerListenerUsesCaptureLabel     "Listener uses capture"
+	IDS_VisualProfilerNoLabel                      "No"
+	IDS_VisualProfilerPropagationStoppedLabel      "Propagation stopped"
+	IDS_VisualProfilerScriptUrlLabel               "Script URL"
+	IDS_VisualProfilerStatusCodeLabel              "Status code"
+	IDS_VisualProfilerYesLabel                     "Yes"
+	IDS_VisualProfilerTimerTypeLabel               "Timer type"
+	IDS_VisualProfilerCssParsingEventDescription   "New CSS content was encountered that needed to be parsed."
+	IDS_VisualProfilerEvaluatingScriptEventDescription "A new <script> element was encountered in the DOM and needed to be parsed and executed."
+	IDS_VisualProfilerHttpRequestEventDescription  "A remote resource was encountered in the DOM or an XMLHttpRequest was created that required an HTTP request to be made."
+	IDS_VisualProfilerImageDecodedEventDescription "An image was included into the DOM and needed be to decompressed from its original format into a bitmap."
+	IDS_VisualProfilerPaintEventDescription        "Visual changes were made to the DOM that required all affected portions of the page to be redrawn."
+	IDS_VisualProfilerTimerFiredEventDescription   "A scheduled timer elapsed which resulted in the execution of its associated callback."
+	IDS_VisualProfilerCssCalculation               "Style calculation" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerCssParsing                   "CSS parsing" // This resource name is referenced in Timeline.Intervals.xml.
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerDomEvent                     "DOM event" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerEvaluatingScript             "Script evaluation" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerEventHandler                 "Event listener" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerGarbageCollection            "Garbage collection" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerHtmlParsing                  "HTML parsing" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerHttpRequest                  "HTTP request" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerImageDecoded                 "Image decoding" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerLayout                       "Layout" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerPaint                        "Paint" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerTimerFired                   "Timer" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerMillisecondsLabel            "milliseconds"
+	IDS_VisualProfilerMinutesLabel                 "minutes"
+	IDS_VisualProfilerRulerMarkTooltipLabel        " at {0}" // placeholder 0 is replaced with the formatted time the mark fired.
+	IDS_VisualProfilerSecondsLabel                 "seconds"
+	IDS_VisualProfilerMinutesAbbreviation          "min"
+	IDS_VisualProfilerAlignedBeat                  "Frame" // This resource name is referenced in Timeline.Intervals.xml.
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerAnimationFrame               "Animation frame callback" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerHtmlSpeculativeDownloading   "Speculative downloading" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerWindowsRuntimeEvent          "Windows Runtime event" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerWindowsRuntimeAsyncCallback  "Windows Runtime async callback" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerEventHeaderLabel             "Event name"
+	IDS_VisualProfilerThreadContextLabel           "Thread: {0}" // placeholder 0 is replaced with the threadId
+	IDS_VisualProfilerUIThreadContext              "UI thread"
+	IDS_VisualProfilerRenderLayer                  "Render layer" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerCPUBarAriaLabel              "{0} utilized {1}% of CPU time at {2}" // placeholder 0 is replaced with the category, placeholder 1 is replaced with the percentage of time spent, and placeholder 2 is replaced with the formatted time
+	IDS_VisualProfilerCPUGraphAriaLabel            "A bar graph representing the CPU utilization of the application. Press the right and left arrows to navigate."
+	IDS_VisualProfilerVisualThroughputGraphAriaLabel "A step line graph representing the visual throughput, reported in frames per second, of the application. Press the right and left arrows to navigate."
+	IDS_VisualProfilerVisualThroughputStepAriaLabel "{0} FPS at {1}" // placeholder 0 is the fps value, and placeholder 1 is the formatted time
+	IDS_VisualProfilerEventsTimelineAriaLabel      "A scrollable Gantt chart displaying the sequence of events that occurred within the current time selection. Press the up and down arrows to navigate."
+	IDS_VisualProfilerEventsTimelineEventAriaLabel "{0} event with start time at {1} and duration {2}" // placeholder 0 is replaced with the event name, placeholder 1 is replaced with start time, placeholder 2 is replaced with duration
+	IDS_VisualProfilerRulerAriaLabel               "Ruler has minimum value of {0} and maximum value of {1}" // placeholder 0 and placeholder 1 are time with units
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerRulerLeftSliderAriaLabel     "Left slider"
+	IDS_VisualProfilerRulerRightSliderAriaLabel    "Right slider"
+	IDS_VisualProfilerRulerSliderAriaValueText     "Current value is {0}. Minimum value is {1}. Maximum value is {2}." // placeholder 0, placeholder 1 and placeholder 2 are time with units
+	IDS_VisualProfilerImageUrlLabel                "Image URL"
+	IDS_VisualProfilerDurationLabelExclusive       "Duration (exclusive): {0}" // placeholder 0 is replaced with a string containing the number of ms
+	IDS_VisualProfilerAlignedBeatEventDescription  "Pending visual changes that were made to the DOM were processed so that the app's display could be updated."
+	IDS_VisualProfilerAnimationFrameEventDescription "While a new frame was being prepared a registered callback was triggered so that it could contribute visual changes."
+	IDS_VisualProfilerCssCalculationEventDescription "Changes were made to the DOM or new CSS content was added, requiring the style properties of all affected elements to be recalculated."
+	IDS_VisualProfilerDomEventDescription          "An event was fired on a DOM object."
+	IDS_VisualProfilerEventHandlerEventDescription "A registered event listener was triggered in response to a DOM event being fired."
+	IDS_VisualProfilerGarbageCollectionEventDescription "The JavaScript runtime audited the app's current memory usage in order to determine which objects aren't being referenced anymore and could therefore be collected."
+	IDS_VisualProfilerHtmlParsingEventDescription  "New HTML content was encountered that needed to be parsed into nodes and inserted into the DOM."
+	IDS_VisualProfilerHtmlSpeculativeDownloadingEventDescription "The page's HTML content was being searched for required resources so that the HTTP requests for them could be scheduled as quickly as possible."
+	IDS_VisualProfilerLayoutEventDescription       "Changes were made to the DOM that required the size and/or position of all affected elements to be computed."
+	IDS_VisualProfilerWindowsRuntimeEventDescription "An event was fired on a Windows Runtime object which triggered a registered listener."
+	IDS_VisualProfilerWindowsRuntimeAsyncCallbackDescription "An async operation was completed by a Windows Runtime object which triggered a Promise callback."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerGraphCollapseAriaLabel       "Press enter to collapse graph."
+	IDS_VisualProfilerGraphExpandAriaLabel         "Press enter to expand graph."
+	IDS_VisualProfilerOriginLabel                  "Origin"
+	IDS_VisualProfilerDimensionsLabel              "Dimensions"
+	IDS_VisualProfilerInlineScriptLabel            "Inline"
+	IDS_VisualProfilerScriptContentPreviewLabel    "Content preview"
+	IDS_VisualProfilerRenderLayoutEventDescription "Visual changes were made to an independently rendered fragment of the DOM (called a layer) which required its respective portion of the page to be redrawn."
+#if BETA
+	IDS_VisualProfilerF12ToolTitle                 "UI Responsiveness"
+#endif
+	IDS_VisualProfilerTASK_DoEnReNo                "(force layout)"
+	IDS_VisualProfilerTASK_DoInsElm                "(insert element)"
+	IDS_VisualProfilerDDTrackDomSet                "set {0}" // placeholder 0 is replaced with the DOM property being set. E.g., set innerHTML
+	IDS_VisualProfilerTASK_Fi                      "(style change detected)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerTASK_FiCmpFmt                "(style computation)"
+	IDS_VisualProfilerUnknownTask                  "(unknown task)"
+	IDS_VisualProfilerTASK_TableBox                "generated parent for display:table" // display:table is code and should not be translated
+	IDS_VisualProfilerTASK_SvgCssBox               "generated root container for SVG content"
+	IDS_VisualProfilerTASK_PageFrame               "page of paginated flow"
+	IDS_VisualProfilerTASK_DocumentResize          "document resize"
+	IDS_VisualProfilerTASK_TextBlock               "text block"
+	IDS_VisualProfilerTASK_LineBox                 "text line"
+	IDS_VisualProfilerUnknownElement               "unknown"
+	IDS_VisualProfilerDDTrackerStyleChangeDescription "The CSS styles affecting this element were updated, requiring a cascade recalculation for this element."
+	IDS_VisualProfilerDDTrackerStyleComputationDescription "Changes were made to the DOM or new CSS content was added, requiring the style properties of an affected element to be recalculated."
+	IDS_VisualProfilerDDTrackerDOMDescription      "Script invoked, accessed or set a DOM property or method, thereby triggering work in the layout engine."
+	IDS_VisualProfilerDDTrackerLayoutDescription   "Changes in the display tree required the size and/or position for this element to be computed."
+	IDS_VisualProfilerDDTrackerStyleComputationDetailHeader "Element style calculation"
+	IDS_VisualProfilerDDTrackerStyleChangeDetailHeader "Element style update"
+	IDS_VisualProfilerDDTrackerDomDetailHeader     "DOM access - {0}" // placeholder 0 is replaced with the type of access, eg clientHeight, set innerHTML, etc
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerDDTrackerLayoutDetailHeader  "Element layout"
+	IDS_VisualProfilerDDTrackerElementLabel        "Element" // Label for an html element (eg html,head,body,div, etc)
+	IDS_VisualProfilerInclusiveTimeDetailsHeader   "Inclusive time summary:" // Inclusive time details breakdown
+	IDS_VisualProfilerUnknownTimerType             "Unknown timer"
+	IDS_VisualProfilerAnimationFrameTimerTypeLabel "Animation frame timer"
+	IDS_VisualProfilerMethodNameLabel              "Name"
+	IDS_VisualProfilerSourceLocationLabel          "Source location"
+	IDS_VisualProfilerImmediatePropagationStoppedLabel "Immediate propagation stopped"
+	IDS_VisualProfilerEventTargetLabel             "Event target"
+	IDS_VisualProfilerSourceLocationLink           "{0} ({1},{2})"
+	IDS_VisualProfilerInclusiveTimeAriaLabel       "A donut chart that displays which event types consumed the highest percentage of CPU time on the UI thread."
+	IDS_VisualProfilerDonutSectorAriaLabel         "{0} event took {1} percent of total CPU time and executed for {2}." // placeholder 0 is the event name, placeholder 1 is the percent value of the event and placeholder 2 is the total exclusive time took to execute that event.
+	IDS_VisualProfilerDOMAccessEvent               "DOM access"
+	IDS_VisualProfilerAccessTypeLabel              "Access type"
+	IDS_VisualProfilerTargetElementLabel           "Target element"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerDroppedEventsWarning         "Due to the target machine being overloaded at the time of collection, some performance data was lost. Information may be incomplete, inaccurate, or out of order."
+	IDS_VisualProfilerStylesheetUrlLabel           "Stylesheet URL"
+	IDS_VisualProfilerInlineStylesheetLabel        "Inline"
+	IDS_VisualProfilerInclusiveTimeSVGLabelString  "{0}%" // placeholder 0 is the percent value of the Inclusive time summary's donut chart sector.
+	IDS_VisualProfilerTimeoutLabel                 "Delay"
+#if BETA
+	IDS_VisualProfilerVisualProfilerTooltip        "UI Responsiveness {0}" // The id must link up with the manifest file for the profiler tool. placeholder 0 is a keyboard shortcut, like (Ctrl+1)
+#endif
+	IDS_VisualProfilerDOMAccessEventHeader         "DOM access ({0})" // placeholder 0 is the type of the dom access, ie "set innerHTML" or "document.createElement()" etc
+	IDS_VisualProfilerDurationLabel                "Duration"
+	IDS_VisualProfilerWarningIncompatibleStandardsModeVS "This tool only supports (1) Windows Store 8.1 apps running on Windows 8.1, (2) Windows Store 8.0 apps running on Windows 8.1, and (3) Internet Explorer 11 or higher running in document modes 10 or higher. Information may be missing from the data collected."
+	IDS_VisualProfilerNavigation                   "Navigation ({0})" // placeholder 0 is the URL that was navigated to.
+	IDS_VisualProfilerUnableToNavigateToSource     "Source navigation failed because the requested file, line and/or column number could not be found."
+	IDS_VisualProfilerLayoutModeLabel              "Layout mode"
+	IDS_VisualProfilerLifecycleMarkTooltip         "Indicates fundamental events during app lifetime"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerVisualProfilerDisabledAtBreakpoint "Profiling is disabled when paused at a breakpoint. You must stop debugging to enable profiling."
+	IDS_VisualProfilerRulerAggregatedMarks         "Merged mark"
+	IDS_VisualProfilerSwimlaneCollapseAriaLabel    "Press enter to collapse graph."
+	IDS_VisualProfilerSwimlaneExpandAriaLabel      "Press enter to expand graph."
+	IDS_VisualProfilerClearSelectionContextMenu    "Clear filter"
+	IDS_VisualProfilerFilterToEventContextMenu     "Filter to event"
+	IDS_VisualProfilerDDTrackerSetStyleContextName "style.{0} = ""{1}""" // placeholder 0 is the style property and 1 is new value for the property
+	IDS_VisualProfilerViewSourceLabel              "View source"
+	IDS_VisualProfilerEnterKey                     "Enter"
+	IDS_VisualProfilerSourceInfoFileLabel          "File:"
+	IDS_VisualProfilerSourceInfoLineLabel          "Line:"
+	IDS_VisualProfilerSourceInfoColumnLabel        "Column:"
+	IDS_VisualProfilerSourceInfoEventLabel         "Event:"
+	IDS_VisualProfilerFilteringMenuButtonTooltipText "Configure the events displayed on the timeline"
+	IDS_VisualProfilerFilterBackgroundActivities   "Background activity"
+	IDS_VisualProfilerFilterNetworkActivities      "Network traffic"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerCallbackFunction             "Callback function"
+	IDS_VisualProfilerProfileJustMyCode            "Profile just my code (Ctrl+J)"
+	IDS_VisualProfilerProfileAllCode               "Profile all code (Ctrl+J)"
+	IDS_VisualProfilerRenderThread                 "Render thread"
+	IDS_VisualProfilerDownloadThread               "Download thread"
+	IDS_VisualProfilerFilterNegligibleUIActivities "Negligible UI activity (<{0})" // placeholder 0 is the time, like 1ms
+	IDS_VisualProfilerFormatting                   "Formatting"
+	IDS_VisualProfilerElementFormatting            "Element formatting"
+	IDS_VisualProfilerTooltipTimeLabel             "Time"
+	IDS_VisualProfilerTooltipValueLabel            "Value"
+	IDS_VisualProfilerF12StartButtonTooltip        "Start profiling session (Ctrl+E)"
+	IDS_VisualProfilerF12StopButtonTooltip         "Stop profiling session (Ctrl+E)"
+	IDS_VisualProfilerF12StartProfilingMessage     "Start profiling to begin a performance session (Ctrl+E)"
+	IDS_VisualProfilerF12StopProfilingMessage      "Stop profiling to generate a report (Ctrl+E)"
+	IDS_VisualProfilerImmediateTimerTypeLabel      "Immediate"
+	IDS_VisualProfilerIntervalTimerTypeLabel       "Interval"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerTimelineSortTooltip          "Sort events either by duration or start time"
+	IDS_VisualProfilerTimeoutTimerTypeLabel        "Timeout"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerFilterMeasures               "User measures"
+	IDS_VisualProfilerMeasure                      "User measure"
+	IDS_VisualProfilerMeasureDescription           "An app-specific scenario was measured using the performance.measure() method."
+	IDS_VisualProfilerMeasureName                  "Name"
+	IDS_VisualProfilerStartMarkName                "Start mark"
+	IDS_VisualProfilerEndMarkName                  "End mark"
+	IDS_VisualProfilerFrame                        "Frame"
+	IDS_VisualProfilerFilterFrames                 "Frames"
+	IDS_VisualProfilerMillisecondsSelectedLabel    "milliseconds selected"
+	IDS_VisualProfilerSecondsSelectedLabel         "seconds selected"
+	IDS_VisualProfilerMinutesSelectedLabel         "minutes selected"
+	IDS_VisualProfilerEventNameFilterPlaceholder   "Event name filter"
+	IDS_VisualProfilerEventNameFilterTooltip       "Filter the top-level events by name or type"
+	IDS_VisualProfilerMediaQueryListener           "Media query listener" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerMediaQueryListenerEventDescription "A registered media query was invalidated which resulted in the execution of its associated listener(s)."
+	IDS_VisualProfilerMediaQueryLabel              "Media query"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerMutationObserver             "Mutation observer" // This resource name is referenced in Timeline.Intervals.xml.
+	IDS_VisualProfilerMutationObserverEventDescription "One or more observed DOM elements were modified which resulted in the execution of a MutationObserver's associated callback."
+	IDS_VisualProfilerFilterEvents                 "Filter events"
+	IDS_VisualProfilerFrameGroupingTooltip         "Group top level events by frames"
+	IDS_VisualProfilerF12OpenSessionButtonTooltip  "Import profiling session (Ctrl+O)"
+	IDS_VisualProfilerF12SaveSessionButtonTooltip  "Export profiling session (Ctrl+S)"
+	IDS_VisualProfilerOpenSessionFailedMessage     "The imported session doesn't include any valid performance data. Please try another file."
+	IDS_VisualProfilerSaveSessionFailedMessage     "An error occurred while exporting the profiling session. Please try again."
+	IDS_VisualProfilerFilterUIActivities           "UI activity"
+	IDS_VisualProfilerWrongDataSource              "The underlying data is not in the proper format"
+	IDS_VisualProfilerDurationFilterAll            "Event duration: All"
+	IDS_VisualProfilerDurationFilterTimed          "Event duration: >{0}" // placeholder 0 is the time threshold that is used for the filter (e.g. 1ms)
+	IDS_VisualProfilerDurationFilterTooltip        "Filters top-level events by their inclusive duration"
+	IDS_VisualProfilerBackgroundActivityFilterTooltip "Show events which occurred on a background thread (e.g. Image decoding, GC)"
+	IDS_VisualProfilerNetworkTrafficFilterTooltip  "Show HTTP requests which were network-bound"
+	IDS_VisualProfilerUIActivityFilterTooltip      "Show events which occurred on the UI thread and/or render thread (e.g. DOM event handlers, Layout)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerUserMeasuresFilterTooltip    "Show custom events which indicate calls to the performance.measure() method"
+	IDS_VisualProfilerSectorTooltipFormat          "{0}: {1}% ({2})" // placeholder 0 is the name of the Event, placeholder 1 is the percent value and placeholder 2 is the timestamp of the event.
+	IDS_VisualProfilerIdle                         "Idle"
+	IDS_VisualProfilerSelectionDurationLabel       "Selection duration: {0}" // placeholder 0 is replaced with a string-formatted duration (e.g.:  123 ms)
+	IDS_VisualProfilerUIThreadSummaryHeader        "UI thread summary:"
+	IDS_VisualProfilerImagePreviewHeader           "Image preview ({0}x{1}):" // placeholder 0 is the width of the image being displayed, and placeholder 1 is the height
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerCPUTooltipTimeLabel          "Time"
+	IDS_VisualProfilerFilterImageDecoding          "Image decoding"
+	IDS_VisualProfilerShowInDomExplorerLabel       "Show in DOM Explorer"
+	IDS_VisualProfilerUserMarkTooltip              "Indicates calls to the performance.mark() or console.timeStamp() methods"
+	IDS_VisualProfilerWarningIncompatibleStandardsModeF12 "This tool only supports document modes 10 or higher; therefore, information may be missing from the session. To improve accuracy, change your document mode to Edge and start a new session."
+	IDS_VisualProfilerImageDecodingThread          "Image decoding thread"
+	IDS_VisualProfilerAsyncStackLabel              "Scheduling call stack:"
+	IDS_VisualProfilerAsyncStackTransition         "[Async call]"
+	IDS_VisualProfilerTimelineTabLabel             "Timeline"
+	IDS_VisualProfilerTimelineTabTooltip           "View the holistic sequence of activities that occurred within the current time selection"
+	IDS_VisualProfilerJavaScriptCallStacksTabLabel "JavaScript call stacks"
+	IDS_VisualProfilerJavaScriptCallStacksTabTooltip "View the JavaScript call stacks that were sampled within the current time selection"
+	IDS_VisualProfilerCpuUsageTreeGrid_ContextMenu_Copy "Copy"
+	IDS_VisualProfilerCpuUsageTreeGrid_ContextMenu_ViewSource "View source"
+	IDS_VisualProfilerCpuUsageTreeGrid_FunctionNameHeader "Function name"
+	IDS_VisualProfilerCpuUsageTreeGrid_FunctionNameTooltip "Function name"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerCpuUsageTreeGrid_ModuleHeader "URL"
+	IDS_VisualProfilerCpuUsageTreeGrid_ModuleTooltip "URL(s) where stack frame occurred"
+	IDS_VisualProfilerCpuUsageTreeGrid_PercentageTooltip "{0} of selected CPU activity ({1} sample(s) out of {2})"
+	IDS_VisualProfilerCpuUsageTreeGrid_SamplesTooltip "{0} ms of CPU time ({1} sample(s) at 1 sample/ms)"
+	IDS_VisualProfilerCpuUsageTreeGrid_SelfSamplesHeader "Exclusive CPU (ms)"
+	IDS_VisualProfilerCpuUsageTreeGrid_SelfSamplesHeaderTooltip "CPU time spent executing code in this function, excluding time in functions called by this function"
+	IDS_VisualProfilerCpuUsageTreeGrid_SelfSamplesPercentHeader "Exclusive CPU (%)"
+	IDS_VisualProfilerCpuUsageTreeGrid_SelfSamplesPercentHeaderTooltip "Percentage of selected CPU activity in this function, excluding activity in functions called by this function"
+	IDS_VisualProfilerCpuUsageTreeGrid_TotalSamplesHeader "Inclusive CPU (ms)"
+	IDS_VisualProfilerCpuUsageTreeGrid_TotalSamplesHeaderTooltip "CPU time spent executing code in this function and in functions called by this function"
+	IDS_VisualProfilerCpuUsageTreeGrid_TotalSamplesPercentHeader "Inclusive CPU (%)"
+	IDS_VisualProfilerCpuUsageTreeGrid_TotalSamplesPercentHeaderTooltip "Percentage of selected CPU activity in this function and in functions called by this function"
+	IDS_VisualProfilerErrMsg_InvalidRegularExpression "The supplied regular expression for searching is invalid."
+	IDS_VisualProfilerLoadDataProgressMessage      "Analyzing..."
+	IDS_VisualProfilerMessage_SearchNoMatches      "Could not find any matches."
+	IDS_VisualProfilerMessage_SearchStartFromTop   "Reached the end of the document. Do you want to restart the search from the beginning?"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_VisualProfilerMultipleModuleLabel          "{0} modules"
+	IDS_VisualProfilerSampleCountLabel             "Sample count: "
+	IDS_VisualProfilerSamplePercentOfProcessLabel  "Sample % of process: "
+	IDS_VisualProfilerSearchProgressMessage        "Searching..."
+	IDS_VisualProfilerSystemCodeLabel              "[System code]"
+	IDS_VisualProfilerModulePerformanceLabel       "Performance"
+	IDS_VisualProfilerMultiModulePerfLabel         "Performance {0}"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkNetworkTooltip                      "Network {0}" // The id must link up with the manifest file for the network tool. placeholder 0 is a keyboard shortcut, like (Ctrl+1)
+	IDS_NetworkNetworkStartButtonTooltip           "Enable network traffic capturing (F5)"
+	IDS_NetworkNetworkStopButtonTooltip            "Disable network traffic capturing (F5)"
+	IDS_NetworkNetworkImportButtonTooltip          "Read in a HAR file"
+	IDS_NetworkAnalyzeDataStatus                   "Analyzing the collected data:"
+	IDS_NetworkF12StartProfilingMessage            "Start profiling to begin a performance session (Ctrl+E)"
+	IDS_NetworkF12StopProfilingMessage             "Stop profiling to generate a report (Ctrl+E)"
+	IDS_NetworkClearCacheTooltip                   "Clear cache"
+	IDS_NetworkClearCookiesTooltip                 "Clear cookies"
+	IDS_NetworkF12ToolTitle                        "Network"
+	IDS_NetworkClearSessionTooltip                 "Clear session"
+	IDS_NetworkRefreshServerTooltip                "Always refresh from server"
+	IDS_NetworkHeadersTabTitle                     "Headers"
+	IDS_NetworkParametersTabTitle                  "Parameters"
+	IDS_NetworkCookiesTabTitle                     "Cookies"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkBodyTabTitle                        "Body"
+	IDS_NetworkName                                "Name"
+	IDS_NetworkDimensions                          "Dimensions"
+	IDS_NetworkContentSize                         "Size"
+	IDS_NetworkUrl                                 "URL"
+	IDS_NetworkDimensionsFormat                    "{0} x {1}" // Represents the dimensions of an image. {0} is number of horizontal pixels. {1} is number of vertical pixels.
+	IDS_NetworkClearOnNavigateTooltip              "Clear entries on navigate"
+	IDS_NetworkCacheHitAnnotation                  "(from cache)"
+	IDS_NetworkStalledLabel                        "Stalled"
+	IDS_NetworkProxyLabel                          "Proxy"
+	IDS_NetworkResolvingLabel                      "Resolving (DNS)"
+	IDS_NetworkConnectingLabel                     "Connecting (TCP)"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkSslLabel                            "SSL"
+	IDS_NetworkSendingLabel                        "Sending"
+	IDS_NetworkWaitingLabel                        "Waiting (TTFB)"
+	IDS_NetworkDownloadingLabel                    "Downloading"
+	IDS_NetworkTimingCacheHitMessage               "This resource was loaded from the cache and it was not affected by network latency"
+	IDS_NetworkTimingEmbeddedResourceMessage       "This resource was embedded in a document and it was not directly affected by network latency"
+	IDS_NetworkTimingRedirectedCacheHitMessage     "The resource requested after redirection was loaded from cache and it was not affected by network latency"
+	IDS_NetworkRedirectedFromLabel                 "Redirected from"
+	IDS_NetworkRedirectedToLabel                   "Redirected to"
+	IDS_NetworkTimingsTabTitle                     "Timings"
+	IDS_NetworkResourceNoHeader                    "This resource has no header data"
+	IDS_NetworkResourceNoBody                      "This resource has no payload data"
+	IDS_NetworkResourceNoCookies                   "This resource has no cookies"
+	IDS_NetworkResourceNoParameters                "This resource has no query string parameters"
+	IDS_NetworkResourceNoTiming                    "This resource has no timing data"
+	IDS_NetworkResourceNothingSelected             "No resource is selected"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkMillisecondsAbbreviation            "ms"
+	IDS_NetworkSecondsAbbreviation                 "s"
+	IDS_NetworkURLHeaderTooltip                    "File name and URL path of resource"
+	IDS_NetworkMethodHeaderLabel                   "Method"
+	IDS_NetworkMethodHeaderTooltip                 "HTTP method used for the request"
+	IDS_NetworkStatusCodeHeaderLabel               "Result"
+	IDS_NetworkStatusCodeHeaderSubLabel            "Description"
+	IDS_NetworkStatusCodeHeaderTooltip             "HTTP status code"
+	IDS_NetworkContentTypeHeaderTooltip            "Request type"
+	IDS_NetworkTransferSizeHeaderLabel             "Size"
+	IDS_NetworkTransferSizeHeaderTooltip           "Total size of the headers and payloads as delivered by the server"
+	IDS_NetworkTotalTimeHeaderLabel                "Time"
+	IDS_NetworkInitiatorHeaderLabel                "Initiator"
+	IDS_NetworkInitiatorHeaderSubLabel             "Type"
+	IDS_NetworkInitiatorHeaderTooltip              "Subsystem responsible for initiating the request"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkContentTypeAll                      "All"
+	IDS_NetworkContentTypeFilterAllTooltip         "All"
+	IDS_NetworkContentTypeDocuments                "Documents"
+	IDS_NetworkContentTypeFilterDocumentsTooltip   "Documents"
+	IDS_NetworkContentTypeStylesheets              "Style sheets"
+	IDS_NetworkContentTypeFilterStylesheetsTooltip "Style sheets"
+	IDS_NetworkContentTypeImages                   "Images"
+	IDS_NetworkContentTypeFilterImagesTooltip      "Images"
+	IDS_NetworkContentTypeScripts                  "Scripts"
+	IDS_NetworkContentTypeFilterScriptsTooltip     "Scripts"
+	IDS_NetworkContentTypeXHR                      "XHR"
+	IDS_NetworkContentTypeFilterXHRTooltip         "XHR"
+	IDS_NetworkContentTypeFonts                    "Fonts"
+	IDS_NetworkContentTypeFilterFontsTooltip       "Fonts"
+	IDS_NetworkContentTypeOther                    "Other"
+	IDS_NetworkContentTypeFilterOtherTooltip       "Other"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkFilterContentType                   "Content type"
+	IDS_NetworkFilterContentTypeMenuButtonTooltipText "Content type filter"
+	IDS_NetworkContentTypeTrafficFilter            "Traffic filter"
+	IDS_NetworkContentTypeFilterTrafficFilterTooltip "Traffic filter"
+	IDS_NetworkContentTypeMedia                    "Media"
+	IDS_NetworkContentTypeFilterMediaTooltip       "Media"
+	IDS_NetworkContentTypeWebSockets               "WebSockets"
+	IDS_NetworkContentTypeFilterWebSocketsTooltip  "WebSockets"
+	IDS_NetworkContentTypeTextTracks               "TextTracks"
+	IDS_NetworkContentTypeFilterTextTracksTooltip  "TextTracks"
+	IDS_NetworkInitiatorOtherLabel                 "Other"
+	IDS_NetworkClearDomainCacheTooltip             "Clear domain cache"
+	IDS_NetworkClearDomainCookieTooltip            "Clear domain cookies"
+	IDS_NetworkImportSessionTooltip                "Import profiling session (Ctrl+O)"
+	IDS_NetworkExportSessionTooltip                "Export profiling session (Ctrl+S)"
+	IDS_NetworkOpenInNewTabContextMenu             "Open in new tab"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkCopyURLContextMenu                  "Copy URL"
+	IDS_NetworkCopyRequestHeaderContextMenu        "Copy request headers"
+	IDS_NetworkCopyResponseHeaderContextMenu       "Copy response headers"
+	IDS_NetworkCopyRequestPayloadContextMenu       "Copy request payload"
+	IDS_NetworkCopyResponsePayloadContextMenu      "Copy response payload"
+	IDS_NetworkReplayXHRContextMenu                "Replay XHR"
+	IDS_NetworkCopyAsCurlContextMenu               "Copy as cURL"
+	IDS_NetworkCopyAsPowerShellContextMenu         "Copy as PowerShell"
+	IDS_NetworkCopyAsHarContextMenu                "Copy all as HAR"
+	IDS_NetworkSummaryBarRequestLabel              "request"
+	IDS_NetworkSummaryBarRequestsLabel             "requests"
+	IDS_NetworkSummaryBarErrorLabel                "error"
+	IDS_NetworkSummaryBarErrorsLabel               "errors"
+	IDS_NetworkStalledTooltip                      "Time spent waiting for a socket to become available so that the request could be sent"
+	IDS_NetworkProxyTooltip                        "Time spent negotiating the connection with a proxy server"
+	IDS_NetworkResolvingTooltip                    "Time spent resolving the IP address for this request's domain"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkConnectingTooltip                   "Time spent completing the TCP handshake and negotiating SSL if required"
+	IDS_NetworkSSLTooltip                          "Time spent completing the SSL handshake"
+	IDS_NetworkSendingTooltip                      "Time spent issuing the request to the server"
+	IDS_NetworkWaitingTooltip                      "Time spent waiting for the initial response from the server"
+	IDS_NetworkDownloadingTooltip                  "Time spent downloading the response from the server"
+	IDS_NetworkWaterfallEventMarkerTooltip         "{0} event marker" // Represents the marker for the page event. {0} could either be the Load or DOMContentLoaded event.
+	IDS_NetworkWaterfallEventMarkerWithTimeTooltip "{0} at {1}" // Represents the marker for the page event as well as when did it happen. {0} could either be the Load or DOMContentLoaded event and {1} is the time when it happen (e.g. 4.34s).
+	IDS_NetworkInitiatorParserLabel                "Parser"
+	IDS_NetworkInitiatorRedirectLabel              "Redirect"
+	IDS_NetworkInitiatorScriptLabel                "Script"
+	IDS_NetworkInitiatorHeadersLabel               "Request and response headers"
+	IDS_NetworkInitiatorPayloadLabel               "Request and response content payload"
+	IDS_NetworkQueryStringParamsLabel              "Query string parameters"
+	IDS_NetworkInitiatorCookiesLabel               "Request and response cookies"
+	IDS_NetworkInitiatorTimingsLabel               "Request and response timings"
+	IDS_NetworkCantAccessRequest                   "The request can't be accessed because of the applied content type filter. You must clear the filter in order to navigate to the request."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkTimelineOfEvents                    "Timeline of network events"
+	IDS_NetworkResponseLoadTimeTooltip             "Total time taken to load the response"
+	IDS_NetworkReceivedLabel                       "Received"
+	IDS_NetworkPathLabel                           "Path"
+	IDS_NetworkRequestNameURLTooltip               "Name and URL path of the request"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkStartProfilingTooltip               "Start profiling session (Ctrl+E)"
+	IDS_NetworkStopProfilingTooltip                "Stop profiling session (Ctrl+E)"
+	IDS_NetworkOpenSessionFailedMessage            "The imported session doesn't include any valid performance data. Please try another file."
+	IDS_NetworkSaveSessionFailedMessage            "An error occurred while exporting the profiling session. Please try again."
+	IDS_NetworkPendingLabel                        "(Pending)"
+	IDS_NetworkOutOfLabel                          "{0} out of "
+	IDS_NetworkTransferredLabel                    "{0} transferred"
+	IDS_NetworkTakenLabel                          "{0} taken"
+	IDS_NetworkRequestLabel                        "{0} request"
+	IDS_NetworkRequestsLabel                       "{0} requests"
+	IDS_NetworkErrorLabel                          "{0} error"
+	IDS_NetworkErrorsLabel                         "{0} errors"
+	IDS_NetworkResponseBodyLabel                   "Response body"
+	IDS_NetworkRequestBodyLabel                    "Request body"
+	IDS_NetworkWordWrapButton                      "Word wrap"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkPrettyPrintButtonTooltip            "Pretty print"
+	IDS_NetworkContentType                         "Content type"
+	IDS_NetworkProtocolLabel                       "Protocol"
+	IDS_NetworkProtocolTypeTooltip                 "Type of protocol for the request"
+	IDS_NetworkExportHAR                           "Export as HAR"
+	IDS_NetworkExportHARTooltip                    "Export as HAR (Ctrl+S)"
+	IDS_NetworkResourceNoResponsePayload           "This resource has no response payload data"
+	IDS_NetworkResourceNoRequestPayload            "This resource has no request payload data"
+	IDS_NetworkDOMContentLoadedStats               " (DOMContentLoaded: {0}, load: {1})"
+	IDS_NetworkCopyTooltip                         "Copy (Ctrl+C)"
+	IDS_NetworkCopyValue                           "Copy value"
+	IDS_NetworkRequestCookies                      "Request Cookies"
+	IDS_NetworkResponseCookies                     "Response Cookies"
+	IDS_NetworkTotalSizeOfDeliveredResponse        "Total size of the response as delivered by the server"
+	IDS_NetworkResponseStartTime                   "Start time"
+	IDS_NetworkNetworkCollectionAgentFailedToStart "The network collection agent failed to start."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_NetworkRulerLifecycleMarkLabel             "App lifecycle mark"
+	IDS_NetworkRulerUserMarkLabel                  "User mark"
+	IDS_NetworkRulerRequestHeaders                 "Request Headers"
+	IDS_NetworkRulerResponseHeaders                "Response Headers"
+	IDS_NetworkRulerRequestURL                     "Request URL"
+	IDS_NetworkRulerRequestMethod                  "Request Method"
+	IDS_NetworkRulerStatusCode                     "Status Code"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Commonvs_editor_contrib_quickOpen_gotoLine_gotoLineLabelEmptyWithLineAndColumnLimit "Type a column between 1 and {0} to navigate to"
+	IDS_Commonvs_editor_contrib_quickOpen_gotoLine_gotoLineLabelEmptyWithLineLimit "Type a line number between 1 and {0} to navigate to"
+#if BETA
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_contribution_label "Go to symbol..."
+#endif
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_call "calls ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline__constructor "constructors ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_variable2 "variables ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_variable "variables ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_property "properties ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_function "functions ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_method "methods ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_interface "interfaces ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_class "classes ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_modules "modules ({0})"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_symbols "symbols ({0})"
+#if BETA
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_QuickOutlineAction_label "Go to symbol..."
+#endif
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Commonvs_editor_core_view_viewImpl_editorViewAccessibleLabel "Editor content"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_Commonvs_editor_contrib_quickOpen_gotoLine_gotoLineActionInput "Type a line number, followed by an optional colon and a column number to navigate to"
+	IDS_Commonvs_editor_contrib_quickOpen_quickOutline_quickOutlineActionInput "Type the name of an identifier you wish to navigate to"
+	IDS_Commonvs_editor_contrib_quickOpen_gotoLine_gotoLineLabelValidLine "Go to line {0}"
+	IDS_Commonvs_editor_contrib_quickOpen_gotoLine_gotoLineLabelValidLineAndColumn "Go to line {0} and column {1}"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DiagHubResourcesRulerMarkTooltipLabel      " at {0}" // {0} is replaced with the formatted time the mark fired.
+	IDS_DiagHubResourcesRulerAriaLabel             "Ruler has minimum value of {0} and maximum value of {1}" // {0} and {1} are time with units
+	IDS_DiagHubResourcesRulerLeftSliderAriaLabel   "Left slider"
+	IDS_DiagHubResourcesRulerRightSliderAriaLabel  "Right slider"
+	IDS_DiagHubResourcesRulerSliderAriaValueText   "Current value is {0}. Minimum value is {1}. Maximum value is {2}." // {0}, {1} and {2} are time with units
+	IDS_DiagHubResourcesRulerLifecycleMarkLabel    "App lifecycle mark"
+	IDS_DiagHubResourcesRulerUserMarkLabel         "User mark"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DiagHubResourcesUserMarkTooltip            "Indicates messages logged using the LoggingChannel API"
+	IDS_DiagHubResourcesRulerMarkLabel             "A ruler mark indicating the occurrence of the following events: {0}" // {0} is replaced with the tooltip content of the ruler mark(s)
+	IDS_DiagHubResourcesRulerTitle                 "Diagnostics session"
+	IDS_DiagHubResourcesMillisecondsLabel          "milliseconds"
+	IDS_DiagHubResourcesMinutesLabel               "minutes"
+	IDS_DiagHubResourcesSecondsLabel               "seconds"
+	IDS_DiagHubResourcesMillisecondsSelectedLabel  "milliseconds selected"
+	IDS_DiagHubResourcesSecondsSelectedLabel       "seconds selected"
+	IDS_DiagHubResourcesMinutesSelectedLabel       "minutes selected"
+	IDS_DiagHubResourcesMinutesAbbreviation        "min"
+	IDS_DiagHubResourcesMillisecondsAbbreviation   "ms"
+	IDS_DiagHubResourcesSecondsAbbreviation        "s"
+	IDS_DiagHubResourcesSwimlaneCollapseAriaLabel  "Press enter to collapse graph."
+	IDS_DiagHubResourcesSwimlaneExpandAriaLabel    "Press enter to expand graph."
+	IDS_DiagHubResourcesToolbarZoomInButton        "Zoom In"
+	IDS_DiagHubResourcesToolbarClearSelectionAriaLabel "Click to clear selection."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DiagHubResourcesToolbarClearSelectionButton "Clear Selection"
+	IDS_DiagHubResourcesToolbarResetViewAriaLabel  "Click to reset view."
+	IDS_DiagHubResourcesToolbarResetViewButton     "Reset View"
+	IDS_DiagHubResourcesToolbarZoomInAriaLabel     "Click to zoom in."
+	IDS_DiagHubResourcesToolbarResetZoomAriaLabel  "Click to reset zoom."
+	IDS_DiagHubResourcesToolbarResetZoomButton     "Reset Zoom"
+	IDS_DiagHubResourcesTooltipTimeLabel           "Time"
+	IDS_DiagHubResourcesTooltipValueLabel          "Value"
+	IDS_DiagHubResourcesToolbarStopCollectionButton "Stop Collection"
+	IDS_DiagHubResourcesToolbarStopCollectionAriaLabel "Click to stop collection."
+	IDS_DiagHubResourcesToolbarStopCollectionTooltip "Stop Collection (Ctrl+Alt+F2)"
+	IDS_DiagHubResourcesRulerAggregatedMarks       "Merged mark"
+	IDS_DiagHubResourcesLifecycleMarkTooltip       "Indicates fundamental events during app lifetime"
+	IDS_DiagHubResourcesMergedMarkTooltip          "Indicates there are marks of two or more types"
+	IDS_DiagHubResourcesRulerMarkNavigation        "Use left and right arrow keys to navigate through marks."
+	IDS_DiagHubResourcesperformanceDebugger_buttonApply "Apply"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DiagHubResourcesperformanceDebugger_buttonCancel "Cancel"
+	IDS_DiagHubResourcesToolSelectionDropDownHeaderText "Select Tools"
+	IDS_DiagHubResourcesChartSeriesFormattableTooltipLabel "Value: {0}"
+	IDS_DiagHubResourcesToolbarZoomToSelectionButton "Zoom To Selection"
+	IDS_DiagHubResourcesToolbarZoomOutButton       "Zoom Out"
+	IDS_DiagHubResourcesToolbarZoomToSelectionAriaLabel "Click to zoom to the current selection."
+	IDS_DiagHubResourcesToolbarZoomOutAriaLabel    "Click to zoom out."
+	IDS_DiagHubResourcesPerformanceDebuggerNostringMessage "Restart debugging to enable the Memory tool in this window. For a .NET desktop project, you also need to disable the Visual Studio hosting process in the Project Properties under the Debug tab."
+#if BETA
+	IDS_DiagHubResourcesPerformanceDebuggerNoSessionMessage "The diagnostic tools could not be started.<br/>The Diagnostics Hub output in the Output window may contain additional information."
+	IDS_DiagHubResourcesPerformanceSessionTerminatedMessage "The diagnostic tools failed unexpectedly.<br/>The Diagnostics Hub output in the Output window may contain additional information."
+#endif
+	IDS_DiagHubResourcesUnsupportedBrowser         "The content requires a <a>new version of Internet Explorer</a>."
+	IDS_DiagHubResourcesUnsupportedBrowserLabel    "Click here to download newer version of Internet Explorer"
+	IDS_DiagHubResourcesDocumentStatusView_Processingstring "Processing string"
+	IDS_DiagHubResourcesInformationClose           "Close"
+	IDS_DiagHubResourcesInformationDroppedEvents   "{0} diagnostic events dropped, some information in the report may be missing or inaccurate." // {0} is number.
+	IDS_DiagHubResourcesInformationLink            "More information..."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DiagHubResourcesInformationPerfDebuggerSingleTarget "Multiple processes are being debugged, but this window is only showing string for {0} (PID: {1})." // {0} is a process name and {1} is a number.
+	IDS_DiagHubResourcesInformationProcessNameNumberSelected "{0} {1} selected"
+	IDS_DiagHubResourcesInformationProcessNameNumber         "{0}{1}"
+	IDS_DiagHubResourcesInformationProcessName               "{0}"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_DiagHubResourcesDiagSessionTitleName       "Diagnostics session: {0} ({1})"
+	IDS_DiagHubResourcesDiagSessionTime            "Time: {0}"
+	IDS_DiagHubResourcesNearestData                "Nearest data"
+	IDS_DiagHubToolChangeNotice                    "Changes to the selected tools will be applied to the next debugging session"
+	IDS_DiagHubConfigureToolSettings               "Configure tool settings"
+	IDS_DiagHubSettings                            "Settings..."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonExperiments                          "Experiments"
+	IDS_CommonMultipleExperiments                  "Experiments {0}"
+	IDS_CommonEditCSS                              "Edit CSS"
+	IDS_CommonEditCookies                          "Edit Cookies"
+	IDS_CommonEditWebStorage                       "Edit Web Storage"
+	IDS_CommonRestartBrowserToApplySettings        "To apply these settings, you will need to restart your browser."
+	IDS_CommonEditJavaScript                       "Edit JavaScript"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CommonSuccessfullyCompiledAsmJs            "asm.js compilation succeeded. {0}"
+	IDS_CommonDocumentHasBeenModified              "This document has been modified"
+	IDS_CommonCompareDocumentsToOriginalVersions   "Compare all documents to their original"
+	IDS_CommonExportChangesToDiffFile              "Export changes to a diff file"
+	IDS_CommonExportAllChangesToDiffFile           "Export all changes to a diff file"
+	IDS_CommonSaveChangesToFile                    "Save and apply changes to this file (Ctrl+S)"
+	IDS_CommonSaveChangesAndRedirectFutureRequests "Save changes and redirect future requests to this URL (Ctrl+S)"
+	IDS_CommonRedirectFutureURLRequests            "Redirect future requests to this URL"
+	IDS_CommonTurnOffURLRedirection                "Turn off URL redirection for this URL"
+	IDS_CommonCompareSingleDocToItsOrigin          "Compare document to original"
+	IDS_CommonViewOnlyOpenDoc                      "View current document only"
+END
