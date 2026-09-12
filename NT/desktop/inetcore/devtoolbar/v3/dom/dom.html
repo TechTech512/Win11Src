@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11">
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta http-equiv="format-detection" content="telephone=no">
+        <title>DOM Explorer</title>
+
+        <link id="toolwindow.css" rel="stylesheet" href="../common/toolwindow.css" type="text/css" data-plugin-theme="true">
+        <link id="toolwindow.f12.css" rel="stylesheet" href="../common/toolwindow.f12.css" type="text/css" data-plugin-theme="true">
+        <link id="toolwindow.vs.css" rel="stylesheet" href="../common/toolwindow.vs.css" type="text/css" data-plugin-theme="true">
+        <link id="controls.css" rel="stylesheet" href="../common/controls/controls.css" type="text/css" data-plugin-theme="true">
+        <link id="datatree.css" rel="stylesheet" href="../common/dataTreeView.css" type="text/css" data-plugin-theme="true">
+        <link id="domExplorer.css" rel="stylesheet" href="domExplorer.css" type="text/css" data-plugin-theme="true" data-necessary-for-tooltip="true">
+        <link id="domExplorer.f12.css" rel="stylesheet" href="domExplorer.f12.css" type="text/css" data-plugin-theme="true">
+        <link id="domExplorer.vs.css" rel="stylesheet" href="domExplorer.vs.css" type="text/css" data-plugin-theme="true">
+        <link id="layout.css" rel="stylesheet" href="layout.css" type="text/css" data-plugin-theme="true">
+        <link id="listControl.css" rel="stylesheet" href="../common/controls/listControl/listControl.css" type="text/css" data-plugin-theme="true" />
+        <link id="htmltree.css" rel="stylesheet" href="../common/htmlTreeView.css" type="text/css" data-plugin-theme="true">
+        <link id="domTree.css" rel="stylesheet" href="DomTree/domTree.css" type="text/css" data-plugin-theme="true">
+        <link rel="stylesheet" href="Styles/StyleView/styleView.css" type="text/css" data-plugin-theme="true">
+        <link rel="stylesheet" href="expandingListView.css" type="text/css" data-plugin-theme="true">
+        <link rel="stylesheet" href="events.css" type="text/css" data-plugin-theme="true">
+        <link rel="stylesheet" href="Styles/WinningView/winningStyles.css" type="text/css" data-plugin-theme="true">
+        <link rel="stylesheet" href="Styles/ChangesView/changesView.css" type="text/css" data-plugin-theme="true">
+        <link id="intellisenseListBox.css" rel="stylesheet" href="../common/Intellisense/intellisenseListBox.css" type="text/css" data-plugin-theme="true">
+
+        <!-- Daytona Includes -->
+        <script type="text/javascript" src="../Common/isDebugBuild.js"></script>
+        <script type="text/javascript" src="../Common/plugin.js"></script>
+        <script type="text/javascript" src="../Common/CommonMerged.js"></script>
+        <script type="text/javascript" src="DomExplorerMerged.js"></script>
+        <script type="text/javascript" src="res://f12test.dll/23/selftest/SelfTestDomExplorer.js"></script>
+        <script type="text/javascript">
+            // The main entry point
+            F12.DomExplorer.App.main();
+        </script>
+        <script id="intellisenseListBox" type="text/html">
+            <ul class="intellisenseListBox"></ul>
+        </script>
+        <script id="styleSubPropertyTemplate" type="text/html">
+            <div class="BPT-Style-SubProperty ##if(isStrikeThrough)##BPT-Style-NotWinning##endIf##" data-uid="%%uid%%" role="treeitem" aria-checked="%%isEnabled%%">
+                <div class="BPT-Style-ChangeBar" data-change="%%changeState%%"></div>
+                <span class="BPT-Style-PropertyAriaChangeState" style="display: none;">%%ariaChangeStateString%%</span>
+                <input class="BPT-Style-Property-Checkbox" type="checkbox" ##if(isEnabled)##checked##endIf## tabindex="-1" ##if(!@canToggleStyleSubpropertyEnable)##style="display: none;" ##endIf##>
+                <span class="BPT-Style-PropertyAriaOverridden" style="display: none;">%%ariaOverriddenString%%</span>
+                <div class="BPT-Style-PropertyName-Container BPT-EditBox-MaxHeightOverride">
+                    <span class="BPT-Style-PropertyNameAriaInvalid" style="display: none;">%%ariaInvalidNameString%%</span>
+                    <span class="BPT-Style-SubPropertyName">%%name%%</span>
+                </div>
+                <div class="BPT-Style-PropertyName-Colon">:</div>
+                <div class="BPT-Style-Color ##if(!isDisplayableColor)##BPT-Style-Color-Hidden##endIf##" style="##if(isDisplayableColor)##background-color: %%colorForDisplay%%;##endIf##"></div>
+                <div class="BPT-Style-PropertyValue-Container BPT-EditBox-MaxHeightOverride">
+                    <span class="BPT-Style-PropertyValueAriaInvalid" style="display: none;">%%ariaInvalidValueString%%</span>
+                    <span class="BPT-Style-SubPropertyValue">%%valueForDisplay%%</span><span class="BPT-Style-Property-SemiColon">;</span>
+                </div>
+            </div>
+        </script>
+        <script id="stylePropertyTemplate" type="text/html">
+            <div class="BPT-Style-Property-Container BPT-EditBox-MarkActive ##if(!isApplied)##BPT-Style-Property-NotApplied##endIf##">
+                <div class="BPT-Style-Property ##if(isStrikeThrough)##BPT-Style-NotWinning##endIf## ##if(!isShorthand)##BPT-Style-Property-LongHand##endIf##"
+                      data-uid="%%uid%%" data-removed="##if(isDeleted)##true##endIf##"
+                      role="treeitem" ##if(isShorthand)##aria-expanded="false" aria-setsize="%%properties.length%%" ##endIf## aria-checked="%%enabledMixedState%%" aria-invalid="%%isInvalid%%">
+                    <div class="BPT-Style-ChangeBar" data-change="%%changeState%%"></div>
+                    <span class="BPT-Style-PropertyAriaChangeState" style="display: none;">%%ariaChangeStateString%%</span>
+                    <input class="BPT-Style-Property-Checkbox" type="checkbox" ##if(isEnabled)##checked##endIf## tabindex="-1" ##if(!@canToggleStylePropertyEnable)##style="display: none;" ##endIf##>
+                    <span class="BPT-Style-PropertyAriaOverridden" style="display: none;">%%ariaOverriddenString%%</span>
+                    <div class="BPT-Style-PropertyName-Container BPT-EditBox-MaxHeightOverride">
+                        <span class="BPT-Style-PropertyNameAriaInvalid" style="display: none;">%%ariaInvalidNameString%%</span>
+                        <span class="BPT-Style-PropertyName ##if(isNameDisplayedAsInvalid)##BPT-Style-InvalidProperty##endIf##">%%name%%</span>
+                    </div>
+                    <div class="BPT-Style-PropertyName-Colon">:</div>
+                    <div class="BPT-Style-PropertyValue-ExpandIcon"></div>
+                    <div class="BPT-Style-Color ##if(!isDisplayableColor)##BPT-Style-Color-Hidden##endIf##" style="##if(isDisplayableColor)##background-color: %%colorForDisplay%%;##endIf##"></div>
+                    <div class="BPT-Style-PropertyValue-Container BPT-EditBox-MaxHeightOverride">
+                        <span class="BPT-Style-PropertyValueAriaInvalid" style="display: none;">%%ariaInvalidValueString%%</span>
+                        <span class="BPT-Style-PropertyValue ##if(!isValidValue)##BPT-Style-InvalidProperty##endIf##">%%valueForDisplay%%</span><span class="BPT-Style-Property-SemiColon">;</span>
+                    </div>
+                </div>
+                <div class="BPT-Style-Properties" role="group">
+                    ##forEach(properties)##
+                    ##include(styleSubPropertyTemplate)##
+                    ##endForEach##
+                </div>
+            </div>
+        </script>
+        <script id="styleRuleTemplate" type="text/html">
+            <div class="BPT-Style-Item">
+            ##if(isFirstRuleInTargetGroup)##<div class="BPT-Style-InheritedFrom">%L%DOMExplorerInheritedFromText%L% <a class="BPT-Style-InheritedFromTarget BPT-Tooltip-Item" data-id="%%target.uid%%" href="#" tabindex="-1" data-tooltip="%%target.description%%">%%displayInheritedFrom%%</a></div>##endIf##
+            ##if(parent)##<div class="BPT-Style-ParentRule" data-change="%%changeState%%">%%parent%%</div>##endIf##
+                <div class="BPT-Style-Rule BPT-EditBox-MarkActive" data-uid="%%uid%%" role="group" aria-expanded="true" aria-label="%%ariaLabel%%">
+                    <div class="BPT-Style-ChangeBar" data-change="%%changeState%%"></div>
+                    <div class="BPT-Style-ExpandIcon"></div>
+                    <div class="BPT-Style-Selector-Container BPT-EditBox-MaxHeightOverride">
+                        ##if(fileUrl)##<span class="BPT-Style-FileReference ##if(@showSourceFileLinks)##BPT-FileLink##endIf## ##if(@showSourceTooltips)##BPT-Tooltip-Item##endIf##" role="##if(@showSourceFileLinks)##link##endIf##" data-tooltip="##if(@showSourceTooltips)##%%tooltip%%##endIf##">%%fileLinkText%%</span>##endIf##
+                        <span class="BPT-Style-Selector BPT-Tooltip-Item" data-tooltip="%%selectorText%%">%%selectorText%%</span>
+                        <span class="BPT-Style-BlockOpener">
+                            <span>{</span><span class="BPT-Style-CollapsedBlockFooter">...}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="BPT-Style-Properties" role="group">
+                    ##forEach(properties)##
+                    ##include(stylePropertyTemplate)##
+                    ##endForEach##
+                    <div class="BPT-Style-BlockFooter">
+                        <div class="BPT-Style-EmptyRuleSpace"></div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </script>
+        <script id="winningStylesPropertyTemplate" type="text/html">
+            <div class="BPT-ExpandingList-Child-Value-Container BPT-EditBox-MarkActive ##if(!isWinningAndEnabled)##BPT-WinningStyle-NotWinning##endIf##" data-uid="%%propertyId%%" role="treeitem" aria-checked="%%isEnabled%%" aria-invalid="%%isInvalid%%">
+                <div class="BPT-WinningStyle-LeftSide" data-removed="##if(isDeleted)##true##endIf##">
+                    <div class="BPT-Style-ChangeBar" data-change="%%changeState%%"></div>
+                    <span class="BPT-WinningStyle-PropertyAriaChangeState" style="display: none;">%%ariaChangeStateString%%</span>
+                    <span class="BPT-WinningStyle-PropertyAriaOverridden" style="display: none;">%%ariaOverriddenString%%</span>
+                    <input class="BPT-WinningStyle-SourceCheckBox" type="checkbox" ##if(isEnabled)##checked##endIf## tabindex="-1" ##if(!@canToggleComputedPropertyEnable)##style="display: none;" ##endIf##>
+                    <span class="BPT-WinningStyle-PropertyAriaOverridden" style="display: none;">%%ariaOverriddenString%%</span>
+                    <div class="BPT-HTML-Tag BPT-Tooltip-Item" data-tooltip="%%selector%%"><div>%%selector%%</div></div>
+                    <div class="BPT-WinningStyle-Separator">-</div>
+                    <div class="BPT-WinningStyle-SourceColor BPT-WinningStyle-Color BPT-EditBox-HideOnEdit" style="##if(isDisplayableColor)##background-color: %%value%%;##endIf## ##if(!isDisplayableColor)##display: none;##endIf##"></div>
+                    <div class="BPT-Style-PropertyValue-Container BPT-EditBox-MaxHeightOverride">
+                        <span class="BPT-Style-PropertyValueAriaInvalid" style="display: none;">%%ariaInvalidString%%</span>
+                        <span class="BPT-Style-PropertyValue ##if(isInvalid)##BPT-Style-InvalidProperty##endIf##">%%valueForDisplay%%</span>
+                    </div>
+                </div>
+                ##if(fileUrl)##<div class="BPT-WinningStyle-FileReference BPT-EditBox-HideOnEdit"><span class="##if(@showSourceFileLinks)##BPT-FileLink##endIf## ##if(@showSourceTooltips)##BPT-Tooltip-Item##endIf##" role="##if(@showSourceFileLinks)##link##endIf##" data-tooltip="##if(@showSourceTooltips)##%%tooltip%%##endIf##">%%fileLinkText%%</span></div>##endIf##
+            </div>
+        </script>
+        <script id="winningStylesItemTemplate" type="text/html">
+            <div class="BPT-ExpandingList-Item" data-listid="%%uniqueId%%" data-name="%%propertyName%%">
+                <div class="BPT-ExpandingList-Header" role="group" aria-expanded="%%expanded%%" data-name="%%propertyName%%">
+                    <div class="BPT-Style-ChangeBar" data-change="%%changeState%%"></div>
+                    <span class="BPT-WinningStyle-PropertyAriaChangeState" style="display: none;">%%ariaChangeStateString%%</span>
+                    ##if(hasChildren)##<div class="BPT-ExpandingList-ExpandIcon"></div>
+                    <input class="BPT-WinningStyle-HeaderCheckBox" type="checkbox" ##if(isEnabled)##checked##endIf## tabindex="-1" ##if(!@canToggleComputedPropertyEnable)##style="display: none;" ##endIf##>##endIf##
+                    <div class="BPT-WinningStyle-PropertyName">%%propertyName%%</div>
+                    <div class="BPT-WinningStyle-HeaderColon">:</div>
+                    <div class="BPT-Style-PropertyValue BPT-WinningStyle-PropertyValue-Grid">%%propertyValue%%</div>
+                    ##if(isColor)##<div class="BPT-WinningStyle-Color" style="background-color: %%propertyValue%%"></div>##endIf##
+                </div>
+                ##if(hasChildren)##<div class="BPT-ExpandingList-Collapsed-Section">
+                    ##forEach(children)##
+                    ##include(winningStylesPropertyTemplate)##
+                    ##endForEach##
+                </div>##endIf##
+            </div>
+        </script>
+        <script id="eventsTemplate" type="text/html">
+            <div class="BPT-ExpandingList-Item" data-listid="%%uniqueId%%">
+                <div class="BPT-ExpandingList-Header" role="group" aria-expanded="%%expanded%%">
+                    ##if(hasChildren)##<div class="BPT-ExpandingList-ExpandIcon"></div>##endIf##
+                    <div class="BPT-Events-EventName">%%eventName%%:</div>
+                </div>
+                ##if(hasChildren)##<div class="BPT-ExpandingList-Collapsed-Section">##forEach(children)##
+                    <div class="BPT-ExpandingList-Child-Value-Container ##if(@showSourceTooltips)##BPT-Tooltip-Item##endIf##" role="treeitem" data-tooltip="##if(@showSourceTooltips)##%%tooltip%%##endIf##" aria-label="%%functionName%%.##if(@showSourceTooltips)## %%tooltip%%##endIf##">
+                    <div class="BPT-HTML-Value BPT-Events-Function-Name">%%functionName%%</div>
+                    <div class="BPT-Events-Location ##if(@showSourceFileLinks)##BPT-FileLink##endIf## BPT-Events-Handler-Link" role="##if(@showSourceFileLinks)##link##endIf##" data-linkcol="##if(@showSourceFileLinks)##%%column%%##endIf##" data-linkline="##if(@showSourceFileLinks)##%%line%%##endIf##" data-linkurl="##if(@showSourceFileLinks)##%%documentUrl%%##endIf##">%%text%%</div>
+                </div>##endForEach##
+                </div>##endIf##
+            </div>
+        </script>
+        <script id="changesTemplate" type="text/html">
+            <div class="BPT-ExpandingList-Item" data-listid="%%uniqueId%%">
+                <div class="BPT-ExpandingList-Header" role="group" aria-expanded="%%expanded%%">
+                    <div class="BPT-ExpandingList-ExpandIcon"></div>
+                    <div class="BPT-Changes-Source BPT-Tooltip-Item" data-tooltip="%%displaySourceTooltip%%">%%displaySource%%</div>
+                </div>
+                <div class="BPT-ExpandingList-Collapsed-Section">##forEach(children)##
+                    <div class="BPT-ExpandingList-Child-Value-Container" data-listsubid="%%uid%%" role="treeitem">
+                        ##if(hasFileLink)##<div class="BPT-Changes-Link BPT-FileLink BPT-Tooltip-Item" role="link" data-tooltip="%%tooltip%%">%%fileLink%%</div>##endIf##
+                        <div class="BPT-Changes-Rule" data-uid="%%uid%%">
+                            ##if(parent)##<div class="BPT-Changes-ParentRule">%%parent%%</div>##endIf##
+                            ##forEach(selectors)##
+                            <div class="BPT-Changes-Selector" data-change="%%changeState%%">
+                                <span class="BPT-Style-SelectorAriaChangeState" style="display: none;">%%ariaChangeStateString%%</span>
+                                <span ##if(isSelectorChanged)##class="BPT-Changes-Highlight"##endIf##>%%selectorText%%</span><span> {</span>
+                            </div>
+                            ##endForEach##
+                            <div class="BPT-Changes-Properties">
+                                ##forEach(properties)##
+                                <div class="BPT-Changes-Property" data-change="%%changeState%%">
+                                    <span class="BPT-Style-PropertyAriaChangeState" style="display: none;">%%ariaChangeStateString%%</span>
+                                    <div class="BPT-Changes-PropertyName">
+                                        <span ##if(isNameChanged)##class="BPT-Changes-Highlight"##endIf##>%%name%%</span>:
+                                    </div>
+                                    <div class="BPT-Changes-PropertyValue">
+                                        <span ##if(isValueChanged)##class="BPT-Changes-Highlight"##endIf##>%%value%%</span><span ##if(isPriorityChanged)##class="BPT-Changes-Highlight"##endIf##>%%priority%%</span>;
+                                    </div>
+                                </div>
+                                ##endForEach##
+                            </div>
+                            <div class="BPT-Changes-BlockFooter" data-change="%%footerState%%">}</div>
+                        </div>
+                    </div>##endForEach##
+                </div>
+            </div>
+        </script>
+        <script id="breadcrumbsTemplate" type="text/html">
+            <div class="BPT-Breadcrumb-Container">
+                <span ##if(isSelected)##role="link" tabindex="1" ##endIf## class="BPT-HorizontalPane-BreadcrumbBar-Item BPT-Breadcrumb##if(isSelected)##-Selected##endIf##" bc-data-uid="%%elementUID%%">%%breadcrumbName%%</span>
+                <svg width="8" height="24" xmlns="http://www.w3.org/2000/svg" class="BPT-HorizontalPane-BreadcrumbChevron" focusable="false">
+                    <g>
+                        <path d="m-1,0 L0,0 L8,12 L0,24 L-1,24" class="BPT-BreadcrumbChevron##if(isSelected)##-Selected##endIf##" />
+                        <path d="m0,0 L8,12 L0,24" class="BPT-BreadcrumbChevron-Edge" />
+                    </g>
+                </svg>
+           </div>
+        </script>
+        <script id="breadcrumbTooltip" type="text/html">
+            <div role="tooltip" class="BPT-Breadcrumb-Tooltip">
+                <div class="BPT-Breadcrumb-TooltipTableRow"##if(!elementName)##style="display:none"##endIf##>
+                    <div class="BPT-Breadcrumb-TooltipTableCell">element</div>
+                    <div class="BPT-Breadcrumb-TooltipTableCell BPT-Breadcrumb-Tooltip-Data">%%elementName%%</div>
+                </div>
+                <div class="BPT-Breadcrumb-TooltipTableRow" ##if(!id)##style="display:none"##endIf##>
+                    <div class="BPT-Breadcrumb-TooltipTableCell">id</div>
+                    <div class="BPT-Breadcrumb-TooltipTableCell BPT-Breadcrumb-Tooltip-Data">%%id%%</div>
+                </div>
+                <div class="BPT-Breadcrumb-TooltipTableRow"##if(!classNames)##style="display:none"##endIf##>
+                    <div class="BPT-Breadcrumb-TooltipTableCell">class</div>
+                    <div class="BPT-Breadcrumb-TooltipTableCell BPT-Breadcrumb-Tooltip-ClassNames">%%classNames%%</div>
+                </div>
+            </div>
+        </script>
+
+        <script id="domTreeItemDataTemplate" type="text/html">
+            <div class="domTreeItemDataTemplate">
+                <div id="domTreeItemDataTemplateNameCell" class="domTreeItemDataTemplateNameCell">
+                    <div id="expander">
+                    </div>
+                    <div id="elementDescription" class="domTreeItemDataTemplateName">
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script id="domTreeElementTemplate" type="text/html">
+            <div class="BPT-HTML">
+                <span class="BPT-HTML-Punctuation">&lt;</span>
+                <span class="BPT-HTML-HtmlElement" data-id="%%uid%%">
+                    <span class="BPT-HTML-NewTag">
+                        </>%%tag%%</>
+                    </span>
+                    </>##if(hasDebugUid)##</>
+                        </> ##include(domTreeDebugUidTemplate)##</>
+                    </>##endIf##</>
+                    </>##forEach(attributes)##</>
+                    </>##include(attributeTemplate)##</>
+                    </>##endForEach##</>
+                </span>
+                <span class="BPT-HTML-Punctuation">&gt;</span>
+                </>##if(hasImmediateClosingTag)##</>
+                    </>##include(domTreeClosingTagTemplate)##</>
+                </>##endIf##</>
+                </>##if(hasEllipsisClosingTag)##</>
+                    </>&hellip;</>
+                    </>##include(domTreeClosingTagTemplate)##</>
+                </>##endIf##</>
+            </div>
+        </script>
+
+        <script id="domTreeTextElementTemplate" type="text/html">
+            <div class="BPT-HTML">
+                </>##if(hasDebugUid)##</>
+                    </>##include(domTreeDebugUidTemplate)## </>
+                </>##endIf##</>
+                <span class="BPT-HTML-Text" data-id="%%uid%%">
+                    </>%%textNodeText%%</>
+                </span>
+            </div>
+        </script>
+
+        <script id="domTreeCommentTemplate" type="text/html">
+            <div class="BPT-HTML">
+                <span class="BPT-HTML-Comment" data-id="%%uid%%">
+                    </>&lt;!--</>
+                    </>%%commentText%%</>
+                    </>--&gt;</>
+                </span>
+            </div>
+        </script>
+
+        <script id="domTreeDocTypeTemplate" type="text/html">
+            <div class="BPT-HTML">
+                <span class="BPT-HTML-DocType" data-id="%%uid%%">
+                    </>DOCTYPE %%docTypeText%%</>
+                </span>
+            </div>
+        </script>
+
+        <script id="domTreeClosingElementTemplate" type="text/html">
+            <div class="BPT-HTML BPT-HTML-Standalone-ClosingTag">
+                </>##include(domTreeClosingTagTemplate)##</>
+            </div>
+        </script>
+
+        <script id="domTreeClosingTagTemplate" type="text/html">
+            <span class="BPT-HTML-NewTag BPT-HTML-ClosingTag" data-id="%%uid%%">
+                </>%%tag%%</>
+            </span>
+            </>##if(hasDebugUid)##</>
+                </> ##include(domTreeDebugUidTemplate)##</>
+            </>##endIf##</>
+        </script>
+
+        <script id="attributeTemplate" type="text/html">
+            <span class="BPT-HTML-Attribute-Section" data-attrName="%%name%%">
+                </> </>
+                <span class="BPT-HTML-Attribute">
+                    </>%%name%%</>
+                </span>
+                <span class="BPT-HTML-Value">
+                    </>%%value%%</>
+                </span>
+            </span>
+        </script>
+
+        <script id="newAttributeTemplate" type="text/html">
+            <span class="BPT-HTML-Attribute-Section BPT-HTML-Attribute-Section-New" data-attrName="%%name%%">
+                </> </>
+                <span class="BPT-HTML-Attribute">
+                    </>%%name%%</>
+                </span>
+                <span class="BPT-HTML-Value">
+                    </>%%value%%</>
+                </span>
+            </span>
+        </script>
+
+        <script id="domTreeDebugUidTemplate" type="text/html">
+            <span class="BPT-HTML-Debug-Uid">%%uid%%</span>
+        </script>
+    </head>
+    <body tabindex="-1" onLoad="document.getElementById('domTreeView').focus();">
+        <div id="tabStartMarker" style="height: 0; width: 0;" tabindex="1"></div>
+        <div id="mainContainer">
+            <div id="toolbar"></div>
+            <div class="BPT-HorizontalPane" id="pane">
+                <div class="BPT-HorizontalPane-Left BPT-HtmlTree-ScrollContainer">
+                   <div id="warningSection" style="display: none;">
+                        <div class="BPT-WarnMessageIcon"></div>
+                        <div id="warningMessageText" class='BPT-WarnMessage'></div>
+                   </div>
+                   <div id="scriptErrorSection" style="display: none;">
+                        <div class="BPT-ScriptErrorMessageIcon"></div>
+                        <div id="scriptErrorMessageText" class='BPT-ScriptErrorMessage'></div>
+                    </div>
+
+                    <div id="domTreeView" class="BPT-DataTree-Container-KeepSelection" tabindex="-1">
+                        <div id="treeContainer" style="height: 100%; width: 100%"></div>
+                    </div>
+
+                    <div class="BPT-HorizontalPane-BreadcrumbBar">
+                        <div id="breadcrumbLeftArrow" class="BPT-HorizontalPane-BreadcrumbBar-Arrow" role="button"></div>
+                        <div id="BreadcrumbsView"></div>
+                        <div id="breadcrumbRightArrow" class="BPT-HorizontalPane-BreadcrumbBar-Arrow" role="button"></div>
+                    </div>
+                </div>
+                <div id="paneRight" class="BPT-HorizontalPane-Right BPT-EditBox-MarkActive" style="height: 100%; width: 100%">
+                    <div class="BPT-Tab-Container">
+                        <div class="BPT-Tabbar BPT-TabCycle-Horizontal" role="tablist">
+                            <div id="stylesTabButton" class="BPT-Tab-Item BPT-TabCycle-Item" tabindex="1" role="tab" aria-selected="true">Styles</div>
+                            <div id="winningStylesTabButton" class="BPT-Tab-Item BPT-TabCycle-Item" role="tab" aria-selected="false">Computed</div>
+                            <div id="layoutTabButton" class="BPT-Tab-Item BPT-TabCycle-Item" role="tab" aria-selected="false">Layout</div>
+                            <div id="eventsTabButton" class="BPT-Tab-Item BPT-TabCycle-Item" role="tab" aria-selected="false">Events</div>
+                            <div id="changesTabButton" class="BPT-Tab-Item BPT-TabCycle-Item" role="tab" aria-selected="false">Changes</div>
+                        </div>
+                    </div>
+
+                    <div id="optionalButtonsPanel" class="BPT-OptionsPanel-Hidden">
+                        <div id="optionalButtonsPanelGroup">
+                            <div id="pseudoStatesToggle" class="BPT-ToolbarButton BPT-ToolbarToggleButton BPT-OptionsPanel-Button" role="button" aria-pressed="false" tabindex="1">
+                                <div class="buttonIcon pseudoStatesToggle"></div>
+                            </div>
+                            <div id="allWinningStylesButton" class="BPT-ToolbarButton BPT-ToolbarToggleButton BPT-BypassDisableReset BPT-OptionsPanel-Button" role="button" aria-pressed="false" tabindex="1" style="display: none;">
+                                <div class="buttonIcon allWinningStylesButton"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pseudoStatesPanel" data-show="false">
+                        <div class="BPT-PseudoSelector" data-name="hover">
+                            <input class="BPT-PseudoCheckbox" type="checkbox" tabindex="1" aria-labelledby="pseudoHoverLabel" id="checkbox_hover">
+                            <label id="pseudoHoverLabel" for="checkbox_hover"></label>
+                        </div>
+                        <div id="pseudoVisited" class="BPT-PseudoSelector" data-name="visited">
+                            <input class="BPT-PseudoCheckbox" type="checkbox" tabindex="1" aria-labelledby="pseudoVisitedLabel" id="checkbox_visited">
+                            <label id="pseudoVisitedLabel" for="checkbox_visited"></label>
+                        </div>
+                    </div>
+
+                    <div id="pane-right" class="BPT-HorizontalPane-Right-Content BPT-DataTree-ScrollContainer" role="tabpanel" style="height: 100%; width: 100%">
+                        <div id="stylesView" class="BPT-HorizontalPane-Right-Tab BPT-DataTree-Container BPT-DataTree-Container-KeepSelection" aria-labelledby="stylesTabButton">
+                            <div id="styleList" role="tree"></div>
+                        </div>
+                        <div id="winningStylesView" class="BPT-HorizontalPane-Right-Tab BPT-DataTree-Container BPT-DataTree-Container-KeepSelection" aria-labelledby="winningStylesTabButton" role="tabpanel">
+                            <div>
+                                <div class="BPT-WinningStyle-Filter">
+                                    <input id="winningStylesFilterTextBox" class="BPT-WinningStyle-Filter-InputText" type="text" placeholder="[Filter Properties...]" tabindex="1" role="textbox" aria-readonly="false">
+                                </div>
+                            </div>
+                            <div id="winningStylesNoResultsMessage">[No properties found.]</div>
+                            <div id="winningStylesList" role="tree"></div>
+                        </div>
+
+                        <div id="layoutView" class="BPT-HorizontalPane-Right-Tab" aria-labelledby="layoutTabButton" role="tabpanel">
+                            <div id="Layout-EditContainer" class="BPT-NoTabStop" style="display: none; position: absolute; z-index: 999"><span></span></div>
+                            <div id="layoutViewTable">
+                                <div id="layout-offset-layer" class="BPT-Layout-Layer" style="text-align: left;">
+                                    <div id="offsetLabel" class="BPT-Layout-Label">Offset</div>
+                                    <div id="Layout-Offset-Top" class="BPT-Layout-Top" data-layoutProperty="offsetTop"></div>
+                                    <div class="BPT-Layout-Left-Outer-Cell"><div class="BPT-Layout-Left-Coord"><div id="Layout-Offset-Left" class="BPT-Layout-Left" data-layoutProperty="offsetLeft"></div></div></div>
+
+                                    <div id="layout-margin-layer" class="BPT-Layout-Layer">
+                                        <div id="marginLabel" class="BPT-Layout-Label">Margin</div>
+                                        <div id="Layout-Margin-Top" class="BPT-Layout-Top" data-layoutProperty="margin-top"></div>
+
+                                        <div class="BPT-Layout-Left-Outer-Cell"><div class="BPT-Layout-Left-Coord"><div id="Layout-Margin-Left" class="BPT-Layout-Left" data-layoutProperty="margin-left"></div></div></div>
+
+                                        <div id="layout-border-layer" class="BPT-Layout-Layer">
+                                            <div id="borderLabel" class="BPT-Layout-Label">Border</div>
+                                            <div id="Layout-Border-Top" class="BPT-Layout-Top" data-layoutProperty="border-top-width"></div>
+
+                                            <div class="BPT-Layout-Left-Outer-Cell"><div class="BPT-Layout-Left-Coord"><div id="Layout-Border-Left" class="BPT-Layout-Left" data-layoutProperty="border-left-width"></div></div></div>
+
+                                            <div id="layout-padding-layer" class="BPT-Layout-Layer">
+                                                <div id="paddingLabel" class="BPT-Layout-Label">Padding</div>
+                                                <div id="Layout-Padding-Top" class="BPT-Layout-Top" data-layoutProperty="padding-top"></div>
+
+                                                <div class="BPT-Layout-Left-Outer-Cell"><div class="BPT-Layout-Left-Coord"><div id="Layout-Padding-Left" class="BPT-Layout-Left" data-layoutProperty="padding-left"></div></div></div>
+
+                                                <div id="layout-size-layer" class="BPT-Layout-Layer">
+                                                    <div id="Layout-Size">
+                                                        <span id="Layout-Size-Width" data-layoutProperty="width"></span> ×
+                                                        <span id="Layout-Size-Height" data-layoutProperty="height"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="BPT-Layout-Right-Outer-Cell"><div class="BPT-Layout-Right-Coord"><div id="Layout-Padding-Right" class="BPT-Layout-Right" data-layoutProperty="padding-right"></div></div></div>
+
+                                                <div id="Layout-Padding-Bottom" class="BPT-Layout-Bottom" data-layoutProperty="padding-bottom"></div>
+                                            </div>
+                                            <div class="BPT-Layout-Right-Outer-Cell"><div class="BPT-Layout-Right-Coord"><div id="Layout-Border-Right" class="BPT-Layout-Right" data-layoutProperty="border-right-width"></div></div></div>
+                                            <div id="Layout-Border-Bottom" class="BPT-Layout-Bottom" data-layoutProperty="border-bottom-width"></div>
+                                        </div>
+                                        <div class="BPT-Layout-Right-Outer-Cell"><div class="BPT-Layout-Right-Coord"><div id="Layout-Margin-Right" class="BPT-Layout-Right" data-layoutProperty="margin-right"></div></div></div>
+                                        <div id="Layout-Margin-Bottom" class="BPT-Layout-Bottom" data-layoutProperty="margin-bottom"></div>
+                                    </div>
+                                    <div class="BPT-Layout-Right-Outer-Cell"><div class="BPT-Layout-Right-Coord"><div id="Layout-Offset-Right" class="BPT-Layout-Right BPT-NoTabStop"></div></div></div>
+                                    <div id="Layout-Offset-Bottom" class="BPT-Layout-Bottom BPT-NoTabStop"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="eventsView" class="BPT-HorizontalPane-Right-Tab BPT-DataTree-Container BPT-DataTree-Container-KeepSelection" aria-labelledby="eventsTabButton" role="tabpanel">
+                            <div id="eventsList" role="list"></div>
+                        </div>
+
+                        <div id="changesView" class="BPT-HorizontalPane-Right-Tab BPT-DataTree-Container BPT-DataTree-Container-KeepSelection" aria-labelledby="changesTabButton" role="tabpanel">
+                            <div id="changesEmptyMessage" role="note"></div>
+                            <div id="changesList" role="list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tabEndMarker" style="height: 0; width: 0;" tabindex="1"></div>
+    </body>
+</html>

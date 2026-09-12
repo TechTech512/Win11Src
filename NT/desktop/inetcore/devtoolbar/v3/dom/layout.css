@@ -1,0 +1,142 @@
+﻿#layoutView {
+    margin: 4px auto auto 5px;
+}
+
+#layoutViewTable {
+    font-family: Consolas, monospace;
+    display: table;
+    overflow: hidden;
+}
+
+/* Need to explicitly override the CSS selector from domExplorer.css
+** .BPT-HorizontalPane-Right-Content > div > *:not(.BPT-Toolbar)
+** in our special #layout-offset-layer selector case.
+*/
+#layout-offset-layer {
+    font-family: inherit;
+}
+
+div.BPT-Layout-Layer {
+    display: table-cell;
+    padding: .1em 1px;
+    text-align: center;
+    border-top: 1px solid #84ACDD;
+    border-left: 1px solid #84ACDD;
+    border-bottom: 1px solid #84ACDD;
+    border-right: 1px solid #84ACDD;
+    white-space: nowrap;
+}
+
+div.BPT-Layout-Top, div.BPT-Layout-Bottom {
+    font-family: inherit;
+    text-align: center;
+    padding: 0.2em;
+    height: 1em;
+}
+
+div.BPT-Layout-Left-Outer-Cell {
+    display: table-cell;
+    font-family: inherit;
+    height: 1.4em;
+    max-width: 1.4em;
+    min-width: 1.4em;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1.4em;
+}
+
+div.BPT-Layout-Left-Coord {
+    font-family: inherit;
+    height: 1.4em;
+    left: -3.3em;
+    position: relative;
+    width: 1px;
+}
+
+div.BPT-Layout-Left {
+    display: inline-block;
+    font-family: inherit;
+    height: 1.4em;
+    line-height: 1.4em;
+    position: relative;
+    text-align: center;
+    transform: rotate(-90deg);
+    width: 8em;
+}
+
+div.BPT-Layout-Right-Outer-Cell {
+    display: table-cell;
+    font-family: inherit;
+    height: 1.4em;
+    max-width: 1.4em;
+    min-width: 1.4em;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1.4em;
+}
+
+div.BPT-Layout-Right-Coord {
+    font-family: inherit;
+    height: 1.4em;
+    left: -3.3em;
+    position: relative;
+    width: 0;
+}
+
+div.BPT-Layout-Right {
+    display: inline-block;
+    font-family: inherit;
+    height: 1.4em;
+    line-height: 1.4em;
+    position: relative;
+    text-align: center;
+    transform: rotate(-90deg);
+    width: 8em;
+}
+
+div.BPT-Layout-Label {
+    font-family: inherit;
+    display: block;
+    font-size: .85em;
+    padding: 0px 5px;
+    width: 0px;
+    height: 0px;
+    overflow: visible;
+    color: gray;
+}
+
+#layout-offset-layer {
+    background-color: #FFFFFF;
+    border-color: #999999;
+    color: black;
+}
+
+#layout-margin-layer {
+    background-color: #FFEFC7;
+    border-color: #FAD05B;
+    color: black;
+}
+
+#layout-border-layer {
+    background-color: #D3E7BC;
+    border-color: #9BCD61;
+    color: black;
+}
+
+#layout-padding-layer {
+    background-color: #FBD4C7;
+    border-color: #F7A387;
+    color: black;
+}
+
+#layout-size-layer {
+    background-color: #E2F3FB;
+    border-color: #A8DDF6;
+    color: black;
+    height: 2em;
+    line-height: 2em;
+    min-width: 10em;
+    vertical-align: middle;
+}

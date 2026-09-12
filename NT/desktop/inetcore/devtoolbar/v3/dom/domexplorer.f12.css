@@ -1,0 +1,31 @@
+﻿.BPT-ScriptErrorMessageIcon {
+    background-image: url('images/i_error.png');   /*[url({plugin-image-icon-dom-explorer-error})]*/
+    background-repeat: no-repeat;
+    background-size: 18px 54px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+
+.BPT-Toolbar .selectElementButton .buttonIcon {
+    background-image: url('images/i_inspect.png');  /*[url({plugin-image-icon-dom-explorer-inspect})]*/
+}
+
+.BPT-Toolbar .showLayoutButton .buttonIcon {
+    background-image: url('images/i_show_layout.png');  /*[url({plugin-image-icon-dom-explorer-show-layout})]*/
+}
+
+.BPT-Toolbar .refreshButton .buttonIcon {
+    background-image: url('images/i_refresh.png');  /*[url({plugin-image-icon-dom-explorer-refresh})]*/
+}
+
+.BPT-Toolbar .BPT-button.colorPickerButton .buttonIcon {
+    background-image: url('../common/images/colorPicker/eyedropperButton.png'); /*[url({plugin-common-image-colorpicker-toggle})]*/
+}
+
+body.xamlWindow .BPT-Toolbar .BPT-button.colorPickerButton .buttonIcon {
+    background-image: url("../common/images/colorPicker/sliderButton.png"); /*[url({plugin-common-image-colorpicker-slider-button})]*/
+}

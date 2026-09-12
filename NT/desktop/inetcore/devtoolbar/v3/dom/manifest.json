@@ -1,0 +1,731 @@
+﻿{
+	"start_url": "dom/dom.html",
+	"domain": "http://microsoft.com",
+	"name":"Dom",
+	"version":"1.0",
+	"f12": {
+		"start_url": "dom.html",
+		"localized_tab_resource": "DomToolLabelText",
+		"localized_tooltip_id": 814,
+		"resource_aliases" : {
+			"Common": {
+				"is_default" : true
+			}
+		},
+		"themed_images": {
+			"plugin-image-icon-dom-explorer-show-all-styles": {
+				"bitmap_source": "images\\i_just_my_code.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-error": {
+				"bitmap_source": "images\\i_error.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-inspect": {
+				"bitmap_source": "images\\i_inspect.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-show-layout": {
+				"bitmap_source": "images\\i_show_layout.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-refresh": {
+				"bitmap_source": "images\\i_refresh.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-icon-next": {
+				"bitmap_source": "..\\common\\images\\i_next.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-icon-previous": {
+				"bitmap_source": "..\\common\\images\\i_previous.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-right": {
+				"bitmap_source": "images\\BreadcrumbScrollRight.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-right-hover": {
+				"bitmap_source": "images\\BreadcrumbScrollRightHover.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-left": {
+				"bitmap_source": "images\\BreadcrumbScrollLeft.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-left-hover": {
+				"bitmap_source": "images\\BreadcrumbScrollLeftHover.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"vs-image-icon-tree-collapsed": {
+				"bitmap_source": "..\\Common\\images\\itemCollapsedIcon.png",
+				"background_color": "plugin-background-color"
+			},
+			"vs-image-icon-tree-expanded": {
+				"bitmap_source": "..\\Common\\images\\itemExpandedIcon.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-red-underline": {
+				"bitmap_source": "images\\red_squiggly.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-show-pseudo_classes": {
+				"bitmap_source": "images\\i_show_pseudo_classes.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-toggle": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\eyedropperButton.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-color-background": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\checkeredBackground.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-eyedropper": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\eyedropperButton.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-slider-button": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\sliderButton.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-hue": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\hueColorBar.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-saturation": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\saturationColorBar.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-lightness": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\lightnessColorBar.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-colorpicker-alpha": {
+				"bitmap_source": "..\\Common\\images\\colorPicker\\alphaColorBar.png",
+				"background_color": "plugin-background-color"
+			}
+		}
+	},
+	"vs": {
+		"resource_aliases" : {
+			"Common": {
+				"type" : "Embedded",
+				"name" : "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+				"path" : "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.Common.Resources",
+				"is_default" : true
+			}
+		},
+		"guid_symbols": {
+			"guidShellStandardSet": "5efc7975-14bc-11cf-9b2b-00aa00573819",
+			"guidHtmlToolHostCmdSet": "a654f3df-4bdb-4863-a750-75cdb50a03bc"
+		},
+		"command_aliases": {
+			"find": {
+				"guid": "guidShellStandardSet",
+				"id": 97,
+				"focus": true
+			},
+			"findnext": {
+				"guid": "guidShellStandardSet",
+				"id": 370,
+				"focus": true
+			},
+			"findprev": {
+				"guid": "guidShellStandardSet",
+				"id": 371,
+				"focus": true
+			},
+			"redo": {
+				"guid": "guidShellStandardSet",
+				"id": 29,
+				"focus": true
+			},
+			"refresh": {
+				"guid": "guidHtmlToolHostCmdSet",
+				"id": 261,
+				"focus": true
+			},
+			"selectelement": {
+				"guid": "guidHtmlToolHostCmdSet",
+				"id": 262,
+				"focus": true
+			},
+			"showlayout": {
+				"guid": "guidHtmlToolHostCmdSet",
+				"id": 263,
+				"focus": true
+			},
+			"undo": {
+				"guid": "guidShellStandardSet",
+				"id": 43,
+				"focus": true
+			}
+		},
+		"theme_token_aliases": {
+			"plugin-font-console-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-console-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-console-input-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Input Text"
+			},
+			"plugin-font-console-input-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Input Text"
+			},            
+			"plugin-font-console-output-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Output Text"
+			},
+			"plugin-font-console-output-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Output Text"
+			},
+			"plugin-font-console-error-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Error Text"
+			},
+			"plugin-font-console-error-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Error Text"
+			},
+			"plugin-font-console-info-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Info Text"
+			},
+			"plugin-font-console-info-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Info Text"
+			},
+			"plugin-font-console-warning-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Warning Text"
+			},
+			"plugin-font-console-warning-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Warning Text"
+			},
+			"plugin-font-editor-color": {
+				"category": "58e96763-1d3b-4e05-b6ba-ff7115fd0b7b",
+				"key_type": "ForegroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-editor-background-color": {
+				"category": "58e96763-1d3b-4e05-b6ba-ff7115fd0b7b",
+				"key_type": "BackgroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-editor-keyword-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "Keyword"
+			},
+			"plugin-font-editor-keyword-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Keyword"
+			},
+			"plugin-font-editor-string-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "String"
+			},
+			"plugin-font-editor-string-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "String"
+			},
+			"plugin-font-editor-number-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "Number"
+			},
+			"plugin-font-editor-number-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Number"
+			},
+			"plugin-font-editor-symbol-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "SymbolDefinitionClassificationFormat"
+			},
+			"plugin-font-editor-symbol-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "SymbolDefinitionClassificationFormat"
+			},
+			"plugin-font-editor-html-tag-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Tag Delimiter"
+			},
+			"plugin-font-editor-html-tag-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Tag Delimiter"
+			},
+			"plugin-font-editor-html-element-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Element Name"
+			},
+			"plugin-font-editor-html-element-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Element Name"
+			},
+			"plugin-font-editor-html-comment-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Comment"
+			},
+			"plugin-font-editor-html-comment-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Comment"
+			},
+			"plugin-font-editor-html-attribute-name-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Attribute"
+			},
+			"plugin-font-editor-html-attribute-name-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Attribute"
+			},
+			"plugin-font-editor-html-attribute-value-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Attribute Value"
+			},
+			"plugin-font-editor-html-attribute-value-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Attribute Value"
+			},
+			"plugin-font-editor-html-operator-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Operator"
+			},
+			"plugin-font-editor-html-operator-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Operator"
+			},
+			"plugin-font-editor-css-name-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CSS Property Name"
+			},
+			"plugin-font-editor-css-name-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "CSS Property Name"
+			},
+			"plugin-font-editor-css-value-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CSS Property Value"
+			},
+			"plugin-font-editor-css-value-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "CSS Property Value"
+			},
+			"plugin-font-editor-css-selector-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CSS Selector"
+			},
+			"plugin-font-editor-css-selector-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "CSS Selector"
+			},
+			"plugin-font-editor-inactive-selected-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Inactive Selected Text"
+			},
+			"plugin-font-editor-selected-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Selected Text"
+			},
+			"plugin-font-editor-selected-border-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "outlining.collapsehintadornment"
+			},
+			"plugin-font-editor-collapse-adornment-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "outlining.collapsehintadornment"
+			},
+			"plugin-environment-background-gradient-begin": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "EnvironmentBackgroundGradientBegin"
+			},
+			"plugin-filetab-hot-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabHotText"
+			},
+			"plugin-filetab-inactive-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabInactiveText"
+			},
+			"plugin-filetab-inactive-gradient-top-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabInactiveGradientTop"
+			},
+			"plugin-filetab-hot-gradient-top-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabHotGradientTop"
+			},
+			"plugin-filetab-selected-gradient-top-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabSelectedGradientTop"
+			},
+			"plugin-filetab-selected-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabSelectedText"
+			},
+			"plugin-searchcontrol-selection-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "BackgroundColor",
+				"name": "Selection"
+			},
+			"plugin-searchcontrol-unfocused-watermark-text-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "BackgroundColor",
+				"name": "UnfocusedWatermarkText"
+			},
+			"plugin-searchcontrol-unfocused-background-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "BackgroundColor",
+				"name": "Unfocused"
+			},
+			"plugin-searchcontrol-unfocused-border-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "BackgroundColor",
+				"name": "UnfocusedBorder"
+			},
+			"plugin-searchcontrol-mouseover-watermark-text-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "BackgroundColor",
+				"name": "MouseOverWatermarkText"
+			},
+			"plugin-searchcontrol-mouseover-background-background-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "BackgroundColor",
+				"name": "MouseOverBackground"
+			},
+			"plugin-searchcontrol-mouseover-background-foreground-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "ForegroundColor",
+				"name": "MouseOverBackground"
+			},
+			"plugin-searchcontrol-mouseover-border-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "BackgroundColor",
+				"name": "MouseOverBorder"
+			},
+			"plugin-pseudo-class-panel-disabled-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "ForegroundColor",
+				"name": "ToolboxDisabledContentMouseOver"
+			},
+			"plugin-styles-deleted-item-color": {
+				"category": "f1095fad-881f-45f1-8580-589e10325eb8",
+				"key_type": "ForegroundColor",
+				"name": "Disabled"
+			},
+			"plugin-styles-changebar-add-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "deltadiff.add.word"
+			},
+			"plugin-styles-changebar-update-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ExtensionManagerStarHighlight2"
+			},
+			"plugin-styles-changebar-remove-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "deltadiff.remove.word"
+			},
+			"plugin-commandbar-gradient-begin-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarGradientBegin"
+			},
+			"plugin-vertical-resize-grip-middle-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "VerticalResizeGripMiddle"
+			},
+			"plugin-font-current-line-active-format-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CurrentLineActiveFormat"
+			},
+			"plugin-font-current-line-inactive-format-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CurrentLineInactiveFormat"
+			},
+			"plugin-font-editor-current-statement-background-color": {
+				"category": "ff349800-ea43-46c1-8c98-878e78f46501",
+				"key_type": "BackgroundColor",
+				"name": "Current Statement"
+			},
+			"plugin-font-editor-current-statement-color": {
+				"category": "ff349800-ea43-46c1-8c98-878e78f46501",
+				"key_type": "ForegroundColor",
+				"name": "Current Statement"
+			},
+			"plugin-tab-header-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolWindowTabGradientEnd"
+			},
+			"plugin-tab-header-active-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolWindowTabSelectedTab"
+			},
+			"plugin-tab-header-hover-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolWindowTabMouseOverBackgroundBegin"
+			},
+			"plugin-tab-header-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolWindowTabText"
+			},
+			"plugin-tab-header-active-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolWindowTabSelectedText"
+			},
+			"plugin-tab-header-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolWindowTabMouseOverText"
+			},
+			"plugin-breadcrumb-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolWindowBackground"
+			},
+			"plugin-border-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ActiveBorder"
+			},
+			"plugin-breadcrumb-border-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ActiveBorder"
+			},
+			"plugin-breadcrumb-hover-color": {
+				"category": "92ecf08e-8b13-4cf4-99e9-ae2692382185",
+				"key_type": "ForegroundColor",
+				"name": "SelectedItemInactive"
+			},
+			"plugin-breadcrumb-hover-background-color": {
+				"category": "92ecf08e-8b13-4cf4-99e9-ae2692382185",
+				"key_type": "BackgroundColor",
+				"name": "SelectedItemInactive"
+			},
+			"plugin-breadcrumb-selected-color": {
+				"category": "92ecf08e-8b13-4cf4-99e9-ae2692382185",
+				"key_type": "ForegroundColor",
+				"name": "SelectedItemActive"
+			},
+			"plugin-breadcrumb-selected-background-color": {
+				"category": "92ecf08e-8b13-4cf4-99e9-ae2692382185",
+				"key_type": "BackgroundColor",
+				"name": "SelectedItemActive"
+			},
+			"plugin-breadcrumb-tooltip-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "ForegroundColor",
+				"name": "ToolTip"
+			},
+			"plugin-breadcrumb-tooltip-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolTip"
+			},
+			"plugin-breadcrumb-tooltip-border-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "ToolTipBorder"
+			},
+			"plugin-perftools-grid-column-sizer": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "VerticalResizeGripMiddle"
+			},
+			"f12-intellisense-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "MenuText"
+			},
+			"f12-intellisense-hover-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "Menu"
+			},
+			"f12-intellisense-checked-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "HighlightText"
+			},
+			"f12-intellisense-checked-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "Highlight"
+			},
+			"f12-toolbar-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarGradientBegin"
+			},
+			"f12-toolbar-button-selected-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarSelected"
+			},
+			"f12-toolbar-button-selected-border-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarSelectedBorder"
+			},
+			"f12-toolbar-button-selected-text-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarTextSelected"
+			},
+			"f12-toolbar-button-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarMouseOverBackgroundBegin"
+			},
+			"f12-toolbar-button-hover-text-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarTextHover"
+			},
+			"f12-toolbar-button-border-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarBorder"
+			},
+			"f12-toolbar-button-pressed-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarMouseDownBackgroundBegin"
+			}
+		},
+		"themed_images": {
+			"vs-image-icon-tree-collapsed": {
+				"bitmap_source": "common/images/itemCollapsedIcon.png",
+				"background_color": "plugin-background-color"
+			},
+			"vs-image-icon-tree-expanded": {
+				"bitmap_source": "common/images/itemExpandedIcon.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-red-underline": {
+				"bitmap_source": "dom/images/red_squiggly.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-show-all-styles": {
+				"bitmap_source": "dom/images/i_just_my_code.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-critical": {
+				"bitmap_source": "common/images/critical.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-inspect-32x": {
+				"bitmap_source": "dom/images/Inspect_32x.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-show-layout-32x": {
+				"bitmap_source": "dom/images/ShowLayout_32x.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-image-icon-dom-explorer-refresh-32x": {
+				"bitmap_source": "dom/images/Refresh_32x.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-common-image-icon-next": {
+				"bitmap_source": "common/images/i_next.png",
+				"background_color": "f12-toolbar-background-color"
+			},
+			"plugin-common-image-icon-previous": {
+				"bitmap_source": "common/images/i_previous.png",
+				"background_color": "f12-toolbar-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-right": {
+				"bitmap_source": "dom/images/BreadcrumbScrollRight.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-right-hover": {
+				"bitmap_source": "dom/images/BreadcrumbScrollRightHover.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-left": {
+				"bitmap_source": "dom/images/BreadcrumbScrollLeft.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"plugin-image-icon-dom-explorer-breadcrumb-left-hover": {
+				"bitmap_source": "dom/images/BreadcrumbScrollLeftHover.png",
+				"background_color": "plugin-breadcrumb-background-color"
+			},
+			"plugin-image-icon-dom-explorer-show-pseudo_classes": {
+				"bitmap_source": "dom/images/i_show_pseudo_classes.png",
+				"background_color": "plugin-background-color"
+			}
+		}
+	},
+	"file_aliases": {
+		"PerformanceTraceExtension": {
+			"path": "PerformanceTrace.dll",
+			"optional": true
+		}
+	}
+}

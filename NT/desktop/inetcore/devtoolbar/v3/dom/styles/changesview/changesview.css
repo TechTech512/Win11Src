@@ -1,0 +1,62 @@
+﻿.BPT-Changes-Source {
+	color:TRANSPARENT; /* [{plugin-tab-header-active-color}] */
+ 	-ms-grid-column: 2;
+}
+
+.BPT-Changes-Link {
+    float: right;
+}
+
+.BPT-Changes-Rule {
+    margin-left: 26px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+.BPT-Changes-Selector {
+    white-space: normal;
+    word-wrap: break-word;
+    border: 1px solid transparent;
+}
+
+.BPT-Changes-Property {
+    display: -ms-grid;
+    -ms-grid-columns: 12px auto 6px 1fr;
+    border: 1px solid transparent;
+}
+
+.BPT-Changes-Property[data-change="add"],
+.BPT-Changes-Selector[data-change="add"],
+.BPT-Changes-BlockFooter[data-change="add"] {
+    background-color: rgba(0, 178, 148, 0.15); /*TODO: add resource*/
+}
+
+.BPT-Changes-Property[data-change="remove"],
+.BPT-Changes-Selector[data-change="remove"],
+.BPT-Changes-BlockFooter[data-change="remove"] {
+    background-color: rgba(186, 20, 26, 0.15); /*TODO: add resource*/
+}
+
+.BPT-Changes-PropertyName, .BPT-Changes-PropertyValue {
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.BPT-Changes-PropertyName {
+    -ms-grid-column: 2;
+}
+
+.BPT-Changes-PropertyValue {
+    -ms-grid-column: 4;
+}
+
+.BPT-Changes-Highlight {
+    font-weight: bold;
+}
+
+#changesEmptyMessage {
+    word-wrap: break-word;
+    white-space: normal;
+}

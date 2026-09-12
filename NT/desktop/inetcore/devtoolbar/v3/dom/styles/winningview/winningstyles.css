@@ -1,0 +1,168 @@
+﻿.BPT-WinningStyle-PropertyName {
+    color: TRANSPARENT;                  /* [{plugin-font-editor-html-attribute-name-color}] */
+}
+
+.BPT-WinningStyle-Color {
+    border: solid black 1px;
+    height: 11px;
+    margin: 2px;
+    padding: 0px;
+    width: 11px;
+}
+
+.BPT-WinningStyle-FileReference {
+    float: right;
+}
+
+.BPT-WinningStyle-Filter {
+    float: left;
+}
+
+.BPT-WinningStyle-Filter-InputText {
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-size: 9pt;
+    margin: 2px;
+}
+
+.BPT-WinningStyle-AllStyles {
+    float: right;
+    margin-top: 3px;
+}
+
+.BPT-WinningStyle-AllStyles-Text {
+    float: right;
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    margin-top: 1px;
+}
+
+.BPT-WinningStyle-AllStyles-CheckBox {
+    float: right;
+}
+
+.BPT-WinningStyle-NotWinning,
+.BPT-WinningStyle-NotWinning .BPT-WinningStyle-LeftSide {
+    text-decoration: line-through;
+}
+
+#winningStylesNoResultsMessage {
+    clear: both;
+    margin-left: 6px;
+}
+
+#winningStylesView .BPT-ExpandingList-Header {
+    -ms-grid-columns: 4px 15px 16px auto 8px auto 1fr;
+    display: -ms-grid;
+}
+
+#winningStylesView .BPT-ExpandingList-Header > .BPT-Style-ChangeBar {
+    -ms-grid-column: 1;
+}
+
+#winningStylesView .BPT-ExpandingList-Header > .BPT-ExpandingList-ExpandIcon {
+    -ms-grid-column: 2;
+}
+
+#winningStylesView .BPT-ExpandingList-Header > .BPT-WinningStyle-HeaderCheckBox {
+    -ms-grid-column: 3;
+}
+
+#winningStylesView .BPT-ExpandingList-Header > .BPT-WinningStyle-PropertyName {
+    -ms-grid-column: 4;
+}
+
+#winningStylesView .BPT-ExpandingList-Header > .BPT-WinningStyle-HeaderColon {
+    -ms-grid-column: 5;
+}
+
+#winningStylesView .BPT-ExpandingList-Header > .BPT-WinningStyle-Color {
+    -ms-grid-column: 6;
+}
+
+#winningStylesView .BPT-ExpandingList-Header > .BPT-WinningStyle-PropertyValue-Grid {
+    -ms-grid-column: 7;
+    word-break: break-all;
+}
+
+#winningStylesView .BPT-HTML-Tag {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-selector-color}]*/
+}
+
+#winningStylesView [data-removed="true"] .BPT-HTML-Tag,
+#winningStylesView [data-removed="true"] .BPT-Style-PropertyValue
+{
+    color: TRANSPARENT; /*[{plugin-styles-deleted-item-color}]*/
+}
+
+input.BPT-WinningStyle-HeaderCheckBox[type='checkbox'],
+input.BPT-WinningStyle-SourceCheckBox[type='checkbox'] {
+    background-color: transparent;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2px;
+    max-height: 13px;
+    padding: 0;
+    vertical-align: baseline;
+    width: 10px;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide {
+    -ms-grid-columns: 4px 37px auto 8px auto auto;
+    display: -ms-grid;
+    overflow: hidden;
+    float: left;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide > .BPT-Style-ChangeBar {
+    -ms-grid-column: 1;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide > input.BPT-WinningStyle-SourceCheckBox[type='checkbox'] {
+    -ms-grid-column: 2;
+    margin-left: 22px;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide[data-removed="true"] > input.BPT-WinningStyle-SourceCheckBox[type='checkbox'] {
+    width: 0;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide > .BPT-HTML-Tag {
+    -ms-grid-column: 3;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide > .BPT-HTML-Tag > div {
+    max-width: 100px;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide > .BPT-WinningStyle-Separator {
+    -ms-grid-column: 4;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide > .BPT-WinningStyle-SourceColor {
+    -ms-grid-column: 5;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > div.BPT-WinningStyle-LeftSide > .BPT-Style-PropertyValue-Container {
+    -ms-grid-column: 6;
+    word-break: break-all;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > .BPT-WinningStyle-FileReference {
+    margin-left: 5px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+#winningStylesView .BPT-ExpandingList-Child-Value-Container > .BPT-WinningStyle-FileReference > span {
+    right: 0;
+}
+
+#winningStylesView .BPT-EditBox-Active .BPT-EditBox-HideOnEdit,
+#winningStylesView .BPT-WinningStyle-Color .BPT-WinningStyle-Color-Hidden {
+    display: none;
+}

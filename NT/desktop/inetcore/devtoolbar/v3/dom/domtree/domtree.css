@@ -1,0 +1,182 @@
+﻿.BPT-HTML-Mutation {
+    background-color: TRANSPARENT; /*[{plugin-highlight-background-color rgba(0.35)}]*/
+    color:TRANSPARENT; /*[{plugin-highlight-color}]*/
+}
+
+#treeContainer.drag-and-drop .BPT-listItemContainer * {
+    pointer-events: none;
+}
+
+@media screen and (-ms-high-contrast: none) {
+    #treeContainer .drag-item {
+        opacity: 0.4;
+    }
+}
+
+/* Override the selection and hover appearance and color theming provided by the list control for the htmltree */
+#treeContainer .BPT-listItemContainer {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    border-color: transparent;
+    overflow: visible;
+}
+
+#treeContainer .BPT-Hover-Highlight {
+    border-width: 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-color: TRANSPARENT;  /*[{plugin-treeview-content-mouseover-color rgba(0.25)}]*/
+    margin-top: -1px;
+    position: absolute;
+    z-index: -1;
+}
+
+#treeContainer .BPT-Selected-Element-Highlight {
+    background: rgba(51, 153, 255, 0.18); /*[{plugin-font-editor-selected-background-color rgba(0.18)}]*/
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-color: TRANSPARENT; /*[{plugin-font-editor-selected-border-color}]*/
+    margin-top: -2px;
+    position: absolute;
+    z-index: -1;
+}
+
+#treeContainer DIV.BPT-listItemContainer.drag-hover-before {
+    border-top: 1px solid blue;
+}
+
+#treeContainer DIV.BPT-listItemContainer.drag-hover {
+    border-bottom: 1px solid blue;
+}
+
+#treeContainer.drag-and-drop .BPT-listItemContainer * {
+    pointer-events: none;
+}
+
+#treeContainer .BPT-stackPanel {
+    overflow-y: scroll;
+}
+
+#treeContainer .BPT-stackPanel .domTreeItemDataTemplateName {
+    overflow: visible;
+}
+
+.BPT-HTML-TextPreview {
+    cursor: text;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.BPT-HTML-Attribute-Section .BPT-HTML-Attribute {
+    display: inline-block;
+    word-break: normal;
+}
+
+.BPT-HTML-CData:before {
+    content: "<![CDATA["
+}
+
+.BPT-HTML-CData:after {
+    content: "]]>"
+}
+
+.BPT-HTML-Comment:before {
+    content: "<!--"
+}
+
+.BPT-HTML-Comment:after {
+    content: "-->"
+}
+
+.BPT-HTML-Value:before {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: "=\"";
+}
+
+.BPT-HTML-Value:after {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: "\"";
+}
+
+.BPT-HTML-DocType:before {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: "<!";
+}
+
+.BPT-HTML-DocType:after {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: ">";
+}
+
+.BPT-HTML-OpeningTag:before {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: "<";
+}
+
+.BPT-HTML-OpeningTag:after {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: ">";
+}
+
+.BPT-HTML-ClosingTag:before {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: "</";
+}
+
+.BPT-HTML-ClosingTag:after {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: ">";
+}
+
+.BPT-HTML-SelfClosingTag:before {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: "<";
+}
+
+.BPT-HTML-SelfClosingTag:after {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    content: " />";
+}
+
+.BPT-HTML {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.BPT-HTML .BPT-HTML-ClosingTag {
+    display: inline-block;
+    word-wrap: normal;
+    word-break: normal;
+}
+
+.domTreeItemDataTemplate .domTreeItemDataTemplateNameCell {
+    /*-ms-grid-column: 1;
+    -ms-grid-row: 1;*/
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-left: 5px;
+    line-height: 1.5em;
+    margin-top: -0.2em; /* needed to shift the whole text up due to using a larger line-height */
+}
+
+.domTreeItemDataTemplateNameCell > .BPT-itemCollapsed,
+.domTreeItemDataTemplateNameCell > .BPT-itemExpanded {
+    margin-top: 0.4em;
+}
+
+.domTreeItemDataTemplate .domTreeItemDataTemplateNameCell .domTreeItemDataTemplateName {
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+@media screen and (-ms-high-contrast: none) {
+    #treeContainer .drag-item {
+        opacity: 0.4;
+    }
+}

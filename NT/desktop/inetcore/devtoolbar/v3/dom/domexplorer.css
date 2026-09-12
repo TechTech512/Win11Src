@@ -1,0 +1,639 @@
+﻿body, div, span {
+    cursor: default;
+}
+
+.BPT-ScriptErrorMessage {
+    color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-error-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-error-weight}]*/
+    padding-left: 21px;
+    padding-top: 6px;
+}
+
+.BPT-Toolbar {
+    -ms-grid-row: 1;
+}
+
+    .BPT-Toolbar .BPT-Search-Button {
+        display: inline-block;
+        position: absolute;
+    }
+
+        .BPT-Toolbar .BPT-Search-Button:not([disabled]):hover div {
+            background-position-x: -16px;
+        }
+
+        .BPT-Toolbar .BPT-Search-Button[disabled] div {
+            visibility: hidden;
+        }
+
+        .BPT-Toolbar .BPT-Search-Button .BPT-Search-Next {
+            background-image: url("../common/images/i_next.png"); /*[url({plugin-common-image-icon-next})]*/
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            background-size: 48px 16px;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+        }
+
+        .BPT-Toolbar .BPT-Search-Button .BPT-Search-Previous {
+            background-image: url("../common/images/i_previous.png"); /*[url({plugin-common-image-icon-previous})]*/
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            background-size: 48px 16px;
+            display: inline-block;
+            width: 19px;
+            height: 16px;
+        }
+
+        .BPT-Toolbar .BPT-SearchBox-HideButtons .BPT-Search-Button {
+            display: none;
+        }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Css styling for the tree view and html elements */
+#tree {
+    margin-top: 5px;
+}
+
+/* Ensure a usable width for a DOM tree item -- this should stay in sync with TreeDataItem.MinSizingParentWidth in treeDataItem.ts */
+.BPT-HTML {
+    min-width: 400px;
+}
+
+/* Css styling for panes */
+#mainContainer {
+    display: -ms-grid;
+    -ms-grid-rows: auto 1fr;
+    -ms-grid-columns: 100%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.BPT-HorizontalPane {
+    -ms-grid-row: 2;
+    height: 100%;
+    background-color: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+    .BPT-HorizontalPane .BPT-Pane {
+        float: left;
+    }
+
+.BPT-HorizontalPane-Left {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto auto 1fr;
+    box-sizing: border-box;
+    display: -ms-grid;
+    height: calc(100% - 25px);
+    overflow-x: auto;
+    width: 100%;
+}
+
+    .BPT-HorizontalPane-Left > #warningSection {
+        -ms-grid-row: 1;
+        border-bottom: 1px solid TRANSPARENT; /*[1px solid {plugin-breadcrumb-border-color}]*/
+    }
+
+    .BPT-HorizontalPane-Left > #scriptErrorSection {
+        -ms-grid-row: 2;
+        border-bottom: 1px solid TRANSPARENT; /*[1px solid {plugin-breadcrumb-border-color}]*/
+    }
+
+    .BPT-HorizontalPane-Left > #domTreeView {
+          -ms-grid-row: 3;
+          display: block;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+    }
+
+.BPT-HorizontalPane-Right {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.BPT-HorizontalPane-Right-Content {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+    .BPT-HorizontalPane-Right-Content > div > *:not(.BPT-Toolbar) {
+        font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+        font-size: 12px; /*[{plugin-font-size}]*/
+        /* Changes to line-height here also require changes in styleView.css (see references to line-height there). */
+        line-height: 1.3em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+.BPT-HorizontalPane-Right-Tab-ToolbarContainer {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 2.666em - 4px);
+    overflow: auto;
+}
+
+.BPT-HorizontalPane-Right-Tab {
+    display: none;
+    padding: 3px 6px 6px 4px;
+}
+
+.BPT-DataTree-Container {
+    margin-top: 5px;
+}
+
+.BPT-Virtualizing-Tree-Container {
+    position: absolute;
+}
+
+.BPT-HTML-InlinedTag {
+    font-style: italic;
+}
+
+.BPT-Pane-Divider {
+    position: relative;
+    float: left;
+    z-index: 100;
+    height: 100%;
+    width: 3px;
+    background-color: TRANSPARENT; /*[{plugin-perftools-grid-column-sizer}]*/
+    cursor: w-resize;
+}
+
+.BPT-HorizontalPane-Right .BPT-Toolbar {
+    font-family: "Segoe UI", Arial, Sans-Serif; /*[{plugin-font-family} , Arial, Sans-Serif]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    font-weight: normal; /*[{plugin-font-weight}]*/
+    color: TRANSPARENT; /*[{plugin-color}]*/
+}
+
+/* CSS styling for the tab and resizable pane controls */
+.BPT-Tab-Container {
+    display: -ms-grid;
+    -ms-grid-columns: 4px 1fr 4px auto;
+    background-color: TRANSPARENT; /*[{plugin-tab-header-background-color}]*/
+}
+
+.BPT-Tabbar {
+    -ms-grid-column: 2;
+    overflow: hidden;
+    width: 100%;
+    height: 25px;
+    white-space: nowrap;
+    background-color: TRANSPARENT; /*[{plugin-tab-header-background-color}]*/
+    padding: 2px 0 0 2px;
+}
+
+    .BPT-Tabbar .BPT-Tab-Item {
+        height: 24px;
+        display: table-cell;
+        cursor: default;
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background-color: TRANSPARENT; /*[{plugin-tab-header-background-color}]*/
+    }
+
+    .BPT-Tabbar ::selection {
+        background: transparent;
+    }
+
+.BPT-Tab-Item[aria-selected='true'] {
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-weight: 600;
+    background-color: TRANSPARENT; /*[{plugin-tab-header-active-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-tab-header-active-color}]*/
+}
+
+.BPT-ToolWindow-NoFocus .BPT-Tab-Item[aria-selected='true'] {
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-weight: normal;
+    background-color: TRANSPARENT; /*[{plugin-tab-header-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-tab-header-color}]*/
+}
+
+.BPT-Tab-Item[aria-selected='false'] {
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-weight: normal;
+    background-color: TRANSPARENT; /*[{plugin-tab-header-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-tab-header-color}]*/
+}
+
+    .BPT-Tab-Item[aria-selected='false']:hover {
+        background-color: TRANSPARENT; /*[{plugin-tab-header-hover-background-color}]*/
+        color: TRANSPARENT; /*[{plugin-tab-header-hover-color}]*/
+    }
+
+.BPT-Tab-Item:focus {
+    outline: invert dotted thin;
+}
+
+@media screen and (-ms-high-contrast) {
+    .BPT-Tab-Container {
+        background-color: transparent;
+    }
+
+    .BPT-Tabbar {
+        background-color: transparent;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+        .BPT-Tabbar .BPT-Tab-Item {
+            background-color: transparent;
+        }
+
+    .BPT-Tab-Item[aria-selected='true'] {
+        background-color: transparent;
+        border-color: TRANSPARENT; /*[{plugin-tab-header-hover-background-color}]*/
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .BPT-Tab-Item[aria-selected='false'] {
+        background-color: transparent;
+    }
+}
+
+/* Optional buttons panel. */
+#optionalButtonsPanel {
+    background-color: TRANSPARENT; /*[{f12-toolbar-background-color}]*/
+    margin: 1px 18px 1px 0;
+    padding: 0 0 1px;
+    position: absolute;
+    right: 0px;
+    z-index: 1;
+}
+
+    .BPT-EditBox-Active > #optionalButtonsPanel,
+    #optionalButtonsPanel.BPT-OptionsPanel-Hidden {
+        display: none;
+    }
+
+#optionalButtonsPanelGroup {
+    display: inline-block;
+    padding: 3px;
+}
+
+.BPT-OptionsPanel-Button {
+    border: 1px solid transparent;
+    padding: 0;
+    margin: 0 2px 0;
+}
+
+    .BPT-OptionsPanel-Button.BPT-ToolbarToggleButton-StateOn {
+        border-color: TRANSPARENT; /*[{f12-toolbar-button-selected-border-color}]*/
+    }
+
+@media screen and (-ms-high-contrast) {
+    #optionalButtonsPanel {
+        background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+    }
+
+    .BPT-OptionsPanel-Button.BPT-ToolbarToggleButton-StateOn {
+        background-color: transparent;
+        border-color: TRANSPARENT; /*[{f12-toolbar-button-selected-color}]*/
+    }
+}
+
+.BPT-OptionsPanel-Button > div {
+    background-size: 18px 54px;
+    background-repeat: no-repeat;
+}
+
+.pseudoStatesToggle {
+    background-image: url('images/i_show_pseudo_classes.png'); /*[url({plugin-image-icon-dom-explorer-show-pseudo_classes})]*/
+}
+
+.allWinningStylesButton {
+    background-image: url('images/i_just_my_code.png'); /*[url({plugin-image-icon-dom-explorer-show-all-styles})]*/
+}
+
+/* Pseudo-Class states panel. */
+#pseudoStatesPanel {
+    margin-top: 1px;
+    height: 28px;
+    display: block;
+    background-color: TRANSPARENT; /*[{f12-toolbar-background-color}]*/
+}
+
+@media screen and (-ms-high-contrast) {
+    #pseudoStatesPanel {
+        background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+    }
+}
+
+#pseudoStatesPanel[data-show="false"], #pseudoStatesToggle[data-show="false"] {
+    display: none;
+}
+
+.BPT-PseudoSelector {
+    margin: 6px 6px;
+    display: inline-block;
+}
+
+.BPT-PseudoSelector-Disabled {
+    color: TRANSPARENT; /*[{plugin-pseudo-class-panel-disabled-color rgba(0.5)}]*/
+}
+
+#pseudoStatesPanel .BPT-PseudoCheckbox {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 4px;
+}
+
+.BPT-DataTreeItem-ChildCollection {
+    display: block;
+}
+
+body.BPT-ToolWindow-NoFocus .BPT-HtmlTree-Container:focus .BPT-HtmlTreeItem-Selected,
+body.BPT-ToolWindow-NoFocus .BPT-HtmlTree-Container-KeepSelection .BPT-HtmlTreeItem-Selected {
+    border-left-color: TRANSPARENT; /*[{plugin-font-editor-inactive-selected-background-color}]*/
+}
+
+    body.BPT-ToolWindow-NoFocus .BPT-HtmlTree-Container:focus .BPT-HtmlTreeItem-Selected > .BPT-HtmlTreeItem-Header,
+    body.BPT-ToolWindow-NoFocus .BPT-HtmlTree-Container-KeepSelection .BPT-HtmlTreeItem-Selected > .BPT-HtmlTreeItem-Header {
+        background: rgba(191, 205, 219, 0.25); /*[{plugin-font-editor-inactive-selected-background-color rgba(0.25)}]*/
+        border-color: TRANSPARENT; /*[{plugin-font-editor-inactive-selected-background-color}]*/
+    }
+
+.BPT-HTML div {
+    display: inline;
+}
+
+.BPT-HTML .BPT-HTML-No-Closing-Slash,
+.BPT-HTML .BPT-HTML-No-Self-Closing-Slash,
+.BPT-HTML .BPT-HTML-No-Closing-Tag,
+.BPT-HTML .BPT-HTML-No-TextContentPreview {
+    display: none;
+}
+
+.BPT-ColorThumbnail {
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    margin: 0 2px 0 2px;
+    border: 1px solid black; /*[1px solid {plugin-font-editor-color}]*/
+}
+
+.BPT-ToolbarLabel .BPT-FileLink {
+    margin-top: -1px;
+    margin-left: 4px;
+    max-width: 12em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Css styling for the editing box */
+.BPT-EditBox {
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-textbox-border-color}]*/
+    box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.25); /*[2px 2px 2px {plugin-textbox-border-color rgba(0.5)}]*/
+    background-color: TRANSPARENT; /*[{plugin-textbox-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+textarea.BPT-EditBox {
+    margin: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: auto;
+    min-height: 16px;
+}
+
+input.BPT-EditBox {
+    margin: -2px 0 -2px 0;
+}
+
+.BPT-EditBox-Invalid {
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-font-console-error-color}]*/
+}
+
+/* Disable "x" in input boxes. */
+::-ms-clear {
+    display: none;
+}
+
+.BPT-SearchBox::-ms-clear {
+    display: normal;
+}
+
+.BPT-SearchBox:-ms-input-placeholder {
+    color: TRANSPARENT; /*[{plugin-searchcontrol-unfocused-watermark-text-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-searchcontrol-unfocused-background-color}]*/
+}
+
+.BPT-SearchBox-Border:hover .BPT-SearchBox:-ms-input-placeholder {
+    background-color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-watermark-text-color}]*/
+}
+
+.BPT-SearchBox-Border {
+    float: right;
+    background-color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-background-color}]*/
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-searchcontrol-unfocused-border-color}]*/
+    margin-top: 3px;
+    padding: 1px;
+    display: inline-block;
+    position: relative;
+}
+
+.BPT-SearchBox {
+    color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-foreground-color}]*/
+    background-color: transparent;
+    border: none;
+    height: 16px;
+    width: 115px;
+    padding: 1px 2px;
+}
+
+    .BPT-SearchBox::selection {
+        background-color: TRANSPARENT; /*[{plugin-searchcontrol-selection-color}]*/
+    }
+
+.BPT-SearchBox-Border:hover {
+    background-color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-background-color}]*/
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-searchcontrol-mouseover-border-color}]*/
+}
+
+.BPT-SearchBox-NoResult, .BPT-SearchBox-NoResult:hover {
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-font-console-error-color}]*/
+}
+
+/* Css styling for editable text sections */
+.BPT-DataTreeItem-Value > .BPT-HTML-CSS-Value[data-uid],
+.BPT-DataTreeItem-Value > .BPT-HTML-Value[data-uid],
+.BPT-HTML-Value[data-attrName],
+.BPT-HTML-Text,
+.BPT-HTML-CData {
+    cursor: text;
+}
+
+::selection {
+    background-color: rgba(0, 0, 255, 0.5); /*[{plugin-highlight-background-color rgba(0.5)}]*/
+}
+
+#BreadcrumbsView {
+    height: 0;
+}
+
+#breadcrumbRightArrow {
+    background-image: url('images/BreadcrumbScrollRight.png'); /*[url({plugin-image-icon-dom-explorer-breadcrumb-right})]*/
+    float: right;
+}
+
+    #breadcrumbRightArrow:hover {
+        background-image: url('images/BreadcrumbScrollRightHover.png'); /*[url({plugin-image-icon-dom-explorer-breadcrumb-right-hover})]*/
+    }
+
+#breadcrumbLeftArrow {
+    background-image: url('images/BreadcrumbScrollLeft.png'); /*[url({plugin-image-icon-dom-explorer-breadcrumb-left})]*/
+    margin-right: 12px;
+    float: left;
+}
+
+    #breadcrumbLeftArrow:hover {
+        background-image: url('images/BreadcrumbScrollLeftHover.png'); /*[url({plugin-image-icon-dom-explorer-breadcrumb-left-hover})]*/
+    }
+
+.BPT-HorizontalPane-BreadcrumbBar-Arrow {
+    background-size: 5px 9px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 12px;
+    height: 24px;
+    display: inline-block;
+}
+
+.BPT-HorizontalPane-BreadcrumbChevron {
+    z-index: 2;
+    position: relative;
+}
+
+.BPT-BreadcrumbChevron-Edge {
+    stroke-width: 1;
+    stroke: TRANSPARENT; /*[{plugin-breadcrumb-border-color}]*/
+    fill-opacity: 0.0;
+}
+
+.BPT-BreadcrumbChevron {
+    fill: TRANSPARENT; /*[{plugin-breadcrumb-background-color}]*/
+    stroke-width: 0px;
+}
+
+.BPT-BreadcrumbChevron-Hover {
+    fill: TRANSPARENT; /*[{plugin-breadcrumb-hover-background-color}]*/
+}
+
+.BPT-BreadcrumbChevron-Selected {
+    fill: TRANSPARENT; /*[{plugin-breadcrumb-selected-background-color}]*/
+}
+
+.BPT-Breadcrumb-Container {
+    margin-left: -8px;
+    float: left;
+    position: relative;
+}
+
+.BPT-HorizontalPane-BreadcrumbBar-Item {
+    float: left;
+    vertical-align: middle;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 8em;
+    padding-left: 16px; /* chevron width + 8 */
+    padding-right: 8px;
+}
+
+.BPT-Breadcrumb-Selected {
+    background-color: TRANSPARENT; /*[{plugin-breadcrumb-selected-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-breadcrumb-selected-color}]*/
+    overflow-x: hidden;
+}
+
+.BPT-Breadcrumb-Hover {
+    background-color: TRANSPARENT; /*[{plugin-breadcrumb-hover-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-breadcrumb-hover-color}]*/
+}
+
+.BPT-HorizontalPane-BreadcrumbBar {
+    font-family: "Segoe UI", Arial, Sans-Serif; /*[{plugin-font-family}, "Segoe UI", Arial, Sans-Serif]*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: table-row;
+    border-top: 1px solid TRANSPARENT; /*[1px solid {plugin-breadcrumb-border-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-breadcrumb-background-color}]*/
+    width: inherit;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    z-index: 1;
+    resize: horizontal;
+    cursor: default;
+}
+
+.BPT-Breadcrumb-Tooltip {
+    position: absolute;
+    float: none;
+    z-index: 2;
+    padding: 6px;
+    display: table;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif; /*[{plugin-font-family}, "Segoe UI", Arial, Sans-Serif]*/
+    font-size: 12px; /*[{plugin-font-size}]*/
+    color: TRANSPARENT; /*[{plugin-breadcrumb-tooltip-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-breadcrumb-tooltip-background-color}]*/
+    box-shadow: 2px 2px 2px TRANSPARENT; /*[2px 2px 2px {plugin-textbox-border-color rgba(0.5)}]*/
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-breadcrumb-tooltip-border-color}]*/
+    line-height: 1.3em;
+    max-width: 400px;
+    word-wrap: break-word;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+.BPT-Breadcrumb-TooltipTableCell {
+    max-width: 380px;
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.BPT-Breadcrumb-TooltipTableRow {
+    display: table-row;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.BPT-Breadcrumb-Tooltip-Data {
+    text-align: left;
+}
+
+.BPT-Breadcrumb-Tooltip-ClassNames {
+    text-align: left;
+}
+
+#searchNextResult {
+    right: 0px;
+    top: 2px;
+}
+
+#searchPreviousResult {
+    right: 11px;
+    top: 2px;
+}
