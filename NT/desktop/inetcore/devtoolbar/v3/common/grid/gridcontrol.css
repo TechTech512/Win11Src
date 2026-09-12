@@ -1,0 +1,632 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(0, 0, 0); /*[{plugin-color}]*/
+    overflow: hidden;
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-size: 12px; /*[{plugin-font-size}]*/
+    background-color: rgb(252, 252, 252); /*[{vs-tool-window-background-color}]*/
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.add-icon {
+    background: url("../Common/images/add_row.png") no-repeat 0 0 !important; /*[url({f12-debugger-image-grid-control-add-row}) no-repeat 0 0 !important]*/
+}
+
+.icon-empty {
+    background: url("../Common/images/common_icons.png") no-repeat -640px -16px !important; /*[url({f12-image-common-icons}) no-repeat -640px -16px !important]*/
+}
+
+.icon-tip {
+    background: url("../Common/images/misc_icons.png") no-repeat -3952px -16px !important; /*[url({f12-image-misc-icons}) no-repeat -3952px -16px !important]*/
+}
+
+.icon-tools {
+    background: url("../Common/images/common_icons.png") no-repeat -2258px -16px !important; /*[url({f12-image-common-icons}) no-repeat -2258px -16px !important]*/
+}
+
+.icon-tree {
+    background: url("../Common/images/misc_icons.png") no-repeat -3998px -16px !important; /*[url({f12-image-misc-icons}) no-repeat -3998px -16px !important]*/
+}
+
+.icon-tree-add {
+    background: url("../Common/images/misc_icons.png") no-repeat -4046px -16px !important; /*[url({f12-image-misc-icons}) no-repeat -4046px -16px !important]*/
+}
+
+.icon-tree-collapse-all {
+    background: url("../Common/images/tree_icons.png") no-repeat -16px -16px !important; /*[url({f12-image-tree-icons}) no-repeat -16px -16px !important]*/
+}
+
+.icon-tree-collapsed {
+    background-color: transparent;
+    background-image: url("../Common/images/itemCollapsedIcon.png"); /*[url({vs-image-icon-tree-collapsed})]*/
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    margin: 3px 2px 0px 3px;
+}
+
+.icon-tree-collapsed-2 {
+    background: url("../Common/images/tree_icons.png") no-repeat -108px -16px !important; /*[url({f12-image-tree-icons}) no-repeat -108px -16px !important]*/
+}
+
+.icon-tree-corner {
+    background: url("../Common/images/misc_icons.png") no-repeat -4622px -16px !important; /*[url({f12-image-misc-icons}) no-repeat -4622px -16px !important]*/
+}
+
+.icon-tree-empty {
+    background: url("../Common/images/tree_icons.png") no-repeat -156px -16px !important; /*[url({f12-image-tree-icons}) no-repeat -156px -16px !important]*/
+}
+
+.icon-tree-expand-all {
+    background: url("../Common/images/tree_icons.png") no-repeat -204px -16px !important; /*[url({f12-image-tree-icons}) no-repeat -204px -16px !important]*/
+}
+
+.icon-tree-expanded {
+    background-color: transparent;
+    background-image: url("../Common/images/itemExpandedIcon.png"); /*[url({vs-image-icon-tree-expanded})]*/
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    margin: 3px 2px 0px 3px;
+}
+
+.icon-tree-expanded-2 {
+    background: url("../Common/images/tree_icons.png") no-repeat -296px -16px !important; /*[url({f12-image-tree-icons}) no-repeat -296px -16px !important]*/
+}
+
+.heading {
+    text-transform: uppercase;
+    line-height: 1.84em;
+    font-size: 12pt; /*[{plugin-font-size}]*/
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.hidden {
+    display: none;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+    .icon.action {
+        cursor: pointer;
+    }
+
+.menu-bar {
+    position: relative;
+}
+
+.menu-popup {
+    position: relative;
+}
+
+.menu-popup-static {
+    position: relative;
+}
+
+.menu {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.menu-bar {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.menu-popup {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.menu-popup-static {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.sub-menu {
+    -ms-overflow-y: auto;
+}
+
+.virtualizing-list-view {
+    border: 1px solid rgb(204, 204, 204); /*[1px solid {vs-tree-view-selected-item-inactive-color}]*/
+    position: relative;
+    background-color: rgb(252, 252, 252); /*[{vs-toolbox-background-color}]*/
+}
+
+    .virtualizing-list-view > .items {
+        margin: 0px;
+        padding: 0px;
+        left: 0px;
+        right: 0px;
+        list-style-type: none;
+        white-space: nowrap;
+        position: absolute;
+    }
+
+.scroll.virtualizing-list-view > .items {
+    right: 18px;
+}
+
+
+.grid {
+    border: 1px solid transparent;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.grid-focus {
+    top: 5px;
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    outline: none;
+}
+
+.grid .grid-canvas {
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+    position: absolute;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -moz-user-select: -moz-none;
+}
+
+    .grid .grid-canvas .grid-row-splitter {
+        cursor: e-resize;
+        width: 3px;
+        position: absolute;
+        z-index: 10;
+        height: 100%
+    }
+
+    .grid .grid-canvas .grid-row-splitter.active {
+        border-left: 3px solid #E5E6ED; /*[3px solid {plugin-debugger-grid-active-splitter-color}]*/
+    }
+
+    .grid .grid-canvas .grid-row-splitter.fixed {
+        cursor: default;
+    }
+
+.has-header.grid .grid-canvas {
+    top: 33px;
+}
+
+.grid-content-spacer {
+    left: 0px;
+    top: 0px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+}
+
+.grid-header {
+    left: 0px;
+    top: 0px;
+    height: 2.2em;
+    right: 0px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 6;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.grid-header-canvas {
+    left: 0px;
+    top: 0px;
+    width: 999999px;
+    bottom: 0px;
+    overflow: hidden;
+    border-bottom-color: transparent;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    position: absolute;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.grid-header-column {
+    background-color: TRANSPARENT; /*[{vs-command-bar-options-background-color}]*/
+    width: 20px;
+    height: 100%;
+    overflow: visible;
+    border-right-color: transparent;
+    border-right-width: 1px;
+    border-right-style: solid;
+    float: left;
+    position: relative;
+    cursor: default;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+    .grid-header-column:hover {
+        background-color: rgb(238, 238, 238); /*[{vs-command-bar-mouse-over-background-begin-color}]*/
+    }
+
+    .grid-header-column > .separator {
+        top: 0px;
+        width: 12px;
+        right: -6px;
+        bottom: 0px;
+        position: absolute;
+        z-index: 6;
+        cursor: e-resize;
+    }
+
+    .grid-header-column > .sort-handle {
+        top: 2px;
+        width: 7px;
+        height: 7px;
+        right: -5000px;
+        overflow: hidden;
+        position: absolute;
+        z-index: 3;
+    }
+
+.ascending.grid-header-column > .sort-handle {
+    background: url("../Common/images/common_icons.png") no-repeat -2128px 50% !important; /*[url({f12-image-common-icons}) no-repeat -2128px 50% !important]*/
+    left: 49%;
+}
+
+.descending.grid-header-column > .sort-handle {
+    background: url("../Common/images/common_icons.png") no-repeat -2171px 50% !important; /*[url({f12-image-common-icons}) no-repeat -2171px 50% !important]*/
+    left: 49%;
+}
+
+.grid-header-column > .title {
+    padding: 4px;
+    left: 0px;
+    top: 3px;
+    text-align: left;
+    right: 0px;
+    color: rgb(128, 128, 128); /*[{plugin-color}]*/
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: absolute;
+    cursor: default;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.grid-header-column > .indented-title {
+    text-indent: 16px;
+}
+
+.ascending.grid-header-column > .title {
+}
+
+.descending.grid-header-column > .title {
+}
+
+.grid-column-sizing {
+    width: 0px;
+    border-left-color: rgb(204, 204, 204); /*[{vs-tree-view-selected-item-inactive-color}]*/
+    border-left-width: 1px;
+    border-left-style: solid;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+}
+
+.grid-column-moving {
+    padding: 7px 4px 4px;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 5;
+    cursor: pointer;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    opacity: 0.75;
+    background-color: rgb(220, 230, 244) !important; /*[{vs-command-bar-mouse-down-background-begin-color} !important]*/
+    -moz-opacity: 0.75;
+}
+
+.grid-column-moving-placer {
+    background: url("../Common/images/columnmove.png") -2px -4px; /*[url({f12-debugger-image-grid-control-column-move}) -2px -4px]*/
+    width: 7px;
+    height: 4px;
+    font-size: 1pt;
+    position: absolute;
+    z-index: 100;
+}
+
+.grid-gutter {
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 50px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 6;
+}
+
+.grid-gutter-canvas {
+    left: 0px;
+    top: 0px;
+    width: 29px;
+    height: 1px;
+    position: absolute;
+    z-index: 5;
+}
+
+.grid-gutter-header {
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    bottom: 0px;
+    position: absolute;
+    z-index: 7;
+}
+
+.grid-gutter-row {
+    width: 100%;
+    height: 1em;
+    overflow: hidden;
+    position: absolute;
+}
+
+.grid-gutter-cell {
+    border: currentColor;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    float: left;
+    display: table-cell;
+    position: relative;
+    cursor: default;
+}
+
+.grid-gutter-menu {
+    margin: 0px 3px;
+    width: 12px;
+}
+
+.grid-gutter-icon {
+    width: 16px;
+    height: 100%;
+}
+
+.grid-gutter-row-normal {
+    border-width: 1px 0px 1px 1px;
+    border-style: solid none solid solid;
+    border-color: rgb(252, 252, 252) currentColor rgb(252, 252, 252) rgb(252, 252, 252); /*[{vs-toolbox-background-color} currentColor {vs-toolbox-background-color} {vs-toolbox-background-color}]*/
+    background-color: rgb(252, 252, 252); /*[{vs-toolbox-background-color}]*/
+}
+
+.grid-gutter-row-selected {
+    border-width: 1px 0px 1px 1px;
+    border-style: solid none solid solid;
+    border-color: rgb(252, 252, 252) currentColor rgb(252, 252, 252) rgb(252, 252, 252); /*[{vs-toolbox-background-color} currentColor {vs-toolbox-background-color} {vs-toolbox-background-color}]*/
+    background-color: rgb(252, 252, 252); /*[{vs-toolbox-background-color}]*/
+}
+
+    .grid-gutter-row-selected .grid-gutter-drop {
+        background: url("../Common/images/common_icons.png") no-repeat -401px 50% !important; /*[url({f12-image-common-icons}) no-repeat -401px 50% !important]*/
+    }
+
+.grid-gutter-drop:hover {
+    background: url("../Common/images/common_icons.png") no-repeat -401px 50% !important; /*[url({f12-image-common-icons}) no-repeat -401px 50% !important]*/
+}
+
+.grid-gutter-row-selected-blur {
+    border-width: 1px 0px 1px 1px;
+    border-style: solid none solid solid;
+    border-color: rgb(252, 252, 252) currentColor rgb(252, 252, 252) rgb(252, 252, 252); /*[{vs-toolbox-background-color} currentColor {vs-toolbox-background-color} {vs-toolbox-background-color}]*/
+    background-color: rgb(252, 252, 252); /*[{vs-toolbox-background-color}]*/
+}
+
+    .grid-gutter-row-selected-blur .grid-gutter-drop {
+        background: url("../Common/images/common_icons.png") no-repeat -401px 50% !important; /*[url({f12-image-common-icons}) no-repeat -401px 50% !important]*/
+    }
+
+.grid-gutter-row-current {
+    border-width: 1px 0px 1px 1px;
+    border-style: solid none solid solid;
+    border-color: rgb(252, 252, 252) currentColor rgb(252, 252, 252) rgb(252, 252, 252); /*[{vs-toolbox-background-color} currentColor {vs-toolbox-background-color} {vs-toolbox-background-color}]*/
+    background-color: rgb(252, 252, 252); /*[{vs-toolbox-background-color}]*/
+}
+
+.grid-row {
+    margin: 0px;
+    width: 100%;
+    color: rgb(0, 0, 0); /*[{plugin-color}]*/
+    overflow: hidden;
+    position: absolute;
+    cursor: default;
+    display: -ms-inline-flexbox;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+    .grid-row:hover {
+        background-color: rgb(242, 247, 253); /*[{plugin-treeview-content-mouseover-background-color}]*/
+    }
+
+    .grid-row:hover,
+    .gird-row:hover a,
+    .grid-row:hover a:link,
+    .grid-row:hover a:visited,
+    .grid-row:hover a:focus {
+        color: rgb(0, 0, 0); /*[{plugin-treeview-content-mouseover-color}]*/
+    }
+
+.grid-row-normal {
+    border: 1px solid transparent;
+}
+
+.grid-row-selected, .grid-row-selected:hover {
+    color: rgb(0, 0, 0); /*[{plugin-treeview-content-selected-color}]*/
+    background-color: rgb(220, 235, 252); /*[{plugin-treeview-content-selected-background-color}]*/
+}
+
+    .grid-row-selected a {
+        text-decoration: none;
+    }
+
+        .grid-row-selected a:hover {
+            text-decoration: underline;
+        }
+
+        .grid-row-selected a:visited {
+        }
+
+        .grid-row-selected a:active {
+        }
+
+.grid-row-selected-blur {
+    background-color: rgb(230, 230, 230); /*[{plugin-treeview-content-inactive-selected-background-color}]*/
+}
+
+.grid-row-selected-blur,
+.grid-row-selected-blur a {
+    color: rgb(0, 0, 0); /*[{plugin-treeview-content-inactive-selected-color}]*/
+}
+
+.grid-row-drop-active {
+    border-top-color: blue;
+    border-top-width: 2px;
+    border-top-style: solid;
+}
+
+.grid-row-dragging {
+    background-color: rgb(230, 230, 230);
+}
+
+.grid-row-group {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    font-weight: bold;
+    border-bottom-color: rgb(240, 240, 240);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    position: absolute;
+    cursor: default;
+    background-color: rgb(255, 255, 255);
+}
+
+.grid-cell {
+    padding: 0px 4px 0px 4px;
+    border: currentColor;
+    width: 100px;
+    text-align: left;
+    text-indent: 2px;
+    overflow: hidden;
+    vertical-align: middle;
+    float: left;
+    display: table-cell;
+    white-space: nowrap;
+    position: relative;
+    cursor: default;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    min-height: 18px;
+}
+
+    .grid-cell input[type='checkbox'] {
+        margin: 0px;
+    }
+
+.grid-cell-first {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: default;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.grid-edit-box {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-tree-icon {
+    text-indent: 0px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.grid-cell-glyph {
+    margin-top: 3px;
+    position: absolute;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.sample-containers {
+    display: none;
+}
+
+.samples-main {
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    position: fixed;
+}
+
+    .samples-main > .right {
+        left: 200px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        overflow: auto;
+        position: absolute;
+    }
+
+        .samples-main > .right .demoview > div {
+            height: 400px;
+            overflow: auto;
+        }
