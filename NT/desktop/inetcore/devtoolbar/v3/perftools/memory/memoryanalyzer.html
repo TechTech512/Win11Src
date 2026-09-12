@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="format-detection" content="telephone=no">
+    <title>Memory</title>
+    <link id="controls" rel="stylesheet" href="../../common/controls/controls.css" type="text/css" data-plugin-theme="true" data-necessary-for-tooltip="true" />
+    <link id="MultiLineGraph" rel="stylesheet" href="../Common/controls/MultiLineGraph.css" type="text/css" data-plugin-theme="true" />
+    <link id="Renderer" rel="stylesheet" href="../Common/controls/Renderer.css" type="text/css" data-plugin-theme="true" />
+    <link id="Ruler" rel="stylesheet" href="../Common/controls/Ruler.css" type="text/css" data-plugin-theme="true" />
+    <link id="Scrollbar" rel="stylesheet" href="../Common/controls/Scrollbar.css" type="text/css" data-plugin-theme="true" />
+    <link id="Swimlane" rel="stylesheet" href="../Common/controls/Swimlane.css" type="text/css" data-plugin-theme="true" />
+    <link id="menuControl" rel="stylesheet" href="../Common/controls/menuControl.css" type="text/css" data-plugin-theme="true" />
+    <link id="common.f12" rel="stylesheet" href="../Common/common.f12.css" type="text/css" data-plugin-theme="true" />
+    <link id="TokenExtractor" rel="stylesheet" href="../Common/TokenExtractor.css" type="text/css" data-plugin-theme="true" />
+    <link id="gridControl" rel="stylesheet" href="../Common/controls/gridControl.css" type="text/css" data-plugin-theme="true" />
+    <link id="memoryAnalyzer" rel="stylesheet" href="memoryAnalyzer.css" type="text/css" data-plugin-theme="true" />
+    <link id="memoryAnalyzer.f12" rel="stylesheet" href="memoryAnalyzer.f12.css" type="text/css" data-plugin-theme="true" />
+    <link id="tabControl" rel="stylesheet" href="js/controls/tabControl.css" type="text/css" data-plugin-theme="true" />
+    <link id="snapshotTileView" rel="stylesheet" href="snapshotTileView.css" type="text/css" data-plugin-theme="true" />
+
+    <script type="text/javascript" src="../../Common/isDebugBuild.js"></script>
+    <script type="text/javascript" src="../Common/plugin.js"></script>
+    <script type="text/javascript" src="../Common/DiagnosticsHub.js"></script>
+    <script type="text/javascript" src="../../Common/CommonMerged.js"></script>
+    <script type="text/javascript" src="../Common/CommonMerged.js"></script>
+    <script type="text/javascript" src="../Common/controls/hubControls.js"></script>
+    <script type="text/javascript" src="MemoryAnalyzerMerged.js"></script>
+    <script type="text/javascript" src="res://f12test.dll/23/selftest/SelfTestMemoryAnalyzer.js"></script>
+
+    <script id="f12ViewTemplate" type="text/html">
+        <div class="headerAndTabContainer">
+            <div class="header" id="toolbarContainer">
+            </div>
+            <div id="tabContainer" class="tabContainer">
+                <div id="startProfilingPrompt" class="startProfilingPrompt">
+                    <div id="startProfilingMessage" class="BPT-FileLink startProfilingMessage" tabindex="0" role="link"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="SummaryTabTemplate" type="text/html">
+        <div class="summaryView">
+            <div id="warningSection" class="warningMessage"></div>
+            <div class="mainSection">
+                <div id="heapOverviewContainer">
+                    <div id="heapOverviewGraph" class="heapOverviewGraph"></div>
+                </div>
+            </div>
+            <div id="tilesContainer" class="snapshotTilesContainer">
+                <div id="takeSnapshotTile" class="snapshotTile snapshotTileBlank">
+                    <div id="snapshotError" class="snapshotError">
+                        <span id="snapshotErrorLabel"></span>
+                        <span id="snapshotErrorMsg"></span>
+                    </div>
+                    <div class="snapshotTileInner">
+                        <button id="takeSnapshotButton" class="takeSnapshotButton">
+                            <div class="snapshotTileTextContainer">
+                                <div id="takeSnapshotIcon" class="takeSnapshotIcon"></div>
+                                <div id="takeSnapshotLabel" class="takeSnapshotLabel" data-plugin-vs-tooltip='{"resource":"TakeSnapshotTooltip"}'></div>
+                            </div>
+                            <progress id="takeSnapshotProgress"></progress>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="giveFeedbackContainer">
+                <button id="giveFeedbackButton_Summary" type="button">Give Feedback</button>
+            </div>
+        </div>
+    </script>
+
+    <script id="SnapshotTileTemplate" type="text/html">
+        <div id="snapshotTile" class="snapshotTile snapshotTileTaken">
+            <div class="snapshotTileInner">
+                <div id="snapshotTileHeader" class="snapshotTileHeader" tabindex="0">
+                    <div id="snapshotTileTitle" class="snapshotTileTitle"></div>
+                    <div id="snapshotTakenDate" class="snapshotTakenDate"></div>
+                    <div id="snapshotTileDetachedDomNodeInfo" class="snapshotTileDetachedDomNodeInfo">
+                        <div class="detachedDomNodeWarning"></div>
+                        <div id="snapshotTileDetachedDomNodeCount" class="BPT-FileLink snapshotTileDetachedDomNodeCount" tabindex="0" role="link"></div>
+                    </div>
+                </div>
+                <div class="snapshotTileGrid">
+                    <div class="rightalign">
+                        <div id="heapSizeLink" class="BPT-FileLink instanceLink heapSizeLink" tabindex="0" role="link"></div>
+                    </div>
+                    <div class="rightColumn rightalign">
+                        <div id="objectsCountLink" class="BPT-FileLink instanceLink objectsCountLink" tabindex="0" role="link"></div>
+                    </div>
+                    <div class="bottomRow rightalign">
+                        <div id="heapDiffLink" class="BPT-FileLink heapDiffLink" tabindex="0" role="link"></div>
+                    </div>
+                    <div id="heapDiffIndicatorIcon" class="bottomRow heapIcon"></div>
+                    <div class="bottomRow rightColumn rightalign">
+                        <div id="objectsDiffLink" class="BPT-FileLink objectsDiffLink" tabindex="0" role="link"></div>
+                    </div>
+                    <div id="objectDiffIndicatorIcon" class="bottomRow objectsIcon"></div>
+                </div>
+                <div id="snapshotTileImageHolder" class="snapshotTileImageHolder">
+                    <img id="snapshotTileImage" class="snapshotTileImage" src="#" alt="#" />
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="CanvasChartTemplate" type="text/html">
+        <canvas id="mainCanvas"></canvas>
+    </script>
+
+    <script id="SummaryBreakdownGraphTooltip" type="text/html">
+        <div class="snapshotTileBreakdownGraphTooltip">
+            <div><span class="breakdownGraphObject"></span><span id="breakdownGraphTooltipObject"></span></div>
+            <div><span class="breakdownGraphMarkup"></span><span id="breakdownGraphTooltipMarkup"></span></div>
+            <div><span class="breakdownGraphWinRT"></span><span id="breakdownGraphTooltipWinRT"></span></div>
+            <div><span class="breakdownGraphExternal"></span><span id="breakdownGraphTooltipExternal"></span></div>
+        </div>
+    </script>
+
+    <script id="SnapshotTabTemplate" type="text/html">
+        <div class="snapshotTab">
+            <div id="snapshotDataNavigation" class="snapshotDataNavigation"></div>
+            <div class="snapshotErrorProgress">
+                <div id="snapshotProcessingError" class="snapshotError">
+                    <div id="snapshotProcessingErrorFrown" class="snapshotProcessingErrorFrown">:(</div>
+                    <span id="snapshotProcessingErrorLabel"></span>
+                    <div id="snapshotProcessingErrorMsg"></div>
+                </div>
+                <div id="snapshotProcessingProgressDiv" class="snapshotProcessingProgressDiv">
+                    <div class="progressContent">
+                        <div id="progressText"></div>
+                        <progress id="progressBar" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="SnapshotDataViewTemplate" type="text/html">
+        <div id="snapshotScrollableContainer" class="snapshotScrollableContainer">
+            <div class="snapshotView">
+                <div id="snapshotGridContainer" class="snapshotGridContainer"></div>
+                <div id="snapshotViewGridSplitter" class="gridSplitter gridSplitter-Vertical"></div>
+                <div id="referenceView" class="referenceView">
+                    <div class="referenceGraphTitle">
+                        <label id="referenceGraphTitleLabel" for="referenceViewContainer"></label>
+                    </div>
+                    <div id="referenceViewContainer" class="referenceViewContainer"></div>
+                </div>
+                <div id="snapshotMessagesContainer" class="snapshotMessagesContainer">
+                    <div id="reachedItemsCapMessageContainer" class="reachedItemsCapMessageContainer"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+</head>
+<body tabindex="-1">
+    <div id="mainContainer">
+    </div>
+</body>
+</html>

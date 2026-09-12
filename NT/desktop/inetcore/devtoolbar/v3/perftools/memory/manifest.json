@@ -1,0 +1,542 @@
+{
+    "start_url": "PerfTools\\MemoryAnalyzer\\memoryAnalyzer.html",
+    "domain": "http://microsoft.com",
+    "name": "JavaScript Memory Analyzer",
+    "version": "1.1",
+    "f12": {
+        "start_url": "memoryAnalyzer.html",
+        "file_aliases": {
+            "DiagnosticsHub.DataWarehouseHost": {
+                "path": "DiagnosticsHub.ScriptedSandboxPlugin.dll"
+            },
+            "MemoryAnalyzerExtension": {
+                "path": "MemoryAnalyzer.dll"
+            },
+            "PerformanceTraceExtension": {
+                "path": "PerformanceTrace.dll",
+                "optional": true
+            }
+        },
+        "localized_tab_resource": "F12ToolTitle",
+        "localized_tooltip_id": 2158,
+        "resource_aliases": {
+            "MemoryAnalyzer": {
+                "is_default": true
+            },
+            "DiagnosticsHubControlsResources": { },
+            "Common": { }
+        },
+        "themed_images": {
+            "f12-image-host-error-alert": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\i_alerterror.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-info-alert": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\i_alertinfo.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-error-close": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\closeErrorBox.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-host-error-help": {
+                "bitmap_source": "..\\..\\pluginhost\\theme\\helpErrorBox.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "f12-image-toolbar-open": {
+                "bitmap_source": "..\\Common\\images\\i_open.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-save": {
+                "bitmap_source": "..\\Common\\images\\i_save.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-snapshot": {
+                "bitmap_source": "images\\i_snapshot.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-start": {
+                "bitmap_source": "..\\Common\\images\\i_start.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-image-toolbar-stop": {
+                "bitmap_source": "..\\Common\\images\\i_stop.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-checkmark": {
+                "bitmap_source": "..\\Common\\images\\checkmark.png",
+                "background_color": "plugin-memory-drop-down-button"
+            },
+            "image-detached-dom-node-warning": {
+                "bitmap_source": "images\\i_info.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-heap-decrease": {
+                "bitmap_source": "images\\status_heap_decrease.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-heap-increase": {
+                "bitmap_source": "images\\status_heap_increase.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-settings": {
+                "bitmap_source": "images\\i_table_options.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-snapshot": {
+                "bitmap_source": "images\\takeSnapshot.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-sort-down": {
+                "bitmap_source": "..\\Common\\images\\i_sort_down.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-sort-up": {
+                "bitmap_source": "..\\Common\\images\\i_sort_up.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-warning": {
+                "bitmap_source": "..\\Common\\images\\i_warning.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-user-mark": {
+                "bitmap_source": "..\\Common\\images\\i_usermark.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-app-event": {
+                "bitmap_source": "..\\Common\\images\\i_appevent.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-aggregated-event": {
+                "bitmap_source": "..\\Common\\Images\\CustomMark5_18x.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-expanded": {
+                "bitmap_source": "..\\Common\\images\\itemExpandedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-collapsed": {
+                "bitmap_source": "..\\Common\\images\\itemCollapsedIcon.png",
+                "background_color": "plugin-background-color"
+            }
+        }
+    },
+    "file_aliases": {
+        "MemoryAnalyzerExtension": {
+            "path_x86": "HtmlTools\\MemoryAnalyzer\\x86\\MemoryAnalyzer.dll",
+            "path_amd64": "HtmlTools\\MemoryAnalyzer\\amd64\\MemoryAnalyzer.dll"
+        },
+        "PerformanceTraceExtension": {
+            "path": "HtmlTools\\PerformanceTrace.dll",
+            "optional": true
+        }
+    },
+    "vs": {
+        "resource_aliases": {
+            "MemoryAnalyzer": {
+                "type": "Embedded",
+                "name": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+                "path": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.MemoryAnalyzer.Resources",
+                "is_default": true
+            },
+            "Common": {
+                "type": "Embedded",
+                "name": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+                "path": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.Common.Resources"
+            },
+            "DiagnosticsHubControlsResources": {
+                "path": "..\\..\\..\\..\\Platform\\DiagnosticsHub\\WebViews\\DiagnosticsHub.Javascript.Controls.ScriptResources"
+            }
+        },
+        "guid_symbols": {
+            "GuidPerfToolHostCmdSet": "5D4B80C3-23AB-4391-9F90-794C201831CE",
+            "GuidPerfToolGridContextMenu": "DB731D4D-421B-4944-9695-28538DD8A563"
+        },
+        "command_aliases": {
+            "takesnapshotcommand": {
+                "guid": "GuidPerfToolHostCmdSet",
+                "id": 264,
+                "focus": false
+            },
+            "showinrootsviewcommand": {
+                "guid": "GuidPerfToolHostCmdSet",
+                "id": 256,
+                "focus": true
+            }
+        },
+        "menu_aliases": {
+            "gridcontextmenu": {
+                "guid": "GuidPerfToolGridContextMenu",
+                "id": 257
+            }
+        },
+        "theme_token_aliases": {
+            "diagnostics-host-border": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "Border"
+            },
+            "diagnostics-host-graph-cursor": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "GraphCursor"
+            },
+            "diagnostics-host-graph-line": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "GraphLine"
+            },
+            "diagnostics-host-graph-scale": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "GraphScale"
+            },
+            "diagnostics-host-ruler-slider": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "RulerSlider"
+            },
+            "diagnostics-host-ruler-slider-active": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "RulerSliderActive"
+            },
+            "diagnostics-host-ruler-tickmark": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "RulerTickmark"
+            },
+            "diagnostics-host-swimlane-border": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "SwimlaneBorder"
+            },
+            "plugin-memory-drop-down-button": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "DropDownButton"
+            },
+            "plugin-perftools-drop-down-button-focus": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBackgroundMiddle"
+            },
+            "plugin-perftools-drop-down-button-focus-border": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBorder"
+            },
+            "plugin-memory-drop-down-button-hover": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "DropDownButtonHover"
+            },
+            "plugin-memory-snapshot-button": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotButton"
+            },
+            "plugin-memory-snapshot-button-active": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotButtonActive"
+            },
+            "plugin-memory-snapshot-button-active-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "SnapshotButtonActive"
+            },
+            "plugin-memory-snapshot-button-border": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotButtonBorder"
+            },
+            "plugin-memory-snapshot-button-border-active": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotButtonBorderActive"
+            },
+            "plugin-memory-snapshot-button-border-hover": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotButtonBorderHover"
+            },
+            "plugin-memory-snapshot-button-disabled": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotButtonDisabled"
+            },
+            "plugin-memory-snapshot-button-disabled-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "SnapshotButtonDisabledText"
+            },
+            "plugin-memory-snapshot-button-hover": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotButtonHover"
+            },
+            "plugin-memory-snapshot-button-hover-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "SnapshotButtonHover"
+            },
+            "plugin-memory-snapshot-diff-added-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "SnapshotDiffAddedText"
+            },
+            "plugin-memory-snapshot-diff-modified-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "SnapshotDiffModifiedText"
+            },
+            "plugin-memory-snapshot-messages-border": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotMessagesBorder"
+            },
+            "plugin-memory-snapshot-tile": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotTile"
+            },
+            "plugin-memory-snapshot-tile-baseline-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "SnapshotTileBaselineText"
+            },
+            "plugin-memory-snapshot-tile-border": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotTileBorder"
+            },
+            "plugin-memory-snapshot-tile-error-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "SnapshotTileErrorText"
+            },
+            "plugin-memory-snapshot-tile-header": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "SnapshotTileHeader"
+            },
+            "plugin-memory-tab-header": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "TabHeader"
+            },
+            "plugin-memory-tab-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "TabText"
+            },
+            "plugin-memory-tab-hover": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "BackgroundColor",
+                "name": "TabHover"
+            },
+            "plugin-memory-tab-hover-text": {
+                "category": "A5441C8F-ED08-40E1-AB04-BA3281D84770",
+                "key_type": "ForegroundColor",
+                "name": "TabHover"
+            },
+            "plugin-menucontrol-background-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "Menu"
+            },
+            "plugin-perftools-detail-pane": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "DetailPane"
+            },
+            "plugin-perftools-focusdots": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "FocusDots"
+            },
+            "plugin-perftools-grid-column-sizer": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "GridColumnSizer"
+            },
+            "plugin-perftools-grid-header-hover": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "GridHeaderHover"
+            },
+            "plugin-perftools-grid-header-hover-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "GridHeaderHover"
+            },
+            "plugin-perftools-grid-header-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "GridHeaderText"
+            },
+            "plugin-perftools-menu": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "Menu"
+            },
+            "plugin-perftools-menu-border": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MenuBorder"
+            },
+            "plugin-perftools-menu-drop-shadow": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ThreeDLightShadow"
+            },
+            "plugin-perftools-menu-focus": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MenuFocus"
+            },
+            "plugin-perftools-menu-focus-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "MenuFocus"
+            },
+            "plugin-perftools-menu-hover": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "MenuHover"
+            },
+            "plugin-perftools-menu-hover-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "MenuHover"
+            },
+            "plugin-perftools-progress": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "Progress"
+            },
+            "plugin-perftools-splitter": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "Splitter"
+            },
+            "plugin-perftools-watermark-text": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "WatermarkText"
+            },
+            "plugin-perftools-detail-pane": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "DetailPane"
+            },
+            "plugin-perftools-grid-border-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "GridCellBorder"
+            },
+            "plugin-searchcontrol-mouseover-background-background-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverBackground"
+            },
+            "plugin-searchcontrol-mouseover-watermark-text-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverWatermarkText"
+            },
+            "plugin-searchcontrol-unfocused-background-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "Unfocused"
+            },
+            "plugin-searchcontrol-unfocused-watermark-text-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "UnfocusedWatermarkText"
+            },
+            "plugin-font-editor-string-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "String"
+            },
+            "plugin-font-editor-number-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "Number"
+            },
+            "plugin-font-editor-html-element-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Element Name"
+            },
+            "plugin-font-editor-html-tag-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Tag Delimiter"
+            },
+            "plugin-font-editor-html-attribute-name-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Attribute"
+            },
+            "plugin-font-editor-html-attribute-value-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Attribute Value"
+            },
+            "plugin-font-editor-html-operator-color": {
+                "category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+                "key_type": "ForegroundColor",
+                "name": "HTML Operator"
+            }
+        },
+        "themed_images": {
+            "image-checkmark": {
+                "bitmap_source": "PerfTools\\Common\\images\\checkmark.png",
+                "background_color": "plugin-memory-drop-down-button"
+            },
+            "image-detached-dom-node-warning": {
+                "bitmap_source": "PerfTools\\MemoryAnalyzer\\images\\i_info.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-heap-decrease": {
+                "bitmap_source": "PerfTools\\MemoryAnalyzer\\images\\status_heap_decrease.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-heap-increase": {
+                "bitmap_source": "PerfTools\\MemoryAnalyzer\\images\\status_heap_increase.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-settings": {
+                "bitmap_source": "PerfTools\\MemoryAnalyzer\\images\\i_table_options.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-snapshot": {
+                "bitmap_source": "PerfTools\\MemoryAnalyzer\\images\\takeSnapshot.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-sort-down": {
+                "bitmap_source": "PerfTools\\Common\\images\\i_sort_down.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-sort-up": {
+                "bitmap_source": "PerfTools\\Common\\images\\i_sort_up.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-warning": {
+                "bitmap_source": "PerfTools\\Common\\images\\i_warning.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-expanded": {
+                "bitmap_source": "PerfTools\\Common\\images\\itemExpandedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-collapsed": {
+                "bitmap_source": "PerfTools\\Common\\images\\itemCollapsedIcon.png",
+                "background_color": "plugin-background-color"
+            }
+        }
+    }
+}

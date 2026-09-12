@@ -1,0 +1,95 @@
+﻿/* 
+ *   TabControl styles 
+ */
+
+.tabControl {
+    height: 100%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto 1fr;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+    .tabControl > .tabHeader {
+        -ms-grid-column: 1;
+        -ms-grid-columns: auto 1fr auto;
+        -ms-grid-row: 1;
+        background-color: TRANSPARENT; /*[{plugin-memory-tab-header}]*/
+        display: -ms-grid;
+    }
+
+    .tabControl > .tabHeader > .beforeBarContainer {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        box-sizing: border-box;
+        display: table-cell;
+        float: left;
+    }
+
+    .tabControl > .tabHeader > .tabBarContainer {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+        -ms-grid-column-align: end;
+        -ms-grid-row-align: center;
+        box-sizing: border-box;
+        display: table-cell;
+    }
+
+    .tabControl > .tabHeader > .tabBarContainerLeftAlign {
+        -ms-grid-column-align: start;
+    }
+
+    .tabControl > .tabHeader > .afterBarContainer {
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+        box-sizing: border-box;
+        display: table-cell;
+        float: right;
+    }
+
+    .tabControl ul.tabBar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        cursor: default;
+    }
+
+        .tabControl ul.tabBar li {
+            display: inline-block;
+            margin: 5px 14px 5px 14px;
+            color: TRANSPARENT; /*[{plugin-memory-tab-text}]*/
+            font-size: 90%;
+            font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+        }
+
+            .tabControl ul.tabBar li:hover {
+                background-color: TRANSPARENT; /*[{plugin-memory-tab-hover}]*/
+                color: TRANSPARENT; /*[{plugin-memory-tab-hover-text}]*/
+                cursor: pointer;
+            }
+
+            .tabControl ul.tabBar li:focus {
+                outline: 1px dotted TRANSPARENT; /*[1px dotted {plugin-perftools-focusdots}]*/
+            }
+
+            .tabControl ul.tabBar li.active {
+                background-color: TRANSPARENT; /*[{plugin-memory-tab-hover}]*/
+                color: TRANSPARENT; /*[{plugin-memory-tab-hover-text}]*/
+                font-weight: 600;
+            }
+
+    .tabControl > .tabContentPane {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+        -ms-grid-row: 2;
+        box-sizing: border-box;
+    }
+
+        .tabControl > .tabContentPane > .tabItemContent {
+            display: none;
+        }
+
+        .tabControl > .tabContentPane > .active {
+            display: block;
+        }

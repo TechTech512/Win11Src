@@ -1,0 +1,57 @@
+﻿/* We only show a blue hover state for icons in f12 */
+.analysisContainer > .settingsMenuButton:hover > .settingsIcon {
+    background-position-y: -18px !important;
+}
+
+.snapshotTileBlank > .snapshotTileInner .takeSnapshotButton:hover:enabled .takeSnapshotIcon {
+    background-position-y: -32px;
+}
+
+/* 
+ * Overriden from the hub, reduce the margin on title text 
+ */
+
+.title-container {
+    -ms-grid-columns: 15px 1fr;
+    margin-left: 0px;
+}
+
+.ruler-legend-container {
+    margin-right: 0px;
+}
+
+.ruler-legend-text-div {
+    margin-right: 0px;
+}
+
+.ruler-legend-color-div {
+    margin-left: 10px;
+}
+
+.legend-text-div {
+    margin-right: 0px;
+}
+
+.footer-container {
+    -ms-grid-row: 3;
+    position: static;
+}
+
+    .footer-container .scrollbar {
+        opacity: 1;
+    }
+
+.grid-row:hover {
+    background-color: rgba(191, 205, 219, 0.25); /*[{plugin-font-editor-inactive-selected-background-color rgba(0.05)}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+.grid-row-selected, .grid-row-selected:hover {
+    background: rgba(51, 153, 255, 0.18); /*[{plugin-perftools-list-item-selected-active-background-color rgba(0.18)}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+.grid-row-selected-blur {
+    background-color: rgba(191, 205, 219, 0.25); /*[{plugin-font-editor-inactive-selected-background-color rgba(0.05)}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}

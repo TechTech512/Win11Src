@@ -1,0 +1,400 @@
+﻿html, body {
+    -ms-high-contrast-adjust: none;
+    cursor: default;
+    height: 100%;
+    margin: 0px;
+}
+
+input:-ms-input-placeholder {
+    color: TRANSPARENT; /*[{plugin-perftools-watermark-text}]*/
+}
+
+#mainContainer {
+    height: 100%;
+    width: 100%;
+}
+
+.warningMessage {
+    -ms-grid-row: 1;
+    background-image: url('../common/images/i_warning.png'); /*[url({image-warning})]*/
+    background-position-y: -18px;
+    background-repeat: no-repeat;
+    background-size: 18px 54px;
+    color: TRANSPARENT; /*[{plugin-color}]*/
+    display: none;
+    height: 18px;
+    margin-top: 2px;
+    padding-left: 21px;
+    width: 18px;
+}
+
+input {
+    padding: 2px;
+}
+
+.controlDropdown {
+    padding: 0;
+    margin: 0;
+}
+
+.additionalSeperator {
+    display: none;
+}
+
+.heapOverviewGraph {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto auto auto;
+    display: none; /* Initial state is display:none, but becomes visible on control initialization */
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+    .heapOverviewGraph .main-swimlane-container {
+        margin-bottom: 0px !important;
+    }
+
+    .heapOverviewGraph .scrollbar-container {
+        -ms-grid-row: 3;
+    }
+
+.datatypeSelection {
+    width: 90px;
+}
+
+.gridSplitter {
+    position: relative;
+    background-color: TRANSPARENT; /*[{plugin-perftools-splitter}]*/
+}
+
+.gridSplitter-Vertical {
+    width: 100%;
+    height: 3px;
+    cursor: ns-resize;
+}
+
+.gridSplitter-Horizontal {
+    width: 3px;
+    height: 100%;
+    cursor: ew-resize;
+}
+
+.summaryView {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto auto 1fr;
+    border-top: 1px solid TRANSPARENT; /*[1px solid {plugin-memory-snapshot-tile-border}]*/
+    display: -ms-grid;
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+}
+
+    .summaryView > .giveFeedbackContainer {
+        position: absolute;
+        bottom: 2px;
+        left: 2px;
+    }
+
+.mainSection {
+    -ms-grid-row: 2;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.snapshotScrollableContainer {
+    border-top: 1px solid TRANSPARENT; /*[1px solid {plugin-memory-snapshot-tile-border}]*/
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.snapshotView {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: .7fr .3fr auto;
+    box-sizing: border-box;
+    display: -ms-grid;
+    height: 100%;
+    min-height: 21em;
+    width: 100%;
+}
+
+    .snapshotView > .snapshotGridContainer {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        box-sizing: border-box;
+    }
+
+    .snapshotView > .gridSplitter {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+        z-index: 10;
+        box-sizing: border-box;
+    }
+
+    .snapshotView > .referenceView {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: auto 1fr;
+        box-sizing: border-box;
+    }
+
+    .snapshotView > .snapshotMessagesContainer {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+        border-top: 1px solid TRANSPARENT; /*[1px solid {plugin-memory-snapshot-messages-border}]*/
+        box-sizing: border-box;
+        cursor: default;
+    }
+
+        .snapshotView > .snapshotMessagesContainer > .reachedItemsCapMessageContainer {
+            box-sizing: border-box;
+            display: none;
+            margin: 5px 0px 5px 10px;
+        }
+
+.analysisContainer {
+    display: -ms-flexbox;
+    margin-left: 14px;
+    margin-right: 10px;
+}
+
+@supports (display: flex) {
+    .analysisContainer {
+        display: flex;
+    }
+}
+
+    .analysisContainer > .scopeFilterBox {
+        vertical-align: top;
+    }
+
+    .analysisContainer > .scopeFilterBox > .scopeFilter {
+        margin-right: 5px;
+    }
+
+    .analysisContainer > .scopeFilterBox > .scopeFilterLabel {
+        display: inline-block;
+        margin-right: 3px;
+        padding-top: 1px;
+        vertical-align: top;
+    }
+
+    .analysisContainer > .filterInput {
+        font-size: 88%;
+        height: 88%;
+        margin-right: 5px;
+    }
+
+        .analysisContainer > .settingsMenuButton > .buttonIcon {
+            background-image: url('images/i_table_options.png'); /*[url({image-settings})]*/
+        }
+
+    .analysisContainer > .foldObjectsByDominatorButton {
+        height: 20px;
+        margin-right: 5px;
+    }
+
+        .analysisContainer > .foldObjectsByDominatorButton > .buttonIcon {
+            background-image: url('images/i_foldin.png'); /*[url({image-foldin})]*/
+        }
+
+.referenceView > .referenceGraphTitle {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    background-color: TRANSPARENT; /*[{plugin-memory-tab-header}]*/
+    border-bottom: 1px solid TRANSPARENT; /*[1px solid {plugin-memory-snapshot-tile-border}]*/
+    box-sizing: border-box;
+    font-weight: 600;
+    padding: 5px 0px 5px 10px;
+}
+
+.referenceView > .referenceViewContainer {
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+    box-sizing: border-box;
+}
+
+.snapshotTab {
+    height: 100%;
+}
+
+    .snapshotTab > .snapshotDataNavigation {
+        height: 100%;
+    }
+
+    .snapshotTab > .snapshotDataNavigationHidden {
+        display: none;
+    }
+
+    .snapshotTab > .snapshotErrorProgress {
+        height: 100%;
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+        .snapshotTab > .snapshotErrorProgress > .snapshotError {
+            font-size: 20px;
+        }
+
+            .snapshotTab > .snapshotErrorProgress > .snapshotError > .snapshotProcessingErrorFrown {
+                font-size: 100px;
+                margin-bottom: 20px;
+            }
+
+        .snapshotTab > .snapshotErrorProgress > .snapshotProcessingProgressDiv {
+            -ms-grid-columns: 1fr;
+            -ms-grid-rows: 1fr;
+            display: -ms-grid;
+            height: 100%;
+            width: 100%;
+        }
+
+        .snapshotTab > .snapshotErrorProgress > .snapshotProcessingProgressDivHidden {
+            display: none;
+        }
+
+        .snapshotTab > .snapshotErrorProgress > .snapshotProcessingProgressDiv > .progressContent {
+            -ms-grid-column: 1;
+            -ms-grid-column-align: center;
+            -ms-grid-row: 1;
+            -ms-grid-row-align: center;
+            max-width: 300px;
+            text-align: center;
+        }
+
+.grid-row > .unmatchedScopeObject {
+    color: grey;
+    font-style: italic;
+}
+
+.headerAndTabContainer {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto 1fr;
+    display: -ms-grid;
+    height: 100%;
+    width: 100%;
+}
+
+.tabContainer {
+    -ms-grid-columns: 1fr;
+    -ms-grid-row: 2;
+    -ms-grid-rows: 1fr;
+    background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+    display: -ms-grid;
+}
+
+    .tabContainer .startProfilingPrompt {
+        -ms-grid-column-align: center;
+        -ms-grid-row-align: center;
+    }
+
+        .tabContainer .startProfilingPrompt .startProfilingMessage {
+            font-size: 14px;
+        }
+
+.BPT-Toolbar .BPT-button.startToolbarButton .buttonIcon {
+    background-image: url('../Common/images/i_start.png'); /*[url({f12-image-toolbar-start})]*/
+}
+
+.BPT-Toolbar .BPT-button.stopToolbarButton .buttonIcon {
+    background-image: url('../Common/images/i_stop.png'); /*[url({f12-image-toolbar-stop})]*/
+}
+
+.BPT-Toolbar .BPT-button.openSessionButton .buttonIcon {
+    background-image: url('../Common/images/i_open.png'); /*[url({f12-image-toolbar-open})]*/
+}
+
+.BPT-Toolbar .BPT-button.saveSessionButton .buttonIcon {
+    background-image: url('../Common/images/i_save.png'); /*[url({f12-image-toolbar-save})]*/
+}
+
+.BPT-Toolbar .BPT-button.takeSnapshotToolbarButton .buttonIcon {
+    background-image: url('images/i_snapshot.png'); /*[url({f12-image-toolbar-snapshot})]*/
+}
+
+.detachedDomNodeWarning {
+    background: url('images/i_info.png') no-repeat 0px 0px; /*[url({image-detached-dom-node-warning}) no-repeat 0px 0px]*/
+    background-size: 15px 15px;
+}
+
+.detachedDomNodeChildrenWarning {
+    background: url('images/i_info.png') no-repeat 0px 0px; /*[url({image-detached-dom-node-warning}) no-repeat 0px 0px]*/
+    background-size: 15px 15px;
+    opacity: 0.5;
+}
+
+.grid-gutter-row {
+    padding-top: 4px;
+}
+
+/*From the DOM/Console common "toolwindow.css"*/
+.BPT-FileLink, .BPT-HelpLink, .BPT-IELink {
+    border: 1px solid transparent;
+    color: TRANSPARENT; /*[{plugin-link-color}]*/ /*EnvironmentColors.CommandBarMenuLinkTextColorKey*/
+    cursor: pointer;
+}
+
+    .BPT-FileLink:hover, .BPT-HelpLink:hover, .BPT-IELink:hover {
+        color: TRANSPARENT; /*[{plugin-link-hover-color}]*/ /*EnvironmentColors.CommandBarMenuLinkTextHoverColorKey*/
+        text-decoration: underline;
+    }
+
+/*
+ *  Datagrid style overrides
+ */
+
+.has-header.grid .grid-canvas {
+    top: 25px;
+}
+
+.grid-header {
+    background-color: transparent; /*[{plugin-perftools-detail-pane}]*/
+    border-bottom: 1px solid transparent; /*[1px solid {plugin-perftools-grid-border-color rgba(0.07)}]*/
+    height: 2.1em;
+}
+
+.grid-header-column {
+    border-right: 1px solid transparent; /*[1px solid {plugin-perftools-grid-border-color rgba(0.07)}]*/
+}
+
+    .grid-header-column:hover > .title {
+        color: rgb(0, 0, 0); /*[{plugin-treeview-content-inactive-selected-color}]*/
+    }
+
+    .grid-header-column > .title {
+        padding: 2px 4px 4px 4px;
+        color: rgb(0, 0, 0); /*[{plugin-color}]*/
+    }
+
+.grid-gutter-header {
+    background-color: transparent; /*[{plugin-perftools-detail-pane}]*/
+}
+
+.grid-gutter-row {
+    padding-left: 7px;
+    padding-top: 3px;
+}
+
+.grid-row-normal {
+    border: none;
+}
+
+.grid-row {
+    border-bottom: 1px solid transparent; /*[1px solid {plugin-perftools-grid-border-color rgba(0.07)}]*/
+}
+
+.grid-cell:not(:last-child) {
+    border-right: 1px solid transparent; /*[1px solid {plugin-perftools-grid-border-color rgba(0.07)}]*/
+}
+
+.numeric-data {
+    text-align: right;
+}
+
+/* Override the * rule in gridcontrol.css */
+#plugin-vs-tooltip, #plugin-vs-tooltip * {
+    box-sizing: content-box;
+}
