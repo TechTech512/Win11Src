@@ -1,0 +1,39 @@
+﻿{
+    "start_url": "emulation.html",
+    "domain": "http://microsoft.com",
+    "name": "Emulation",
+    "version": "1.0",
+    "f12": {
+        "localized_tab_resource": "EmulationTitle",
+        "localized_tooltip_id": 818,
+        "resource_aliases" : {
+            "Common": {
+                "is_default" : true
+            }
+        },
+        "themed_images": {
+            "f12-emulation-image-info-button": {
+				"bitmap_source": "infoButton.png",
+				"background_color": "plugin-background-color"
+			},
+            "f12-emulation-image-delete": {
+				"bitmap_source": "..\\common\\images\\i_delete.png",
+				"background_color": "plugin-background-color"
+			},
+            "f12-emulation-image-persist-settings": {
+				"bitmap_source": "i_persistSettings.png",
+				"background_color": "plugin-background-color"
+			},
+            "f12-emulation-image-reset-settings": {
+				"bitmap_source": "i_resetSettings.png",
+				"background_color": "plugin-background-color"
+			}
+        }
+    },
+    "file_aliases": {
+        "PerformanceTraceExtension": {
+            "path": "PerformanceTrace.dll",
+            "optional": true
+        }
+    }
+}

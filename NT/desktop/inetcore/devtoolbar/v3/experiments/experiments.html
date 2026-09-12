@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta http-equiv="format-detection" content="telephone=no">
+    <title>Experiments</title>
+
+    <link rel="stylesheet" type="text/css" href="experiments.css" data-plugin-theme="true" />
+
+    <!-- Daytona Includes -->
+    <script type="text/javascript" src="../Common/isDebugBuild.js"></script>
+    <script type="text/javascript" src="../common/plugin.js"></script>
+
+    <script type="text/javascript" src="../Common/CommonMinimal.js"></script>
+    <script type="text/javascript" src="ExperimentsMerged.js"></script>
+
+    <script type="text/javascript">
+        // The main entry point
+        document.addEventListener("DOMContentLoaded", function () {
+            F12.Host.Experiments.App.main();
+        });
+    </script>
+</head>
+
+<body>
+    <div id="mainContainer">
+        <div class="experimentsSection" tabindex="-1">
+            <div class="title">
+                <h1><label id="experimentsLabel"></label></h1>
+            </div>
+            
+            <!-- JS editing -->
+
+            <div class="experimentRow">
+                <div class="experimentName">
+                    <label id="jsEditLabel"></label>
+                </div>
+                <div class="experimentToggle">
+                    <div class="onoffswitch" tabindex="0" id="jsEditSwitchDiv">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="jsEditSwitch" />
+                        <label class="onoffswitch-label" for="jsEditSwitch">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="experimentState">
+                    <label id="jsEditStateLabel" class="infoText"></label>
+                </div>
+            </div>
+
+            <hr id="rule" />
+            <div class="footerText"><a id="moreInformationLink" tabindex="0"></a></div>
+        </div>
+    </div>
+</body>
+</html>

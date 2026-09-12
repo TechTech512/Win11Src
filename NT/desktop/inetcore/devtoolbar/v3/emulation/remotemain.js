@@ -1,0 +1,2 @@
+var remoteHelpers,F12;(function(n){"use strict";var t;(function(n){var t;(function(n){var t=function(){function t(){}return t.main=function(){t.messageHandlers=new n.MessageHandlers;remoteHelpers=new Common.RemoteHelpers(t.messageHandlers);t.remoteCode=new n.RemoteEmulation;t.remoteCode.initialize()},t}();n.EmulationRemoteApp=t})(t=n.Emulation||(n.Emulation={}))})(t=n.Tools||(n.Tools={}))})(F12||(F12={}));F12.Tools.Emulation.EmulationRemoteApp.main()
+//# sourceMappingURL=remoteMain.min.js.map

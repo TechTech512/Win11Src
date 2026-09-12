@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="format-detection" content="telephone=no">
+    <title>Emulation</title>
+
+
+    <link id="toolwindow.css" rel="stylesheet" href="../common/toolwindow.css" type="text/css" data-plugin-theme="true" />
+    <link id="toolwindow.f12.css" rel="stylesheet" href="../common/toolwindow.f12.css" type="text/css" data-plugin-theme="true" />
+    <link id="button.css" rel="stylesheet" href="../common/button.css" type="text/css" data-plugin-theme="true" />
+    <link id="controls.css" rel="stylesheet" href="../common/controls/controls.css" type="text/css" data-plugin-theme="true" />
+    <link id="emulation.css" rel="stylesheet" href="emulation.css" type="text/css" data-plugin-theme="true" />
+
+    <!-- Daytona Includes -->
+    <script type="text/javascript" src="../Common/isDebugBuild.js"></script>
+    <script type="text/javascript" src="../Common/plugin.js"></script>
+
+    <script type="text/html" id="validatedTextboxTemplate">
+        <span>
+            <input type="text" id="validatedTextbox" />
+            <img src="../Common/images/critical.png" id="validationErrorIcon" class="validationErrorIcon" />
+            <label id="validationErrorHelper" class="hiddenLabel" aria-live="assertive"></label>
+        </span>
+    </script>
+
+    <script type="text/javascript" src="../Common/CommonMerged.js"></script>
+
+    <script type="text/javascript" src="EmulationMerged.js"></script>
+    <script type="text/javascript" src="res://f12test.dll/23/selftest/SelfTestEmulation.js"></script>
+    <script type="text/javascript">
+        // The main entry point
+        F12.Tools.Emulation.App.main();
+    </script>
+</head>
+<body tabindex="-1">
+    <div id="mainContainer">
+        <div id="toolbar">
+        </div>
+        <div id="clientArea">
+            <div id="modeSection"
+                 class="emulationSection">
+            </div>
+            <div class="emulationSection">
+                <h1 id="displayLabel"></h1>
+                <div id="displayBasicSubSection"></div>
+                <div id="customDisplaySizeSection" class="customSection">
+                    <label id="enterCustomResolutionLabel" class="minorHeadingLabel"></label>
+                    <div id="customDisplayInchesInfo" class="labeledTextBoxWithUnits">
+                        <label id="customDisplaySizeLabel"></label>
+                        <span id="displaySizeControlRoot"></span>
+                        <label id="displaySizeInchesLabel" class="unitsLabel"></label>
+                    </div>
+                    <div class="labeledTextBoxWithUnits">
+                        <label id="customDisplayWidthLabel"></label>
+                        <span id="displayWidthControlRoot"></span>
+                        <label id="widthPixelsLabel" class="unitsLabel"></label>
+                    </div>
+                    <div class="labeledTextBoxWithUnits">
+                        <label id="customDisplayHeightLabel"></label>
+                        <span id="displayHeightControlRoot"></span>
+                        <label id="heightPixelsLabel" class="unitsLabel"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="emulationSection">
+                <h1 id="geoLabel"></h1>
+                <div class="labeledRadioButton">
+                    <label id="gpsLabel"></label>
+                    <span role="radiogroup" aria-labelledby="gpsLabel">
+                        <input type="radio" name="gps" id="gpsOff" /><label id="gpsOffLabel" class="radioButtonLabel" for="gpsOff"></label>
+                        <input type="radio" name="gps" id="gpsOn" /><label id="gpsOnLabel" class="radioButtonLabel" for="gpsOn"></label>
+                        <input type="radio" name="gps" id="gpsOnNoSignal" /><label id="gpsOnNoSignalLabel" class="radioButtonLabel" for="gpsOnNoSignal"></label>
+                    </span>
+                </div>
+                <div id="geoLocationControlsRoot">
+                    <div class="labeledTextBoxWithUnits">
+                        <label id="latitudeLabel"></label>
+                        <span id="latitudeControlRoot"></span>
+                    </div>
+                    <div class="labeledTextBoxWithUnits">
+                        <label id="longitudeLabel"></label>
+                        <span id="longitudeControlRoot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

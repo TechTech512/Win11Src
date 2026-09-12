@@ -1,0 +1,42 @@
+﻿{
+    "start_url": "experiments.html",
+    "domain": "http://microsoft.com",
+    "name": "Experiments",
+    "version": "1.0",
+    "f12": {
+        "localized_tab_resource": "ExperimentsPluginTitle",
+        "localized_tooltip_id": 10017,
+        "resource_aliases": {
+            "Experiments": {
+                "is_default": true
+            },
+            "Common": {
+            }
+        },
+        "themed_images": {
+
+        },
+        "theme_token_aliases": {
+            "plugin-experiment-switch-inner-before-background-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "BackgroundColor",
+                "name": "Plain Text"
+            },
+            "plugin-experiment-switch-inner-after-background-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "BackgroundColor",
+                "name": "Plain Text"
+            },
+            "plugin-experiment-switch-inner-after-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "ForegroundColor",
+                "name": "Plain Text"
+            },
+            "plugin-experiment-on-off-switch-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "ForegroundColor",
+                "name": "Plain Text"
+            }
+        }
+    }
+}
