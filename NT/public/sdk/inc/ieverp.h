@@ -20,16 +20,20 @@
 #define VER_PRODUCTVERSION_DW           (0x0B000000 | VER_PRODUCTBUILD)
 
 
+#include <ntverp.h>
+
 //
 // override product name (normally defined in ntverp.h / common.ver)
 //
+#ifdef VER_PRODUCTNAME_STR
 #ifdef RC_INVOKED
+#undef VER_PRODUCTNAME_STR
 #define VER_PRODUCTNAME_STR L"Internet Explorer"
 #else
+#undef VER_PRODUCTNAME_STR
 #define VER_PRODUCTNAME_STR "Internet Explorer"
 #endif
-
-#include <ntverp.h>
+#endif
 
 // Define IE Specific Version numbers. Only component versions are effected by VER_IE*VERSION defined below. 
 // Component versions are specified in the manifest files (inetcore\manifests) using the version attribute.
