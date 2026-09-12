@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html class="hostedF12">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta http-equiv="format-detection" content="telephone=no">
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link id="toolwindow.css" rel="stylesheet" href="../common/toolwindow.css" type="text/css" data-plugin-theme="true">
+    <link id="toolwindow.f12.css" rel="stylesheet" href="../common/toolwindow.f12.css" type="text/css" data-plugin-theme="true">
+    <link id="toolwindow.vs.css" rel="stylesheet" href="../common/toolwindow.vs.css" type="text/css" data-plugin-theme="true">
+    <link id="common_controls.css" rel="stylesheet" href="../common/Controls/controls.css" type="text/css" data-plugin-theme="true" data-necessary-for-tooltip="true" />
+
+    <!-- Prototype-only CSS -->
+    <link id="common.css" rel="stylesheet" href="common/common.css" type="text/css" />
+    <link id="controls.css" rel="stylesheet" href="Controls/controls.css" type="text/css" />
+    <link id="grid.css" rel="stylesheet" href="common/External/grid.css" type="text/css" />
+    <link id="Ruler.css" rel="stylesheet" href="common/External/Ruler.css" type="text/css" data-plugin-theme="true" />
+
+    <!-- Network project CSS -->
+    <link id="network.css" rel="stylesheet" href="network.css" type="text/css" data-plugin-theme="true" data-necessary-for-tooltip="true" />
+    <link id="network.vs.css" rel="stylesheet" href="network.vs.css" type="text/css" data-plugin-theme="true" />
+
+    <!-- F12-build-only Monaco files -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../common/editor/vs/editor/css/vs-theme.css" data-plugin-theme="true" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../common/editor/vs/editor/css/vs-theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" data-name="../common/editor/vs/editor/editor.main" href="../common/editor/vs/editor/editor.main.css" />
+    <link rel="stylesheet" href="../common/editor/editor.css" type="text/css" data-plugin-theme="true" />
+
+    <script type="text/javascript">
+        window.require = {
+            baseUrl: "res://" + window.location.host + "/23/common/editor",
+            catchError: false
+        };
+    </script>
+
+    <script type="text/javascript" src="../common/editor/vs/loader.js"></script>
+    <script type="text/javascript" src="../common/editor/vs/editor/editor.main.js"></script>    
+
+    <!-- F12-build-only Daytona files -->
+    <script type="text/javascript" src="../Common/isDebugBuild.js"></script>
+    <script type="text/javascript" src="../Common/plugin.js"></script>
+
+    <!-- F12-build-only Script -->
+    <script type="text/javascript" src="../Common/CommonMerged.js"></script>
+    <script type="text/javascript" src="../Common/DiagShared/JSTreeGridControl.js"></script>
+
+    <!-- Prototype-only Script -->
+    <script type="text/javascript" src="common/External/JSTreeGridControl.js"></script>
+
+    <!-- Diagnostics Hub -->
+    <script type="text/javascript" src="common/External/DiagnosticsHub.js"></script>
+    <script type="text/javascript" src="common/External/Controls.js"></script>
+
+    <!-- Network project script -->
+    <script type="text/javascript" src="NetworkMerged.js"></script>
+
+    <script type="text/javascript" src="res://f12test.dll/23/selftest/SelfTestNetwork.js"></script>
+
+    <script type="text/javascript">
+        // The main entry point
+        F12.Tools.Network.App.main();
+    </script>
+</head>
+<body>
+    <div id="rootContainer"></div>
+</body>
+</html>

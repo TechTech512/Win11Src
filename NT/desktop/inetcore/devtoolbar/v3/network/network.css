@@ -1,0 +1,767 @@
+﻿/*  The following tokens will need to be updated to new colors in the manifest:
+        plugin-network-grid-path-color
+        plugin-network-grid-path-color-highlighted
+        plugin-network-grid-response-cache-color
+        plugin-network-grid-response-error-color
+        plugin-network-tabpane-key-color
+        plugin-network-tabpane-value-color
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    -ms-high-contrast-adjust: none;
+    color: TRANSPARENT; /*[{plugin-color}]*/
+    cursor: default;
+    height: 100%;
+    width: 100%;
+}
+
+.clippedText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#rootContainer {
+    -ms-grid-rows: auto 1fr;
+    -ms-grid-columns: 100%;
+    background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+    display: -ms-grid;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.mainPanel {
+    -ms-grid-row: 2;
+}
+
+.summary {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.splitter {
+    background-color: TRANSPARENT; /*[{plugin-network-splitter}]*/
+    border-left-style: solid;
+    border-left-color: TRANSPARENT; /*[{plugin-network-grid-border-color rgba(0.07)}]*/
+    border-left-width: 3px;
+    height: 100%;
+}
+
+.splitterBody {
+    background-color: TRANSPARENT; /*[{plugin-network-grid-column-header-background-color}]*/
+    height: 100%;
+    width: 11px;
+}
+
+.splitterButton {
+    background-color: TRANSPARENT; /*[{plugin-border-color}]*/
+    color: white;
+    cursor: pointer;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    height: 27px;
+    padding-top: 5px;
+    text-align: center;
+    width: 11px;
+}
+
+.network-grid {
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.network-grid-header {
+    background-color: transparent;
+    border-right: TRANSPARENT; /*[1px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+    box-sizing: border-box;
+    height: 3.3em;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 6;
+}
+
+.network-grid-canvas {
+    background-color: transparent;
+    bottom: 0px;
+    box-sizing: border-box;
+    color: TRANSPARENT; /*[{plugin-color}]*/
+    left: 0px;
+    overflow: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.has-header .network-grid-canvas {
+    top: 39px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.headersPane .grid-cell {
+    text-indent: 12px !important;
+}
+
+.multi-line-grid-cell {
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    border: currentColor;
+    border-bottom: TRANSPARENT; /*[1px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+    border-right: TRANSPARENT; /*[1px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+    cursor: default;
+    display: table-cell;
+    float: left;
+    height: 3.0em;
+    overflow: hidden;
+    padding: 2px;
+    position: relative;
+    text-align: left;
+    text-indent: 2px;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100px;
+}
+
+.grid-gutter-header {
+    background-color: transparent;
+}
+
+.grid-gutter-row {
+    padding-left: 7px;
+    padding-top: 3px;
+}
+
+.grid-row-normal {
+    border: none;
+}
+
+.grid-cell:not(:last-child) {
+    border-right: TRANSPARENT; /*[1px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+}
+
+.keyvalue-grid {
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.keyvalue-grid-row-normal {
+    width: 100% !important;
+    border-bottom: TRANSPARENT; /*[1px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+}
+
+.expanderRow {
+    border-top: TRANSPARENT; /*[2px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+    font-weight: bold;
+}
+
+    .expanderRow > span {
+        padding-left: 15px;
+    }
+
+.grid-row[id="row_GridControl_0"] .expanderRow {
+    border-top: none;
+}
+
+#selectionPanel .BPT-tabControl .tabContentPane {
+    color: TRANSPARENT; /*[{plugin-network-tabpane-key-color}]*/
+}
+
+.key-string {
+    color: TRANSPARENT; /*[{plugin-network-tabpane-key-color}]*/
+}
+
+    .key-string:after {
+        content: ": ";
+    }
+
+.value-string { /*right hand side of pairs*/
+    color: TRANSPARENT; /*[{plugin-network-tabpane-value-color}]*/
+}
+
+.status-widget {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 3px -2px 3px;
+}
+
+.status-ok {
+    background-image: url("Images/NetworkStatus-OK.png"); /*[url({f12-network-image-status-ok})]*/
+    background-size: 14px;
+}
+
+.status-error {
+    background-image: url("Images/NetworkStatus-Error.png"); /*[url({f12-network-image-status-error})]*/
+    background-size: 14px;
+}
+
+.status-warning {
+    background-image: url("Images/NetworkStatus-Warning.png"); /*[url({f12-network-image-status-warning})]*/
+    background-size: 14px;
+}
+
+.cellStyle-cachedResponse { /*cached response*/
+    color: TRANSPARENT; /*[{plugin-network-grid-response-cache-color}]*/
+}
+
+.grid-row-selected .cellStyle-cachedResponse {
+    color: TRANSPARENT; /*[{plugin-network-grid-response-selected-cache-color}]*/
+}
+
+.grid-row:hover .cellStyle-cachedResponse {
+    color: TRANSPARENT; /*[{plugin-network-grid-response-selected-cache-color}]*/
+}
+
+.grid-row-selected-blur .cellStyle-cachedResponse {
+    color: TRANSPARENT; /*[{plugin-network-grid-response-blur-cache-color}]*/
+}
+
+.cellStyle-errorResponse { /*Error response is red*/
+    color: TRANSPARENT; /*[{plugin-network-grid-response-error-color}]*/
+}
+
+.grid-row-selected .cellStyle-errorResponse {
+    color: TRANSPARENT; /*[{plugin-network-grid-response-selected-error-color}]*/
+}
+
+.grid-row:hover .cellStyle-errorResponse {
+    color: TRANSPARENT; /*[{plugin-network-grid-response-selected-cache-color}]*/
+}
+
+.grid-row-selected-blur .cellStyle-errorResponse {
+    color: TRANSPARENT; /*[{plugin-network-grid-response-blur-error-color}]*/
+}
+
+.cookiesPane .key-string {
+    padding-left: 15px;
+}
+
+.BPT-Toolbar .BPT-button.clearCacheButton .buttonIcon {
+    background-image: url(''); /*[url({image-clear-cache})]*/
+}
+
+.BPT-Toolbar .BPT-button.clearCookiesButton .buttonIcon {
+    background-image: url(''); /*[url({image-clear-cookies})]*/
+}
+
+.BPT-Toolbar .BPT-button.clearOnNavigateButton .buttonIcon {
+    background-image: url(''); /*[url({image-clear-on-navigate})]*/
+}
+
+.BPT-Toolbar .BPT-button.clearSessionButton .buttonIcon {
+    background-image: url(''); /*[url({image-clear-session})]*/
+}
+
+.BPT-Toolbar .BPT-button.openButton .buttonIcon {
+    background-image: url(''); /*[url({image-open})]*/
+}
+
+.BPT-Toolbar .BPT-button.refreshServerButton .buttonIcon {
+    background-image: url(''); /*[url({image-refresh-server})]*/
+}
+
+.BPT-Toolbar .BPT-button.saveButton .buttonIcon {
+    background-image: url(''); /*[url({image-save})]*/
+}
+
+.BPT-Toolbar .BPT-button.startButton .buttonIcon {
+    background-image: url(''); /*[url({image-start})]*/
+}
+
+.BPT-Toolbar .BPT-button.stopButton .buttonIcon {
+    background-image: url(''); /*[url({image-stop})]*/
+}
+
+.BPT-Toolbar .BPT-button .buttonText {
+    color: TRANSPARENT; /*[{plugin-network-toolbar-button-text-color}]*/
+}
+
+.BPT-Toolbar .BPT-button:hover .buttonText {
+    color: TRANSPARENT; /*[{plugin-network-toolbar-button-hover-text-color}]*/
+}
+
+.BPT-Toolbar .BPT-button.BPT-popupActive .buttonText {
+    color: TRANSPARENT; /*[{plugin-network-toolbar-button-popup-text-color}]*/
+}
+
+.BPT-Toolbar .BPT-button.pressed .buttonText {
+    color: TRANSPARENT; /*[{plugin-network-toolbar-button-pressed-text-color}]*/
+}
+
+.BPT-tabControl ul.tabBar li {
+    padding: 3px 8px 2px 8px;
+}
+
+.BPT-tabControl ul.tabBar {
+    padding-top: 3px;
+}
+
+.tabHeader > .beforeBarContainer {
+    width: 6px;
+}
+
+.requestResponseSelector {
+    height: 24px;
+    border-bottom: 1px solid #CBCDDA;
+    padding-bottom: 1px;
+    padding-left: 5px;
+}
+
+    .requestResponseSelector ul.tabBar li {
+        background: transparent;
+        border: none;
+        color: TRANSPARENT; /*[{plugin-color}]*/
+        padding-top: 0px;
+        margin-left: 2px;
+    }
+
+        .requestResponseSelector ul.tabBar li.disabled {
+            color: TRANSPARENT; /*[{plugin-color rgba(0.5)}]*/
+        }
+
+        .requestResponseSelector ul.tabBar li.active:not(.disabled) {
+            border: none;
+        }
+
+.BPT-Toolbar .BPT-button.filterContentTypeMenuButton {
+    background: TRANSPARENT; /*[{plugin-background-color}]*/
+    height: 23px;
+    padding-top: 3px;
+}
+
+    .BPT-Toolbar .BPT-button.filterContentTypeMenuButton.longMenu {
+        position: relative;
+        z-index: 3000; /* Should be greater than .BPT-popup's z-index */
+    }
+
+        .BPT-Toolbar .BPT-button.filterContentTypeMenuButton.longMenu.BPT-popupActive {
+            border-bottom: none;
+            margin-bottom: 1px;
+        }
+
+    .BPT-Toolbar .BPT-button.filterContentTypeMenuButton .buttonIcon {
+        background-image: url(''); /*[url({image-filtering-options})]*/
+        width: 27px;
+    }
+
+.BPT-menuControl {
+    border-top-color: transparent;
+}
+
+    .BPT-menuControl.longMenu {
+        border-top-color: TRANSPARENT; /*[{f12-toolbar-button-selected-border-color}]*/
+    }
+
+.editorControlContainer {
+    height: calc(100% + 22px);
+    overflow: visible;
+    width: 100%;
+}
+
+    .editorControlContainer .BPT-button.editorButtonContainer {
+        height: 20px;
+        margin-top: 1px;
+        margin-right: 2px;
+        padding: 1px;
+        width: 20px;
+    }
+
+    .editorControlContainer .editorToolbar {
+        height: 0px;
+        padding-right: 20px;
+        position: relative;
+        text-align: right;
+        top: -23px;
+    }
+
+        .editorControlContainer .editorToolbar .editorButton {
+            background-size: 16px 48px;
+            height: 16px;
+            width: 16px;
+        }
+
+        .editorControlContainer .editorToolbar .BPT-button.prettyPrintButton .editorButton {
+            background-image: url(''); /*[url({image-toggle-pretty-print})]*/
+        }
+
+        .editorControlContainer .editorToolbar .BPT-button.wordWrapButton .editorButton {
+            background-image: url(''); /*[url({image-toggle-word-wrap})]*/
+        }
+
+    .editorControlContainer .editorElement {
+        height: calc(100% - 21px);
+        width: 100%;
+    }
+
+.BPT-button:hover .editorButton {
+    background-position-y: -16px;
+}
+
+.BPT-button.checked .editorButton {
+    background-position-y: -16px;
+}
+
+.BPT-button.disabled .editorButton {
+    background-position-y: -32px;
+}
+
+.imageControlContainer {
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+    .imageControlContainer .imageLabel {
+        font-weight: 500;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .imageControlContainer .bodyImage {
+        background-image: url(''); /*[url({image-checkered-background})]*/
+        box-shadow: 0px 0px 10px #000000;
+        margin-bottom: 5px;
+        margin-left: 15px;
+        margin-top: 15px;
+        max-width: calc(100% - 30px);
+    }
+
+.keyValuePair {
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.imageControlContainer .keyValuePair {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.redirectionInfo .keyValuePair {
+    -ms-grid-columns: auto 1fr;
+    display: -ms-grid;
+}
+
+    .redirectionInfo .keyValuePair .key-string {
+        -ms-grid-column: 1;
+        display: inline-block;
+        margin-right: 4px;
+    }
+
+    .redirectionInfo .keyValuePair .value-string {
+        -ms-grid-column: 2;
+        display: inline-block;
+    }
+
+    .redirectionInfo .keyValuePair .BPT-FileLink {
+        border: 0;
+        display: inline-block;
+        width: 100%;
+    }
+
+.timingsView {
+    padding: 5px 15px;
+    width: 330px; /* non-expanding width identical to the minimum width of the selection view */
+}
+
+.timingsGanttChart .keyValuePair {
+    display: -ms-grid;
+    -ms-grid-columns: 100px 1fr; /* Leave extra space for timings labels */
+}
+
+    .timingsGanttChart .keyValuePair .key-string {
+        -ms-grid-column: 1;
+        white-space: normal;
+    }
+
+    .timingsGanttChart .keyValuePair .value-string {
+        -ms-grid-column: 2;
+        color: TRANSPARENT; /*[{plugin-color}]*/
+        /* Leave space for timing labels to overflow on the right */
+        overflow: visible;
+        padding-right: 70px;
+        white-space: nowrap;
+    }
+
+        .timingsGanttChart .keyValuePair .value-string > span {
+            display: inline-block;
+            height: 15px;
+        }
+
+.redirectionInfo > hr {
+    background-color: TRANSPARENT; /*[{plugin-border-color}]*/
+    border: 0;
+    height: 1px;
+    margin: 15px 0px;
+}
+
+.redirectionInfo > .redirectionError {
+    margin-top: 10px;
+    color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+}
+
+.monaco-editor.vs .searchTermDecoration {
+    background-color: TRANSPARENT; /* [{plugin-font-editor-search-result-background-color rgba(0.5)}]*/
+    border: TRANSPARENT; /* [solid 1px {plugin-font-editor-search-result-background-color}]*/
+}
+
+.monaco-editor.vs-dark {
+    background-color: TRANSPARENT; /* [{plugin-background-color}]*/
+}
+
+.selectedRow {
+    background-color: rgb(120, 200, 255) !important;
+}
+
+.icon-tree-collapsed {
+    background: "../Common/images/itemCollapsedIcon.png"; /*[url({vs-image-icon-tree-collapsed}) no-repeat !important]*/
+    background-size: 10px 10px !important;
+    margin: 2px 6px 0px 16px;
+}
+
+.icon-tree-expanded {
+    background: "../Common/images/itemExpandedIcon.png"; /*[url({vs-image-icon-tree-expanded}) no-repeat !important]*/
+    background-size: 10px 10px !important;
+    margin: 2px 6px 0px 16px;
+}
+
+.gridKeyValueViewer,
+.bodyView {
+    height: 100%;
+    width: 100%;
+}
+
+    .gridKeyValueViewer > .noDataLabel,
+    .bodyView > .resourceViewerContainer > .noDataLabel {
+        margin: 5px 15px 5px 15px;
+    }
+
+    .gridKeyValueViewer > .gridContainer,
+    .bodyView > .resourceViewerContainer {
+        overflow-y: visible;
+        width: 100%;
+    }
+
+    .gridKeyValueViewer > .gridContainer {
+        height: 100%;
+    }
+
+    .gridKeyValueViewer .grid-cell {
+        width: 100% !important;
+    }
+
+    .gridKeyValueViewer .grid-content-spacer {
+        width: 100% !important;
+    }
+
+    .bodyView > .resourceViewerContainer {
+        height: calc(100% - 25px);
+    }
+
+#keyValuePairList {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.timingsWaterfallColumnHeader {
+    padding-left: 2px;
+    width: 100%;
+}
+
+.timingsWaterfallColumnHeader .ruler-scale-mark-image-position {
+    top: auto;
+    bottom: 0px;
+}
+
+.waterfallItem {
+    position: relative;
+}
+
+    .waterfallItem > .waterfallItemBar {
+        height: 18px;
+        margin-top: 6px;
+    }
+
+.grid-header-column {
+    background-color: TRANSPARENT; /*[{plugin-network-grid-column-header-background-color}]*/
+    border-bottom: TRANSPARENT; /*[1px solid {plugin-treeview-content-inactive-selected-background-color}]*/
+    border-left: TRANSPARENT; /*[1px solid {plugin-treeview-content-inactive-selected-background-color}]*/
+    border-right: TRANSPARENT; /*[1px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+    color: TRANSPARENT; /*[{plugin-color}]*/
+}
+
+    .grid-header-column > .title {
+        color: TRANSPARENT; /*[{plugin-color}]*/
+        padding: 2px 4px 4px 4px;
+    }
+
+    .grid-header-column:hover {
+        background-color: TRANSPARENT; /*[{f12-toolbar-button-hover-color}]*/
+        color: TRANSPARENT; /*[{f12-toolbar-button-hover-text-color}]*/
+    }
+
+        .grid-header-column:hover > .title {
+            background-color: TRANSPARENT; /*[{f12-toolbar-button-hover-color}]*/
+            color: TRANSPARENT; /*[{f12-toolbar-button-hover-text-color}]*/
+        }
+
+.grid-header-canvas :nth-child(1).grid-header-column {
+    padding-left: 10px;
+}
+
+.grid-row {
+    border-bottom: TRANSPARENT; /*[1px solid {plugin-network-grid-border-color rgba(0.07)}]*/
+    color: TRANSPARENT; /*[{plugin-color}]*/
+}
+
+    .grid-row:not(.grid-row-selected) .expanderRow:hover,
+    .grid-row:hover {
+        background-color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-background-color}]*/
+        color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+    }
+
+    .grid-row:not(.grid-row-selected):not(:hover):not(.grid-row-selected-blur) .odd-row-cell {
+        background-color: TRANSPARENT; /*[{plugin-network-grid-cell-odd-background-color}]*/
+    }
+
+    .grid-row:not(.grid-row-selected):not(:hover):not(.grid-row-selected-blur) .even-row-cell {
+        background-color: TRANSPARENT; /*[{plugin-network-grid-cell-even-background-color}]*/
+    }
+
+    .grid-row:not(.grid-row-selected) .expanderRow {
+        background-color: TRANSPARENT; /*[{plugin-network-grid-column-header-background-color}]*/
+    }
+
+.grid-row-selected-blur {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+}
+
+    .grid-row-selected-blur > .odd-row-cell,
+    .grid-row-selected-blur > .even-row-cell {
+        background-color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-background-color}]*/
+    }
+
+.grid-row-selected, .grid-row-selected:hover {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-selected-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-treeview-content-selected-color}]*/
+}
+
+.multi-line-grid-cell > div :nth-child(2):not(.urlWithNoName) { /*Second row URL color*/
+    color: TRANSPARENT; /*[{plugin-network-grid-path-color}]*/
+    font-size: 11px;
+}
+
+.grid-row:hover > .multi-line-grid-cell > div :nth-child(2):not(.urlWithNoName),
+.grid-row-selected-blur > .multi-line-grid-cell > div :nth-child(2):not(.urlWithNoName) { /*Second row URL color when the row is highlighted*/
+    color: TRANSPARENT; /*[{plugin-network-grid-path-color-highlighted}]*/
+}
+
+.grid-row-selected > .multi-line-grid-cell > div :nth-child(2):not(.urlWithNoName),
+.grid-row-selected:hover > .multi-line-grid-cell > div :nth-child(2):not(.urlWithNoName) {
+    color: TRANSPARENT; /*[{plugin-network-grid-path-color-selected}]*/
+}
+
+.grid-row:hover .key-string, .grid-row-selected-blur .key-string, .grid-row-current .key-string {
+    color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+}
+
+.grid-row:hover .value-string, .grid-row-selected-blur .value-string, .grid-row-current .value-string {
+    color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+}
+
+.summaryBar {
+    -ms-grid-row: 3;
+    background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+    border: TRANSPARENT; /*[1px solid {plugin-treeview-content-inactive-selected-background-color}]*/
+    padding: 2px 2px 2px 2px;
+    position: relative;
+}
+
+.summaryBarErrorSpan {
+    border-right: TRANSPARENT; /*[1px solid {plugin-treeview-content-inactive-selected-background-color}]*/
+    padding: 0px 25px 0px 25px;
+}
+
+    .summaryBarErrorSpan.badgeBackground {
+        width: 16px;
+        height: 16px;
+        margin: 3px 0 0 4px;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        vertical-align: top;
+        z-index: 2;
+        display: inline;
+        text-align: justify;
+    }
+
+        .summaryBarErrorSpan.badgeBackground.badgeError {
+            background-image: url("Images/badgeError.png");
+            background-position-y: -34px;
+        }
+
+            .summaryBarErrorSpan.badgeBackground.badgeError.hasErrors {
+                background-position-y: 0px;
+            }
+
+    .summaryBarErrorSpan.hasErrors {
+        color: TRANSPARENT; /*[{plugin-link-color}]*/
+    }
+
+        .summaryBarErrorSpan.hasErrors:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+.summaryBarRequestSpan {
+    border-right: TRANSPARENT; /*[1px solid {plugin-treeview-content-inactive-selected-background-color}]*/
+    padding: 0px 25px 0px 25px;
+}
+
+.summaryBarSizeSpan {
+    border-right: TRANSPARENT; /*[1px solid {plugin-treeview-content-inactive-selected-background-color}]*/
+    padding: 0px 25px 0px 25px;
+}
+
+.summaryBarTimeSpan {
+    padding: 0px 25px 0px 25px;
+}
+
+.initiatorUrl {
+    display: inline-block;
+}
+
+.bodyPane .monaco-scrollable-element > .visible {
+    background: TRANSPARENT; /*[{plugin-scrollbar-background-color}]*/
+}
+
+.bodyPane .monaco-scrollable-element > .scrollbar {
+    background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.1)}]*/
+    border: TRANSPARENT; /*[1px solid {plugin-scrollbar-face-color}]*/
+}
+
+    .bodyPane .monaco-scrollable-element > .scrollbar > .slider {
+        background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.7)}]*/
+        border: TRANSPARENT; /*[1px solid {plugin-scrollbar-face-color}]*/
+    }
+
+        .bodyPane .monaco-scrollable-element > .scrollbar > .slider:hover {
+            background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.6)}]*/
+        }
+
+        .bodyPane .monaco-scrollable-element > .scrollbar > .slider.active {
+            background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.9)}]*/
+        }

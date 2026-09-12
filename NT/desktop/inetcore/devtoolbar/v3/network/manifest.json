@@ -1,0 +1,618 @@
+﻿{
+    "start_url": "Network/network.html",
+    "domain": "http://microsoft.com",
+    "name": "Network Tool",
+    "version": "1.1",
+    "f12": {
+        "localized_tab_resource": "F12ToolTitle",
+        "localized_tooltip_id": 6001,
+        "resource_aliases": {
+            "Network": {
+                "is_default": true
+            },
+            "Common": {
+            },
+            "DiagnosticsHubControlsResources": {
+            }
+        },
+        "themed_images": {
+            "plugin-common-image-find-next": {
+                "bitmap_source": "../Common/images/i_next.png",
+                "background_color": "plugin-searchcontrol-mouseover-background-background-color"
+            },
+            "plugin-common-image-find-previous": {
+                "bitmap_source": "../Common/images/i_previous.png",
+                "background_color": "plugin-searchcontrol-mouseover-background-background-color"
+            },
+            "vs-image-icon-tree-collapsed": {
+                "bitmap_source": "../Common/images/itemCollapsedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-expanded": {
+                "bitmap_source": "../Common/images/itemExpandedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-toggle-pretty-print": {
+                "bitmap_source": "..\\Common\\images\\togglePrettyPrint.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "image-toggle-word-wrap": {
+                "bitmap_source": "..\\Common\\images\\toggleWordWrap.png",
+                "background_color": "plugin-font-editor-background-color"
+            },
+            "image-checkered-background": {
+                "bitmap_source": "images\\i_checkered_background.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-cache": {
+                "bitmap_source": "images\\i_clearCache.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-cookies": {
+                "bitmap_source": "images\\i_clearCookies.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-on-navigate": {
+                "bitmap_source": "images\\i_clearOnNavigate.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-session": {
+                "bitmap_source": "images\\i_clearSession.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-filtering-options": {
+                "bitmap_source": "images\\i_filtering_options.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-open": {
+                "bitmap_source": "images\\i_open.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-refresh-server": {
+                "bitmap_source": "images\\i_refreshServer.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-save": {
+                "bitmap_source": "images\\i_save.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-start": {
+                "bitmap_source": "images\\i_start.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-stop": {
+                "bitmap_source": "images\\i_stop.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-network-image-status-ok": {
+                "bitmap_source": "Images/NetworkStatus-OK.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-network-image-status-error": {
+                "bitmap_source": "Images/NetworkStatus-Error.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-network-image-status-warning": {
+                "bitmap_source": "Images/NetworkStatus-Warning.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-user-mark": {
+                "bitmap_source": "Images/i_usermark.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-app-event": {
+                "bitmap_source": "Images/i_appevent.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-aggregated-event": {
+                "bitmap_source": "Images/CustomMark5_18x.png",
+                "background_color": "plugin-background-color"
+            }
+        },
+        "file_aliases": {
+            "DiagnosticsHub.DataWarehouseHost": {
+                "path": "DiagnosticsHub.ScriptedSandboxPlugin.dll"
+            }
+        }
+    },
+    "vs": {
+        "resource_aliases": {
+            "Network": {
+                "type": "Embedded",
+                "name": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+                "path": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.Network.Resources",
+                "is_default": true
+            },
+            "Common": {
+                "type": "Embedded",
+                "name": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+                "path": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.Common.Resources"
+            },
+            "DiagnosticsHubControlsResources": {
+                "path": "..\\..\\..\\..\\Platform\\DiagnosticsHub\\WebViews\\DiagnosticsHub.Javascript.Controls.ScriptResources"
+            }
+        },
+        "guid_symbols": {
+            "guidShellStandardSet": "5efc7975-14bc-11cf-9b2b-00aa00573819"
+        },
+        "command_aliases": {
+            "find": {
+                "guid": "guidShellStandardSet",
+                "id": 97,
+                "focus": true
+            }
+        },
+        "theme_token_aliases": {
+            "diagnostics-host-ruler-tickmark": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "RulerTickmark"
+            },
+            "f12-toolbar-button-hover-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseOverBackgroundBegin"
+            },
+            "f12-toolbar-button-hover-text-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextHover"
+            },
+            "f12-toolbar-button-selected-border-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarSelectedBorder"
+            },
+            "f12-toolbar-button-selected-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarSelected"
+            },
+            "f12-toolbar-button-selected-text-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextSelected"
+            },
+            "f12-toolbar-button-pressed-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBackgroundBegin"
+            },
+            "vs-command-bar-options-background-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarOptionsBackground"
+            },
+            "vs-tool-window-text-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ToolWindowText"
+            },
+            "plugin-border-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ActiveBorder"
+            },
+            "plugin-editor-scrollbar-marker-search-result-color": {
+                "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",
+                "key_type": "BackgroundColor",
+                "name": "Border"
+            },
+            "plugin-menucontrol-background-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "Menu"
+            },
+            "plugin-network-grid-border-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "GridCellBorder"
+            },
+            "plugin-network-grid-cell-odd-background-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ToolWindowBackground"
+            },
+            "plugin-network-grid-cell-even-background-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ToolWindowBackground"
+            },
+            "plugin-network-grid-column-header-background-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "NetworkHeaderBackground"
+            },
+            "plugin-network-grid-path-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "ForegroundColor",
+                "name": "Console Warning Text"
+            },
+            "plugin-network-grid-path-color-highlighted": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkGridSecondaryHighlighted"
+            },
+            "plugin-network-grid-path-color-selected": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkGridSecondarySelected"
+            },
+            "plugin-network-grid-response-cache-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "ForegroundColor",
+                "name": "Console Warning Text"
+            },
+            "plugin-network-grid-response-selected-cache-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkCacheSelectedText"
+            },
+            "plugin-network-grid-response-blur-cache-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkCacheBlurText"
+            },
+            "plugin-network-grid-response-error-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "ForegroundColor",
+                "name": "Console Error Text"
+            },
+            "plugin-network-grid-response-selected-error-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkErrorSelectedText"
+            },
+            "plugin-network-grid-response-blur-error-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkErrorBlurText"
+            },
+            "plugin-network-toolbar-button-text-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkToolbarButtonTextColor"
+            },
+            "plugin-network-toolbar-button-hover-text-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkToolbarButtonHoverTextColor"
+            },
+            "plugin-network-toolbar-button-popup-text-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkToolbarButtonPopupTextColor"
+            },
+            "plugin-network-toolbar-button-pressed-text-color": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "ForegroundColor",
+                "name": "NetworkToolbarButtonPressedTextColor"
+            },
+            "plugin-network-splitter": {
+                "category": "634eef98-6af2-4f63-8d9f-36351e18b606",
+                "key_type": "BackgroundColor",
+                "name": "Splitter"
+            },
+            "plugin-network-tabpane-key-color": {
+                "category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+                "key_type": "ForegroundColor",
+                "name": "Console Warning Text"
+            },
+            "plugin-network-tabpane-value-color": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "ToolWindowText"
+            },
+            "plugin-searchcontrol-selection-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "Selection"
+            },
+            "plugin-searchcontrol-unfocused-watermark-text-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "UnfocusedWatermarkText"
+            },
+            "plugin-searchcontrol-unfocused-background-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "Unfocused"
+            },
+            "plugin-searchcontrol-unfocused-border-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "UnfocusedBorder"
+            },
+            "plugin-searchcontrol-mouseover-watermark-text-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverWatermarkText"
+            },
+            "plugin-searchcontrol-mouseover-background-background-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverBackground"
+            },
+            "plugin-searchcontrol-mouseover-background-foreground-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "ForegroundColor",
+                "name": "MouseOverBackground"
+            },
+            "plugin-searchcontrol-mouseover-border-color": {
+                "category": "f1095fad-881f-45f1-8580-589e10325eb8",
+                "key_type": "BackgroundColor",
+                "name": "MouseOverBorder"
+            },
+            "plugin-theme-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "ThemeColor"
+            },
+            "plugin-font-editor-color": {
+              "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+              "key_type": "ForegroundColor",
+              "name": "PluginFontEditorColor"
+            },
+            "monaco-gotoline-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "MonacoGotolineBackgroundColor"
+            },
+            "monaco-gotoline-focused-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "MonacoGotolineFocusedBackgroundColor"
+            },
+            "monaco-gotoline-hover-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "MonacoGotolineHoverBackgroundColor"
+            },
+            "monaco-gotoline-selected-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "MonacoGotolineSelectedBackgroundColor"
+            },
+            "plugin-editor-selected-text-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "PluginEditorSelectedTextBackgroundColor"
+            },
+            "plugin-font-console-error-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontConsoleErrorColor"
+            },
+            "plugin-font-console-info-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontConsoleInfoColor"
+            },
+            "plugin-font-console-input-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontConsoleInputColor"
+            },
+            "plugin-font-console-warning-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontConsoleWarningColor"
+            },
+            "plugin-font-editor-breakpoint-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "PluginFontEditorBreakpointBackgroundColor"
+            },
+            "plugin-font-editor-comment-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorCommentColor"
+            },
+            "plugin-font-editor-css-name-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorCssNameColor"
+            },
+            "plugin-font-editor-css-selector-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorCssSelectorColor"
+            },
+            "plugin-font-editor-css-value-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorCssValueColor"
+            },
+            "plugin-font-editor-erroradornment-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "PluginFontEditorErroradornmentBackgroundColor"
+            },
+            "plugin-font-editor-erroradornment-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorErroradornmentColor"
+            },
+            "plugin-font-editor-html-attribute-name-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorHtmlAttributeNameColor"
+            },
+            "plugin-font-editor-html-attribute-value-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorHtmlAttributeValueColor"
+            },
+            "plugin-font-editor-html-element-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorHtmlElementColor"
+            },
+            "plugin-font-editor-html-tag-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorHtmlTagColor"
+            },
+            "plugin-font-editor-identifier-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorIdentifierColor"
+            },
+            "plugin-font-editor-instruction-pointer-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "PluginFontEditorInstructionPointerBackgroundColor"
+            },
+            "plugin-font-editor-keyword-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorKeywordColor"
+            },
+            "plugin-font-editor-literal-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorLiteralColor"
+            },
+            "plugin-font-editor-margin-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "PluginFontEditorMarginBackgroundColor"
+            },
+            "plugin-font-editor-margin-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorMarginColor"
+            },
+            "plugin-font-editor-number-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorNumberColor"
+            },
+            "plugin-font-editor-search-result-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "PluginFontEditorSearchResultBackgroundColor"
+            },
+            "plugin-font-editor-string-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginFontEditorStringColor"
+            },
+            "plugin-highlight-border-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginHighlightBorderColor"
+            },
+            "plugin-tab-header-hover-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "PluginTabHeaderHoverBackgroundColor"
+            },
+            "plugin-word-highlight-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginWordHighlightColor"
+            },
+            "plugin-word-highlight-strong-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "ForegroundColor",
+                "name": "PluginWordHighlightStrongColor"
+            },
+            "vs-drop-shadow-background-color": {
+                "category": "ca939bd0-e6fd-47f6-8a98-effc40dfab02",
+                "key_type": "BackgroundColor",
+                "name": "VsDropShadowBackgroundColor"
+            }
+        },
+        "themed_images": {
+            "plugin-common-image-find-next": {
+                "bitmap_source": "Common\\images\\i_next.png",
+                "background_color": "plugin-textbox-background-color"
+            },
+            "plugin-common-image-find-previous": {
+                "bitmap_source": "Common\\images\\i_previous.png",
+                "background_color": "plugin-textbox-background-color"
+            },
+            "vs-image-icon-tree-collapsed": {
+                "bitmap_source": "Common\\images\\itemCollapsedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-icon-tree-expanded": {
+                "bitmap_source": "Common\\images\\itemExpandedIcon.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-toggle-pretty-print": {
+                "bitmap_source": "Common\\images\\togglePrettyPrint.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-toggle-word-wrap": {
+                "bitmap_source": "Common\\images\\toggleWordWrap.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-cache": {
+                "bitmap_source": "Network\\images\\i_clearCache.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-cookies": {
+                "bitmap_source": "Network\\images\\i_clearCookies.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-on-navigate": {
+                "bitmap_source": "Network\\images\\i_clearOnNavigate.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-clear-session": {
+                "bitmap_source": "Network\\images\\i_clearSession.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-filtering-options": {
+                "bitmap_source": "Network\\images\\i_filtering_options.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-open": {
+                "bitmap_source": "Network\\images\\i_open.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-refresh-server": {
+                "bitmap_source": "Network\\images\\i_refreshServer.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-save": {
+                "bitmap_source": "Network\\images\\i_save.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-start": {
+                "bitmap_source": "Network\\images\\i_start.png",
+                "background_color": "plugin-background-color"
+            },
+            "image-stop": {
+                "bitmap_source": "Network\\images\\i_stop.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-network-image-status-ok": {
+                "bitmap_source": "Network\\Images\\NetworkStatus-OK.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-network-image-status-error": {
+                "bitmap_source": "Network\\Images\\NetworkStatus-Error.png",
+                "background_color": "plugin-background-color"
+            },
+            "f12-network-image-status-warning": {
+                "bitmap_source": "Network\\Images\\NetworkStatus-Warning.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-user-mark": {
+                "bitmap_source": "Network\\Images\\i_usermark.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-app-event": {
+                "bitmap_source": "Network\\Images\\i_appevent.png",
+                "background_color": "plugin-background-color"
+            },
+            "vs-image-graph-aggregated-event": {
+                "bitmap_source": "Network\\Images\\CustomMark5_18x.png",
+                "background_color": "plugin-background-color"
+            }
+        }
+    }
+}
