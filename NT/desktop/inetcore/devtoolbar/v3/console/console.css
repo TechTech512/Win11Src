@@ -1,0 +1,473 @@
+html, body {
+    overflow: hidden;
+}
+
+#f12ConsoleSplitter {
+    left: 0;
+    right: 0;
+    background-color: TRANSPARENT; /*[{plugin-perftools-grid-column-sizer}]*/
+    cursor: ns-resize;
+    height: 3px;
+    display: none;
+}
+    body.showSplitter > #f12ConsoleSplitter {
+        display: block;
+    }
+
+#mainContainer {
+    display: -ms-grid;
+    -ms-grid-rows: auto 1fr auto;
+    -ms-grid-columns: 100%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+    body.showSplitter > #mainContainer {
+        height: calc(100% - 3px);
+    }
+
+#outputArea {
+    -ms-grid-row: 2;
+    white-space: nowrap;
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+
+#outputList {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    font-family: Consolas, 'Lucida Console', monospace; /*[{plugin-font-console} , Lucida Console, monospace]*/
+    font-size: 9pt; /*[{plugin-font-console-size}]*/
+    color: TRANSPARENT; /*[{plugin-font-console-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+
+#warningSection {
+    margin-left: 2px;
+}
+
+/* Object visualization */
+#outputList .listview-grid-row:not(.listview-grid-row-expanded) .listview-grid-underline {
+    background-color: rgba(0, 0, 0, 0.05); /*[{plugin-font-console-output-color rgba(0.07)}]*/
+}
+
+#outputList .consoleItemInput .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-input-color}]*/
+    background-color: transparent; /*[{plugin-font-console-input-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-input-weight}]*/
+}
+
+#outputList .consoleItemInput > .listview-grid-cell-icon {
+    background-image: url('images/i_console-input.png'); /*[url({plugin-console-image-icon-input})]*/
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 2px;
+}
+
+#outputList .consoleItemOutput .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-output-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-output-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-output-weight}]*/
+}
+#outputList .consoleItemOutput > .listview-grid-cell-icon {
+
+}
+
+#outputList .consoleItemOutput-Async > .listview-grid-cell-icon {
+    background-image: none;
+}
+
+#outputList .consoleItemLog .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-output-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-output-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-output-weight}]*/
+}
+#outputList .consoleItemLog > .listview-grid-cell-icon {
+    background-image: none;
+}
+
+#outputList .consoleItemAssert .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-error-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-error-weight}]*/
+}
+
+#outputList .consoleItemError .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-error-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-error-weight}]*/
+}
+
+#outputList .consoleItemInfo .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-info-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-info-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-info-weight}]*/
+}
+
+#outputList .consoleItemWarn .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-warning-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-warning-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-warning-weight}]*/
+}
+
+#outputList .consoleItemErrorExpandable .listview-grid-cell-resize {
+    color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+    font-weight: normal; /*[{plugin-font-console-error-weight}]*/
+}
+
+#outputList .consoleItemInfoExpandable .listview-grid-cell-resize {
+    color: TRANSPARENT; /*[{plugin-font-console-info-color}]*/
+    font-weight: normal; /*[{plugin-font-console-info-weight}]*/
+}
+
+#outputList .consoleItemWarnExpandable .listview-grid-cell-resize {
+    color: TRANSPARENT; /*[{plugin-font-console-warning-color}]*/
+    font-weight: normal; /*[{plugin-font-console-warning-weight}]*/
+}
+
+#outputList .consoleItemScriptError .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-error-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-error-weight}]*/
+}
+
+#outputList .consoleItemOutput-Undefined .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-info-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-info-background-color}]*/
+}
+#outputList .consoleItemOutput-Exception .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-console-info-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-info-background-color}]*/
+}
+#outputList .consoleItemOutput-Null .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+#outputList .consoleItemOutput-String .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-editor-string-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+#outputList .consoleItemOutput-Boolean .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+#outputList .consoleItemOutput-Number .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-editor-number-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+#outputList .consoleItemOutput-Array .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-editor-symbol-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+#outputList .consoleItemOutput-Object .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-editor-symbol-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+.consoleItemOutput-Internal {
+    color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+#outputList .consoleItemOutput-Internal .listview-grid-cell-value {
+    color: TRANSPARENT; /*[{plugin-font-editor-symbol-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+
+#outputList .listview-grid-row-selected .listview-grid-cell {
+    background-color: transparent !important;
+}
+
+#outputList .listview-horizontal-separator {
+    margin-top:7px;
+    background-color: TRANSPARENT; /*[{plugin-font-console-output-color rgba(0.5)}]*/
+    height: 2px;
+}
+
+/* HTML visualization */
+.Console-Html {
+    font-family: "Consolas", Lucida Console, monospace; /*[{plugin-font-editor} , Lucida Console, monospace]*/
+    font-size: 9pt; /*[{plugin-font-editor-size}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-tag-weight}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-html-tag-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+}
+
+.Console-Html-Tag {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-element-weight}]*/
+}
+
+.Console-Html-DocType, .Console-Html-DocType + .Console-Html-Text {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-comment-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-comment-weight}]*/
+}
+
+.Console-Html-Comment, .Console-Html-Comment + .Console-Html-Text {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-comment-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-comment-weight}]*/
+}
+            
+.Console-Html-Attribute {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-name-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-attribute-name-weight}]*/
+}
+            
+.Console-Html-Value {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-value-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-attribute-value-weight}]*/
+}
+
+.Console-Html-Operator {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-operator-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-operator-weight}]*/
+}
+
+.Console-Html-Text {
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-weight}]*/
+}
+
+.Console-Html-CSS-Name {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-name-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-css-name-weight}]*/
+}
+
+.Console-Html-CSS-Value {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-value-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/ 
+    font-weight: normal; /*[{plugin-font-editor-css-value-weight}]*/
+}
+
+.Console-Html-CSS-Selector, .Console-Html-CSS-Selector div {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-selector-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-css-selector-weight}]*/
+}
+
+.Console-Html-CSS-Text {
+    background-color: TRANSPARENT; /*[{plugin-font-console-background-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-weight}]*/
+}
+
+.listview-grid-row-selected .Console-HtmlItem .Console-Html, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-Tag, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-Attribute, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-Value, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-Operator, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-Text, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-Comment, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-Comment + .Console-Html-Text, 
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-DocType + .Console-Html-Text,
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-CSS-Name,
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-CSS-Value,
+.listview-grid-row-selected .Console-StyleItem-Value.Console-Html-CSS-Value,
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-CSS-Selector,
+.listview-grid-row-selected .Console-HtmlItem .Console-Html-CSS-Text,
+.listview-grid-row-selected .listview-grid-cell {
+    background-color: transparent !important;
+}
+
+.listview-icon-tree-expanded + .listview-grid-cell .Console-Html-CollapsedFooter {
+    display: none;
+}
+
+.Console-Html-Footer {
+    margin-left: -16px;
+}
+
+.Console-Html-Numbering {
+    display: inline-block;
+    min-width: 24px;
+    margin-right: 4px;
+}
+
+.Console-ExpandableLines {
+    color: TRANSPARENT; /*[{plugin-font-console-info-color}]*/
+}
+
+.Console-ExpandableString {
+    color: TRANSPARENT; /*[{plugin-font-editor-string-color}]*/
+}
+
+/* Toolbar and status */
+.BPT-WarnMessage {
+    color: TRANSPARENT; /*[{plugin-font-console-warning-color}]*/
+    cursor: default;
+    background-color: TRANSPARENT; /*[{plugin-font-console-warning-background-color}]*/
+    font-weight: normal; /*[{plugin-font-console-warning-weight}]*/
+    padding-left: 21px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/* Console input control */
+#inputArea {
+    -ms-grid-row: 3;
+    position: relative;
+
+    font-family: Consolas, 'Lucida Console', monospace; /*[{plugin-font-console} , Lucida Console, monospace]*/
+    font-size: 9pt; /*[{plugin-font-console-size}]*/
+    color: TRANSPARENT; /*[{plugin-font-console-inputarea-color}]*/
+    background-color: TRANSPARENT;  /*[{plugin-font-console-inputarea-background-color}]*/  /* redline has #e8eef6 */
+}
+
+#inputSplitter {
+    cursor: n-resize;
+    height: 3px;
+    width: 100%;
+    background-color: TRANSPARENT; /*[{vs-horizontal-resize-grip-color}]*/
+    margin-bottom: 1px;
+}
+
+#inputLabel {
+    top: 0;
+    display: table-cell;
+    width: auto;
+    vertical-align: top;
+}
+#inputLabel > div {
+    box-sizing: border-box;
+    width: 16px;
+    margin: 0 2px 0 2px;
+    background-image: url('images/i_console-input.png'); /*[url({plugin-console-image-icon-input})]*/
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-origin: content-box; 
+    padding: 2px;
+}
+
+#inputBoxContainer {
+    top: 0;
+    margin-left: 0.5em;
+    display: table-cell;
+    width: 100%;
+}
+#inputBoxContainer > * {
+    display: none;
+    border: none;
+    width: 100%;
+    height: inherit;
+}
+
+#inputMultilineContainer {
+    display: none;
+    width: inherit;
+    height: inherit;
+}
+
+#input-singleLine {
+    background-color: TRANSPARENT;  /*[{plugin-font-console-inputarea-background-color}]*/  /* redline has #e8eef6 */
+}
+#input-singleLine::-ms-clear {
+    display:none;
+}
+
+#input-multiLine {
+    display: inline-block;
+    border: none;
+    height: inherit;
+    width: inherit;
+    background-color: TRANSPARENT;  /*[{plugin-font-console-inputarea-background-color}]*/  /* redline has #e8eef6 */
+}
+
+#input-singleLine,
+#input-multiLine {
+	/* Could have font: inherit, but Spartan sometimes reports the wrong value via getComputedStyle */
+    font-family: Consolas, 'Lucida Console', monospace; /*[{plugin-font-console} , Lucida Console, monospace]*/
+    font-size: 9pt; /*[{plugin-font-console-size}]*/
+}
+
+#inputButtonContainer {
+    top: 0;
+    display: table-cell; 
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: auto;
+    vertical-align: bottom;
+}
+
+.BPT-ConsoleButton {
+    top: 0;
+    display: table-cell; 
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: auto;
+    vertical-align: bottom;
+}
+
+.BPT-ConsoleInput:focus {
+    outline-color: transparent !important;
+    outline-style: hidden !important;
+}
+
+.Console-ColorThumbnail {
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    margin: 0 2px 0 2px;
+    border: 1px solid black; /*[1px solid {plugin-font-editor-color}]*/
+}
+
+.Console-Style-Disabled .listview-grid-cell {
+    text-decoration: line-through;
+}
+
+.Console-Style-Disabled .listview-grid-cell span.Console-Html-CSS-Value {
+    text-decoration: line-through;
+    text-decoration-color: TRANSPARENT; /*[{plugin-font-editor-css-value-color}]*/
+}
+
+.valueStringToken-Null {
+    color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+}
+.valueStringToken-Undefined {
+    color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+}
+.valueStringToken-String {
+    color: TRANSPARENT; /*[{plugin-font-editor-string-color}]*/
+}
+.valueStringToken-Boolean  {
+    color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+}
+.valueStringToken-Number  {
+    color: TRANSPARENT; /*[{plugin-font-editor-number-color}]*/
+}
+.valueStringToken-Array  {
+    color: TRANSPARENT; /*[{plugin-font-editor-symbol-color}]*/
+}
+.valueStringToken-Object {
+    color: TRANSPARENT; /*[{plugin-font-editor-symbol-color}]*/
+}
+.valueStringToken-Function {
+    color: TRANSPARENT; /*[{plugin-font-console-output-color}]*/
+}
+.valueStringToken-PropertyName {
+    color: TRANSPARENT; /*[{plugin-font-console-output-color}]*/
+}
+.valueStringToken-Default {
+    color: TRANSPARENT; /*[{plugin-font-console-output-color}]*/
+}
+
+.labeledComboBox {
+    display: inline-block;
+    float: right;
+}
+
+.labeledComboBox select {
+    width: 150px;
+    margin: 3px;
+}
+
+.labeledComboBox option {
+    background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+}

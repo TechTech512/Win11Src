@@ -1,0 +1,549 @@
+﻿{
+	"start_url": "console/console.html",
+	"domain": "http://microsoft.com",
+	"name": "Console",
+	"version": "1.0",
+	"f12": {
+		"start_url": "console.html",
+		"localized_tab_resource": "ConsoleToolLabelText",
+		"localized_tooltip_id": 813,
+		"resource_aliases" : {
+			"Common": {
+				"is_default": true
+			}
+		},
+		"themed_images": {
+			"plugin-console-image-icon-input": {
+				"bitmap_source": "images\\i_console-input.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-error": {
+				"bitmap_source": "images\\i_error.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-info": {
+				"bitmap_source": "images\\i_info.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-warning": {
+				"bitmap_source": "..\\Common\\images\\i_warning.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-multi": {
+				"bitmap_source": "images\\i_toggle-multi.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-single": {
+				"bitmap_source": "images\\i_toggle-single.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-clear": {
+				"bitmap_source": "..\\Common\\images\\i_delete.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-clear-on-navigate": {
+				"bitmap_source": "images\\i_clear-on-navigate.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-info": {
+				"bitmap_source": "images\\i_info.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-warn": {
+				"bitmap_source": "..\\Common\\images\\i_warning.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-error": {
+				"bitmap_source": "images\\i_error.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-execute": {
+				"bitmap_source": "images\\i_execute.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-clear-input": {
+				"bitmap_source": "images\\i_clear-input.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"vs-image-icon-tree-collapsed": {
+				"bitmap_source": "..\\Common\\images\\itemCollapsedIcon.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"vs-image-icon-tree-expanded": {
+				"bitmap_source": "..\\Common\\images\\itemExpandedIcon.png",
+				"background_color": "plugin-font-console-background-color"
+			}
+		}
+	},
+	"vs": {
+		"resource_aliases": {
+			"Common": {
+				"type": "Embedded",
+				"name": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost",
+				"path": "Microsoft.VisualStudio.WebClient.Diagnostics.HtmlToolHost.Resources.Common.Resources",
+				"is_default": true
+			}
+		},
+		"guid_symbols": {
+			"guidHtmlToolHostCmdSet": "a654f3df-4bdb-4863-a750-75cdb50a03bc"
+		},
+		"command_aliases": {
+			"clearconsole": {
+				"guid": "guidHtmlToolHostCmdSet",
+				"id": 336,
+				"focus": true
+			}
+		},
+		"theme_token_aliases": {
+			"plugin-font-console-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-console-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-console-input-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Input Text"
+			},
+			"plugin-font-console-input-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Input Text"
+			},
+			"plugin-font-console-inputarea-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Input Text"
+			},
+			"plugin-font-console-inputarea-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Input Text"
+			},
+			"plugin-font-console-output-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Output Text"
+			},
+			"plugin-font-console-output-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Output Text"
+			},
+			"plugin-font-console-error-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Error Text"
+			},
+			"plugin-font-console-error-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Error Text"
+			},
+			"plugin-font-console-info-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Info Text"
+			},
+			"plugin-font-console-info-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Info Text"
+			},
+			"plugin-font-console-warning-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Console Warning Text"
+			},
+			"plugin-font-console-warning-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Console Warning Text"
+			},
+			"plugin-font-editor-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "ForegroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-editor-background-color": {
+				"category": "2AA714AE-53BE-4393-84E0-DC95B57A1891",
+				"key_type": "BackgroundColor",
+				"name": "Plain Text"
+			},
+			"plugin-font-editor-keyword-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "Keyword"
+			},
+			"plugin-font-editor-keyword-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Keyword"
+			},
+			"plugin-font-editor-string-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "String"
+			},
+			"plugin-font-editor-string-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "String"
+			},
+			"plugin-font-editor-number-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "Number"
+			},
+			"plugin-font-editor-number-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Number"
+			},
+			"plugin-font-editor-symbol-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "SymbolDefinitionClassificationFormat"
+			},
+			"plugin-font-editor-symbol-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "SymbolDefinitionClassificationFormat"
+			},
+			"plugin-font-editor-html-tag-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Tag Delimiter"
+			},
+			"plugin-font-editor-html-tag-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Tag Delimiter"
+			},
+			"plugin-font-editor-html-element-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Element Name"
+			},
+			"plugin-font-editor-html-element-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Element Name"
+			},
+			"plugin-font-editor-html-comment-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Comment"
+			},
+			"plugin-font-editor-html-comment-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Comment"
+			},
+			"plugin-font-editor-html-attribute-name-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Attribute"
+			},
+			"plugin-font-editor-html-attribute-name-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Attribute"
+			},
+			"plugin-font-editor-html-attribute-value-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Attribute Value"
+			},
+			"plugin-font-editor-html-attribute-value-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Attribute Value"
+			},
+			"plugin-font-editor-html-operator-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "HTML Operator"
+			},
+			"plugin-font-editor-html-operator-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "HTML Operator"
+			},
+			"plugin-font-editor-css-name-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CSS Property Name"
+			},
+			"plugin-font-editor-css-name-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "CSS Property Name"
+			},
+			"plugin-font-editor-css-value-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CSS Property Value"
+			},
+			"plugin-font-editor-css-value-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "CSS Property Value"
+			},
+			"plugin-font-editor-css-selector-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CSS Selector"
+			},
+			"plugin-font-editor-css-selector-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "CSS Selector"
+			},
+			"plugin-font-editor-inactive-selected-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Inactive Selected Text"
+			},
+			"plugin-font-editor-selected-background-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "BackgroundColor",
+				"name": "Selected Text"
+			},
+			"plugin-font-editor-selected-border-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "outlining.collapsehintadornment"
+			},
+			"plugin-environment-background-gradient-begin": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "EnvironmentBackgroundGradientBegin"
+			},
+			"plugin-filetab-hot-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabHotText"
+			},
+			"plugin-filetab-inactive-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabInactiveText"
+			},
+			"plugin-filetab-inactive-gradient-top-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabInactiveGradientTop"
+			},
+			"plugin-filetab-hot-gradient-top-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabHotGradientTop"
+			},
+			"plugin-filetab-selected-gradient-top-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabSelectedGradientTop"
+			},
+			"plugin-filetab-selected-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "FileTabSelectedText"
+			},
+			"plugin-commandbar-gradient-begin-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarGradientBegin"
+			},
+			"plugin-vertical-resize-grip-middle-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "VerticalResizeGripMiddle"
+			},
+			"plugin-font-current-line-active-format-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CurrentLineActiveFormat"
+			},
+			"plugin-font-current-line-inactive-format-color": {
+				"category": "75a05685-00a8-4ded-bae5-e7a50bfa929a",
+				"key_type": "ForegroundColor",
+				"name": "CurrentLineInactiveFormat"
+			},
+			"plugin-font-editor-current-statement-background-color": {
+				"category": "ff349800-ea43-46c1-8c98-878e78f46501",
+				"key_type": "BackgroundColor",
+				"name": "Current Statement"
+			},
+			"plugin-font-editor-current-statement-color": {
+				"category": "ff349800-ea43-46c1-8c98-878e78f46501",
+				"key_type": "ForegroundColor",
+				"name": "Current Statement"
+			},
+			"plugin-perftools-grid-column-sizer": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "GridLine"
+			},
+			"f12-intellisense-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "MenuText"
+			},
+			"f12-intellisense-hover-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "Menu"
+			},
+			"f12-intellisense-checked-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "HighlightText"
+			},
+			"f12-intellisense-checked-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "Highlight"
+			},
+			"vs-horizontal-resize-grip-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "HorizontalResizeGrip"
+			},
+			"f12-toolbar-background-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarGradientBegin"
+			},
+			"f12-toolbar-button-selected-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarSelected"
+			},
+			"f12-toolbar-button-selected-border-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarSelectedBorder"
+			},
+			"f12-toolbar-button-selected-text-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarTextSelected"
+			},
+			"f12-toolbar-button-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarMouseOverBackgroundBegin"
+			},
+			"f12-toolbar-button-checked-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarHoverOverSelectedIcon"
+			},
+			"f12-toolbar-button-hover-text-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarTextHover"
+			},
+			"f12-toolbar-button-border-hover-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarBorder"
+			},
+			"f12-toolbar-button-pressed-color": {
+				"category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+				"key_type": "BackgroundColor",
+				"name": "CommandBarMouseDownBackgroundBegin"
+			}
+		},
+		"themed_images": {
+			"plugin-console-image-icon-input": {
+				"bitmap_source": "console/images/i_console-input.png",
+				"background_color": "plugin-font-console-inputarea-background-color"
+			},
+			"plugin-console-image-icon-critical": {
+				"bitmap_source": "common/images/critical.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-info": {
+				"bitmap_source": "console/images/info.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-warning": {
+				"bitmap_source": "console/images/warning.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-multi-24x": {
+				"bitmap_source": "console/images/CollapseMultiline_24x.png",
+				"background_color": "plugin-font-console-inputarea-background-color"
+			},
+			"plugin-console-image-icon-button-single-24x": {
+				"bitmap_source": "console/images/CollapseSingle_24x.png",
+				"background_color": "plugin-font-console-inputarea-background-color"
+			},
+			"plugin-console-image-icon-button-delete-32x": {
+				"bitmap_source": "console/images/Delete_32x.png",
+				"background_color": "f12-toolbar-background-color"
+			},
+			"plugin-console-image-icon-button-delete-disabled-32x": {
+				"bitmap_source": "console/images/DeleteDisabled_32x.png",
+				"background_color": "f12-toolbar-background-color"
+			},
+			"plugin-console-image-icon-button-clear-on-navigate-16x": {
+				"bitmap_source": "console/images/i_clear-on-navigate_16x.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-info": {
+				"bitmap_source": "console/images/info.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-warning": {
+				"bitmap_source": "console/images/warning.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-button-critical": {
+				"bitmap_source": "common/images/critical.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"vs-image-icon-tree-collapsed": {
+				"bitmap_source": "common/images/itemCollapsedIcon.png",
+				"background_color": "plugin-background-color"
+			},
+			"vs-image-icon-tree-expanded": {
+				"bitmap_source": "common/images/itemExpandedIcon.png",
+				"background_color": "plugin-background-color"
+			},
+			"plugin-console-image-icon-button-run-24x": {
+				"bitmap_source": "console/images/Run_24x.png",
+				"background_color": "plugin-font-console-inputarea-background-color"
+			},
+			"plugin-console-image-icon-button-delete-24x": {
+				"bitmap_source": "console/images/Delete_24x.png",
+				"background_color": "plugin-font-console-inputarea-background-color"
+			},
+			"plugin-console-image-icon-critical-disabled": {
+				"bitmap_source": "console/images/critical_disabled_16x.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-warning-disabled": {
+				"bitmap_source": "console/images/warning_disabled_16x.png",
+				"background_color": "plugin-font-console-background-color"
+			},
+			"plugin-console-image-icon-information-disabled": {
+				"bitmap_source": "console/images/information_disabled_16x.png",
+				"background_color": "plugin-font-console-background-color"
+			}
+		}
+	},
+		"file_aliases": {
+			"PerformanceTraceExtension": {
+				"path": "PerformanceTrace.dll",
+				"optional": true
+			}
+		}
+	}

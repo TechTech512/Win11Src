@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11">
+        <meta http-equiv="Content-Type" content="text/html">
+        <meta http-equiv="format-detection" content="telephone=no">
+        <title>Console</title>
+
+        <link id="toolwindow.css" rel="stylesheet" href="../common/toolwindow.css" type="text/css" data-plugin-theme="true" />
+        <link id="toolwindow.f12.css" rel="stylesheet" href="../common/toolwindow.f12.css" type="text/css" data-plugin-theme="true" />
+        <link id="toolwindow.vs.css" rel="stylesheet" href="../common/toolwindow.vs.css" type="text/css" data-plugin-theme="true" />
+        <link id="controls.css" rel="stylesheet" href="../common/controls/controls.css" type="text/css" data-plugin-theme="true" />
+        <link id="intellisenseListBox.css" rel="stylesheet" href="../common/Intellisense/intellisenseListBox.css" type="text/css" data-plugin-theme="true" />
+        <link id="console.css" rel="stylesheet" href="console.css" type="text/css" data-plugin-theme="true" />
+        <link id="console.f12.css" rel="stylesheet" href="console.f12.css" type="text/css" data-plugin-theme="true" />
+        <link id="console.vs.css" rel="stylesheet" href="console.vs.css" type="text/css" data-plugin-theme="true" />
+        <link id="objectTreeView.css" rel="stylesheet" href="../common/ObjectView/objectTreeView.css" type="text/css" data-plugin-theme="true" />
+
+        <!-- Daytona Includes -->
+        <script type="text/javascript" src="../Common/isDebugBuild.js"></script>
+        <script type="text/javascript" src="../Common/plugin.js"></script>
+
+        <script id="intellisenseListBox" type="text/html">
+            <ul class="intellisenseListBox"></ul>
+        </script>
+
+        <script type="text/javascript" src="../Common/CommonMerged.js"></script>  
+        <script type="text/javascript" src="ConsoleMerged.js"></script>
+        <script type="text/javascript" src="res://f12test.dll/23/selftest/SelfTestConsole.js"></script>
+
+        <script type="text/javascript">
+            // The main entry point
+            F12.Tools.Console.App.main();
+        </script>
+    </head>
+    <body tabindex="-1">
+        <div id="f12ConsoleSplitter"></div>
+        <div id="mainContainer">
+            <div id="inputArea">
+                <div id="inputSplitter"></div>
+                <div id="inputLabel"><div>&nbsp;</div></div>
+                <div id="inputBoxContainer">
+                    <input id="input-singleLine" class="BPT-ConsoleInput" type="text" tabindex="1" />
+                    <div id="inputMultilineContainer">
+                        <textarea id="input-multiLine" class="BPT-ConsoleInput" tabindex="1" spellcheck="false"></textarea>
+                    </div>
+                </div>
+                <div id="inputButtonContainer">
+                    <div class="BPT-ConsoleButton">
+                        <div id="clearInputButton" role="button" tabindex="1"></div>
+                    </div>
+                    <div class="BPT-ConsoleButton">
+                        <div id="executeButton" role="button" tabindex="1"></div>
+                    </div>
+                    <div class="BPT-ConsoleButton">
+                        <div id="toggleButton" class="BPT-Toggle-MultiIcon" role="button" tabindex="1"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="outputArea">
+                <div id="warningSection" style="display: none;" role="alert">
+                    <div class="BPT-WarnMessageIcon"></div>
+                    <div id="warningMessageText" class='BPT-WarnMessage'></div>
+                </div>
+                <div id="outputList"></div>
+            </div>
+            <div id="toolbar"></div>
+        </div>
+    </body>
+</html>

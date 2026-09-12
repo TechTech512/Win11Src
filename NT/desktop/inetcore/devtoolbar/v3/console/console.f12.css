@@ -1,0 +1,116 @@
+﻿#outputList .consoleItemAssert > .listview-grid-cell-icon {
+    background-image: url('images/i_error.png'); /*[url({plugin-console-image-icon-error})]*/
+    background-size: 18px 54px;
+}
+
+#outputList .consoleItemError > .listview-grid-cell-icon {
+    background-image: url('images/i_error.png'); /*[url({plugin-console-image-icon-error})]*/
+    background-size: 18px 54px;
+}
+
+#outputList .consoleItemInfo > .listview-grid-cell-icon {
+    background-image: url('images/i_info.png'); /*[url({plugin-console-image-icon-info})]*/
+    background-size: 18px 54px;
+}
+
+#outputList .consoleItemWarn > .listview-grid-cell-icon {
+    background-image: url('../common/images/i_warning.png'); /*[url({plugin-console-image-icon-warning})]*/
+    background-size: 18px 54px;
+}
+
+#outputList .consoleItemScriptError > .listview-grid-cell-icon {
+    background-image: url('images/i_error.png'); /*[url({plugin-console-image-icon-error})]*/
+    background-size: 18px 54px;
+}
+
+#outputList .consoleItemErrorStale > .listview-grid-cell-icon {
+    background-position-y: -36px;
+}
+
+#outputList .consoleItemWarnStale > .listview-grid-cell-icon {
+    background-position-y: -36px;
+}
+
+#outputList .consoleItemInfoStale > .listview-grid-cell-icon {
+    background-position-y: -36px;
+}
+
+.BPT-WarnMessageIcon {
+    background-image: url('../common/images/i_warning.png'); /*[url({plugin-console-image-icon-warning})]*/
+    background-size: 18px 54px;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+}
+
+.BPT-Toolbar .errorButton .buttonIcon {
+    background-image: url('images/i_error.png'); /*[url({plugin-console-image-icon-button-error})]*/
+}
+
+.BPT-Toolbar .warnButton .buttonIcon {
+    background-image: url('../common/images/i_warning.png'); /*[url({plugin-console-image-icon-button-warn})]*/
+}
+
+.BPT-Toolbar .infoButton .buttonIcon {
+    background-image: url('images/i_info.png'); /*[url({plugin-console-image-icon-button-info})]*/
+}
+
+.BPT-Toolbar .clearButton .buttonIcon {
+    background-image: url('../common/images/i_delete.png'); /*[url({plugin-console-image-icon-button-clear})]*/
+}
+
+.BPT-Toolbar .clearOnNavigateButton .buttonIcon {
+    background-image: url('images/i_clear-on-navigate.png'); /*[url({plugin-console-image-icon-button-clear-on-navigate})]*/
+}
+
+#executeButton {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url('images/i_execute.png'); /*[url({plugin-console-image-icon-button-execute})]*/
+    background-size: 12px 36px;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+
+#executeButton:hover {
+    background-position: 0px -12px;
+}
+
+#clearInputButton {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url('images/i_clear-input.png'); /*[url({plugin-console-image-icon-button-clear-input})]*/
+    background-size: 12px 36px;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+
+#clearInputButton:hover {
+    background-position: 0px -12px;
+}
+
+#toggleButton {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 12px 36px;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+
+#toggleButton:hover {
+    background-position: 0px -12px;
+}
+
+.BPT-Toggle-MultiIcon {
+    background-image: url('images/i_toggle-multi.png'); /*[url({plugin-console-image-icon-button-multi})]*/
+}
+
+.BPT-Toggle-SingleIcon {
+    background-image: url('images/i_toggle-single.png'); /*[url({plugin-console-image-icon-button-single})]*/
+}
