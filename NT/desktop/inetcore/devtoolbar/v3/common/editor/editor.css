@@ -1,0 +1,591 @@
+#dataTipElement {
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-active-border-color}]*/
+    background: TRANSPARENT; /*[{plugin-contextmenu-background-color}]*/
+    box-shadow: 2px 2px 2px TRANSPARENT; /*[2px 2px 2px {plugin-textbox-border-color rgba(0.5)}]*/
+    display: none;
+    position: absolute;
+    z-index: 501;
+    top: 30px;
+}
+
+    #dataTipElement .popoverInnerContainer {
+        margin-top: 9px;
+        height: calc(100% - 30px);
+        width: 100%;
+        color: TRANSPARENT; /*[{plugin-color}]*/
+    }
+
+        #dataTipElement .popoverInnerContainer a {
+            margin-left: 4px;
+        }
+
+    #dataTipElement .grid > .grid-canvas {
+        overflow-x: hidden;
+    }
+
+.f12Glyph {
+    background-repeat: no-repeat;
+}
+
+.monaco-editor.vs {
+    line-height: 18px;
+}
+
+    .monaco-editor.vs .breakpointDecoration {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-breakpoint-background-color rgba(0.2)}]*/
+        border: TRANSPARENT solid 1px; /*[{plugin-tab-header-hover-background-color} solid 1px]*/
+    }
+
+    .monaco-editor.vs .breakpointGlyph {
+        background-image: url("Breakpoints/images/breakpointGlyph.png"); /*[url({f12-debugger-image-breakpoint})]*/
+        background-position-y: 2px;
+        background-size: 14px 14px;
+        margin-left: 2px;
+    }
+
+        .monaco-editor.vs .breakpointGlyph.bpUnbound {
+            background-image: url("Breakpoints/images/breakpointUnbound.png"); /*[url({f12-debugger-image-breakpoint-unbound})]*/
+        }
+
+        .monaco-editor.vs .breakpointGlyph.bpDisabled {
+            background-image: url("Breakpoints/images/breakpointDisabled.png"); /*[url({f12-debugger-image-breakpoint-disabled})]*/
+        }
+
+    .monaco-editor.vs .tracepointimg {
+        background-image: url('Breakpoints/images/tracepointBreakpoint.png'); /*[url({f12-debugger-image-breakpoint-tracepoint})]*/
+        background-position-y: 2px;
+        background-size: 14px 14px;
+        margin-left: 2px;
+    }
+
+    .monaco-editor.vs .conditionalimg {
+        background-image: url('Breakpoints/images/conditionalBreakpoint.png'); /*[url({f12-debugger-image-breakpoint-conditional})]*/
+        background-position-y: 2px;
+        background-size: 14px 14px;
+        margin-left: 2px;
+    }
+
+    .monaco-editor.vs .cursorDecoration {
+        background-color: TRANSPARENT;
+    }
+
+    .monaco-editor.vs .cursorGlyph {
+        background-color: TRANSPARENT;
+        background-image: url("Cursor/images/currentLocationArrow.png"); /*[url({f12-debugger-image-cursor})]*/
+        background-position-y: 2px;
+        background-size: 14px 14px;
+        margin-left: 2px;
+    }
+
+    .monaco-editor.vs .cursorGlyph.breakpointGlyph {
+        background-color: TRANSPARENT;
+        background-image: url("Cursor/images/currentLocationArrow.png"), url("Breakpoints/images/breakpointGlyph.png"); /*[url({f12-debugger-image-cursor}), url({f12-debugger-image-breakpoint})]*/
+        background-position-y: 2px;
+        background-size: 14px 14px;
+        margin-left: 2px;
+    }
+
+    .monaco-editor.vs .activeFrameDecoration {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-comment-color rgba(0.4)}]*/
+    }
+
+    .monaco-editor.vs .activeFrameGlyph {
+        background-image: url("Callstack/images/activeFrameGlyph.png"); /*[url({f12-debugger-image-callstack-active-frame})]*/
+        background-position-y: 2px;
+        background-size: 14px 14px;
+        margin-left: 2px;
+    }
+
+        .monaco-editor.vs .activeFrameGlyph.breakpointGlyph {
+            background-image: url("Callstack/images/activeFrameGlyph.png"), url("Breakpoints/images/breakpointGlyph.png"); /*[url({f12-debugger-image-callstack-active-frame}), url({f12-debugger-image-breakpoint})]*/
+        }
+
+            .monaco-editor.vs .activeFrameGlyph.breakpointGlyph.bpUnbound {
+                background-image: url("Callstack/images/activeFrameGlyph.png"), url("Breakpoints/images/breakpointUnbound.png"); /*[url({f12-debugger-image-callstack-active-frame}), url({f12-debugger-image-breakpoint-unbound})]*/
+            }
+
+            .monaco-editor.vs .activeFrameGlyph.breakpointGlyph.bpDisabled {
+                background-image: url("Callstack/images/activeFrameGlyph.png"), url("Breakpoints/images/breakpointDisabled.png"); /*[url({f12-debugger-image-callstack-active-frame}), url({f12-debugger-image-breakpoint-disabled})]*/
+            }
+
+        .monaco-editor.vs .activeFrameGlyph.tracepointimg {
+            background-image: url("Callstack/images/activeFrameGlyph.png"), url("Breakpoints/images/tracepointBreakpoint.png"); /*[url({f12-debugger-image-callstack-active-frame}), url({f12-debugger-image-breakpoint-tracepoint})]*/
+        }
+
+        .monaco-editor.vs .activeFrameGlyph.conditionalimg {
+            background-image: url("Callstack/images/activeFrameGlyph.png"), url("Breakpoints/images/conditionalBreakpoint.png"); /*[url({f12-debugger-image-callstack-active-frame}), url({f12-debugger-image-breakpoint-conditional})]*/
+        }
+
+    .monaco-editor.vs .instructionPointerDecoration {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-instruction-pointer-background-color rgba(0.6)}]*/
+    }
+
+    .monaco-editor.vs .textSpotlightDecoration {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-text-spotlight-background-color}]*/
+    }
+
+    .monaco-editor.vs .instructionPointerGlyph {
+        background-image: url("Callstack/images/instructionPointerGlyph.png"); /*[url({f12-debugger-image-callstack-instruction-pointer})]*/
+        background-position-y: 2px;
+        background-size: 14px 14px;
+        margin-left: 2px;
+    }
+
+        .monaco-editor.vs .instructionPointerGlyph.breakpointGlyph {
+            background-image: url("Callstack/images/instructionPointerGlyph.png"), url("Breakpoints/images/breakpointGlyph.png"); /*[url({f12-debugger-image-callstack-instruction-pointer}), url({f12-debugger-image-breakpoint})]*/
+        }
+
+            .monaco-editor.vs .instructionPointerGlyph.breakpointGlyph.bpUnbound {
+                background-image: url("Callstack/images/instructionPointerGlyph.png"), url("Breakpoints/images/breakpointUnbound.png"); /*[url({f12-debugger-image-callstack-instruction-pointer}), url({f12-debugger-image-breakpoint-unbound})]*/
+            }
+
+            .monaco-editor.vs .instructionPointerGlyph.breakpointGlyph.bpDisabled {
+                background-image: url("Callstack/images/instructionPointerGlyph.png"), url("Breakpoints/images/breakpointDisabled.png"); /*[url({f12-debugger-image-callstack-instruction-pointer}), url({f12-debugger-image-breakpoint-disabled})]*/
+            }
+
+        .monaco-editor.vs .instructionPointerGlyph.tracepointimg {
+            background-image: url("Callstack/images/instructionPointerGlyph.png"), url("Breakpoints/images/tracepointBreakpoint.png"); /*[url({f12-debugger-image-callstack-instruction-pointer}), url({f12-debugger-image-breakpoint-tracepoint})]*/
+        }
+
+        .monaco-editor.vs .instructionPointerGlyph.conditionalimg {
+            background-image: url("Callstack/images/instructionPointerGlyph.png"), url("Breakpoints/images/conditionalBreakpoint.png"); /*[url({f12-debugger-image-callstack-instruction-pointer}), url({f12-debugger-image-breakpoint-conditional})]*/
+        }
+
+    .monaco-editor.vs .searchTermDecoration {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-search-result-background-color rgba(0.5)}]*/
+        border: solid 1px TRANSPARENT; /*[solid 1px {plugin-font-editor-search-result-background-color}]*/
+    }
+
+    .monaco-editor.vs .exceptionViewZone {
+        color: TRANSPARENT; /*[{plugin-font-editor-erroradornment-color}]*/
+        background-color: TRANSPARENT; /*[{plugin-font-editor-erroradornment-background-color}]*/
+        border: solid 1px TRANSPARENT; /*[solid 1px {plugin-font-editor-erroradornment-background-color}]*/
+        -ms-user-select: text;
+        z-index: 2;
+        padding-left: 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+        .monaco-editor.vs .exceptionViewZone .exceptionGlyph {
+            background: url("../Common/images/common_icons.png") no-repeat -688px -16px; /*[url({f12-image-common-icons}) no-repeat -688px -16px]*/
+            padding-top: 1px;
+            float: left;
+            width: 20px;
+            height: 16px;
+        }
+
+    .monaco-editor.vs .setNextStatementErrorViewZone {
+        color: TRANSPARENT; /*[{plugin-font-editor-erroradornment-color}]*/
+        background-color: TRANSPARENT; /*[{plugin-font-editor-erroradornment-background-color}]*/
+        border: solid 1px TRANSPARENT; /*[solid 1px {plugin-font-editor-erroradornment-background-color}]*/
+        -ms-user-select: none;
+        padding-left: 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+        .monaco-editor.vs .setNextStatementErrorViewZone .exceptionGlyph {
+            background: url("../Common/images/common_icons.png") no-repeat -688px -16px; /*[url({f12-image-common-icons}) no-repeat -688px -16px]*/
+            padding-top: 1px;
+            float: left;
+            width: 20px;
+            height: 16px;
+        }
+
+/* Monaco editor overrides */
+.monaco-editor.vs,
+.monaco-editor.vs .zone-widget .monaco-editor.vs {
+    font-family: Consolas, Nimsum, Monaco, Menlo, Consolas, "Droid Sans Mono", "Inconsolata", "Courier New", monospace; /*[{plugin-font-editor}, Nimsum, Monaco, Menlo, Consolas, "Droid Sans Mono", "Inconsolata", "Courier New", monospace]*/
+    font-size: 9pt; /*[{plugin-font-editor-size}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    background: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+}
+
+    .monaco-editor.vs .monaco-editor-background {
+        background: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+    }
+
+    .monaco-editor.vs .focus-mode {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+        opacity: 0.333;
+    }
+
+    .monaco-editor.vs .cursor {
+        background: TRANSPARENT; /*[{plugin-color}]*/
+    }
+
+    .monaco-editor.vs .current-line {
+        background: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+        border: none !important;
+        box-sizing: border-box;
+    }
+
+    .monaco-editor.vs .lineHighlight {
+        background-color: TRANSPARENT; /*[{plugin-highlight-color rgba(0.2)}]*/
+    }
+
+    .monaco-editor.vs .dynamic.focused > .selections-layer > .selected-text {
+        background: TRANSPARENT !important; /*[{plugin-highlight-background-color rgba(0.45)} !important]*/
+    }
+
+    .monaco-editor.vs .dynamic > .selections-layer > .selected-text {
+        background: TRANSPARENT !important; /*[{plugin-highlight-background-color rgba(0.45)} !important]*/
+    }
+
+    .monaco-editor.vs .glyph-margin {
+        background: TRANSPARENT; /*[{plugin-font-editor-margin-background-color}]*/
+    }
+
+    .monaco-editor.vs .lines-decorations {
+        background: TRANSPARENT; /*[{plugin-background-color}]*/
+    }
+
+    .monaco-editor.vs .line-numbers {
+        background: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+        color: TRANSPARENT; /*[{plugin-font-editor-margin-color}]*/
+    }
+
+    /* Monaco GoToLinePrompt */
+    .monaco-editor.vs .quick-open-widget {
+        background: TRANSPARENT; /*[{monaco-gotoline-background-color}]*/
+    }
+
+    .monaco-editor.vs .monaco-vtree.focused .rows > .row.focused:not(.highlighted) {
+        background-color: TRANSPARENT; /*[{monaco-gotoline-focused-background-color}]*/
+    }
+
+    .monaco-editor.vs .monaco-vtree.focused .rows > .row.selected:not(.highlighted) {
+        background-color: TRANSPARENT; /*[{monaco-gotoline-selected-background-color}]*/
+    }
+
+    .monaco-editor.vs .monaco-vtree .rows > .row:hover:not(.highlighted):not(.selected):not(.focused) {
+        background-color: TRANSPARENT; /*[{monaco-gotoline-hover-background-color}]*/
+    }
+
+.monaco-editor .view-overlays.focused .selected-text {
+    background: TRANSPARENT !important; /*[{plugin-editor-selected-text-focus-background-color} !important]*/
+}
+
+.monaco-editor .view-overlays .selected-text {
+    background: TRANSPARENT !important; /*[{plugin-editor-selected-text-background-color} !important]*/
+}
+
+@media screen and (-ms-high-contrast: active) {
+    .monaco-editor .view-overlays.focused .selected-text,
+    .monaco-editor .view-overlays .selected-text,
+    .monaco-editor .quick-open-widget .quick-open-tree .row.focused {
+        border: TRANSPARENT solid 1px; /*[{plugin-tab-header-hover-background-color} solid 1px]*/
+    }
+}
+
+.monaco-editor-hover {
+    box-sizing: content-box;
+}
+
+.debuggerEditor .monaco-diff-editor .diffOverview {
+    background-color: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+}
+
+.debuggerEditor .monaco-scrollable-element.modified-in-monaco-diff-editor .scrollbar {
+    background: TRANSPARENT; /*[{plugin-scrollbar-background-color rgba(0.1)}]*/
+}
+
+.debuggerEditor .monaco-scrollable-element .visible {
+    background: TRANSPARENT; /*[{plugin-scrollbar-background-color}]*/
+}
+
+.debuggerEditor .monaco-scrollable-element .scrollbar {
+    background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.1)}]*/
+}
+
+.debuggerEditor .monaco-scrollable-element .slider {
+    background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.6)}]*/
+}
+
+    .debuggerEditor .monaco-scrollable-element .slider:hover {
+        background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.7)}]*/
+    }
+
+    .debuggerEditor .monaco-scrollable-element .slider.active {
+        background: TRANSPARENT; /*[{plugin-scrollbar-face-color rgba(0.9)}]*/
+    }
+
+.debuggerEditor .monaco-scrollable-element > .scrollbar > .up-arrow {
+    background-image: url("../common/editor/vs/base/ui/scrollbar/impl/arrow-up.png"); /*[url({f12-debugger-image-editor-scroll-arrow-up})]*/
+}
+
+.debuggerEditor .monaco-scrollable-element > .scrollbar > .down-arrow {
+    background-image: url("../common/editor/vs/base/ui/scrollbar/impl/arrow-down.png"); /*[url({f12-debugger-image-editor-scroll-arrow-down})]*/
+}
+
+.debuggerEditor .monaco-scrollable-element > .scrollbar > .left-arrow {
+    background-image: url("../common/editor/vs/base/ui/scrollbar/impl/arrow-left.png"); /*[url({f12-debugger-image-editor-scroll-arrow-left})]*/
+}
+
+.debuggerEditor .monaco-scrollable-element > .scrollbar > .right-arrow {
+    background-image: url("../common/editor/vs/base/ui/scrollbar/impl/arrow-right.png"); /*[url({f12-debugger-image-editor-scroll-arrow-right})]*/
+}
+
+.monaco-editor.vs .lineHighlight {
+    border: solid 1px TRANSPARENT; /*[solid 1px {plugin-highlight-border-color}]*/
+}
+
+.monaco-editor.vs .wordHighlight {
+    background-color: TRANSPARENT; /*[{plugin-word-highlight-color rgba(0.35)}]*/
+    border: solid 1px TRANSPARENT; /*[solid 1px {plugin-highlight-border-color}]*/
+    animation-name: wordHighlightFadeIn;
+    animation-duration: 0.2s;
+}
+
+@keyframes wordHighlightFadeIn {
+    from {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+        border: solid 1px TRANSPARENT; /*[solid 1px {plugin-font-editor-background-color}]*/
+    }
+
+    to {
+        background-color: TRANSPARENT; /*[{plugin-word-highlight-color rgba(0.35)}]*/
+        border: solid 1px TRANSPARENT; /*[solid 1px {plugin-highlight-border-color}]*/
+    }
+}
+
+.monaco-editor.vs .wordHighlightStrong {
+    background-color: TRANSPARENT; /*[{plugin-word-highlight-strong-color rgba(0.7)}]*/
+    border: dashed 1px TRANSPARENT; /*[dashed 1px {plugin-highlight-border-color}]*/
+    animation-name: wordHighlightStrongFadeIn;
+    animation-duration: 0.2s;
+}
+
+@keyframes wordHighlightStrongFadeIn {
+    from {
+        background-color: TRANSPARENT; /*[{plugin-font-editor-background-color}]*/
+        border: dashed 1px TRANSPARENT; /*[dashed 1px {plugin-font-editor-background-color}]*/
+    }
+
+    to {
+        background-color: TRANSPARENT; /*[{plugin-word-highlight-strong-color rgba(0.7)}]*/
+        border: dashed 1px TRANSPARENT; /*[dashed 1px {plugin-highlight-border-color}]*/
+    }
+}
+
+.monaco-editor.vs .bracket-match {
+    box-shadow: inset 0 0 0 1px TRANSPARENT; /*[inset 0 0 0 1px {vs-drop-shadow-background-color rgba(0.5)}]*/
+}
+
+.monaco-editor.vs .monaco-tree.focused .selected > .content {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-background-color}]*/
+}
+
+.monaco-editor.vs .monaco-tree.focused .focused > .content {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-selected-background-color}]*/
+}
+
+.monaco-editor.vs .monaco-tree .selected > .content {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-inactive-selected-background-color}]*/
+}
+
+.monaco-editor.vs .monaco-tree .focused > .content {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-background-color}]*/
+}
+
+.monaco-editor.vs .monaco-tree .content:hover {
+    background-color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-background-color}]*/
+}
+
+.monaco-editor.vs .linked-editing {
+    box-shadow: inset 0 0 0 1px TRANSPARENT; /*[inset 0 0 0 1px {vs-drop-shadow-background-color rgba(0.5)}]*/
+}
+
+.monaco-editor.vs .new-snippet {
+    background-color: TRANSPARENT; /*[{plugin-color rgba(0.1)}]*/
+}
+
+.monaco-editor.vs .snippet-placeholder {
+    background-color: TRANSPARENT; /*[{plugin-color rgba(0.1)}]*/
+}
+
+.monaco-editor.vs .finish-snippet-placeholder {
+    outline: TRANSPARENT solid 1px; /*[{plugin-background-color} solid 1px]*/
+}
+
+.monaco-editor.vs .detected-link {
+    border-color: TRANSPARENT; /*[{plugin-link-color}]*/
+}
+
+.monaco-editor.vs .token {
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+}
+
+    .monaco-editor.vs .token.comment {
+        color: TRANSPARENT; /*[{plugin-font-editor-comment-color}]*/
+    }
+
+    .monaco-editor.vs .token.number {
+        color: TRANSPARENT; /*[{plugin-font-editor-number-color}]*/
+    }
+
+    .monaco-editor.vs .token.regexp, .monaco-editor.vs .token.regexp.js {
+        color: TRANSPARENT; /*[{plugin-font-editor-number-color}]*/
+    }
+
+    .monaco-editor.vs .token.string {
+        color: TRANSPARENT; /*[{plugin-font-editor-string-color}]*/
+    }
+
+        .monaco-editor.vs .token.string.escape {
+            color: TRANSPARENT; /*[{plugin-font-editor-string-color}]*/
+        }
+
+    .monaco-editor.vs .token.delimiter {
+        color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    }
+
+    .monaco-editor.vs .token.keyword {
+        color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+    }
+
+        .monaco-editor.vs .token.keyword.flow {
+            color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+        }
+
+    .monaco-editor.vs .token.info-token {
+        color: TRANSPARENT; /*[{plugin-font-console-info-color}]*/
+    }
+
+    .monaco-editor.vs .token.warn-token {
+        color: TRANSPARENT; /*[{plugin-font-console-warning-color}]*/
+    }
+
+    .monaco-editor.vs .token.error-token {
+        color: TRANSPARENT; /*[{plugin-font-console-error-color}]*/
+    }
+
+    .monaco-editor.vs .token.debug-token {
+        color: TRANSPARENT; /*[{plugin-font-console-input-color}]*/
+    }
+
+    .monaco-editor.vs .token.meta {
+        color: TRANSPARENT; /*[{plugin-font-editor-comment-color}]*/
+    }
+
+    .monaco-editor.vs .token.key {
+        color: TRANSPARENT; /*[{plugin-font-editor-literal-color}]*/
+    }
+
+    .monaco-editor.vs .token.variable {
+        color: TRANSPARENT; /*[{plugin-font-editor-identifier-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.name, .monaco-editor.vs .token.attribute.name.html {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-name-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.value, .monaco-editor.vs .token.attribute.value.html {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-value-color}]*/
+    }
+
+    .monaco-editor.vs .token.tag.html {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    }
+
+    .monaco-editor.vs .token.delimiter.html {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-tag-color}]*/
+    }
+
+    .monaco-editor.vs .token.meta.content.html {
+        color: TRANSPARENT; /*[{plugin-font-editor-comment-color}]*/
+    }
+
+    .monaco-editor.vs .token.meta.html {
+        color: TRANSPARENT; /*[{plugin-font-editor-comment-color}]*/
+    }
+
+    .monaco-editor.vs .token.tag.xml {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    }
+
+    .monaco-editor.vs .token.delimiter.xml {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-tag-color}]*/
+    }
+
+    .monaco-editor.vs .token.meta.content.xml {
+        color: TRANSPARENT; /*[{plugin-font-editor-comment-color}]*/
+    }
+
+    .monaco-editor.vs .token.meta.xml {
+        color: TRANSPARENT; /*[{plugin-font-editor-comment-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.name.xml {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.value.xml {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-tag-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.name.css {
+        color: TRANSPARENT; /*[{plugin-font-editor-css-name-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.value.css {
+        color: TRANSPARENT; /*[{plugin-font-editor-css-value-color}]*/
+    }
+
+    .monaco-editor.vs .token.tag.css {
+        color: TRANSPARENT; /*[{plugin-font-editor-css-selector-color}]*/
+    }
+
+    .monaco-editor.vs .token.delimiter.css {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-tag-color}]*/
+    }
+
+    .monaco-editor.vs .token.vs {
+        color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    }
+
+    .monaco-editor.vs .token.tag.vs {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    }
+
+    .monaco-editor.vs .token.delimiter.js {
+        color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.name.vs {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-name-color}]*/
+    }
+
+    .monaco-editor.vs .token.attribute.value.vs {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-value-color}]*/
+    }
+
+    .monaco-editor.vs .token.meta.java {
+        color: TRANSPARENT; /*[{plugin-font-editor-comment-color}]*/
+    }
+
+    .monaco-editor.vs .token.tag.jade {
+        color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    }
+
+    .monaco-editor.vs .token.tag.id.jade,
+    .monaco-editor.vs .token.tag.class.jade {
+        color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+    }
+
+    .monaco-editor.vs .token.interpolation.jade {
+        color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+    }
+
+    .monaco-editor.vs .token.interpolation.delimiter.jade {
+        color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    }
+
+.monaco-editor.vs .typeInfo {
+    color: TRANSPARENT; /*[{plugin-font-editor-keyword-color}]*/
+}   

@@ -1,0 +1,4 @@
+/*---------------------------------------------------------
+ * Copyright (C) Microsoft Corporation. All rights reserved.
+ *--------------------------------------------------------*/
+"use strict";define("vs/languages/typescript/js/globalVariableRewriter",["require","exports","vs/base/strings"],function(e,t,n){var i=function(){function e(){this._pattern=/(\/\* ?globals? )([\s\S]+)\*\//gm}return e.prototype.computeEdits=function(e){this._pattern.lastIndex=0;for(var t,i=e.sourceFile.getFullText(),r=[];t=this._pattern.exec(i);)t[2].split(",").forEach(function(e){e=e.trim();var t=e.indexOf(":");e=e.substring(0,~t?t:void 0),r.push(n.format("declare var {0}:any;\n",e))}),e.newInsert(Math.max(e.sourceUnitStart,t.index),r.join(n.empty))},e}();t.GlobalVariableCollector=i});

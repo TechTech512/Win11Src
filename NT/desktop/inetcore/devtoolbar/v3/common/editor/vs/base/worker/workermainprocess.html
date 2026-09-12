@@ -1,0 +1,90 @@
+<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
+<html>
+<head>
+	<script type="text/javascript">
+		
+		// Load native modules before the loader overwrites `require`
+		var remote = require('remote');
+		var ipc = require('ipc');
+		var path = require('path');
+		
+	</script>
+	<script type="text/javascript" src="../../loader.js"></script>	
+	<script type="text/javascript">
+		function hideWorker() {
+			var currentWindow = remote.getCurrentWindow();
+			if (currentWindow) {
+				currentWindow.hide();
+				currentWindow.closeDevTools();
+			}
+		}
+		
+		process.on('uncaughtException', function(err) {
+			console.error('[uncaught exception]: ', err);
+			if (err && err.stack) {
+				console.log(err.stack);				
+			}
+			var currentWindow = remote.getCurrentWindow();
+			currentWindow.show();
+			currentWindow.openDevTools();
+		});
+		
+		var root = path.resolve(path.join(__dirname, '..', '..', '..', '..'));
+		require.config({
+			paths: {
+				'vs': 'client/vs'
+			},
+			baseUrl: root,
+			catchError: true
+		});
+		window.isProcessWorker = true;
+		
+		function initializeWorker(payload) {
+			var mainPid = payload.pid;
+			setInterval(function() {
+				try {
+					// throws an exception if the main process doesn't exist anymore.
+					process.kill(mainPid, 0);				
+				} catch(e) {
+					process.exit();					
+				}
+			}, 1000);
+		}
+		
+		var beforeReadyMessages = [];
+		var beforeReadyListener = function (msg) {
+			beforeReadyMessages.push(msg);
+		};
+		var id = 'ProcessWorker-' + remote.getCurrentWindow().id;
+		ipc.on(id, beforeReadyListener);
+		
+		require(['vs/base/worker/workerServer'], function(ws) {
+			var workerServer = new ws.WorkerServer(function (msg) {
+				ipc.send(id, ws.marshallObject(msg));
+			});
+			ipc.removeListener(id, beforeReadyListener);
+			ipc.on(id, function(data) {
+				var msg = ws.demarshallObject(data);
+				if (msg.type === '$workerInitialize') {
+					initializeWorker(msg.payload);
+				} else {			
+					workerServer.onmessage(msg)
+				}
+			});
+			for(var i = 0; i < beforeReadyMessages.length; i++) {
+				var msg = ws.demarshallObject(beforeReadyMessages[i]);
+				if (msg.type === '$workerInitialize') {
+					initializeWorker(msg.payload);
+				} else {			
+					workerServer.onmessage(msg);
+				}
+			}
+			beforeReadyMessages = null;
+		});
+	</script>
+</head>
+<body>
+	<h2>Separate process worker</h2>
+	<input type="button" value="Hide Worker" onclick="hideWorker();">
+</body>
+</html>
