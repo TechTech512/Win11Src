@@ -1,0 +1,455 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -ms-user-select: none;
+    overflow: hidden;
+    background-color: TRANSPARENT; /*[{f12-header-background-color}]*/
+}
+
+    body.inactiveWindow {
+        background-color: TRANSPARENT; /*[{f12-header-background-inactive-color}]*/
+    }
+
+#f12Logo {
+    width: 40px;
+    padding-top: 2px;
+    text-align: center;
+    min-width: 40px;
+    color: TRANSPARENT; /*[{f12-header-logo-text-color}]*/
+    flex-shrink: 0;
+    cursor: default;
+}
+
+#emulationMenu {
+    min-width: 29px;
+    height: 21px;
+    display: inline-flex;
+    flex-direction: row; 
+    flex-shrink: 0;
+    cursor: default;
+    border-top: thin solid transparent;   /* no token for this border, we are reserving space so the menu does not move when it is opened and we add a border*/
+    border-left: thin solid transparent; 
+    border-right: thin solid transparent; 
+}
+    body.xamlWindow #emulationMenu {
+        display: none;
+    }
+
+    #emulationMenu.menuOpen {
+        background-color: TRANSPARENT; /*[{f12-header-tab-selected-background-color}]*/
+        border-top: thin solid TRANSPARENT; /*[thin solid {f12-header-popup-border-color}]*/
+        border-left: thin solid TRANSPARENT; /*[thin solid {f12-header-popup-border-color}]*/
+        border-right: thin solid TRANSPARENT; /*[thin solid {f12-header-popup-border-color}]*/
+    }
+
+        #emulationMenu.menuOpen #emulationIcon {
+            background-position-y: -36px;
+        }
+
+        #emulationMenu.menuOpen #emulationText {
+            color: TRANSPARENT; /*[{f12-header-tab-selected-text-color}]*/
+        }
+
+    body:not(.inactiveWindow) #emulationMenu:not(.toolbarButtonStateDisabled):not(.menuOpen):hover > #emulationText {
+        background-color: TRANSPARENT; /*[{f12-header-button-active-background-color}]*/
+    }
+
+    body:not(.inactiveWindow) #emulationMenu:not(.toolbarButtonStateDisabled):not(.menuOpen):hover > #emulationIcon {
+        background-color: TRANSPARENT; /*[{f12-header-button-active-background-color}]*/
+    }
+    
+    body:not(.inactiveWindow) #emulationMenu:not(.toolbarButtonStateDisabled).menuOpen > #emulationIcon:hover {
+        background-color: TRANSPARENT;/*[{f12-header-tab-selected-background-color}]*/
+       /* background-position-y: -36px; */
+    }
+
+#emulationIcon {
+    background-image: url("Images/emulationCombo.png");
+    background-size: cover;
+}
+
+#emulationMenu.toolbarButtonStateDisabled:hover > #emulationIcon {
+    background-color: transparent;
+}
+
+#emulationMenu.toolbarButtonStateDisabled #emulationIcon {
+    background-position-y: -36px;
+}
+
+#emulationText {
+    color: TRANSPARENT; /*[{f12-header-tab-text-color}]*/
+    padding: 2px 0 0 4px;
+    padding-right: 8px;
+    min-width: 30px;
+}
+
+#emulationMenu.toolbarButtonStateDisabled #emulationText {
+    color: TRANSPARENT; /*[{f12-header-disabled-text-color}]*/
+}
+
+#consoleButton {
+    background-image: url("Images/console.png");
+}
+
+#helpButton {
+    background-image: url("Images/help.png");
+}
+
+#dockButton {
+    background-image: url("Images/dock.png");
+    display: block;
+}
+    body.dockedWindow #dockButton, body.xamlWindow #dockButton {
+        display: none;
+    }
+
+ #undockButton {
+    background-image: url("Images/undock.png");
+    display: none;
+}
+    body.dockedWindow:not(.xamlWindow) #undockButton {
+        display: block;
+    }
+
+#bringIEToForegroundButton {
+    background-image: url("Images/foreground.png");
+    display: block;
+}
+    body.dockedWindow #bringIEToForegroundButton {
+        display: none;
+    }
+
+#closeButton {
+    background-image: url("Images/close.png");
+    display: none;
+}
+    body.dockedWindow:not(.xamlWindow) #closeButton {
+        display: block;
+    }
+
+.buttonIcon {
+    display: inline-block;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-size: 18px 54px;
+    padding: 1px 4px 0 5px;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border: 1px solid transparent;
+}
+
+.buttonIcon.toolbarButtonStateActive {
+    border: 1px solid TRANSPARENT; /*[1px solid {f12-header-button-selected-border-color}]*/
+}
+
+.buttonIcon.toolbarButtonStateDisabled {
+    background-position-y: -36px;
+}
+
+body:not(.inactiveWindow) .buttonIcon.toolbarButtonStateActive {
+    background-color: TRANSPARENT; /*[{f12-header-button-active-background-color}]*/
+}
+
+body:not(.inactiveWindow) .buttonIcon:not(.toolbarButtonStateDisabled):active {
+    background-color: TRANSPARENT; /*[{f12-header-button-active-background-color}]*/
+}
+
+body:not(.inactiveWindow) .buttonIcon:not(.toolbarButtonStateDisabled):hover {
+    background-color: TRANSPARENT; /*[{f12-header-button-hover-background-color}]*/
+}
+
+#tabContainer {
+    flex: 1 1 auto;
+    height: 22px;
+    overflow:hidden;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+}
+    body.dockedWindow #content, body.xamlWindow #content {
+        -ms-grid-rows: 0 1fr;
+    }
+
+#titleBar {
+    width: 100%;
+    position: relative;
+    -ms-grid-row: 1;
+    display: -ms-grid;
+    -ms-grid-columns: auto 1fr auto auto auto auto auto;
+}
+    body.dockedWindow #titleBar, body.xamlWindow #titleBar {
+        display: none;
+    }
+
+#titlePadding {
+    -ms-grid-column: 1;
+    width: 84px;
+}
+
+#titleArea {
+    color: TRANSPARENT; /*[{f12-header-tab-text-color}]*/
+    text-align: center;
+    -ms-grid-column: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+}
+
+#titleMinButton {
+    background-image: url("Images/minimize.png");
+    -ms-grid-column: 4;
+}
+
+#titleRestoreButton {
+    background-image: url("Images/restore.png");
+    display: none;
+    -ms-grid-column: 5;
+}
+
+#titleMaxButton {
+    background-image: url("Images/maximize.png");
+    -ms-grid-column: 6;
+}
+
+#titleCloseButton {
+    background-image: url("Images/close.png");
+    display: block;
+    -ms-grid-column: 7;
+}
+    body.dockedWindow #titlebar .buttonIcon, body.xamlWindow #titlebar .buttonIcon{
+        display: none;
+    }
+
+#mainContainer {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+    -ms-grid-row: 2;
+}
+
+#overflowButton {
+    background-image: url("Images/overflow.png");
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#overflowButton.selectedTabOverflowed {
+    background-color: TRANSPARENT; /*[{f12-header-tab-selected-background-color}]*/
+    background-position-y: -35px;
+}
+
+#overflowButton.menuOpen {
+    background-color: TRANSPARENT; /*[{f12-header-tab-selected-background-color}]*/
+    border: thin solid TRANSPARENT !important; /*[thin solid {f12-header-popup-border-color} !important]*/
+    background-position-y: -35px;
+}
+
+#divider {
+    background-color: TRANSPARENT; /*[{f12-header-divider-color}]*/
+    margin: 3px 2px;
+    width: 1px;
+}
+
+.tabItem {
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 0px 9px;
+    height: 100%;
+    vertical-align: top;
+    color: TRANSPARENT; /*[{f12-header-tab-text-color}]*/
+}
+
+    .tabItem.neverBadge {
+        padding: 0px 4px;
+    }
+
+    body:not(.inactiveWindow) .tabItem:hover:not(.tabItemSelected) {
+        background-color: TRANSPARENT; /*[{f12-header-tab-hover-background-color}]*/
+        color: TRANSPARENT; /*[{f12-header-tab-hover-text-color}]*/
+    }
+
+    .tabItem > .tabText {
+        height: 18px;
+        margin-top: 2px;
+        display: inline-block;
+    }
+
+    .tabItem:not(.hasBadge) > .tabText {
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+
+    .tabItem.countBadge:not(.hasBadge) > .tabText {
+        margin-left: 16px;
+        margin-right: 15px;
+    }
+
+.tabImage {
+    flex-grow: 0;
+    padding: 2px 2px 0 2px;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-flex;
+    z-index: 1;
+}
+
+.tabItemSelected {
+    background-color: TRANSPARENT; /*[{f12-header-tab-selected-background-color}]*/
+    color: TRANSPARENT; /*[{f12-header-tab-selected-text-color}]*/
+}
+
+    .tabItemSelected .tabImage, .tabItemSelected .tabImage:hover {
+        background-position: -96px 0;
+    }
+
+.tabItemDisabled .tabImage {
+    background-position: -96px 0;
+}
+
+.badgeNumber, .badgePlus, .badgeBackground {
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    background-color: transparent; /* no token - comes from the image */
+}
+
+.badgeNumber, .badgePlus {
+    z-index: 3;
+}
+
+.badgeBackground {
+    width: 14px;
+    height: 14px;
+    margin: 3px 0 0 4px;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    z-index: 2;
+    display: none;
+    color: TRANSPARENT; /*[{f12-header-badge-error-text-color}]*/
+    text-align: justify;
+}
+    .badgeBackground.badgeAlert {
+        background-image: url("Images/badgeAlert.png");
+    }
+    .badgeBackground.badgeError {
+        background-image: url("Images/badgeError.png");
+    }
+    .badgeBackground.badgeRunning {
+        background-image: url("Images/badgeRunning.png");
+    }
+    .badgeBackground.badgeInfo {
+        background-image: url("Images/badgeInfo.png");
+    }
+    .badgeBackground.badgeBreak {
+        background-image: url("Images/badgeBreak.png");
+    }
+
+.tabItem.hasBadge .badgeBackground {
+    display: inline-block;
+}
+
+.tabItem.countBadge.hasBadge .badgeBackground {
+    padding-left: 15px;
+    width: 12px;
+}
+
+.badgeNumber, .badgePlus {
+    position: relative;
+    top: -1px;
+    font-size: 11px;
+    padding-left: 1px;
+    font-weight: 500;
+}
+
+.badgeNumber {
+    display: none;
+}
+
+.tabItemSelected.hasBadge .badgeBackground {
+    background-position-y: -14px;
+    color: TRANSPARENT; /*[{f12-header-badge-error-selected-text-color}]*/
+    font-weight: 600;
+}
+
+.tabItem.hasBadge .badgeBackground.displayNumber .badgeNumber {
+    display: inline-block;
+}
+
+.badgePlus {
+    display: none;
+    left: -1px;
+    padding-right:2px;
+}
+
+.tabItem.hasBadge .badgeBackground.displayPlus .badgePlus {
+    display: inline-block;
+}
+
+.tabItemSelected.hasBadge .badgeBackground.displayPlus .badgePlus {
+    color: TRANSPARENT; /*[{f12-header-tab-selected-text-color}]*/
+}
+
+.tabNavButton {
+    width: 16px;
+    height: 16px;
+    -ms-grid-column-align: center;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: TRANSPARENT; /*[{f12-header-background-color}]*/
+    background-size: 64px 16px;
+}
+
+    .tabNavButton:active {
+        background-position: -16px 0;
+    }
+
+    .tabNavButton:hover {
+        background-position: -32px 0;
+    }
+
+    .tabNavButton.tabNavButtonDisabled {
+        background-position: -48px 0;
+        visibility: hidden;
+    }
+
+
+    .selectedTabOverflowed#overflowButton.inactiveWindow {
+        background-position-y: 1px;
+    }
+
+    
+@media screen and (max-width:292px) {
+
+    #f12Logo {
+        min-width: 4px;
+        flex-shrink: 1;
+    }
+
+}
+@media screen and (max-width:250px) {
+
+    #f12Logo {
+        visibility: hidden;
+        width: 8px;
+    }
+}

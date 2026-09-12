@@ -1,0 +1,15 @@
+﻿{
+    "start_url": "header.html",
+    "domain": "http://microsoft.com",
+    "name": "Header",
+    "version": "1.0",
+    "f12": {
+        "resource_aliases": {
+            "Header": {
+                "is_default": true
+            },
+            "Common": {
+            }
+        }
+    }
+}
