@@ -1,0 +1,827 @@
+﻿/*
+ * TemplateControl
+ */
+
+.BPT-hidden {
+    display: none !important;
+}
+
+/*
+ *  Toolbar
+ */
+
+.BPT-Toolbar {
+    width: 100%;
+    color: TRANSPARENT; /*[{plugin-color}]*/
+    background-color: TRANSPARENT; /*[{f12-toolbar-background-color}]*/
+    border-bottom: 1px solid TRANSPARENT; /*[1px solid {plugin-treeview-content-inactive-selected-background-color}]*/
+    display: -ms-grid;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    -ms-grid-rows: auto;
+    -ms-grid-columns: 1fr auto;
+    cursor: default;
+}
+
+    .BPT-Toolbar > .BPT-ToolbarContents {
+        -ms-grid-column: 1;
+        margin-top: 1px;
+        padding-left: 14px;
+    }
+
+        .BPT-Toolbar > .BPT-ToolbarContents > .buttons {
+            display: inline-block;
+            margin-right: 10px;
+            white-space: nowrap;
+        }
+
+        .BPT-Toolbar > .BPT-ToolbarContents > .BPT-ToolTitle {
+            font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+            font-size: 20px;
+            font-weight: 200;
+            padding-right: 42px;
+            line-height: 29px;
+        }
+
+/* Use less padding in F12 to align to the F12 logo*/
+html.hostedF12 .BPT-Toolbar > .BPT-ToolbarContents {
+    padding-left: 9px;
+}
+
+/*
+ *  Button
+ */
+
+.BPT-button {
+    display: inline-block;
+    padding: 2px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: TRANSPARENT; /*[{plugin-color}]*/
+}
+
+    .BPT-button.iconButton24x24 {
+        height: 24px;
+        width: 24px;
+    }
+
+    .BPT-button.menuButton33x24 {
+        height: 24px;
+        width: 33px;
+    }
+
+    .BPT-button.labeledIconButton,
+    .BPT-button.labeledIconButton33x24,
+    .BPT-button.iconButton {
+        padding-bottom: 0px;
+    }
+
+    .BPT-button .buttonIcon {
+        background-color: transparent;
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+        display: inline-block;
+    }
+
+    .BPT-button.iconButton24x24 .buttonIcon {
+        background-size: 18px 54px;
+        height: 18px;
+        width: 18px;
+    }
+
+    .BPT-button.menuButton33x24 .buttonIcon {
+        background-size: 27px 54px;
+        height: 18px;
+        width: 27px;
+    }
+
+    .BPT-button.iconButton .buttonIcon,
+    .BPT-button.labeledIconButton .buttonIcon {
+        background-size: 18px 54px;
+        padding-bottom: 0px;
+        height: 18px;
+        width: 18px;
+    }
+
+    .BPT-button.labeledIconButton33x24 .buttonIcon {
+        background-size: 27px 54px;
+        padding-bottom: 0px;
+        height: 18px;
+        width: 27px;
+    }
+
+    .BPT-button.imageStates5 .buttonIcon {
+        background-size: 27px 90px;
+    }
+
+    .BPT-button .buttonText {
+        display: inline-block;
+        float: right;
+        min-width: 8px;
+        margin: 0px 5px 0px 5px;
+        text-align: right;
+        cursor: default;
+    }
+
+    .BPT-button.checked {
+        color: TRANSPARENT; /*[{f12-toolbar-button-selected-text-color}]*/
+        background-color: TRANSPARENT; /*[{f12-toolbar-button-selected-color}]*/
+        border-color: TRANSPARENT; /*[{f12-toolbar-button-selected-border-color}]*/
+    }
+
+        .BPT-button.checked .buttonIcon {
+            background-position-y: -18px;
+        }
+
+    .BPT-button:hover {
+        color: TRANSPARENT; /*[{f12-toolbar-button-hover-text-color}]*/
+        background-color: TRANSPARENT; /*[{f12-toolbar-button-hover-color}]*/
+    }
+
+        .BPT-button:hover .buttonIcon {
+            background-position-y: -18px;
+        }
+
+    .BPT-button.menuButton33x24:hover .buttonIcon {
+        background-position-y: -18px;
+    }
+
+    .BPT-button.pressed {
+        background-color: TRANSPARENT; /*[{f12-toolbar-button-pressed-color}]*/
+    }
+
+    .BPT-button.disabled {
+        background-color: transparent;
+    }
+
+    .BPT-button.iconButton.disabled .buttonIcon {
+        background-position-y: -36px;
+    }
+
+    .BPT-button.iconButton24x24.disabled .buttonIcon {
+        background-position-y: -36px;
+    }
+
+    .BPT-button.menuButton33x24.disabled .buttonIcon {
+        background-position-y: -72px;
+    }
+
+    .BPT-button.labeledIconButton.disabled .buttonIcon {
+        background-position-y: -36px;
+    }
+
+    .BPT-button.hidden {
+        display: none;
+    }
+
+    .BPT-button:focus {
+        outline: invert dotted thin;
+    }
+
+.BPT-Toolbar .BPT-button {
+    margin-right: 7px;
+}
+
+/*
+ *  Textbox
+ */
+
+.BPT-TextBox:not([disabled]):-ms-input-placeholder {
+    background-color: TRANSPARENT; /*[{plugin-searchcontrol-unfocused-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-searchcontrol-unfocused-watermark-text-color}]*/
+}
+
+.BPT-TextBox:not([disabled]):hover:-ms-input-placeholder {
+    background-color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-watermark-text-color}]*/
+}
+
+
+/*
+ *  Searchbox
+ */
+
+#searchNextResult {
+    right: 0;
+    top: 2px;
+}
+
+#searchPreviousResult {
+    right: 11px;
+    top: 2px;
+}
+
+.BPT-SearchBox {
+    color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-foreground-color}]*/
+    background-color: transparent;
+    border: none;
+    height: 18px;
+    width: 119px;
+    padding: 1px 2px;
+    margin-right: 26px;
+}
+
+    /* Disable "x" in input boxes. */
+    .BPT-SearchBox::-ms-clear {
+        display: none;
+    }
+
+    .BPT-SearchBox::selection {
+        background-color: TRANSPARENT; /*[{plugin-searchcontrol-selection-color}]*/
+    }
+
+    .BPT-SearchBox:-ms-input-placeholder {
+        color: TRANSPARENT; /*[{plugin-searchcontrol-unfocused-watermark-text-color}]*/
+        background-color: TRANSPARENT; /*[{plugin-searchcontrol-unfocused-background-color}]*/
+    }
+
+.BPT-SearchBox-Border {
+    float: right;
+    background-color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-background-color}]*/
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-searchcontrol-unfocused-border-color}]*/
+    margin-top: 3px;
+    padding: 1px;
+    display: inline-block;
+    position: relative;
+    margin-right: 6px;
+}
+
+    .BPT-SearchBox-Border:hover {
+        background-color: TRANSPARENT; /*[{plugin-searchcontrol-mouseover-background-background-color}]*/
+        border: 1px solid TRANSPARENT; /*[1px solid {plugin-searchcontrol-mouseover-border-color}]*/
+    }
+
+.BPT-SearchBox-NoResult {
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-font-console-error-color}]*/
+}
+
+    .BPT-SearchBox-NoResult:hover {
+        border: 1px solid TRANSPARENT; /*[1px solid {plugin-font-console-error-color}]*/
+    }
+
+.BPT-SearchBox-Border .BPT-Search-Button {
+    display: inline-block;
+    position: absolute;
+}
+
+    .BPT-SearchBox-Border .BPT-Search-Button:not([disabled]):hover div {
+        background-position-x: -16px;
+    }
+
+    .BPT-SearchBox-Border .BPT-Search-Button[disabled] div {
+        visibility: hidden;
+    }
+
+    .BPT-SearchBox-Border .BPT-Search-Button .BPT-Search-Next {
+        background-image: url(""); /*[url({plugin-common-image-find-next})]*/
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 48px 16px;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+    }
+
+    .BPT-SearchBox-Border .BPT-Search-Button .BPT-Search-Previous {
+        background-image: url(""); /*[url({plugin-common-image-find-previous})]*/
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 48px 16px;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+    }
+
+/*
+ *  Popup
+ */
+
+.BPT-popup {
+    position: absolute;
+    z-index: 2000;
+}
+
+/*
+ *  Menu
+ */
+
+.BPT-menuControl {
+    border: 1px solid TRANSPARENT; /*[1px solid {f12-toolbar-button-selected-border-color}]*/
+    box-shadow: 2px 2px 2px TRANSPARENT; /*[2px 2px 2px {plugin-textbox-border-color rgba(0.5)}]*/
+    background-color: TRANSPARENT; /*[{plugin-menucontrol-background-color}]*/
+    display: table-cell;
+    width: auto;
+    white-space: nowrap;
+}
+
+.BPT-menuContent {
+    list-style-type: none;
+    padding: 2px;
+    margin: 0px;
+}
+
+    .BPT-menuContent > li.menuItem {
+        cursor: default;
+        padding: 4px;
+    }
+
+        .BPT-menuContent > li.menuItem:not([disabled]):hover {
+            cursor: pointer;
+            color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+            background-color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-background-color}]*/
+        }
+
+        .BPT-menuContent > li.menuItem.selected {
+            color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-color}]*/
+            background-color: TRANSPARENT; /*[{plugin-treeview-content-mouseover-background-color}]*/
+        }
+
+        .BPT-menuContent > li.menuItem > .gutter {
+            height: 12px;
+            width: 12px;
+            padding-right: 3px;
+            vertical-align: middle;
+            float: left;
+        }
+
+        .BPT-menuContent > li.menuItem.hiddenCheckMark > .menuToggleItem {
+            visibility: hidden;
+        }
+
+    .BPT-menuContent > hr {
+        border: none;
+        border-top: 1px solid TRANSPARENT; /*[1px solid {vs-command-bar-menu-separator-color}]*/
+        margin: 2px -2px 2px -2px;
+    }
+
+    /* Override for checkbocMenuItem*/
+    .BPT-menuContent > li.menuItem > input[type="checkbox"] {
+        margin-top: -2px;
+    }
+
+    /* Override for comboBoxMenuItem */
+    .BPT-menuContent > li.menuItem > select {
+        width: 100%;
+    }
+
+    .BPT-menuContent > li.menuItem:not([disabled]).comboBoxMenuItem {
+        background-color: TRANSPARENT;
+    }
+
+    /* Override for textBoxMenuItem */
+    .BPT-menuContent > li.menuItem:not([disabled]).textBoxMenuItem {
+        background-color: TRANSPARENT;
+    }
+
+/*
+ *  Popup
+ */
+
+.BPT-popupActive {
+    background-color: TRANSPARENT !important; /*[{f12-toolbar-button-selected-color}  !important]*/
+    border-color: TRANSPARENT !important; /*[{f12-toolbar-button-selected-border-color} !important]*/
+}
+
+/*
+ * Ribbon
+ */
+
+.BPT-ribbonPanel {
+    overflow: hidden;
+    position: relative; /* Ensures the ribbon panel is offset parent, property can be overriden */
+}
+
+    .BPT-ribbonPanel > * {
+        position: relative;
+    }
+
+.BPT-horizontalRibbonPanel {
+    white-space: nowrap;
+}
+
+    .BPT-horizontalRibbonPanel > * {
+        display: inline-block;
+    }
+
+/*
+ * Color picker
+ */
+
+.colorPicker, .colorPicker * {
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.colorPicker {
+    background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-border-color}]*/
+    border-bottom: none;
+    box-shadow: 2px 2px 2px TRANSPARENT; /*[2px 2px 2px {plugin-box-shadow-color rgba(0.5)}]*/
+    width: 200px;
+}
+     body.xamlWindow .colorPicker {
+        width: 204px;
+    }
+
+    .colorPicker .BPT-ribbonPanel:focus, .colorPicker .colorSlider:focus {
+        outline: invert dotted thin;
+    }
+
+    .colorPicker > * {
+        border-bottom: 1px solid TRANSPARENT; /*[1px solid {plugin-border-color}]*/
+        height: 27px; /* 24px buttons + 2 * 1px padding + 1px border-bottom */
+        padding: 1px;
+        width: 100%;
+    }
+
+    .colorPicker > .selectedColorPane {
+        display: -ms-grid;
+    }
+
+    .colorPicker > .slidersPane {
+        height: auto;
+        overflow-y: auto;
+        padding: 12px;
+    }
+
+    .colorPicker .BPT-button.colorSquare {
+        background-image: url("../common/images/colorPicker/checkeredBackground.png"); /*[url({plugin-common-image-colorpicker-color-background})]*/
+        border: 1px solid TRANSPARENT; /*[1px solid {plugin-border-color}]*/
+        height: 20px;
+        margin: 2px;
+        padding: 0;
+        width: 20px;
+    }
+
+        .colorPicker .BPT-button.colorSquare .buttonIcon {
+            height: 100%;
+            width: 100%;
+        }
+
+    .colorPicker .selectedColorPane .BPT-button.colorSquare {
+        outline: none; /* not focusable, don't show indicator on click */
+    }
+
+    .colorPicker .selectedColorValue {
+        -ms-grid-column: 2;
+        -ms-grid-row-align: center;
+        background-color: TRANSPARENT;
+        border: none;
+        width: 140px;
+    }
+
+    .colorPicker .eyedropperButton .buttonIcon {
+        background-image: url("../common/images/colorPicker/eyedropperButton.png"); /*[url({plugin-common-image-colorpicker-eyedropper})]*/
+    }
+
+    .colorPicker .slidersButton .buttonIcon {
+        background-image: url("../common/images/colorPicker/sliderButton.png"); /*[url({plugin-common-image-colorpicker-slider-button})]*/
+    }
+
+    .colorPicker .colorToolsPane > * {
+        float: left;
+        height: 24px;
+    }
+
+    .colorPicker .colorPalette {
+        float: right;
+    }
+
+        .colorPicker .colorPalette > * {
+            float: left;
+        }
+
+    .colorPicker .colorPaletteProgress {
+        background-color: TRANSPARENT; /*[{plugin-background-color}]*/
+        position: absolute;
+        right: 17px; /* 1px padding + 17px arrow button */
+        z-index: 5000;
+    }
+
+    .colorPicker .colorPalettePanel {
+        height: 24px;
+        margin-left: 4px;
+        margin-right: 4px;
+        overflow-x: hidden;
+        width: 104px; /* 4 * 20px squares + 6 * 4px margin */
+    }
+
+     body.xamlWindow .colorPicker .colorPalettePanel {
+        width: 160px; /* 6 * 20px squares + 10 * 4px margin */
+    }
+
+        .colorPicker .colorPalettePanel > .BPT-button.colorSquare {
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+            .colorPicker .colorPalettePanel > .BPT-button.colorSquare.BPT-selected {
+                border-color: TRANSPARENT; /*[{f12-toolbar-button-selected-border-color}]*/
+                border-width: 1px;
+            }
+
+    .colorPicker .arrowButton {
+        background-size: 48px 16px;
+        height: 16px;
+        margin-bottom: 4px;
+        margin-top: 4px;
+        width: 16px;
+    }
+
+        .colorPicker .arrowButton:hover {
+            background-position-x: -16px;
+        }
+
+        .colorPicker .arrowButton.disabled {
+            background-position-x: -32px;
+        }
+
+        .colorPicker .arrowButton.arrowLeft {
+            background-image: url("../common/images/i_previous.png"); /*[url({plugin-common-image-icon-previous})]*/
+        }
+
+        .colorPicker .arrowButton.arrowRight {
+            background-image: url("../common/images/i_next.png"); /*[url({plugin-common-image-icon-next})]*/
+        }
+
+    .colorPicker .hslText {
+        float: right;
+        text-align: right;
+        width: 35px;
+    }
+
+    .colorPicker input[type=range].colorSlider {
+        display: block;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: 100% 7px;
+        border: none;
+        height: 15px;
+        margin: 4px 0 10px 0;
+        padding: 0;
+        width: 100%;
+    }
+
+        .colorPicker input[type=range].colorSlider:last-child {
+            margin-bottom: 0px;
+        }
+
+        .colorPicker input[type=range].colorSlider::-ms-track {
+            background-color: transparent;
+            border-color: transparent;
+            width: 0;
+        }
+
+        .colorPicker input[type=range].colorSlider::-ms-thumb {
+            height: 15px;
+            width: 5px;
+        }
+
+        .colorPicker input[type=range].colorSlider::-ms-tooltip {
+            display: none;
+        }
+
+        .colorPicker input[type=range].colorSlider.hueSlider {
+            background-image: url("../common/images/colorPicker/hueColorBar.png"); /*[url({plugin-common-image-colorpicker-hue})]*/
+        }
+
+        .colorPicker input[type=range].colorSlider.saturationSlider {
+            background-image: url("../common/images/colorPicker/saturationColorBar.png"); /*[url({plugin-common-image-colorpicker-saturation})]*/
+        }
+
+        .colorPicker input[type=range].colorSlider.lightnessSlider {
+            background-image: url("../common/images/colorPicker/lightnessColorBar.png"); /*[url({plugin-common-image-colorpicker-lightness})]*/
+        }
+
+        .colorPicker input[type=range].colorSlider.alphaSlider {
+            background-image: url("../common/images/colorPicker/alphaColorBar.png"); /*[url({plugin-common-image-colorpicker-alpha})]*/
+        }
+
+/*
+ *   TabControl styles
+ */
+
+.BPT-tabControl {
+    height: 100%;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto 1fr;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+    .BPT-tabControl > .tabHeader {
+        -ms-grid-column: 1;
+        -ms-grid-columns: auto 1fr auto;
+        -ms-grid-row: 1;
+        background-color: TRANSPARENT; /*[{plugin-contextmenu-background-color}]*/
+        border-bottom: 1px solid #cccedb; /*[1px solid {plugin-border-color}]*/
+        display: -ms-grid;
+        overflow: visible;
+    }
+
+        .BPT-tabControl > .tabHeader * {
+            overflow: visible;
+        }
+
+        .BPT-tabControl > .tabHeader > .beforeBarContainer {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+            box-sizing: border-box;
+        }
+
+        .BPT-tabControl > .tabHeader > .tabBarContainer {
+            -ms-grid-column: 2;
+            -ms-grid-row: 1;
+            -ms-grid-column-align: end;
+            -ms-grid-row-align: center;
+            box-sizing: border-box;
+        }
+
+        .BPT-tabControl > .tabHeader > .tabBarContainerLeftAlign {
+            -ms-grid-column-align: start;
+        }
+
+        .BPT-tabControl > .tabHeader > .afterBarContainer {
+            -ms-grid-column: 3;
+            -ms-grid-row: 1;
+            box-sizing: border-box;
+        }
+
+    .BPT-tabControl ul.tabBar {
+        list-style-type: none;
+        margin: 0;
+        margin-right: 20px;
+        padding: 0;
+        cursor: default;
+    }
+
+        .BPT-tabControl ul.tabBar li {
+            border: 1px solid transparent;
+            color: black; /*[{plugin-color}]*/
+            display: inline-block;
+            font-size: 100%;
+            font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+            padding: 5px 14px 5px 14px;
+            position: relative;
+            top: 1px;
+        }
+
+            .BPT-tabControl ul.tabBar li.disabled {
+                color: black; /*[{plugin-color rgba(0.5)}]*/
+            }
+
+            .BPT-tabControl ul.tabBar li:hover:not(.disabled) {
+                background-color: lightgray; /*[{plugin-contextmenu-hover-color}]*/
+                color: black; /*[{plugin-contextmenu-hover-text-color}]*/
+                cursor: pointer;
+            }
+
+            .BPT-tabControl ul.tabBar li:focus:not(.disabled) {
+                outline: 1px dotted TRANSPARENT; /*[1px dotted {plugin-color}]*/
+            }
+
+            .BPT-tabControl ul.tabBar li.active:not(.disabled) {
+                background-color: transparent; /*[{plugin-background-color}]*/
+                border: 1px solid #cccedb; /*[1px solid {plugin-border-color}]*/
+                border-bottom-color: transparent; /*[{plugin-background-color}]*/
+                color: #007acc; /*[{plugin-link-color}]*/
+            }
+
+    .BPT-tabControl > .tabContentPane {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+        -ms-grid-row: 2;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+        .BPT-tabControl > .tabContentPane > .tabItemContent {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .BPT-tabControl > .tabContentPane > .active {
+            visibility: visible;
+        }
+
+.BPT-tabItem {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+ *   SourceInfo
+ */
+
+.BPT-sourceInfoTooltip {
+    -ms-grid-columns: auto 5px auto;
+    -ms-grid-rows: 4;
+    display: -ms-grid;
+    width: 237px;
+}
+
+    .BPT-sourceInfoTooltip .sourceInfoNameLabel {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+    }
+
+    .BPT-sourceInfoTooltip .sourceInfoName {
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+        word-break: break-all;
+    }
+
+    .BPT-sourceInfoTooltip .sourceInfoFileLabel {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+    }
+
+    .BPT-sourceInfoTooltip .sourceInfoFile {
+        -ms-grid-column: 3;
+        -ms-grid-row: 2;
+        word-break: break-all;
+    }
+
+    .BPT-sourceInfoTooltip .sourceInfoLineLabel {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+    }
+
+    .BPT-sourceInfoTooltip .sourceInfoLine {
+        -ms-grid-column: 3;
+        -ms-grid-row: 3;
+        word-break: break-all;
+    }
+
+    .BPT-sourceInfoTooltip .sourceInfoColumnLabel {
+        -ms-grid-column: 1;
+        -ms-grid-row: 4;
+    }
+
+    .BPT-sourceInfoTooltip .sourceInfoColumn {
+        -ms-grid-column: 3;
+        -ms-grid-row: 4;
+        word-break: break-all;
+    }
+
+/*
+ *  Miscellaneous
+ */
+
+/* Hide the tool title in VS but not in F12 */
+.BPT-ToolTitle {
+    display: none;
+}
+
+.iconShell_18x18 {
+    background-color: transparent;
+    border: 1px solid transparent;
+    height: 18px;
+    width: 18px;
+    margin-left: 8px;
+}
+
+.iconShell_24x24 {
+    background-color: transparent;
+    border: 1px solid transparent;
+    height: 24px;
+    width: 24px;
+}
+
+.iconShell_33x24 {
+    background-color: transparent;
+    border: 1px solid transparent;
+    height: 24px;
+    width: 33px;
+}
+
+.icon_14x14 {
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 16px 48px;
+    height: 16px;
+    width: 16px;
+}
+
+.icon_16x16 {
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 18px 54px;
+    height: 18px;
+    margin: 3px 0px 0px 3px;
+    width: 18px;
+}
+
+.icon_25x16 {
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 27px 90px;
+    height: 18px;
+    margin: 3px 0px 0px 3px;
+    width: 27px;
+}
+
+.themeColor {
+    color: TRANSPARENT; /*[{plugin-theme-color}]*/
+}
