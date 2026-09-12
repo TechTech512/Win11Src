@@ -1,0 +1,42 @@
+﻿.BPT-ToolbarButton .buttonIcon,
+.Toolbar-ControlsButton .buttonIcon {
+    background-color: transparent;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+
+.BPT-ToolbarButton:hover .buttonIcon,
+.Toolbar-ControlsButton:hover .buttonIcon {
+    background-position-y: -18px;
+}
+
+.BPT-ToolbarToggleButton-StateOn img,
+.ToolbarControlsToggleButton[selected=true] img,
+.BPT-ToolbarToggleButton-StateOn .buttonIcon,
+.ToolbarControlsToggleButton[selected=true] .buttonIcon {
+    background-position-y: -18px;
+}
+
+.BPT-ToolbarButton-StateDisabled img,
+.Toolbar-ControlsButton[disabled] img,
+.BPT-ToolbarButton-StateDisabled .buttonIcon,
+.Toolbar-ControlsButton[disabled] .buttonIcon {
+    background-position-y: -36px;
+}
+
+.BPT-ToolbarButton:not([disabled]):hover,
+.Toolbar-ControlsButton:not([disabled]):hover {
+    background-color: TRANSPARENT; /*[{f12-toolbar-button-hover-color}] */
+    background-position-y: -18px;
+}
+
+.ToolbarControlsToggleButton.FilterToggleButton[selected=true] .buttonIcon {
+    background-position-y: -18px;
+}
+
+.ToolbarControlsToggleButton.FilterToggleButton:hover[selected=false] .buttonIcon {
+    background-position-y: -18px;
+}

@@ -1,0 +1,36 @@
+﻿body {
+    background-color: #FFFFFF;
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-size: small;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1em;
+}
+
+button{
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4px 8px 4px 8px;
+    border: solid 1px #BFBFBF;
+    font-size: x-small;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+button:hover{
+    border-color: #000000;
+}
+
+dt{
+    font-weight: bold;
+}
+dd{
+
+}
+
+.cutText{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}

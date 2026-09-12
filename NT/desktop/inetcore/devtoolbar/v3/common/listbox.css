@@ -1,0 +1,28 @@
+﻿.listBox {
+    padding: 0px;
+    cursor: default;
+    border: 1px solid black;
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-size: 12px;
+    list-style-type: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-user-select: none;
+}
+
+.listBox ::selection{
+	background-color: transparent;
+}
+
+.listBox li {
+	-ms-user-select: none;
+}
+
+.listBox li:hover{
+	background-color: #DBFFFC;
+}
+
+.listBox li[selected=selected] {
+	background-color: blue; 
+	color: white;
+}

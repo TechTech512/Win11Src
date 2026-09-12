@@ -1,0 +1,223 @@
+﻿.BPT-DataTree-Container {
+    white-space: nowrap;
+    padding: 3px 6px 6px 6px;
+}
+
+.BPT-DataTree-Container:focus {
+    outline:0;
+}
+
+.BPT-DataTree {
+    position: relative;
+}
+
+.BPT-DataTree-Divider {
+    position: absolute;
+    top: 0px;
+    left: 170px;
+    bottom: 0px;
+    z-index: 100;
+    width: 4px;
+    background-color: transparent;
+    cursor: w-resize;
+    margin-left: 14px;
+}
+
+.BPT-DataTree-DividerVisible {
+    background-color: #222222; /*[{plugin-vertical-resize-grip-middle-color}]*/
+}
+
+.BPT-DataTreeItem {
+    position: relative;
+    margin: 0 3px 0 3px;
+    padding-left: 7px;
+    border-left: 1px solid transparent;
+    cursor: default;
+    min-width: 200px;
+}
+
+.BPT-DataTreeItem-Loading {
+    margin: 1px 0px 5px 0px;
+}
+
+.BPT-DataTreeItem-Expanded {
+    background-repeat: no-repeat;
+    background-position: 3px 5px;
+}
+
+.BPT-DataTreeItem-Collapsed {
+    background-repeat: no-repeat;
+    background-position: 3px 5px;
+}
+
+.BPT-DataTreeItem-Expanded .BPT-DataTreeItem {
+    display: block;
+}
+
+.BPT-DataTreeItem-Collapsed .BPT-DataTreeItem {
+    display: none;
+}
+
+.BPT-DataTreeItem-ExpandIcon {
+    left: 3px;
+    top: 5px;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
+.BPT-DataTree .BPT-DataTreeItem-Collapsed > .BPT-DataTreeItem-ExpandIcon {
+    background-image: url(''); /*[url({vs-image-icon-tree-collapsed})]*/
+    background-size: 10px 10px;
+}
+
+.BPT-DataTree .BPT-DataTreeItem-Expanded > .BPT-DataTreeItem-ExpandIcon {
+    background-image: url(''); /*[url({vs-image-icon-tree-expanded})]*/
+    background-size: 10px 10px;
+}
+
+.BPT-DataTreeItem-ChildCollection {
+    
+}
+
+.BPT-DataTreeItem-Header {
+    display:inline-block;
+    left: 0;
+    right: 0;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin-left: 8px;
+    margin-bottom: 0;
+    padding: 1px 0;
+}
+
+.BPT-DataTreeItem-CollapsedBlockFooter {
+    display: inline;
+}
+
+.BPT-DataTreeItem-BlockFooter {
+    display: none;
+    margin-left: 10px;
+}
+
+.BPT-DataTreeItem-Expanded.BPT-DataTreeItem-CollapsibleBlock > .BPT-DataTreeItem-Header > .BPT-DataTreeItem-Name > .BPT-DataTreeItem-CollapsedBlockFooter {
+    display: none;
+}
+
+.BPT-DataTreeItem-Expanded > .BPT-DataTreeItem-BlockFooter {
+    display: block;
+}
+
+.BPT-DataTreeItem-FileLink-Right {
+    display: block;
+    float: right;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px;
+}
+
+.BPT-DataTreeItem-Header > .BPT-DataTreeItem-FileLink-Right {
+    padding: 0;
+}
+
+.BPT-DataTreeItem-FileLink-Value {
+    max-width: 12em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #007acc;                 /*[{plugin-link-color}]*/
+}
+
+.BPT-DataTreeItem-Name {
+    display: inline-block;
+    width: 150px;
+    min-height: 1.3em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    vertical-align: top;
+}
+
+.BPT-DataTreeItem-Name input[type="checkbox"]{
+    position: relative;
+    top: -1px;
+    padding: 0;
+    margin: 0 2px 0 3px;
+    vertical-align: middle;
+}
+
+.BPT-DataTreeItem-Value {
+    display: inline-block;
+    overflow: auto;
+    vertical-align: top;
+    min-height: 1.3em;
+    min-width: 50px;
+}
+
+.BPT-DataTreeItem-CollapsibleBlock > .BPT-DataTreeItem-Header > .BPT-DataTreeItem-Name {
+    overflow: hidden;
+    width: auto;
+    white-space: normal;
+    max-width: 100%;
+    margin-right: 0;
+    word-wrap: break-word;
+}
+
+.BPT-DataTreeItem-CollapsibleBlock > .BPT-DataTreeItem-Header > .BPT-DataTreeItem-Value {
+    min-width: 0;
+}
+
+.BPT-DataTreeItem-Selected {
+    border-left: 1px solid transparent;
+}
+
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+body.showFocus .BPT-DataTree-Container-CurrentFocus .BPT-DataTreeItem-Selected > .BPT-FileLink {
+    border: 1px dotted #3399FF; /*[1px dotted {plugin-font-editor-selected-background-color}]*/
+}
+
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-Tag, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-Attribute, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-Value, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-Operator, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-Text, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-Comment, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-Comment + .BPT-HTML-Text, 
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-DocType + .BPT-HTML-Text,
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-CSS-Name,
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-CSS-Value,
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-CSS-Selector,
+.BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header .BPT-HTML-CSS-Text {
+    background: transparent;
+}
+
+body .BPT-DataTree-Container:focus .BPT-DataTreeItem-Selected,
+body .BPT-DataTree-Container-CurrentFocus .BPT-DataTreeItem-Selected,
+body .BPT-DataTree-Container-KeepSelection .BPT-DataTreeItem-Selected {
+    border-color: #3399FF; /*[{plugin-font-editor-selected-background-color}]*/
+}
+
+body .BPT-DataTree-Container:focus .BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header,
+body .BPT-DataTree-Container-CurrentFocus .BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header,
+body .BPT-DataTree-Container-KeepSelection .BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header {
+    background: rgba(51, 153, 255, 0.25); /*[{plugin-font-editor-selected-background-color rgba(0.25)}]*/
+    border-color: #3399FF; /*[{plugin-font-editor-selected-background-color}]*/
+}
+
+body.BPT-ToolWindow-NoFocus .BPT-DataTree-Container:focus .BPT-DataTreeItem-Selected,
+body.BPT-ToolWindow-NoFocus .BPT-DataTree-Container-CurrentFocus .BPT-DataTreeItem-Selected,
+body.BPT-ToolWindow-NoFocus .BPT-DataTree-Container-KeepSelection .BPT-DataTreeItem-Selected {
+    border-color: transparent;
+}
+
+body.BPT-ToolWindow-NoFocus .BPT-DataTree-Container:focus .BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header,
+body.BPT-ToolWindow-NoFocus .BPT-DataTree-Container-CurrentFocus .BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header,
+body.BPT-ToolWindow-NoFocus .BPT-DataTree-Container-KeepSelection .BPT-DataTreeItem-Selected > .BPT-DataTreeItem-Header {
+    background: rgba(191, 205, 219, 0.25); /*[{plugin-font-editor-inactive-selected-background-color rgba(0.25)}]*/
+    border-color: #BFCDDB; /*[{plugin-font-editor-inactive-selected-background-color}]*/
+}

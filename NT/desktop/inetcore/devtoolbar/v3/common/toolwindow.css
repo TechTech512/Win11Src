@@ -1,0 +1,157 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    -ms-high-contrast-adjust: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+body.showFocus *:focus {
+    outline: invert dotted thin;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family} , Arial, sans-serif]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    font-weight: normal; /*[{plugin-font-weight}]*/
+    color: TRANSPARENT; /*[{plugin-color}]*/
+}
+
+#mainContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.ScrollContainer {
+    overflow: auto;
+}
+
+.BPT-ToolbarSeparator {
+    color: TRANSPARENT; /*[{plugin-contextmenu-separator-color}]*/
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid TRANSPARENT; /*[1px solid {plugin-contextmenu-separator-color}]*/
+    margin-right: 2.166em;
+}
+
+.BPT-ToolbarSeparator div {
+    float: left;
+}
+
+.BPT-ToolbarSpace {
+    display: inline-block;
+    margin-right: 1em;
+    cursor: default;
+}
+
+.BPT-ToolbarToggleSeparator {
+    margin: 0 3px 0 0;
+}
+
+.BPT-ToolbarButton,
+.Toolbar-ControlsButton {
+    display: inline-block;
+    border: 1px solid transparent;
+    vertical-align: top;
+    padding: 2px;
+    margin-top: 2px;
+    cursor: default;
+}
+
+.BPT-ToolbarButton .buttonText,
+.Toolbar-ControlsButton .buttonText {
+    display: inline-block;
+    float: right;
+    min-width: 8px;
+    margin: 0px 5px 0px 5px;
+    text-align: right;
+    cursor: default;
+}
+
+
+.BPT-ToolbarButton img,
+.Toolbar-ControlsButton img {
+    margin: 2px 4px 0 -2px;
+    vertical-align: middle;
+}
+
+.BPT-ToolbarButton-StateHidden {
+    display: none;
+}
+
+.BPT-ToolbarButton-StateDisabled,
+.Toolbar-ControlsButton[disabled] {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: TRANSPARENT; /*[{plugin-inactive-color}]*/
+}
+
+.BPT-ToolbarToggleButton,
+.ToolbarControlsToggleButton {
+    color: TRANSPARENT; /*[{plugin-color}]*/
+}
+
+.Toolbar-ControlsButton.FilterToggleButton:hover {
+    color: TRANSPARENT; /*[{f12-toolbar-button-hover-text-color}]*/
+    background-color: TRANSPARENT; /*[{f12-toolbar-button-hover-color}] */
+}
+
+.BPT-ToolbarToggleButton-StateOn,
+.ToolbarControlsToggleButton[selected=true] {
+    color: TRANSPARENT; /*[{f12-toolbar-button-selected-text-color}]*/
+    background-color: TRANSPARENT; /*[{f12-toolbar-button-selected-color}]*/
+    border: 1px solid TRANSPARENT; /*[1px solid {f12-toolbar-button-selected-border-color}]*/
+}
+
+.ToolbarControlsToggleButton.FilterToggleButton[selected=false] .buttonIcon {
+    background-position-y: 0px;
+}
+
+.BPT-ToolbarButton-MouseDown:not([disabled]) {
+    background-color: TRANSPARENT !important; /*[{f12-toolbar-button-pressed-color} !important]*/
+}
+
+.BPT-FileLink,
+.BPT-HelpLink,
+.BPT-IELink {
+    border: 1px solid transparent;
+    color: TRANSPARENT; /*[{plugin-link-color}]*/ /*EnvironmentColors.CommandBarMenuLinkTextColorKey*/
+    cursor: pointer;
+}
+
+.BPT-FileLink:hover,
+.BPT-HelpLink:hover,
+.BPT-IELink:hover {
+    color: TRANSPARENT; /*[{plugin-link-hover-color}]*/ /*EnvironmentColors.CommandBarMenuLinkTextHoverColorKey*/
+    text-decoration: underline;
+}
+
+.BPT-ContextMenu {
+    background-color: TRANSPARENT; /*[{plugin-contextmenu-background-color}]*/
+    color: TRANSPARENT; /*[{plugin-contextmenu-color}]*/
+    position: fixed;
+    border: solid;
+    border-width: 1px;
+    border-color: TRANSPARENT; /*[{plugin-contextmenu-border-color}]*/
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.BPT-ContextMenuItem {
+    background-color: TRANSPARENT; /*[{plugin-contextmenu-background-color}]*/
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.BPT-ContextMenuItem:hover {
+    background-color: TRANSPARENT; /*[{plugin-contextmenu-hover-color}]*/
+}
+
+.BPT-ContextMenuItemDisabled {
+    color: TRANSPARENT; /*[{plugin-inactive-color}]*/
+}

@@ -1,0 +1,154 @@
+﻿/*
+Button control.
+*/
+button, input[type=button], input[type=reset], input[type=submit] {
+    min-width: 90px;
+    padding: 4px 8px;
+    border-width: 2px;
+    border-style: solid;
+    background-clip: padding-box;
+    font-size: 11pt;
+    font-weight: 600;
+}
+
+button ::selection, 
+input[type=button] ::selection, 
+input[type=reset] ::selection, 
+input[type=submit] ::selection {
+    background: transparent; 
+}
+
+/*
+Button control colors.
+*/
+button, input[type=button], input[type=submit],
+input[type=reset], input[type=file]::-ms-browse {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 1px solid #FFFFFF;
+}
+
+button[type=submit], input[type=submit] {
+    background-clip: padding-box;
+    background-color: rgb(70, 23, 180);
+}
+
+button:hover, input[type=button]:hover, input[type=reset]:hover,
+input[type=file]::-ms-browse:hover {
+    background-color: rgba(255, 255, 255, 0.13);
+    border-color: rgb(255, 255, 255);
+}
+
+button[type=submit]:hover, input[type=submit]:hover {
+    background-clip: padding-box;    
+    background-color: rgb(95, 55, 190);
+    border-color: rgb(255, 255, 255);
+}
+
+button:hover:active, button[type=submit]:hover:active,
+input[type=button]:hover:active, input[type=reset]:hover:active,
+input[type=submit]:hover:active, input[type=file]::-ms-browse:hover:active {
+    background-clip: border-box;
+    background-color: rgb(255, 255, 255);
+    border-color: transparent;
+    color: rgb(0, 0, 0);
+}
+
+button:disabled, button[type=submit]:disabled,
+input[type=button]:disabled, input[type=reset]:disabled,
+input[type=submit]:disabled, input[type=file]:disabled::-ms-browse,
+button:disabled:active, button[type=submit]:disabled:active,
+input[type=button]:disabled:active, input[type=reset]:disabled:active,
+input[type=submit]:disabled:active, input[type=file]:disabled::-ms-browse:active {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+button[selected=true], 
+input[type=button][selected=true], 
+input[type=reset][selected=true],
+input[type=file][selected=true] {
+    color: #333333; /*[{plugin-filetab-hot-color}]*/
+    background-color: #FFF3CD; /* [{plugin-contextmenu-hover-color}]*/
+    border: 1px solid #E5C365; /* [1px solid {host-command-bar-selected-border-color}]*/
+}
+
+/*
+Toolbar Button control.
+*/
+.toolbar button, 
+.toolbar input[type=button], 
+.toolbar input[type=reset], 
+.toolbar input[type=submit] {
+	cursor: default;
+    padding: 0 5px 0 5px;
+    display: inline-block;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    background-clip: padding-box;
+    font-size: 9pt;
+    font-weight: normal;
+}
+
+.toolbar button img, 
+.toolbar input[type=button] img, 
+.toolbar input[type=reset] img, 
+.toolbar input[type=submit] img {
+    margin: 2px 4px 0 -2px;
+    vertical-align: middle;
+}
+
+/*
+Button control colors.
+*/
+.toolbar button, 
+.toolbar input[type=button], 
+.toolbar input[type=submit],
+.toolbar input[type=reset], 
+.toolbar input[type=file]::-ms-browse {
+    background-color: transparent;
+    border-color: rgb(255, 255, 255);
+    color: #BFBFBF;
+    padding-right: 4px;
+}
+
+.toolbar button:hover, 
+.toolbar input[type=button]:hover, 
+.toolbar input[type=reset]:hover,
+.toolbar input[type=file]::-ms-browse:hover {
+    color: #333333; /*[{plugin-filetab-hot-color}]*/
+}
+
+.toolbar button:hover:active, 
+.toolbar button[type=submit]:hover:active,
+.toolbar input[type=button]:hover:active, 
+.toolbar input[type=reset]:hover:active,
+.toolbar input[type=submit]:hover:active, 
+.toolbar input[type=file]::-ms-browse:hover:active {
+    color: #333333; /*[{plugin-filetab-hot-color}]*/
+}
+
+.toolbar button:disabled, 
+.toolbar button[type=submit]:disabled,
+.toolbar input[type=button]:disabled, 
+.toolbar input[type=reset]:disabled,
+.toolbar input[type=submit]:disabled, 
+.toolbar input[type=file]:disabled::-ms-browse,
+.toolbar button:disabled:active, 
+.toolbar button[type=submit]:disabled:active,
+.toolbar input[type=button]:disabled:active, 
+.toolbar input[type=reset]:disabled:active,
+.toolbar input[type=submit]:disabled:active, 
+.toolbar input[type=file]:disabled::-ms-browse:active {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #808080; /*[{plugin-inactive-color}]*/
+}
+
+.toolbar button[selected=true], 
+.toolbar input[type=button][selected=true], 
+.toolbar input[type=reset][selected=true],
+.toolbar input[type=file][selected=true] {
+    color: #333333; /*[{plugin-filetab-hot-color}]*/
+}

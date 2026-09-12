@@ -1,0 +1,126 @@
+﻿.BPT-HtmlTree-Container:focus {
+    outline: 0;
+}
+
+.BPT-HTML {
+    font-family: "Consolas", Lucida Console, monospace, "Segoe UI Symbol"; /*[{plugin-font-editor} , Lucida Console, monospace, "Segoe UI Symbol"]*/
+    font-size: 9pt; /*[{plugin-font-editor-size}]*/
+    font-weight: normal; /*[{plugin-font-editor-weight}]*/
+    color: TRANSPARENT; /*[{plugin-font-editor-html-tag-color}]*/
+}
+
+.BPT-HTML-Tag {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-element-weight}]*/
+}
+
+.BPT-HTML-NewTag {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-element-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-element-weight}]*/
+}
+
+.BPT-HTML-DocType, .BPT-HTML-DocType + .BPT-HTML-Text {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-comment-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-comment-weight}]*/
+    cursor: default;
+}
+
+.BPT-HTML-Comment, .BPT-HTML-Comment + .BPT-HTML-Text {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-comment-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-comment-weight}]*/
+    cursor: default;
+}
+
+.BPT-HTML-Attribute {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-name-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-attribute-name-weight}]*/
+}
+
+.BPT-HTML-Value {
+    color: TRANSPARENT; /*[{plugin-font-editor-html-attribute-value-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-attribute-value-weight}]*/
+}
+
+.BPT-HTML-Text, .BPT-HTML-CData {
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-html-operator-weight}]*/
+    white-space: pre-wrap;
+}
+
+.BPT-HTML-CSS-Name {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-name-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-css-name-weight}]*/
+}
+
+.BPT-HTML-CSS-Value {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-value-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-css-value-weight}]*/
+}
+
+.BPT-HTML-CSS-Selector {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-selector-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-css-selector-weight}]*/
+}
+
+.BPT-HTML-CSS-ParentRule {
+    color: TRANSPARENT; /*[{plugin-font-editor-css-selector-color}]*/
+    font-weight: normal;
+}
+
+.BPT-HTML-CSS-Text {
+    color: TRANSPARENT; /*[{plugin-font-editor-color}]*/
+    font-weight: normal; /*[{plugin-font-editor-weight}]*/
+}
+
+.BPT-HTML-CSS-SelectorTag {
+    font-style:italic;
+}
+
+.BPT-HTML-CSS-InlinedSelector {
+    font-style:italic;
+}
+
+.BPT-HTML-Numbering {
+    display: inline-block;
+    min-width: 25px;
+}
+
+.BPT-HTML-Tag > input {
+    vertical-align: -2px
+}
+
+.BPT-Style-Disabled span {
+    text-decoration: line-through;
+}
+
+.BPT-HtmlTree-ChildCollection-ShowAll {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+    background-color: TRANSPARENT;  /*[{plugin-font-editor-background-color}]*/
+    font-weight: normal;        /*[{plugin-font-editor-weight}]*/
+    white-space: pre-wrap;
+
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 1px;
+}
+
+.BPT-HtmlTree-ChildCollection-ShowAll:hover, .BPT-HtmlTree-ChildCollection-ShowAll.BPT-HtmlTreeItem-Selected {
+    text-decoration: underline;
+}
+
+.BPT-HtmlTreeItem-Hover.BPT-HtmlTreeItem-DropBefore {
+    border-top: 1px solid blue;
+}
+
+.BPT-HtmlTreeItem-Hover.BPT-HtmlTreeItem-DropAfter {
+    border-bottom: 1px solid blue;
+}
+
+.BPT-HTML-Punctuation {
+    color: TRANSPARENT;             /*[{plugin-font-editor-color}]*/
+}
+
+.BPT-HTML-Debug-Uid {
+    color: lightgrey;
+}
