@@ -1,0 +1,147 @@
+.listview {
+    position: relative;
+    border: 1px solid transparent;
+    overflow: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    -ms-user-select: none;
+    white-space: nowrap;
+}
+
+.listview:focus {
+    outline: none;
+}
+
+.listview-grid {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 100%;
+}
+
+.listview-grid-row {
+    position: relative;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    border: solid 1px transparent;
+    word-spacing: 0;
+    -ms-user-select: element;
+}
+
+.listview-grid-row:focus {
+    outline: none !important;
+}
+
+.listview-grid-focus-within .listview-grid-row-selected, .grid-row-selected:hover {
+    background-color: rgba(51, 153, 255, 0.25); /*[{plugin-font-editor-selected-background-color rgba(0.18)}]*/
+    border-color: transparent;                  /*[{plugin-font-editor-selected-border-color}]*/
+}
+
+.listview-grid-row-selected {
+    background-color: rgba(191, 205, 219, 0.25); /*[{plugin-font-editor-inactive-selected-background-color rgba(0.05)}]*/
+    border-color: transparent;                   /*[{plugin-font-editor-selected-border-color rgba(0.18)}]*/
+}
+
+.listview-grid-row-filtered {
+    color: TRANSPARENT; /*[{plugin-font-console-info-color}]*/
+    height: 5px;
+}
+
+.listview-grid-cell {
+    position: relative;
+    display: inline-block;
+    padding: 1px 4px 2px 4px;
+    text-align: left;
+    text-indent: 2px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.listview-grid-cell pre {
+    display: inline;
+    font: inherit;
+}
+
+.listview-grid-cell-indent {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.listview-grid-cell-resize {
+    display: inline-block;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.listview-grid-cell-full {
+    box-sizing: border-box;
+    padding-left: 1px;
+}
+
+.listview-grid-cell-icon, .listview-grid-cell-icon-space {
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    padding: 0 2px 0 2px;
+    background: none no-repeat no-repeat center top;
+    background-position-y: -18px;
+    background-color: transparent;
+}
+
+.listview-grid-underline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background-color: transparent;
+}
+
+.listview-icon-tree {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 1px;
+    left: 2px;
+}
+
+.listview-icon-tree-collapsed {
+    background: url('') no-repeat center center; /*[url({vs-image-icon-tree-collapsed}) no-repeat center center]*/
+    background-size: 10px 10px;
+}
+
+.listview-icon-tree-expanded {
+    background: url('') no-repeat center center; /*[url({vs-image-icon-tree-expanded}) no-repeat center center]*/
+    background-size: 10px 10px;
+}
+
+.listview-grid-groupline {
+    position: absolute;
+    width: 4px;
+    margin-top: -5px;
+    box-sizing: border-box;
+    border: solid 1px TRANSPARENT; /*[solid 1px {plugin-perftools-grid-groupline-color}]*/
+    border-top-color: transparent;
+    border-right-color: transparent;
+}
+
+.listview-grid-separator {
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background-color: transparent;
+    cursor: ew-resize;
+    z-index: 100;
+}
+
+.listview-grid-separator-visible {
+    background-color: TRANSPARENT; /*[{plugin-perftools-grid-column-sizer}]*/
+}

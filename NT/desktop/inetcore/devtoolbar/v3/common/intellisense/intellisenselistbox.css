@@ -1,0 +1,38 @@
+﻿.intellisenseListBox {
+    color: TRANSPARENT; /*[{plugin-select-option-color}]*/
+    background-color: TRANSPARENT; /*[{plugin-select-option-background-color}]*/
+    padding: 0;
+    margin: 0;
+    max-width: 500px;
+    cursor: default;
+    border: 1px solid TRANSPARENT; /*[1px solid {plugin-textbox-border-color}]*/
+    font-family: "Consolas", Lucida Console, monospace; /*[{plugin-font-family} , Lucida Console, monospace]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    list-style-type: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-user-select: none;
+    z-index: 1000;
+}
+
+.intellisenseListBox ::selection{
+    background-color: transparent;
+}
+
+.intellisenseListBoxItem {
+    padding-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+    -ms-user-select: none;
+}
+
+.intellisenseListBoxItem:hover{
+    background-color: TRANSPARENT; /*[{f12-intellisense-hover-background-color}]*/
+    color: TRANSPARENT; /*[{f12-intellisense-hover-color}]*/
+}
+
+.intellisenseListBoxItem[selected=selected] {
+    background-color: TRANSPARENT; /*[{f12-intellisense-checked-background-color}]*/
+    color: TRANSPARENT; /*[{f12-intellisense-checked-color}]*/
+}
