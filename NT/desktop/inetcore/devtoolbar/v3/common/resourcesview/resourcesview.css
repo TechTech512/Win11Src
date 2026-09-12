@@ -1,0 +1,110 @@
+.resourceGrid {
+    display: flex;
+    flex-flow: column;
+}
+
+.resourceGrid * {
+    box-sizing: content-box;
+}
+
+/* Prevent scrollbar appearing during resize */
+.resourceGrid .slick-viewport {
+    overflow-x: hidden !important;
+}
+
+.resourceGrid .slick-header-column {
+    background: TRANSPARENT; /*[{plugin-resources-grid-cell-odd-background-color}]*/
+    border: none !important;
+    border-left: 1px solid TRANSPARENT !important; /*[1px solid {plugin-resources-grid-vborder} !important]*/
+}
+
+    .resourceGrid .slick-header-column.slick-header-column-active,
+    .resourceGrid .slick-header-column.slick-header-column-active + .slick-header-column {
+        /* Ensure the cursor is still the resize style during resize when it is not directly on top of the resize handle */
+        cursor: col-resize;
+    }
+
+.resourceGrid .slick-header-columns {
+    border-top: 1px solid TRANSPARENT !important; /*[1px solid {plugin-resources-grid-header-hborder} !important]*/
+    border-bottom: 1px solid TRANSPARENT !important; /*[1px solid {plugin-resources-grid-header-hborder} !important]*/
+}
+
+.resourceGrid .slick-row.odd {
+    background: TRANSPARENT; /*[{plugin-resources-grid-cell-odd-background-color}]*/
+}
+
+.resourceGrid .slick-row.even {
+    background: TRANSPARENT; /*[{plugin-resources-grid-cell-even-background-color}]*/
+}
+
+.resourceGrid .slick-row.ui-state-active,
+.resourceGrid .slick-row.active,
+.resourceGrid .slick-cell.selected {
+  background: TRANSPARENT; /*[{plugin-resources-grid-active-row-background}]*/
+}
+
+.resourceGrid .resourceGrid-cell-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: inherit;
+}
+
+.resourceGrid .slick-cell {
+    border: none;
+    border-left: 1px solid TRANSPARENT; /*[1px solid {plugin-resources-grid-vborder}]*/
+    border-bottom: 1px solid TRANSPARENT; /*[1px solid {plugin-resources-grid-hborder}]*/
+    overflow: hidden;
+}
+
+    /* Shift read-mode text down to be centered vertically */
+    .resourceGrid .slick-cell:not(.editable) {
+        padding-top: 2px;
+        padding-bottom: 0px;
+    }
+
+    .resourceGrid .slick-cell.active {
+        border: none;
+        outline: 1px solid TRANSPARENT; /*[1px solid {plugin-resources-grid-active-cell-border}]*/
+        border: none !important;
+        margin-left: 1px;
+
+        background: TRANSPARENT; /*[{plugin-resources-grid-active-cell-background}]*/
+        z-index: 2;
+        white-space: pre;
+    }
+
+        @media screen and (-ms-high-contrast: active) {
+            .resourceGrid .slick-cell.active {
+                text-decoration: underline;
+                background: TRANSPARENT; /*[{plugin-resources-grid-active-cell-background rgba(.18)}]*/
+                outline-width: 3px;
+            }
+        }
+
+        .resourceGrid .slick-cell.active.editable {
+            background: TRANSPARENT; /*[{plugin-resources-grid-editable-cell-background}]*/
+
+            /* Shift text up to be centered vertically */
+            padding-top: 0px;
+        }
+
+        .resourceGrid .slick-cell.active.editable input.editor-text {
+            width: 100%;
+            height: 100%;
+            border: none !important;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+.resourceGrid .resourceGrid-title {
+    margin: 5px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    cursor: default;
+}
+
+.resourceGrid .resourceGrid-grid {
+    height: 100%;
+    flex: 0 1 auto;
+}
