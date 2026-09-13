@@ -1,0 +1,21 @@
+TARGETNAME=ftpmib
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=ftpmib.def
+USE_MSVCRT=1
+EXPECTED_WINVER=10.00
+
+DLLENTRY=_DllMainCRTStartup
+
+UMTYPE=console
+
+INCLUDES=..\..\..\..\inc;$(BASEDIR)\servercommon\inetsrv\iis\iisrearc\core\snmp\dll;
+
+SOURCES=ftpcounters.c \
+        main.c \
+		mib.c \
+		mib.rc
+
+TARGETLIBS=$(SDK_LIB_PATH)\snmpapi.lib \
+           $(SDK_LIB_PATH)\kernel32.lib \
+           $(SDK_LIB_PATH)\pdh.lib

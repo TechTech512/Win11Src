@@ -1,0 +1,24 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2012 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "FTP SNMP AGENT"
+#define VER_INTERNALNAME_STR        "ftpmib.dll"
+#define VER_ORIGINALFILENAME_STR    "ftpmib.dll"
+#define VER_LANGNEUTRAL
+#ifdef VER_PRODUCTNAME_STR
+#undef VER_PRODUCTNAME_STR
+#define VER_PRODUCTNAME_STR         "Internet Information Services"
+#endif
+
+#include "common.ver"

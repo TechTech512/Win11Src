@@ -1,0 +1,6 @@
+LIBRARY FTPMIB
+EXPORTS
+    SnmpExtensionInit 
+    SnmpExtensionQuery 
+    SnmpExtensionTrap 
+
