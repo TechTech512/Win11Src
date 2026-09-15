@@ -1,0 +1,12 @@
+TARGETNAME=FaceDetectorResources
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=facedetectorresources.def
+UMTYPE=console
+EXPECTED_WINVER=10.00
+USE_MSVCRT=1
+BUFFER_OVERFLOW_CHECKS=1
+SOURCES=facedetectorresources.rc \
+        dllmain.cpp
+TARGETLIBS=$(SDK_LIB_PATH)\mincore.lib
+NT_SIGNCODE=1
