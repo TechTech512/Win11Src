@@ -1,0 +1,49 @@
+
+TARGETNAME=SecEdit
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+EXPECTED_WINVER=10.00
+
+C_DEFINES=-DWIN32 -DUNICODE
+
+INCLUDES=..\;..\..\inc;$(BASE_INC_PATH);$(INTERNAL_SDK_INC_PATH)
+
+
+SOURCES= secedit.c \
+         secedit.rc
+
+TARGETLIBS= $(SDK_LIB_PATH)\mincore.lib  \
+            $(SDK_LIB_PATH)\mincore_downlevel.lib   \
+            $(SDK_LIB_PATH)\onecore.lib   \
+            $(SDK_LIB_PATH)\onecore_apiset.lib   \
+            $(SDK_LIB_PATH)\onecore_downlevel.lib   \
+            $(SDK_LIB_PATH)\onecoreuap.lib   \
+            $(SDK_LIB_PATH)\onecoreuap_apiset.lib   \
+            $(SDK_LIB_PATH)\onecoreuap_downlevel.lib   \
+            $(SDK_LIB_PATH)\windowscoreheadless.lib   \
+            $(SDK_LIB_PATH)\windowscoreheadless_apiset.lib   \
+            $(SDK_LIB_PATH)\windowsapp.lib   \
+            $(SDK_LIB_PATH)\windowsapp_downlevel.lib   \
+            $(BASEDIR)\onecore\base\ntsetup\forwarders\apiquery\$(O)\api-ms-win-core-apiquery-l1-1-0.lib  \
+            $(SDK_LIB_PATH)\ntdll.lib   \
+            $(SDK_LIB_PATH)\msvcrt_enforcement.lib   \
+            $(SDK_LIB_PATH)\shlwapi.lib   \
+            $(SDK_LIB_PATH)\scecli.lib   \
+            $(SDK_LIB_PATH)\ucrt.lib
+
+UMTYPE=console
+UMENTRY=wmain
+
+DELAYLOAD = shlwapi.dll
+DLOAD_ERROR_HANDLER = kernelbase
+
+USE_MSVCRT=1
+
+MISCFILES=Secedit_{3A7AC468-F825-4524-8821-CEEB95E4F174}.sld
+
+# Fusionized
+SXS_MANIFEST_RESOURCE_ID=1
+SXS_APPLICATION_MANIFEST=SecEdit.Manifest
+SXS_ASSEMBLY_NAME=Microsoft.Windows.Security.Secedit
+SXS_NO_BINPLACE=1
+SXS_MANIFEST_IN_RESOURCES=1
