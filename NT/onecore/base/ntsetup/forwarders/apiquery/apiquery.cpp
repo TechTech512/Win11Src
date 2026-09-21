@@ -17,7 +17,7 @@ extern "C" {
     );
 }
 
-long __cdecl ApiSetQueryApiSetPresence(PUNICODE_STRING ModuleName, unsigned char* PresenceFlag)
+extern "C" long __stdcall ApiSetQueryApiSetPresence(PUNICODE_STRING ModuleName, unsigned char* PresenceFlag)
 {
     NTSTATUS LoadStatus;
     NTSTATUS UnloadStatus;
