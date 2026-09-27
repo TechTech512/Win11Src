@@ -1,0 +1,5 @@
+TARGETNAME=uiutils
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+SOURCES=..\browserdesktopuiutils.cpp
