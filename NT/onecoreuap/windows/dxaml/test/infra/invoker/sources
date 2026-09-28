@@ -1,0 +1,15 @@
+TARGETNAME=Invoker
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+USE_MSVCRT=1
+USE_STL=1
+EXPECTED_WINVER=10.00
+
+INCLUDES=..\..\..\xcp\inc;
+
+UMTYPE=console
+
+SOURCES=Invoker.cpp
+
+TARGETLIBS=$(SDK_LIB_PATH)\onecoreuap.lib \
+           $(SDK_LIB_PATH)\msvcrt.lib
