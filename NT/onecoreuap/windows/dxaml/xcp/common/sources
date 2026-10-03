@@ -1,0 +1,28 @@
+!INCLUDE "..\xcpdefines.inc"
+
+TARGETNAME=common
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+PRECOMPILED_INCLUDE=precomp.hpp
+PRECOMPILED_OBJ=precomp.obj
+PRECOMPILED_PCH=precomp.pch
+
+C_DEFINES=$(C_DEFINES) -std:c++17 -await
+
+INCLUDES=$(XcpPath)\core\inc;\
+         $(XcpPath)\components\criticalsection\inc;\
+		 $(XcpPath)\inc;\
+		 $(XcpPath)\inc\fwd;\
+		 $(CRT_INC_PATH)\stl110;\
+		 $(SDK_INC_PATH)\ucrt\inc;\
+		 $(SDK_INC_PATH)\winrt;\
+		 $(WINDOWS_INC_PATH);\
+		 $(XcpPath)\components\base\inc;\
+		 $(XcpPath)\components\metadata\inc;\
+		 $(XcpPath)\components\xstring\inc;\
+		 $(XcpPath)\components\legacy\inc;\
+		 $(XcpPath)\pal\inc;
+
+SOURCES=stdlib.cpp \
+        xuriutils.cpp
