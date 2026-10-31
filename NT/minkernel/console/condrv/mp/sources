@@ -1,0 +1,38 @@
+!IF 0
+
+Copyright (C) Microsoft Corporation, 2010
+
+Module Name:
+
+    sources.
+
+!ENDIF
+
+TARGETNAME=condrv
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+PRECOMPILED_INCLUDE=condrvp.h
+PRECOMPILED_PCH=condrvp.pch
+PRECOMPILED_OBJ=condrvp.obj
+
+TARGETLIBS=\
+		$(DDK_LIB_PATH)\BufferOverflowFastFailK.lib \
+		$(DDK_LIB_PATH)\ntoskrnl.lib \
+		$(SDK_LIB_PATH)\ntdll.lib \
+		$(DDK_LIB_PATH)\hal.lib
+
+NT_SIGNCODE=1
+
+INCLUDES=$(DDK_INC_PATH);$(MINWIN_PRIV_SDK_INC_PATH);$(INTERNAL_SDK_INC_PATH);..
+
+SOURCES=\
+        ..\broker.c         \
+        ..\client.c         \
+        ..\condrv.c         \
+        ..\connection.c         \
+        ..\display.c         \
+        ..\pipe.c         \
+        ..\reference.c         \
+        ..\server.c         \
+        ..\condrv.rc
