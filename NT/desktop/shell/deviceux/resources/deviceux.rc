@@ -1,0 +1,13 @@
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE    VFT_DLL
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Windows Device User Experience Resource File"
+#define VER_INTERNALNAME_STR        "DeviceUxRes"
+#define VER_ORIGINALFILENAME_STR    "DeviceUxRes.dll"
+
+#include "common.ver"
+
+1 11 DISCARDABLE "msg.bin"
+1 WEVT_TEMPLATE DISCARDABLE "deviceuxres.evtx"
