@@ -1,0 +1,11 @@
+TARGETNAME=DeviceInfoExt
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+UMTYPE=console
+EXPECTED_WINVER=10.00
+USE_MSVCRT=1
+DLLENTRY=_DllMainCRTStartup
+DLLDEF=DeviceInfoExt.def
+SOURCES=deviceinfoext.cpp \
+        deviceinfoext.rc
+TARGETLIBS=$(SDK_LIB_PATH)\mincore.lib
