@@ -1,0 +1,34 @@
+//=================================================================
+//
+// Microsoft Windows
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+//
+// Resource table
+// 
+//=================================================================
+
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DLL
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "ETW for Provisioning Diagnostics"
+#define VER_INTERNALNAME_STR        "ETW for Provisioning Diagnostics"
+#define VER_ORIGINALFILENAME_STR    "provdiagnostics.dll"
+
+#include "common.ver"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WEVT_TEMPLATE
+//
+
+1 WEVT_TEMPLATE DISCARDABLE "wevttmpl.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Message Table
+//
+
+1 11 DISCARDABLE "msg.bin"
+
