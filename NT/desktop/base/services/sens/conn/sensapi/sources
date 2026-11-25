@@ -1,0 +1,19 @@
+TARGETNAME=SensApi
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=SensApi.def
+USE_MSVCRT=1
+UMTYPE=console
+EXPECTED_WINVER=10.00
+
+DELAYLOAD = RPCRT4.dll
+DLOAD_ERROR_HANDLER = kernelbase
+
+INCLUDES=..\common;
+
+SOURCES=sensapi.cxx \
+        sensapi.rc
+
+TARGETLIBS=$(SDK_LIB_PATH)\mincore.lib \
+           $(SDK_LIB_PATH)\rpcrt4.lib \
+           $(SDK_LIB_PATH)\rpcutil.lib
