@@ -1,0 +1,6 @@
+TARGETNAME=securedesktopclient
+TARGETPATH=$(ONECOREDS_LIB_DEST)
+TARGETTYPE=LIBRARY
+
+SOURCES=rpchelper.c \
+        securedesktopclient.c
