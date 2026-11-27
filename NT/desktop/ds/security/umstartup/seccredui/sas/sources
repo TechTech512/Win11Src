@@ -1,0 +1,20 @@
+TARGETNAME=SAS
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLDEF=$(O)\sas.def
+USE_MSVCRT=1
+UMTYPE=console
+EXPECTED_WINVER=10.00
+
+DLLENTRY=_DllMainCRTStartup
+
+INCLUDES=$(MINWIN_PRIV_SDK_INC_PATH);
+
+SOURCES=dllmain.c \
+        sas.rc
+
+TARGETLIBS=$(SDK_LIB_PATH)\mincore.lib \
+           $(SDK_LIB_PATH)\kernel32.lib \
+		   $(SDK_LIB_PATH)\rpcrt4.lib \
+		   $(SDK_LIB_PATH)\rpcutil.lib \
+		   $(ONECOREDS_LIB_PATH)\securedesktopclient.lib
